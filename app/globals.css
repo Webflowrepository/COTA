@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+:root {
+  /* base — sitio mayormente claro, como cota.com.ar */
+  --ink: #0b0e1a;       /* negro con temperatura azul, no neutro */
+  --ink-soft: #141a2e;
+  --ink-deep: #060811;
+  --paper: #fafaf8;
+  --paper-dim: #eeece6;
+
+  /* acentos de marca — tomados del logo/sitio actual de COTA */
+  --blue: #2e3d96;
+  --blue-light: #5468d6;
+  --green: #017130;
+  --green-light: #2fa35a;
+
+  --line-on-dark: rgba(250, 250, 248, 0.14);
+  --line-on-light: rgba(11, 14, 26, 0.12);
+
+  --ease-industrial: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-deep: var(--ink-deep);
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-blue: var(--blue);
+  --color-blue-light: var(--blue-light);
+  --color-green: var(--green);
+  --color-green-light: var(--green-light);
+  --color-line-on-dark: var(--line-on-dark);
+  --color-line-on-light: var(--line-on-light);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+::selection {
+  background: var(--blue);
+  color: var(--paper);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+  text-wrap: balance;
+}
+
+.font-technical {
+  font-family: var(--font-mono), monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.container-industrial {
+  width: 100%;
+  max-width: 1720px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-industrial {
+    padding-inline: 3rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container-industrial {
+    padding-inline: 4.5rem;
+  }
+}
+
+.dev-tag {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  opacity: 0.34;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+@keyframes liquid-drift {
+  0% { transform: translate3d(-2%, 0, 0) scale(1); }
+  50% { transform: translate3d(2%, -1.5%, 0) scale(1.04); }
+  100% { transform: translate3d(-2%, 0, 0) scale(1); }
+}
+
+@keyframes steam-drift {
+  0% { transform: translate3d(0, 6%, 0) scale(1); opacity: 0.18; }
+  50% { transform: translate3d(-3%, -4%, 0) scale(1.15); opacity: 0.32; }
+  100% { transform: translate3d(0, 6%, 0) scale(1); opacity: 0.18; }
+}
+
+.animate-liquid-drift {
+  animation: liquid-drift 18s var(--ease-industrial) infinite;
+}
+
+.animate-steam-drift {
+  animation: steam-drift 12s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

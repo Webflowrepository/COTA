@@ -1,0 +1,27 @@
+import Hero from "@/components/sections/Hero";
+import WhatCotaDoes from "@/components/sections/WhatCotaDoes";
+import IndustrialProcess from "@/components/sections/IndustrialProcess";
+import ProductionScale from "@/components/sections/ProductionScale";
+import ChemicalsToPaper from "@/components/sections/ChemicalsToPaper";
+import ProductFamilies from "@/components/sections/ProductFamilies";
+import SolutionsByApplication from "@/components/sections/SolutionsByApplication";
+import NaschelPlant from "@/components/sections/NaschelPlant";
+import History from "@/components/sections/History";
+import Contact from "@/components/sections/Contact";
+
+export default function Home() {
+  return (
+    <main className="flex-1">
+      <Hero />
+      <WhatCotaDoes />
+      <IndustrialProcess />
+      <ProductionScale />
+      <ChemicalsToPaper />
+      <ProductFamilies />
+      <SolutionsByApplication />
+      <NaschelPlant />
+      <History />
+      <Contact />
+    </main>
+  );
+}
