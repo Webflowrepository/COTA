@@ -55,29 +55,33 @@ export default function ProductionScale() {
   }, []);
 
   return (
-    <section ref={wrapperRef} className="relative h-[260vh] w-full bg-ink">
+    <section ref={wrapperRef} className="relative h-[260vh] w-full bg-paper">
       <div className="sticky top-0 flex h-[100svh] w-full flex-col items-center justify-center overflow-hidden">
-        <MacroSurface tone="ink" />
-        <div ref={ambientRef} className="absolute inset-0" style={{ background: "radial-gradient(60% 60% at 50% 100%, rgba(193,68,14,0.35), transparent 70%)" }} />
-        <ProductionLineStrip ref={lineRef} className="opacity-[0.06]" tone="ink" />
+        <MacroSurface tone="paper" />
+        <div
+          ref={ambientRef}
+          className="absolute inset-0"
+          style={{ background: "radial-gradient(60% 60% at 50% 100%, rgba(1,113,48,0.16), transparent 70%)" }}
+        />
+        <ProductionLineStrip ref={lineRef} className="opacity-[0.07]" tone="paper" />
 
-        <div className="scale-heading font-technical relative z-10 mb-6 text-[11px] text-paper/60">
+        <div className="scale-heading font-technical relative z-10 mb-6 text-[11px] text-ink/55">
           Capacidad de producción
         </div>
 
         <div className="relative z-10 flex items-end gap-3 md:gap-5">
           <span
             ref={numberRef}
-            className="text-[32vw] leading-[0.8] text-paper md:text-[24vw] lg:text-[19vw]"
+            className="font-impact text-[32vw] leading-[0.8] text-ink md:text-[24vw] lg:text-[19vw]"
           >
             0
           </span>
-          <span className="font-technical mb-3 text-[4vw] text-rust-light md:mb-6 md:text-[2vw]">
+          <span className="font-technical mb-3 text-[4vw] text-green md:mb-6 md:text-[2vw]">
             T/MES
           </span>
         </div>
 
-        <p className="relative z-10 mt-8 max-w-sm px-6 text-center text-sm text-paper/60 md:text-base">
+        <p className="relative z-10 mt-8 max-w-sm px-6 text-center text-sm text-ink/55 md:text-base">
           Escala industrial sostenida — planta propia en Naschel, San Luis.
         </p>
       </div>

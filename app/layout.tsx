@@ -5,6 +5,7 @@ import Nav from "@/components/nav/Nav";
 import Footer from "@/components/footer/Footer";
 import SmoothScrollProvider from "@/lib/motion/SmoothScrollProvider";
 import VisualDefs from "@/components/visuals/VisualDefs";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 const display = Big_Shoulders({
   variable: "--font-display",
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Nav />
           {children}
           <Footer />
+          <WhatsAppButton />
         </SmoothScrollProvider>
       </body>
     </html>

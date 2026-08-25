@@ -1,8 +1,8 @@
 /**
  * Única fuente de verdad para datos verificados de COTA.
- * Verificado contra cota.com.ar (sitio actual de la empresa).
+ * Fuentes: cota.com.ar (sitio actual) + brief provisto directamente por el cliente.
  * No agregar certificaciones, clientes, países, specs técnicas
- * o claims de sostenibilidad/liderazgo que no estén confirmados ahí.
+ * o claims de sostenibilidad/liderazgo que no estén confirmados en alguna de esas dos fuentes.
  */
 
 export const cota = {
@@ -28,7 +28,7 @@ export const cota = {
     {
       id: "papel",
       label: "Papel Tissue",
-      short: "Fabricación de bobinas de papel Tissue en planta propia.",
+      short: "Bobinas para convertidores y línea profesional Guardián.",
     },
     {
       id: "soluciones",
@@ -58,10 +58,35 @@ export const cota = {
       short: "Productos finales y asesoramiento a distribuidores en todo el país.",
     },
   ],
+  /** Tipos de blanqueadores ópticos que produce COTA — provisto por el cliente. */
+  chemicalTypes: ["Tetrasulfónicos", "Hexasulfónicos", "Antraquinona"],
+  /**
+   * Guardián — línea profesional de producto terminado (papel Tissue),
+   * dirigida a distribuidores. Marca real de COTA, confirmada por el cliente.
+   * No hay fotografía de producto en alta resolución todavía — usar proxy visual.
+   */
+  guardian: {
+    name: "Guardián",
+    tagline: "Línea Profesional — Protector de Ambientes Limpios",
+  },
+  /** Categorías para el contacto segmentado — mismo canal real, asunto pre-completado por categoría. */
+  contactCategories: [
+    { id: "bobinas", label: "Bobinas para convertidores" },
+    { id: "quimicos", label: "Blanqueadores y químicos" },
+    { id: "distribucion", label: "Distribución — Guardián" },
+    { id: "maquinaria", label: "Maquinaria y logística" },
+  ],
   contact: {
     email: "comercial@cota.com.ar",
     phone: "+54 9 11 3371 3283",
   },
+  /** PLACEHOLDER — no se proveyó un número de WhatsApp Business todavía. */
+  whatsapp: {
+    number: null as string | null,
+    isPlaceholder: true,
+  },
+  /** Redes preparadas para activar más adelante — sin cuenta confirmada todavía. */
+  socialPlaceholders: ["TikTok", "LinkedIn"],
 } as const;
 
 export type BusinessLine = (typeof cota.businessLines)[number];

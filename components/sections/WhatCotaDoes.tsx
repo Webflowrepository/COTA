@@ -10,7 +10,13 @@ import { cota } from "@/lib/content/cota";
 const SWATCH: Record<string, ReactNode> = {
   quimicos: <LiquidChemical intensity={0.8} />,
   papel: <FiberField tone="paper" />,
-  soluciones: <MacroSurface tone="rust" />,
+  soluciones: <MacroSurface tone="blue" />,
+};
+
+const ACCENT: Record<string, string> = {
+  quimicos: "group-hover:text-blue",
+  papel: "group-hover:text-green",
+  soluciones: "group-hover:text-blue",
 };
 
 export default function WhatCotaDoes() {
@@ -47,20 +53,22 @@ export default function WhatCotaDoes() {
   }, []);
 
   return (
-    <section id="compania" ref={rootRef} className="relative w-full bg-ink py-28 md:py-40">
+    <section id="compania" ref={rootRef} className="relative w-full bg-paper py-28 md:py-40">
       <div className="container-industrial">
-        <span className="font-technical mb-14 block text-[11px] text-paper/50 md:mb-20">
-          Compañía — {cota.country}, +{cota.yearsOfOperation} años
+        <span className="font-technical mb-14 block text-[11px] text-ink/50 md:mb-20">
+          Compañía — {cota.country}, desde {cota.foundedYear}
         </span>
 
-        <div className="flex flex-col divide-y divide-line-on-dark">
+        <div className="flex flex-col divide-y divide-line-on-light">
           {cota.businessLines.map((line) => (
             <div key={line.id} className="line-row group relative flex items-center justify-between gap-8 py-8 md:py-12">
               <div className="min-w-0">
-                <h3 className="break-words text-[12vw] leading-[0.9] text-paper transition-colors group-hover:text-rust-light md:text-[6vw]">
+                <h3
+                  className={`break-words text-[12vw] leading-[0.9] text-ink transition-colors md:text-[6vw] ${ACCENT[line.id]}`}
+                >
                   {line.label}
                 </h3>
-                <p className="mt-3 max-w-md text-sm text-paper/55 md:text-base">{line.short}</p>
+                <p className="mt-3 max-w-md text-sm text-ink/55 md:text-base">{line.short}</p>
               </div>
               <div className="line-swatch relative hidden h-28 w-40 shrink-0 overflow-hidden rounded-sm md:block lg:h-36 lg:w-56">
                 {SWATCH[line.id]}

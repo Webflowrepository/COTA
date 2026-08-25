@@ -6,9 +6,10 @@ import LiquidChemical from "@/components/visuals/LiquidChemical";
 import FiberField from "@/components/visuals/FiberField";
 import PaperRollVisual from "@/components/visuals/PaperRollVisual";
 import DevTag from "@/components/visuals/DevTag";
+import { cota } from "@/lib/content/cota";
 
-const CHEM_ITEMS = ["Desarrollo de fórmulas", "Producción a escala industrial", "Control de proceso"];
-const PAPER_ITEMS = ["Producción propia en Naschel", "Rollos a escala industrial", "Especificaciones técnicas a pedido"];
+const CHEM_ITEMS = cota.chemicalTypes.map((type) => `Blanqueadores ${type}`);
+const PAPER_ITEMS = ["Bobinas para convertidores", `${cota.guardian.name} — línea profesional`, "Producción propia en Naschel"];
 
 export default function ChemicalsToPaper() {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -80,8 +81,8 @@ export default function ChemicalsToPaper() {
 
         {/* Capítulo Químicos */}
         <div ref={chemTextRef} className="container-industrial absolute inset-0 flex flex-col justify-end pb-20 md:pb-28">
-          <span className="font-technical mb-4 block text-[11px] text-steel">Químicos — 01</span>
-          <h3 className="max-w-2xl text-[10vw] leading-[0.92] text-paper md:text-[5.5vw]">
+          <span className="font-technical mb-4 block text-[11px] text-blue-light">Químicos — 01</span>
+          <h3 className="font-impact max-w-2xl text-[10vw] leading-[0.92] text-paper md:text-[5.5vw]">
             Precisión en cada reacción.
           </h3>
           <ul className="mt-8 flex flex-col gap-2">
@@ -95,9 +96,9 @@ export default function ChemicalsToPaper() {
 
         {/* Capítulo Papel */}
         <div ref={paperTextRef} className="container-industrial absolute inset-0 flex flex-col justify-end pb-20 text-ink md:pb-28">
-          <span className="font-technical mb-4 block text-[11px] text-rust">Papel — 02</span>
-          <h3 className="max-w-2xl text-[10vw] leading-[0.92] text-ink md:text-[5.5vw]">
-            Papel a escala industrial.
+          <span className="font-technical mb-4 block text-[11px] text-green">Papel — 02</span>
+          <h3 className="font-impact max-w-2xl text-[10vw] leading-[0.92] text-ink md:text-[5.5vw]">
+            Papel Tissue a escala industrial.
           </h3>
           <ul className="mt-8 flex flex-col gap-2">
             {PAPER_ITEMS.map((item, i) => (

@@ -13,59 +13,71 @@ const STAGES = [
   {
     n: "01",
     title: "Materia Prima",
-    copy: "Fibra y materia prima ingresan al proceso industrial.",
+    copy: "Fibra ingresa al proceso industrial.",
     visual: "raw" as const,
+    dark: false,
+    accent: "text-green",
   },
   {
     n: "02",
     title: "Proceso Químico",
-    copy: "Insumos químicos desarrollados por COTA integran el proceso.",
+    copy: "Blanqueadores ópticos desarrollados por COTA integran el proceso.",
     visual: "chem" as const,
+    dark: true,
+    accent: "text-blue-light",
   },
   {
     n: "03",
-    title: "Fabricación de Papel",
-    copy: "La materia se transforma en papel a escala industrial.",
+    title: "Fabricación de Papel Tissue",
+    copy: "La fibra se transforma en papel Tissue a escala industrial.",
     visual: "paper" as const,
+    dark: false,
+    accent: "text-green",
   },
   {
     n: "04",
     title: "Rebobinado",
     copy: "El papel se rebobina y se prepara para su conversión.",
     visual: "rewind" as const,
+    dark: false,
+    accent: "text-green",
   },
   {
     n: "05",
     title: "Producto Terminado",
-    copy: "Cada rollo sale listo para su uso industrial.",
+    copy: "Cada bobina sale lista para su conversión.",
     visual: "roll" as const,
+    dark: false,
+    accent: "text-green",
   },
   {
     n: "06",
     title: "Logística",
-    copy: "Distribución hacia clientes y convertidores.",
+    copy: "Distribución de bobinas hacia convertidores y distribuidores.",
     visual: "logistics" as const,
+    dark: false,
+    accent: "text-green",
   },
 ];
 
 function StageVisual({ kind }: { kind: (typeof STAGES)[number]["visual"] }) {
   switch (kind) {
     case "raw":
-      return <MacroSurface tone="ink" />;
+      return <MacroSurface tone="paper" />;
     case "chem":
       return <LiquidChemical intensity={0.9} />;
     case "paper":
-      return <FiberField tone="ink" opacity={0.5} />;
+      return <FiberField tone="paper" opacity={0.6} />;
     case "rewind":
-      return <MacroSurface tone="ink" grain={false} />;
+      return <MacroSurface tone="paper" grain={false} />;
     case "roll":
       return (
-        <div className="absolute inset-0 bg-ink-deep opacity-90">
-          <PaperRollVisual className="scale-[0.85] opacity-30" />
+        <div className="absolute inset-0 bg-paper">
+          <PaperRollVisual className="scale-[0.9] opacity-90" />
         </div>
       );
     case "logistics":
-      return <MacroSurface tone="rust" grain />;
+      return <MacroSurface tone="green" grain />;
   }
 }
 
@@ -123,9 +135,9 @@ export default function IndustrialProcess() {
   }, []);
 
   return (
-    <section id="proceso" ref={wrapperRef} className="relative h-[600vh] w-full bg-ink">
+    <section id="proceso" ref={wrapperRef} className="relative h-[600vh] w-full bg-paper">
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
-        <ProductionLineStrip ref={lineRef} className="opacity-[0.08]" tone="ink" />
+        <ProductionLineStrip ref={lineRef} className="opacity-[0.08]" tone="paper" />
 
         {STAGES.map((stage) => (
           <div key={stage.n} className="ip-stage absolute inset-0">
@@ -134,26 +146,36 @@ export default function IndustrialProcess() {
             </div>
             <div
               className="absolute inset-0"
-              style={{ background: "linear-gradient(0deg, #050504 0%, transparent 45%)" }}
+              style={{
+                background: stage.dark
+                  ? "linear-gradient(0deg, #060811 0%, transparent 45%)"
+                  : "linear-gradient(0deg, rgba(250,250,248,0.92) 0%, transparent 45%)",
+              }}
             />
 
             <div className="container-industrial relative flex h-full flex-col justify-end pb-20 md:pb-28">
-              <span className="font-technical mb-4 block text-[11px] text-rust-light">
+              <span className={`font-technical mb-4 block text-[11px] ${stage.accent}`}>
                 Recorrido industrial — {stage.n} / 06
               </span>
-              <h3 className="max-w-2xl text-[11vw] leading-[0.92] text-paper md:text-[6vw] lg:text-[5vw]">
+              <h3
+                className={`font-impact max-w-2xl text-[11vw] leading-[0.92] md:text-[6vw] lg:text-[5vw] ${
+                  stage.dark ? "text-paper" : "text-ink"
+                }`}
+              >
                 {stage.title}
               </h3>
-              <p className="mt-4 max-w-sm text-sm text-paper/65 md:text-base">{stage.copy}</p>
+              <p className={`mt-4 max-w-sm text-sm md:text-base ${stage.dark ? "text-paper/65" : "text-ink/60"}`}>
+                {stage.copy}
+              </p>
             </div>
           </div>
         ))}
 
         <DevTag>proxy — reemplazar por secuencia real de planta Naschel</DevTag>
 
-        <div className="pointer-events-none absolute inset-x-5 top-6 flex items-center justify-between md:inset-x-12">
-          <span className="font-technical text-[10px] text-paper/40">Materia prima → Producto terminado</span>
-          <span className="font-technical text-[10px] text-paper/40">Scroll para avanzar</span>
+        <div className="pointer-events-none absolute inset-x-5 top-6 z-10 flex items-center justify-between md:inset-x-12">
+          <span className="dev-tag text-paper !opacity-60">Materia prima → Producto terminado</span>
+          <span className="dev-tag text-paper !opacity-60">Scroll para avanzar</span>
         </div>
       </div>
     </section>

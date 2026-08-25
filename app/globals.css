@@ -60,12 +60,22 @@ body {
   color: var(--paper);
 }
 
+/* Por defecto, la tipografía es contenida — el peso/escala grande se
+   reserva a propósito para los 4 momentos insignia (.font-impact),
+   para que esos momentos realmente contrasten con el resto del sitio. */
 h1, h2, h3, h4 {
+  font-family: var(--font-body), sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.font-impact {
   font-family: var(--font-display), sans-serif;
   font-weight: 800;
   letter-spacing: -0.01em;
-  line-height: 0.95;
-  text-wrap: balance;
+  line-height: 0.9;
 }
 
 .font-technical {
