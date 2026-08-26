@@ -79,6 +79,12 @@ export default function ChemicalsToPaper() {
               </li>
             ))}
           </ul>
+          <a
+            href={`mailto:${cota.contact.email}?subject=${encodeURIComponent("Ficha técnica — Blanqueadores y químicos")}`}
+            className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper hover:text-blue-light"
+          >
+            Solicitar ficha técnica →
+          </a>
         </div>
 
         {/* Capítulo Papel */}
@@ -92,6 +98,12 @@ export default function ChemicalsToPaper() {
               </li>
             ))}
           </ul>
+          <a
+            href={`mailto:${cota.contact.email}?subject=${encodeURIComponent("Ficha técnica — Bobinas para convertidores")}`}
+            className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper hover:text-green-light"
+          >
+            Solicitar ficha técnica →
+          </a>
         </div>
       </div>
     </section>
