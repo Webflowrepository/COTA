@@ -1,16 +1,14 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
-import MacroSurface from "@/components/visuals/MacroSurface";
-import LiquidChemical from "@/components/visuals/LiquidChemical";
-import FiberField from "@/components/visuals/FiberField";
+import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import { cota } from "@/lib/content/cota";
 
-const SWATCH: Record<string, ReactNode> = {
-  quimicos: <LiquidChemical intensity={0.8} />,
-  papel: <FiberField tone="paper" />,
-  soluciones: <MacroSurface tone="blue" />,
+const SWATCH_LABEL: Record<string, string> = {
+  quimicos: "Foto — blanqueador óptico / tanque de proceso",
+  papel: "Foto — bobina de papel Tissue",
+  soluciones: "Foto — instalación de fábrica / maquinaria",
 };
 
 const ACCENT: Record<string, string> = {
@@ -25,25 +23,16 @@ export default function WhatCotaDoes() {
   useEffect(() => {
     const { gsap, ScrollTrigger } = ensureGsapRegistered();
     const ctx = gsap.context(() => {
-      gsap.utils.toArray<HTMLElement>(".line-row").forEach((row, i) => {
+      gsap.utils.toArray<HTMLElement>(".line-row").forEach((row) => {
         gsap.fromTo(
           row,
-          { autoAlpha: 0, x: i % 2 === 0 ? -40 : 40 },
+          { autoAlpha: 0, y: 24 },
           {
             autoAlpha: 1,
-            x: 0,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: { trigger: row, start: "top 80%", end: "top 45%", scrub: 0.6 },
-          },
-        );
-        gsap.fromTo(
-          row.querySelector(".line-swatch"),
-          { clipPath: "inset(0 100% 0 0)" },
-          {
-            clipPath: "inset(0 0% 0 0)",
-            ease: "none",
-            scrollTrigger: { trigger: row, start: "top 80%", end: "top 40%", scrub: 0.6 },
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: { trigger: row, start: "top 85%", end: "top 55%", scrub: true },
           },
         );
       });
@@ -53,25 +42,21 @@ export default function WhatCotaDoes() {
   }, []);
 
   return (
-    <section id="compania" ref={rootRef} className="relative w-full bg-paper py-28 md:py-40">
+    <section id="compania" ref={rootRef} className="relative w-full bg-paper py-24 md:py-36">
       <div className="container-industrial">
-        <span className="font-technical mb-14 block text-[11px] text-ink/50 md:mb-20">
+        <span className="font-label mb-16 block text-ink/45 md:mb-24">
           Compañía — {cota.country}, desde {cota.foundedYear}
         </span>
 
         <div className="flex flex-col divide-y divide-line-on-light">
           {cota.businessLines.map((line) => (
-            <div key={line.id} className="line-row group relative flex items-center justify-between gap-8 py-8 md:py-12">
-              <div className="min-w-0">
-                <h3
-                  className={`break-words text-[12vw] leading-[0.9] text-ink transition-colors md:text-[6vw] ${ACCENT[line.id]}`}
-                >
-                  {line.label}
-                </h3>
-                <p className="mt-3 max-w-md text-sm text-ink/55 md:text-base">{line.short}</p>
+            <div key={line.id} className="line-row group relative flex items-center justify-between gap-10 py-9 md:py-12">
+              <div className="min-w-0 max-w-md">
+                <h3 className={`text-heading text-ink transition-colors ${ACCENT[line.id]}`}>{line.label}</h3>
+                <p className="mt-3 text-sm text-ink/55 md:text-base">{line.short}</p>
               </div>
-              <div className="line-swatch relative hidden h-28 w-40 shrink-0 overflow-hidden rounded-sm md:block lg:h-36 lg:w-56">
-                {SWATCH[line.id]}
+              <div className="relative hidden h-44 max-w-lg flex-1 overflow-hidden md:block lg:h-56">
+                <PlaceholderMedia tone={line.id === "papel" ? "light" : "dark"} label={SWATCH_LABEL[line.id]} />
               </div>
             </div>
           ))}

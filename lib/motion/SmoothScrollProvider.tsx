@@ -17,7 +17,7 @@ export default function SmoothScrollProvider({
     if (prefersReducedMotion()) return;
 
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 0.7,
       easing: (t) => 1 - Math.pow(1 - t, 3),
       touchMultiplier: 1.1,
     });

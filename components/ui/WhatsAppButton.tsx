@@ -26,7 +26,11 @@ export default function WhatsAppButton() {
       title={href ? "Escribinos por WhatsApp" : "WhatsApp — número pendiente de confirmar"}
     >
       <WhatsAppIcon />
-      {!href && <span className="dev-tag absolute -top-2 right-0 text-paper">número pendiente</span>}
+      {!href && (
+        <span className="placeholder-tag absolute -top-5 right-0 whitespace-nowrap text-ink/50">
+          número pendiente
+        </span>
+      )}
     </a>
   );
 }

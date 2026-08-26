@@ -44,14 +44,17 @@
 
 html {
   scroll-behavior: auto;
-  overflow-x: hidden;
+  /* overflow-x: clip (no "hidden") — hidden convierte a html/body en
+     scroll containers y eso rompe position:sticky en todos los
+     descendientes (IndustrialProcess, ProductionScale, etc.) */
+  overflow-x: clip;
 }
 
 body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body), system-ui, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
   width: 100%;
 }
 
@@ -60,33 +63,51 @@ body {
   color: var(--paper);
 }
 
-/* Por defecto, la tipografía es contenida — el peso/escala grande se
-   reserva a propósito para los 4 momentos insignia (.font-impact),
-   para que esos momentos realmente contrasten con el resto del sitio. */
+/* Tipografía editorial y contenida — peso regular/medio, escala grande
+   pero acotada (clamp, no vw crudo), como referencia de diseño. */
 h1, h2, h3, h4 {
   font-family: var(--font-body), sans-serif;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.04;
   text-wrap: balance;
 }
 
-.font-impact {
-  font-family: var(--font-display), sans-serif;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  line-height: 0.9;
+.text-hero {
+  font-size: clamp(2.75rem, 6vw, 5.75rem);
+  line-height: 1;
 }
 
-.font-technical {
+.text-display {
+  font-size: clamp(2.1rem, 4.2vw, 3.75rem);
+  line-height: 1.03;
+}
+
+.text-heading {
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+  line-height: 1.08;
+}
+
+/* reservado para el único momento de tipografía-como-escala: el contador de producción */
+.font-impact-number {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 0.9;
+  font-size: clamp(5rem, 16vw, 11rem);
+}
+
+.font-label {
   font-family: var(--font-mono), monospace;
-  letter-spacing: 0.06em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  font-size: 0.6875rem;
 }
 
 .container-industrial {
   width: 100%;
-  max-width: 1720px;
+  max-width: 1440px;
   margin-inline: auto;
   padding-inline: 1.25rem;
 }
@@ -99,19 +120,16 @@ h1, h2, h3, h4 {
 
 @media (min-width: 1440px) {
   .container-industrial {
-    padding-inline: 4.5rem;
+    padding-inline: 5rem;
   }
 }
 
-.dev-tag {
+.placeholder-tag {
   font-family: var(--font-mono), monospace;
-  font-size: 9px;
-  letter-spacing: 0.08em;
+  font-size: 10px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  line-height: 1;
-  opacity: 0.34;
-  pointer-events: none;
-  mix-blend-mode: difference;
+  line-height: 1.3;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -119,26 +137,6 @@ h1, h2, h3, h4 {
 }
 .no-scrollbar {
   scrollbar-width: none;
-}
-
-@keyframes liquid-drift {
-  0% { transform: translate3d(-2%, 0, 0) scale(1); }
-  50% { transform: translate3d(2%, -1.5%, 0) scale(1.04); }
-  100% { transform: translate3d(-2%, 0, 0) scale(1); }
-}
-
-@keyframes steam-drift {
-  0% { transform: translate3d(0, 6%, 0) scale(1); opacity: 0.18; }
-  50% { transform: translate3d(-3%, -4%, 0) scale(1.15); opacity: 0.32; }
-  100% { transform: translate3d(0, 6%, 0) scale(1); opacity: 0.18; }
-}
-
-.animate-liquid-drift {
-  animation: liquid-drift 18s var(--ease-industrial) infinite;
-}
-
-.animate-steam-drift {
-  animation: steam-drift 12s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

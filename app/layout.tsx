@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Big_Shoulders, Inter, JetBrains_Mono } from "next/font/google";
+import { Big_Shoulders, Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/nav/Nav";
 import Footer from "@/components/footer/Footer";
 import SmoothScrollProvider from "@/lib/motion/SmoothScrollProvider";
-import VisualDefs from "@/components/visuals/VisualDefs";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 const display = Big_Shoulders({
@@ -18,10 +17,10 @@ const body = Inter({
   weight: ["400", "500", "600"],
 });
 
-const mono = JetBrains_Mono({
+const mono = Geist_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +36,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${display.variable} ${body.variable} ${mono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink">
-        <VisualDefs />
         <SmoothScrollProvider>
           <Nav />
           {children}
