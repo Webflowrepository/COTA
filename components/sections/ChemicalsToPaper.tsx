@@ -67,7 +67,7 @@ export default function ChemicalsToPaper() {
   }, []);
 
   return (
-    <section ref={wrapperRef} id="quimicos" className="relative h-[400vh] w-full bg-ink-deep">
+    <section ref={wrapperRef} id="quimicos" className="relative h-[240vh] w-full bg-ink-deep">
       <span id="papel" className="absolute left-0 top-1/2 block h-px w-px" aria-hidden />
 
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
