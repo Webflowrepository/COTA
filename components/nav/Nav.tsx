@@ -56,48 +56,50 @@ export default function Nav() {
     };
   }, []);
 
+  // el pill de fondo cubre TODO el header (logo + links + contacto) una vez
+  // scrolleado, para que el texto siempre tenga contraste garantizado sin
+  // importar qué sección (clara u oscura) esté detrás en ese momento.
   const base = scrolled ? "text-ink/65 hover:text-ink" : "text-paper/75 hover:text-paper";
-  const logoColor = scrolled ? "text-ink" : "text-paper";
+  const strong = scrolled ? "text-ink" : "text-paper";
 
   return (
     <header className="fixed inset-x-0 top-5 z-50 md:top-8">
-      <div className="container-industrial flex items-center justify-between">
-        <a href="#top" className={`text-sm font-medium tracking-tight transition-colors ${logoColor}`}>
-          COTA
-        </a>
-
-        <nav
-          className={`font-label hidden items-center gap-7 rounded-none px-6 py-3 transition-colors duration-300 md:flex ${
-            scrolled ? "bg-paper/90 backdrop-blur-md" : ""
+      <div className="container-industrial">
+        <div
+          className={`flex items-center justify-between px-5 py-3 transition-colors duration-300 md:px-7 ${
+            scrolled ? "bg-paper/95 shadow-[0_1px_0_0_rgba(11,14,26,0.08)] backdrop-blur-md" : ""
           }`}
         >
-          {LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              aria-current={activeId === link.id ? "true" : undefined}
-              className={`nav-underline transition-colors ${activeId === link.id ? "text-blue" : base}`}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+          <a href="#top" className={`text-sm font-medium tracking-tight transition-colors ${strong}`}>
+            COTA
+          </a>
 
-        <a
-          href="#contacto"
-          className={`nav-underline font-label hidden transition-colors md:block ${scrolled ? "text-ink/65 hover:text-ink" : "text-paper/75 hover:text-paper"}`}
-        >
-          Contacto
-        </a>
+          <nav className="font-label hidden items-center gap-7 md:flex">
+            {LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                aria-current={activeId === link.id ? "true" : undefined}
+                className={`nav-underline transition-colors ${activeId === link.id ? "text-blue" : base}`}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
 
-        <button
-          aria-label="Abrir navegación"
-          className="flex flex-col gap-1.5 md:hidden"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className={`h-px w-6 transition-transform ${logoColor === "text-ink" ? "bg-ink" : "bg-paper"} ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
-          <span className={`h-px w-6 transition-transform ${logoColor === "text-ink" ? "bg-ink" : "bg-paper"} ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
-        </button>
+          <a href="#contacto" className={`nav-underline font-label hidden transition-colors md:block ${base}`}>
+            Contacto
+          </a>
+
+          <button
+            aria-label="Abrir navegación"
+            className="flex flex-col gap-1.5 md:hidden"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span className={`h-px w-6 transition-transform ${scrolled ? "bg-ink" : "bg-paper"} ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
+            <span className={`h-px w-6 transition-transform ${scrolled ? "bg-ink" : "bg-paper"} ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
+          </button>
+        </div>
       </div>
 
       {open && (
