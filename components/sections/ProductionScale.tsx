@@ -52,7 +52,7 @@ export default function ProductionScale() {
         </div>
 
         <div className="relative z-10 flex items-end gap-3 md:gap-5">
-          <span ref={numberRef} className="font-impact-number text-paper">
+          <span ref={numberRef} className="font-impact-number text-mega text-paper">
             0
           </span>
           <span className="font-label mb-3 text-paper/70 md:mb-6">T/MES</span>

@@ -14,6 +14,7 @@ export default function ChemicalsToPaper() {
   const paperLayerRef = useRef<HTMLDivElement>(null);
   const chemTextRef = useRef<HTMLDivElement>(null);
   const paperTextRef = useRef<HTMLDivElement>(null);
+  const chemCountRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const { gsap, ScrollTrigger } = ensureGsapRegistered();
@@ -47,7 +48,13 @@ export default function ChemicalsToPaper() {
         start: "top top",
         end: "bottom bottom",
         scrub: 0.15,
-        onUpdate: (self) => tl.totalProgress(self.progress),
+        onUpdate: (self) => {
+          tl.totalProgress(self.progress);
+          const countProgress = Math.min(1, self.progress / 0.3);
+          if (chemCountRef.current) {
+            chemCountRef.current.textContent = String(Math.round(countProgress * cota.chemicalTypes.length));
+          }
+        },
       });
     }, wrapperRef);
 
@@ -71,7 +78,15 @@ export default function ChemicalsToPaper() {
         {/* Capítulo Químicos */}
         <div ref={chemTextRef} className="container-industrial absolute inset-0 flex flex-col justify-end pb-20 md:pb-28">
           <span className="font-label mb-4 block text-blue-light">Químicos — 01</span>
-          <h3 className="text-display max-w-2xl text-paper">Precisión en cada reacción.</h3>
+          <div className="flex flex-wrap items-end gap-x-8 gap-y-4">
+            <h3 className="text-display max-w-2xl text-paper">Precisión en cada reacción.</h3>
+            <div>
+              <span className="font-impact-number text-stat block text-blue-light">
+                <span ref={chemCountRef}>0</span>
+              </span>
+              <span className="font-label text-paper/50">Tipos de blanqueadores</span>
+            </div>
+          </div>
           <ul className="mt-8 flex flex-col gap-2">
             {CHEM_ITEMS.map((item, i) => (
               <li key={item} className="chem-item font-label text-paper/65">

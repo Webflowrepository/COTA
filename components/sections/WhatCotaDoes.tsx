@@ -35,6 +35,15 @@ export default function WhatCotaDoes() {
             scrollTrigger: { trigger: row, start: "top 85%", end: "top 55%", scrub: true },
           },
         );
+        gsap.fromTo(
+          row.querySelector(".media-reveal"),
+          { clipPath: "inset(100% 0 0 0)" },
+          {
+            clipPath: "inset(0% 0 0 0)",
+            ease: "power2.out",
+            scrollTrigger: { trigger: row, start: "top 85%", end: "top 50%", scrub: true },
+          },
+        );
       });
       return () => ScrollTrigger.getAll().forEach((t) => t.trigger === rootRef.current && t.kill());
     }, rootRef);
@@ -55,7 +64,7 @@ export default function WhatCotaDoes() {
                 <h3 className={`text-heading text-ink transition-colors ${ACCENT[line.id]}`}>{line.label}</h3>
                 <p className="mt-3 text-sm text-ink/55 md:text-base">{line.short}</p>
               </div>
-              <div className="relative hidden h-44 max-w-lg flex-1 overflow-hidden md:block lg:h-56">
+              <div className="media-reveal relative hidden h-44 max-w-lg flex-1 overflow-hidden md:block lg:h-56">
                 <PlaceholderMedia tone={line.id === "papel" ? "light" : "dark"} label={SWATCH_LABEL[line.id]} />
               </div>
             </div>

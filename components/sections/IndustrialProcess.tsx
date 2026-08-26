@@ -70,6 +70,11 @@ export default function IndustrialProcess() {
         if (i < STAGES.length - 1) {
           tl.to(stageEls[i], { autoAlpha: 0, duration: 0.4 }, i + 0.6);
         }
+        // ken burns — zoom lento mientras la etapa está en pantalla
+        const media = stageEls[i].querySelector(".stage-media");
+        const start = i === 0 ? 0 : i - 0.4;
+        const duration = i === 0 ? 0.6 : 1;
+        tl.fromTo(media, { scale: 1 }, { scale: 1.08, ease: "none", duration }, start);
       });
 
       ScrollTrigger.create({
@@ -88,8 +93,10 @@ export default function IndustrialProcess() {
     <section id="proceso" ref={wrapperRef} className="relative h-[600vh] w-full bg-paper">
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         {STAGES.map((stage) => (
-          <div key={stage.n} className="ip-stage absolute inset-0">
-            <PlaceholderMedia tone={stage.dark ? "dark" : "light"} label={stage.label} />
+          <div key={stage.n} className="ip-stage absolute inset-0 overflow-hidden">
+            <div className="stage-media absolute inset-0">
+              <PlaceholderMedia tone={stage.dark ? "dark" : "light"} label={stage.label} />
+            </div>
             <div
               className="absolute inset-0"
               style={{

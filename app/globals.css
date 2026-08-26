@@ -88,13 +88,20 @@ h1, h2, h3, h4 {
   line-height: 1.08;
 }
 
-/* reservado para el único momento de tipografía-como-escala: el contador de producción */
+/* reservado para momentos de tipografía-como-escala: contadores de datos reales */
 .font-impact-number {
   font-family: var(--font-display), sans-serif;
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 0.9;
+}
+
+.text-mega {
   font-size: clamp(5rem, 16vw, 11rem);
+}
+
+.text-stat {
+  font-size: clamp(2rem, 4vw, 3.25rem);
 }
 
 .font-label {
@@ -122,6 +129,25 @@ h1, h2, h3, h4 {
   .container-industrial {
     padding-inline: 5rem;
   }
+}
+
+.nav-underline {
+  position: relative;
+}
+.nav-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-industrial);
+}
+.nav-underline:hover::after {
+  transform: scaleX(1);
 }
 
 .placeholder-tag {

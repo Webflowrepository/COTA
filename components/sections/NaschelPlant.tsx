@@ -5,15 +5,11 @@ import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import { cota } from "@/lib/content/cota";
 
-const FACTS = [
-  `Desde ${cota.foundedYear}`,
-  `${cota.production.monthlyTons} T/mes`,
-  `${cota.plant.location}, ${cota.country}`,
-];
-
 export default function NaschelPlant() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
+  const yearsRef = useRef<HTMLSpanElement>(null);
+  const tonsRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const { gsap, ScrollTrigger } = ensureGsapRegistered();
@@ -28,7 +24,12 @@ export default function NaschelPlant() {
         start: "top top",
         end: "bottom bottom",
         scrub: 0.15,
-        onUpdate: (self) => tl.totalProgress(self.progress),
+        onUpdate: (self) => {
+          tl.totalProgress(self.progress);
+          const countProgress = Math.min(1, self.progress / 0.5);
+          if (yearsRef.current) yearsRef.current.textContent = String(Math.round(countProgress * cota.yearsOfOperation));
+          if (tonsRef.current) tonsRef.current.textContent = String(Math.round(countProgress * cota.production.monthlyTons));
+        },
       });
     }, wrapperRef);
 
@@ -52,12 +53,26 @@ export default function NaschelPlant() {
           </span>
           <h2 className="text-hero max-w-3xl text-paper">Naschel.</h2>
 
-          <div className="mt-8 flex flex-wrap gap-x-10 gap-y-3">
-            {FACTS.map((fact) => (
-              <span key={fact} className="font-label text-paper/70">
-                {fact}
+          <div className="mt-10 flex flex-wrap items-end gap-x-12 gap-y-6">
+            <div>
+              <span className="font-impact-number text-stat block text-paper">
+                <span ref={yearsRef}>0</span>+
               </span>
-            ))}
+              <span className="font-label text-paper/60">Años</span>
+            </div>
+            <div>
+              <span className="font-impact-number text-stat block text-paper">
+                <span ref={tonsRef}>0</span>
+              </span>
+              <span className="font-label text-paper/60">T/mes</span>
+            </div>
+            <div>
+              <span className="font-impact-number text-stat block text-paper">1</span>
+              <span className="font-label text-paper/60">Planta propia</span>
+            </div>
+            <span className="font-label pb-1 text-paper/50">
+              {cota.plant.location}, {cota.country}
+            </span>
           </div>
         </div>
       </div>

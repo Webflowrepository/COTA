@@ -76,7 +76,7 @@ export default function Nav() {
               key={link.href}
               href={link.href}
               aria-current={activeId === link.id ? "true" : undefined}
-              className={`transition-colors ${activeId === link.id ? "text-blue" : base}`}
+              className={`nav-underline transition-colors ${activeId === link.id ? "text-blue" : base}`}
             >
               {link.label}
             </a>
@@ -85,7 +85,7 @@ export default function Nav() {
 
         <a
           href="#contacto"
-          className={`font-label hidden transition-colors md:block ${scrolled ? "text-ink/65 hover:text-ink" : "text-paper/75 hover:text-paper"}`}
+          className={`nav-underline font-label hidden transition-colors md:block ${scrolled ? "text-ink/65 hover:text-ink" : "text-paper/75 hover:text-paper"}`}
         >
           Contacto
         </a>

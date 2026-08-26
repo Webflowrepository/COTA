@@ -6,7 +6,6 @@ import ChemicalsToPaper from "@/components/sections/ChemicalsToPaper";
 import ProductFamilies from "@/components/sections/ProductFamilies";
 import SolutionsByApplication from "@/components/sections/SolutionsByApplication";
 import NaschelPlant from "@/components/sections/NaschelPlant";
-import History from "@/components/sections/History";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
       <ProductFamilies />
       <SolutionsByApplication />
       <NaschelPlant />
-      <History />
       <Contact />
     </main>
   );
