@@ -10,21 +10,25 @@ qué conseguir. Este archivo es la lista completa para producción/reemplazo.
 
 Se sumaron 3 fotos reales de stock con licencia libre para uso comercial
 (Pexels — no requiere atribución), guardadas en `public/photos/` en su
-resolución original (4-8K de ancho). Son imágenes **genéricas** (atmósfera
-industrial / macro / maquinaria) — ninguna afirma ser una foto específica de
-la planta de Naschel o del proceso real de COTA, por eso el `alt` de cada una
-es deliberadamente genérico:
+resolución original. Las tres son del **mismo fotógrafo** (Igor Passchier,
+serie de puerto/planta industrial en Rotterdam a la hora azul/dorada) a
+propósito — mismo tratamiento de luz y color en todo el sitio en vez de fotos
+sueltas de fuentes distintas, que es lo que generaba el "revoltijo" que el
+cliente señaló (la primera versión de Químicos era un macro abstracto de
+tinta que no encajaba con el resto — se reemplazó). Son imágenes
+**genéricas** (atmósfera industrial real, pero no la planta de COTA) — el
+`alt` de cada una es deliberadamente genérico:
 
 | Sección | Componente | Archivo | Contenido |
 |---|---|---|---|
-| Hero | `components/sections/Hero.tsx` | `public/photos/hero-industrial.jpeg` (5184×3456) | Estructura industrial, tanque cilíndrico y cañerías — atmósfera, no la planta real |
-| Químicos | `components/sections/ChemicalsToPaper.tsx` | `public/photos/quimicos-liquido.jpeg` (4223×7018) | Macro de líquido en proceso |
-| Soluciones Industriales | `components/sections/WhatCotaDoes.tsx`, `components/sections/ProductFamilies.tsx` | `public/photos/soluciones-maquinaria.jpeg` (8368×5569) | Sistema de maquinaria/conveyor industrial en movimiento |
+| Hero | `components/sections/Hero.tsx` | `public/photos/hero-planta-atardecer.jpeg` (5472×3648) | Planta industrial vertical a la hora azul, Zuid-Holland |
+| Químicos | `components/sections/ChemicalsToPaper.tsx` | `public/photos/quimicos-planta.jpeg` (4834×3223) | Refinería con vapor a la hora azul, Rotterdam |
+| Soluciones Industriales | `components/sections/WhatCotaDoes.tsx`, `components/sections/ProductFamilies.tsx` | `public/photos/soluciones-puerto.jpeg` (3080×2053) | Grúas pórtico de puerto al atardecer, Rotterdam |
 
 No se buscó una foto para **Papel** (Tissue): las opciones libres encontradas
-eran cartón corrugado (no tissue) o rollos de baño de calidad baja — mejor
-mantener el placeholder ahí que forzar una imagen que no representa bien el
-producto.
+siguen siendo cartón corrugado (no tissue) o rollos de baño de calidad baja —
+mejor mantener el placeholder ahí que forzar una imagen que no representa
+bien el producto ni respeta el patrón visual del resto.
 
 ## Sigue en placeholder (a propósito)
 
@@ -33,7 +37,12 @@ producto.
 | Proceso Industrial | `components/sections/IndustrialProcess.tsx` | Reclama ser la secuencia real de la planta de Naschel (materia prima → producto terminado) — una foto de stock ahí sería engañosa, no solo genérica. |
 | Planta Naschel | `components/sections/NaschelPlant.tsx` | Misma razón — la sección afirma mostrar la fachada/infraestructura real de Naschel. |
 | Papel Tissue | `components/sections/ChemicalsToPaper.tsx` (capa papel), `components/sections/ProductFamilies.tsx` (panel Bobinas/Guardián), `components/sections/WhatCotaDoes.tsx` (swatch Papel) | No se encontró stock libre que represente bien papel Tissue (ver arriba). |
-| Escala de Producción | `components/sections/ProductionScale.tsx` | Sección tipográfica, no depende de imagen — queda como está. |
+
+**Nota:** la sección standalone "Escala de Producción" (`ProductionScale.tsx`)
+se eliminó — mostraba el mismo dato (700 T/mes) que ya aparece en Planta
+Naschel, duplicado. El contador grande ("mega", mismo tratamiento tipográfico
+que tenía esa sección) ahora vive del lado derecho de `NaschelPlant.tsx`,
+junto al resto de los datos de la planta.
 
 ## Marca y color
 
@@ -42,11 +51,13 @@ cliente — wordmark monocromático blanco, 327×80, pensado para fondo oscuro).
 Se usa en el nav (con `filter: invert` cuando el fondo pasa a claro al
 scrollear) y en el cierre del formulario de contacto.
 
-`app/globals.css` sigue usando azul (`#2e3d96`) y verde (`#017130`) tomados
-del sitio actual cota.com.ar — el logo provisto es monocromático, así que no
-confirma el hex exacto de esos colores. Si tenés una guía de marca con los
-códigos oficiales, reemplazo estos valores aproximados. Si consiguen el logo
-también en versión SVG o a color, mejor aún — el PNG actual es rasterizado.
+`app/globals.css` usa un único acento de marca: verde (`#017130`), tomado del
+sitio actual cota.com.ar (antes había también un azul de acento que no se
+correspondía con la identidad real del sitio — se sacó, todo el acento del
+sitio es ahora ese mismo verde). El logo provisto es monocromático, así que
+no confirma el hex exacto. Si tenés una guía de marca con el código oficial,
+reemplazo este valor aproximado. Si consiguen el logo también en versión SVG
+o a color, mejor aún — el PNG actual es rasterizado.
 
 ## Datos de contacto
 

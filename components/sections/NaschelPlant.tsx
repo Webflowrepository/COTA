@@ -56,33 +56,42 @@ export default function NaschelPlant() {
           <span className="font-label mb-4 block text-paper/60">
             Planta industrial — {cota.plant.location}
           </span>
-          <h2 className="text-hero max-w-3xl text-paper">Naschel.</h2>
 
-          <div className="mt-10 flex flex-wrap items-end gap-x-12 gap-y-6">
+          <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between md:gap-8">
             <div>
-              <span className="font-impact-number text-stat block text-paper">
-                <span ref={yearsRef}>{cota.yearsOfOperation}</span>+
-              </span>
-              <span className="font-label text-paper/60">Años</span>
+              <h2 className="text-hero max-w-xl text-paper">Naschel.</h2>
+
+              <div className="mt-10 flex flex-wrap items-end gap-x-12 gap-y-6">
+                <div>
+                  <span className="font-impact-number text-stat block text-paper">
+                    <span ref={yearsRef}>{cota.yearsOfOperation}</span>+
+                  </span>
+                  <span className="font-label text-paper/60">Años</span>
+                </div>
+                <div>
+                  <span className="font-impact-number text-stat block text-paper">1</span>
+                  <span className="font-label text-paper/60">Planta propia</span>
+                </div>
+                <span className="font-label pb-1 text-paper/50">
+                  {cota.plant.location}, {cota.country}
+                </span>
+              </div>
+
+              {cota.plant.ownCapital && (
+                <p className="font-label mt-6 max-w-md text-paper/45">Instalación realizada con capitales propios.</p>
+              )}
             </div>
-            <div>
-              <span className="font-impact-number text-stat block text-paper">
-                <span ref={tonsRef}>{cota.production.monthlyTons}</span>
-              </span>
-              <span className="font-label text-paper/60">T/mes</span>
+
+            <div className="shrink-0 md:text-right">
+              <span className="font-label mb-2 block text-paper/60">Capacidad de producción</span>
+              <div className="flex items-end gap-3 md:justify-end">
+                <span className="font-impact-number text-mega block text-paper">
+                  <span ref={tonsRef}>{cota.production.monthlyTons}</span>
+                </span>
+                <span className="font-label mb-3 text-paper/70 md:mb-6">T/MES</span>
+              </div>
             </div>
-            <div>
-              <span className="font-impact-number text-stat block text-paper">1</span>
-              <span className="font-label text-paper/60">Planta propia</span>
-            </div>
-            <span className="font-label pb-1 text-paper/50">
-              {cota.plant.location}, {cota.country}
-            </span>
           </div>
-
-          {cota.plant.ownCapital && (
-            <p className="font-label mt-6 max-w-md text-paper/45">Instalación realizada con capitales propios.</p>
-          )}
         </div>
       </div>
     </section>

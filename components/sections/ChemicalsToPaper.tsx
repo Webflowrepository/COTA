@@ -72,7 +72,7 @@ export default function ChemicalsToPaper() {
 
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         <div ref={chemLayerRef} className="absolute inset-0">
-          <PhotoMedia src="/photos/quimicos-liquido.jpeg" alt="Líquido en proceso — macro" />
+          <PhotoMedia src="/photos/quimicos-planta.jpeg" alt="Planta química industrial — atmósfera" />
           <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.5)" }} />
         </div>
         <div ref={paperLayerRef} className="absolute inset-0">
@@ -82,11 +82,11 @@ export default function ChemicalsToPaper() {
 
         {/* Capítulo Químicos */}
         <div ref={chemTextRef} className="container-industrial absolute inset-0 flex flex-col justify-end pb-20 md:pb-28">
-          <span className="font-label mb-4 block text-blue-light">Químicos — 01</span>
+          <span className="font-label mb-4 block text-green-light">Químicos — 01</span>
           <div className="flex flex-wrap items-end gap-x-8 gap-y-4">
             <h3 className="text-display max-w-2xl text-paper">Precisión en cada reacción.</h3>
             <div>
-              <span className="font-impact-number text-stat block text-blue-light">
+              <span className="font-impact-number text-stat block text-green-light">
                 <span ref={chemCountRef}>{cota.chemicalTypes.length}</span>
               </span>
               <span className="font-label text-paper/50">Tipos de blanqueadores</span>
@@ -101,7 +101,7 @@ export default function ChemicalsToPaper() {
           </ul>
           <a
             href={`mailto:${cota.contact.email}?subject=${encodeURIComponent("Ficha técnica — Blanqueadores y químicos")}`}
-            className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper hover:text-blue-light"
+            className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper hover:text-green-light"
           >
             Solicitar ficha técnica →
           </a>

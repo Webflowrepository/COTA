@@ -1,7 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import WhatCotaDoes from "@/components/sections/WhatCotaDoes";
 import IndustrialProcess from "@/components/sections/IndustrialProcess";
-import ProductionScale from "@/components/sections/ProductionScale";
 import ChemicalsToPaper from "@/components/sections/ChemicalsToPaper";
 import ProductFamilies from "@/components/sections/ProductFamilies";
 import SolutionsByApplication from "@/components/sections/SolutionsByApplication";
@@ -14,7 +13,6 @@ export default function Home() {
       <Hero />
       <WhatCotaDoes />
       <IndustrialProcess />
-      <ProductionScale />
       <ChemicalsToPaper />
       <ProductFamilies />
       <SolutionsByApplication />

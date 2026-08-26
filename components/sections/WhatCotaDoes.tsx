@@ -13,9 +13,9 @@ const SWATCH_LABEL: Record<string, string> = {
 };
 
 const ACCENT: Record<string, string> = {
-  quimicos: "group-hover:text-blue",
+  quimicos: "group-hover:text-green",
   papel: "group-hover:text-green",
-  soluciones: "group-hover:text-blue",
+  soluciones: "group-hover:text-green",
 };
 
 export default function WhatCotaDoes() {
@@ -68,7 +68,7 @@ export default function WhatCotaDoes() {
               </div>
               <div className="media-reveal relative hidden h-44 max-w-lg flex-1 overflow-hidden md:block lg:h-56">
                 {line.id === "soluciones" ? (
-                  <PhotoMedia src="/photos/soluciones-maquinaria.jpeg" alt="Maquinaria de conversión industrial" />
+                  <PhotoMedia src="/photos/soluciones-puerto.jpeg" alt="Logística industrial — grúas de puerto" />
                 ) : (
                   <PlaceholderMedia tone={line.id === "papel" ? "light" : "dark"} label={SWATCH_LABEL[line.id]} />
                 )}

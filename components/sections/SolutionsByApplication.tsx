@@ -58,7 +58,7 @@ export default function SolutionsByApplication() {
               key={seg.id}
               onClick={() => setActiveId(seg.id)}
               className={`font-label transition-colors ${
-                activeId === seg.id ? "text-blue" : "text-ink/45 hover:text-ink"
+                activeId === seg.id ? "text-green" : "text-ink/45 hover:text-ink"
               }`}
             >
               {seg.label}
@@ -85,7 +85,7 @@ export default function SolutionsByApplication() {
             <p className="mt-4 max-w-md text-ink/60">{active.copy}</p>
             <a
               href={mailto}
-              className="font-label mt-8 inline-block w-fit border-b border-blue pb-1 text-blue transition-colors hover:border-ink hover:text-ink"
+              className="font-label mt-8 inline-block w-fit border-b border-green pb-1 text-green transition-colors hover:border-ink hover:text-ink"
             >
               {active.cta} →
             </a>

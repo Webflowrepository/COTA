@@ -87,7 +87,7 @@ export default function Nav() {
                 key={link.href}
                 href={link.href}
                 aria-current={activeId === link.id ? "true" : undefined}
-                className={`nav-underline transition-colors ${activeId === link.id ? "text-blue" : base}`}
+                className={`nav-underline transition-colors ${activeId === link.id ? "text-green" : base}`}
               >
                 {link.label}
               </a>
@@ -116,7 +116,7 @@ export default function Nav() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className={`text-2xl ${activeId === link.id ? "text-blue" : "text-ink"}`}
+              className={`text-2xl ${activeId === link.id ? "text-green" : "text-ink"}`}
             >
               {link.label}
             </a>
