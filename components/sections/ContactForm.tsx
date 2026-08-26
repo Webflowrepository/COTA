@@ -30,7 +30,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-16 max-w-lg border-t border-line-on-light pt-10">
+    <form onSubmit={handleSubmit} className="mt-10 max-w-lg border-t border-line-on-light pt-8">
       <span className="font-label mb-8 block text-ink/45">Solicitar cotización</span>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
