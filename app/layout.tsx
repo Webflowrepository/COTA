@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Big_Shoulders, Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/nav/Nav";
-import Footer from "@/components/footer/Footer";
 import SmoothScrollProvider from "@/lib/motion/SmoothScrollProvider";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
@@ -39,7 +38,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SmoothScrollProvider>
           <Nav />
           {children}
-          <Footer />
           <WhatsAppButton />
         </SmoothScrollProvider>
       </body>
