@@ -15,6 +15,11 @@ export default function NaschelPlant() {
     const { gsap, ScrollTrigger } = ensureGsapRegistered();
 
     const ctx = gsap.context(() => {
+      // valores reales ya están en el HTML como fallback — recién acá
+      // se resetean a 0 para poder animar el conteo.
+      if (yearsRef.current) yearsRef.current.textContent = "0";
+      if (tonsRef.current) tonsRef.current.textContent = "0";
+
       const tl = gsap.timeline({ paused: true });
       tl.fromTo(bgRef.current, { yPercent: -8 }, { yPercent: 8, ease: "none", duration: 1 }, 0);
       tl.fromTo(".naschel-heading", { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.3 }, 0.15);
@@ -56,13 +61,13 @@ export default function NaschelPlant() {
           <div className="mt-10 flex flex-wrap items-end gap-x-12 gap-y-6">
             <div>
               <span className="font-impact-number text-stat block text-paper">
-                <span ref={yearsRef}>0</span>+
+                <span ref={yearsRef}>{cota.yearsOfOperation}</span>+
               </span>
               <span className="font-label text-paper/60">Años</span>
             </div>
             <div>
               <span className="font-impact-number text-stat block text-paper">
-                <span ref={tonsRef}>0</span>
+                <span ref={tonsRef}>{cota.production.monthlyTons}</span>
               </span>
               <span className="font-label text-paper/60">T/mes</span>
             </div>

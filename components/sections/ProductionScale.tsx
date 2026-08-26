@@ -13,6 +13,10 @@ export default function ProductionScale() {
     const { gsap, ScrollTrigger } = ensureGsapRegistered();
 
     const ctx = gsap.context(() => {
+      // el valor real (700) ya está en el HTML como fallback sin JS —
+      // recién acá lo reseteamos a 0 para poder animar el conteo.
+      if (numberRef.current) numberRef.current.textContent = "0";
+
       const st = ScrollTrigger.create({
         trigger: wrapperRef.current,
         start: "top top",
@@ -53,7 +57,7 @@ export default function ProductionScale() {
 
         <div className="relative z-10 flex items-end gap-3 md:gap-5">
           <span ref={numberRef} className="font-impact-number text-mega text-paper">
-            0
+            {cota.production.monthlyTons}
           </span>
           <span className="font-label mb-3 text-paper/70 md:mb-6">T/MES</span>
         </div>

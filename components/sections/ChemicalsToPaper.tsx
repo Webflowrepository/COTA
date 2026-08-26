@@ -20,6 +20,10 @@ export default function ChemicalsToPaper() {
     const { gsap, ScrollTrigger } = ensureGsapRegistered();
 
     const ctx = gsap.context(() => {
+      // valor real ya está en el HTML como fallback — recién acá se
+      // resetea a 0 para poder animar el conteo.
+      if (chemCountRef.current) chemCountRef.current.textContent = "0";
+
       const chemItems = chemTextRef.current!.querySelectorAll<HTMLLIElement>(".chem-item");
       const paperItems = paperTextRef.current!.querySelectorAll<HTMLLIElement>(".paper-item");
 
@@ -82,7 +86,7 @@ export default function ChemicalsToPaper() {
             <h3 className="text-display max-w-2xl text-paper">Precisión en cada reacción.</h3>
             <div>
               <span className="font-impact-number text-stat block text-blue-light">
-                <span ref={chemCountRef}>0</span>
+                <span ref={chemCountRef}>{cota.chemicalTypes.length}</span>
               </span>
               <span className="font-label text-paper/50">Tipos de blanqueadores</span>
             </div>
