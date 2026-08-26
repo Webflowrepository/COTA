@@ -14,7 +14,11 @@ export const cota = {
   plant: {
     location: "Naschel, San Luis",
     postalCode: "5759",
+    /** cota.com.ar (historia): instalación de la planta propia con capitales propios. */
+    ownCapital: true,
   },
+  /** Distillado de la Misión real publicada en cota.com.ar ("Socios Estratégicos en Soluciones de Papel"). */
+  mission: "Socios estratégicos en soluciones de papel.",
   production: {
     monthlyTons: 700,
     unit: "T/mes",
@@ -33,7 +37,7 @@ export const cota = {
     {
       id: "soluciones",
       label: "Soluciones Industriales",
-      short: "Asesoramiento, logística e instalación de fábricas para convertidores.",
+      short: "Asesoramiento, logística, instalación de fábricas y venta de maquinaria de conversión.",
     },
   ],
   services: [

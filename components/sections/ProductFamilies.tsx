@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
 const bobinas = cota.services.find((s) => s.id === "bobinas")!;
@@ -91,7 +92,11 @@ export default function ProductFamilies() {
               className="pf-panel group relative h-[62vh] w-[86vw] shrink-0 snap-start overflow-hidden md:h-[68vh] md:w-[46vw] lg:w-[36vw]"
             >
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
-                <PlaceholderMedia tone="dark" label={panel.mediaLabel} />
+                {panel.id === "soluciones" ? (
+                  <PhotoMedia src="/photos/soluciones-maquinaria.jpeg" alt="Maquinaria de conversión industrial" />
+                ) : (
+                  <PlaceholderMedia tone="dark" label={panel.mediaLabel} />
+                )}
               </div>
               <div
                 className="absolute inset-0"

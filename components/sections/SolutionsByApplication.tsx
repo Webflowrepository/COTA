@@ -21,7 +21,7 @@ const SEGMENTS = [
     id: "distribuidores",
     label: "Distribuidores",
     headline: cota.guardian.tagline,
-    copy: `Línea profesional ${cota.guardian.name} para distribución en punto de venta.`,
+    copy: `Línea profesional ${cota.guardian.name}, con apoyo a distribuidores en todo el país.`,
     cta: "Ver Guardián",
     mediaLabel: "Foto — producto Guardián en punto de venta",
     categoryId: "distribucion",

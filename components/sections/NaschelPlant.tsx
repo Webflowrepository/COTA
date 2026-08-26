@@ -79,6 +79,10 @@ export default function NaschelPlant() {
               {cota.plant.location}, {cota.country}
             </span>
           </div>
+
+          {cota.plant.ownCapital && (
+            <p className="font-label mt-6 max-w-md text-paper/45">Instalación realizada con capitales propios.</p>
+          )}
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const LINKS = [
   { href: "#compania", id: "compania", label: "Compañía" },
@@ -60,7 +61,6 @@ export default function Nav() {
   // scrolleado, para que el texto siempre tenga contraste garantizado sin
   // importar qué sección (clara u oscura) esté detrás en ese momento.
   const base = scrolled ? "text-ink/65 hover:text-ink" : "text-paper/75 hover:text-paper";
-  const strong = scrolled ? "text-ink" : "text-paper";
 
   return (
     <header className="fixed inset-x-0 top-5 z-50 md:top-8">
@@ -70,8 +70,15 @@ export default function Nav() {
             scrolled ? "bg-paper/95 shadow-[0_1px_0_0_rgba(11,14,26,0.08)] backdrop-blur-md" : ""
           }`}
         >
-          <a href="#top" className={`text-sm font-medium tracking-tight transition-colors ${strong}`}>
-            COTA
+          <a href="#top" className="shrink-0">
+            <Image
+              src="/logo-cota.png"
+              alt="COTA"
+              width={327}
+              height={80}
+              priority
+              className={`h-6 w-auto transition-[filter] duration-300 ${scrolled ? "invert" : ""}`}
+            />
           </a>
 
           <nav className="font-label hidden items-center gap-7 md:flex">

@@ -6,24 +6,47 @@ disponible. Cada placeholder preserva la composición exacta (tamaño, encuadre)
 que va a ocupar el asset real, con una etiqueta chica en la esquina indicando
 qué conseguir. Este archivo es la lista completa para producción/reemplazo.
 
-## Por sección
+## Fotografía stock ya integrada (reemplaza al placeholder)
 
-| Sección | Componente | Asset real necesario | Formato sugerido |
+Se sumaron 3 fotos reales de stock con licencia libre para uso comercial
+(Pexels — no requiere atribución), guardadas en `public/photos/` en su
+resolución original (4-8K de ancho). Son imágenes **genéricas** (atmósfera
+industrial / macro / maquinaria) — ninguna afirma ser una foto específica de
+la planta de Naschel o del proceso real de COTA, por eso el `alt` de cada una
+es deliberadamente genérico:
+
+| Sección | Componente | Archivo | Contenido |
 |---|---|---|---|
-| Hero | `components/sections/Hero.tsx` | Video loop 10–15s: rollo de papel en movimiento, vapor de proceso, o macro de material en transformación | Video 1920×1080+, muteado, loop, <8MB o servido optimizado |
-| Proceso Industrial | `components/sections/IndustrialProcess.tsx` | Secuencia real de planta Naschel: materia prima, proceso químico, fabricación, rebobinado, producto terminado, logística (6 momentos) | 6 fotos o video corto por etapa, mismo encuadre/tono si es posible |
-| Escala de Producción | `components/sections/ProductionScale.tsx` | Fondo de maquinaria/línea de producción en movimiento (opcional, puede quedar tipográfico) | Video o foto de línea de producción |
-| Químicos → Papel | `components/sections/ChemicalsToPaper.tsx` | Macro de líquido químico (superficie, reacción) + macro de fibra de papel real | Foto macro alta resolución, iluminación controlada |
-| Familias de Producto | `components/sections/ProductFamilies.tsx` | Foto por línea: químicos, papel, soluciones industriales | 3 fotos horizontales, mismo tratamiento de luz |
-| Planta Naschel | `components/sections/NaschelPlant.tsx` | Fotografía/video real de la planta — fachada, infraestructura, escala física, de día (la sección usa un cielo claro, no nocturno) | Foto/video panorámico, luz de día |
+| Hero | `components/sections/Hero.tsx` | `public/photos/hero-industrial.jpeg` (5184×3456) | Estructura industrial, tanque cilíndrico y cañerías — atmósfera, no la planta real |
+| Químicos | `components/sections/ChemicalsToPaper.tsx` | `public/photos/quimicos-liquido.jpeg` (4223×7018) | Macro de líquido en proceso |
+| Soluciones Industriales | `components/sections/WhatCotaDoes.tsx`, `components/sections/ProductFamilies.tsx` | `public/photos/soluciones-maquinaria.jpeg` (8368×5569) | Sistema de maquinaria/conveyor industrial en movimiento |
+
+No se buscó una foto para **Papel** (Tissue): las opciones libres encontradas
+eran cartón corrugado (no tissue) o rollos de baño de calidad baja — mejor
+mantener el placeholder ahí que forzar una imagen que no representa bien el
+producto.
+
+## Sigue en placeholder (a propósito)
+
+| Sección | Componente | Por qué sigue en placeholder |
+|---|---|---|
+| Proceso Industrial | `components/sections/IndustrialProcess.tsx` | Reclama ser la secuencia real de la planta de Naschel (materia prima → producto terminado) — una foto de stock ahí sería engañosa, no solo genérica. |
+| Planta Naschel | `components/sections/NaschelPlant.tsx` | Misma razón — la sección afirma mostrar la fachada/infraestructura real de Naschel. |
+| Papel Tissue | `components/sections/ChemicalsToPaper.tsx` (capa papel), `components/sections/ProductFamilies.tsx` (panel Bobinas/Guardián), `components/sections/WhatCotaDoes.tsx` (swatch Papel) | No se encontró stock libre que represente bien papel Tissue (ver arriba). |
+| Escala de Producción | `components/sections/ProductionScale.tsx` | Sección tipográfica, no depende de imagen — queda como está. |
 
 ## Marca y color
 
-`app/globals.css` usa azul (`#2e3d96`) y verde (`#017130`) tomados del sitio
-actual cota.com.ar (logo/plantilla). No se pudo leer el logo real en detalle
-por bloqueo cross-origin al muestrear la imagen — si COTA tiene una guía de
-marca o el logo en SVG/alta resolución, conviene reemplazar estos valores
-aproximados por los oficiales.
+El logo real ya está integrado (`public/logo-cota.png`, provisto por el
+cliente — wordmark monocromático blanco, 327×80, pensado para fondo oscuro).
+Se usa en el nav (con `filter: invert` cuando el fondo pasa a claro al
+scrollear) y en el cierre del formulario de contacto.
+
+`app/globals.css` sigue usando azul (`#2e3d96`) y verde (`#017130`) tomados
+del sitio actual cota.com.ar — el logo provisto es monocromático, así que no
+confirma el hex exacto de esos colores. Si tenés una guía de marca con los
+códigos oficiales, reemplazo estos valores aproximados. Si consiguen el logo
+también en versión SVG o a color, mejor aún — el PNG actual es rasterizado.
 
 ## Datos de contacto
 
@@ -64,6 +87,52 @@ sitio afirme algo falso sobre COTA:
   requiere afirmaciones técnicas de química/papel que solo alguien de COTA
   puede validar. No voy a redactar contenido técnico especializado sin
   revisión de un experto de la empresa.
+
+## Evaluación del informe comparativo con la competencia
+
+Se recibió un informe que cruzaba (a) contenido presente en cota.com.ar pero
+ausente en el sitio nuevo, y (b) prácticas de competidores (Celulosa Pilar,
+Celulosa Argentina, Argen-Pel, Carvalheira). Se aplicó el mismo criterio de
+siempre: sumar lo verificado, declinar lo que requeriría inventar datos de
+COTA.
+
+**Incorporado (dato real de cota.com.ar, ya estaba verificado en esta sesión
+pero no se veía en el sitio):**
+- Misión distillada ("Socios estratégicos en soluciones de papel") — en
+  `WhatCotaDoes.tsx`.
+- Mención a industria textil en el Hero (`Hero.tsx`) — ya estaba en el
+  business line de Químicos, pero no en la primera pantalla.
+- "Venta de maquinaria de conversión" explícita en el business line de
+  Soluciones Industriales (`lib/content/cota.ts`) — antes solo aparecía en
+  `services.logistica`, quedaba diluido.
+- "Apoyo a distribuidores en todo el país" en el segmento Distribuidores de
+  `SolutionsByApplication.tsx`.
+- "Instalación realizada con capitales propios" en `NaschelPlant.tsx` — dato
+  real de la sección de historia de cota.com.ar.
+
+**Declinado explícitamente (compararía a COTA con datos de otra empresa, o
+afirmaría algo no confirmado):**
+- **Especificaciones técnicas duras** (gramaje, ancho, diámetro de bobina):
+  los números que cita el informe son de Celulosa Pilar, no de COTA. No se
+  agregó ninguna tabla de specs con valores inventados — sigue documentado
+  arriba como pendiente real.
+- **Sección de sostenibilidad/ambiente** (tratamiento de efluentes,
+  reutilización de desperdicios): son claims de competidores. COTA no tiene
+  ningún dato ambiental verificado en cota.com.ar ni provisto por el cliente
+  — no se agregó.
+- **Promesas de stock/entrega puntual (48/72hs)**: es un compromiso de
+  servicio de Celulosa Pilar. Publicarlo para COTA sin confirmación sería un
+  compromiso comercial falso, no solo un error de copy.
+- **Control de calidad visible** ("cada bobina pasa control de gramaje,
+  humedad y resistencia"): describe el proceso de un competidor, no un
+  proceso confirmado de COTA.
+- **E-commerce / portal de pedidos**: es una decisión de infraestructura
+  (backend, catálogo, pagos), no de contenido — fuera de alcance de este
+  rediseño de sitio institucional.
+
+Si en algún momento tenés estos datos reales de COTA (specs de producto,
+certificaciones ambientales, SLA de entrega), los sumo de inmediato — el
+límite fue siempre "no inventar", no "no quiero mostrarlo".
 
 ## Formulario de contacto — limitación técnica
 

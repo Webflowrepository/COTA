@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
 const SWATCH_LABEL: Record<string, string> = {
@@ -53,9 +54,10 @@ export default function WhatCotaDoes() {
   return (
     <section id="compania" ref={rootRef} className="relative w-full bg-paper py-24 md:py-36">
       <div className="container-industrial">
-        <span className="font-label mb-16 block text-ink/45 md:mb-24">
+        <span className="font-label mb-6 block text-ink/45">
           Compañía — {cota.country}, desde {cota.foundedYear}
         </span>
+        <h2 className="text-display mb-16 max-w-2xl text-ink md:mb-24">{cota.mission}</h2>
 
         <div className="flex flex-col divide-y divide-line-on-light">
           {cota.businessLines.map((line) => (
@@ -65,7 +67,11 @@ export default function WhatCotaDoes() {
                 <p className="mt-3 text-sm text-ink/55 md:text-base">{line.short}</p>
               </div>
               <div className="media-reveal relative hidden h-44 max-w-lg flex-1 overflow-hidden md:block lg:h-56">
-                <PlaceholderMedia tone={line.id === "papel" ? "light" : "dark"} label={SWATCH_LABEL[line.id]} />
+                {line.id === "soluciones" ? (
+                  <PhotoMedia src="/photos/soluciones-maquinaria.jpeg" alt="Maquinaria de conversión industrial" />
+                ) : (
+                  <PlaceholderMedia tone={line.id === "papel" ? "light" : "dark"} label={SWATCH_LABEL[line.id]} />
+                )}
               </div>
             </div>
           ))}

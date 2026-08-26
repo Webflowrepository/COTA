@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered, prefersReducedMotion } from "@/lib/motion/gsap";
-import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 
 export default function Hero() {
   const root = useRef<HTMLDivElement>(null);
@@ -41,7 +41,7 @@ export default function Hero() {
   return (
     <section id="top" ref={root} className="relative h-[100svh] w-full overflow-hidden bg-ink-deep">
       <div className="hero-bg hero-parallax absolute inset-0">
-        <PlaceholderMedia tone="dark" label="Video — rollo de papel en movimiento, planta Naschel" />
+        <PhotoMedia src="/photos/hero-industrial.jpeg" alt="Planta industrial — estructura y proceso" priority />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(0deg, rgba(6,8,17,0.75) 0%, rgba(6,8,17,0.15) 45%, rgba(6,8,17,0.35) 100%)" }}
@@ -59,7 +59,7 @@ export default function Hero() {
         </h1>
 
         <p className="hero-sub mt-7 max-w-md text-base text-paper/65 md:text-lg">
-          Fabricamos química y papel Tissue a escala industrial desde 1994.
+          Fabricamos química para la industria papelera y textil, y papel Tissue a escala industrial, desde 1994.
         </p>
       </div>
 

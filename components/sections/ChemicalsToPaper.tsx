@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
 const CHEM_ITEMS = cota.chemicalTypes.map((type) => `Blanqueadores ${type}`);
@@ -71,7 +72,7 @@ export default function ChemicalsToPaper() {
 
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         <div ref={chemLayerRef} className="absolute inset-0">
-          <PlaceholderMedia tone="dark" label="Foto — líquido / blanqueador en proceso" />
+          <PhotoMedia src="/photos/quimicos-liquido.jpeg" alt="Líquido en proceso — macro" />
           <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.5)" }} />
         </div>
         <div ref={paperLayerRef} className="absolute inset-0">
