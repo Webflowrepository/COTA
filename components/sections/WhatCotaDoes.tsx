@@ -12,12 +12,6 @@ const SWATCH_LABEL: Record<string, string> = {
   soluciones: "Foto — instalación de fábrica / maquinaria",
 };
 
-const ACCENT: Record<string, string> = {
-  quimicos: "group-hover:text-green",
-  papel: "group-hover:text-green",
-  soluciones: "group-hover:text-green",
-};
-
 export default function WhatCotaDoes() {
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -63,14 +57,16 @@ export default function WhatCotaDoes() {
           {cota.businessLines.map((line) => (
             <div key={line.id} className="line-row group relative flex items-center justify-between gap-10 py-9 md:py-12">
               <div className="min-w-0 max-w-md">
-                <h3 className={`text-heading text-ink transition-colors ${ACCENT[line.id]}`}>{line.label}</h3>
+                <h3 className="text-heading text-ink">{line.label}</h3>
                 <p className="mt-3 text-sm text-ink/55 md:text-base">{line.short}</p>
               </div>
               <div className="media-reveal relative hidden h-44 max-w-lg flex-1 overflow-hidden md:block lg:h-56">
                 {line.id === "soluciones" ? (
                   <PhotoMedia src="/photos/soluciones-puerto.jpeg" alt="Logística industrial — grúas de puerto" />
+                ) : line.id === "quimicos" ? (
+                  <PhotoMedia src="/photos/quimicos-planta.jpeg" alt="Planta química industrial — atmósfera" />
                 ) : (
-                  <PlaceholderMedia tone={line.id === "papel" ? "light" : "dark"} label={SWATCH_LABEL[line.id]} />
+                  <PlaceholderMedia tone="light" label={SWATCH_LABEL[line.id]} />
                 )}
               </div>
             </div>

@@ -22,13 +22,23 @@ tinta que no encajaba con el resto — se reemplazó). Son imágenes
 | Sección | Componente | Archivo | Contenido |
 |---|---|---|---|
 | Hero | `components/sections/Hero.tsx` | `public/photos/hero-planta-atardecer.jpeg` (5472×3648) | Planta industrial vertical a la hora azul, Zuid-Holland |
-| Químicos | `components/sections/ChemicalsToPaper.tsx` | `public/photos/quimicos-planta.jpeg` (4834×3223) | Refinería con vapor a la hora azul, Rotterdam |
-| Soluciones Industriales | `components/sections/WhatCotaDoes.tsx`, `components/sections/ProductFamilies.tsx` | `public/photos/soluciones-puerto.jpeg` (3080×2053) | Grúas pórtico de puerto al atardecer, Rotterdam |
+| Químicos (capítulo) | `components/sections/ChemicalsToPaper.tsx` | `public/photos/quimicos-planta.jpeg` (4834×3223) | Refinería con vapor a la hora azul, Rotterdam |
+| Químicos (swatch Compañía) | `components/sections/WhatCotaDoes.tsx` | `public/photos/quimicos-planta.jpeg` | Misma foto reutilizada — el business line es el mismo |
+| Químicos (panel Familias) | `components/sections/ProductFamilies.tsx` | `public/photos/quimicos-planta.jpeg` | Misma foto reutilizada |
+| Papeleras y textiles (segmento) | `components/sections/SolutionsByApplication.tsx` | `public/photos/quimicos-planta.jpeg` | Este segmento vende blanqueadores químicos a papeleras — es el mismo producto que Químicos, misma foto |
+| Soluciones (swatch Compañía + panel Familias) | `components/sections/WhatCotaDoes.tsx`, `components/sections/ProductFamilies.tsx` | `public/photos/soluciones-puerto.jpeg` (3080×2053) | Grúas pórtico de puerto al atardecer, Rotterdam |
 
-No se buscó una foto para **Papel** (Tissue): las opciones libres encontradas
-siguen siendo cartón corrugado (no tissue) o rollos de baño de calidad baja —
-mejor mantener el placeholder ahí que forzar una imagen que no representa
-bien el producto ni respeta el patrón visual del resto.
+Las 3 fotos base se reutilizan a propósito en cada lugar donde el business
+line es el mismo (en vez de buscar una foto distinta y sin relación para
+cada componente) — eso es lo que da el patrón consistente, no forzar una
+imagen nueva por cada placeholder.
+
+No se encontró una foto para **Papel/Bobinas** (Tissue) pese a una segunda
+búsqueda dedicada ("paper mill machine roll", "tissue paper roll factory"):
+el stock libre disponible sigue siendo cartón corrugado (no tissue), rollos
+de baño de consumo (no industriales), o CNC/manufactura genérica sin
+relación. Mejor mantener el placeholder ahí que forzar una imagen que no
+representa bien el producto ni respeta el patrón visual del resto.
 
 ## Sigue en placeholder (a propósito)
 
@@ -36,7 +46,9 @@ bien el producto ni respeta el patrón visual del resto.
 |---|---|---|
 | Proceso Industrial | `components/sections/IndustrialProcess.tsx` | Reclama ser la secuencia real de la planta de Naschel (materia prima → producto terminado) — una foto de stock ahí sería engañosa, no solo genérica. |
 | Planta Naschel | `components/sections/NaschelPlant.tsx` | Misma razón — la sección afirma mostrar la fachada/infraestructura real de Naschel. |
-| Papel Tissue | `components/sections/ChemicalsToPaper.tsx` (capa papel), `components/sections/ProductFamilies.tsx` (panel Bobinas/Guardián), `components/sections/WhatCotaDoes.tsx` (swatch Papel) | No se encontró stock libre que represente bien papel Tissue (ver arriba). |
+| Papel Tissue | `components/sections/ChemicalsToPaper.tsx` (capa papel), `components/sections/ProductFamilies.tsx` (panel Bobinas), `components/sections/WhatCotaDoes.tsx` (swatch Papel) | No se encontró stock libre que represente bien papel Tissue (ver arriba). |
+| Guardián (producto) | `components/sections/ProductFamilies.tsx` (panel Guardián), `components/sections/SolutionsByApplication.tsx` (segmento Distribuidores) | Es un producto específico de COTA — una foto de stock de "papel higiénico genérico" se leería como el producto real y sería engañoso. |
+| Convertidores (segmento) | `components/sections/SolutionsByApplication.tsx` | Necesita mostrar una bobina/convertidor específico — no hay stock que no sea genérico o mal orientado (ver Papel arriba). |
 
 **Nota:** la sección standalone "Escala de Producción" (`ProductionScale.tsx`)
 se eliminó — mostraba el mismo dato (700 T/mes) que ya aparece en Planta

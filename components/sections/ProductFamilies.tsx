@@ -94,6 +94,8 @@ export default function ProductFamilies() {
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
                 {panel.id === "soluciones" ? (
                   <PhotoMedia src="/photos/soluciones-puerto.jpeg" alt="Logística industrial — grúas de puerto" />
+                ) : panel.id === "quimicos" ? (
+                  <PhotoMedia src="/photos/quimicos-planta.jpeg" alt="Planta química industrial — atmósfera" />
                 ) : (
                   <PlaceholderMedia tone="dark" label={panel.mediaLabel} />
                 )}
@@ -104,11 +106,11 @@ export default function ProductFamilies() {
               />
               <div className="absolute inset-0 flex flex-col justify-end p-7 text-paper md:p-9">
                 <span className="font-label mb-3 block text-paper/70">Línea de producto</span>
-                <h3 className="text-heading transition-colors group-hover:text-green-light">{panel.label}</h3>
+                <h3 className="text-heading">{panel.label}</h3>
                 <p className="mt-3 max-w-xs text-sm text-paper/70">{panel.short}</p>
                 <a
                   href={mailto}
-                  className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper hover:text-green-light"
+                  className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
                 >
                   Solicitar ficha técnica →
                 </a>
@@ -121,7 +123,7 @@ export default function ProductFamilies() {
       <div className="container-industrial mt-2">
         <div className="h-px w-full bg-line-on-light">
           <div
-            className="h-px bg-green transition-[width] duration-150 ease-out"
+            className="h-px bg-ink transition-[width] duration-150 ease-out"
             style={{ width: `${Math.max(8, progress * 100)}%` }}
           />
         </div>

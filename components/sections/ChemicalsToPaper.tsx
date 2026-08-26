@@ -82,11 +82,11 @@ export default function ChemicalsToPaper() {
 
         {/* Capítulo Químicos */}
         <div ref={chemTextRef} className="container-industrial absolute inset-0 flex flex-col justify-end pb-20 md:pb-28">
-          <span className="font-label mb-4 block text-green-light">Químicos — 01</span>
+          <span className="font-label mb-4 block text-paper/60">Químicos — 01</span>
           <div className="flex flex-wrap items-end gap-x-8 gap-y-4">
             <h3 className="text-display max-w-2xl text-paper">Precisión en cada reacción.</h3>
             <div>
-              <span className="font-impact-number text-stat block text-green-light">
+              <span className="font-impact-number text-stat block text-paper">
                 <span ref={chemCountRef}>{cota.chemicalTypes.length}</span>
               </span>
               <span className="font-label text-paper/50">Tipos de blanqueadores</span>
@@ -101,7 +101,7 @@ export default function ChemicalsToPaper() {
           </ul>
           <a
             href={`mailto:${cota.contact.email}?subject=${encodeURIComponent("Ficha técnica — Blanqueadores y químicos")}`}
-            className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper hover:text-green-light"
+            className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
           >
             Solicitar ficha técnica →
           </a>
@@ -109,7 +109,7 @@ export default function ChemicalsToPaper() {
 
         {/* Capítulo Papel */}
         <div ref={paperTextRef} className="container-industrial absolute inset-0 flex flex-col justify-end pb-20 md:pb-28">
-          <span className="font-label mb-4 block text-green-light">Papel — 02</span>
+          <span className="font-label mb-4 block text-paper/60">Papel — 02</span>
           <h3 className="text-display max-w-2xl text-paper">Papel Tissue a escala industrial.</h3>
           <ul className="mt-8 flex flex-col gap-2">
             {PAPER_ITEMS.map((item, i) => (
@@ -120,7 +120,7 @@ export default function ChemicalsToPaper() {
           </ul>
           <a
             href={`mailto:${cota.contact.email}?subject=${encodeURIComponent("Ficha técnica — Bobinas para convertidores")}`}
-            className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper hover:text-green-light"
+            className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
           >
             Solicitar ficha técnica →
           </a>

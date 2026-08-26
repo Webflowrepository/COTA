@@ -11,7 +11,7 @@ export default function Contact() {
 
         <a
           href={`mailto:${cota.contact.email}`}
-          className="mt-10 inline-block border-b-2 border-green text-2xl text-ink transition-colors hover:text-green md:text-3xl"
+          className="mt-10 inline-block border-b-2 border-ink text-2xl text-ink transition-opacity hover:opacity-60 md:text-3xl"
         >
           {cota.contact.email}
         </a>

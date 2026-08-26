@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
 const bobinas = cota.services.find((s) => s.id === "bobinas")!;
@@ -57,8 +58,8 @@ export default function SolutionsByApplication() {
             <button
               key={seg.id}
               onClick={() => setActiveId(seg.id)}
-              className={`font-label transition-colors ${
-                activeId === seg.id ? "text-green" : "text-ink/45 hover:text-ink"
+              className={`font-label underline-offset-4 transition-colors ${
+                activeId === seg.id ? "text-ink underline" : "text-ink/45 hover:text-ink"
               }`}
             >
               {seg.label}
@@ -75,7 +76,11 @@ export default function SolutionsByApplication() {
                   activeId === seg.id ? "opacity-100" : "pointer-events-none opacity-0"
                 }`}
               >
-                <PlaceholderMedia tone="dark" label={seg.mediaLabel} />
+                {seg.id === "papeleras" ? (
+                  <PhotoMedia src="/photos/quimicos-planta.jpeg" alt="Planta química industrial — atmósfera" />
+                ) : (
+                  <PlaceholderMedia tone="dark" label={seg.mediaLabel} />
+                )}
               </div>
             ))}
           </div>
@@ -85,7 +90,7 @@ export default function SolutionsByApplication() {
             <p className="mt-4 max-w-md text-ink/60">{active.copy}</p>
             <a
               href={mailto}
-              className="font-label mt-8 inline-block w-fit border-b border-green pb-1 text-green transition-colors hover:border-ink hover:text-ink"
+              className="font-label mt-8 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
             >
               {active.cta} →
             </a>

@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import { cota } from "@/lib/content/cota";
 
 const inputClass =
-  "w-full border-b border-line-on-light bg-transparent py-2.5 text-ink placeholder:text-ink/35 outline-none transition-colors focus:border-green";
+  "w-full border-b border-line-on-light bg-transparent py-2.5 text-ink placeholder:text-ink/35 outline-none transition-colors focus:border-ink";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -95,7 +95,7 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="font-label mt-8 border-b border-green pb-1 text-green transition-colors hover:text-ink hover:border-ink"
+        className="font-label mt-8 border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
       >
         Enviar consulta →
       </button>
