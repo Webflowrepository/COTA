@@ -32,6 +32,30 @@ export default function Contact() {
                 </div>
               ))}
             </dl>
+
+            {cota.whatsapp.number && (
+              <a
+                href={`https://wa.me/${cota.whatsapp.number}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-label mt-6 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+              >
+                Escribir por WhatsApp <span className="cta-arrow">→</span>
+              </a>
+            )}
+
+            {/* Horario de atención — no confirmado por COTA todavía, no se
+                inventa un rango. Sumar acá cuando esté confirmado. */}
+
+            <div className="mt-8 h-56 w-full overflow-hidden border border-line-on-light grayscale transition-[filter] duration-500 hover:grayscale-0">
+              <iframe
+                title={`Ubicación de la planta de COTA en ${cota.plant.location}`}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(`${cota.plant.location}, ${cota.country}`)}&output=embed`}
+                className="h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
 
           <div className="md:col-span-7">

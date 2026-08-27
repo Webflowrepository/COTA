@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { cota } from "@/lib/content/cota";
 
 function WhatsAppIcon() {
@@ -14,15 +17,31 @@ function WhatsAppIcon() {
 export default function WhatsAppButton() {
   const href = cota.whatsapp.number ? `https://wa.me/${cota.whatsapp.number}` : undefined;
 
+  // en mobile, el botón flotante se oculta al llegar al footer (pedido
+  // explícito: no tapar el footer con el CTA sticky). En desktop no hace
+  // falta — el botón ya es chico respecto al layout.
+  const [hideOnMobile, setHideOnMobile] = useState(false);
+
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+    const io = new IntersectionObserver(([entry]) => setHideOnMobile(entry.isIntersecting), {
+      rootMargin: "0px",
+      threshold: 0.05,
+    });
+    io.observe(footer);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <a
       href={href}
       target={href ? "_blank" : undefined}
       rel={href ? "noopener noreferrer" : undefined}
       aria-disabled={!href}
-      className={`fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-green text-paper shadow-lg transition-transform md:bottom-8 md:right-8 ${
+      className={`fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-green text-paper shadow-lg transition-[transform,opacity] md:bottom-8 md:right-8 ${
         href ? "hover:scale-105" : "cursor-default opacity-60"
-      }`}
+      } ${hideOnMobile ? "pointer-events-none translate-y-24 opacity-0 md:pointer-events-auto md:translate-y-0 md:opacity-100" : ""}`}
       title={href ? "Escribinos por WhatsApp" : "WhatsApp — número pendiente de confirmar"}
     >
       <WhatsAppIcon />

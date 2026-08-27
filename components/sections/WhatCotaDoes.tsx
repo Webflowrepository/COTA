@@ -5,6 +5,14 @@ import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
+// CTA secundario por división — apunta a la sección real correspondiente
+// (no a un mailto genérico), ya que las 3 tienen su propio anchor en la página.
+const SECONDARY_CTA: Record<string, { label: string; href: string }> = {
+  quimicos: { label: "Ver especificaciones", href: "#quimicos" },
+  papel: { label: "Conocer línea Guardián", href: "#papel" },
+  soluciones: { label: "Asesoramiento técnico", href: "#soluciones" },
+};
+
 export default function WhatCotaDoes() {
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -58,6 +66,14 @@ export default function WhatCotaDoes() {
               <div className="min-w-0 max-w-md">
                 <h3 className="text-heading text-ink transition-opacity duration-300 group-hover:opacity-60">{line.label}</h3>
                 <p className="mt-3 text-sm text-ink/55 md:text-base">{line.short}</p>
+                {SECONDARY_CTA[line.id] && (
+                  <a
+                    href={SECONDARY_CTA[line.id].href}
+                    className="font-label mt-5 inline-block w-fit border-b border-ink/40 pb-0.5 text-ink/70 transition-colors hover:border-ink hover:text-ink"
+                  >
+                    {SECONDARY_CTA[line.id].label} <span className="cta-arrow">→</span>
+                  </a>
+                )}
               </div>
               <div className="media-reveal relative hidden h-44 max-w-lg flex-1 overflow-hidden md:block lg:h-56">
                 <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">

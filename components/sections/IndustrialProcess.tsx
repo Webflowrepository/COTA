@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ensureGsapRegistered } from "@/lib/motion/gsap";
+import type { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ensureGsapRegistered, prefersReducedMotion } from "@/lib/motion/gsap";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
 
@@ -58,6 +59,7 @@ const STAGES = [
 export default function IndustrialProcess() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const stRef = useRef<ScrollTrigger | null>(null);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -72,7 +74,7 @@ export default function IndustrialProcess() {
         ease: "none",
       });
 
-      ScrollTrigger.create({
+      stRef.current = ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top top",
         end: () => `+=${window.innerHeight}`,
@@ -86,6 +88,19 @@ export default function IndustrialProcess() {
 
     return () => ctx.revert();
   }, []);
+
+  // navegación por puntos en mobile — el scroll horizontal por gesto de
+  // scroll vertical no siempre es intuitivo en touch, así que cada punto
+  // saltea directamente a la posición de scroll de página que corresponde
+  // a esa etapa (mismo ScrollTrigger que ya maneja el desktop).
+  function goToStage(i: number) {
+    const st = stRef.current;
+    if (!st) return;
+    const target = st.start + (i / (STAGES.length - 1)) * (st.end - st.start);
+    window.scrollTo({ top: target, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+  }
+
+  const activeStage = Math.min(STAGES.length - 1, Math.round(progress * (STAGES.length - 1)));
 
   return (
     <section id="proceso" ref={sectionRef} className="relative w-full bg-ink-deep">
@@ -134,6 +149,27 @@ export default function IndustrialProcess() {
               className="h-px bg-paper/60 transition-[width] duration-150 ease-out"
               style={{ width: `${Math.max(2, progress * 100)}%` }}
             />
+          </div>
+
+          {/* En mobile, el gesto de scroll vertical→horizontal no siempre es
+              obvio — se agregan puntos como forma explícita de navegar. */}
+          <div className="mt-5 flex items-center justify-center gap-2.5 md:hidden">
+            {STAGES.map((stage, i) => (
+              <button
+                key={stage.n}
+                type="button"
+                aria-label={`Ir a etapa ${stage.n} — ${stage.title}`}
+                aria-current={activeStage === i}
+                onClick={() => goToStage(i)}
+                className="p-1.5"
+              >
+                <span
+                  className={`block h-1 transition-[width,background-color] duration-300 ${
+                    activeStage === i ? "w-7 bg-paper" : "w-2.5 bg-paper/35"
+                  }`}
+                />
+              </button>
+            ))}
           </div>
         </div>
       </div>

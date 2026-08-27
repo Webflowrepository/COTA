@@ -243,6 +243,74 @@ Si en algún momento tenés estos datos reales de COTA (specs de producto,
 certificaciones ambientales, SLA de entrega), los sumo de inmediato — el
 límite fue siempre "no inventar", no "no quiero mostrarlo".
 
+## Ronda grande: brief de 10 secciones nuevas
+
+Se recibió un brief externo (tono "developer senior") pidiendo 10 secciones/mejoras
+nuevas sobre este mismo sitio. 4 de esas 10 pedían datos que COTA no tiene
+confirmados — **exactamente los mismos 4 tipos de contenido ya declinados una
+vez en la ronda del informe comparativo** (ver más abajo): sostenibilidad,
+testimonio de cliente, certificaciones, logos de clientes. Se le preguntó al
+cliente cómo manejarlos y eligió explícitamente **"Placeholder visible
+marcado"** — construir el layout con contenido de ejemplo del brief, pero
+imposible de confundir con dato real. Se creó `components/ui/ExampleNotice.tsx`
+para esto (mismo espíritu que `PlaceholderMedia.tsx`, pero para texto/dato en
+vez de foto) y se usa en las 4 secciones nuevas:
+
+- `Sustainability.tsx` — los 3 puntos del brief (90% agua recirculada, etc.)
+  con marca a nivel de sección Y a nivel de cada bullet ("Ejemplo, no
+  confirmado"). **No publicar sin reemplazar por datos ambientales reales.**
+- `Testimonial.tsx` — la cita/resultado/autor del brief, con marca explícita
+  de que son ficticios. **No publicar sin una cita real autorizada por un
+  cliente real.**
+- `Certifications.tsx` — ISO 9001 / BPM / normas de seguridad del brief, cada
+  una con sufijo "(pendiente)" además del aviso de sección. **No publicar
+  ninguna sin confirmar que COTA efectivamente la tiene vigente** — mostrar un
+  sello de certificación no verificada es un riesgo, no sólo un error de copy.
+- `LogoBand.tsx` — acá se hizo una excepción al "usar el ejemplo del brief":
+  el brief sugería nombres de empresa inventados ("Convertidora Sur", etc.)
+  como placeholder, pero eso fabrica prueba social (implica que empresas
+  reales confían en COTA). Se armaron 6 slots vacíos con borde punteado y
+  label "Logo" en vez de nombres inventados — layout listo, pero sin
+  fabricar ningún cliente. Reemplazar cada slot por `<img>` cuando haya
+  logos + autorización confirmada.
+
+**Secciones nuevas construidas con datos 100% reales (sin marca de ejemplo):**
+- `StatsBand.tsx` — franja de 4 números debajo del Hero. El brief pedía
+  "50.000+ TN/año de producción" (no es un dato real de COTA — sólo la
+  capacidad de Químicos, 700 T/mes, está confirmada); se usó ese número real
+  en su lugar, mismo criterio que ya se aplicó en `NaschelPlant.tsx`. Los
+  otros 3 (años operando, 3 divisiones, abastecimiento nacional) sí están
+  verificados en `lib/content/cota.ts`.
+- `WhyCota.tsx` — "Por qué COTA", los 4 diferenciales del brief resultaron
+  ser reformulaciones de contenido YA verificado y usado en otras secciones
+  (blanqueadores desarrollados por COTA — no revendidos, integración
+  vertical, logística propia, asesoramiento técnico) — no hizo falta
+  inventar nada acá.
+- `IndustrialProcess.tsx` — se agregó navegación por puntos, sólo visible en
+  mobile (`md:hidden`), que saltea la posición de scroll de página
+  correspondiente a cada etapa usando el mismo `ScrollTrigger` que ya
+  maneja el desktop (`stRef.current.start/end`).
+- Hero: se agregó un CTA principal ("Solicitar asesoramiento técnico →")
+  que antes no existía en el Hero (las 6+ CTAs "Ir al formulario" viven en
+  otras secciones, no en el Hero).
+- Contacto: mini mapa embebido (`iframe` de Google Maps con la dirección
+  real de Naschel, sin API key), link directo a WhatsApp, y el formulario
+  ahora pide también Email y Teléfono del que consulta. El brief pedía un
+  horario de atención ("Lun a Vie 8 a 17hs") — no está confirmado, no se
+  agregó (mismo criterio de siempre).
+- Divisiones (`WhatCotaDoes.tsx`): CTA secundario por división, apuntando a
+  la sección real correspondiente (`#quimicos`, `#papel`, `#soluciones`) en
+  vez de a un mailto genérico. El brief también pedía "formatos de entrega"
+  por división (ej. "Tambores | IBC | A granel" para Químicos) — no está
+  confirmado, se omitió en vez de inventar valores de packaging.
+
+**Orden de página:** el brief sugería intercalar Sostenibilidad/Testimonio
+justo después del Recorrido Industrial, cortando la secuencia continua
+Proceso → Químicos → Papel que se construyó como un tramo narrativo único
+(ver punto 2 de la memoria de dirección de arte). Se agruparon esas 2
+secciones + Certificaciones cerca del final, antes de Contacto, en vez de
+seguir el orden literal del brief — ver comentario en `app/page.tsx`.
+
 ## Formulario de contacto — limitación técnica
 
 `components/sections/ContactForm.tsx` arma un `mailto:` con los datos
