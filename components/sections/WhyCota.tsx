@@ -50,12 +50,24 @@ export default function WhyCota() {
 
   return (
     <section ref={rootRef} className="relative w-full bg-paper py-24 md:py-32">
-      <div className="container-industrial grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-10">
+      {/* Orden en mobile: título → foto → diferenciales. Antes la foto vivía
+          en una columna aparte que en mobile caía al final del todo, así
+          que entre esta sección y WhatCotaDoes había un tramo largo de puro
+          texto (título + 4 bullets) sin nada visual. En desktop se arma
+          igual que antes (columna de texto + foto a la derecha) gracias al
+          md:row-span-2 de la foto. */}
+      <div className="container-industrial grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-10">
         <div className="md:col-span-6">
           <span className="font-label mb-6 block text-ink/45">Por qué COTA</span>
           <h2 className="text-display max-w-lg text-ink">Más que un proveedor. Un socio industrial.</h2>
+        </div>
 
-          <div className="mt-12 flex flex-col divide-y divide-line-on-light">
+        <div className="relative h-[30vh] overflow-hidden md:col-span-6 md:row-span-2 md:h-auto">
+          <PhotoMedia src="/photos/proceso-materia-prima.png" alt="Planta industrial de COTA en Naschel" />
+        </div>
+
+        <div className="md:col-span-6">
+          <div className="flex flex-col divide-y divide-line-on-light">
             {POINTS.map((point) => (
               <div key={point.title} className="why-point flex gap-5 py-6 first:pt-0">
                 <span className="mt-2 h-px w-6 shrink-0 bg-ink/40" aria-hidden />
@@ -73,10 +85,6 @@ export default function WhyCota() {
           >
             Conocer nuestra planta <span className="cta-arrow">→</span>
           </a>
-        </div>
-
-        <div className="relative h-[38vh] overflow-hidden md:col-span-6 md:h-auto">
-          <PhotoMedia src="/photos/proceso-materia-prima.png" alt="Planta industrial de COTA en Naschel" />
         </div>
       </div>
     </section>

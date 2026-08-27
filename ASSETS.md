@@ -105,15 +105,27 @@ encontrado representan esto con precisión):
 - Segmento Distribuidores (Soluciones) — necesita mostrar el producto
   Guardián específico (foto de producto/POS), no una foto genérica de fábrica
 
-**Panel Guardián (Familias de Producto) — dejó de ser placeholder, pero sin
-foto.** El cliente pidió "reimaginar" esta sección porque el panel Guardián
-(un placeholder gris) se veía vacío al lado de 3 paneles con fotos reales.
-En vez de forzar una foto que no existe, se rediseñó como panel tipográfico:
-fondo oscuro + la marca "Guardián." en tipografía grande (mismo tratamiento
-que "Naschel." en `NaschelPlant.tsx`) + su tagline real + CTA a distribución
-— mismo criterio de siempre (no inventar una foto de producto que no existe),
-pero ahora es un beat de diseño intencional en el ritmo del carrusel en vez
-de un hueco. Ver `components/sections/ProductFamilies.tsx`.
+**Guardián salió de Familias de Producto (ProductFamilies.tsx) — historial
+completo.** Pasó por 3 rondas ahí y nunca terminó de funcionar: (1) placeholder
+gris genérico, (2) panel tipográfico con fondo oscuro ("colgado" — leía como
+un bloque negro entre 3 fotos), (3) mismo panel con fondo claro (seguía
+"colgado" — el problema no era el color, era el formato: un panel sin foto
+no puede convivir bien con 3 paneles cuyo lenguaje ES la foto). En la 4ª
+ronda se sacó por completo del carrusel — ahora son 3 paneles, todos con
+foto real, consistentes entre sí. Toda la presencia de Guardián se
+concentró en un único lugar bien resuelto: el bloque "Productos terminados
++ Guardián" al final de `PapelTissueSpecs.tsx` (ver abajo), con el mismo
+tratamiento tipográfico grande que "Naschel." en `NaschelPlant.tsx` —
+mismo criterio de siempre (no inventar una foto de producto que no existe),
+pero ahora es un momento de marca con peso real en vez de un panel forzado.
+
+**Catálogo de productos terminados + Guardián — rediseño completo.** Era la
+sección con menos peso visual de la página: una lista de texto angosta en
+3 columnas + un párrafo suelto de Guardián debajo, sin relación visual entre
+ambos. Se rehizo como una sola composición de 2 columnas: catálogo con
+números grandes (mismo tratamiento que "Modelos de negocio" — `font-impact-number`
++ `text-ink/25`) a la izquierda, Guardián a tamaño hero a la derecha. Ver
+`components/sections/PapelTissueSpecs.tsx`.
 
 **Nota:** la sección standalone "Escala de Producción" (`ProductionScale.tsx`)
 se eliminó — mostraba el mismo dato (700 T/mes) que ya aparece en Planta

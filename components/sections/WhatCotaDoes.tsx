@@ -62,7 +62,7 @@ export default function WhatCotaDoes() {
 
         <div className="flex flex-col divide-y divide-line-on-light">
           {cota.businessLines.map((line) => (
-            <div key={line.id} className="line-row group relative flex items-center justify-between gap-10 py-9 transition-[padding] duration-500 ease-out md:py-12 md:hover:pl-3">
+            <div className="line-row group relative flex flex-col gap-5 py-9 transition-[padding] duration-500 ease-out md:flex-row md:items-center md:justify-between md:gap-10 md:py-12 md:hover:pl-3" key={line.id}>
               <div className="min-w-0 max-w-md">
                 <h3 className="text-heading text-ink transition-opacity duration-300 group-hover:opacity-60">{line.label}</h3>
                 <p className="mt-3 text-sm text-ink/55 md:text-base">{line.short}</p>
@@ -75,7 +75,11 @@ export default function WhatCotaDoes() {
                   </a>
                 )}
               </div>
-              <div className="media-reveal relative hidden h-44 max-w-lg flex-1 overflow-hidden md:block lg:h-56">
+              {/* antes se ocultaba en mobile (hidden md:block) — dejaba un
+                  tramo de puro texto entre esta sección y "Por qué COTA".
+                  Ahora se ve también en mobile, más baja, para cortar la
+                  densidad. */}
+              <div className="media-reveal relative h-40 w-full overflow-hidden sm:h-48 md:h-44 md:max-w-lg md:flex-1 lg:h-56">
                 <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
                   {line.id === "soluciones" ? (
                     <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA — logística y despacho" />

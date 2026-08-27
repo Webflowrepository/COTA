@@ -24,13 +24,11 @@ const PANELS = [
     mediaLabel: "Foto — bobina de papel",
     categoryId: "bobinas",
   },
-  {
-    id: "guardian",
-    label: cota.guardian.name,
-    short: cota.guardian.tagline,
-    mediaLabel: "Foto — producto Guardián",
-    categoryId: "distribucion",
-  },
+  // Guardián ya no es un panel acá — sin foto de producto, quedaba "colgado"
+  // junto a 3 fotos reales (2 rondas de retoque de estilo no lo arreglaron,
+  // el problema era el formato, no el color). Su presencia ahora se
+  // concentra en un bloque propio y más importante en PapelTissueSpecs.tsx,
+  // junto al catálogo de productos terminados.
   {
     id: "soluciones",
     label: soluciones.label,
@@ -147,58 +145,30 @@ export default function ProductFamilies() {
               key={panel.id}
               className="pf-panel group relative h-[62vh] w-[86vw] shrink-0 snap-start overflow-hidden md:h-[68vh] md:w-[46vw] lg:w-[36vw]"
             >
-              {panel.id === "guardian" ? (
-                // Sin foto de producto en alta resolución todavía (ver ASSETS.md) — en vez de
-                // un placeholder gris junto a 3 fotos reales, este panel usa la marca en sí
-                // (tipografía grande) como el momento visual: es un beat propio en el ritmo
-                // del carrusel, no un hueco vacío disfrazado de foto. Fondo claro (no oscuro
-                // como "Naschel." en NaschelPlant.tsx) para que no lea como un bloque negro
-                // al lado de las 3 fotos — se asimila a la tipografía clara del resto del sitio.
-                <div className="flex h-full w-full flex-col justify-between border border-line-on-light bg-paper p-7 text-ink md:p-9">
-                  <span className="font-label text-ink/45">Línea propia</span>
-                  <div>
-                    <h3 className="text-hero text-ink transition-transform duration-500 ease-out group-hover:-translate-y-1">
-                      Guardián.
-                    </h3>
-                    <p className="mt-4 max-w-xs text-sm text-ink/60">
-                      {cota.guardian.tagline}. Con apoyo a distribuidores en todo el país.
-                    </p>
-                    <a
-                      href={mailto}
-                      className="font-label mt-6 inline-block w-fit border-b border-ink/40 pb-0.5 text-ink transition-colors hover:border-ink"
-                    >
-                      Consultar distribución <span className="cta-arrow">→</span>
-                    </a>
-                  </div>
-                </div>
-              ) : (
-                <>
-                  <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
-                    {panel.id === "soluciones" ? (
-                      <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA — logística y despacho" />
-                    ) : panel.id === "quimicos" ? (
-                      <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
-                    ) : (
-                      <PhotoMedia src="/photos/papel-produccion.jpeg" alt="Línea de producción de bobinas de papel" />
-                    )}
-                  </div>
-                  <div
-                    className="absolute inset-0"
-                    style={{ background: "linear-gradient(0deg, rgba(6,8,17,0.75) 0%, transparent 45%)" }}
-                  />
-                  <div className="absolute inset-0 flex flex-col justify-end p-7 text-paper md:p-9">
-                    <span className="font-label mb-3 block text-paper/70">Línea de producto</span>
-                    <h3 className="text-heading">{panel.label}</h3>
-                    <p className="mt-3 max-w-xs text-sm text-paper/70">{panel.short}</p>
-                    <a
-                      href={mailto}
-                      className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
-                    >
-                      Solicitar ficha técnica <span className="cta-arrow">→</span>
-                    </a>
-                  </div>
-                </>
-              )}
+              <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
+                {panel.id === "soluciones" ? (
+                  <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA — logística y despacho" />
+                ) : panel.id === "quimicos" ? (
+                  <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
+                ) : (
+                  <PhotoMedia src="/photos/papel-produccion.jpeg" alt="Línea de producción de bobinas de papel" />
+                )}
+              </div>
+              <div
+                className="absolute inset-0"
+                style={{ background: "linear-gradient(0deg, rgba(6,8,17,0.75) 0%, transparent 45%)" }}
+              />
+              <div className="absolute inset-0 flex flex-col justify-end p-7 text-paper md:p-9">
+                <span className="font-label mb-3 block text-paper/70">Línea de producto</span>
+                <h3 className="text-heading">{panel.label}</h3>
+                <p className="mt-3 max-w-xs text-sm text-paper/70">{panel.short}</p>
+                <a
+                  href={mailto}
+                  className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
+                >
+                  Solicitar ficha técnica <span className="cta-arrow">→</span>
+                </a>
+              </div>
             </div>
           );
         })}

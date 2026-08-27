@@ -2,11 +2,15 @@
 
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
+import SpecCounter from "@/components/ui/SpecCounter";
 import { cota } from "@/lib/content/cota";
 
 export default function PapelTissueSpecs() {
   const modelsRef = useRef<HTMLDivElement>(null);
   const specsRef = useRef<HTMLDivElement>(null);
+  const catalogRef = useRef<HTMLDivElement>(null);
+  const distribucionLabel = cota.contactCategories.find((c) => c.id === "distribucion")?.label ?? "Distribución — Guardián";
+  const guardianMailto = `mailto:${cota.contact.email}?subject=${encodeURIComponent(`Consulta — ${distribucionLabel}`)}`;
 
   useEffect(() => {
     const { gsap } = ensureGsapRegistered();
@@ -35,7 +39,30 @@ export default function PapelTissueSpecs() {
           scrollTrigger: { trigger: specsRef.current, start: "top 75%", end: "top 35%", scrub: true },
         },
       );
-    }, [modelsRef, specsRef]);
+      gsap.fromTo(
+        ".catalog-item",
+        { autoAlpha: 0, y: 14 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.06,
+          ease: "power2.out",
+          scrollTrigger: { trigger: catalogRef.current, start: "top 80%", end: "top 45%", scrub: true },
+        },
+      );
+      gsap.fromTo(
+        ".guardian-block",
+        { autoAlpha: 0, y: 20 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: { trigger: catalogRef.current, start: "top 75%", end: "top 40%", scrub: true },
+        },
+      );
+    }, [modelsRef, specsRef, catalogRef]);
     return () => ctx.revert();
   }, []);
 
@@ -88,19 +115,19 @@ export default function PapelTissueSpecs() {
                 <tr className="spec-row border-b border-line-on-dark transition-colors duration-300 hover:bg-paper/[0.04]">
                   <td className="py-5 pr-8 text-paper/70">Ancho</td>
                   <td className="font-impact-number text-2xl text-paper transition-transform duration-300 hover:translate-x-1 md:text-3xl">
-                    {cota.bobinaSpecs.anchos.join(" / ")}
+                    <SpecCounter values={cota.bobinaSpecs.anchos} />
                   </td>
                 </tr>
                 <tr className="spec-row border-b border-line-on-dark transition-colors duration-300 hover:bg-paper/[0.04]">
                   <td className="py-5 pr-8 text-paper/70">Diámetro</td>
                   <td className="font-impact-number text-2xl text-paper transition-transform duration-300 hover:translate-x-1 md:text-3xl">
-                    {cota.bobinaSpecs.diametros.join(" / ")}
+                    <SpecCounter values={cota.bobinaSpecs.diametros} />
                   </td>
                 </tr>
                 <tr className="spec-row transition-colors duration-300 hover:bg-paper/[0.04]">
                   <td className="py-5 pr-8 text-paper/70">Cono interior</td>
                   <td className="font-impact-number text-2xl text-paper transition-transform duration-300 hover:translate-x-1 md:text-3xl">
-                    {cota.bobinaSpecs.conoInterior}
+                    <SpecCounter values={[cota.bobinaSpecs.conoInterior]} />
                   </td>
                 </tr>
               </tbody>
@@ -123,29 +150,43 @@ export default function PapelTissueSpecs() {
         </div>
       </div>
 
-      {/* Catálogo de productos terminados */}
-      <div className="container-industrial py-16 md:py-20">
-        <span className="font-label mb-8 block text-ink/45">Productos terminados</span>
-        <ul className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 md:grid-cols-3">
-          {cota.finishedProducts.map((product, i) => (
-            <li
-              key={product}
-              className="font-label border-t border-line-on-light py-4 text-ink/70 transition-colors duration-300 hover:text-ink"
-            >
-              {String(i + 1).padStart(2, "0")} — {product}
-            </li>
-          ))}
-        </ul>
-      </div>
+      {/* Catálogo de productos terminados + Guardián — antes eran dos
+          bloques chicos y desconectados (una lista de texto angosta y un
+          párrafo suelto), la sección con menos peso visual de la página.
+          Guardián además vivía duplicado como panel sin foto en
+          ProductFamilies.tsx, donde quedaba "colgado" junto a 3 fotos
+          reales — se sacó de ahí y toda su presencia se concentra acá,
+          con el mismo tratamiento tipográfico grande que "Naschel." en
+          NaschelPlant.tsx. */}
+      <div ref={catalogRef} className="container-industrial py-16 md:py-24">
+        <div className="grid grid-cols-1 gap-14 border-t border-line-on-light pt-14 md:grid-cols-12 md:gap-10 md:pt-20">
+          <div className="md:col-span-7">
+            <span className="font-label mb-10 block text-ink/45">Productos terminados</span>
+            <ul className="flex flex-col divide-y divide-line-on-light">
+              {cota.finishedProducts.map((product, i) => (
+                <li key={product} className="catalog-item group flex items-baseline gap-6 py-4">
+                  <span className="font-impact-number text-2xl text-ink/25 transition-colors duration-300 group-hover:text-ink/55 md:text-3xl">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-ink/70 transition-colors duration-300 group-hover:text-ink">{product}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-      {/* Guardián */}
-      <div className="container-industrial pb-16 md:pb-20">
-        <div className="border-t border-line-on-light pt-12 md:pt-16">
-          <span className="font-label mb-4 block text-ink/45">Línea propia</span>
-          <h3 className="text-heading max-w-xl text-ink">{cota.guardian.name}</h3>
-          <p className="mt-4 max-w-md text-ink/60">
-            {cota.guardian.tagline}. Con apoyo a distribuidores en todo el país.
-          </p>
+          <div className="guardian-block md:col-span-5">
+            <span className="font-label mb-4 block text-ink/45">Línea propia</span>
+            <h3 className="text-hero text-ink">{cota.guardian.name}.</h3>
+            <p className="mt-5 max-w-sm text-ink/60">
+              {cota.guardian.tagline}. Con apoyo a distribuidores en todo el país.
+            </p>
+            <a
+              href={guardianMailto}
+              className="font-label mt-8 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+            >
+              Consultar distribución <span className="cta-arrow">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

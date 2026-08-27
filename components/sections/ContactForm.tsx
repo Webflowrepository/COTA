@@ -3,8 +3,11 @@
 import { useState, type FormEvent } from "react";
 import { cota } from "@/lib/content/cota";
 
+// antes era sólo un underline (bg transparente) — en mobile, rodeado de
+// texto (info de contacto, mapa), no se notaba que esto era un formulario
+// rellenable. Con borde completo + fill se lee como campo, no como texto.
 const inputClass =
-  "w-full border-b border-line-on-light bg-transparent py-2.5 text-ink placeholder:text-ink/35 outline-none transition-colors focus:border-ink";
+  "w-full border border-line-on-light bg-paper-dim/50 px-3.5 py-2.5 text-ink placeholder:text-ink/35 outline-none transition-colors focus:border-ink focus:bg-paper-dim";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
