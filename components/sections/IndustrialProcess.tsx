@@ -28,6 +28,7 @@ const STAGES = [
     copy: "La fibra se transforma en papel Tissue a escala industrial.",
     label: "Foto — máquina papelera en producción",
     dark: false,
+    photo: { src: "/photos/planta-porton.png", alt: "Planta de COTA — acceso" },
   },
   {
     n: "04",
@@ -35,6 +36,7 @@ const STAGES = [
     copy: "El papel se rebobina y se prepara para su conversión.",
     label: "Foto — rebobinadora industrial",
     dark: false,
+    photo: { src: "/photos/marca-logo-pared-2.png", alt: "Marca COTA en la planta" },
   },
   {
     n: "05",
@@ -42,6 +44,7 @@ const STAGES = [
     copy: "Cada bobina sale lista para su conversión.",
     label: "Foto — bobina terminada",
     dark: false,
+    photo: { src: "/photos/marca-logo-pared.png", alt: "Marca COTA en la planta" },
   },
   {
     n: "06",

@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
-import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
@@ -96,8 +95,10 @@ export default function ProductFamilies() {
                   <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA — logística y despacho" />
                 ) : panel.id === "quimicos" ? (
                   <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
+                ) : panel.id === "bobinas" ? (
+                  <PhotoMedia src="/photos/planta-porton.png" alt="Planta de COTA — acceso" />
                 ) : (
-                  <PlaceholderMedia tone="dark" label={panel.mediaLabel} />
+                  <PhotoMedia src="/photos/marca-logo-pared.png" alt="Marca COTA en la planta" />
                 )}
               </div>
               <div

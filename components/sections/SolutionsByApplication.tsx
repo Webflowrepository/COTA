@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
@@ -78,8 +77,10 @@ export default function SolutionsByApplication() {
               >
                 {seg.id === "papeleras" ? (
                   <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
+                ) : seg.id === "convertidores" ? (
+                  <PhotoMedia src="/photos/planta-porton.png" alt="Planta de COTA — acceso" />
                 ) : (
-                  <PlaceholderMedia tone="dark" label={seg.mediaLabel} />
+                  <PhotoMedia src="/photos/marca-logo-pared-2.png" alt="Marca COTA en la planta" />
                 )}
               </div>
             ))}

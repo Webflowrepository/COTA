@@ -2,15 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
-import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
-
-const SWATCH_LABEL: Record<string, string> = {
-  quimicos: "Foto — blanqueador óptico / tanque de proceso",
-  papel: "Foto — bobina de papel Tissue",
-  soluciones: "Foto — instalación de fábrica / maquinaria",
-};
 
 export default function WhatCotaDoes() {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -72,7 +65,7 @@ export default function WhatCotaDoes() {
                 ) : line.id === "quimicos" ? (
                   <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
                 ) : (
-                  <PlaceholderMedia tone="light" label={SWATCH_LABEL[line.id]} />
+                  <PhotoMedia src="/photos/planta-porton.png" alt="Planta de COTA — acceso" />
                 )}
               </div>
             </div>

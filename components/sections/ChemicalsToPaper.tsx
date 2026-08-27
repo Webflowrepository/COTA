@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
-import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
@@ -75,7 +74,7 @@ export default function ChemicalsToPaper() {
           <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.5)" }} />
         </div>
         <div ref={paperLayerRef} className="absolute inset-0">
-          <PlaceholderMedia tone="light" label="Foto — macro de papel Tissue" />
+          <PhotoMedia src="/photos/planta-porton.png" alt="Planta de COTA — acceso" />
           <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.35)" }} />
         </div>
 

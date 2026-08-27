@@ -40,51 +40,49 @@ cliente pidió consolidar todo de nuevo en el landing. Estado actual:
 papel Tissue — el documento fuente de esta ronda lo señala explícitamente
 como pendiente de verificar con COTA, así que no se agregó ningún número.
 
-Este sitio se construyó con **placeholders limpios** (`components/visuals/PlaceholderMedia.tsx`)
-en lugar de fotografía/video real, porque todavía no hay material de COTA
-disponible. Cada placeholder preserva la composición exacta (tamaño, encuadre)
-que va a ocupar el asset real, con una etiqueta chica en la esquina indicando
-qué conseguir. Este archivo es la lista completa para producción/reemplazo.
+Este sitio usaba **placeholders limpios** (`components/visuals/PlaceholderMedia.tsx`,
+componente que sigue existiendo por si hace falta en el futuro) en los lugares
+sin foto real. A esta altura **no queda ningún placeholder visible en el sitio**
+— ver la nota de "cobertura total" más abajo.
 
-## Fotos reales de la planta (confirmadas por el cliente) — reemplazaron todo el stock
+## Fotos reales de la planta (confirmadas por el cliente) — cobertura total
 
 El cliente subió 10 imágenes a `Images/` y confirmó explícitamente que son
 fotos reales de la planta (o representación autorizada) — incluso después de
 que se le señalara que varias tenían señales típicas de generación por IA
 (arquitectura inconsistente entre tomas de "el mismo" edificio, tipografía
-del logo con artefactos raros). Con esa confirmación, se usaron como fuente
-de verdad y **reemplazaron por completo** el stock de Pexels (Rotterdam a la
-hora azul) que se había integrado en una ronda anterior — ya no queda
-ninguna foto de stock en el sitio, salvo donde no existe material real que
-represente el contenido con precisión (ver tabla de placeholders abajo).
+del logo con artefactos raros). Con esa confirmación, reemplazaron por
+completo el stock de Pexels (Rotterdam) que se había integrado antes.
+
+Al principio se usaron con precisión de contenido (una foto de tanques solo
+donde el texto hablaba de tanques, etc.), dejando placeholder donde ninguna
+foto coincidía exactamente con lo que la sección describía (máquina
+papelera, rebobinadora, producto Guardián). El cliente pidió — más de una
+vez — que no quedara ningún hueco vacío en el sitio, así que se relajó ese
+criterio: **ahora las fotos reales se reutilizan también en secciones donde
+no coinciden con precisión milimétrica** (p. ej. una foto del portón de la
+planta ilustrando la etapa "Fabricación de Papel Tissue", o un primer plano
+de la marca en la pared ilustrando el panel "Guardián"). Sigue siendo 100%
+material real de COTA — nunca una foto de otra empresa ni generada — solo
+que ya no cada imagen ilustra el paso/producto exacto que describe el texto
+que tiene al lado.
 
 | Archivo en `public/photos/` | Contenido | Usado en |
 |---|---|---|
-| `hero-planta-aerea.png` | Vista aérea al amanecer | Hero (`Hero.tsx`) |
-| `naschel-planta-aerea.png` | Vista aérea al atardecer, portón/cartel COTA | Fondo de Planta Naschel (`NaschelPlant.tsx`); swatch/panel Soluciones (`WhatCotaDoes.tsx`, `ProductFamilies.tsx`); Proceso — etapa 06 Logística (`IndustrialProcess.tsx`, `IndustrialProcessTeaser.tsx`) |
-| `quimicos-tanques.png` | Tanques de proceso, primer plano, cielo despejado | Capítulo Químicos (`ChemicalsToPaper.tsx`); swatch/panel Químicos (`WhatCotaDoes.tsx`, `ProductFamilies.tsx`); segmento Papeleras y textiles (`SolutionsByApplication.tsx`) |
-| `proceso-tanques.png` | Tanques de proceso, interior, tono oscuro | Proceso — etapa 02 Proceso Químico (`IndustrialProcess.tsx`) |
-| `proceso-materia-prima.png` | Tanques + edificio + avenida, luz de día | Proceso — etapa 01 Materia Prima (`IndustrialProcess.tsx`, `IndustrialProcessTeaser.tsx`) |
+| `hero-planta-aerea.png` | Vista aérea al amanecer | Hero |
+| `naschel-planta-aerea.png` | Vista aérea al atardecer, portón/cartel COTA | Fondo de Planta Naschel; swatch/panel Soluciones; Proceso — etapa 06 Logística |
+| `quimicos-tanques.png` | Tanques de proceso, primer plano, cielo despejado | Capítulo Químicos; swatch/panel Químicos; segmento Papeleras y textiles |
+| `proceso-tanques.png` | Tanques de proceso, interior, tono oscuro | Proceso — etapa 02 Proceso Químico |
+| `proceso-materia-prima.png` | Tanques + edificio + avenida, luz de día | Proceso — etapa 01 Materia Prima |
 | `footer-planta-cenital.png` | Vista aérea cenital (90°) | Fondo del `Footer.tsx` |
+| `planta-porton.png` | Portón/acceso a la planta, nivel de piso | Swatch Papel (Compañía); capa Papel (Químicos→Papel); panel Bobinas (Familias de Producto); Proceso — etapa 03 Fabricación; segmento Convertidores (Soluciones) |
+| `marca-logo-pared.png` | Primer plano del logo COTA en pared | Panel Guardián (Familias de Producto); Proceso — etapa 05 Producto Terminado |
+| `marca-logo-pared-2.png` | Primer plano del logo COTA, otro ángulo | Proceso — etapa 04 Rebobinado; segmento Distribuidores (Soluciones) |
 
-Las fotos se reutilizan a propósito en cada lugar donde el business line es
-el mismo (patrón consistente, en vez de una imagen distinta por componente).
-Las 3 restantes de las 10 subidas (dos primeros planos del cartel/logo en la
-pared, una toma aérea de un complejo en un paisaje tipo meseta/desierto que
-no coincide con la geografía de San Luis) quedan sin usar — no encajaban con
-ningún placeholder disponible sin forzar la composición.
-
-## Sigue en placeholder (a propósito)
-
-| Sección | Componente | Por qué sigue en placeholder |
-|---|---|---|
-| Proceso — Fabricación, Rebobinado, Producto Terminado (etapas 03, 04, 05) | `components/sections/IndustrialProcess.tsx` | Ninguna de las fotos reales disponibles muestra específicamente la máquina papelera, la rebobinadora, o una bobina terminada — usar una foto de tanques/portón ahí mostraría el paso equivocado del proceso, que es peor que un placeholder. |
-| Papel Tissue | `components/sections/ChemicalsToPaper.tsx` (capa papel), `components/sections/ProductFamilies.tsx` (panel Bobinas), `components/sections/WhatCotaDoes.tsx` (swatch Papel) | No hay entre las fotos reales ni en stock libre algo que muestre bobinas de papel Tissue específicamente. |
-| Guardián (producto) | `components/sections/ProductFamilies.tsx` (panel Guardián), `components/sections/SolutionsByApplication.tsx` (segmento Distribuidores) | Es un producto específico de COTA — una foto genérica se leería como el producto real y sería engañoso. |
-| Convertidores (segmento) | `components/sections/SolutionsByApplication.tsx` | Necesita mostrar una bobina/convertidor específico — no hay material real ni stock libre que lo muestre bien. |
-
-Si el cliente identifica cuál de las 3 fotos sin usar (o alguna nueva que
-suba) corresponde a alguno de estos lugares, se puede sumar.
+Queda **1 foto de las 10 sin usar**: una toma aérea de un complejo en un
+paisaje tipo meseta/desierto que no coincide con la geografía de San Luis —
+se dejó afuera por esa inconsistencia geográfica, no por falta de lugar
+donde ponerla.
 
 **Nota:** la sección standalone "Escala de Producción" (`ProductionScale.tsx`)
 se eliminó — mostraba el mismo dato (700 T/mes) que ya aparece en Planta
