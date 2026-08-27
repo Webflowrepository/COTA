@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 
 const STEPS = [
   {
@@ -23,6 +24,7 @@ const STEPS = [
     title: "Logística",
     copy: "Distribución de bobinas hacia convertidores y distribuidores.",
     label: "Foto — despacho / logística",
+    photo: { src: "/photos/naschel-planta-aerea.png", alt: "Planta de COTA, vista aérea con patio de despacho" },
   },
 ];
 
@@ -64,7 +66,11 @@ export default function IndustrialProcessTeaser() {
         {STEPS.map((step) => (
           <div key={step.n} className="ipt-card relative h-[46vh] overflow-hidden md:h-[52vh]">
             <div className="absolute inset-0">
-              <PlaceholderMedia tone="dark" label={step.label} />
+              {step.photo ? (
+                <PhotoMedia src={step.photo.src} alt={step.photo.alt} />
+              ) : (
+                <PlaceholderMedia tone="dark" label={step.label} />
+              )}
             </div>
             <div
               className="absolute inset-0"

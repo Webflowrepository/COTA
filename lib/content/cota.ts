@@ -133,10 +133,10 @@ export const cota = {
     email: "comercial@cota.com.ar",
     phone: "+54 9 11 3371 3283",
   },
-  /** PLACEHOLDER — no se proveyó un número de WhatsApp Business todavía. */
+  /** Mismo celular confirmado por el cliente para contacto — formato wa.me (solo dígitos, sin +). */
   whatsapp: {
-    number: null as string | null,
-    isPlaceholder: true,
+    number: "5491133713283" as string | null,
+    isPlaceholder: false,
   },
   /** Redes preparadas para activar más adelante — sin cuenta confirmada todavía. */
   socialPlaceholders: ["TikTok", "LinkedIn"],

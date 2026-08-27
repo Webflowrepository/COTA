@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 
 const STAGES = [
   {
@@ -18,6 +19,7 @@ const STAGES = [
     copy: "Blanqueadores ópticos desarrollados por COTA integran el proceso.",
     label: "Foto — tanque de proceso químico",
     dark: true,
+    photo: { src: "/photos/proceso-tanques.png", alt: "Tanques de proceso en la planta de COTA" },
   },
   {
     n: "03",
@@ -46,6 +48,7 @@ const STAGES = [
     copy: "Distribución de bobinas hacia convertidores y distribuidores.",
     label: "Foto — despacho / logística",
     dark: false,
+    photo: { src: "/photos/naschel-planta-aerea.png", alt: "Planta de COTA, vista aérea con patio de despacho" },
   },
 ];
 
@@ -99,7 +102,11 @@ export default function IndustrialProcess() {
               className="ip-panel relative h-[62vh] w-[86vw] shrink-0 overflow-hidden md:h-[68vh] md:w-[46vw] lg:w-[36vw]"
             >
               <div className="absolute inset-0">
-                <PlaceholderMedia tone={stage.dark ? "dark" : "light"} label={stage.label} />
+                {stage.photo ? (
+                  <PhotoMedia src={stage.photo.src} alt={stage.photo.alt} />
+                ) : (
+                  <PlaceholderMedia tone={stage.dark ? "dark" : "light"} label={stage.label} />
+                )}
               </div>
               <div
                 className="absolute inset-0"

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
-import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
 export default function NaschelPlant() {
@@ -45,7 +45,7 @@ export default function NaschelPlant() {
     <section id="planta" ref={wrapperRef} className="relative h-[180vh] w-full bg-ink-deep">
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         <div ref={bgRef} className="absolute -inset-y-[8%] inset-x-0">
-          <PlaceholderMedia tone="dark" label="Foto/video — fachada planta Naschel, luz de día" />
+          <PhotoMedia src="/photos/naschel-planta-aerea.png" alt={`Planta de COTA en ${cota.plant.location}, vista aérea`} priority />
         </div>
         <div
           className="absolute inset-0"

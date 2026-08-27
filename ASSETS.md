@@ -70,12 +70,31 @@ de baño de consumo (no industriales), o CNC/manufactura genérica sin
 relación. Mejor mantener el placeholder ahí que forzar una imagen que no
 representa bien el producto ni respeta el patrón visual del resto.
 
+## Fotos reales de la planta de Naschel (confirmadas por el cliente)
+
+El cliente subió 9 imágenes a `Images/` y confirmó que son fotos reales de
+la planta (o representación autorizada). Se integraron 2, guardadas en
+`public/photos/`:
+
+| Sección | Componente | Archivo | Contenido |
+|---|---|---|---|
+| Planta Naschel (fondo) | `components/sections/NaschelPlant.tsx` | `public/photos/naschel-planta-aerea.png` (1672×941) | Vista aérea de la planta al atardecer, con el portón/cartel COTA |
+| Proceso — Logística (etapa 06) | `components/sections/IndustrialProcess.tsx`, `components/sections/IndustrialProcessTeaser.tsx` | `public/photos/naschel-planta-aerea.png` | Misma foto — muestra el playón de despacho |
+| Proceso — Proceso Químico (etapa 02) | `components/sections/IndustrialProcess.tsx` | `public/photos/proceso-tanques.png` (1672×941) | Tanques de proceso, planta interior |
+
+Las otras 7 imágenes en `Images/` (variantes del portón/logo, tanques,
+tomas aéreas) quedan sin usar por ahora — no había una etapa/sección
+específica del recorrido industrial (materia prima, fabricación, rebobinado,
+producto terminado) que coincidiera con lo que muestran, así que esas 4
+etapas siguen en placeholder en vez de forzar una foto que no representa el
+paso correcto. Si el cliente identifica cuál imagen corresponde a cuál
+etapa, se pueden sumar.
+
 ## Sigue en placeholder (a propósito)
 
 | Sección | Componente | Por qué sigue en placeholder |
 |---|---|---|
-| Proceso Industrial | `components/sections/IndustrialProcess.tsx` | Reclama ser la secuencia real de la planta de Naschel (materia prima → producto terminado) — una foto de stock ahí sería engañosa, no solo genérica. |
-| Planta Naschel | `components/sections/NaschelPlant.tsx` | Misma razón — la sección afirma mostrar la fachada/infraestructura real de Naschel. |
+| Proceso — Materia Prima, Fabricación, Rebobinado, Producto Terminado (etapas 01, 03, 04, 05) | `components/sections/IndustrialProcess.tsx`, `components/sections/IndustrialProcessTeaser.tsx` | No hay, entre las fotos reales disponibles, una que muestre específicamente ese momento del proceso — ver nota arriba. |
 | Papel Tissue | `components/sections/ChemicalsToPaper.tsx` (capa papel), `components/sections/ProductFamilies.tsx` (panel Bobinas), `components/sections/WhatCotaDoes.tsx` (swatch Papel) | No se encontró stock libre que represente bien papel Tissue (ver arriba). |
 | Guardián (producto) | `components/sections/ProductFamilies.tsx` (panel Guardián), `components/sections/SolutionsByApplication.tsx` (segmento Distribuidores) | Es un producto específico de COTA — una foto de stock de "papel higiénico genérico" se leería como el producto real y sería engañoso. |
 | Convertidores (segmento) | `components/sections/SolutionsByApplication.tsx` | Necesita mostrar una bobina/convertidor específico — no hay stock que no sea genérico o mal orientado (ver Papel arriba). |
