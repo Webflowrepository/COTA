@@ -150,21 +150,22 @@ export default function ProductFamilies() {
               {panel.id === "guardian" ? (
                 // Sin foto de producto en alta resolución todavía (ver ASSETS.md) — en vez de
                 // un placeholder gris junto a 3 fotos reales, este panel usa la marca en sí
-                // (tipografía grande, mismo tratamiento que "Naschel." en NaschelPlant.tsx)
-                // como el momento visual: es un beat propio en el ritmo del carrusel, no un
-                // hueco vacío disfrazado de foto.
-                <div className="flex h-full w-full flex-col justify-between bg-ink-deep p-7 text-paper md:p-9">
-                  <span className="font-label text-paper/50">Línea propia</span>
+                // (tipografía grande) como el momento visual: es un beat propio en el ritmo
+                // del carrusel, no un hueco vacío disfrazado de foto. Fondo claro (no oscuro
+                // como "Naschel." en NaschelPlant.tsx) para que no lea como un bloque negro
+                // al lado de las 3 fotos — se asimila a la tipografía clara del resto del sitio.
+                <div className="flex h-full w-full flex-col justify-between border border-line-on-light bg-paper p-7 text-ink md:p-9">
+                  <span className="font-label text-ink/45">Línea propia</span>
                   <div>
-                    <h3 className="text-hero text-paper transition-transform duration-500 ease-out group-hover:-translate-y-1">
+                    <h3 className="text-hero text-ink transition-transform duration-500 ease-out group-hover:-translate-y-1">
                       Guardián.
                     </h3>
-                    <p className="mt-4 max-w-xs text-sm text-paper/70">
+                    <p className="mt-4 max-w-xs text-sm text-ink/60">
                       {cota.guardian.tagline}. Con apoyo a distribuidores en todo el país.
                     </p>
                     <a
                       href={mailto}
-                      className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
+                      className="font-label mt-6 inline-block w-fit border-b border-ink/40 pb-0.5 text-ink transition-colors hover:border-ink"
                     >
                       Consultar distribución <span className="cta-arrow">→</span>
                     </a>
@@ -203,16 +204,16 @@ export default function ProductFamilies() {
         })}
       </div>
 
-      <div className="container-industrial mt-2">
+      <div className="container-industrial mt-1 flex justify-center">
         <div
           ref={trackRef}
           onPointerDown={handleTrackPointerDown}
-          className="flex w-full cursor-pointer items-center py-3"
+          className="flex w-24 cursor-pointer items-center py-2"
         >
           <div className="h-px w-full bg-line-on-light">
             <div
               className="h-px bg-ink transition-[width] duration-150 ease-out"
-              style={{ width: `${Math.max(8, progress * 100)}%` }}
+              style={{ width: `${Math.max(15, progress * 100)}%` }}
             />
           </div>
         </div>
