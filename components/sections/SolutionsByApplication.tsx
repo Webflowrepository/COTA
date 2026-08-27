@@ -77,7 +77,7 @@ export default function SolutionsByApplication() {
                 }`}
               >
                 {seg.id === "papeleras" ? (
-                  <PhotoMedia src="/photos/quimicos-planta.jpeg" alt="Planta química industrial — atmósfera" />
+                  <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
                 ) : (
                   <PlaceholderMedia tone="dark" label={seg.mediaLabel} />
                 )}

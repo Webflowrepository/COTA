@@ -41,7 +41,7 @@ export default function Hero() {
   return (
     <section id="top" ref={root} className="relative h-[100svh] w-full overflow-hidden bg-ink-deep">
       <div className="hero-bg hero-parallax absolute inset-0">
-        <PhotoMedia src="/photos/hero-planta-atardecer.jpeg" alt="Planta industrial — atmósfera al atardecer" priority />
+        <PhotoMedia src="/photos/hero-planta-aerea.png" alt="Planta de COTA — vista aérea al amanecer" priority />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(0deg, rgba(6,8,17,0.75) 0%, rgba(6,8,17,0.15) 45%, rgba(6,8,17,0.35) 100%)" }}

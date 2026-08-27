@@ -1,19 +1,11 @@
-import type { Metadata } from "next";
-import Link from "next/link";
 import { cota } from "@/lib/content/cota";
 
-export const metadata: Metadata = {
-  title: "Papel Tissue — Bobinas y productos terminados | COTA",
-  description:
-    "Bobinas de papel Tissue para convertidores en Argentina — anchos 220/200 cm, diámetros 110/100 cm, cono interior 7,5 cm. Fabricación, marca privada y línea Guardián.",
-};
-
-export default function PapelTissuePage() {
+export default function PapelTissueSpecs() {
   return (
-    <main className="flex-1 bg-paper text-ink">
-      <div className="container-industrial pt-32 pb-16 md:pt-40 md:pb-20">
+    <section id="papel" className="relative w-full bg-paper">
+      <div className="container-industrial pt-24 pb-16 md:pt-32 md:pb-20">
         <span className="font-label mb-4 block text-ink/45">Papel Tissue</span>
-        <h1 className="text-hero max-w-2xl text-ink">Bobinas para convertidores, a su medida.</h1>
+        <h2 className="text-display max-w-2xl text-ink">Bobinas para convertidores, a su medida.</h2>
         <p className="mt-6 max-w-lg text-base text-ink/60 md:text-lg">
           {cota.businessLines.find((l) => l.id === "papel")?.short} Producción propia en{" "}
           {cota.plant.location}, con tres formas de trabajar según lo que necesite su operación.
@@ -21,7 +13,7 @@ export default function PapelTissuePage() {
       </div>
 
       {/* Modelos de negocio */}
-      <div className="container-industrial pb-20 md:pb-28">
+      <div className="container-industrial pb-16 md:pb-20">
         <span className="font-label mb-8 block text-ink/45">Modelos de negocio</span>
         <div className="grid grid-cols-1 gap-8 divide-y divide-line-on-light md:grid-cols-3 md:gap-10 md:divide-y-0">
           {cota.businessModels.map((model, i) => (
@@ -35,7 +27,7 @@ export default function PapelTissuePage() {
       </div>
 
       {/* Especificaciones técnicas */}
-      <div className="w-full bg-ink-deep py-20 md:py-28">
+      <div className="w-full bg-ink-deep py-16 md:py-20">
         <div className="container-industrial">
           <span className="font-label mb-8 block text-paper/50">Especificaciones técnicas — bobinas</span>
           <div className="overflow-x-auto">
@@ -68,17 +60,25 @@ export default function PapelTissuePage() {
               </tbody>
             </table>
           </div>
-          <a
-            href={`mailto:${cota.contact.email}?subject=${encodeURIComponent("Ficha técnica — Bobinas para convertidores")}`}
-            className="font-label mt-8 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
-          >
-            Solicitar ficha técnica completa →
-          </a>
+          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+            <a
+              href={`mailto:${cota.contact.email}?subject=${encodeURIComponent("Ficha técnica — Bobinas para convertidores")}`}
+              className="font-label inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
+            >
+              Solicitar ficha técnica completa →
+            </a>
+            <a
+              href="#contacto"
+              className="font-label inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
+            >
+              Ir al formulario →
+            </a>
+          </div>
         </div>
       </div>
 
       {/* Catálogo de productos terminados */}
-      <div className="container-industrial py-20 md:py-28">
+      <div className="container-industrial py-16 md:py-20">
         <span className="font-label mb-8 block text-ink/45">Productos terminados</span>
         <ul className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 md:grid-cols-3">
           {cota.finishedProducts.map((product, i) => (
@@ -90,24 +90,15 @@ export default function PapelTissuePage() {
       </div>
 
       {/* Guardián */}
-      <div className="container-industrial pb-20 md:pb-28">
+      <div className="container-industrial pb-16 md:pb-20">
         <div className="border-t border-line-on-light pt-12 md:pt-16">
           <span className="font-label mb-4 block text-ink/45">Línea propia</span>
-          <h2 className="text-display max-w-xl text-ink">{cota.guardian.name}</h2>
+          <h3 className="text-heading max-w-xl text-ink">{cota.guardian.name}</h3>
           <p className="mt-4 max-w-md text-ink/60">
             {cota.guardian.tagline}. Con apoyo a distribuidores en todo el país.
           </p>
         </div>
       </div>
-
-      <div className="container-industrial pb-24 md:pb-32">
-        <Link
-          href="/contacto"
-          className="font-label inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
-        >
-          Solicitar cotización de bobinas →
-        </Link>
-      </div>
-    </main>
+    </section>
   );
 }

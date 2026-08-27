@@ -93,9 +93,9 @@ export default function ProductFamilies() {
             >
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
                 {panel.id === "soluciones" ? (
-                  <PhotoMedia src="/photos/soluciones-puerto.jpeg" alt="Logística industrial — grúas de puerto" />
+                  <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA — logística y despacho" />
                 ) : panel.id === "quimicos" ? (
-                  <PhotoMedia src="/photos/quimicos-planta.jpeg" alt="Planta química industrial — atmósfera" />
+                  <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
                 ) : (
                   <PlaceholderMedia tone="dark" label={panel.mediaLabel} />
                 )}

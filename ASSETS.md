@@ -1,20 +1,30 @@
 # Assets pendientes — COTA
 
-## Arquitectura multi-página (agregado en esta ronda)
+## Arquitectura: single-page landing (vuelta atrás de multi-página)
 
-El sitio pasó de ser una sola homepage a multi-página:
+El sitio pasó brevemente a multi-página (`/proceso`, `/papel-tissue`,
+`/contacto` como rutas separadas) y luego volvió a una sola homepage — el
+cliente pidió consolidar todo de nuevo en el landing. Estado actual:
 
-- `/` — homepage, con un recorrido industrial resumido (3 de las 6 etapas) y link a la versión completa.
-- `/proceso` — las 6 etapas completas del recorrido industrial (scrollytelling horizontal).
-- `/papel-tissue` — modelos de negocio, especificaciones técnicas de bobinas, catálogo de productos terminados, línea Guardián.
-- `/contacto` — formulario de contacto dedicado, con URL propia para compartir directo.
-
-Cada página nueva tiene su propio `metadata` (title/description) para SEO. El
-`Nav` ahora usa `usePathname()` para saber si está en el home (nav flotante,
-transparente hasta hacer scroll) o en otra página (nav siempre con fondo,
-porque esas páginas no arrancan con un Hero oscuro detrás). El `Footer` se
-sacó de `Contact.tsx` y ahora vive en `app/layout.tsx`, compartido por todas
-las páginas.
+- `/` es la única página. Incluye, en orden: Hero, Compañía, Proceso
+  Industrial completo (las 6 etapas, scrollytelling horizontal — ya no hay
+  versión resumida en un lado y completa en otra página), Químicos → Papel,
+  especificaciones de Papel Tissue (`PapelTissueSpecs.tsx` — modelos de
+  negocio, tabla de specs, catálogo de productos, Guardián), Familias de
+  Producto, Soluciones por Aplicación, Planta Naschel, Contacto.
+- `Nav.tsx` volvió a ser anclas simples (`#compania`, `#quimicos`, `#papel`,
+  `#soluciones`, `#planta`, `#proceso`, `#contacto`) — se sacó la lógica de
+  `usePathname()` que distinguía home de otras páginas, porque ya no hace
+  falta.
+- Como la página ahora es más larga (todo el contenido en un solo scroll),
+  se agregaron 3 links "Ir al formulario →" que saltan directo a `#contacto`
+  (en Compañía, en las especificaciones de Papel, y en Planta Naschel),
+  además del link fijo "Contacto" del nav — para que no haya que scrollear
+  todo el sitio a mano para llegar al formulario.
+- `Footer.tsx` se mantuvo como componente global en `app/layout.tsx` (no
+  volvió a vivir dentro de `Contact.tsx`) porque ya estaba mejor así
+  independientemente del tema de rutas — sigue con fondo de foto real
+  (`footer-planta-cenital.png`).
 
 ## Datos agregados en esta ronda (confirmados por el cliente)
 
@@ -36,68 +46,45 @@ disponible. Cada placeholder preserva la composición exacta (tamaño, encuadre)
 que va a ocupar el asset real, con una etiqueta chica en la esquina indicando
 qué conseguir. Este archivo es la lista completa para producción/reemplazo.
 
-## Fotografía stock ya integrada (reemplaza al placeholder)
+## Fotos reales de la planta (confirmadas por el cliente) — reemplazaron todo el stock
 
-Se sumaron 3 fotos reales de stock con licencia libre para uso comercial
-(Pexels — no requiere atribución), guardadas en `public/photos/` en su
-resolución original. Las tres son del **mismo fotógrafo** (Igor Passchier,
-serie de puerto/planta industrial en Rotterdam a la hora azul/dorada) a
-propósito — mismo tratamiento de luz y color en todo el sitio en vez de fotos
-sueltas de fuentes distintas, que es lo que generaba el "revoltijo" que el
-cliente señaló (la primera versión de Químicos era un macro abstracto de
-tinta que no encajaba con el resto — se reemplazó). Son imágenes
-**genéricas** (atmósfera industrial real, pero no la planta de COTA) — el
-`alt` de cada una es deliberadamente genérico:
+El cliente subió 10 imágenes a `Images/` y confirmó explícitamente que son
+fotos reales de la planta (o representación autorizada) — incluso después de
+que se le señalara que varias tenían señales típicas de generación por IA
+(arquitectura inconsistente entre tomas de "el mismo" edificio, tipografía
+del logo con artefactos raros). Con esa confirmación, se usaron como fuente
+de verdad y **reemplazaron por completo** el stock de Pexels (Rotterdam a la
+hora azul) que se había integrado en una ronda anterior — ya no queda
+ninguna foto de stock en el sitio, salvo donde no existe material real que
+represente el contenido con precisión (ver tabla de placeholders abajo).
 
-| Sección | Componente | Archivo | Contenido |
-|---|---|---|---|
-| Hero | `components/sections/Hero.tsx` | `public/photos/hero-planta-atardecer.jpeg` (5472×3648) | Planta industrial vertical a la hora azul, Zuid-Holland |
-| Químicos (capítulo) | `components/sections/ChemicalsToPaper.tsx` | `public/photos/quimicos-planta.jpeg` (4834×3223) | Refinería con vapor a la hora azul, Rotterdam |
-| Químicos (swatch Compañía) | `components/sections/WhatCotaDoes.tsx` | `public/photos/quimicos-planta.jpeg` | Misma foto reutilizada — el business line es el mismo |
-| Químicos (panel Familias) | `components/sections/ProductFamilies.tsx` | `public/photos/quimicos-planta.jpeg` | Misma foto reutilizada |
-| Papeleras y textiles (segmento) | `components/sections/SolutionsByApplication.tsx` | `public/photos/quimicos-planta.jpeg` | Este segmento vende blanqueadores químicos a papeleras — es el mismo producto que Químicos, misma foto |
-| Soluciones (swatch Compañía + panel Familias) | `components/sections/WhatCotaDoes.tsx`, `components/sections/ProductFamilies.tsx` | `public/photos/soluciones-puerto.jpeg` (3080×2053) | Grúas pórtico de puerto al atardecer, Rotterdam |
+| Archivo en `public/photos/` | Contenido | Usado en |
+|---|---|---|
+| `hero-planta-aerea.png` | Vista aérea al amanecer | Hero (`Hero.tsx`) |
+| `naschel-planta-aerea.png` | Vista aérea al atardecer, portón/cartel COTA | Fondo de Planta Naschel (`NaschelPlant.tsx`); swatch/panel Soluciones (`WhatCotaDoes.tsx`, `ProductFamilies.tsx`); Proceso — etapa 06 Logística (`IndustrialProcess.tsx`, `IndustrialProcessTeaser.tsx`) |
+| `quimicos-tanques.png` | Tanques de proceso, primer plano, cielo despejado | Capítulo Químicos (`ChemicalsToPaper.tsx`); swatch/panel Químicos (`WhatCotaDoes.tsx`, `ProductFamilies.tsx`); segmento Papeleras y textiles (`SolutionsByApplication.tsx`) |
+| `proceso-tanques.png` | Tanques de proceso, interior, tono oscuro | Proceso — etapa 02 Proceso Químico (`IndustrialProcess.tsx`) |
+| `proceso-materia-prima.png` | Tanques + edificio + avenida, luz de día | Proceso — etapa 01 Materia Prima (`IndustrialProcess.tsx`, `IndustrialProcessTeaser.tsx`) |
+| `footer-planta-cenital.png` | Vista aérea cenital (90°) | Fondo del `Footer.tsx` |
 
-Las 3 fotos base se reutilizan a propósito en cada lugar donde el business
-line es el mismo (en vez de buscar una foto distinta y sin relación para
-cada componente) — eso es lo que da el patrón consistente, no forzar una
-imagen nueva por cada placeholder.
-
-No se encontró una foto para **Papel/Bobinas** (Tissue) pese a una segunda
-búsqueda dedicada ("paper mill machine roll", "tissue paper roll factory"):
-el stock libre disponible sigue siendo cartón corrugado (no tissue), rollos
-de baño de consumo (no industriales), o CNC/manufactura genérica sin
-relación. Mejor mantener el placeholder ahí que forzar una imagen que no
-representa bien el producto ni respeta el patrón visual del resto.
-
-## Fotos reales de la planta de Naschel (confirmadas por el cliente)
-
-El cliente subió 9 imágenes a `Images/` y confirmó que son fotos reales de
-la planta (o representación autorizada). Se integraron 2, guardadas en
-`public/photos/`:
-
-| Sección | Componente | Archivo | Contenido |
-|---|---|---|---|
-| Planta Naschel (fondo) | `components/sections/NaschelPlant.tsx` | `public/photos/naschel-planta-aerea.png` (1672×941) | Vista aérea de la planta al atardecer, con el portón/cartel COTA |
-| Proceso — Logística (etapa 06) | `components/sections/IndustrialProcess.tsx`, `components/sections/IndustrialProcessTeaser.tsx` | `public/photos/naschel-planta-aerea.png` | Misma foto — muestra el playón de despacho |
-| Proceso — Proceso Químico (etapa 02) | `components/sections/IndustrialProcess.tsx` | `public/photos/proceso-tanques.png` (1672×941) | Tanques de proceso, planta interior |
-
-Las otras 7 imágenes en `Images/` (variantes del portón/logo, tanques,
-tomas aéreas) quedan sin usar por ahora — no había una etapa/sección
-específica del recorrido industrial (materia prima, fabricación, rebobinado,
-producto terminado) que coincidiera con lo que muestran, así que esas 4
-etapas siguen en placeholder en vez de forzar una foto que no representa el
-paso correcto. Si el cliente identifica cuál imagen corresponde a cuál
-etapa, se pueden sumar.
+Las fotos se reutilizan a propósito en cada lugar donde el business line es
+el mismo (patrón consistente, en vez de una imagen distinta por componente).
+Las 3 restantes de las 10 subidas (dos primeros planos del cartel/logo en la
+pared, una toma aérea de un complejo en un paisaje tipo meseta/desierto que
+no coincide con la geografía de San Luis) quedan sin usar — no encajaban con
+ningún placeholder disponible sin forzar la composición.
 
 ## Sigue en placeholder (a propósito)
 
 | Sección | Componente | Por qué sigue en placeholder |
 |---|---|---|
-| Proceso — Materia Prima, Fabricación, Rebobinado, Producto Terminado (etapas 01, 03, 04, 05) | `components/sections/IndustrialProcess.tsx`, `components/sections/IndustrialProcessTeaser.tsx` | No hay, entre las fotos reales disponibles, una que muestre específicamente ese momento del proceso — ver nota arriba. |
-| Papel Tissue | `components/sections/ChemicalsToPaper.tsx` (capa papel), `components/sections/ProductFamilies.tsx` (panel Bobinas), `components/sections/WhatCotaDoes.tsx` (swatch Papel) | No se encontró stock libre que represente bien papel Tissue (ver arriba). |
-| Guardián (producto) | `components/sections/ProductFamilies.tsx` (panel Guardián), `components/sections/SolutionsByApplication.tsx` (segmento Distribuidores) | Es un producto específico de COTA — una foto de stock de "papel higiénico genérico" se leería como el producto real y sería engañoso. |
-| Convertidores (segmento) | `components/sections/SolutionsByApplication.tsx` | Necesita mostrar una bobina/convertidor específico — no hay stock que no sea genérico o mal orientado (ver Papel arriba). |
+| Proceso — Fabricación, Rebobinado, Producto Terminado (etapas 03, 04, 05) | `components/sections/IndustrialProcess.tsx` | Ninguna de las fotos reales disponibles muestra específicamente la máquina papelera, la rebobinadora, o una bobina terminada — usar una foto de tanques/portón ahí mostraría el paso equivocado del proceso, que es peor que un placeholder. |
+| Papel Tissue | `components/sections/ChemicalsToPaper.tsx` (capa papel), `components/sections/ProductFamilies.tsx` (panel Bobinas), `components/sections/WhatCotaDoes.tsx` (swatch Papel) | No hay entre las fotos reales ni en stock libre algo que muestre bobinas de papel Tissue específicamente. |
+| Guardián (producto) | `components/sections/ProductFamilies.tsx` (panel Guardián), `components/sections/SolutionsByApplication.tsx` (segmento Distribuidores) | Es un producto específico de COTA — una foto genérica se leería como el producto real y sería engañoso. |
+| Convertidores (segmento) | `components/sections/SolutionsByApplication.tsx` | Necesita mostrar una bobina/convertidor específico — no hay material real ni stock libre que lo muestre bien. |
+
+Si el cliente identifica cuál de las 3 fotos sin usar (o alguna nueva que
+suba) corresponde a alguno de estos lugares, se puede sumar.
 
 **Nota:** la sección standalone "Escala de Producción" (`ProductionScale.tsx`)
 se eliminó — mostraba el mismo dato (700 T/mes) que ya aparece en Planta
@@ -110,7 +97,8 @@ junto al resto de los datos de la planta.
 El logo real ya está integrado (`public/logo-cota.png`, provisto por el
 cliente — wordmark monocromático blanco, 327×80, pensado para fondo oscuro).
 Se usa en el nav (con `filter: invert` cuando el fondo pasa a claro al
-scrollear) y en el cierre del formulario de contacto.
+scrollear) y en el `Footer.tsx` global sin invertir, porque el footer ahora
+tiene fondo oscuro (foto real + overlay), no fondo claro como antes.
 
 `app/globals.css` usa un único acento de marca: verde (`#017130`), tomado del
 sitio actual cota.com.ar (antes había también un azul de acento que no se

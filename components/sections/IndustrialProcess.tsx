@@ -12,6 +12,7 @@ const STAGES = [
     copy: "Fibra ingresa al proceso industrial.",
     label: "Foto — recepción de fibra / materia prima",
     dark: false,
+    photo: { src: "/photos/proceso-materia-prima.png", alt: "Ingreso a la planta de COTA" },
   },
   {
     n: "02",

@@ -51,7 +51,13 @@ export default function WhatCotaDoes() {
         <span className="font-label mb-6 block text-ink/45">
           Compañía — {cota.country}, desde {cota.foundedYear}
         </span>
-        <h2 className="text-display mb-16 max-w-2xl text-ink md:mb-24">{cota.mission}</h2>
+        <h2 className="text-display max-w-2xl text-ink">{cota.mission}</h2>
+        <a
+          href="#contacto"
+          className="font-label mb-16 mt-6 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60 md:mb-24"
+        >
+          Ir al formulario →
+        </a>
 
         <div className="flex flex-col divide-y divide-line-on-light">
           {cota.businessLines.map((line) => (
@@ -62,9 +68,9 @@ export default function WhatCotaDoes() {
               </div>
               <div className="media-reveal relative hidden h-44 max-w-lg flex-1 overflow-hidden md:block lg:h-56">
                 {line.id === "soluciones" ? (
-                  <PhotoMedia src="/photos/soluciones-puerto.jpeg" alt="Logística industrial — grúas de puerto" />
+                  <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA — logística y despacho" />
                 ) : line.id === "quimicos" ? (
-                  <PhotoMedia src="/photos/quimicos-planta.jpeg" alt="Planta química industrial — atmósfera" />
+                  <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
                 ) : (
                   <PlaceholderMedia tone="light" label={SWATCH_LABEL[line.id]} />
                 )}

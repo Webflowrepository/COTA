@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Link from "next/link";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
@@ -72,7 +71,7 @@ export default function ChemicalsToPaper() {
 
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         <div ref={chemLayerRef} className="absolute inset-0">
-          <PhotoMedia src="/photos/quimicos-planta.jpeg" alt="Planta química industrial — atmósfera" />
+          <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
           <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.5)" }} />
         </div>
         <div ref={paperLayerRef} className="absolute inset-0">
@@ -125,12 +124,12 @@ export default function ChemicalsToPaper() {
             >
               Solicitar ficha técnica →
             </a>
-            <Link
-              href="/papel-tissue"
+            <a
+              href="#papel"
               className="font-label inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
             >
               Ver especificaciones técnicas →
-            </Link>
+            </a>
           </div>
         </div>
       </div>

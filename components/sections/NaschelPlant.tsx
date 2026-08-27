@@ -80,6 +80,13 @@ export default function NaschelPlant() {
               {cota.plant.ownCapital && (
                 <p className="font-label mt-6 max-w-md text-paper/45">Instalación realizada con capitales propios.</p>
               )}
+
+              <a
+                href="#contacto"
+                className="font-label mt-8 inline-block w-fit border-b border-paper/40 pb-1 text-paper transition-colors hover:border-paper"
+              >
+                Ir al formulario →
+              </a>
             </div>
 
             <div className="shrink-0 md:text-right">

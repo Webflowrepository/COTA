@@ -2,48 +2,30 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 const LINKS = [
-  { href: "/#compania", id: "compania", label: "Compañía" },
-  { href: "/#quimicos", id: "quimicos", label: "Químicos" },
-  { href: "/papel-tissue", id: "papel-tissue", label: "Papel" },
-  { href: "/#soluciones", id: "soluciones", label: "Soluciones" },
-  { href: "/#planta", id: "planta", label: "Planta" },
-  { href: "/proceso", id: "proceso", label: "Proceso" },
+  { href: "#compania", id: "compania", label: "Compañía" },
+  { href: "#quimicos", id: "quimicos", label: "Químicos" },
+  { href: "#papel", id: "papel", label: "Papel" },
+  { href: "#soluciones", id: "soluciones", label: "Soluciones" },
+  { href: "#planta", id: "planta", label: "Planta" },
+  { href: "#proceso", id: "proceso", label: "Proceso" },
 ];
 
-const ANCHOR_IDS = LINKS.filter((l) => l.href.startsWith("/#")).map((l) => l.id);
-
 export default function Nav() {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [anchorActiveId, setAnchorActiveId] = useState<string | null>(null);
-
-  // en el home, el pill de fondo aparece al scrollear (Hero oscuro debajo).
-  // en cualquier otra página no hay Hero oscuro arriba de todo, así que el
-  // pill va siempre — si no, el texto queda invisible sobre fondo claro.
-  const solid = scrolled || !isHome;
-
-  // fuera del home el link activo se deriva directo de la ruta, sin efecto
-  // ni estado propio (no hay anclas de scroll para trackear ahí).
-  const activeId = isHome ? anchorActiveId : pathname === "/proceso" ? "proceso" : pathname === "/papel-tissue" ? "papel-tissue" : null;
+  const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!isHome) return;
     const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [isHome]);
+  }, []);
 
   useEffect(() => {
-    if (!isHome) return;
-
-    const targets = ANCHOR_IDS.map((id) => document.getElementById(id)).filter(
+    const targets = LINKS.map((l) => document.getElementById(l.id)).filter(
       (el): el is HTMLElement => el !== null,
     );
     if (targets.length === 0) return;
@@ -57,7 +39,7 @@ export default function Nav() {
         const top = el.getBoundingClientRect().top + window.scrollY;
         if (top <= triggerY) current = el.id;
       }
-      setAnchorActiveId(current);
+      setActiveId(current);
     };
 
     const onScroll = () => {
@@ -74,71 +56,71 @@ export default function Nav() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
     };
-  }, [isHome]);
+  }, []);
 
   // el pill de fondo cubre TODO el header (logo + links + contacto) una vez
-  // activo, para que el texto siempre tenga contraste garantizado sin
+  // scrolleado, para que el texto siempre tenga contraste garantizado sin
   // importar qué sección (clara u oscura) esté detrás en ese momento.
-  const base = solid ? "text-ink/65 hover:text-ink" : "text-paper/75 hover:text-paper";
+  const base = scrolled ? "text-ink/65 hover:text-ink" : "text-paper/75 hover:text-paper";
 
   return (
     <header className="fixed inset-x-0 top-5 z-50 md:top-8">
       <div className="container-industrial">
         <div
           className={`flex items-center justify-between px-5 py-3 transition-colors duration-300 md:px-7 ${
-            solid ? "bg-paper/95 shadow-[0_1px_0_0_rgba(11,14,26,0.08)] backdrop-blur-md" : ""
+            scrolled ? "bg-paper/95 shadow-[0_1px_0_0_rgba(11,14,26,0.08)] backdrop-blur-md" : ""
           }`}
         >
-          <Link href="/" className="shrink-0">
+          <a href="#top" className="shrink-0">
             <Image
               src="/logo-cota.png"
               alt="COTA"
               width={327}
               height={80}
               priority
-              className={`h-6 w-auto transition-[filter] duration-300 ${solid ? "invert" : ""}`}
+              className={`h-6 w-auto transition-[filter] duration-300 ${scrolled ? "invert" : ""}`}
             />
-          </Link>
+          </a>
 
           <nav className="font-label hidden items-center gap-7 md:flex">
             {LINKS.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
                 aria-current={activeId === link.id ? "true" : undefined}
                 className={`nav-underline transition-colors ${activeId === link.id ? "text-green" : base}`}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </nav>
 
-          <Link href="/contacto" className={`nav-underline font-label hidden transition-colors md:block ${base}`}>
+          <a href="#contacto" className={`nav-underline font-label hidden transition-colors md:block ${base}`}>
             Contacto
-          </Link>
+          </a>
 
           <button
             aria-label="Abrir navegación"
             className="flex flex-col gap-1.5 md:hidden"
             onClick={() => setOpen((v) => !v)}
           >
-            <span className={`h-px w-6 transition-transform ${solid ? "bg-ink" : "bg-paper"} ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
-            <span className={`h-px w-6 transition-transform ${solid ? "bg-ink" : "bg-paper"} ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
+            <span className={`h-px w-6 transition-transform ${scrolled ? "bg-ink" : "bg-paper"} ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
+            <span className={`h-px w-6 transition-transform ${scrolled ? "bg-ink" : "bg-paper"} ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
           </button>
         </div>
       </div>
 
       {open && (
         <nav className="mt-3 flex flex-col gap-6 bg-paper px-5 py-8 md:hidden">
-          {LINKS.concat([{ href: "/contacto", id: "contacto", label: "Contacto" }]).map((link) => (
-            <Link
+          {LINKS.concat([{ href: "#contacto", id: "contacto", label: "Contacto" }]).map((link) => (
+            <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
               className={`text-2xl ${activeId === link.id ? "text-green" : "text-ink"}`}
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
       )}
