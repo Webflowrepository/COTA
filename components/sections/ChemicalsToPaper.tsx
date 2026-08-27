@@ -74,7 +74,7 @@ export default function ChemicalsToPaper() {
           <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.5)" }} />
         </div>
         <div ref={paperLayerRef} className="absolute inset-0">
-          <PhotoMedia src="/photos/planta-porton.png" alt="Planta de COTA — acceso" />
+          <PhotoMedia src="/photos/papel-produccion.jpeg" alt="Línea de producción de bobinas de papel" />
           <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.35)" }} />
         </div>
 

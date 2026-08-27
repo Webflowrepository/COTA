@@ -1,6 +1,44 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import { cota } from "@/lib/content/cota";
 
 export default function PapelTissueSpecs() {
+  const modelsRef = useRef<HTMLDivElement>(null);
+  const specsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const { gsap } = ensureGsapRegistered();
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".biz-model",
+        { autoAlpha: 0, y: 20 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.12,
+          ease: "power2.out",
+          scrollTrigger: { trigger: modelsRef.current, start: "top 80%", end: "top 45%", scrub: true },
+        },
+      );
+      gsap.fromTo(
+        ".spec-row",
+        { autoAlpha: 0, y: 16 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: { trigger: specsRef.current, start: "top 75%", end: "top 35%", scrub: true },
+        },
+      );
+    }, [modelsRef, specsRef]);
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section id="papel" className="relative w-full bg-paper">
       <div className="container-industrial pt-24 pb-16 md:pt-32 md:pb-20">
@@ -10,16 +48,24 @@ export default function PapelTissueSpecs() {
           {cota.businessLines.find((l) => l.id === "papel")?.short} Producción propia en{" "}
           {cota.plant.location}, con tres formas de trabajar según lo que necesite su operación.
         </p>
+        <a
+          href="#contacto"
+          className="font-label mt-6 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+        >
+          Ir al formulario →
+        </a>
       </div>
 
       {/* Modelos de negocio */}
-      <div className="container-industrial pb-16 md:pb-20">
-        <span className="font-label mb-8 block text-ink/45">Modelos de negocio</span>
-        <div className="grid grid-cols-1 gap-8 divide-y divide-line-on-light md:grid-cols-3 md:gap-10 md:divide-y-0">
+      <div ref={modelsRef} className="container-industrial pb-16 md:pb-20">
+        <span className="font-label mb-10 block text-ink/45">Modelos de negocio</span>
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-0 md:divide-x md:divide-line-on-light">
           {cota.businessModels.map((model, i) => (
-            <div key={model.id} className="pt-8 first:pt-0 md:pt-0">
-              <span className="font-label text-ink/40">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="text-heading mt-2 text-ink">{model.label}</h3>
+            <div key={model.id} className="biz-model md:px-10 md:first:pl-0 md:last:pr-0">
+              <span className="font-impact-number text-stat block text-ink/25">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="text-heading mt-4 text-ink">{model.label}</h3>
               <p className="mt-3 text-sm text-ink/60 md:text-base">{model.short}</p>
             </div>
           ))}
@@ -27,7 +73,7 @@ export default function PapelTissueSpecs() {
       </div>
 
       {/* Especificaciones técnicas */}
-      <div className="w-full bg-ink-deep py-16 md:py-20">
+      <div ref={specsRef} className="w-full bg-ink-deep py-16 md:py-20">
         <div className="container-industrial">
           <span className="font-label mb-8 block text-paper/50">Especificaciones técnicas — bobinas</span>
           <div className="overflow-x-auto">
@@ -39,19 +85,19 @@ export default function PapelTissueSpecs() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-line-on-dark">
+                <tr className="spec-row border-b border-line-on-dark">
                   <td className="py-5 pr-8 text-paper/70">Ancho</td>
                   <td className="font-impact-number text-2xl text-paper md:text-3xl">
                     {cota.bobinaSpecs.anchos.join(" / ")}
                   </td>
                 </tr>
-                <tr className="border-b border-line-on-dark">
+                <tr className="spec-row border-b border-line-on-dark">
                   <td className="py-5 pr-8 text-paper/70">Diámetro</td>
                   <td className="font-impact-number text-2xl text-paper md:text-3xl">
                     {cota.bobinaSpecs.diametros.join(" / ")}
                   </td>
                 </tr>
-                <tr>
+                <tr className="spec-row">
                   <td className="py-5 pr-8 text-paper/70">Cono interior</td>
                   <td className="font-impact-number text-2xl text-paper md:text-3xl">
                     {cota.bobinaSpecs.conoInterior}

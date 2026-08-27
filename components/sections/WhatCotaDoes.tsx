@@ -65,7 +65,7 @@ export default function WhatCotaDoes() {
                 ) : line.id === "quimicos" ? (
                   <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
                 ) : (
-                  <PhotoMedia src="/photos/planta-porton.png" alt="Planta de COTA — acceso" />
+                  <PhotoMedia src="/photos/papel-produccion.jpeg" alt="Línea de producción de bobinas de papel" />
                 )}
               </div>
             </div>

@@ -17,10 +17,11 @@ cliente pidió consolidar todo de nuevo en el landing. Estado actual:
   `usePathname()` que distinguía home de otras páginas, porque ya no hace
   falta.
 - Como la página ahora es más larga (todo el contenido en un solo scroll),
-  se agregaron 3 links "Ir al formulario →" que saltan directo a `#contacto`
-  (en Compañía, en las especificaciones de Papel, y en Planta Naschel),
-  además del link fijo "Contacto" del nav — para que no haya que scrollear
-  todo el sitio a mano para llegar al formulario.
+  se agregaron varios links "Ir al formulario →" que saltan directo a
+  `#contacto` (en Compañía, dos en Papel Tissue, en Familias de Producto,
+  en Soluciones, y en Planta Naschel — 6 en total), además del link fijo
+  "Contacto" del nav — para que no haya que scrollear todo el sitio a mano
+  para llegar al formulario.
 - `Footer.tsx` se mantuvo como componente global en `app/layout.tsx` (no
   volvió a vivir dentro de `Contact.tsx`) porque ya estaba mejor así
   independientemente del tema de rutas — sigue con fondo de foto real
@@ -40,49 +41,51 @@ cliente pidió consolidar todo de nuevo en el landing. Estado actual:
 papel Tissue — el documento fuente de esta ronda lo señala explícitamente
 como pendiente de verificar con COTA, así que no se agregó ningún número.
 
-Este sitio usaba **placeholders limpios** (`components/visuals/PlaceholderMedia.tsx`,
-componente que sigue existiendo por si hace falta en el futuro) en los lugares
-sin foto real. A esta altura **no queda ningún placeholder visible en el sitio**
-— ver la nota de "cobertura total" más abajo.
+Este sitio usaba **placeholders limpios** (`components/visuals/PlaceholderMedia.tsx`)
+en los lugares sin foto real. Hubo una vuelta de más/menos precisión que vale
+la pena documentar porque puede repetirse:
 
-## Fotos reales de la planta (confirmadas por el cliente) — cobertura total
+1. Primero se usaron las fotos reales solo con precisión de contenido (una
+   foto de tanques solo donde el texto hablaba de tanques), dejando
+   placeholder donde nada coincidía exactamente.
+2. El cliente pidió que no quedara ningún hueco vacío, así que se reutilizaron
+   fotos reales de la planta también donde no coincidían con precisión
+   (una foto del portón ilustrando "Fabricación de Papel Tissue", un primer
+   plano del logo ilustrando "Guardián").
+3. El cliente señaló que esas fotos reutilizadas **se veían sin relación con
+   lo que decía el texto al lado** — pidió imágenes acordes o generarlas.
+   Se hizo una nueva búsqueda de stock (Pexels) específica para bobinas/papel
+   Tissue industrial y esta vez sí apareció una foto real que encaja
+   (`papel-produccion.jpeg` — línea de producción con bobinas grandes,
+   trabajador inspeccionando). Se usó donde encaja genuinamente; donde no
+   había nada que encajara ni en las fotos de COTA ni en stock, **se volvió
+   a placeholder en vez de forzar otra foto sin relación**.
 
-El cliente subió 10 imágenes a `Images/` y confirmó explícitamente que son
-fotos reales de la planta (o representación autorizada) — incluso después de
-que se le señalara que varias tenían señales típicas de generación por IA
-(arquitectura inconsistente entre tomas de "el mismo" edificio, tipografía
-del logo con artefactos raros). Con esa confirmación, reemplazaron por
-completo el stock de Pexels (Rotterdam) que se había integrado antes.
+Regla aplicada de acá en adelante: una foto (real o de stock) solo se usa si
+efectivamente representa lo que dice el texto al lado. Si no hay ninguna que
+encaje, mejor un placeholder honesto que una foto que "llene el hueco" pero
+no tenga que ver.
 
-Al principio se usaron con precisión de contenido (una foto de tanques solo
-donde el texto hablaba de tanques, etc.), dejando placeholder donde ninguna
-foto coincidía exactamente con lo que la sección describía (máquina
-papelera, rebobinadora, producto Guardián). El cliente pidió — más de una
-vez — que no quedara ningún hueco vacío en el sitio, así que se relajó ese
-criterio: **ahora las fotos reales se reutilizan también en secciones donde
-no coinciden con precisión milimétrica** (p. ej. una foto del portón de la
-planta ilustrando la etapa "Fabricación de Papel Tissue", o un primer plano
-de la marca en la pared ilustrando el panel "Guardián"). Sigue siendo 100%
-material real de COTA — nunca una foto de otra empresa ni generada — solo
-que ya no cada imagen ilustra el paso/producto exacto que describe el texto
-que tiene al lado.
+| Archivo en `public/photos/` | Fuente | Contenido | Usado en |
+|---|---|---|---|
+| `hero-planta-aerea.png` | Foto real de COTA | Vista aérea al amanecer | Hero |
+| `naschel-planta-aerea.png` | Foto real de COTA | Vista aérea al atardecer, portón/cartel COTA | Fondo de Planta Naschel; swatch/panel Soluciones; Proceso — etapa 06 Logística |
+| `quimicos-tanques.png` | Foto real de COTA | Tanques de proceso, primer plano, cielo despejado | Capítulo Químicos; swatch/panel Químicos; segmento Papeleras y textiles |
+| `proceso-tanques.png` | Foto real de COTA | Tanques de proceso, interior, tono oscuro | Proceso — etapa 02 Proceso Químico |
+| `proceso-materia-prima.png` | Foto real de COTA | Tanques + edificio + avenida, luz de día | Proceso — etapa 01 Materia Prima |
+| `footer-planta-cenital.png` | Foto real de COTA | Vista aérea cenital (90°) | Fondo del `Footer.tsx` |
+| `papel-produccion.jpeg` | Stock Pexels (David Lehoczki, licencia libre) | Línea de producción, bobinas grandes de papel, trabajador inspeccionando | Swatch Papel (Compañía); capa Papel (Químicos→Papel); panel Bobinas (Familias de Producto); Proceso — etapa 03 Fabricación; segmento Convertidores (Soluciones) |
 
-| Archivo en `public/photos/` | Contenido | Usado en |
-|---|---|---|
-| `hero-planta-aerea.png` | Vista aérea al amanecer | Hero |
-| `naschel-planta-aerea.png` | Vista aérea al atardecer, portón/cartel COTA | Fondo de Planta Naschel; swatch/panel Soluciones; Proceso — etapa 06 Logística |
-| `quimicos-tanques.png` | Tanques de proceso, primer plano, cielo despejado | Capítulo Químicos; swatch/panel Químicos; segmento Papeleras y textiles |
-| `proceso-tanques.png` | Tanques de proceso, interior, tono oscuro | Proceso — etapa 02 Proceso Químico |
-| `proceso-materia-prima.png` | Tanques + edificio + avenida, luz de día | Proceso — etapa 01 Materia Prima |
-| `footer-planta-cenital.png` | Vista aérea cenital (90°) | Fondo del `Footer.tsx` |
-| `planta-porton.png` | Portón/acceso a la planta, nivel de piso | Swatch Papel (Compañía); capa Papel (Químicos→Papel); panel Bobinas (Familias de Producto); Proceso — etapa 03 Fabricación; segmento Convertidores (Soluciones) |
-| `marca-logo-pared.png` | Primer plano del logo COTA en pared | Panel Guardián (Familias de Producto); Proceso — etapa 05 Producto Terminado |
-| `marca-logo-pared-2.png` | Primer plano del logo COTA, otro ángulo | Proceso — etapa 04 Rebobinado; segmento Distribuidores (Soluciones) |
+Quedan **3 de las 10 fotos de COTA sin usar** (dos primeros planos del
+logo/cartel en la pared, una toma aérea con paisaje tipo meseta/desierto que
+no coincide con San Luis) — no encajan con ningún contenido actual del
+sitio; se guardan en `Images/` por si sirven para algo más adelante (redes,
+material de marca, etc.).
 
-Queda **1 foto de las 10 sin usar**: una toma aérea de un complejo en un
-paisaje tipo meseta/desierto que no coincide con la geografía de San Luis —
-se dejó afuera por esa inconsistencia geográfica, no por falta de lugar
-donde ponerla.
+**Sigue en placeholder, a propósito** (ni las fotos de COTA ni el stock
+encontrado representan esto con precisión):
+- Proceso — etapa 04 Rebobinado, etapa 05 Producto Terminado
+- Panel Guardián (Familias de Producto) y segmento Distribuidores (Soluciones) — ambos necesitan mostrar el producto Guardián específico, no una foto genérica de fábrica
 
 **Nota:** la sección standalone "Escala de Producción" (`ProductionScale.tsx`)
 se eliminó — mostraba el mismo dato (700 T/mes) que ya aparece en Planta

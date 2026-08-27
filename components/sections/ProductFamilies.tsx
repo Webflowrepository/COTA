@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
+import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
@@ -121,8 +122,16 @@ export default function ProductFamilies() {
 
   return (
     <section ref={sectionRef} className="relative w-full bg-paper py-24 md:py-32">
-      <div className="container-industrial mb-10 flex items-end justify-between md:mb-14">
-        <h2 className="text-display max-w-md text-ink">Un sistema industrial integrado.</h2>
+      <div className="container-industrial mb-10 flex flex-wrap items-end justify-between gap-6 md:mb-14">
+        <div>
+          <h2 className="text-display max-w-md text-ink">Un sistema industrial integrado.</h2>
+          <a
+            href="#contacto"
+            className="font-label mt-4 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+          >
+            Ir al formulario →
+          </a>
+        </div>
         <span className="font-label hidden text-ink/40 md:block">Desplazar horizontalmente →</span>
       </div>
 
@@ -145,9 +154,9 @@ export default function ProductFamilies() {
                 ) : panel.id === "quimicos" ? (
                   <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
                 ) : panel.id === "bobinas" ? (
-                  <PhotoMedia src="/photos/planta-porton.png" alt="Planta de COTA — acceso" />
+                  <PhotoMedia src="/photos/papel-produccion.jpeg" alt="Línea de producción de bobinas de papel" />
                 ) : (
-                  <PhotoMedia src="/photos/marca-logo-pared.png" alt="Marca COTA en la planta" />
+                  <PlaceholderMedia tone="dark" label={panel.mediaLabel} />
                 )}
               </div>
               <div

@@ -28,7 +28,7 @@ const STAGES = [
     copy: "La fibra se transforma en papel Tissue a escala industrial.",
     label: "Foto — máquina papelera en producción",
     dark: false,
-    photo: { src: "/photos/planta-porton.png", alt: "Planta de COTA — acceso" },
+    photo: { src: "/photos/papel-produccion.jpeg", alt: "Línea de producción de bobinas de papel" },
   },
   {
     n: "04",
@@ -36,7 +36,6 @@ const STAGES = [
     copy: "El papel se rebobina y se prepara para su conversión.",
     label: "Foto — rebobinadora industrial",
     dark: false,
-    photo: { src: "/photos/marca-logo-pared-2.png", alt: "Marca COTA en la planta" },
   },
   {
     n: "05",
@@ -44,7 +43,6 @@ const STAGES = [
     copy: "Cada bobina sale lista para su conversión.",
     label: "Foto — bobina terminada",
     dark: false,
-    photo: { src: "/photos/marca-logo-pared.png", alt: "Marca COTA en la planta" },
   },
   {
     n: "06",
@@ -90,8 +88,8 @@ export default function IndustrialProcess() {
 
   return (
     <section id="proceso" ref={sectionRef} className="relative w-full bg-ink-deep">
-      <div className="relative h-[100svh] w-full overflow-hidden">
-        <div className="container-industrial pointer-events-none absolute inset-x-0 top-10 z-10 flex items-end justify-between md:top-14">
+      <div className="flex h-[100svh] w-full flex-col overflow-hidden">
+        <div className="container-industrial flex shrink-0 items-end justify-between pt-10 pb-6 md:pt-14 md:pb-8">
           <div>
             <span className="font-label mb-4 block text-paper/50">Recorrido industrial</span>
             <h2 className="text-display max-w-md text-paper">Materia prima → producto terminado.</h2>
@@ -101,12 +99,12 @@ export default function IndustrialProcess() {
 
         <div
           ref={trackRef}
-          className="flex h-full items-end gap-4 pb-24 pl-5 will-change-transform md:gap-6 md:pb-28 md:pl-12"
+          className="flex min-h-0 flex-1 gap-4 pb-6 pl-5 will-change-transform md:gap-6 md:pb-8 md:pl-12"
         >
           {STAGES.map((stage) => (
             <div
               key={stage.n}
-              className="ip-panel relative h-[62vh] w-[86vw] shrink-0 overflow-hidden md:h-[68vh] md:w-[46vw] lg:w-[36vw]"
+              className="ip-panel relative h-full w-[86vw] shrink-0 overflow-hidden md:w-[46vw] lg:w-[36vw]"
             >
               <div className="absolute inset-0">
                 {stage.photo ? (
@@ -129,7 +127,7 @@ export default function IndustrialProcess() {
           <div className="w-5 shrink-0 md:w-12" aria-hidden />
         </div>
 
-        <div className="container-industrial absolute inset-x-0 bottom-10 md:bottom-14">
+        <div className="container-industrial shrink-0 pb-8 md:pb-10">
           <div className="h-px w-full bg-line-on-dark">
             <div
               className="h-px bg-paper/60 transition-[width] duration-150 ease-out"

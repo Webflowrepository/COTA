@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
@@ -51,6 +52,12 @@ export default function SolutionsByApplication() {
         <p className="mt-6 max-w-lg text-base text-ink/60 md:text-lg">
           Cada línea de COTA se integra en procesos industriales más amplios. Elija su perfil.
         </p>
+        <a
+          href="#contacto"
+          className="font-label mt-4 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+        >
+          Ir al formulario →
+        </a>
 
         <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-b border-line-on-light pb-6">
           {SEGMENTS.map((seg) => (
@@ -78,9 +85,9 @@ export default function SolutionsByApplication() {
                 {seg.id === "papeleras" ? (
                   <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
                 ) : seg.id === "convertidores" ? (
-                  <PhotoMedia src="/photos/planta-porton.png" alt="Planta de COTA — acceso" />
+                  <PhotoMedia src="/photos/papel-produccion.jpeg" alt="Línea de producción de bobinas de papel" />
                 ) : (
-                  <PhotoMedia src="/photos/marca-logo-pared-2.png" alt="Marca COTA en la planta" />
+                  <PlaceholderMedia tone="dark" label={seg.mediaLabel} />
                 )}
               </div>
             ))}
