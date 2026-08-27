@@ -97,7 +97,7 @@ export default function ContactForm() {
         type="submit"
         className="font-label mt-8 border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
       >
-        Enviar consulta →
+        Enviar consulta <span className="cta-arrow">→</span>
       </button>
       <p className="font-label mt-4 text-ink/35">Se abre su cliente de correo con la consulta pre-cargada.</p>
     </form>

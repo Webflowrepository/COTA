@@ -60,6 +60,21 @@ la pena documentar porque puede repetirse:
    trabajador inspeccionando). Se usó donde encaja genuinamente; donde no
    había nada que encajara ni en las fotos de COTA ni en stock, **se volvió
    a placeholder en vez de forzar otra foto sin relación**.
+4. `papel-produccion.jpeg` terminó reutilizada en 5 lugares — el cliente
+   notó que se repetía muy seguido en el scroll (Familias de Producto →
+   Soluciones, dos secciones seguidas, mostraban la misma foto). Se buscó
+   una segunda foto de stock específica para "rebobinado" y apareció
+   `proceso-rebobinado.jpeg` (Pexels, Dmitriy Steinke — rebobinadora
+   industrial con bobinas grandes entrando a la máquina), que además encaja
+   mejor que la anterior en dos lugares puntuales: Proceso — etapa 04
+   Rebobinado (coincidencia directa con el título de la etapa) y el
+   segmento Convertidores de `SolutionsByApplication.tsx` (que ya hablaba
+   de "bobinas listas para su línea de conversión"). Se buscó también un
+   match para "Producto Terminado" (rollos de papel apilados/embalados);
+   no apareció nada con el registro visual industrial del resto del sitio
+   — los resultados eran o decorativos (rollos de tela de colores) o de
+   estética "lifestyle" desenfocada, ninguno de los dos encaja — sigue en
+   placeholder, a propósito, no forzado.
 
 Regla aplicada de acá en adelante: una foto (real o de stock) solo se usa si
 efectivamente representa lo que dice el texto al lado. Si no hay ninguna que
@@ -74,7 +89,8 @@ no tenga que ver.
 | `proceso-tanques.png` | Foto real de COTA | Tanques de proceso, interior, tono oscuro | Proceso — etapa 02 Proceso Químico |
 | `proceso-materia-prima.png` | Foto real de COTA | Tanques + edificio + avenida, luz de día | Proceso — etapa 01 Materia Prima |
 | `footer-planta-cenital.png` | Foto real de COTA | Vista aérea cenital (90°) | Fondo del `Footer.tsx` |
-| `papel-produccion.jpeg` | Stock Pexels (David Lehoczki, licencia libre) | Línea de producción, bobinas grandes de papel, trabajador inspeccionando | Swatch Papel (Compañía); capa Papel (Químicos→Papel); panel Bobinas (Familias de Producto); Proceso — etapa 03 Fabricación; segmento Convertidores (Soluciones) |
+| `papel-produccion.jpeg` | Stock Pexels (David Lehoczki, licencia libre) | Línea de producción, bobinas grandes de papel, trabajador inspeccionando | Swatch Papel (Compañía); capa Papel (Químicos→Papel); panel Bobinas (Familias de Producto); Proceso — etapa 03 Fabricación |
+| `proceso-rebobinado.jpeg` | Stock Pexels (Dmitriy Steinke, licencia libre) | Rebobinadora industrial, bobinas grandes entrando a la máquina | Proceso — etapa 04 Rebobinado; segmento Convertidores (Soluciones) |
 
 Quedan **3 de las 10 fotos de COTA sin usar** (dos primeros planos del
 logo/cartel en la pared, una toma aérea con paisaje tipo meseta/desierto que
@@ -84,14 +100,46 @@ material de marca, etc.).
 
 **Sigue en placeholder, a propósito** (ni las fotos de COTA ni el stock
 encontrado representan esto con precisión):
-- Proceso — etapa 04 Rebobinado, etapa 05 Producto Terminado
-- Panel Guardián (Familias de Producto) y segmento Distribuidores (Soluciones) — ambos necesitan mostrar el producto Guardián específico, no una foto genérica de fábrica
+- Proceso — etapa 05 Producto Terminado (ver punto 4 arriba — se buscó, no
+  apareció nada con el registro visual del resto del sitio)
+- Segmento Distribuidores (Soluciones) — necesita mostrar el producto
+  Guardián específico (foto de producto/POS), no una foto genérica de fábrica
+
+**Panel Guardián (Familias de Producto) — dejó de ser placeholder, pero sin
+foto.** El cliente pidió "reimaginar" esta sección porque el panel Guardián
+(un placeholder gris) se veía vacío al lado de 3 paneles con fotos reales.
+En vez de forzar una foto que no existe, se rediseñó como panel tipográfico:
+fondo oscuro + la marca "Guardián." en tipografía grande (mismo tratamiento
+que "Naschel." en `NaschelPlant.tsx`) + su tagline real + CTA a distribución
+— mismo criterio de siempre (no inventar una foto de producto que no existe),
+pero ahora es un beat de diseño intencional en el ritmo del carrusel en vez
+de un hueco. Ver `components/sections/ProductFamilies.tsx`.
 
 **Nota:** la sección standalone "Escala de Producción" (`ProductionScale.tsx`)
 se eliminó — mostraba el mismo dato (700 T/mes) que ya aparece en Planta
 Naschel, duplicado. El contador grande ("mega", mismo tratamiento tipográfico
 que tenía esa sección) ahora vive del lado derecho de `NaschelPlant.tsx`,
 junto al resto de los datos de la planta.
+
+## Microinteracciones (pedido: "más motion, dinamismo")
+
+Se agregó una capa liviana de microinteracciones, sin salir de la regla de
+UI restringida (sin cards/pills/sombras decorativas):
+
+- **`.cta-arrow`** (`app/globals.css`): clase compartida para la flecha "→"
+  de todos los CTAs del sitio (13 links/botones en 8 componentes) — al hacer
+  hover sobre el link/botón, la flecha se desplaza 5px con la misma curva de
+  easing (`--ease-industrial`) que ya usaba el subrayado del nav.
+- `WhatCotaDoes.tsx`: cada fila de línea de negocio ahora reacciona al hover
+  (título baja opacidad, foto hace zoom sutil, la fila se corre unos px) —
+  antes solo tenía la animación de entrada por scroll, sin feedback al pasar
+  el mouse.
+- `PapelTissueSpecs.tsx`: los números de "Modelos de negocio" se iluminan e
+  título se desplaza al hover; las filas de la tabla de specs resaltan de
+  fondo y el valor numérico se corre al hover; los ítems del catálogo de
+  productos terminados cambian de opacidad al hover.
+- `ProductFamilies.tsx`: el panel Guardián (ver arriba) también reacciona al
+  hover (el wordmark se desplaza), igual que los paneles con foto.
 
 ## Marca y color
 

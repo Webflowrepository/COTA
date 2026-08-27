@@ -52,7 +52,7 @@ export default function PapelTissueSpecs() {
           href="#contacto"
           className="font-label mt-6 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
         >
-          Ir al formulario →
+          Ir al formulario <span className="cta-arrow">→</span>
         </a>
       </div>
 
@@ -61,11 +61,11 @@ export default function PapelTissueSpecs() {
         <span className="font-label mb-10 block text-ink/45">Modelos de negocio</span>
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-0 md:divide-x md:divide-line-on-light">
           {cota.businessModels.map((model, i) => (
-            <div key={model.id} className="biz-model md:px-10 md:first:pl-0 md:last:pr-0">
-              <span className="font-impact-number text-stat block text-ink/25">
+            <div key={model.id} className="biz-model group md:px-10 md:first:pl-0 md:last:pr-0">
+              <span className="font-impact-number text-stat block text-ink/25 transition-colors duration-300 group-hover:text-ink/50">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="text-heading mt-4 text-ink">{model.label}</h3>
+              <h3 className="text-heading mt-4 text-ink transition-transform duration-300 group-hover:translate-x-1">{model.label}</h3>
               <p className="mt-3 text-sm text-ink/60 md:text-base">{model.short}</p>
             </div>
           ))}
@@ -85,21 +85,21 @@ export default function PapelTissueSpecs() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="spec-row border-b border-line-on-dark">
+                <tr className="spec-row border-b border-line-on-dark transition-colors duration-300 hover:bg-paper/[0.04]">
                   <td className="py-5 pr-8 text-paper/70">Ancho</td>
-                  <td className="font-impact-number text-2xl text-paper md:text-3xl">
+                  <td className="font-impact-number text-2xl text-paper transition-transform duration-300 hover:translate-x-1 md:text-3xl">
                     {cota.bobinaSpecs.anchos.join(" / ")}
                   </td>
                 </tr>
-                <tr className="spec-row border-b border-line-on-dark">
+                <tr className="spec-row border-b border-line-on-dark transition-colors duration-300 hover:bg-paper/[0.04]">
                   <td className="py-5 pr-8 text-paper/70">Diámetro</td>
-                  <td className="font-impact-number text-2xl text-paper md:text-3xl">
+                  <td className="font-impact-number text-2xl text-paper transition-transform duration-300 hover:translate-x-1 md:text-3xl">
                     {cota.bobinaSpecs.diametros.join(" / ")}
                   </td>
                 </tr>
-                <tr className="spec-row">
+                <tr className="spec-row transition-colors duration-300 hover:bg-paper/[0.04]">
                   <td className="py-5 pr-8 text-paper/70">Cono interior</td>
-                  <td className="font-impact-number text-2xl text-paper md:text-3xl">
+                  <td className="font-impact-number text-2xl text-paper transition-transform duration-300 hover:translate-x-1 md:text-3xl">
                     {cota.bobinaSpecs.conoInterior}
                   </td>
                 </tr>
@@ -111,13 +111,13 @@ export default function PapelTissueSpecs() {
               href={`mailto:${cota.contact.email}?subject=${encodeURIComponent("Ficha técnica — Bobinas para convertidores")}`}
               className="font-label inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
             >
-              Solicitar ficha técnica completa →
+              Solicitar ficha técnica completa <span className="cta-arrow">→</span>
             </a>
             <a
               href="#contacto"
               className="font-label inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
             >
-              Ir al formulario →
+              Ir al formulario <span className="cta-arrow">→</span>
             </a>
           </div>
         </div>
@@ -128,7 +128,10 @@ export default function PapelTissueSpecs() {
         <span className="font-label mb-8 block text-ink/45">Productos terminados</span>
         <ul className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 md:grid-cols-3">
           {cota.finishedProducts.map((product, i) => (
-            <li key={product} className="font-label border-t border-line-on-light py-4 text-ink/70">
+            <li
+              key={product}
+              className="font-label border-t border-line-on-light py-4 text-ink/70 transition-colors duration-300 hover:text-ink"
+            >
               {String(i + 1).padStart(2, "0")} — {product}
             </li>
           ))}

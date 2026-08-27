@@ -146,6 +146,15 @@ h1, h2, h3, h4 {
   transform: scaleX(1);
 }
 
+.cta-arrow {
+  display: inline-block;
+  transition: transform 0.35s var(--ease-industrial);
+}
+a:hover .cta-arrow,
+button:hover .cta-arrow {
+  transform: translateX(5px);
+}
+
 .placeholder-tag {
   font-family: var(--font-mono), monospace;
   font-size: 10px;

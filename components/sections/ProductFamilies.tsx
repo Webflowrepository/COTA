@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
-import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
@@ -129,7 +128,7 @@ export default function ProductFamilies() {
             href="#contacto"
             className="font-label mt-4 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
           >
-            Ir al formulario →
+            Ir al formulario <span className="cta-arrow">→</span>
           </a>
         </div>
         <span className="font-label hidden text-ink/40 md:block">Desplazar horizontalmente →</span>
@@ -148,32 +147,57 @@ export default function ProductFamilies() {
               key={panel.id}
               className="pf-panel group relative h-[62vh] w-[86vw] shrink-0 snap-start overflow-hidden md:h-[68vh] md:w-[46vw] lg:w-[36vw]"
             >
-              <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
-                {panel.id === "soluciones" ? (
-                  <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA — logística y despacho" />
-                ) : panel.id === "quimicos" ? (
-                  <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
-                ) : panel.id === "bobinas" ? (
-                  <PhotoMedia src="/photos/papel-produccion.jpeg" alt="Línea de producción de bobinas de papel" />
-                ) : (
-                  <PlaceholderMedia tone="dark" label={panel.mediaLabel} />
-                )}
-              </div>
-              <div
-                className="absolute inset-0"
-                style={{ background: "linear-gradient(0deg, rgba(6,8,17,0.75) 0%, transparent 45%)" }}
-              />
-              <div className="absolute inset-0 flex flex-col justify-end p-7 text-paper md:p-9">
-                <span className="font-label mb-3 block text-paper/70">Línea de producto</span>
-                <h3 className="text-heading">{panel.label}</h3>
-                <p className="mt-3 max-w-xs text-sm text-paper/70">{panel.short}</p>
-                <a
-                  href={mailto}
-                  className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
-                >
-                  Solicitar ficha técnica →
-                </a>
-              </div>
+              {panel.id === "guardian" ? (
+                // Sin foto de producto en alta resolución todavía (ver ASSETS.md) — en vez de
+                // un placeholder gris junto a 3 fotos reales, este panel usa la marca en sí
+                // (tipografía grande, mismo tratamiento que "Naschel." en NaschelPlant.tsx)
+                // como el momento visual: es un beat propio en el ritmo del carrusel, no un
+                // hueco vacío disfrazado de foto.
+                <div className="flex h-full w-full flex-col justify-between bg-ink-deep p-7 text-paper md:p-9">
+                  <span className="font-label text-paper/50">Línea propia</span>
+                  <div>
+                    <h3 className="text-hero text-paper transition-transform duration-500 ease-out group-hover:-translate-y-1">
+                      Guardián.
+                    </h3>
+                    <p className="mt-4 max-w-xs text-sm text-paper/70">
+                      {cota.guardian.tagline}. Con apoyo a distribuidores en todo el país.
+                    </p>
+                    <a
+                      href={mailto}
+                      className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
+                    >
+                      Consultar distribución <span className="cta-arrow">→</span>
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
+                    {panel.id === "soluciones" ? (
+                      <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA — logística y despacho" />
+                    ) : panel.id === "quimicos" ? (
+                      <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
+                    ) : (
+                      <PhotoMedia src="/photos/papel-produccion.jpeg" alt="Línea de producción de bobinas de papel" />
+                    )}
+                  </div>
+                  <div
+                    className="absolute inset-0"
+                    style={{ background: "linear-gradient(0deg, rgba(6,8,17,0.75) 0%, transparent 45%)" }}
+                  />
+                  <div className="absolute inset-0 flex flex-col justify-end p-7 text-paper md:p-9">
+                    <span className="font-label mb-3 block text-paper/70">Línea de producto</span>
+                    <h3 className="text-heading">{panel.label}</h3>
+                    <p className="mt-3 max-w-xs text-sm text-paper/70">{panel.short}</p>
+                    <a
+                      href={mailto}
+                      className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
+                    >
+                      Solicitar ficha técnica <span className="cta-arrow">→</span>
+                    </a>
+                  </div>
+                </>
+              )}
             </div>
           );
         })}

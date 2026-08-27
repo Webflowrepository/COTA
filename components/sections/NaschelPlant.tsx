@@ -85,7 +85,7 @@ export default function NaschelPlant() {
                 href="#contacto"
                 className="font-label mt-8 inline-block w-fit border-b border-paper/40 pb-1 text-paper transition-colors hover:border-paper"
               >
-                Ir al formulario →
+                Ir al formulario <span className="cta-arrow">→</span>
               </a>
             </div>
 

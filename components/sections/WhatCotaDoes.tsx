@@ -49,24 +49,26 @@ export default function WhatCotaDoes() {
           href="#contacto"
           className="font-label mb-16 mt-6 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60 md:mb-24"
         >
-          Ir al formulario →
+          Ir al formulario <span className="cta-arrow">→</span>
         </a>
 
         <div className="flex flex-col divide-y divide-line-on-light">
           {cota.businessLines.map((line) => (
-            <div key={line.id} className="line-row group relative flex items-center justify-between gap-10 py-9 md:py-12">
+            <div key={line.id} className="line-row group relative flex items-center justify-between gap-10 py-9 transition-[padding] duration-500 ease-out md:py-12 md:hover:pl-3">
               <div className="min-w-0 max-w-md">
-                <h3 className="text-heading text-ink">{line.label}</h3>
+                <h3 className="text-heading text-ink transition-opacity duration-300 group-hover:opacity-60">{line.label}</h3>
                 <p className="mt-3 text-sm text-ink/55 md:text-base">{line.short}</p>
               </div>
               <div className="media-reveal relative hidden h-44 max-w-lg flex-1 overflow-hidden md:block lg:h-56">
-                {line.id === "soluciones" ? (
-                  <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA — logística y despacho" />
-                ) : line.id === "quimicos" ? (
-                  <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
-                ) : (
-                  <PhotoMedia src="/photos/papel-produccion.jpeg" alt="Línea de producción de bobinas de papel" />
-                )}
+                <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
+                  {line.id === "soluciones" ? (
+                    <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA — logística y despacho" />
+                  ) : line.id === "quimicos" ? (
+                    <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
+                  ) : (
+                    <PhotoMedia src="/photos/papel-produccion.jpeg" alt="Línea de producción de bobinas de papel" />
+                  )}
+                </div>
               </div>
             </div>
           ))}

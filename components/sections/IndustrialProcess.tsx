@@ -35,6 +35,7 @@ const STAGES = [
     title: "Rebobinado",
     copy: "El papel se rebobina y se prepara para su conversión.",
     label: "Foto — rebobinadora industrial",
+    photo: { src: "/photos/proceso-rebobinado.jpeg", alt: "Rebobinadora industrial procesando bobinas de papel" },
     dark: false,
   },
   {

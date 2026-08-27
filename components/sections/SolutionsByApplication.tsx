@@ -56,7 +56,7 @@ export default function SolutionsByApplication() {
           href="#contacto"
           className="font-label mt-4 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
         >
-          Ir al formulario →
+          Ir al formulario <span className="cta-arrow">→</span>
         </a>
 
         <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-b border-line-on-light pb-6">
@@ -85,7 +85,7 @@ export default function SolutionsByApplication() {
                 {seg.id === "papeleras" ? (
                   <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
                 ) : seg.id === "convertidores" ? (
-                  <PhotoMedia src="/photos/papel-produccion.jpeg" alt="Línea de producción de bobinas de papel" />
+                  <PhotoMedia src="/photos/proceso-rebobinado.jpeg" alt="Rebobinadora industrial procesando bobinas de papel" />
                 ) : (
                   <PlaceholderMedia tone="dark" label={seg.mediaLabel} />
                 )}
@@ -100,7 +100,7 @@ export default function SolutionsByApplication() {
               href={mailto}
               className="font-label mt-8 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
             >
-              {active.cta} →
+              {active.cta} <span className="cta-arrow">→</span>
             </a>
           </div>
         </div>
