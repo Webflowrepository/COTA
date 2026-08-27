@@ -43,6 +43,7 @@ const PANELS = [
 export default function ProductFamilies() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
 
   function handleScroll() {
@@ -50,6 +51,29 @@ export default function ProductFamilies() {
     if (!el) return;
     const max = el.scrollWidth - el.clientWidth;
     setProgress(max > 0 ? el.scrollLeft / max : 0);
+  }
+
+  // la barra también funciona como control: clickear/arrastrar sobre ella
+  // salta el carrusel a ese punto, por si alguien intenta usarla como
+  // scrollbar en vez de scrollear el panel en sí.
+  function seekTo(clientX: number) {
+    const track = trackRef.current;
+    const el = scrollerRef.current;
+    if (!track || !el) return;
+    const rect = track.getBoundingClientRect();
+    const ratio = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+    el.scrollLeft = ratio * (el.scrollWidth - el.clientWidth);
+  }
+
+  function handleTrackPointerDown(e: React.PointerEvent<HTMLDivElement>) {
+    seekTo(e.clientX);
+    const onMove = (ev: PointerEvent) => seekTo(ev.clientX);
+    const onUp = () => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+    };
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
   }
 
   useEffect(() => {
@@ -147,11 +171,17 @@ export default function ProductFamilies() {
       </div>
 
       <div className="container-industrial mt-2">
-        <div className="h-px w-full bg-line-on-light">
-          <div
-            className="h-px bg-ink transition-[width] duration-150 ease-out"
-            style={{ width: `${Math.max(8, progress * 100)}%` }}
-          />
+        <div
+          ref={trackRef}
+          onPointerDown={handleTrackPointerDown}
+          className="flex w-full cursor-pointer items-center py-3"
+        >
+          <div className="h-px w-full bg-line-on-light">
+            <div
+              className="h-px bg-ink transition-[width] duration-150 ease-out"
+              style={{ width: `${Math.max(8, progress * 100)}%` }}
+            />
+          </div>
         </div>
       </div>
     </section>

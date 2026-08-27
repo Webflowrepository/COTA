@@ -99,7 +99,10 @@ export default function IndustrialProcess() {
           <span className="font-label hidden text-paper/40 md:block">Scroll para avanzar</span>
         </div>
 
-        <div ref={trackRef} className="flex h-full items-center gap-4 pl-5 will-change-transform md:gap-6 md:pl-12">
+        <div
+          ref={trackRef}
+          className="flex h-full items-end gap-4 pb-24 pl-5 will-change-transform md:gap-6 md:pb-28 md:pl-12"
+        >
           {STAGES.map((stage) => (
             <div
               key={stage.n}
