@@ -5,10 +5,10 @@ export default function Footer() {
   return (
     <footer className="w-full bg-paper text-ink">
       <div className="container-industrial flex flex-col gap-6 border-t border-line-on-light py-6 md:flex-row md:items-center md:justify-between">
-        <div className="flex flex-col gap-1">
-          <Image src="/logo-cota.png" alt="COTA" width={327} height={80} className="h-5 w-auto invert" />
+        <div className="flex flex-col items-start gap-1">
+          <Image src="/logo-cota.png" alt="COTA" width={327} height={80} className="h-5 w-auto shrink-0 invert" />
           <span className="font-label mt-2 block text-ink/35">
-            {cota.offices.commercial} — Planta: {cota.plant.location}
+            Planta: {cota.plant.location} ({cota.plant.postalCode}), {cota.country}
           </span>
         </div>
 

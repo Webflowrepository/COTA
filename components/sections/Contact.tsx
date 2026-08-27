@@ -3,7 +3,7 @@ import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
-    <section id="contacto" className="relative flex min-h-[100svh] w-full flex-col justify-center bg-paper py-20 text-ink md:py-28">
+    <section id="contacto" className="relative w-full bg-paper pb-20 pt-32 text-ink md:pb-28 md:pt-40">
       <div className="container-industrial">
         <span className="font-label mb-8 block text-ink/50">Contacto</span>
         <h2 className="text-display max-w-3xl text-ink">Hablemos de su próxima operación industrial.</h2>
@@ -14,9 +14,11 @@ export default function Contact() {
         >
           {cota.contact.email}
         </a>
-        <p className="font-label mt-3 text-ink/50">
-          {cota.contact.phone} — {cota.offices.commercial}
+        <p className="font-label mt-3 text-ink/50">Cel. {cota.contact.phone}</p>
+        <p className="font-label mt-1 text-ink/50">
+          Planta: {cota.plant.location} ({cota.plant.postalCode}), {cota.country}
         </p>
+        <p className="font-label mt-1 text-ink/35">Oficina comercial: {cota.offices.commercial}</p>
 
         <ContactForm />
       </div>
