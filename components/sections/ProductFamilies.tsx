@@ -70,6 +70,31 @@ export default function ProductFamilies() {
     return () => ctx.revert();
   }, []);
 
+  // la mayoría llega acá con mouse (rueda vertical), no trackpad — sin esto,
+  // "desplazar horizontalmente" no responde a una rueda de mouse normal.
+  // Convertimos el scroll vertical en horizontal mientras haya recorrido
+  // pendiente; una vez que el carrusel llega al final, se deja pasar el
+  // scroll normal para que la página siga bajando. React registra onWheel
+  // como listener pasivo (no permite preventDefault), así que se engancha
+  // a mano con { passive: false }.
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+
+    const onWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+      const max = el.scrollWidth - el.clientWidth;
+      const atStart = el.scrollLeft <= 0;
+      const atEnd = el.scrollLeft >= max - 1;
+      if ((e.deltaY < 0 && atStart) || (e.deltaY > 0 && atEnd)) return;
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
+    };
+
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, []);
+
   return (
     <section ref={sectionRef} className="relative w-full bg-paper py-24 md:py-32">
       <div className="container-industrial mb-10 flex items-end justify-between md:mb-14">
