@@ -3,7 +3,7 @@ import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
-    <section id="contacto" className="relative w-full bg-paper pb-20 pt-32 text-ink md:pb-28 md:pt-40">
+    <section id="contacto" className="relative flex min-h-[calc(100svh-6rem)] w-full flex-col bg-paper pb-16 pt-28 text-ink md:pb-20 md:pt-32">
       <div className="container-industrial">
         <span className="font-label mb-8 block text-ink/50">Contacto</span>
         <h2 className="text-display max-w-3xl text-ink">Hablemos de su próxima operación industrial.</h2>
