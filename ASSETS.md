@@ -1,5 +1,35 @@
 # Assets pendientes — COTA
 
+## Arquitectura multi-página (agregado en esta ronda)
+
+El sitio pasó de ser una sola homepage a multi-página:
+
+- `/` — homepage, con un recorrido industrial resumido (3 de las 6 etapas) y link a la versión completa.
+- `/proceso` — las 6 etapas completas del recorrido industrial (scrollytelling horizontal).
+- `/papel-tissue` — modelos de negocio, especificaciones técnicas de bobinas, catálogo de productos terminados, línea Guardián.
+- `/contacto` — formulario de contacto dedicado, con URL propia para compartir directo.
+
+Cada página nueva tiene su propio `metadata` (title/description) para SEO. El
+`Nav` ahora usa `usePathname()` para saber si está en el home (nav flotante,
+transparente hasta hacer scroll) o en otra página (nav siempre con fondo,
+porque esas páginas no arrancan con un Hero oscuro detrás). El `Footer` se
+sacó de `Contact.tsx` y ahora vive en `app/layout.tsx`, compartido por todas
+las páginas.
+
+## Datos agregados en esta ronda (confirmados por el cliente)
+
+- Especificaciones de bobinas: ancho 220/200 cm, diámetro 110/100 cm, cono interior 7,5 cm.
+- 3 modelos de negocio de la línea de papel: Fabricación, Marca privada/terceros, Guardián.
+- Catálogo de productos terminados (toallas en rollo, camilleros, bobinas de limpieza con precorte, toallas intercaladas, papel higiénico medio/alto metraje, servilletas extra blancas).
+- Oficina comercial en San Isidro, Buenos Aires (distinta de la planta de Naschel).
+- Los 700 T/mes son específicos de la línea de **Químicos**, no de la planta entera — se corrigió el label en `NaschelPlant.tsx` (antes decía "Capacidad de producción" genérico).
+- Servicio de autoelevadores y embalajes, y abastecimiento a la industria de la limpieza (línea Químicos).
+- Categoría de contacto "Consulta general" agregada al formulario.
+
+**Sigue sin confirmar** (no inventado): capacidad de producción específica de
+papel Tissue — el documento fuente de esta ronda lo señala explícitamente
+como pendiente de verificar con COTA, así que no se agregó ningún número.
+
 Este sitio se construyó con **placeholders limpios** (`components/visuals/PlaceholderMedia.tsx`)
 en lugar de fotografía/video real, porque todavía no hay material de COTA
 disponible. Cada placeholder preserva la composición exacta (tamaño, encuadre)

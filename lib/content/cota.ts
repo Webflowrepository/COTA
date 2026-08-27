@@ -17,17 +17,24 @@ export const cota = {
     /** cota.com.ar (historia): instalación de la planta propia con capitales propios. */
     ownCapital: true,
   },
+  /** Oficina comercial — distinta de la planta de producción en Naschel. */
+  offices: {
+    commercial: "San Isidro, Buenos Aires",
+  },
   /** Distillado de la Misión real publicada en cota.com.ar ("Socios Estratégicos en Soluciones de Papel"). */
   mission: "Socios estratégicos en soluciones de papel.",
   production: {
-    monthlyTons: 700,
+    /** Capacidad de la línea de químicos/blanqueadores — no es la capacidad total de la planta. */
+    chemicalsMonthlyTons: 700,
+    /** No confirmado todavía por COTA — no inventar un número acá. */
+    paperMonthlyTons: null as number | null,
     unit: "T/mes",
   },
   businessLines: [
     {
       id: "quimicos",
       label: "Químicos",
-      short: "Blanqueadores ópticos para la industria papelera y textil.",
+      short: "Blanqueadores ópticos para la industria papelera y textil, y abastecimiento a la industria de la limpieza.",
     },
     {
       id: "papel",
@@ -61,9 +68,50 @@ export const cota = {
       label: "Productos finales",
       short: "Productos finales y asesoramiento a distribuidores en todo el país.",
     },
+    {
+      id: "autoelevadores",
+      label: "Autoelevadores y embalajes",
+      short: "Provisión de autoelevadores y soluciones de embalaje para la operación del cliente.",
+    },
   ],
   /** Tipos de blanqueadores ópticos que produce COTA — provisto por el cliente. */
   chemicalTypes: ["Tetrasulfónicos", "Hexasulfónicos", "Antraquinona"],
+  /**
+   * Especificaciones técnicas de bobinas de papel Tissue.
+   * Confirmadas por el cliente — no inventadas.
+   */
+  bobinaSpecs: {
+    anchos: ["220 cm", "200 cm"],
+    diametros: ["110 cm", "100 cm"],
+    conoInterior: "7,5 cm",
+  },
+  /** Los 3 modelos de negocio bajo los que opera la línea de papel. */
+  businessModels: [
+    {
+      id: "fabricacion",
+      label: "Fabricación",
+      short: "Producción de bobinas de papel Tissue a pedido, según las medidas que requiera el convertidor.",
+    },
+    {
+      id: "marca-privada",
+      label: "Marca privada / terceros",
+      short: "Producto terminado fabricado bajo la marca del cliente o de un tercero.",
+    },
+    {
+      id: "guardian",
+      label: "Guardián",
+      short: "Línea propia de COTA, con apoyo a distribuidores en todo el país.",
+    },
+  ],
+  /** Catálogo de productos terminados — confirmado por el cliente. */
+  finishedProducts: [
+    "Toallas en rollo",
+    "Camilleros",
+    "Bobinas de limpieza con precorte",
+    "Toallas intercaladas",
+    "Papel higiénico de medio y alto metraje",
+    "Servilletas extra blancas",
+  ],
   /**
    * Guardián — línea profesional de producto terminado (papel Tissue),
    * dirigida a distribuidores. Marca real de COTA, confirmada por el cliente.
@@ -75,6 +123,7 @@ export const cota = {
   },
   /** Categorías para el contacto segmentado — mismo canal real, asunto pre-completado por categoría. */
   contactCategories: [
+    { id: "general", label: "Consulta general" },
     { id: "bobinas", label: "Bobinas para convertidores" },
     { id: "quimicos", label: "Blanqueadores y químicos" },
     { id: "distribucion", label: "Distribución — Guardián" },

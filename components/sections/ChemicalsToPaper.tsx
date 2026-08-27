@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
@@ -68,7 +69,6 @@ export default function ChemicalsToPaper() {
 
   return (
     <section ref={wrapperRef} id="quimicos" className="relative h-[240vh] w-full bg-ink-deep">
-      <span id="papel" className="absolute left-0 top-1/2 block h-px w-px" aria-hidden />
 
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         <div ref={chemLayerRef} className="absolute inset-0">
@@ -118,12 +118,20 @@ export default function ChemicalsToPaper() {
               </li>
             ))}
           </ul>
-          <a
-            href={`mailto:${cota.contact.email}?subject=${encodeURIComponent("Ficha técnica — Bobinas para convertidores")}`}
-            className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
-          >
-            Solicitar ficha técnica →
-          </a>
+          <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
+            <a
+              href={`mailto:${cota.contact.email}?subject=${encodeURIComponent("Ficha técnica — Bobinas para convertidores")}`}
+              className="font-label inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
+            >
+              Solicitar ficha técnica →
+            </a>
+            <Link
+              href="/papel-tissue"
+              className="font-label inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
+            >
+              Ver especificaciones técnicas →
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Big_Shoulders, Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/nav/Nav";
+import Footer from "@/components/footer/Footer";
 import SmoothScrollProvider from "@/lib/motion/SmoothScrollProvider";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
@@ -25,7 +26,7 @@ const mono = Geist_Mono({
 export const metadata: Metadata = {
   title: "COTA — Materia en transformación",
   description:
-    "COTA es una empresa industrial argentina con más de 30 años de trayectoria en químicos, papel y soluciones industriales. Planta en Naschel, ~700 T/mes de capacidad.",
+    "COTA es una empresa industrial argentina con más de 30 años de trayectoria en blanqueadores ópticos (tetrasulfónicos, hexasulfónicos, antraquinona), bobinas de papel Tissue y soluciones industriales. Planta propia en Naschel, San Luis.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SmoothScrollProvider>
           <Nav />
           {children}
+          <Footer />
           <WhatsAppButton />
         </SmoothScrollProvider>
       </body>

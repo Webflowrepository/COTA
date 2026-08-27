@@ -33,7 +33,7 @@ export default function NaschelPlant() {
           tl.totalProgress(self.progress);
           const countProgress = Math.min(1, self.progress / 0.5);
           if (yearsRef.current) yearsRef.current.textContent = String(Math.round(countProgress * cota.yearsOfOperation));
-          if (tonsRef.current) tonsRef.current.textContent = String(Math.round(countProgress * cota.production.monthlyTons));
+          if (tonsRef.current) tonsRef.current.textContent = String(Math.round(countProgress * cota.production.chemicalsMonthlyTons));
         },
       });
     }, wrapperRef);
@@ -83,10 +83,10 @@ export default function NaschelPlant() {
             </div>
 
             <div className="shrink-0 md:text-right">
-              <span className="font-label mb-2 block text-paper/60">Capacidad de producción</span>
+              <span className="font-label mb-2 block text-paper/60">Capacidad — Químicos</span>
               <div className="flex items-end gap-3 md:justify-end">
                 <span className="font-impact-number text-mega block text-paper">
-                  <span ref={tonsRef}>{cota.production.monthlyTons}</span>
+                  <span ref={tonsRef}>{cota.production.chemicalsMonthlyTons}</span>
                 </span>
                 <span className="font-label mb-3 text-paper/70 md:mb-6">T/MES</span>
               </div>

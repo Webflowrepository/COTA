@@ -1,6 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import WhatCotaDoes from "@/components/sections/WhatCotaDoes";
-import IndustrialProcess from "@/components/sections/IndustrialProcess";
+import IndustrialProcessTeaser from "@/components/sections/IndustrialProcessTeaser";
 import ChemicalsToPaper from "@/components/sections/ChemicalsToPaper";
 import ProductFamilies from "@/components/sections/ProductFamilies";
 import SolutionsByApplication from "@/components/sections/SolutionsByApplication";
@@ -12,7 +12,7 @@ export default function Home() {
     <main className="flex-1">
       <Hero />
       <WhatCotaDoes />
-      <IndustrialProcess />
+      <IndustrialProcessTeaser />
       <ChemicalsToPaper />
       <ProductFamilies />
       <SolutionsByApplication />
