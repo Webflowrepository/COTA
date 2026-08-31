@@ -3,23 +3,24 @@
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
+import Counter from "@/components/ui/Counter";
 import { cota } from "@/lib/content/cota";
 
 export default function NaschelPlant() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
-  const yearsRef = useRef<HTMLSpanElement>(null);
-  const tonsRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const { gsap, ScrollTrigger } = ensureGsapRegistered();
 
     const ctx = gsap.context(() => {
-      // valores reales ya están en el HTML como fallback — recién acá
-      // se resetean a 0 para poder animar el conteo.
-      if (yearsRef.current) yearsRef.current.textContent = "0";
-      if (tonsRef.current) tonsRef.current.textContent = "0";
-
+      // el conteo de "Años"/"T/mes" ya NO va acá — antes estaba atado 1:1
+      // al progreso exacto del scroll dentro de esta sección de 180vh, lo
+      // que no dejaba claro qué relación tenía "cuánto scrolleás" con el
+      // número, y tardaba mucho en terminar si alguien scrolleaba
+      // despacio. Ahora usa Counter.tsx: cuenta una sola vez, rápido, apenas
+      // entra en viewport. El parallax del fondo y el fade del heading
+      // siguen atados al scroll — eso sí es un efecto visual, no un dato.
       const tl = gsap.timeline({ paused: true });
       tl.fromTo(bgRef.current, { yPercent: -8 }, { yPercent: 8, ease: "none", duration: 1 }, 0);
       tl.fromTo(".naschel-heading", { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0, duration: 0.3 }, 0.15);
@@ -29,12 +30,7 @@ export default function NaschelPlant() {
         start: "top top",
         end: "bottom bottom",
         scrub: 0.15,
-        onUpdate: (self) => {
-          tl.totalProgress(self.progress);
-          const countProgress = Math.min(1, self.progress / 0.5);
-          if (yearsRef.current) yearsRef.current.textContent = String(Math.round(countProgress * cota.yearsOfOperation));
-          if (tonsRef.current) tonsRef.current.textContent = String(Math.round(countProgress * cota.production.chemicalsMonthlyTons));
-        },
+        onUpdate: (self) => tl.totalProgress(self.progress),
       });
     }, wrapperRef);
 
@@ -64,7 +60,7 @@ export default function NaschelPlant() {
               <div className="mt-10 flex flex-wrap items-end gap-x-12 gap-y-6">
                 <div>
                   <span className="font-impact-number text-stat block text-paper">
-                    <span ref={yearsRef}>{cota.yearsOfOperation}</span>+
+                    <Counter target={cota.yearsOfOperation} />+
                   </span>
                   <span className="font-label text-paper/60">Años</span>
                 </div>
@@ -93,7 +89,7 @@ export default function NaschelPlant() {
               <span className="font-label mb-2 block text-paper/60">Capacidad — Químicos</span>
               <div className="flex items-end gap-3 md:justify-end">
                 <span className="font-impact-number text-mega block text-paper">
-                  <span ref={tonsRef}>{cota.production.chemicalsMonthlyTons}</span>
+                  <Counter target={cota.production.chemicalsMonthlyTons} />
                 </span>
                 <span className="font-label mb-3 text-paper/70 md:mb-6">T/MES</span>
               </div>

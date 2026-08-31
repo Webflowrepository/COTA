@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
+import Counter from "@/components/ui/Counter";
 import { cota } from "@/lib/content/cota";
 
 const CHEM_ITEMS = cota.chemicalTypes.map((type) => `Blanqueadores ${type}`);
@@ -14,16 +15,11 @@ export default function ChemicalsToPaper() {
   const paperLayerRef = useRef<HTMLDivElement>(null);
   const chemTextRef = useRef<HTMLDivElement>(null);
   const paperTextRef = useRef<HTMLDivElement>(null);
-  const chemCountRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const { gsap, ScrollTrigger } = ensureGsapRegistered();
 
     const ctx = gsap.context(() => {
-      // valor real ya está en el HTML como fallback — recién acá se
-      // resetea a 0 para poder animar el conteo.
-      if (chemCountRef.current) chemCountRef.current.textContent = "0";
-
       const chemItems = chemTextRef.current!.querySelectorAll<HTMLLIElement>(".chem-item");
       const paperItems = paperTextRef.current!.querySelectorAll<HTMLLIElement>(".paper-item");
 
@@ -52,13 +48,7 @@ export default function ChemicalsToPaper() {
         start: "top top",
         end: "bottom bottom",
         scrub: 0.15,
-        onUpdate: (self) => {
-          tl.totalProgress(self.progress);
-          const countProgress = Math.min(1, self.progress / 0.3);
-          if (chemCountRef.current) {
-            chemCountRef.current.textContent = String(Math.round(countProgress * cota.chemicalTypes.length));
-          }
-        },
+        onUpdate: (self) => tl.totalProgress(self.progress),
       });
     }, wrapperRef);
 
@@ -85,7 +75,7 @@ export default function ChemicalsToPaper() {
             <h3 className="text-display max-w-2xl text-paper">Precisión en cada reacción.</h3>
             <div>
               <span className="font-impact-number text-stat block text-paper">
-                <span ref={chemCountRef}>{cota.chemicalTypes.length}</span>
+                <Counter target={cota.chemicalTypes.length} />
               </span>
               <span className="font-label text-paper/50">Tipos de blanqueadores</span>
             </div>

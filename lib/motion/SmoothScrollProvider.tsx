@@ -16,23 +16,48 @@ export default function SmoothScrollProvider({
 
     if (prefersReducedMotion()) return;
 
-    const lenis = new Lenis({
-      duration: 0.7,
-      easing: (t) => 1 - Math.pow(1 - t, 3),
-      touchMultiplier: 1.1,
-    });
-    lenisRef.current = lenis;
+    // Lenis re-suaviza el scroll nativo con su propio raf loop — en
+    // desktop con mouse/trackpad se siente premium, pero en mobile compite
+    // con el scroll táctil nativo (que ya es suave) y sumado a todas las
+    // animaciones scrub de GSAP terminaba sintiéndose con lag/delay al
+    // scrollear con el dedo. Por eso queda gateado a <768px, tal como
+    // estaba planeado desde el arranque del proyecto pero nunca se había
+    // implementado. Sin Lenis, ScrollTrigger sigue andando igual —
+    // escucha el scroll nativo por su cuenta.
+    let lenis: Lenis | null = null;
+    let rafCb: ((time: number) => void) | null = null;
+    const mq = window.matchMedia("(min-width: 768px)");
 
-    lenis.on("scroll", ScrollTrigger.update);
+    function enable() {
+      if (lenis) return;
+      lenis = new Lenis({
+        duration: 0.7,
+        easing: (t) => 1 - Math.pow(1 - t, 3),
+        touchMultiplier: 1.1,
+      });
+      lenisRef.current = lenis;
+      lenis.on("scroll", ScrollTrigger.update);
+      rafCb = (time: number) => lenis?.raf(time * 1000);
+      gsap.ticker.add(rafCb);
+    }
 
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
+    function disable() {
+      if (!lenis) return;
+      if (rafCb) gsap.ticker.remove(rafCb);
+      lenis.destroy();
+      lenis = null;
+      lenisRef.current = null;
+    }
+
     gsap.ticker.lagSmoothing(0);
+    if (mq.matches) enable();
+
+    const onChange = (e: MediaQueryListEvent) => (e.matches ? enable() : disable());
+    mq.addEventListener("change", onChange);
 
     return () => {
-      lenis.destroy();
-      lenisRef.current = null;
+      mq.removeEventListener("change", onChange);
+      disable();
     };
   }, []);
 

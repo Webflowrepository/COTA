@@ -1,8 +1,5 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import { cota } from "@/lib/content/cota";
-import { prefersReducedMotion } from "@/lib/motion/gsap";
+import Counter from "@/components/ui/Counter";
 
 /**
  * Franja de números reales debajo del Hero. Sólo datos verificados en
@@ -15,41 +12,6 @@ const STATS = [
   { value: cota.businessLines.length, suffix: "", label: "Divisiones integradas" },
   { value: null, suffix: "", label: "Abastecimiento nacional", word: "Todo el país" },
 ] as const;
-
-function Counter({ target }: { target: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [started, setStarted] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    if (prefersReducedMotion()) {
-      el.textContent = String(target);
-      return;
-    }
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting || started) return;
-        setStarted(true);
-        const duration = 1200;
-        const start = performance.now();
-        const tick = (now: number) => {
-          const progress = Math.min(1, (now - start) / duration);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = String(Math.round(eased * target));
-          if (progress < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-      },
-      { threshold: 0.5 },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [target]);
-
-  return <span ref={ref}>0</span>;
-}
 
 export default function StatsBand() {
   return (
