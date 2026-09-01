@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
+import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import { cota } from "@/lib/content/cota";
 
 // CTA secundario por división — apunta a la sección real correspondiente
@@ -86,7 +87,7 @@ export default function WhatCotaDoes() {
                   ) : line.id === "quimicos" ? (
                     <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
                   ) : (
-                    <PhotoMedia src="/photos/papel-produccion.jpeg" alt="Línea de producción de bobinas de papel" />
+                    <PlaceholderMedia tone="light" label="Foto — bobina de papel Tissue" />
                   )}
                 </div>
               </div>

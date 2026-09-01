@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
+import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import Counter from "@/components/ui/Counter";
 import { cota } from "@/lib/content/cota";
 
@@ -64,7 +65,7 @@ export default function ChemicalsToPaper() {
           <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.5)" }} />
         </div>
         <div ref={paperLayerRef} className="absolute inset-0">
-          <PhotoMedia src="/photos/papel-produccion.jpeg" alt="Línea de producción de bobinas de papel" />
+          <PlaceholderMedia tone="dark" label="Foto — línea de producción de papel Tissue" />
           <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.35)" }} />
         </div>
 

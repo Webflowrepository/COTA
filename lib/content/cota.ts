@@ -81,7 +81,7 @@ export const cota = {
    * Confirmadas por el cliente — no inventadas.
    */
   bobinaSpecs: {
-    anchos: ["220 cm", "200 cm"],
+    anchos: ["220 cm", "200 cm", "120 cm", "100 cm"],
     diametros: ["110 cm", "100 cm"],
     conoInterior: "7,5 cm",
   },
@@ -130,7 +130,7 @@ export const cota = {
     { id: "maquinaria", label: "Maquinaria y logística" },
   ],
   contact: {
-    email: "comercial@cota.com.ar",
+    email: "ventaspapel@cota.com.ar",
     phone: "+54 9 11 3371 3283",
   },
   /** Mismo celular confirmado por el cliente para contacto — formato wa.me (solo dígitos, sin +). */

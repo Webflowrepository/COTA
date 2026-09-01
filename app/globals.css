@@ -100,10 +100,15 @@ h1, h2, h3, h4 {
   font-size: clamp(2rem, 4vw, 3.25rem);
 }
 
+/* Antes usaba la mono (Geist Mono) — el cliente la vio "muy compu" en los
+   labels/CTAs/specs (se repite en casi todo el sitio). Pasa a usar el
+   mismo cuerpo del sitio (Inter) en mayúsculas + tracking ancho + semibold,
+   para mantener la función de "anotación técnica" sin la estética de
+   terminal/código. */
 .font-label {
-  font-family: var(--font-mono), monospace;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-family: var(--font-body), sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   font-size: 0.6875rem;
 }

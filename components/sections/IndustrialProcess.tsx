@@ -29,14 +29,12 @@ const STAGES = [
     copy: "La fibra se transforma en papel Tissue a escala industrial.",
     label: "Foto — máquina papelera en producción",
     dark: false,
-    photo: { src: "/photos/papel-produccion.jpeg", alt: "Línea de producción de bobinas de papel" },
   },
   {
     n: "04",
     title: "Rebobinado",
     copy: "El papel se rebobina y se prepara para su conversión.",
     label: "Foto — rebobinadora industrial",
-    photo: { src: "/photos/proceso-rebobinado.jpeg", alt: "Rebobinadora industrial procesando bobinas de papel" },
     dark: false,
   },
   {

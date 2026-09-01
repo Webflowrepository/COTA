@@ -84,8 +84,6 @@ export default function SolutionsByApplication() {
               >
                 {seg.id === "papeleras" ? (
                   <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
-                ) : seg.id === "convertidores" ? (
-                  <PhotoMedia src="/photos/proceso-rebobinado.jpeg" alt="Rebobinadora industrial procesando bobinas de papel" />
                 ) : (
                   <PlaceholderMedia tone="dark" label={seg.mediaLabel} />
                 )}

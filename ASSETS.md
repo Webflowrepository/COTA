@@ -81,22 +81,96 @@ efectivamente representa lo que dice el texto al lado. Si no hay ninguna que
 encaje, mejor un placeholder honesto que una foto que "llene el hueco" pero
 no tenga que ver.
 
+5. **Ronda de revisión del cliente (documento "A revisar") — se sacaron 2 de
+   las 2 fotos de stock y 1 foto de COTA por no representar a la empresa.**
+   El cliente miró el sitio en detalle y marcó 3 fotos como problemáticas,
+   con motivos distintos:
+   - `papel-produccion.jpeg` — "hay miles de rollitos chiquitos en una
+     cinta, esa no es representativa". Es la foto de stock (Pexels, David
+     Lehoczki) que además muestra a un fotógrafo de espaldas en el
+     encuadre — nunca fue ideal, se sacó de las 4 secciones donde vivía
+     (swatch Papel en Compañía, capa Papel en Químicos→Papel, panel
+     Bobinas en Familias de Producto, Proceso — etapa 03) y se volvió a
+     `PlaceholderMedia` en las 4.
+   - `proceso-rebobinado.jpeg` — "se nota que no somos nada que ver". Es la
+     otra foto de stock (Pexels, Dmitriy Steinke) — bobinas industriales
+     reales pero de otra fábrica, con una estética (soportes celestes,
+     carteles en otro idioma) que no se parece en nada a la planta real de
+     COTA. Se sacó de Proceso — etapa 04 y del segmento Convertidores
+     (Soluciones), vuelta a `PlaceholderMedia` en ambas.
+   - `footer-planta-cenital.png` — el cliente la identificó como "otra foto
+     rara... está desde el aire, pero no es la portada... no tiene nada que
+     ver", sin saber que ya se había flageado antes por dentro (ver más
+     abajo) como una de las fotos "reales" de COTA con tells de generación
+     por IA: comparada con `hero-planta-aerea.png` y
+     `naschel-planta-aerea.png` (mismos techos blancos con detalle verde,
+     misma arquitectura), esta muestra techos completamente verdes y una
+     distribución de edificios distinta — no es la misma planta. Se sacó
+     del fondo del `Footer.tsx` (global, en todas las páginas) y se
+     reemplazó por `naschel-planta-aerea.png`, ya usada y consistente en
+     el resto del sitio. **El archivo se conserva en `public/photos/` por
+     si el cliente confirma que es real y hay que reintegrarla, pero no se
+     debería volver a usar sin esa confirmación explícita — no pasó el
+     control de consistencia dos veces.**
+
+   Las 2 fotos de stock quedaron completamente fuera del sitio (0 usos) —
+   ver la tabla actualizada abajo. Después de esta ronda, **6 de las 9
+   secciones que antes tenían foto real ahora están en placeholder
+   honesto**, a la espera de fotos reales de COTA que sí representen lo que
+   describen: máquina papelera en producción, rebobinadora industrial,
+   bobina de papel Tissue (genérica).
+
+Regla aplicada de acá en adelante: una foto (real o de stock) solo se usa si
+efectivamente representa lo que dice el texto al lado. Si no hay ninguna que
+encaje, mejor un placeholder honesto que una foto que "llene el hueco" pero
+no tenga que ver. **Esto ahora incluye fotos "reales" de COTA con tells de
+IA que el cliente mismo puede detectar como ajenas** — no alcanza con que el
+archivo venga del cliente, también tiene que superar la prueba de "¿esto se
+parece a la planta real?".
+
 | Archivo en `public/photos/` | Fuente | Contenido | Usado en |
 |---|---|---|---|
 | `hero-planta-aerea.png` | Foto real de COTA | Vista aérea al amanecer | Hero |
-| `naschel-planta-aerea.png` | Foto real de COTA | Vista aérea al atardecer, portón/cartel COTA | Fondo de Planta Naschel; swatch/panel Soluciones; Proceso — etapa 06 Logística |
+| `naschel-planta-aerea.png` | Foto real de COTA | Vista aérea al atardecer, portón/cartel COTA | Fondo de Planta Naschel; swatch/panel Soluciones; Proceso — etapa 06 Logística; fondo del `Footer.tsx` |
 | `quimicos-tanques.png` | Foto real de COTA | Tanques de proceso, primer plano, cielo despejado | Capítulo Químicos; swatch/panel Químicos; segmento Papeleras y textiles |
 | `proceso-tanques.png` | Foto real de COTA | Tanques de proceso, interior, tono oscuro | Proceso — etapa 02 Proceso Químico |
 | `proceso-materia-prima.png` | Foto real de COTA | Tanques + edificio + avenida, luz de día | Proceso — etapa 01 Materia Prima |
-| `footer-planta-cenital.png` | Foto real de COTA | Vista aérea cenital (90°) | Fondo del `Footer.tsx` |
-| `papel-produccion.jpeg` | Stock Pexels (David Lehoczki, licencia libre) | Línea de producción, bobinas grandes de papel, trabajador inspeccionando | Swatch Papel (Compañía); capa Papel (Químicos→Papel); panel Bobinas (Familias de Producto); Proceso — etapa 03 Fabricación |
-| `proceso-rebobinado.jpeg` | Stock Pexels (Dmitriy Steinke, licencia libre) | Rebobinadora industrial, bobinas grandes entrando a la máquina | Proceso — etapa 04 Rebobinado; segmento Convertidores (Soluciones) |
+
+`papel-produccion.jpeg` y `proceso-rebobinado.jpeg` (stock Pexels) siguen en
+`public/photos/` pero **ya no se usan en ningún lado** — el cliente las
+descartó explícitamente (ver punto 5). `footer-planta-cenital.png` (foto de
+COTA con tells de IA) tampoco se usa — ver mismo punto.
 
 Quedan **3 de las 10 fotos de COTA sin usar** (dos primeros planos del
 logo/cartel en la pared, una toma aérea con paisaje tipo meseta/desierto que
 no coincide con San Luis) — no encajan con ningún contenido actual del
 sitio; se guardan en `Images/` por si sirven para algo más adelante (redes,
 material de marca, etc.).
+
+## Fotos reales pendientes (pedidas explícitamente por el cliente)
+
+- **Máquina papelera en producción** (Proceso — etapa 03 "Fabricación de
+  Papel Tissue"; también capa Papel en Químicos→Papel).
+- **Rebobinadora industrial** (Proceso — etapa 04 "Rebobinado"; también
+  segmento Convertidores en Soluciones).
+- **Bobina de papel Tissue** — foto de producto/bobina sola, no de la línea
+  completa (swatch Papel en Compañía; panel Bobinas en Familias de
+  Producto). El cliente sugirió específicamente **bobinas de 220 cm de
+  ancho** como la más representativa/clave para mostrar.
+- **Productos terminados** (toallas en rollo, camilleros, servilletas, etc.)
+  — hoy el catálogo en `PapelTissueSpecs.tsx` es solo texto, sin ninguna
+  foto de producto.
+- Confirmar si `footer-planta-cenital.png` es una foto real (y de qué
+  ángulo/fecha) o si hay que descartarla definitivamente — ver punto 5.
+
+## Catálogos descargables (PDF) — pendiente
+
+El cliente pidió botones de descarga de catálogo por línea: **Bobinas y
+Producto terminado primero, Químicos y Máquinas más adelante**. Hoy no
+existe ningún PDF — los CTAs "Solicitar ficha técnica" abren un mailto
+pre-completado en su lugar (ver "Formulario de contacto — limitación
+técnica" más abajo). En cuanto haya un PDF real por línea, cambio esos
+botones para que descarguen el archivo directo.
 
 **Sigue en placeholder, a propósito** (ni las fotos de COTA ni el stock
 encontrado representan esto con precisión):
@@ -171,9 +245,12 @@ o a color, mejor aún — el PNG actual es rasterizado.
 
 ## Datos de contacto
 
-`lib/content/cota.ts` — email y teléfono son los reales de cota.com.ar
-(`comercial@cota.com.ar`, `+54 9 11 3371 3283`). Confirmar que sigan vigentes
-antes de publicar.
+`lib/content/cota.ts` — email y teléfono son los reales provistos por el
+cliente (`ventaspapel@cota.com.ar` — reemplazó a `comercial@cota.com.ar`;
+`+54 9 11 3371 3283`). Es el único mail de contacto del sitio: todos los
+`mailto:` (formulario, CTAs "Solicitar ficha técnica" de cada línea,
+Contacto, footer, schema.org) referencian `cota.contact.email`, no hay
+ningún otro hardcodeado. Confirmar que sigan vigentes antes de publicar.
 
 ## Contenido pendiente (no solo media)
 
@@ -195,7 +272,11 @@ que falta es **contenido real que no puedo fabricar** sin arriesgar que el
 sitio afirme algo falso sobre COTA:
 
 - **Casos de éxito / testimonios de clientes** — ninguno verificado. No se
-  inventaron citas ni resultados ("aumentó su producción un 30%", etc.).
+  inventaron citas ni resultados ("aumentó su producción un 30%", etc.). El
+  cliente confirmó que conseguir la autorización legal escrita de un caso
+  real "no cree que la consigamos" — se sacó `Testimonial.tsx` del todo
+  (componente eliminado, ya no está en `app/page.tsx`) en vez de dejarlo
+  como sección de ejemplo a la espera de un dato que no va a llegar.
 - **Logos de clientes** — cota.com.ar no lista clientes con permiso de uso.
   Si tenés autorización de alguno, mandalos y los sumo como prueba social.
 - **Certificaciones** (ISO, calidad) — no verificadas, no incluidas.
