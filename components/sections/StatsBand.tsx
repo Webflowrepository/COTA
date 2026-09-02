@@ -19,7 +19,7 @@ const STATS = [
 
 export default function StatsBand() {
   return (
-    <section className="w-full bg-paper py-16 md:py-20">
+    <section className="section-py-sm w-full bg-paper">
       <div className="container-industrial grid grid-cols-2 gap-x-6 gap-y-10 border-t border-line-on-light pt-10 md:grid-cols-4 md:gap-x-10">
         {STATS.map((stat) => (
           <div key={stat.label}>

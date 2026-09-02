@@ -16,7 +16,7 @@ const BADGES = [
 
 export default function Certifications() {
   return (
-    <section className="w-full bg-paper py-14 md:py-16">
+    <section className="section-py-xs w-full bg-paper">
       <div className="container-industrial">
         <span className="font-label mb-2 block text-ink/45">Certificaciones</span>
         <ExampleNotice text="Ejemplo — ninguna certificación confirmada todavía" />

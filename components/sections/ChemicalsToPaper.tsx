@@ -57,7 +57,6 @@ export default function ChemicalsToPaper() {
 
   return (
     <section ref={wrapperRef} id="quimicos" className="relative h-[240vh] w-full bg-ink-deep">
-
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         <div ref={chemLayerRef} className="absolute inset-0">
           <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />

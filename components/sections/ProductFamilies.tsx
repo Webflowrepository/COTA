@@ -121,7 +121,7 @@ export default function ProductFamilies() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-paper py-24 md:py-32">
+    <section ref={sectionRef} className="section-py-md relative w-full bg-paper">
       <div className="container-industrial mb-10 flex flex-wrap items-end justify-between gap-6 md:mb-14">
         <div>
           <h2 className="text-display max-w-md text-ink">Un sistema industrial integrado.</h2>

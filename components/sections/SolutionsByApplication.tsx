@@ -45,7 +45,7 @@ export default function SolutionsByApplication() {
   const mailto = `mailto:${cota.contact.email}?subject=${encodeURIComponent(`Consulta — ${categoryLabel}`)}`;
 
   return (
-    <section id="soluciones" className="relative w-full bg-paper py-28 md:py-40">
+    <section id="soluciones" className="section-py-md relative w-full bg-paper">
       <div className="container-industrial">
         <span className="font-label mb-8 block text-ink/50">Soluciones — 03</span>
         <h2 className="text-display max-w-3xl text-ink">De la materia a la operación del cliente.</h2>

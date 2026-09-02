@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
+import { EASE_STANDARD } from "@/lib/motion/tokens";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
@@ -27,7 +28,7 @@ export default function WhatCotaDoes() {
             autoAlpha: 1,
             y: 0,
             duration: 0.8,
-            ease: "power2.out",
+            ease: EASE_STANDARD,
             scrollTrigger: { trigger: row, start: "top 85%", end: "top 55%", scrub: true },
           },
         );
@@ -36,7 +37,7 @@ export default function WhatCotaDoes() {
           { clipPath: "inset(100% 0 0 0)" },
           {
             clipPath: "inset(0% 0 0 0)",
-            ease: "power2.out",
+            ease: EASE_STANDARD,
             scrollTrigger: { trigger: row, start: "top 85%", end: "top 50%", scrub: true },
           },
         );
@@ -47,7 +48,7 @@ export default function WhatCotaDoes() {
   }, []);
 
   return (
-    <section id="compania" ref={rootRef} className="relative w-full bg-paper py-24 md:py-36">
+    <section id="compania" ref={rootRef} className="section-py-lg relative w-full bg-paper">
       <div className="container-industrial">
         <span className="font-label mb-6 block text-ink/45">
           Compañía — {cota.country}, desde {cota.foundedYear}
@@ -69,7 +70,7 @@ export default function WhatCotaDoes() {
                 {SECONDARY_CTA[line.id] && (
                   <a
                     href={SECONDARY_CTA[line.id].href}
-                    className="font-label mt-5 inline-block w-fit border-b border-ink/40 pb-0.5 text-ink/70 transition-colors hover:border-ink hover:text-ink"
+                    className="font-label mt-5 inline-block w-fit border-b border-ink/40 pb-0.5 text-ink/70 transition-opacity hover:opacity-60"
                   >
                     {SECONDARY_CTA[line.id].label} <span className="cta-arrow">→</span>
                   </a>

@@ -100,17 +100,80 @@ h1, h2, h3, h4 {
   font-size: clamp(2rem, 4vw, 3.25rem);
 }
 
-/* Antes usaba la mono (Geist Mono) — el cliente la vio "muy compu" en los
-   labels/CTAs/specs (se repite en casi todo el sitio). Pasa a usar el
-   mismo cuerpo del sitio (Inter) en mayúsculas + tracking ancho + semibold,
-   para mantener la función de "anotación técnica" sin la estética de
-   terminal/código. */
+/* Numeración de listas (catálogo de productos, filas de specs) — antes
+   cada lugar escribía "text-2xl md:text-3xl" suelto, la misma escala
+   reinventada dos veces. .text-stat queda reservada para los 3 modelos de
+   negocio (una jerarquía más grande, a propósito: son 3 decisiones, no 6
+   ítems de referencia). */
+.text-index {
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+}
+
+/* Ronda 1: Geist Mono → "muy compu". Ronda 2: Inter mayúsculas + tracking
+   ancho → seguía leyendo "compu genérico" (es EL patrón típico de label de
+   SaaS/dashboard, más allá de qué fuente exacta haya debajo). Pasa a usar
+   Teko (la misma condensada que ya se eligió para los números grandes) —
+   tiene una forma propia y angosta que no se confunde con una plantilla
+   genérica, y menos tracking porque Teko ya es alta y angosta de por sí. */
 .font-label {
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-weight: 600;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
+}
+
+/* Ritmo vertical entre secciones. Antes cada sección tenía su propio
+   py-24/py-28/py-32 sin ninguna lógica — todo el sitio respiraba al mismo
+   ritmo, sin momentos comprimidos ni momentos que se tomen su tiempo. Estas
+   4 categorías son deliberadas: xs = conector rápido entre dos momentos
+   más grandes; sm = beat corto (un dato, una fila de logos); md = ritmo
+   estándar de una sección de contenido; lg = una afirmación que necesita
+   aire (una declaración de misión, el cierre de contacto). Las secciones
+   pinneadas/full-bleed (Hero, Proceso Industrial, Químicos→Papel, Naschel)
+   no usan esta escala — su alto lo define el propio scroll-story. */
+.section-py-xs {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+.section-py-sm {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+.section-py-md {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.section-py-lg {
+  padding-top: 7rem;
+  padding-bottom: 9rem;
+}
+@media (min-width: 768px) {
+  .section-py-xs {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+  .section-py-sm {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+  .section-py-md {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  .section-py-lg {
+    padding-top: 9rem;
+    padding-bottom: 11rem;
+  }
+}
+
+/* Foco visible propio en vez del default del navegador — usa currentColor
+   para heredar el ink/paper que ya tenga el elemento, así funciona igual
+   de bien sobre fondo claro u oscuro sin reglas separadas. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
 }
 
 .container-industrial {

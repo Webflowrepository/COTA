@@ -11,7 +11,7 @@ const SLOTS = 6;
 
 export default function LogoBand() {
   return (
-    <section className="w-full bg-paper-dim py-16 md:py-20">
+    <section className="section-py-xs w-full bg-paper-dim">
       <div className="container-industrial">
         <span className="font-label mb-2 block text-ink/50">Quienes nos eligen</span>
         <ExampleNotice text="Ejemplo — logos pendientes de autorización de clientes" />

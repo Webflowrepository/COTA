@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
+import { EASE_STANDARD } from "@/lib/motion/tokens";
 import SpecCounter from "@/components/ui/SpecCounter";
 import { cota } from "@/lib/content/cota";
 
@@ -23,7 +24,7 @@ export default function PapelTissueSpecs() {
           y: 0,
           duration: 0.7,
           stagger: 0.12,
-          ease: "power2.out",
+          ease: EASE_STANDARD,
           scrollTrigger: { trigger: modelsRef.current, start: "top 80%", end: "top 45%", scrub: true },
         },
       );
@@ -35,7 +36,7 @@ export default function PapelTissueSpecs() {
           y: 0,
           duration: 0.6,
           stagger: 0.1,
-          ease: "power2.out",
+          ease: EASE_STANDARD,
           scrollTrigger: { trigger: specsRef.current, start: "top 75%", end: "top 35%", scrub: true },
         },
       );
@@ -47,7 +48,7 @@ export default function PapelTissueSpecs() {
           y: 0,
           duration: 0.5,
           stagger: 0.06,
-          ease: "power2.out",
+          ease: EASE_STANDARD,
           scrollTrigger: { trigger: catalogRef.current, start: "top 80%", end: "top 45%", scrub: true },
         },
       );
@@ -58,7 +59,7 @@ export default function PapelTissueSpecs() {
           autoAlpha: 1,
           y: 0,
           duration: 0.8,
-          ease: "power2.out",
+          ease: EASE_STANDARD,
           scrollTrigger: { trigger: catalogRef.current, start: "top 75%", end: "top 40%", scrub: true },
         },
       );
@@ -114,19 +115,19 @@ export default function PapelTissueSpecs() {
               <tbody>
                 <tr className="spec-row border-b border-line-on-dark transition-colors duration-300 hover:bg-paper/[0.04]">
                   <td className="py-5 pr-8 text-paper/70">Ancho</td>
-                  <td className="font-impact-number text-2xl text-paper transition-transform duration-300 hover:translate-x-1 md:text-3xl">
+                  <td className="font-impact-number text-index text-paper transition-transform duration-300 hover:translate-x-1">
                     <SpecCounter values={cota.bobinaSpecs.anchos} />
                   </td>
                 </tr>
                 <tr className="spec-row border-b border-line-on-dark transition-colors duration-300 hover:bg-paper/[0.04]">
                   <td className="py-5 pr-8 text-paper/70">Diámetro</td>
-                  <td className="font-impact-number text-2xl text-paper transition-transform duration-300 hover:translate-x-1 md:text-3xl">
+                  <td className="font-impact-number text-index text-paper transition-transform duration-300 hover:translate-x-1">
                     <SpecCounter values={cota.bobinaSpecs.diametros} />
                   </td>
                 </tr>
                 <tr className="spec-row transition-colors duration-300 hover:bg-paper/[0.04]">
                   <td className="py-5 pr-8 text-paper/70">Cono interior</td>
-                  <td className="font-impact-number text-2xl text-paper transition-transform duration-300 hover:translate-x-1 md:text-3xl">
+                  <td className="font-impact-number text-index text-paper transition-transform duration-300 hover:translate-x-1">
                     <SpecCounter values={[cota.bobinaSpecs.conoInterior]} />
                   </td>
                 </tr>
@@ -163,7 +164,7 @@ export default function PapelTissueSpecs() {
             <ul className="flex flex-col divide-y divide-line-on-light">
               {cota.finishedProducts.map((product, i) => (
                 <li key={product} className="catalog-item group flex items-baseline gap-6 py-4">
-                  <span className="font-impact-number text-2xl text-ink/25 transition-colors duration-300 group-hover:text-ink/55 md:text-3xl">
+                  <span className="font-impact-number text-index text-ink/25 transition-colors duration-300 group-hover:text-ink/55">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="text-ink/70 transition-colors duration-300 group-hover:text-ink">{product}</span>

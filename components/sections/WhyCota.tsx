@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
+import { EASE_STANDARD } from "@/lib/motion/tokens";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
@@ -40,7 +41,7 @@ export default function WhyCota() {
           y: 0,
           duration: 0.7,
           stagger: 0.1,
-          ease: "power2.out",
+          ease: EASE_STANDARD,
           scrollTrigger: { trigger: rootRef.current, start: "top 75%", end: "top 40%", scrub: true },
         },
       );
@@ -49,7 +50,7 @@ export default function WhyCota() {
   }, []);
 
   return (
-    <section ref={rootRef} className="relative w-full bg-paper py-24 md:py-32">
+    <section ref={rootRef} className="section-py-md relative w-full bg-paper">
       {/* Orden en mobile: título → foto → diferenciales. Antes la foto vivía
           en una columna aparte que en mobile caía al final del todo, así
           que entre esta sección y WhatCotaDoes había un tramo largo de puro

@@ -17,11 +17,19 @@ const POINTS = [
 
 export default function Sustainability() {
   return (
-    <section className="relative w-full overflow-hidden bg-ink-deep py-24 text-paper md:py-32">
-      <div className="absolute inset-0 opacity-30">
+    <section className="section-py-sm relative w-full overflow-hidden bg-ink-deep text-paper">
+      {/* Antes: opacity-30 en la foto + un overlay plano encima — entre las
+          dos, la foto quedaba casi invisible (7% de brillo real). El resto
+          del sitio usa una sola foto a opacidad completa con un degradé
+          (más oscuro abajo, donde vive el texto) — este era el único lugar
+          que rompía ese patrón. */}
+      <div className="absolute inset-0">
         <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA en Naschel" />
       </div>
-      <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.75)" }} />
+      <div
+        className="absolute inset-0"
+        style={{ background: "linear-gradient(0deg, rgba(6,8,17,0.9) 0%, rgba(6,8,17,0.55) 55%, rgba(6,8,17,0.7) 100%)" }}
+      />
 
       <div className="container-industrial relative">
         <span className="font-label mb-2 block text-paper/50">Sostenibilidad</span>

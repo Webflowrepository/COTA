@@ -377,18 +377,103 @@ Si en algún momento tenés estos datos reales de COTA (specs de producto,
 certificaciones ambientales, SLA de entrega), los sumo de inmediato — el
 límite fue siempre "no inventar", no "no quiero mostrarlo".
 
-## Tipografía de números — Big Shoulders → Teko
+## Pase final de dirección de arte
+
+Pedido explícito del cliente: pulir lo que ya existe (spacing, tipografía,
+motion, consistencia) sin rediseñar, sin inventar contenido, sin
+reestructurar la narrativa. Se auditó todo el sitio sección por sección
+(`grep` de valores de padding, easings de GSAP, `rounded-`/`shadow-`) antes
+de tocar nada. Cambios concretos:
+
+- **Ritmo vertical (el de mayor impacto).** Antes casi todas las secciones
+  usaban variantes de `py-24`/`py-28`/`py-32` sin ninguna lógica — el sitio
+  respiraba todo al mismo ritmo. Se creó una escala de 4 roles en
+  `globals.css` (`.section-py-xs/sm/md/lg`) y se asignó cada sección a
+  propósito: StatsBand=sm (beat corto después del Hero), LogoBand=xs
+  (conector), Compañía=lg (la declaración de misión necesita aire),
+  WhyCota/ProductFamilies/Soluciones=md (ritmo estándar), Sostenibilidad=sm,
+  Certificaciones=xs (conector antes del cierre), Contacto=lg (la
+  conclusión). Las secciones pinneadas/full-bleed (Hero, Proceso Industrial,
+  Químicos→Papel, Naschel) no usan esta escala — ya tienen su propio ritmo
+  cinematográfico. Verificado con `getComputedStyle` en el navegador: la
+  secuencia real de padding ahora es 0→88→72→144/176→128→[inmersivo]
+  →[inmersivo]→128→128→[inmersivo]→88→72→144/176 — una onda real, no una
+  línea plana.
+- **`.text-index` nuevo** (`clamp(1.5rem, 3vw, 1.875rem)`) — antes
+  "text-2xl md:text-3xl" estaba escrito suelto en 4 lugares distintos
+  (specs de bobinas ×3, catálogo de productos) para el mismo rol visual
+  (un número de índice en una lista). `.text-stat` queda reservado a los 3
+  Modelos de negocio a propósito — son 3 decisiones, no 6 ítems de
+  referencia, y merecen más peso.
+- **`lib/motion/tokens.ts` nuevo** (`EASE_STANDARD`) — el patrón de reveal
+  simple (autoAlpha + y, scroll-scrubbed) se repetía igual en 6 lugares
+  (WhatCotaDoes, WhyCota, y 4 veces en PapelTissueSpecs) con "power2.out"
+  como string suelto en cada archivo. Ahora comparten una constante. Las
+  coreografías con ease propio (Hero, el clip-reveal de ProductFamilies)
+  no se tocaron — son los 2 momentos insignia del sitio y está bien que se
+  sientan distintos.
+- **Foto de Sostenibilidad, corregida.** Tenía `opacity-30` en la imagen
+  MÁS un overlay plano `rgba(...,0.75)` encima — entre las dos capas, la
+  foto quedaba a ~7% de brillo real, casi invisible. Era la única sección
+  del sitio que no seguía el patrón ya establecido en el resto (una foto a
+  opacidad completa + un degradé más oscuro hacia abajo). Se corrigió para
+  que siga el mismo patrón que Hero/Naschel/Proceso Industrial.
+- **Hover de la CTA secundaria de Compañía, unificado.** Era la única CTA
+  ink-sobre-claro del sitio que usaba `hover:border-ink hover:text-ink` —
+  las otras 6+ CTAs en el mismo contexto (texto ink sobre fondo claro) usan
+  `hover:opacity-60`. Las CTAs sobre fondo oscuro/foto sí usan
+  consistentemente un tratamiento de borde — ese patrón (opacity en claro,
+  borde en oscuro) ya existía en casi todo el sitio, esta era la única
+  excepción real.
+- **Foco de teclado propio.** No había ningún `:focus-visible` definido —
+  dependía del outline default del navegador. Se agregó un outline de
+  `currentColor` (2px, offset 3px) que hereda el ink/paper de cada
+  elemento, así funciona igual en secciones claras y oscuras sin reglas
+  separadas.
+
+**Lo que se revisó y se decidió NO tocar** (por las mismas razones que pide
+el brief — "refinar antes que reemplazar"):
+- Las 3 filas de Compañía (Químicos/Papel/Soluciones) repiten la misma
+  composición texto-izquierda/foto-derecha en vez de alternar — es
+  intencional: son 3 líneas de negocio en pie de igualdad, variar la
+  composición entre ellas implicaría una jerarquía que no existe.
+- El orden Químicos→Papel dentro de `ChemicalsToPaper.tsx` y
+  `IndustrialProcess.tsx` — es el proceso real de producción (se trata
+  químicamente antes de convertirse en papel), no una cuestión de balance
+  visual (ver "Balance Papel vs. Químicos" más abajo, que sí tocó el orden
+  en otros lugares donde no había una razón de proceso real).
+- Los paneles de ProductFamilies/Proceso Industrial ya eran fotos
+  full-bleed con texto superpuesto, no cards de ecommerce — no hizo falta
+  ningún cambio de composición ahí.
+- Corner-radii/sombras: ya eran mínimos y deliberados (el botón circular de
+  WhatsApp es la única excepción documentada desde el arranque del
+  proyecto) — no había nada que "desprolijar" ahí.
+
+## Tipografía — Big Shoulders → Teko (números Y labels)
 
 `.font-impact-number` (todos los números grandes del sitio: StatsBand,
 NaschelPlant, contador de Químicos en Químicos→Papel, specs de bobinas,
 numeración "01/02/03" de catálogo/modelos de negocio) pasó de **Big
-Shoulders** a **Teko** — `app/layout.tsx`. Importante: esto NO afecta los
-títulos (`h1`-`h4`, `.text-hero`, `.text-display`, `.text-heading`), que
-siempre usaron `--font-body` (Inter), no `--font-display`. El cambio se
-eligió mostrándole al cliente comparadores en vivo (4 rondas: industrial
-condensada, más condensada aún, display geométrico moderno tipo "Clash
-Display" — descartada por alejarse demasiado del registro industrial — y
-una vuelta al terreno condensado con más carácter) hasta llegar a Teko.
+Shoulders** a **Teko** — `app/layout.tsx`. El cambio se eligió mostrándole
+al cliente comparadores en vivo (4 rondas: industrial condensada, más
+condensada aún, display geométrico moderno tipo "Clash Display" —
+descartada por alejarse demasiado del registro industrial — y una vuelta
+al terreno condensado con más carácter) hasta llegar a Teko.
+
+Después de aplicarlo, el cliente mandó una captura de los labels del nav
+("AÑOS OPERANDO", "T/MES — CAPACIDAD QUÍMICOS", etc.) diciendo que
+"seguía dando muy compu genérico" — pero esos labels usan `.font-label`,
+que en ese momento seguía en Inter mayúsculas + tracking (el fix de la
+ronda anterior contra Geist Mono). O sea: el problema nunca fue
+específicamente Geist Mono ni Inter — es el **patrón** "sans en mayúsculas
+con tracking ancho", el label típico de cualquier SaaS/dashboard,
+más allá de qué fuente exacta esté debajo. Se resolvió pasando
+`.font-label` a Teko también (menos tracking, `0.8125rem` en vez de
+`0.6875rem` porque las proporciones de Teko a ese tamaño necesitan un poco
+más de aire) — ahora todo el sistema de "anotación técnica" del sitio
+(números grandes Y labels/kickers/CTAs) comparte una sola fuente con forma
+propia, angosta y condensada, en vez de mezclar Inter-mayúsculas con lo
+que sea que se use para los números.
 
 ## Balance Papel vs. Químicos en el sitio
 

@@ -36,7 +36,7 @@ const CHANNELS = [
 
 export default function Contact() {
   return (
-    <section id="contacto" className="relative w-full bg-paper pb-20 pt-28 text-ink md:pb-28 md:pt-36">
+    <section id="contacto" className="section-py-lg relative w-full bg-paper text-ink">
       <div className="container-industrial">
         <span className="font-label mb-8 block text-ink/50">Contacto</span>
 
