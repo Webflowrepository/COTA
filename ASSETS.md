@@ -194,15 +194,19 @@ más adelante (redes, material de marca, etc.).
 - Confirmar si `footer-planta-cenital.png` es una foto real (y de qué
   ángulo/fecha) o si hay que descartarla definitivamente — ver punto 5.
 
-## Redes sociales — íconos agregados, faltan links reales
+## Redes sociales — Instagram confirmado, falta LinkedIn
 
-`Footer.tsx` ahora muestra íconos SVG (no texto plano) para Instagram,
-LinkedIn y TikTok — ver `cota.socialPlaceholders`. Ninguno tiene link
-todavía: quedan como `<span>` no clickeable con tooltip "próximamente". El
-cliente dijo que va a pasar los links reales de Instagram y LinkedIn (los
-únicos que existen); TikTok queda marcado como "próximamente" sin más. En
-cuanto lleguen las URLs reales, cambio los `<span>` por `<a>` igual que ya
-funciona el link de WhatsApp.
+`Footer.tsx` y `Contact.tsx` muestran íconos SVG (no texto plano) para
+Instagram, LinkedIn y TikTok — ver `cota.social` en `lib/content/cota.ts`
+(antes `socialPlaceholders`, un array de strings; ahora `{name, href}[]`
+para poder cargar el link real de cada uno de forma independiente).
+**Instagram real, confirmado por el cliente:**
+`https://www.instagram.com/cota_papelera/` — ya es un `<a>` funcional en
+Footer, en los 3 íconos de Contacto, y en `sameAs` del schema.org
+(`app/layout.tsx`). LinkedIn y TikTok siguen con `href: null` — quedan
+como `<span>` con tooltip "próximamente" hasta que el cliente pase esos
+links. Cuando lleguen, es un solo cambio en `cota.social` — ya no hace
+falta tocar los componentes.
 
 ## Catálogos descargables (PDF) — pendiente
 
@@ -376,6 +380,42 @@ afirmaría algo no confirmado):**
 Si en algún momento tenés estos datos reales de COTA (specs de producto,
 certificaciones ambientales, SLA de entrega), los sumo de inmediato — el
 límite fue siempre "no inventar", no "no quiero mostrarlo".
+
+## Familias de Producto — el carrusel no se sentía scrolleable
+
+El cliente mandó captura: en pantallas anchas los 3 paneles (Bobinas,
+Químicos, Soluciones) casi entraban enteros, así que el scroll horizontal
+apenas se movía unos px — se sentía como que no había scroll, y el
+progreso de la barra de abajo (que sí avanzaba un poco) parecía un bug
+("la misma imagen que no se completa") en vez de una tercera imagen
+distinta. Además el título quedaba separado del carrusel por un hueco
+grande porque el hint "Desplazar horizontalmente →" vivía pegado al borde
+derecho del contenedor, lejos del título.
+
+Cambios en `ProductFamilies.tsx`:
+- Paneles más anchos (`md:w-[62vw] lg:w-[52vw]`, antes `46vw/36vw`) — con
+  3 paneles eso da ~150-186vw de ancho total, un recorrido de scroll real
+  y perceptible (verificado: pasó de ~167px a 1223px de distancia
+  scrolleable en una pantalla de 1900px). Ahora el 3er panel siempre queda
+  parcialmente cortado en el borde, invitando a scrollear.
+- El hint de scroll se movió del header a la barra de abajo, junto con un
+  contador "01 / 03" — ahí es donde efectivamente pasa la interacción.
+- El header quedó solo con título + CTA, sin el elemento suelto al borde
+  derecho.
+
+**Bug de cascada CSS encontrado en el camino:** intenté agregarle `pr-20`
+(padding-right de Tailwind) al mismo `<div>` que ya tenía la clase
+`container-industrial` para separar el contador del botón flotante de
+WhatsApp en mobile — no tuvo ningún efecto. Causa: `.container-industrial`
+define `padding-inline` en `globals.css`, y como esa regla está definida
+*después* de `@import "tailwindcss"` en el archivo, le gana en cascada a
+cualquier utilidad `pr-*`/`pl-*` de Tailwind aplicada al mismo elemento
+(misma especificidad, pero orden de aparición posterior). **Cualquier
+elemento con la clase `container-industrial` va a ignorar `pr-*`/`pl-*`
+de Tailwind puestos en el mismo nodo** — hay que usar `margin` en un hijo,
+o padding en un wrapper interno, nunca padding directo sobre el nodo que
+ya tiene `container-industrial`. Se resolvió con `mr-16 md:mr-0` en el
+`<span>` del contador en vez de padding en el contenedor.
 
 ## Pase final de dirección de arte
 
@@ -599,5 +639,5 @@ esa segmentación de vuelta (para armar reportes de qué línea genera más
 leads, por ejemplo), es cuestión de volver a montar `ContactForm.tsx` en la
 sección — el componente sigue andando, no hubo que tocarlo.
 
-El link de Instagram queda sin cargar (`href: null` en `Contact.tsx`) hasta
-que el cliente pase la URL real — mismo criterio que en `Footer.tsx`.
+El ícono de Instagram ya tiene link real (`https://www.instagram.com/cota_papelera/`,
+confirmado por el cliente) — ver "Redes sociales" más arriba.

@@ -35,12 +35,27 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-4 text-paper/45">
-          {cota.socialPlaceholders.map((s) => {
-            const Icon = SOCIAL_ICONS[s];
-            return (
-              <span key={s} title={`${s} — próximamente`} className="flex items-center gap-1.5">
+          {cota.social.map(({ name, href }) => {
+            const Icon = SOCIAL_ICONS[name];
+            const content = (
+              <>
                 {Icon && <Icon />}
-                <span className="font-label">{s}</span>
+                <span className="font-label">{name}</span>
+              </>
+            );
+            return href ? (
+              <a
+                key={name}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 transition-colors hover:text-paper"
+              >
+                {content}
+              </a>
+            ) : (
+              <span key={name} title={`${name} — próximamente`} className="flex items-center gap-1.5">
+                {content}
               </span>
             );
           })}

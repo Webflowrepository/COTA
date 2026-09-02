@@ -46,6 +46,7 @@ export default function ProductFamilies() {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
+  const activeIndex = Math.min(PANELS.length - 1, Math.round(progress * (PANELS.length - 1)));
 
   function handleScroll() {
     const el = scrollerRef.current;
@@ -122,17 +123,20 @@ export default function ProductFamilies() {
 
   return (
     <section ref={sectionRef} className="section-py-md relative w-full bg-paper">
-      <div className="container-industrial mb-10 flex flex-wrap items-end justify-between gap-6 md:mb-14">
-        <div>
-          <h2 className="text-display max-w-md text-ink">Un sistema industrial integrado.</h2>
-          <a
-            href="#contacto"
-            className="font-label mt-4 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
-          >
-            Ir al formulario <span className="cta-arrow">→</span>
-          </a>
-        </div>
-        <span className="font-label hidden text-ink/40 md:block">Desplazar horizontalmente →</span>
+      {/* Antes había un segundo elemento ("Desplazar horizontalmente →")
+          pegado al borde derecho del contenedor, separado del título por
+          un hueco enorme en pantallas anchas — leía como dos cosas sueltas
+          compartiendo una fila, no como un encabezado. El hint de scroll
+          se movió abajo, junto al control real (la barra), que es donde
+          efectivamente pasa la interacción. */}
+      <div className="container-industrial mb-10 md:mb-14">
+        <h2 className="text-display max-w-md text-ink">Un sistema industrial integrado.</h2>
+        <a
+          href="#contacto"
+          className="font-label mt-4 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+        >
+          Ir al formulario <span className="cta-arrow">→</span>
+        </a>
       </div>
 
       <div
@@ -146,7 +150,7 @@ export default function ProductFamilies() {
           return (
             <div
               key={panel.id}
-              className="pf-panel group relative h-[62vh] w-[86vw] shrink-0 snap-start overflow-hidden md:h-[68vh] md:w-[46vw] lg:w-[36vw]"
+              className="pf-panel group relative h-[62vh] w-[86vw] shrink-0 snap-start overflow-hidden md:h-[68vh] md:w-[62vw] lg:w-[52vw]"
             >
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
                 {panel.id === "soluciones" ? (
@@ -177,19 +181,37 @@ export default function ProductFamilies() {
         })}
       </div>
 
-      <div className="container-industrial mt-1 flex justify-center">
+      {/* Antes esta barra era una tira de 96px centrada sola, con el hint
+          de scroll separado arriba — muy chica para leerse como un control
+          real; con los paneles casi enteros a la vista en pantallas
+          anchas (antes de agrandarlos), avanzar la barra unos px no se
+          sentía distinto de la nada, como un bug. Ahora es un control de
+          ancho completo con el número de panel activo — más grande, más
+          claro que hay algo que arrastrar/clickear. */}
+      <div className="container-industrial mt-6 flex items-center gap-6">
         <div
           ref={trackRef}
           onPointerDown={handleTrackPointerDown}
-          className="flex w-24 cursor-pointer items-center py-2"
+          className="flex flex-1 cursor-pointer items-center py-2"
         >
           <div className="h-px w-full bg-line-on-light">
             <div
               className="h-px bg-ink transition-[width] duration-150 ease-out"
-              style={{ width: `${Math.max(15, progress * 100)}%` }}
+              style={{ width: `${Math.max(8, progress * 100)}%` }}
             />
           </div>
         </div>
+        {/* mr-16 en mobile: el botón flotante de WhatsApp vive fijo en esa
+            misma esquina (right-5, 56px de ancho) — sin este margen, el
+            contador queda tapado por el botón cuando esta fila llega al
+            fondo del viewport (pasa casi siempre, la sección mide ~1
+            viewport de alto en mobile). Va como margin en el propio
+            elemento, no como padding en .container-industrial — ese
+            padding-inline le gana en cascada a cualquier pr-* de Tailwind. */}
+        <span className="font-label mr-16 shrink-0 text-ink/40 md:mr-0">
+          {String(activeIndex + 1).padStart(2, "0")} / {String(PANELS.length).padStart(2, "0")}
+          <span className="hidden md:inline"> — Desplazar horizontalmente →</span>
+        </span>
       </div>
     </section>
   );

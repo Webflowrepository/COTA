@@ -53,6 +53,7 @@ const jsonLd = {
   },
   telephone: cota.contact.phone,
   email: cota.contact.email,
+  sameAs: cota.social.filter((s) => s.href).map((s) => s.href),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

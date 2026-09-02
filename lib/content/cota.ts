@@ -142,8 +142,13 @@ export const cota = {
     number: "5491133713283" as string | null,
     isPlaceholder: false,
   },
-  /** Redes preparadas para activar más adelante — sin cuenta confirmada todavía. */
-  socialPlaceholders: ["Instagram", "LinkedIn", "TikTok"],
+  /** Redes — Instagram es la cuenta real confirmada por el cliente.
+   * LinkedIn/TikTok siguen sin cuenta confirmada (href null). */
+  social: [
+    { name: "Instagram", href: "https://www.instagram.com/cota_papelera/" as string | null },
+    { name: "LinkedIn", href: null as string | null },
+    { name: "TikTok", href: null as string | null },
+  ],
 } as const;
 
 export type BusinessLine = (typeof cota.businessLines)[number];

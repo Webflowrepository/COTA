@@ -23,7 +23,7 @@ const CHANNELS = [
   {
     id: "instagram",
     label: "Instagram",
-    href: null as string | null, // pendiente — el cliente va a pasar el link real
+    href: cota.social.find((s) => s.name === "Instagram")?.href ?? null,
     Icon: InstagramIcon,
   },
   {
