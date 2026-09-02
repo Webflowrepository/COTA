@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const LINKS = [
   { href: "#compania", id: "compania", label: "Compañía" },
-  { href: "#quimicos", id: "quimicos", label: "Químicos" },
   { href: "#papel", id: "papel", label: "Papel" },
+  { href: "#quimicos", id: "quimicos", label: "Químicos" },
   { href: "#soluciones", id: "soluciones", label: "Soluciones" },
   { href: "#planta", id: "planta", label: "Planta" },
   { href: "#proceso", id: "proceso", label: "Proceso" },

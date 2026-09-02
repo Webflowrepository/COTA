@@ -128,6 +128,41 @@ IA que el cliente mismo puede detectar como ajenas** — no alcanza con que el
 archivo venga del cliente, también tiene que superar la prueba de "¿esto se
 parece a la planta real?".
 
+6. **Las 5 fotos "papel/bobinas" que faltaban llegaron por WhatsApp — 4 se
+   usaron, 1 quedó afuera.** El cliente había mandado por audio que ya
+   tenía fotos reales de "la típica bobina arriba de un pallet" — aparecieron
+   como 5 archivos nuevos en `Images/` (`WhatsApp Image 2026-09-01...`).
+   Se revisaron una por una:
+   - Máquina de papel Tissue produciendo toallas apiladas → copiada a
+     `papel-produccion-tissue.jpeg`, usada en Proceso — etapa 03
+     "Fabricación de Papel Tissue".
+   - Bobina en máquina rebobinadora, brazo de operario visible (no la cara)
+     → `proceso-rebobinado-real.jpeg`, usada en Proceso — etapa 04
+     "Rebobinado".
+   - Depósito con filas de bobinas grandes en pallets, carteles "TB30",
+     sin personas → `bobinas-deposito.jpeg`, la más versátil — usada como
+     swatch Papel (Compañía), capa Papel (Químicos→Papel) y segmento
+     Convertidores (Soluciones).
+   - Dos personas caminando junto a bobinas de 220 cm en pallets afuera de
+     la planta (el "típico" pedido en el audio) → `bobinas-pallet-220cm.jpeg`,
+     usada en el panel "Bobinas Industriales" de Familias de Producto. Tiene
+     2 personas identificables en cuadro — el cliente la mandó a propósito
+     como LA foto representativa, así que se usó tal cual; avisar si
+     prefieren una versión recortada/sin personas más adelante.
+   - La 5ª imagen es un **gráfico de marketing ya armado** (logo COTA +
+     "Papel Tissue para cada necesidad" + "100% EXTRA BLANCO" + fotos de
+     producto, todo con texto incrustado) — no se usó como foto de fondo de
+     ninguna sección: el sitio arma toda su tipografía en código, no con
+     texto incrustado en la imagen, y el claim "100% EXTRA BLANCO" no está
+     verificado como para mostrarlo. Queda en `Images/` — puede servir tal
+     cual para redes sociales en vez de para el sitio.
+
+   Con esto, **las 5 secciones "papel/bobinas" que estaban en placeholder
+   después de sacar las fotos de stock (punto 5) ahora tienen foto real**.
+   Sigue pendiente únicamente: foto de productos terminados (toallas,
+   camilleros, etc. — no hay ninguna en las que mandaron) y confirmar si
+   `footer-planta-cenital.png` es real o se descarta del todo.
+
 | Archivo en `public/photos/` | Fuente | Contenido | Usado en |
 |---|---|---|---|
 | `hero-planta-aerea.png` | Foto real de COTA | Vista aérea al amanecer | Hero |
@@ -135,33 +170,39 @@ parece a la planta real?".
 | `quimicos-tanques.png` | Foto real de COTA | Tanques de proceso, primer plano, cielo despejado | Capítulo Químicos; swatch/panel Químicos; segmento Papeleras y textiles |
 | `proceso-tanques.png` | Foto real de COTA | Tanques de proceso, interior, tono oscuro | Proceso — etapa 02 Proceso Químico |
 | `proceso-materia-prima.png` | Foto real de COTA | Tanques + edificio + avenida, luz de día | Proceso — etapa 01 Materia Prima |
+| `papel-produccion-tissue.jpeg` | Foto real de COTA (WhatsApp) | Máquina de papel Tissue, toallas apiladas en producción | Proceso — etapa 03 Fabricación |
+| `proceso-rebobinado-real.jpeg` | Foto real de COTA (WhatsApp) | Bobina en máquina rebobinadora | Proceso — etapa 04 Rebobinado |
+| `bobinas-deposito.jpeg` | Foto real de COTA (WhatsApp) | Depósito, filas de bobinas grandes en pallets, sin personas | Swatch Papel (Compañía); capa Papel (Químicos→Papel); segmento Convertidores (Soluciones) |
+| `bobinas-pallet-220cm.jpeg` | Foto real de COTA (WhatsApp) | Bobina de 220cm en pallet, 2 personas en cuadro | Panel Bobinas Industriales (Familias de Producto) |
 
-`papel-produccion.jpeg` y `proceso-rebobinado.jpeg` (stock Pexels) siguen en
-`public/photos/` pero **ya no se usan en ningún lado** — el cliente las
-descartó explícitamente (ver punto 5). `footer-planta-cenital.png` (foto de
-COTA con tells de IA) tampoco se usa — ver mismo punto.
+`footer-planta-cenital.png` (foto de COTA con tells de IA) no se usa — ver
+punto 5. Las fotos de stock Pexels descartadas (punto 5) se borraron de
+`public/photos/` directamente, ya no están ni sin usar.
 
-Quedan **3 de las 10 fotos de COTA sin usar** (dos primeros planos del
-logo/cartel en la pared, una toma aérea con paisaje tipo meseta/desierto que
-no coincide con San Luis) — no encajan con ningún contenido actual del
-sitio; se guardan en `Images/` por si sirven para algo más adelante (redes,
-material de marca, etc.).
+Quedan **3 de las 10 fotos originales de COTA sin usar** (dos primeros
+planos del logo/cartel en la pared, una toma aérea con paisaje tipo
+meseta/desierto que no coincide con San Luis) — no encajan con ningún
+contenido actual del sitio; se guardan en `Images/` por si sirven para algo
+más adelante (redes, material de marca, etc.).
 
 ## Fotos reales pendientes (pedidas explícitamente por el cliente)
 
-- **Máquina papelera en producción** (Proceso — etapa 03 "Fabricación de
-  Papel Tissue"; también capa Papel en Químicos→Papel).
-- **Rebobinadora industrial** (Proceso — etapa 04 "Rebobinado"; también
-  segmento Convertidores en Soluciones).
-- **Bobina de papel Tissue** — foto de producto/bobina sola, no de la línea
-  completa (swatch Papel en Compañía; panel Bobinas en Familias de
-  Producto). El cliente sugirió específicamente **bobinas de 220 cm de
-  ancho** como la más representativa/clave para mostrar.
 - **Productos terminados** (toallas en rollo, camilleros, servilletas, etc.)
   — hoy el catálogo en `PapelTissueSpecs.tsx` es solo texto, sin ninguna
-  foto de producto.
+  foto de producto. Ninguna de las fotos recibidas hasta ahora sirve para
+  esto — son todas de proceso/bobina, no de producto de góndola/venta.
 - Confirmar si `footer-planta-cenital.png` es una foto real (y de qué
   ángulo/fecha) o si hay que descartarla definitivamente — ver punto 5.
+
+## Redes sociales — íconos agregados, faltan links reales
+
+`Footer.tsx` ahora muestra íconos SVG (no texto plano) para Instagram,
+LinkedIn y TikTok — ver `cota.socialPlaceholders`. Ninguno tiene link
+todavía: quedan como `<span>` no clickeable con tooltip "próximamente". El
+cliente dijo que va a pasar los links reales de Instagram y LinkedIn (los
+únicos que existen); TikTok queda marcado como "próximamente" sin más. En
+cuanto lleguen las URLs reales, cambio los `<span>` por `<a>` igual que ya
+funciona el link de WhatsApp.
 
 ## Catálogos descargables (PDF) — pendiente
 
@@ -336,6 +377,43 @@ Si en algún momento tenés estos datos reales de COTA (specs de producto,
 certificaciones ambientales, SLA de entrega), los sumo de inmediato — el
 límite fue siempre "no inventar", no "no quiero mostrarlo".
 
+## Balance Papel vs. Químicos en el sitio
+
+El cliente pidió explícitamente que el sitio "no parezca una fábrica solo
+química" y esté "más orientada al papel también". Antes de tocar nada se
+contó el uso real de fotos por tema (`grep` sobre `components/`): ya estaba
+bastante parejo (6 fotos papel/bobinas vs. 5 químicos-específicas), así que
+el desbalance no era de fotos — era de **orden y de números**:
+
+- `cota.businessLines` en `lib/content/cota.ts` tenía Químicos primero — se
+  reordenó a Papel primero (con Químicos y Soluciones después). Esto se
+  propaga solo a todo lo que itera ese array, principalmente
+  `WhatCotaDoes.tsx` (ahí Papel Tissue ahora es la primera línea que se ve
+  al entrar a "Compañía").
+- `ProductFamilies.tsx` (`PANELS`) tenía Químicos primero en el carrusel —
+  se reordenó a Bobinas primero.
+- `Nav.tsx` (`LINKS`) tenía Químicos antes que Papel — se invirtió el orden.
+- `StatsBand.tsx` tenía un solo stat "de negocio" con número propio: 700
+  T/mes Químicos, sin ningún número de Papel al lado (los otros 3 stats
+  eran neutrales: años, divisiones, alcance nacional) — visualmente leía
+  como que solo Químicos tiene una cifra de escala industrial. Se reemplazó
+  el stat más genérico ("Abastecimiento nacional") por **220 cm — Ancho
+  máx. de bobina (Papel)**, dato real de `cota.bobinaSpecs.anchos`, para
+  que Papel tenga su propio número igual de grande al lado del de Químicos.
+
+**Lo que no se tocó a propósito:** el orden interno de `ChemicalsToPaper.tsx`
+(Químicos → Papel) y de `IndustrialProcess.tsx` (Proceso Químico antes de
+Fabricación de Papel) — ese orden es el proceso real de producción (la
+fibra se trata químicamente antes de convertirse en papel), no una
+jerarquía de importancia; invertirlo sería inexacto, no solo una cuestión
+de balance visual. `SolutionsByApplication.tsx` ya tenía Convertidores
+(papel) primero, no hizo falta tocarlo.
+
+**Nota:** este pedido llegó junto con "cargué nueva foto en la carpeta
+Images" — se revisó `Images/` y no apareció ningún archivo nuevo (mismos
+16 archivos que la ronda anterior, mismas fechas). Puede que la subida no
+haya terminado de sincronizar — avisar si hay que revisar de nuevo.
+
 ## Ronda grande: brief de 10 secciones nuevas
 
 Se recibió un brief externo (tono "developer senior") pidiendo 10 secciones/mejoras
@@ -404,13 +482,24 @@ Proceso → Químicos → Papel que se construyó como un tramo narrativo único
 secciones + Certificaciones cerca del final, antes de Contacto, en vez de
 seguir el orden literal del brief — ver comentario en `app/page.tsx`.
 
-## Formulario de contacto — limitación técnica
+## Formulario de contacto — se sacó del todo
 
-`components/sections/ContactForm.tsx` arma un `mailto:` con los datos
-cargados (abre el cliente de correo del visitante). Funciona sin backend,
-pero tiene las limitaciones típicas de mailto: depende de que el visitante
-tenga un cliente de correo configurado, y no queda un registro del lead del
-lado del servidor. Para un formulario que envíe el mail directamente y
-guarde los leads, hace falta conectar un servicio (Resend, Formspree, o un
-backend propio) — es una decisión de infraestructura, no de diseño, así que
-la dejo para cuando definan qué servicio usar.
+`Contact.tsx` ya no usa `ContactForm.tsx`. El cliente lo pidió explícito por
+audio: "el formulario espanta a la gente, te abstrae". Se reemplazó por
+mail grande + 3 íconos (WhatsApp/Instagram/Mail) más el mapa, que ahora
+ocupa la columna que dejó libre el formulario. `ContactForm.tsx` queda en
+el repo sin usar (no se borró, por si se quiere volver atrás) —
+`components/ui/SocialIcons.tsx` es nuevo, centraliza los íconos que antes
+estaban duplicados en `WhatsAppButton.tsx` y `Footer.tsx`, y suma
+`MailIcon`.
+
+**Se pierde con este cambio:** la segmentación por categoría
+(Químicos/Papel/Soluciones/Guardián/Otro) y el campo de volumen estimado
+que traía cada consulta por mailto — ahora cualquier consulta por mail o
+WhatsApp llega sin ese contexto pre-cargado. Si en algún momento hace falta
+esa segmentación de vuelta (para armar reportes de qué línea genera más
+leads, por ejemplo), es cuestión de volver a montar `ContactForm.tsx` en la
+sección — el componente sigue andando, no hubo que tocarlo.
+
+El link de Instagram queda sin cargar (`href: null` en `Contact.tsx`) hasta
+que el cliente pase la URL real — mismo criterio que en `Footer.tsx`.

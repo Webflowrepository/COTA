@@ -3,27 +3,29 @@
 import { useEffect, useRef, useState } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
-import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import { cota } from "@/lib/content/cota";
 
 const bobinas = cota.services.find((s) => s.id === "bobinas")!;
 const quimicos = cota.businessLines.find((l) => l.id === "quimicos")!;
 const soluciones = cota.businessLines.find((l) => l.id === "soluciones")!;
 
+// Bobinas primero — el sitio no debe leer como una fábrica solo de
+// química; Papel/bobinas encabeza el carrusel igual que ahora encabeza
+// cota.businessLines.
 const PANELS = [
-  {
-    id: "quimicos",
-    label: quimicos.label,
-    short: quimicos.short,
-    mediaLabel: "Foto — proceso químico",
-    categoryId: "quimicos",
-  },
   {
     id: "bobinas",
     label: "Bobinas Industriales",
     short: bobinas.short,
     mediaLabel: "Foto — bobina de papel",
     categoryId: "bobinas",
+  },
+  {
+    id: "quimicos",
+    label: quimicos.label,
+    short: quimicos.short,
+    mediaLabel: "Foto — proceso químico",
+    categoryId: "quimicos",
   },
   // Guardián ya no es un panel acá — sin foto de producto, quedaba "colgado"
   // junto a 3 fotos reales (2 rondas de retoque de estilo no lo arreglaron,
@@ -152,7 +154,7 @@ export default function ProductFamilies() {
                 ) : panel.id === "quimicos" ? (
                   <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
                 ) : (
-                  <PlaceholderMedia tone="dark" label={panel.mediaLabel} />
+                  <PhotoMedia src="/photos/bobinas-pallet-220cm.jpeg" alt="Bobina industrial de 220 cm sobre pallet, planta de COTA" />
                 )}
               </div>
               <div

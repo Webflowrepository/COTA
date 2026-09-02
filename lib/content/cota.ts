@@ -30,16 +30,20 @@ export const cota = {
     paperMonthlyTons: null as number | null,
     unit: "T/mes",
   },
+  // Orden: Papel primero — el cliente pidió que el sitio no lea como una
+  // fábrica solo de química, y la Misión real de COTA ("Socios estratégicos
+  // en soluciones de papel") ya es papel-céntrica. Este orden se propaga
+  // solo a todo lo que itera cota.businessLines (WhatCotaDoes.tsx, etc.).
   businessLines: [
-    {
-      id: "quimicos",
-      label: "Químicos",
-      short: "Blanqueadores ópticos para la industria papelera y textil, y abastecimiento a la industria de la limpieza.",
-    },
     {
       id: "papel",
       label: "Papel Tissue",
       short: "Bobinas para convertidores y línea profesional Guardián.",
+    },
+    {
+      id: "quimicos",
+      label: "Químicos",
+      short: "Blanqueadores ópticos para la industria papelera y textil, y abastecimiento a la industria de la limpieza.",
     },
     {
       id: "soluciones",
@@ -139,7 +143,7 @@ export const cota = {
     isPlaceholder: false,
   },
   /** Redes preparadas para activar más adelante — sin cuenta confirmada todavía. */
-  socialPlaceholders: ["TikTok", "LinkedIn"],
+  socialPlaceholders: ["Instagram", "LinkedIn", "TikTok"],
 } as const;
 
 export type BusinessLine = (typeof cota.businessLines)[number];
