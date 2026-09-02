@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Big_Shoulders, Inter, Geist_Mono } from "next/font/google";
+import { Teko, Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/nav/Nav";
 import Footer from "@/components/footer/Footer";
@@ -7,9 +7,15 @@ import SmoothScrollProvider from "@/lib/motion/SmoothScrollProvider";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { cota } from "@/lib/content/cota";
 
-const display = Big_Shoulders({
+// Reemplaza a Big Shoulders — el cliente pidió Teko después de comparar
+// varias rondas de opciones (condensada técnica, cortes angulosos). Solo
+// afecta a .font-impact-number en globals.css (los números grandes:
+// StatsBand, NaschelPlant, specs de bobinas, etc.) — los títulos usan
+// --font-body (Inter), no este.
+const display = Teko({
   variable: "--font-display",
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
 });
 
 const body = Inter({

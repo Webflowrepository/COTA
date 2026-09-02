@@ -377,6 +377,19 @@ Si en algún momento tenés estos datos reales de COTA (specs de producto,
 certificaciones ambientales, SLA de entrega), los sumo de inmediato — el
 límite fue siempre "no inventar", no "no quiero mostrarlo".
 
+## Tipografía de números — Big Shoulders → Teko
+
+`.font-impact-number` (todos los números grandes del sitio: StatsBand,
+NaschelPlant, contador de Químicos en Químicos→Papel, specs de bobinas,
+numeración "01/02/03" de catálogo/modelos de negocio) pasó de **Big
+Shoulders** a **Teko** — `app/layout.tsx`. Importante: esto NO afecta los
+títulos (`h1`-`h4`, `.text-hero`, `.text-display`, `.text-heading`), que
+siempre usaron `--font-body` (Inter), no `--font-display`. El cambio se
+eligió mostrándole al cliente comparadores en vivo (4 rondas: industrial
+condensada, más condensada aún, display geométrico moderno tipo "Clash
+Display" — descartada por alejarse demasiado del registro industrial — y
+una vuelta al terreno condensado con más carácter) hasta llegar a Teko.
+
 ## Balance Papel vs. Químicos en el sitio
 
 El cliente pidió explícitamente que el sitio "no parezca una fábrica solo
