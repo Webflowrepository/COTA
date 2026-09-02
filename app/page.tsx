@@ -1,6 +1,5 @@
 import Hero from "@/components/sections/Hero";
 import StatsBand from "@/components/sections/StatsBand";
-import LogoBand from "@/components/sections/LogoBand";
 import WhatCotaDoes from "@/components/sections/WhatCotaDoes";
 import WhyCota from "@/components/sections/WhyCota";
 import IndustrialProcess from "@/components/sections/IndustrialProcess";
@@ -18,7 +17,6 @@ export default function Home() {
     <main className="flex-1">
       <Hero />
       <StatsBand />
-      <LogoBand />
       <WhatCotaDoes />
       <WhyCota />
       <IndustrialProcess />
@@ -32,8 +30,10 @@ export default function Home() {
           Químicos → Papel que se construyó como un tramo continuo (ver
           memoria de dirección de arte, punto 2), en vez de cortarla justo
           después del recorrido industrial como sugería el brief original.
-          El Testimonio se sacó del todo — el cliente confirmó que no va a
-          conseguir la autorización legal escrita de ningún caso real. */}
+          El Testimonio y el logo band de clientes se sacaron del todo — el
+          cliente confirmó que no va a conseguir la autorización legal
+          escrita ni de un caso de éxito ni del uso del logo de ningún
+          cliente. */}
       <Sustainability />
       <Certifications />
       <Contact />

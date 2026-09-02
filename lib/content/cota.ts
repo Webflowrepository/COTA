@@ -142,13 +142,10 @@ export const cota = {
     number: "5491133713283" as string | null,
     isPlaceholder: false,
   },
-  /** Redes — Instagram es la cuenta real confirmada por el cliente.
-   * LinkedIn/TikTok siguen sin cuenta confirmada (href null). */
-  social: [
-    { name: "Instagram", href: "https://www.instagram.com/cota_papelera/" as string | null },
-    { name: "LinkedIn", href: null as string | null },
-    { name: "TikTok", href: null as string | null },
-  ],
+  /** Redes — solo la cuenta real confirmada por el cliente. No hay
+   * LinkedIn ni TikTok de COTA todavía; mostrarlos como "próximamente"
+   * quedaba mal al final del sitio — se sacan del todo hasta que existan. */
+  social: [{ name: "Instagram", href: "https://www.instagram.com/cota_papelera/" }],
 } as const;
 
 export type BusinessLine = (typeof cota.businessLines)[number];

@@ -381,6 +381,35 @@ Si en algún momento tenés estos datos reales de COTA (specs de producto,
 certificaciones ambientales, SLA de entrega), los sumo de inmediato — el
 límite fue siempre "no inventar", no "no quiero mostrarlo".
 
+## Logo band de clientes — sacado del todo
+
+`LogoBand.tsx` ("Quienes nos eligen", 6 slots vacíos marcados "Ejemplo")
+se eliminó por completo del sitio (componente borrado, ya no está en
+`app/page.tsx`) — mismo motivo que el Testimonio: el cliente confirmó que
+no va a conseguir autorización legal de ningún cliente para usar su logo.
+No tiene sentido mantenerlo como placeholder a la espera de algo que no va
+a llegar.
+
+## Contadores — por qué a veces se veían en "0" y cómo se hizo más robusto
+
+El cliente vio en el sitio deployado "0+Años operando", "0T/mes", etc. —
+los contadores (`Counter.tsx`, `SpecCounter.tsx`) arrancan en 0 y cuentan
+hasta el valor real cuando el elemento entra en viewport
+(`IntersectionObserver`). El umbral original (`threshold: 0.4`, dispara
+recién con 40% del elemento visible) dejaba poco margen: alguien
+scrolleando rápido podía pasar de largo la sección con el número recién
+arrancando desde 0, y una captura de pantalla en ese instante muestra
+justo eso. Se hizo más robusto en dos frentes:
+- `threshold: 0` + `rootMargin: "0px 0px 150px 0px"` — arranca apenas el
+  elemento empieza a asomar (150px antes de que sea visible del todo),
+  no cuando ya está bien entrado en pantalla. Verificado: ahora la franja
+  de stats ya termina de contar sola apenas carga la página, sin ni
+  siquiera hacer scroll.
+- **Red de seguridad**: un `setTimeout` de 4s que completa el número al
+  valor real igual, por si el observer nunca llega a disparar por
+  cualquier motivo. Antes no había ningún fallback — si el observer no
+  disparaba, el número quedaba en "0" para siempre.
+
 ## Familias de Producto — el carrusel no se sentía scrolleable
 
 El cliente mandó captura: en pantallas anchas los 3 paneles (Bobinas,
@@ -416,6 +445,20 @@ de Tailwind puestos en el mismo nodo** — hay que usar `margin` en un hijo,
 o padding en un wrapper interno, nunca padding directo sobre el nodo que
 ya tiene `container-industrial`. Se resolvió con `mr-16 md:mr-0` en el
 `<span>` del contador en vez de padding en el contenedor.
+
+**Ronda siguiente — el cliente vio el resultado en una pantalla ancha y
+pidió lo contrario:** que no haga falta desplazar nada, que las 3 se vean
+directamente. El scroll real que se acababa de arreglar solucionaba "se
+siente roto" pero introducía "tengo que scrollear para ver el tercero" —
+en una pantalla ancha eso tampoco convencía. Resolución: el carrusel
+deslizable queda **solo en mobile** (`<md`, donde 3 columnas no entran sin
+achicarse hasta ilegibles); desde `md` es un **grid fijo de 3 columnas**
+(`md:grid md:grid-cols-3`, `md:w-auto` en vez del ancho en vw), sin
+scroll, sin barra de progreso (se oculta con `md:hidden` — no hay nada que
+contar ni arrastrar cuando las 3 ya están a la vista). Verificado:
+`scrollWidth === clientWidth` en desktop (los 3 paneles caben exactos en
+1440px, sin overlap), y `scrollWidth > clientWidth` se mantiene en mobile
+(sigue siendo un carrusel real ahí).
 
 ## Pase final de dirección de arte
 

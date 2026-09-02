@@ -139,10 +139,15 @@ export default function ProductFamilies() {
         </a>
       </div>
 
+      {/* Mobile: carrusel deslizable (3 paneles no entran en un teléfono sin
+          achicarlos hasta ilegibles). Desde md: grid fijo de 3 columnas —
+          el cliente lo pidió explícito después de ver que en pantallas
+          anchas alcanzaba y sobraba con agrandar los paneles para forzar
+          un scroll real: quiere ver las 3 sin tener que desplazar nada. */}
       <div
         ref={scrollerRef}
         onScroll={handleScroll}
-        className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 md:gap-6 md:px-12"
+        className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 md:mx-auto md:grid md:max-w-[1440px] md:grid-cols-3 md:gap-6 md:overflow-visible md:px-12 md:pb-0"
       >
         {PANELS.map((panel) => {
           const categoryLabel = cota.contactCategories.find((c) => c.id === panel.categoryId)?.label ?? panel.label;
@@ -150,7 +155,7 @@ export default function ProductFamilies() {
           return (
             <div
               key={panel.id}
-              className="pf-panel group relative h-[62vh] w-[86vw] shrink-0 snap-start overflow-hidden md:h-[68vh] md:w-[62vw] lg:w-[52vw]"
+              className="pf-panel group relative h-[62vh] w-[86vw] shrink-0 snap-start overflow-hidden md:h-[58vh] md:w-auto"
             >
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
                 {panel.id === "soluciones" ? (
@@ -181,14 +186,9 @@ export default function ProductFamilies() {
         })}
       </div>
 
-      {/* Antes esta barra era una tira de 96px centrada sola, con el hint
-          de scroll separado arriba — muy chica para leerse como un control
-          real; con los paneles casi enteros a la vista en pantallas
-          anchas (antes de agrandarlos), avanzar la barra unos px no se
-          sentía distinto de la nada, como un bug. Ahora es un control de
-          ancho completo con el número de panel activo — más grande, más
-          claro que hay algo que arrastrar/clickear. */}
-      <div className="container-industrial mt-6 flex items-center gap-6">
+      {/* Solo en mobile — en desktop las 3 ya están a la vista, no hay nada
+          que arrastrar/scrollear ni un panel activo que contar. */}
+      <div className="container-industrial mt-6 flex items-center gap-6 md:hidden">
         <div
           ref={trackRef}
           onPointerDown={handleTrackPointerDown}
@@ -201,16 +201,15 @@ export default function ProductFamilies() {
             />
           </div>
         </div>
-        {/* mr-16 en mobile: el botón flotante de WhatsApp vive fijo en esa
-            misma esquina (right-5, 56px de ancho) — sin este margen, el
-            contador queda tapado por el botón cuando esta fila llega al
-            fondo del viewport (pasa casi siempre, la sección mide ~1
-            viewport de alto en mobile). Va como margin en el propio
-            elemento, no como padding en .container-industrial — ese
-            padding-inline le gana en cascada a cualquier pr-* de Tailwind. */}
-        <span className="font-label mr-16 shrink-0 text-ink/40 md:mr-0">
-          {String(activeIndex + 1).padStart(2, "0")} / {String(PANELS.length).padStart(2, "0")}
-          <span className="hidden md:inline"> — Desplazar horizontalmente →</span>
+        {/* mr-16: el botón flotante de WhatsApp vive fijo en esa misma
+            esquina (right-5, 56px de ancho) — sin este margen, el contador
+            queda tapado por el botón cuando esta fila llega al fondo del
+            viewport (pasa casi siempre, la sección mide ~1 viewport de
+            alto en mobile). Va como margin en el propio elemento, no como
+            padding en .container-industrial — ese padding-inline le gana
+            en cascada a cualquier pr-* de Tailwind. */}
+        <span className="font-label mr-16 shrink-0 text-ink/40">
+          {String(activeIndex + 1).padStart(2, "0")} / {String(PANELS.length).padStart(2, "0")} — Deslizar →
         </span>
       </div>
     </section>

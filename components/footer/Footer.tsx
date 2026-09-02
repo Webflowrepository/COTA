@@ -1,15 +1,14 @@
 import type { ReactElement } from "react";
 import Image from "next/image";
 import { cota } from "@/lib/content/cota";
-import { InstagramIcon, LinkedInIcon, TikTokIcon } from "@/components/ui/SocialIcons";
+import { InstagramIcon } from "@/components/ui/SocialIcons";
 
-// Sin cuenta real confirmada todavía (ver cota.socialPlaceholders) — los
-// íconos quedan sin link, solo como indicador visual de qué redes se van a
-// sumar, con el mismo "Próximamente" que antes tenía el texto plano.
+// cota.social sólo trae redes con cuenta real confirmada (ver
+// lib/content/cota.ts) — mostrar LinkedIn/TikTok como "próximamente" acá,
+// al final del sitio, quedaba mal. Si el día de mañana hay una cuenta
+// real de más, sumarla acá.
 const SOCIAL_ICONS: Record<string, (props: { className?: string }) => ReactElement> = {
   Instagram: InstagramIcon,
-  TikTok: TikTokIcon,
-  LinkedIn: LinkedInIcon,
 };
 
 export default function Footer() {

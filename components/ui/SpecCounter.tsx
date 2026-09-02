@@ -37,6 +37,9 @@ export default function SpecCounter({ values, duration = 1100 }: { values: reado
       return;
     }
 
+    // threshold 0 + rootMargin: mismo criterio que Counter.tsx — arranca
+    // apenas asoma, no cuando ya está 40% visible, para que alguien
+    // scrolleando rápido no pase de largo con el número recién en 0.
     const io = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting || started) return;
@@ -50,10 +53,22 @@ export default function SpecCounter({ values, duration = 1100 }: { values: reado
         };
         requestAnimationFrame(tick);
       },
-      { threshold: 0.4 },
+      { threshold: 0, rootMargin: "0px 0px 150px 0px" },
     );
     io.observe(el);
-    return () => io.disconnect();
+
+    // red de seguridad: nunca queda en "0" para siempre.
+    const fallback = window.setTimeout(() => {
+      if (!started) {
+        setStarted(true);
+        el.textContent = finalText;
+      }
+    }, 4000);
+
+    return () => {
+      io.disconnect();
+      window.clearTimeout(fallback);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [finalText]);
 

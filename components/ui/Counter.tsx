@@ -14,8 +14,8 @@ import { prefersReducedMotion } from "@/lib/motion/gsap";
  */
 export default function Counter({
   target,
-  duration = 900,
-  threshold = 0.4,
+  duration = 700,
+  threshold = 0,
 }: {
   target: number;
   duration?: number;
@@ -31,6 +31,12 @@ export default function Counter({
       el.textContent = String(target);
       return;
     }
+    // threshold 0 + rootMargin positivo abajo: arranca apenas el elemento
+    // empieza a asomar, no cuando ya está 40% visible — antes, si alguien
+    // scrolleaba rápido, podía pasar de largo la sección con el número
+    // recién arrancando desde 0 (el cliente vio justo eso en una captura).
+    // Con más margen de scroll antes de que el número tenga que ser
+    // legible, el conteo (700ms) siempre llega a terminar a tiempo.
     const io = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting || started) return;
@@ -44,10 +50,25 @@ export default function Counter({
         };
         requestAnimationFrame(tick);
       },
-      { threshold },
+      { threshold, rootMargin: "0px 0px 150px 0px" },
     );
     io.observe(el);
-    return () => io.disconnect();
+
+    // red de seguridad: si por lo que sea el observer nunca llega a
+    // disparar (tab en background, alguna condición rara del browser),
+    // el número no debería quedar en "0" para siempre — a los 4s se
+    // completa igual.
+    const fallback = window.setTimeout(() => {
+      if (!started) {
+        setStarted(true);
+        el.textContent = String(target);
+      }
+    }, 4000);
+
+    return () => {
+      io.disconnect();
+      window.clearTimeout(fallback);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [target]);
 
