@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import { cota } from "@/lib/content/cota";
 
@@ -16,6 +17,11 @@ const SEGMENTS = [
     cta: "Ver bobinas",
     mediaLabel: "Foto — convertidor trabajando con bobina",
     categoryId: "bobinas",
+    // Frame extraído (ffmpeg) del video generado que subió el cliente
+    // (kling_20260904_VIDEO_que_aprsca_937_0.mp4) — se usa como foto fija,
+    // no como video, para no sumar el peso/complejidad de otro <video>
+    // autoplay como el de NaschelPlant (decisión del cliente).
+    photo: { src: "/photos/soluciones-convertidor-bobina.jpg", alt: "Operario junto a bobina de papel en máquina convertidora" },
   },
   {
     id: "distribuidores",
@@ -25,6 +31,9 @@ const SEGMENTS = [
     cta: "Ver Guardián",
     mediaLabel: "Foto — producto Guardián en punto de venta",
     categoryId: "distribucion",
+    // Sin foto — ninguna de las imágenes/videos subidos muestra producto
+    // en punto de venta. Queda en placeholder marcado a propósito en vez
+    // de forzar una imagen que no corresponde (decisión del cliente).
   },
   {
     id: "papeleras",
@@ -34,6 +43,9 @@ const SEGMENTS = [
     cta: "Ver químicos",
     mediaLabel: "Foto — control de calidad en papelera",
     categoryId: "quimicos",
+    // Frame extraído (ffmpeg) de kling_20260904_VIDEO_son_bobina_891_0.mp4
+    // — mismo criterio que Convertidores arriba.
+    photo: { src: "/photos/soluciones-papelera-control-calidad.jpg", alt: "Pila de papel Tissue plegado en línea de producción" },
   },
 ];
 
@@ -114,7 +126,11 @@ export default function SolutionsByApplication() {
                   activeId === seg.id ? "opacity-100" : "pointer-events-none opacity-0"
                 }`}
               >
-                <PlaceholderMedia tone="dark" label={seg.mediaLabel} />
+                {seg.photo ? (
+                  <PhotoMedia src={seg.photo.src} alt={seg.photo.alt} />
+                ) : (
+                  <PlaceholderMedia tone="dark" label={seg.mediaLabel} />
+                )}
               </div>
             ))}
           </div>
