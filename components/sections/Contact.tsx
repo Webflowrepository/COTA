@@ -13,6 +13,16 @@ const INFO_ROWS = [
 // segmentación por categoría/volumen que tenía el formulario viejo
 // (ContactForm.tsx queda sin usar en el repo, no se borró por si se
 // quiere volver atrás).
+// PDFs que subió el cliente — vivían en la raíz del repo (fuera de
+// public/), Next.js no los servía y no aparecían en ningún lado del
+// sitio. Se movieron a public/catalogos/ con nombre limpio; acá se linkean
+// directo (abren en pestaña nueva, no se descargan solos).
+const CATALOGS = [
+  { label: "Catálogo de bobinas 2026", href: "/catalogos/catalogo-bobinas-2026.pdf" },
+  { label: "Catálogo de producto convertido", href: "/catalogos/catalogo-producto-convertido.pdf" },
+  { label: "Catálogo interactivo COTA", href: "/catalogos/catalogo-interactivo-marketing.pdf" },
+];
+
 const CHANNELS = [
   {
     id: "whatsapp",
@@ -87,6 +97,21 @@ export default function Contact() {
                 </div>
               ))}
             </dl>
+
+            <div className="mt-8 flex flex-col gap-2 border-t border-line-on-light pt-6">
+              <span className="font-label mb-1 block text-ink/40">Catálogos</span>
+              {CATALOGS.map((cat) => (
+                <a
+                  key={cat.href}
+                  href={cat.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-label inline-block w-fit border-b border-ink/40 pb-0.5 text-ink/70 transition-opacity hover:opacity-60"
+                >
+                  {cat.label} <span className="cta-arrow">→</span>
+                </a>
+              ))}
+            </div>
 
             {/* Horario de atención — no confirmado por COTA todavía, no se
                 inventa un rango. Sumar acá cuando esté confirmado. */}

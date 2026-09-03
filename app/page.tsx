@@ -8,7 +8,6 @@ import PapelTissueSpecs from "@/components/sections/PapelTissueSpecs";
 import ProductFamilies from "@/components/sections/ProductFamilies";
 import SolutionsByApplication from "@/components/sections/SolutionsByApplication";
 import NaschelPlant from "@/components/sections/NaschelPlant";
-import InstagramFeed from "@/components/sections/InstagramFeed";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
@@ -29,8 +28,10 @@ export default function Home() {
           real confirmada. Mismo criterio ya aplicado a Testimonio, el logo
           band de clientes y Sostenibilidad: ninguno tenía un dato real de
           COTA detrás y el cliente prefirió que no queden ni como ejemplo.
-          Volver a agregar sólo con certificaciones confirmadas y vigentes. */}
-      <InstagramFeed />
+          Volver a agregar sólo con certificaciones confirmadas y vigentes.
+          InstagramFeed también se sacó (pedido del cliente) — el
+          componente sigue en components/sections/InstagramFeed.tsx por si
+          se quiere reactivar, sólo se desmontó de la página. */}
       <Contact />
     </main>
   );

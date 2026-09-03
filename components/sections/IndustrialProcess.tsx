@@ -31,24 +31,15 @@ const STAGES = [
     copy: "Blanqueadores ópticos desarrollados por COTA integran el proceso.",
     label: "Foto — tanque de proceso químico",
     dark: true,
-    // Auditoría fotográfica (COTA_REFERENCE_GAP_AUDIT.md, intervención #4):
-    // esta es la única foto del sitio con negros realmente reventados —
-    // medido con Playwright (muestreo de píxeles vía canvas), 76% de sus
-    // píxeles caen por debajo de luminancia 20/255, contra 1.4–21.8% en
-    // cualquier otra foto del sitio, y su brillo promedio (19/255) es
-    // 4.5–8 veces más oscuro que el resto. Va pegada, sin corte, entre
-    // "Materia Prima" y "Fabricación de Papel Tissue" (ambas mucho más
-    // claras) dentro de un mismo scroll horizontal continuo — el salto es
-    // el más brusco de toda la secuencia fotográfica del sitio. No se
-    // reemplaza (sigue siendo la foto real de esta etapa, no hay otra
-    // disponible) ni se le aplica un tratamiento de color parejo con el
-    // resto — sólo se le levantan las sombras lo suficiente para que deje
-    // de leer como reventada, sin aplanarle el carácter (sigue siendo la
-    // etapa más oscura/dramática de las 5, intencionalmente). Es el único
-    // ajuste de esta intervención — el resto de las 8 fotos del sitio ya
-    // es fotográficamente coherente entre sí sin tocar nada.
-    photoClassName: "brightness-[1.3] contrast-[0.85]",
-    photo: { src: "/photos/proceso-tanques.png", alt: "Tanques de proceso en la planta de COTA" },
+    // Reemplazo directo (pedido del cliente) de la foto interior de
+    // tanques (auditoría fotográfica, intervención #4: era la única con
+    // negros reventados del sitio — 76% de píxeles por debajo de
+    // luminancia 20/255 — y se le había aplicado un levantado de sombras
+    // vía CSS para compensar). Esta foto nueva es una imagen generada de
+    // tanques exteriores a la luz del día, ya bien expuesta — no necesita
+    // ningún tratamiento de color, por eso se sacó el `photoClassName`
+    // que tenía la versión anterior.
+    photo: { src: "/photos/proceso-tanques-exterior.png", alt: "Tanques de proceso químico de la planta de COTA, a la luz del día" },
   },
   {
     n: "03",
@@ -153,11 +144,7 @@ export default function IndustrialProcess() {
             >
               <div className="absolute inset-0">
                 {stage.photo ? (
-                  <PhotoMedia
-                    src={stage.photo.src}
-                    alt={stage.photo.alt}
-                    className={"photoClassName" in stage ? stage.photoClassName : undefined}
-                  />
+                  <PhotoMedia src={stage.photo.src} alt={stage.photo.alt} />
                 ) : (
                   <PlaceholderMedia tone={stage.dark ? "dark" : "light"} label={stage.label} />
                 )}

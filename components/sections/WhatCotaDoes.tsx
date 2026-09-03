@@ -16,10 +16,17 @@ import { cota } from "@/lib/content/cota";
 // generada disponible con tanques, el cliente confirmó repetirla acá antes
 // que dejar el placeholder). Reemplazar por foto real de COTA cuando
 // exista — mismo criterio que el resto de las imágenes generadas del sitio.
-const MEDIA_PHOTO: Record<string, { src: string; alt: string }> = {
-  papel: { src: "/photos/papel-tissue-produccion-operarios.png", alt: "Operarios controlando la producción de papel Tissue" },
+// objectPosition: "top" en Papel/Soluciones — el contenedor de esta fila
+// es corto y ancho (h-40/44/48/56 según breakpoint, pero flex-1 lo hace
+// muy ancho en tablet/desktop), y en esas dos fotos la gente está cerca
+// del borde superior del encuadre original. El recorte centrado default
+// de object-cover cortaba cabezas (confirmado con capturas en 768px y
+// 1920px). "top" ancla el borde superior de la foto al del contenedor y
+// recorta desde abajo en su lugar. Químicos no tiene gente — sin cambios.
+const MEDIA_PHOTO: Record<string, { src: string; alt: string; objectPosition?: string }> = {
+  papel: { src: "/photos/papel-tissue-produccion-operarios.png", alt: "Operarios controlando la producción de papel Tissue", objectPosition: "top" },
   quimicos: { src: "/photos/quimicos-ibc-tanques.png", alt: "Tanques y contenedores IBC de proceso químico" },
-  soluciones: { src: "/photos/soluciones-logistica-montacargas.png", alt: "Montacargas moviendo bobina de papel en planta de COTA" },
+  soluciones: { src: "/photos/soluciones-logistica-montacargas.png", alt: "Montacargas moviendo bobina de papel en planta de COTA", objectPosition: "top" },
 };
 
 // CTA secundario por división — apunta a la sección real correspondiente
@@ -135,7 +142,11 @@ export default function WhatCotaDoes() {
                   estaba). */}
               <div className="media-reveal relative h-40 w-full overflow-hidden sm:h-48 md:h-44 md:flex-1 md:-mr-12 lg:h-56 min-[1440px]:-mr-20!">
                 <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
-                  <PhotoMedia src={MEDIA_PHOTO[line.id].src} alt={MEDIA_PHOTO[line.id].alt} />
+                  <PhotoMedia
+                    src={MEDIA_PHOTO[line.id].src}
+                    alt={MEDIA_PHOTO[line.id].alt}
+                    objectPosition={MEDIA_PHOTO[line.id].objectPosition}
+                  />
                 </div>
               </div>
             </div>
