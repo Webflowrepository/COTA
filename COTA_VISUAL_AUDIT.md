@@ -6,30 +6,32 @@ Method: real browser rendering (navigation, wheel-scroll, viewport resize, scree
 
 This is visual-execution only. It does not propose new sections, new content, or IA changes.
 
+> **Update — defect correction pass applied.** Findings #1, #2, #3, #4, #5, and #10 were implemented as scoped, minimal fixes and re-verified against the local build at 1440×900, 768×1024, and 390×844 (screenshots + measured geometry). All six are marked **✅ RESOLVED** below, with the verified numbers. Findings #6, #7, #8, and #9 were intentionally left untouched — out of scope for that pass.
+
 ---
 
 ## TOP 10 VISUAL ISSUES
 
 Ranked by how much each one currently costs the site's ability to read as expertly executed.
 
-| # | Issue | Section | Viewport(s) |
-|---|---|---|---|
-| 1 | Certification badges are labeled "(pendiente)" in the live, shipped page | Certifications | All |
-| 2 | Clicking "Proceso" in the nav hides the section's own kicker behind the nav bar | IndustrialProcess | All |
-| 3 | Product panels are squeezed into a 1:2.9 portrait crop at tablet width | ProductFamilies | 768×1024 |
-| 4 | Business-line photos shrink to ~180px wide at tablet width | WhatCotaDoes | 768×1024 |
-| 5 | The nav highlights "Químicos" while the on-screen content reads "Papel — 02" | ChemicalsToPaper | 1440, 1280 |
-| 6 | Two forced-scroll pinned sections run back-to-back with no normal section between them | IndustrialProcess → ChemicalsToPaper | All |
-| 7 | The same 3-line pitch, in near-identical wording, is shown twice in a row | ProductFamilies → SolutionsByApplication | All |
-| 8 | The mobile menu is an unstyled link list with none of the site's own type system | Nav (mobile menu) | 390×844 |
-| 9 | Nav and kicker text stay fixed at 13px from 390px to 1440px+ | Nav / all kickers | All |
-| 10 | 184px of empty padding separates the last stat from the next heading on mobile | StatsBand → WhatCotaDoes | 390×844 |
+| # | Issue | Section | Viewport(s) | Status |
+|---|---|---|---|---|
+| 1 | Certification badges are labeled "(pendiente)" in the live, shipped page | Certifications | All | ✅ RESOLVED |
+| 2 | Clicking "Proceso" in the nav hides the section's own kicker behind the nav bar | IndustrialProcess | All | ✅ RESOLVED |
+| 3 | Product panels are squeezed into a 1:2.9 portrait crop at tablet width | ProductFamilies | 768×1024 | ✅ RESOLVED |
+| 4 | Business-line photos shrink to ~180px wide at tablet width | WhatCotaDoes | 768×1024 | ✅ RESOLVED |
+| 5 | The nav highlights "Químicos" while the on-screen content reads "Papel — 02" | ChemicalsToPaper | 1440, 1280 | ✅ RESOLVED |
+| 6 | Two forced-scroll pinned sections run back-to-back with no normal section between them | IndustrialProcess → ChemicalsToPaper | All | Not addressed (out of scope) |
+| 7 | The same 3-line pitch, in near-identical wording, is shown twice in a row | ProductFamilies → SolutionsByApplication | All | Not addressed (out of scope) |
+| 8 | The mobile menu is an unstyled link list with none of the site's own type system | Nav (mobile menu) | 390×844 | Not addressed (out of scope) |
+| 9 | Nav and kicker text stay fixed at 13px from 390px to 1440px+ | Nav / all kickers | All | Not addressed (out of scope) |
+| 10 | 184px of empty padding separates the last stat from the next heading on mobile | StatsBand → WhatCotaDoes | 390×844 | ✅ RESOLVED |
 
 Full detail for each, plus additional findings below, follow the same format: **Section / Viewport / What's wrong / Why it matters / Correction / Impact.**
 
 ---
 
-## 1. Certification badges read as placeholder content in production
+## 1. Certification badges read as placeholder content in production — ✅ RESOLVED
 
 **Section:** Certifications (between NaschelPlant and InstagramFeed)
 **Viewport:** All four — the section doesn't reflow, it's a static row of badges.
@@ -38,9 +40,11 @@ Full detail for each, plus additional findings below, follow the same format: **
 **Exact correction:** Remove the section until the badges represent certifications COTA actually holds. This is a copy/content decision, not a layout one — no visual redesign needed, just don't ship unconfirmed claims.
 **Expected impact:** Removes the single most visible "this site isn't finished" signal on the page. High impact, zero design cost.
 
+**✅ Verified fixed:** `Certifications.tsx` removed from `app/page.tsx` (and deleted from the repo). Confirmed via DOM query on the local build that no "(pendiente)" text or Certifications section exists anywhere on the page, at any viewport. `NaschelPlant` now flows directly into `InstagramFeed` with a normal 0px section boundary (no orphaned gap where the section used to sit).
+
 ---
 
-## 2. IndustrialProcess kicker is hidden behind the fixed nav on arrival
+## 2. IndustrialProcess kicker is hidden behind the fixed nav on arrival — ✅ RESOLVED
 
 **Section:** IndustrialProcess (`#proceso`)
 **Viewport:** Confirmed at 1440×900 and 1280×800 via both screenshot and geometry; the same fixed-offset math reproduces at 768 and 390 (kicker sits 40–56px below the section's own top, well inside the nav's footprint at every width, since the nav's height doesn't scale with viewport).
@@ -49,9 +53,11 @@ Full detail for each, plus additional findings below, follow the same format: **
 **Exact correction:** Add `scroll-margin-top` to `#proceso` (and audit the other five anchor targets the same way — `#compania`, `#quimicos`, `#papel`, `#soluciones`, `#planta` all currently have 48–398px of clearance and are fine, but `#proceso` is the one exception) sized to the nav's actual rendered height at each breakpoint (~80px desktop, ~56px mobile), or increase the section's own top offset so the kicker starts below that line regardless of anchor scroll-margin.
 **Expected impact:** Fixes a reproducible, 100%-of-the-time defect on the one section most likely to be clicked directly from the nav (it's the second link, right after "Compañía").
 
+**✅ Verified fixed:** Added `scroll-mt-24` (96px) to `#proceso` in `IndustrialProcess.tsx` — the smallest scoped correction (no other anchor targets were touched, since none of them showed the defect). Clicked "Proceso" in the live nav on the local build at 1440×900: measured kicker clearance went from **-24px** (hidden behind the nav) to **+72px** (fully visible), and the screenshot confirms "RECORRIDO INDUSTRIAL" renders cleanly below the nav bar with "Proceso" correctly highlighted green. No other section's anchor-landing clearance changed.
+
 ---
 
-## 3. ProductFamilies panels are compressed to a 1:2.9 portrait crop at tablet width
+## 3. ProductFamilies panels are compressed to a 1:2.9 portrait crop at tablet width — ✅ RESOLVED
 
 **Section:** ProductFamilies ("Un sistema industrial integrado.")
 **Viewport:** 768×1024 specifically — the breakpoint where the component switches from mobile carousel (`flex overflow-x-auto`) to desktop grid (`md:grid md:grid-cols-3`), which triggers at exactly 768px.
@@ -60,9 +66,11 @@ Full detail for each, plus additional findings below, follow the same format: **
 **Exact correction:** Cap panel height with a `vh`-and-pixel pair that degrades gracefully at narrow grid widths — e.g. `md:h-[58vh] md:max-h-[420px]` (or a `clamp()`), or scale the grid's column height by aspect ratio (`aspect-[3/4]`) instead of pure `vh`, so a narrow column also gets a shorter, more landscape-friendly frame.
 **Expected impact:** Removes the worst photo crop on the page at a standard device width (iPad portrait, most small laptops in a non-maximized window).
 
+**✅ Verified fixed:** Changed the panel height in `ProductFamilies.tsx` from a single `md:h-[58vh]` to `md:h-[420px] lg:h-[58vh]` — a fixed height only in the exact `md`-but-not-`lg` range (768–1023px) where the crop was extreme, with `lg:` restoring the original `58vh` behavior unchanged at 1024px+. Measured on the local build: at 768×1024 the panel ratio went from **203×594px (1:2.9)** to **203×420px (1:2.07)** — visually confirmed in the screenshot, all three panels (Bobinas Industriales, Químicos, Soluciones Industriales) now show their actual photo content instead of a cropped sliver. At 1440×900, panel height measured at **522px = exactly 58vh of 900px** — byte-for-byte the original desktop value, zero regression.
+
 ---
 
-## 4. WhatCotaDoes business-line photos shrink to ~180px wide at tablet width
+## 4. WhatCotaDoes business-line photos shrink to ~180px wide at tablet width — ✅ RESOLVED
 
 **Section:** WhatCotaDoes ("Socios estratégicos en soluciones de papel.")
 **Viewport:** 768×1024.
@@ -71,9 +79,11 @@ Full detail for each, plus additional findings below, follow the same format: **
 **Exact correction:** Switch the text column from a fixed `max-w-md` to a percentage or `clamp()`-based width (e.g. `w-[40%]` or `max-w-[min(28rem,40%)]`) so it yields proportionally more room to the photo column as the row narrows, instead of eating a fixed 448px regardless of how little space is left.
 **Expected impact:** Restores the photo as a legible visual element for the entire 768–1024px range — currently the single narrowest-looking section on tablet.
 
+**✅ Verified fixed:** Changed the text column in `WhatCotaDoes.tsx` from `max-w-md` to `max-w-md md:max-w-[280px] lg:max-w-md` — narrows the text column only in the `md`-but-not-`lg` range, restoring the exact original `max-w-md` at `lg:` (1024px+). Measured on the local build at 768×1024: photo column width went from **169–189px** to **337px** across all three rows (ratio 337:176 ≈ 1.9:1, a landscape photo ratio instead of a near-square crop) — visually confirmed, the "Papel Tissue" row's bobinas-warehouse photo now reads as a real photograph. At 1440×900: text column measured **428px**, photo column **512px (exactly `max-w-lg`)** — identical to pre-fix values, zero regression.
+
 ---
 
-## 5. Nav active-state disagrees with the on-screen section label
+## 5. Nav active-state disagrees with the on-screen section label — ✅ RESOLVED
 
 **Section:** ChemicalsToPaper (`#quimicos`) — specifically its second, crossfaded "Papel — 02" chapter.
 **Viewport:** Confirmed at 1440×900; applies at any viewport since it's a DOM-structure issue, not a layout one.
@@ -81,6 +91,8 @@ Full detail for each, plus additional findings below, follow the same format: **
 **Why it reduces design quality:** The nav's entire job is to tell the visitor where they are. For roughly half of this section's scroll duration, it tells them something the content on screen directly contradicts.
 **Exact correction:** Either split the "Papel" chapter into its own DOM section with its own id and let the nav's existing scroll-position logic pick it up naturally, or add the crossfade progress into the nav's active-section calculation so it switches from "Químicos" to "Papel" partway through this component's scroll range.
 **Expected impact:** Removes a direct, visible self-contradiction between two pieces of UI that are only 80px apart on screen at any given moment.
+
+**✅ Verified fixed:** Chose the lower-risk of the two proposed corrections — rather than splitting `ChemicalsToPaper`'s DOM (which would touch its pin/scrub mechanics), `Nav.tsx`'s active-section calculation now computes scroll progress through `#quimicos` directly and switches the highlighted link from "Químicos" to "Papel" past the same ~40% progress point where `ChemicalsToPaper.tsx`'s own GSAP timeline crossfades the two chapters — self-contained to `Nav.tsx`, no other component touched. Verified on the local build at 1440×900: at scrollY 6700 (mid-pin), `getComputedStyle` confirms the "Papel Tissue a escala industrial." chapter at `opacity: 1` and the "Precisión en cada reacción." chapter at `opacity: 0`, with the nav's `aria-current="true"` link reading **"Papel"**, not "Químicos" — screenshot-confirmed. Re-tested `#compania`, `#soluciones` anchor landings afterward to confirm the added logic doesn't affect any other section's highlighting — both still activate correctly.
 
 ---
 
@@ -128,7 +140,7 @@ Full detail for each, plus additional findings below, follow the same format: **
 
 ---
 
-## 10. 184px of empty padding between StatsBand and WhatCotaDoes on mobile
+## 10. 184px of empty padding between StatsBand and WhatCotaDoes on mobile — ✅ RESOLVED
 
 **Section:** StatsBand → WhatCotaDoes (the transition itself).
 **Viewport:** 390×844.
@@ -136,6 +148,8 @@ Full detail for each, plus additional findings below, follow the same format: **
 **Why it reduces design quality:** On mobile, where every scroll-inch is relatively more expensive than on desktop, a fifth of a screen with no content between two sections reads as a pause the design didn't intend, especially directly after the Hero and StatsBand — the two sections meant to give the fastest possible sense of what COTA does. It's the single largest content-free gap in the first two screens of the mobile experience.
 **Exact correction:** Reduce `WhatCotaDoes`'s mobile-specific top padding (it currently uses the same `section-py-lg` role at every breakpoint that gives it 112px on mobile before also carrying a 144–176px desktop value) — a mobile-specific lighter first-section padding (e.g. 56–64px) would still read as a clear section break without costing an extra fifth of a screen.
 **Expected impact:** Tightens the highest-attention part of the mobile scroll (the first 2 sections after Hero) without touching desktop spacing at all.
+
+**✅ Verified fixed:** `.section-py-lg` is a shared utility class (also used by `Contact`) — rather than edit it globally, `WhatCotaDoes.tsx`'s `<section>` got a scoped, mobile-only override: `max-md:pt-14!`. The `!` (Tailwind v4 important-suffix) is required because this project's custom `globals.css` classes are defined after `@import "tailwindcss"` and win the cascade over a same-weight Tailwind utility otherwise (a previously-documented gotcha in this codebase). Measured on the local build at 390×844: `WhatCotaDoes`'s padding-top went from **112px to 56px**, so the combined dead zone (StatsBand's unchanged 72px bottom padding + this) dropped from **184px to 128px** — visually confirmed in the screenshot, a clearly tighter, more intentional-reading section break. At 768×1024 and 1440×900 — both ≥768px, where `section-py-lg`'s own `@media (min-width: 768px)` rule already applies — padding-top measured **144px** at both, unchanged from before the fix — the override only ever applies below the `md` breakpoint.
 
 ---
 

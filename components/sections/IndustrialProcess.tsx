@@ -103,7 +103,16 @@ export default function IndustrialProcess() {
   const activeStage = Math.min(STAGES.length - 1, Math.round(progress * (STAGES.length - 1)));
 
   return (
-    <section id="proceso" ref={sectionRef} className="relative w-full bg-ink-deep">
+    <section
+      id="proceso"
+      ref={sectionRef}
+      /* scroll-mt: al entrar por el link del nav (o por scroll normal), el
+         kicker "Recorrido industrial" arrancaba pegado al borde superior
+         de la sección — quedaba tapado por el nav fijo (~80px en desktop,
+         ~64px en mobile). Ningún otro anchor del sitio tenía este problema
+         porque sus kickers ya arrancan más abajo. */
+      className="relative w-full scroll-mt-24 bg-ink-deep"
+    >
       <div className="flex h-[100svh] w-full flex-col overflow-hidden">
         <div className="container-industrial flex shrink-0 items-end justify-between pt-10 pb-6 md:pt-14 md:pb-8">
           <div>

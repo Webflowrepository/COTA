@@ -48,7 +48,20 @@ export default function WhatCotaDoes() {
   }, []);
 
   return (
-    <section id="compania" ref={rootRef} className="section-py-lg relative w-full bg-paper">
+    <section
+      id="compania"
+      ref={rootRef}
+      /* max-md:pt-14! — en mobile, section-py-lg (7rem/112px de padding-top)
+         sumado al padding-bottom de StatsBand (4.5rem/72px) dejaba 184px de
+         hueco vacío (22% de una pantalla de 844px) entre el último número y
+         este kicker. .section-py-lg es una clase compartida (Contact
+         también la usa) — no se toca; se pisa sólo acá y sólo en mobile.
+         El sufijo "!" hace falta porque las clases custom de globals.css se
+         definen después de @import "tailwindcss" y le ganan en cascada a
+         cualquier utilidad Tailwind del mismo peso sin !important (ver
+         memoria de dirección de arte, punto 18). md:/lg: sin cambios. */
+      className="section-py-lg relative w-full bg-paper max-md:pt-14!"
+    >
       <div className="container-industrial">
         <span className="font-label mb-6 block text-ink/45">
           Compañía — {cota.country}, desde {cota.foundedYear}
@@ -64,7 +77,11 @@ export default function WhatCotaDoes() {
         <div className="flex flex-col divide-y divide-line-on-light">
           {cota.businessLines.map((line) => (
             <div className="line-row group relative flex flex-col gap-5 py-9 transition-[padding] duration-500 ease-out md:flex-row md:items-center md:justify-between md:gap-10 md:py-12 md:hover:pl-3" key={line.id}>
-              <div className="min-w-0 max-w-md">
+              {/* md:max-w acotado — a 768px, max-w-md (448px fijo) le
+                  dejaba a la foto (flex-1) sólo ~180px de ancho en una fila
+                  de ~660px. lg: vuelve a max-w-md sin cambios — 1440/1280
+                  quedan iguales. */}
+              <div className="min-w-0 max-w-md md:max-w-[280px] lg:max-w-md">
                 <h3 className="text-heading text-ink transition-opacity duration-300 group-hover:opacity-60">{line.label}</h3>
                 <p className="mt-3 text-sm text-ink/55 md:text-base">{line.short}</p>
                 {SECONDARY_CTA[line.id] && (

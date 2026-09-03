@@ -44,6 +44,22 @@ export default function Nav() {
         const top = el.getBoundingClientRect().top + window.scrollY;
         if (top <= triggerY) current = el.id;
       }
+
+      // ChemicalsToPaper (#quimicos) hace un crossfade interno de un
+      // capítulo "Químicos" a uno "Papel" sin cambiar de sección de DOM —
+      // el nav marcaba "Químicos" durante todo el pin, incluso mientras en
+      // pantalla ya se leía "PAPEL — 02". El crossfade cambia de capítulo
+      // ~40% del recorrido del pin (mismo punto que anima ChemicalsToPaper.tsx).
+      if (current === "quimicos") {
+        const quimicos = document.getElementById("quimicos");
+        if (quimicos) {
+          const rect = quimicos.getBoundingClientRect();
+          const scrollable = rect.height - window.innerHeight;
+          const progress = scrollable > 0 ? Math.min(1, Math.max(0, -rect.top / scrollable)) : 0;
+          if (progress > 0.4) current = "papel";
+        }
+      }
+
       setActiveId(current);
     };
 

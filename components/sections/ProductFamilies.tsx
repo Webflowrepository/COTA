@@ -155,7 +155,13 @@ export default function ProductFamilies() {
           return (
             <div
               key={panel.id}
-              className="pf-panel group relative h-[62vh] w-[86vw] shrink-0 snap-start overflow-hidden md:h-[58vh] md:w-auto"
+              /* md:h fijo en vez de vh puro — a 768px de ancho (grid de 3
+                 columnas, cada panel de ~200px) el 58vh de una pantalla de
+                 tablet en vertical (~1024px alto) daba paneles de ~594px:
+                 un crop retrato 1:2.9 sobre fotos compuestas en horizontal.
+                 lg: recupera el 58vh original sin cambios — 1440/1280 no
+                 se tocan. */
+              className="pf-panel group relative h-[62vh] w-[86vw] shrink-0 snap-start overflow-hidden md:h-[420px] md:w-auto lg:h-[58vh]"
             >
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
                 {panel.id === "soluciones" ? (
