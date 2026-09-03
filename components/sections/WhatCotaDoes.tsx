@@ -96,8 +96,28 @@ export default function WhatCotaDoes() {
               {/* antes se ocultaba en mobile (hidden md:block) — dejaba un
                   tramo de puro texto entre esta sección y "Por qué COTA".
                   Ahora se ve también en mobile, más baja, para cortar la
-                  densidad. */}
-              <div className="media-reveal relative h-40 w-full overflow-hidden sm:h-48 md:h-44 md:max-w-lg md:flex-1 lg:h-56">
+                  densidad.
+                  Auditoría comparativa (COTA_REFERENCE_GAP_AUDIT.md,
+                  intervención #1): antes tenía md:max-w-lg (512px) — con
+                  flex-1 ya de por sí capaz de crecer mucho más, ese tope
+                  cortaba la foto corta y dejaba ~325px de hueco muerto
+                  entre texto y foto (ni el texto ni la foto lo
+                  reclamaban, "justify-between" lo repartía como
+                  separación). Sacar el tope deja que flex-1 ocupe ese
+                  espacio de verdad. El margen negativo (md:-mr-12,
+                  1440px:-mr-20) empuja la foto hasta el borde real del
+                  viewport, cancelando el padding-inline de
+                  .container-industrial en esos mismos breakpoints (3rem/
+                  5rem) — sólo en la foto, el texto sigue dentro del
+                  container. El "!" en min-[1440px] hace falta porque ese
+                  variant arbitrario no le gana en cascada a "md:" por
+                  orden de aparición en el CSS generado, aunque 1440px
+                  sea un breakpoint más angosto (mismo tipo de problema
+                  que container-industrial vs. utilidades Tailwind — ver
+                  memoria de dirección de arte, punto 18). Sin cambios en
+                  mobile (<md sigue apilado a ancho completo, como ya
+                  estaba). */}
+              <div className="media-reveal relative h-40 w-full overflow-hidden sm:h-48 md:h-44 md:flex-1 md:-mr-12 lg:h-56 min-[1440px]:-mr-20!">
                 <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
                   {line.id === "soluciones" ? (
                     <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA — logística y despacho" />

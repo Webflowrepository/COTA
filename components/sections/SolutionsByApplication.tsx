@@ -73,8 +73,17 @@ export default function SolutionsByApplication() {
           ))}
         </div>
 
-        <div className="relative mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center md:gap-16">
-          <div className="relative h-[42vh] w-full overflow-hidden md:h-[48vh]">
+        {/* Auditoría comparativa (COTA_REFERENCE_GAP_AUDIT.md, intervención
+            #1): grid-cols-2 le daba a la foto el mismo ancho que al
+            texto, y ambas quedaban dentro del padding de
+            .container-industrial — la foto nunca tocaba el borde real
+            del viewport. md:grid-cols-[1.6fr_1fr] le da a la foto la
+            porción dominante (~62/38, mismo objetivo que WhatCotaDoes);
+            el margen negativo en la foto cancela el padding-inline del
+            container en sus mismos breakpoints (3rem/5rem), empujándola
+            hasta el borde izquierdo real. El texto no se toca. */}
+        <div className="relative mt-10 grid grid-cols-1 gap-8 md:grid-cols-[1.6fr_1fr] md:items-center md:gap-16">
+          <div className="relative h-[42vh] w-full overflow-hidden md:-ml-12 md:h-[48vh] min-[1440px]:-ml-20!">
             {SEGMENTS.map((seg) => (
               <div
                 key={seg.id}
