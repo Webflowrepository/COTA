@@ -2,10 +2,31 @@
 
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered, prefersReducedMotion } from "@/lib/motion/gsap";
-import PhotoMedia from "@/components/visuals/PhotoMedia";
 
 export default function Hero() {
   const root = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Video generado (drone, sobrevuelo de la planta) que subió el cliente
+  // (kling_20260904_VIDEO_angulo_epi_1004_0.mp4) para reemplazar la foto
+  // estática del Hero — recomprimido a ~2MB/1920px (original pesaba 32MB,
+  // inviable arriba del fold). El poster sigue siendo la misma foto que
+  // usaba antes (hero-planta-aerea.png): se ve instantánea en el primer
+  // paint, igual que antes, y el <video> la reemplaza recién cuando carga
+  // — no hay salto de layout ni de composición, sólo empieza a moverse.
+  // A diferencia de NaschelPlant (que difiere la carga hasta que la
+  // sección entra en viewport, porque puede estar a pantallas de
+  // distancia), acá el Hero siempre está en pantalla al cargar la página,
+  // así que el video arranca de una — sin IntersectionObserver. Con
+  // prefers-reduced-motion no se le asigna `src` nunca: la foto del
+  // poster queda fija, como página estática.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || prefersReducedMotion()) return;
+    video.src = "/videos/hero-planta-aerea-drone.mp4";
+    video.addEventListener("loadedmetadata", () => video.play().catch(() => {}), { once: true });
+    video.load();
+  }, []);
 
   useEffect(() => {
     const { gsap } = ensureGsapRegistered();
@@ -41,7 +62,16 @@ export default function Hero() {
   return (
     <section id="top" ref={root} className="relative h-[100svh] w-full overflow-hidden bg-ink-deep">
       <div className="hero-bg hero-parallax absolute inset-0">
-        <PhotoMedia src="/photos/hero-planta-aerea.png" alt="Planta de COTA — vista aérea al amanecer" priority />
+        <video
+          ref={videoRef}
+          className="absolute inset-0 h-full w-full object-cover"
+          muted
+          loop
+          playsInline
+          preload="none"
+          poster="/photos/hero-planta-aerea.png"
+          aria-label="Planta de COTA — vista aérea al amanecer"
+        />
         <div
           className="absolute inset-0"
           style={{ background: "linear-gradient(0deg, rgba(6,8,17,0.75) 0%, rgba(6,8,17,0.15) 45%, rgba(6,8,17,0.35) 100%)" }}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import PhotoMedia from "@/components/visuals/PhotoMedia";
+import VideoMedia from "@/components/visuals/VideoMedia";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import { cota } from "@/lib/content/cota";
 
@@ -17,11 +17,15 @@ const SEGMENTS = [
     cta: "Ver bobinas",
     mediaLabel: "Foto — convertidor trabajando con bobina",
     categoryId: "bobinas",
-    // Frame extraído (ffmpeg) del video generado que subió el cliente
-    // (kling_20260904_VIDEO_que_aprsca_937_0.mp4) — se usa como foto fija,
-    // no como video, para no sumar el peso/complejidad de otro <video>
-    // autoplay como el de NaschelPlant (decisión del cliente).
-    photo: { src: "/photos/soluciones-convertidor-bobina.jpg", alt: "Operario junto a bobina de papel en máquina convertidora" },
+    // Video generado que subió el cliente (kling_20260904_VIDEO_que_aprsca
+    // _937_0.mp4), recomprimido a ~800KB/1280px para web (original pesaba
+    // 7MB). El poster es el mismo frame que se usaba antes como foto fija
+    // — evita cualquier parpadeo/negro mientras el video carga.
+    video: {
+      src: "/videos/soluciones-convertidor-bobina.mp4",
+      poster: "/photos/soluciones-convertidor-bobina.jpg",
+      alt: "Operario junto a bobina de papel en máquina convertidora",
+    },
   },
   {
     id: "distribuidores",
@@ -43,9 +47,13 @@ const SEGMENTS = [
     cta: "Ver químicos",
     mediaLabel: "Foto — control de calidad en papelera",
     categoryId: "quimicos",
-    // Frame extraído (ffmpeg) de kling_20260904_VIDEO_son_bobina_891_0.mp4
-    // — mismo criterio que Convertidores arriba.
-    photo: { src: "/photos/soluciones-papelera-control-calidad.jpg", alt: "Pila de papel Tissue plegado en línea de producción" },
+    // Video generado (kling_20260904_VIDEO_son_bobina_891_0.mp4),
+    // recomprimido — mismo criterio que Convertidores arriba.
+    video: {
+      src: "/videos/soluciones-papelera-control-calidad.mp4",
+      poster: "/photos/soluciones-papelera-control-calidad.jpg",
+      alt: "Pila de papel Tissue plegado en línea de producción",
+    },
   },
 ];
 
@@ -126,8 +134,8 @@ export default function SolutionsByApplication() {
                   activeId === seg.id ? "opacity-100" : "pointer-events-none opacity-0"
                 }`}
               >
-                {seg.photo ? (
-                  <PhotoMedia src={seg.photo.src} alt={seg.photo.alt} />
+                {seg.video ? (
+                  <VideoMedia src={seg.video.src} poster={seg.video.poster} ariaLabel={seg.video.alt} />
                 ) : (
                   <PlaceholderMedia tone="dark" label={seg.mediaLabel} />
                 )}

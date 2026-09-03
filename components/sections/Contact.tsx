@@ -36,7 +36,17 @@ const CHANNELS = [
 
 export default function Contact() {
   return (
-    <section id="contacto" className="section-py-lg relative w-full bg-paper text-ink">
+      /* pb-14!/md:pb-18! — section-py-lg trae padding-bottom 9rem/11rem
+         (144/176px), pensado para secciones que cierran contra OTRA
+         sección clara (ver comentario en globals.css: "el cierre de
+         contacto"). Acá cierra directo contra el footer (bg-ink-deep, casi
+         sin padding propio, py-6), así que ese hueco quedaba como blanco
+         muerto antes de la franja oscura, no como una pausa — se acortó a
+         los valores de section-py-xs (3.5rem/4.5rem) para que el cierre
+         real lo dé el propio corte claro→oscuro del footer, no el
+         padding. No se toca section-py-lg (WhatCotaDoes también la usa) ni
+         el padding-top de esta sección. */
+    <section id="contacto" className="section-py-lg relative w-full bg-paper text-ink pb-14! md:pb-18!">
       <div className="container-industrial">
         <span className="font-label mb-8 block text-ink/50">Contacto</span>
 
