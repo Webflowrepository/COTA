@@ -381,34 +381,65 @@ Si en algún momento tenés estos datos reales de COTA (specs de producto,
 certificaciones ambientales, SLA de entrega), los sumo de inmediato — el
 límite fue siempre "no inventar", no "no quiero mostrarlo".
 
-## Logo band de clientes — sacado del todo
+## Feed de Instagram — 9 posts reales, sin widget de terceros
+
+`InstagramFeed.tsx` (nuevo, entre Certificaciones y Contacto) muestra los
+9 posts/reels más recientes reales de @cota_papelera. **No usa la API de
+Instagram ni un servicio tipo LightWidget/Elfsight** (habría que dar de
+alta una cuenta ahí, algo que le corresponde al cliente) — en cambio, se
+visitó el perfil real, se tomaron las 9 miniaturas reales (`public/photos/instagram/ig-01.jpg`
+a `ig-09.jpg`, bajadas una vez, no hotlinkeadas — las URLs de Instagram
+son firmadas y expiran) y cada una linkea al post real
+(`https://instagram.com/cota_papelera/p/...`). Se descartó el embed
+oficial de Instagram (`instagram.com/embed.js`) porque cada post trae su
+propio cartel de marca (foto de perfil, botón seguir, "ver en Instagram")
+que desentonaba fuerte con el resto del sitio — esto en cambio es una
+grilla simple con el mismo lenguaje visual que ya usa el sitio.
+
+**Esto NO se actualiza solo.** Como cualquier feed sin API real, hay que
+refrescarlo a mano: volver a `instagram.com/cota_papelera`, tomar los 9
+posts más recientes y sus URLs de imagen, reemplazar los archivos en
+`public/photos/instagram/` y actualizar el array `POSTS` en
+`InstagramFeed.tsx`. Documentado en un comentario arriba del componente.
+
+## Logo band de clientes y Sostenibilidad — sacados del todo
 
 `LogoBand.tsx` ("Quienes nos eligen", 6 slots vacíos marcados "Ejemplo")
 se eliminó por completo del sitio (componente borrado, ya no está en
 `app/page.tsx`) — mismo motivo que el Testimonio: el cliente confirmó que
 no va a conseguir autorización legal de ningún cliente para usar su logo.
-No tiene sentido mantenerlo como placeholder a la espera de algo que no va
-a llegar.
 
-## Contadores — por qué a veces se veían en "0" y cómo se hizo más robusto
+`Sustainability.tsx` ("Producimos pensando en el mañana", con los 3 puntos
+de ejemplo — 90% de agua recirculada, etc.) también se eliminó por
+completo. Mismo criterio: sin dato ambiental real de COTA, el cliente
+prefirió que no quede ni como ejemplo marcado. Ninguna de las dos se deja
+como placeholder a la espera de algo que no va a llegar.
+
+## Contadores — historial de ajustes de timing (2 rondas)
 
 El cliente vio en el sitio deployado "0+Años operando", "0T/mes", etc. —
 los contadores (`Counter.tsx`, `SpecCounter.tsx`) arrancan en 0 y cuentan
 hasta el valor real cuando el elemento entra en viewport
-(`IntersectionObserver`). El umbral original (`threshold: 0.4`, dispara
-recién con 40% del elemento visible) dejaba poco margen: alguien
-scrolleando rápido podía pasar de largo la sección con el número recién
-arrancando desde 0, y una captura de pantalla en ese instante muestra
-justo eso. Se hizo más robusto en dos frentes:
-- `threshold: 0` + `rootMargin: "0px 0px 150px 0px"` — arranca apenas el
-  elemento empieza a asomar (150px antes de que sea visible del todo),
-  no cuando ya está bien entrado en pantalla. Verificado: ahora la franja
-  de stats ya termina de contar sola apenas carga la página, sin ni
-  siquiera hacer scroll.
-- **Red de seguridad**: un `setTimeout` de 4s que completa el número al
-  valor real igual, por si el observer nunca llega a disparar por
-  cualquier motivo. Antes no había ningún fallback — si el observer no
-  disparaba, el número quedaba en "0" para siempre.
+(`IntersectionObserver`).
+
+**Ronda 1** — el umbral original (`threshold: 0.4`) dejaba poco margen:
+scrolleando rápido se podía pasar de largo la sección con el número recién
+arrancando desde 0. Se cambió a `threshold: 0` + `rootMargin: "0px 0px 150px 0px"`
+(arranca apenas asoma, 150px antes de estar visible del todo) + se agregó
+una **red de seguridad** (`setTimeout` de 4s que completa el número igual
+si el observer nunca dispara).
+
+**Ronda 2** — el ajuste de la ronda 1 se pasó de rosca: arrancaba TAN
+temprano que para cuando el usuario realmente veía el número en pantalla,
+el conteo (700ms) ya había terminado — se veía "aparecer" ya completo, no
+"cargar" con la animación. Se corrigió: `threshold: 0.2`, sin
+`rootMargin` extra (arranca cuando el número realmente empieza a verse,
+no antes) + duración más larga (`Counter` 700→1400ms, `SpecCounter`
+1100→1600ms) para que el conteo se note mientras se termina de scrollear
+hacia la sección. La red de seguridad de la ronda 1 se mantiene sin
+cambios. Estos 2 componentes cubren **todos** los números del sitio
+(`StatsBand`, `NaschelPlant` ×2, `ChemicalsToPaper`, specs de bobinas
+×3 en `PapelTissueSpecs`) — no hay ningún contador fuera de este patrón.
 
 ## Familias de Producto — el carrusel no se sentía scrolleable
 

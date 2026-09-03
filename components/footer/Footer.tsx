@@ -1,16 +1,8 @@
-import type { ReactElement } from "react";
 import Image from "next/image";
 import { cota } from "@/lib/content/cota";
-import { InstagramIcon } from "@/components/ui/SocialIcons";
 
-// cota.social sólo trae redes con cuenta real confirmada (ver
-// lib/content/cota.ts) — mostrar LinkedIn/TikTok como "próximamente" acá,
-// al final del sitio, quedaba mal. Si el día de mañana hay una cuenta
-// real de más, sumarla acá.
-const SOCIAL_ICONS: Record<string, (props: { className?: string }) => ReactElement> = {
-  Instagram: InstagramIcon,
-};
-
+// Instagram ya vive en Contact.tsx y en InstagramFeed.tsx (con la grilla
+// de posts reales) — repetirlo acá también quedaba de más, se sacó.
 export default function Footer() {
   return (
     <footer className="relative w-full overflow-hidden bg-ink-deep text-paper">
@@ -31,33 +23,6 @@ export default function Footer() {
           <span className="font-label mt-2 block text-paper/45">
             Planta: {cota.plant.location} ({cota.plant.postalCode}), {cota.country}
           </span>
-        </div>
-
-        <div className="flex items-center gap-4 text-paper/45">
-          {cota.social.map(({ name, href }) => {
-            const Icon = SOCIAL_ICONS[name];
-            const content = (
-              <>
-                {Icon && <Icon />}
-                <span className="font-label">{name}</span>
-              </>
-            );
-            return href ? (
-              <a
-                key={name}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 transition-colors hover:text-paper"
-              >
-                {content}
-              </a>
-            ) : (
-              <span key={name} title={`${name} — próximamente`} className="flex items-center gap-1.5">
-                {content}
-              </span>
-            );
-          })}
         </div>
 
         <span className="font-label text-paper/45">

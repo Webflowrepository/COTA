@@ -21,7 +21,7 @@ function format(n: number, decimals: number) {
   return decimals > 0 ? n.toFixed(decimals).replace(".", ",") : String(Math.round(n));
 }
 
-export default function SpecCounter({ values, duration = 1100 }: { values: readonly string[]; duration?: number }) {
+export default function SpecCounter({ values, duration = 1600 }: { values: readonly string[]; duration?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
   const [started, setStarted] = useState(false);
   const parsed = values.map(parse);
@@ -37,9 +37,10 @@ export default function SpecCounter({ values, duration = 1100 }: { values: reado
       return;
     }
 
-    // threshold 0 + rootMargin: mismo criterio que Counter.tsx — arranca
-    // apenas asoma, no cuando ya está 40% visible, para que alguien
-    // scrolleando rápido no pase de largo con el número recién en 0.
+    // Mismo criterio que Counter.tsx: threshold 0.2, sin rootMargin extra
+    // — arranca cuando el valor realmente empieza a verse, no antes (si
+    // arranca demasiado temprano, para cuando el usuario lo mira ya
+    // terminó de contar y parece que "no carga" en vez de animarse).
     const io = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting || started) return;
@@ -53,7 +54,7 @@ export default function SpecCounter({ values, duration = 1100 }: { values: reado
         };
         requestAnimationFrame(tick);
       },
-      { threshold: 0, rootMargin: "0px 0px 150px 0px" },
+      { threshold: 0.2 },
     );
     io.observe(el);
 

@@ -14,8 +14,8 @@ import { prefersReducedMotion } from "@/lib/motion/gsap";
  */
 export default function Counter({
   target,
-  duration = 700,
-  threshold = 0,
+  duration = 1400,
+  threshold = 0.2,
 }: {
   target: number;
   duration?: number;
@@ -31,12 +31,13 @@ export default function Counter({
       el.textContent = String(target);
       return;
     }
-    // threshold 0 + rootMargin positivo abajo: arranca apenas el elemento
-    // empieza a asomar, no cuando ya está 40% visible — antes, si alguien
-    // scrolleaba rápido, podía pasar de largo la sección con el número
-    // recién arrancando desde 0 (el cliente vio justo eso en una captura).
-    // Con más margen de scroll antes de que el número tenga que ser
-    // legible, el conteo (700ms) siempre llega a terminar a tiempo.
+    // Ronda anterior: threshold 0 + 150px de rootMargin arrancaba TAN
+    // temprano (antes de que el número entrara en pantalla) que para
+    // cuando el usuario lo veía, el conteo (700ms) ya había terminado —
+    // se percibía como que "no cargaba", no como que contaba. threshold
+    // 0.2 + sin rootMargin arranca cuando el número realmente empieza a
+    // verse, y 1400ms alcanza para que el conteo se note mientras se
+    // termina de scrollear hacia la sección.
     const io = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting || started) return;
@@ -50,7 +51,7 @@ export default function Counter({
         };
         requestAnimationFrame(tick);
       },
-      { threshold, rootMargin: "0px 0px 150px 0px" },
+      { threshold },
     );
     io.observe(el);
 
