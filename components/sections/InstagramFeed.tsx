@@ -51,7 +51,11 @@ export default function InstagramFeed() {
           )}
         </div>
 
-        <div className="grid grid-cols-3 gap-1.5 md:gap-2">
+        {/* Grilla más chica a propósito — es una sección de apoyo, no un
+            momento insignia (ver memoria de dirección de arte, punto 3):
+            9 posts en una sola fila desde tablet en vez de 3 imágenes
+            gigantes de ~420px cada una a lo ancho del container. */}
+        <div className="grid grid-cols-3 gap-1 sm:grid-cols-6 sm:gap-1.5 md:grid-cols-9">
           {POSTS.map((post) => (
             <a
               key={post.file}

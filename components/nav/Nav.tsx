@@ -3,13 +3,18 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
+// Mismo orden en que las secciones aparecen en el scroll real de la página
+// (ver app/page.tsx) — antes el array no coincidía con el DOM (ej. "Papel"
+// listado antes que "Proceso", que en la página va segundo), así que el
+// resaltado de sección activa (más abajo) marcaba un link que no era el
+// siguiente en aparecer.
 const LINKS = [
   { href: "#compania", id: "compania", label: "Compañía" },
-  { href: "#papel", id: "papel", label: "Papel" },
+  { href: "#proceso", id: "proceso", label: "Proceso" },
   { href: "#quimicos", id: "quimicos", label: "Químicos" },
+  { href: "#papel", id: "papel", label: "Papel" },
   { href: "#soluciones", id: "soluciones", label: "Soluciones" },
   { href: "#planta", id: "planta", label: "Planta" },
-  { href: "#proceso", id: "proceso", label: "Proceso" },
 ];
 
 export default function Nav() {

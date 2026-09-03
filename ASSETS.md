@@ -715,3 +715,185 @@ sección — el componente sigue andando, no hubo que tocarlo.
 
 El ícono de Instagram ya tiene link real (`https://www.instagram.com/cota_papelera/`,
 confirmado por el cliente) — ver "Redes sociales" más arriba.
+
+## Ronda: Sostenibilidad eliminada, scroll de Planta Naschel corregido, Instagram sacado del footer
+
+El cliente mandó 3 capturas con feedback puntual:
+
+**1. `Sustainability.tsx` eliminado del todo.** Ya venía marcada con
+`ExampleNotice` como dato de ejemplo (ver ronda anterior) — el cliente pidió
+directamente sacar la sección completa en vez de mantenerla marcada. Mismo
+criterio ya aplicado a `Testimonial.tsx` y `LogoBand.tsx`: sin dato ambiental
+real de COTA, mejor ninguna sección que una marcada a la espera de un dato
+que no va a llegar. Componente borrado, import y uso sacados de `app/page.tsx`.
+
+**2. `NaschelPlant.tsx` — "el scroll está funcionando mal, apenas bajás los
+números no parecen cargarse".** Causa real: el heading + los 2 contadores
+("Naschel.", años, T/MES) estaban con la opacidad atada al progreso continuo
+de un `ScrollTrigger` con `scrub: 0.15` que abarcaba **todo el pin de
+180vh** (`start: "top top", end: "bottom bottom"`), con el fade ocupando
+sólo el tramo 0.15-0.45 de ese progreso. Si el usuario dejaba de scrollear
+en cualquier punto dentro de ese rango — muy probable, es un recorrido
+largo — el heading quedaba a mitad de opacidad **para siempre**, se leía
+como roto. Encima `Counter.tsx` cuenta con su propio `IntersectionObserver`
+que mide geometría, no opacidad — así que el número podía terminar de
+contar mientras el contenedor todavía estaba casi invisible (`autoAlpha`
+no afecta la detección del observer).
+
+Se separaron los dos efectos, que en realidad tenían roles distintos:
+- El **parallax de fondo** (la foto aérea moviéndose) sigue atado al scrub
+  continuo — es un efecto ambiental, tiene sentido que seguiste el scroll.
+- El **heading + stats** pasaron a un reveal de una sola vez
+  (`toggleActions: "play none none none"`, `start: "top top"`, sin scrub) —
+  aparecen con una animación corta apenas arranca el pin y quedan visibles
+  pase lo que pase después. Esto además sincroniza el fade con el arranque
+  del conteo de `Counter.tsx`, en vez de que el número termine de contar
+  oculto.
+
+**Nota de testing para sesiones futuras:** verificar este fix con
+`window.scrollTo()` + saltos de JS da falsos negativos en este entorno —
+Lenis (smooth scroll) sólo notifica a ScrollTrigger vía su propio pipeline
+(`lenis.on("scroll", ScrollTrigger.update)`); un salto directo de
+`scrollTo` no pasa por ahí, así que `ScrollTrigger.progress` queda
+desactualizado aunque se llame `.update()`/`.refresh()` a mano después. La
+verificación real hay que hacerla con la acción de scroll de rueda genuina
+del `computer` tool (o, para un usuario real, cualquier scroll normal) —
+así se confirmó: el heading aparece opaco al 100% y el contador de Químicos
+llega a "700" de forma estable, sin quedar semi-transparente ni revertir al
+seguir scrolleando.
+
+El mismo patrón de `Counter`/`SpecCounter` (ver ronda de "Contadores —
+historial de ajustes de timing" arriba) ya cubre **todos** los números del
+sitio (`StatsBand`, `NaschelPlant` ×2, `ChemicalsToPaper`, specs de bobinas
+×3) — no hay otro contador fuera de ese patrón, así que no hizo falta tocar
+nada más para el pedido "chequeá lo mismo con los otros números de la web".
+El único bug real de "no parece contar" estaba específicamente en la
+opacidad atada al scrub de `NaschelPlant.tsx`, no en los componentes de
+conteo en sí.
+
+**3. Ícono de Instagram sacado del footer.** Quedaba duplicado: ya está en
+`Contact.tsx` (3 íconos: WhatsApp/Instagram/Mail) y ahora también en
+`InstagramFeed.tsx` (grilla de 9 posts + CTA "Seguir en Instagram →"). El
+footer volvió a su layout de 2 columnas (logo | copyright), sin fila de
+redes sociales ni `SOCIAL_ICONS`.
+
+## Ronda: feed de Instagram más chico, botón de WhatsApp fuera del footer en desktop, orden del nav corregido
+
+Nuevo feedback con 3 capturas:
+
+**1. `InstagramFeed.tsx` — la grilla se veía enorme.** 3 columnas en un
+container de hasta 1440px de ancho daba miniaturas de ~420px cada una —
+dominaba la pantalla como si fuera un momento insignia, cuando en realidad
+es una sección de apoyo (ver memoria de dirección de arte, punto 3). Se
+pasó a `grid-cols-3` (mobile, sin cambios) → `sm:grid-cols-6` →
+`md:grid-cols-9` (las 9 en una sola fila desde tablet en adelante) con gap
+más chico. Verificado en el DOM: cada miniatura pasó de ~420px a ~123px de
+ancho en una pantalla de 1440px.
+
+**2. Botón flotante de WhatsApp quedaba superpuesto sobre el footer en
+desktop.** `WhatsAppButton.tsx` ya tenía lógica para ocultarse al llegar al
+footer (`IntersectionObserver` sobre `<footer>`), pero sólo estaba activa
+en mobile (`md:pointer-events-auto md:opacity-100` la anulaba desde
+`md:` en adelante) — el comentario original asumía "en desktop no hace
+falta, el botón ya es chico respecto al layout", pero el cliente mostró
+que en su pantalla sí se superponía. Se sacó esa anulación — ahora el
+mismo comportamiento (fade + `translate-y-24` + `pointer-events: none`)
+aplica en cualquier tamaño de viewport en cuanto el footer entra en
+pantalla. **El botón en sí no se tocó ni se eliminó** — sigue siendo el
+CTA flotante en el resto del sitio, sólo se corrigió dónde deja de
+mostrarse. Verificado con `getComputedStyle` en el navegador con el footer
+en viewport: `opacity: 0`, `pointer-events: none`, elemento trasladado
+fuera del área visible.
+
+**3. `Nav.tsx` — el orden de los links no coincidía con el orden real de
+las secciones en la página, y por eso el resaltado de "sección activa"
+marcaba algo que no correspondía.** El array `LINKS` tenía
+Compañía/Papel/Químicos/Soluciones/Planta/Proceso, pero el DOM real (ver
+`app/page.tsx`) va Compañía → Proceso → Químicos → Papel → Soluciones →
+Planta. Se reordenó el array para que coincida exactamente. El resaltado
+de sección activa (`activeId` vía scroll listener, clase `text-green`) ya
+existía en el código — el pedido de "que se vayan marcando a medida que
+estás en esa sección" ya estaba implementado, sólo no se notaba bien
+porque los links no estaban en el orden en que aparecen al scrollear.
+Verificado con scroll real: al llegar a Contacto, "CONTACTO" se resalta en
+verde en el nav.
+
+**Nota de verificación:** en esta ronda, el screenshot del Browser pane
+falló de forma intermitente y persistente cerca del final de la página
+(footer/mapa embebido) — se verificaron los 3 cambios por inspección
+directa del DOM (`getBoundingClientRect`, `getComputedStyle`) en vez de
+capturas visuales para esa zona específica; el resto de la página
+(hero, nav) sí capturó bien. No parece relacionado con los cambios de
+código — probablemente un problema puntual del pipeline de captura de esta
+sesión.
+
+## Ronda: Planta Naschel — de pin+parallax de 180vh a video de fondo, sin scroll-jacking
+
+El cliente reportó que la sección seguía "lageando" (aun después del fix
+de opacidad de la ronda anterior) y pidió explícitamente: (1) convertir la
+foto de fondo en video, (2) que no haya que scrollear tanto hasta que
+aparece la info.
+
+**Diagnóstico real del lag:** no era sólo la opacidad (ya resuelta) — el
+`ScrollTrigger` con `scrub: 0.15` recalculaba un `yPercent` de parallax en
+cada frame de scroll, sobre una sección de **180vh** (casi el doble de una
+pantalla de scroll sólo para esta sección) con una imagen full-bleed de
+alta resolución de fondo. En hardware más modesto eso es trabajo real de
+layout/paint por frame, sostenido durante todo ese recorrido — de ahí el
+lag percibido, más allá del bug de opacidad ya corregido.
+
+**Solución — se sacó el pin y el scrub por completo, no se afinó más.**
+Siguiendo el mismo criterio que ya aplicó este proyecto varias veces
+("Long pinned scroll sections should be short" — ver memoria de dirección
+de arte, punto 9): en vez de ajustar el scrub, se eliminó la necesidad de
+scrub. La sección pasó de `h-[180vh]` + `sticky` + parallax scrubbeado a
+una sección normal de `min-h-[100svh]` (un viewport), sin pin ni scrub:
+
+- **Fondo: foto → video.** Se generó un video real a partir de la MISMA
+  foto real de COTA (`naschel-planta-aerea.png`, no se inventó ni se buscó
+  contenido nuevo) — un Ken Burns sutil (zoom-in 8s + el mismo clip
+  invertido de zoom-out 8s, loop de 16s sin salto/corte perceptible al
+  repetirse) generado con `ffmpeg` (`zoompan` + `reverse` + `concat`),
+  1920×1080, h.264, ~3.3MB. Queda en `public/videos/naschel-planta-aerea.mp4`.
+  El movimiento ahora lo da la reproducción nativa del video (decodificada
+  por hardware, no depende del scroll) — nada que recalcular en cada frame
+  de scroll, que era la causa real del lag.
+- **Carga diferida del video, mismo patrón que `Counter.tsx`.** El
+  `<video>` no trae `src` en el HTML inicial — sólo `poster` (la foto real
+  fija). Un `IntersectionObserver` (dispara una sola vez, `rootMargin: "600px 0px"`)
+  recién le asigna el `src` cuando la sección está por entrar en pantalla,
+  y arranca la reproducción al evento `loadedmetadata` (no inmediatamente
+  después de `.load()`, para evitar un `AbortError` de carrera entre
+  `.load()` y `.play()` en el mismo tick). Respeta
+  `prefers-reduced-motion` (se queda en la foto fija, no baja ni reproduce
+  nada). Esto evita gastar ancho de banda en un video que puede estar a
+  15+ pantallas de distancia cuando carga la página.
+- **Reveal del heading, mismo patrón que el resto del sitio.** Antes
+  disparaba recién al pisar el pin (`start: "top top"`). Ahora usa el
+  mismo criterio que `WhyCota.tsx`/`WhatCotaDoes.tsx` (`start: "top 70%"`,
+  `toggleActions: "play none none none"`, sin scrub) — aparece apenas la
+  sección entra bastante en pantalla, sin depender de ningún pin.
+
+**Resultado medido:** la altura de la sección pasó de ~180vh a ~100vh
+(exactamente 1 viewport) — se verificó con `getBoundingClientRect` en el
+navegador: `sectionHeight` pasó de acaparar casi 2 pantallas de scroll a
+ocupar exactamente 1. El heading queda con `opacity: 1` apenas se entra a
+la sección, sin ningún recorrido extra de scroll pinneado después.
+
+**Nota de verificación — límite real de esta sesión, no del sitio.** El
+`IntersectionObserver` que dispara la carga del video no llegó a
+confirmarse disparando durante la automatización de scroll de esta
+sesión — se armó un `IntersectionObserver` de prueba, aislado, directamente
+en la página (sin pasar por el componente) apuntando al mismo elemento ya
+visible en viewport, y **tampoco disparó su callback** en 2 segundos de
+espera. Esto confirma que es una limitación del entorno de automatización
+de este Browser pane (entrega de callbacks de `IntersectionObserver`/eventos
+de media poco confiable en esta sesión — coherente con el freeze de rAF ya
+documentado en la memoria de dirección de arte, punto 21), no un bug del
+sitio: se disparó `.load()` + `.play()` manualmente sobre el mismo
+`<video>` real del DOM y funcionó de punta a punta — `readyState` llegó a
+4 (`HAVE_ENOUGH_DATA`), `play()` resolvió sin error, y `currentTime` avanzó
+normalmente hasta completar el loop de 16s. La lógica de carga diferida en
+sí replica exactamente el patrón ya probado y funcionando de `Counter.tsx`
+(mismo tipo de `IntersectionObserver` de un solo disparo) — no hay motivo
+para que se comporte distinto en un navegador real.
