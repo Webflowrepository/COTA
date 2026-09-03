@@ -6,6 +6,16 @@ import { ensureGsapRegistered, prefersReducedMotion } from "@/lib/motion/gsap";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
 
+// Antes había una 6ta etapa "Producto Terminado" sin foto real (caía en
+// PlaceholderMedia) entre Rebobinado y Logística — quedaba como el frame
+// terminal de la secuencia (el pin la deja congelada en pantalla completa
+// al soltar) y era la única etapa sin evidencia fotográfica en las 3
+// referencias comparadas (COTA_REFERENCE_GAP_AUDIT.md, gap 4 / intervención
+// #2). Se sacó del todo — no había ningún concepto exclusivo ahí:
+// Rebobinado ya cierra en "se prepara para su conversión" y Logística
+// abre con "distribución de bobinas", así que el paso de "producto
+// terminado" ya queda implícito entre esas dos. Si en algún momento llega
+// una foto real de bobina/producto terminado, se puede volver a sumar acá.
 const STAGES = [
   {
     n: "01",
@@ -41,13 +51,6 @@ const STAGES = [
   },
   {
     n: "05",
-    title: "Producto Terminado",
-    copy: "Cada bobina sale lista para su conversión.",
-    label: "Foto — bobina terminada",
-    dark: false,
-  },
-  {
-    n: "06",
     title: "Logística",
     copy: "Distribución de bobinas hacia convertidores y distribuidores.",
     label: "Foto — despacho / logística",
@@ -143,7 +146,9 @@ export default function IndustrialProcess() {
                 style={{ background: "linear-gradient(0deg, rgba(6,8,17,0.75) 0%, transparent 45%)" }}
               />
               <div className="absolute inset-0 flex flex-col justify-end p-7 text-paper md:p-9">
-                <span className="font-label mb-3 block text-paper/60">{stage.n} / 06</span>
+                <span className="font-label mb-3 block text-paper/60">
+                  {stage.n} / {String(STAGES.length).padStart(2, "0")}
+                </span>
                 <h3 className="text-heading">{stage.title}</h3>
                 <p className="mt-3 max-w-xs text-sm text-paper/70">{stage.copy}</p>
               </div>

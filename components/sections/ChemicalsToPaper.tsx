@@ -56,7 +56,27 @@ export default function ChemicalsToPaper() {
   }, []);
 
   return (
-    <section ref={wrapperRef} id="quimicos" className="relative h-[240vh] w-full bg-ink-deep">
+    /* Pacing (COTA_REFERENCE_GAP_AUDIT.md, intervención #3): con 240vh el
+       ScrollTrigger que maneja el crossfade ("top top" a "bottom bottom")
+       sólo cubre 140vh — matemáticamente siempre altura-wrapper menos
+       altura-sticky (100vh) — y el crossfade ya usa ese rango entero (sus
+       posiciones dentro del timeline son fracciones del propio rango de
+       scrub, no valores absolutos, así que se reescalan solas). Los 100vh
+       restantes eran el capítulo "Papel" ya resuelto, deslizándose fuera
+       de pantalla sin que pase nada más — medido con Playwright scrolleando
+       de a pasos reales: a partir de que el crossfade cierra, el frame
+       queda visualmente estático durante 1 pantalla completa antes de que
+       empiece la sección siguiente. 200vh acorta esa cola manteniendo el
+       ritmo del crossfade Químicos→Papel intacto (mismo timeline, mismas
+       fracciones, sólo corre sobre menos scroll). IndustrialProcess (la
+       otra mitad de esta secuencia consecutiva) no se tocó: su propia
+       "zona muerta" viene de que GSAP pin:true reserva altura-natural +
+       rango-de-scrub como espacio total del spacer — reducir su `end` no
+       la achica (achica sólo la parte que sí es útil, el paneo horizontal
+       real), y arreglarla de verdad requeriría desacoplar el trigger del
+       elemento pineado (cambio estructural, fuera del alcance de esta
+       intervención — el mecanismo horizontal en sí está protegido). */
+    <section ref={wrapperRef} id="quimicos" className="relative h-[200vh] w-full bg-ink-deep">
       <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
         <div ref={chemLayerRef} className="absolute inset-0">
           <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />

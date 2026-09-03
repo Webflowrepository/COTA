@@ -41,10 +41,16 @@ export default function NaschelPlant() {
 
     // El <video> no trae `src` en el HTML inicial — recién se le asigna
     // cuando la sección está por entrar en pantalla (mismo criterio que
-    // Counter.tsx: IntersectionObserver, dispara una sola vez). Antes de
-    // eso se ve el `poster` (la misma foto real, sin animar) — así no se
+    // Counter.tsx: IntersectionObserver, dispara una sola vez) — así no se
     // gasta ancho de banda bajando un video que puede estar a 15+
-    // pantallas de scroll de distancia.
+    // pantallas de scroll de distancia. Antes de eso queda el fondo
+    // bg-ink-deep de la sección (sin `poster`) — se sacó el poster que
+    // apuntaba a naschel-planta-aerea.png para que esa foto no aparezca
+    // dos veces en el sitio (pasada de "ninguna foto se repite"): esa
+    // foto ya es la real usada en IndustrialProcess, etapa "Logística".
+    // El video en sí (naschel-planta-aerea.mp4) es un archivo generado
+    // aparte, no la foto — sigue siendo el contenido real de esta
+    // sección una vez que carga.
     const video = videoRef.current;
     const section = rootRef.current;
     let io: IntersectionObserver | undefined;
@@ -82,7 +88,6 @@ export default function NaschelPlant() {
       <video
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
-        poster="/photos/naschel-planta-aerea.png"
         muted
         loop
         playsInline

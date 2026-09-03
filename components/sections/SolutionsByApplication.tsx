@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
-import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
 const bobinas = cota.services.find((s) => s.id === "bobinas")!;
@@ -83,6 +82,14 @@ export default function SolutionsByApplication() {
             container en sus mismos breakpoints (3rem/5rem), empujándola
             hasta el borde izquierdo real. El texto no se toca. */}
         <div className="relative mt-10 grid grid-cols-1 gap-8 md:grid-cols-[1.6fr_1fr] md:items-center md:gap-16">
+          {/* Los 3 segmentos pasaron a placeholder — pasada de "ninguna
+              foto se repite": bobinas-deposito.jpeg y quimicos-tanques.png
+              le quedaron a ChemicalsToPaper.tsx (sus dos capítulos no
+              pueden perder ninguna de las dos fotos sin quedar un
+              capítulo entero vacío). "Distribuidores" ya estaba en
+              placeholder desde antes (nunca hubo foto de producto
+              Guardián en punto de venta); ahora los 3 comparten el mismo
+              tratamiento en vez de mezclar 2 fotos reales con 1 marcada. */}
           <div className="relative h-[42vh] w-full overflow-hidden md:-ml-12 md:h-[48vh] min-[1440px]:-ml-20!">
             {SEGMENTS.map((seg) => (
               <div
@@ -91,13 +98,7 @@ export default function SolutionsByApplication() {
                   activeId === seg.id ? "opacity-100" : "pointer-events-none opacity-0"
                 }`}
               >
-                {seg.id === "papeleras" ? (
-                  <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
-                ) : seg.id === "convertidores" ? (
-                  <PhotoMedia src="/photos/bobinas-deposito.jpeg" alt="Bobinas de papel Tissue en depósito de COTA" />
-                ) : (
-                  <PlaceholderMedia tone="dark" label={seg.mediaLabel} />
-                )}
+                <PlaceholderMedia tone="dark" label={seg.mediaLabel} />
               </div>
             ))}
           </div>

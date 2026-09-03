@@ -3,8 +3,21 @@
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import { EASE_STANDARD } from "@/lib/motion/tokens";
-import PhotoMedia from "@/components/visuals/PhotoMedia";
+import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import { cota } from "@/lib/content/cota";
+
+// Foto por línea de negocio — pasada de "ninguna foto se repite":
+// bobinas-deposito.jpeg y quimicos-tanques.png le quedaron a
+// ChemicalsToPaper.tsx (sus dos capítulos "Químicos"/"Papel" no pueden
+// perder ninguna de las dos sin quedar un capítulo entero vacío) y
+// naschel-planta-aerea.png le quedó a IndustrialProcess.tsx (etapa
+// "Logística"). No queda ninguna foto real libre para estas 3 filas —
+// pasan a placeholder marcado, como ya se usa en SolutionsByApplication.
+const MEDIA_LABEL: Record<string, string> = {
+  papel: "Foto — bobinas de papel Tissue",
+  quimicos: "Foto — tanques de proceso químico",
+  soluciones: "Foto — planta y logística",
+};
 
 // CTA secundario por división — apunta a la sección real correspondiente
 // (no a un mailto genérico), ya que las 3 tienen su propio anchor en la página.
@@ -119,13 +132,7 @@ export default function WhatCotaDoes() {
                   estaba). */}
               <div className="media-reveal relative h-40 w-full overflow-hidden sm:h-48 md:h-44 md:flex-1 md:-mr-12 lg:h-56 min-[1440px]:-mr-20!">
                 <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
-                  {line.id === "soluciones" ? (
-                    <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA — logística y despacho" />
-                  ) : line.id === "quimicos" ? (
-                    <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
-                  ) : (
-                    <PhotoMedia src="/photos/bobinas-deposito.jpeg" alt="Bobinas de papel Tissue en depósito de COTA" />
-                  )}
+                  <PlaceholderMedia tone="dark" label={MEDIA_LABEL[line.id]} />
                 </div>
               </div>
             </div>

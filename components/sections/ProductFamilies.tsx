@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
+import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import { cota } from "@/lib/content/cota";
 
 const bobinas = cota.services.find((s) => s.id === "bobinas")!;
@@ -163,13 +164,19 @@ export default function ProductFamilies() {
                  se tocan. */
               className="pf-panel group relative h-[62vh] w-[86vw] shrink-0 snap-start overflow-hidden md:h-[420px] md:w-auto lg:h-[58vh]"
             >
+              {/* Soluciones y Químicos pasaron a placeholder — pasada de
+                  "ninguna foto se repite": naschel-planta-aerea.png le
+                  quedó a IndustrialProcess (etapa "Logística") y
+                  quimicos-tanques.png le quedó a ChemicalsToPaper (su
+                  capítulo "Químicos" es un momento cinematográfico propio,
+                  no puede perder esa foto sin quedar vacío). Bobinas
+                  mantiene la suya (bobinas-pallet-220cm.jpeg), única en
+                  todo el sitio, sin conflicto. */}
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
-                {panel.id === "soluciones" ? (
-                  <PhotoMedia src="/photos/naschel-planta-aerea.png" alt="Planta de COTA — logística y despacho" />
-                ) : panel.id === "quimicos" ? (
-                  <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
-                ) : (
+                {panel.id === "bobinas" ? (
                   <PhotoMedia src="/photos/bobinas-pallet-220cm.jpeg" alt="Bobina industrial de 220 cm sobre pallet, planta de COTA" />
+                ) : (
+                  <PlaceholderMedia tone="dark" label={panel.mediaLabel} />
                 )}
               </div>
               <div
