@@ -3,20 +3,23 @@
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import { EASE_STANDARD } from "@/lib/motion/tokens";
-import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
-// Foto por línea de negocio — pasada de "ninguna foto se repite":
-// bobinas-deposito.jpeg y quimicos-tanques.png le quedaron a
-// ChemicalsToPaper.tsx (sus dos capítulos "Químicos"/"Papel" no pueden
-// perder ninguna de las dos sin quedar un capítulo entero vacío) y
-// naschel-planta-aerea.png le quedó a IndustrialProcess.tsx (etapa
-// "Logística"). No queda ninguna foto real libre para estas 3 filas —
-// pasan a placeholder marcado, como ya se usa en SolutionsByApplication.
-const MEDIA_LABEL: Record<string, string> = {
-  papel: "Foto — bobinas de papel Tissue",
-  quimicos: "Foto — tanques de proceso químico",
-  soluciones: "Foto — planta y logística",
+// Foto por línea de negocio — estas 3 filas quedaron en placeholder en la
+// pasada de "ninguna foto se repite" (ver historial: bobinas-deposito.jpeg
+// y quimicos-tanques.png le quedaron a ChemicalsToPaper, naschel-planta-
+// aerea.png a IndustrialProcess). El cliente subió imagen generada propia
+// para tapar los 3 huecos — Papel Tissue y Soluciones con fotos nuevas
+// (producción de papel / logística con montacargas), Químicos reusa
+// quimicos-ibc-tanques.png (ya usada en ProductFamilies — única foto
+// generada disponible con tanques, el cliente confirmó repetirla acá antes
+// que dejar el placeholder). Reemplazar por foto real de COTA cuando
+// exista — mismo criterio que el resto de las imágenes generadas del sitio.
+const MEDIA_PHOTO: Record<string, { src: string; alt: string }> = {
+  papel: { src: "/photos/papel-tissue-produccion-operarios.png", alt: "Operarios controlando la producción de papel Tissue" },
+  quimicos: { src: "/photos/quimicos-ibc-tanques.png", alt: "Tanques y contenedores IBC de proceso químico" },
+  soluciones: { src: "/photos/soluciones-logistica-montacargas.png", alt: "Montacargas moviendo bobina de papel en planta de COTA" },
 };
 
 // CTA secundario por división — apunta a la sección real correspondiente
@@ -132,7 +135,7 @@ export default function WhatCotaDoes() {
                   estaba). */}
               <div className="media-reveal relative h-40 w-full overflow-hidden sm:h-48 md:h-44 md:flex-1 md:-mr-12 lg:h-56 min-[1440px]:-mr-20!">
                 <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
-                  <PlaceholderMedia tone="dark" label={MEDIA_LABEL[line.id]} />
+                  <PhotoMedia src={MEDIA_PHOTO[line.id].src} alt={MEDIA_PHOTO[line.id].alt} />
                 </div>
               </div>
             </div>

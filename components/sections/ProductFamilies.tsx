@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
-import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import { cota } from "@/lib/content/cota";
 
 const bobinas = cota.services.find((s) => s.id === "bobinas")!;
@@ -20,6 +19,7 @@ const PANELS = [
     short: bobinas.short,
     mediaLabel: "Foto — bobina de papel",
     categoryId: "bobinas",
+    photo: { src: "/photos/bobinas-pallet-220cm.jpeg", alt: "Bobina industrial de 220 cm sobre pallet, planta de COTA" },
   },
   {
     id: "quimicos",
@@ -27,6 +27,13 @@ const PANELS = [
     short: quimicos.short,
     mediaLabel: "Foto — proceso químico",
     categoryId: "quimicos",
+    // Imagen generada (no foto real de COTA) — el cliente subió 3
+    // renders y eligió ésta para tapar el placeholder mientras no haya
+    // fotografía real del proceso químico. Reemplazar apenas exista una
+    // foto real equivalente (misma lógica que el resto del sitio: la
+    // fotografía real de COTA es siempre la prioridad sobre imagen
+    // generada — ver memoria de dirección de arte).
+    photo: { src: "/photos/quimicos-ibc-tanques.png", alt: "Tanques y contenedores IBC de proceso químico" },
   },
   // Guardián ya no es un panel acá — sin foto de producto, quedaba "colgado"
   // junto a 3 fotos reales (2 rondas de retoque de estilo no lo arreglaron,
@@ -39,6 +46,9 @@ const PANELS = [
     short: soluciones.short,
     mediaLabel: "Foto — maquinaria / instalación",
     categoryId: "maquinaria",
+    // Imagen generada (no foto real de COTA) — mismo criterio que arriba:
+    // reemplazar apenas exista una foto real de instalación/maquinaria.
+    photo: { src: "/photos/soluciones-rebobinadora.png", alt: "Operario trabajando en máquina rebobinadora industrial" },
   },
 ];
 
@@ -164,20 +174,15 @@ export default function ProductFamilies() {
                  se tocan. */
               className="pf-panel group relative h-[62vh] w-[86vw] shrink-0 snap-start overflow-hidden md:h-[420px] md:w-auto lg:h-[58vh]"
             >
-              {/* Soluciones y Químicos pasaron a placeholder — pasada de
-                  "ninguna foto se repite": naschel-planta-aerea.png le
-                  quedó a IndustrialProcess (etapa "Logística") y
-                  quimicos-tanques.png le quedó a ChemicalsToPaper (su
-                  capítulo "Químicos" es un momento cinematográfico propio,
-                  no puede perder esa foto sin quedar vacío). Bobinas
-                  mantiene la suya (bobinas-pallet-220cm.jpeg), única en
-                  todo el sitio, sin conflicto. */}
+              {/* Los 3 paneles tienen foto — Soluciones y Químicos usaban
+                  PlaceholderMedia (naschel-planta-aerea.png y
+                  quimicos-tanques.png le quedaron a IndustrialProcess y
+                  ChemicalsToPaper en la pasada de "ninguna foto se repite")
+                  hasta que el cliente subió y eligió imagen generada propia
+                  para tapar esos dos huecos — ver nota en PANELS arriba
+                  sobre reemplazarlas por foto real cuando exista. */}
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
-                {panel.id === "bobinas" ? (
-                  <PhotoMedia src="/photos/bobinas-pallet-220cm.jpeg" alt="Bobina industrial de 220 cm sobre pallet, planta de COTA" />
-                ) : (
-                  <PlaceholderMedia tone="dark" label={panel.mediaLabel} />
-                )}
+                <PhotoMedia src={panel.photo.src} alt={panel.photo.alt} />
               </div>
               <div
                 className="absolute inset-0"

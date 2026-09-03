@@ -44,7 +44,23 @@ export default function SolutionsByApplication() {
   const mailto = `mailto:${cota.contact.email}?subject=${encodeURIComponent(`Consulta — ${categoryLabel}`)}`;
 
   return (
-    <section id="soluciones" className="section-py-md relative w-full bg-paper">
+    /* Pacing (COTA_REFERENCE_GAP_AUDIT.md, intervención #5 — reevaluada
+       tras #1-#4): el audit original apuntaba a Hero→StatsBand, pero esa
+       transición ya cierra bien sola (Hero termina en un frame limpio,
+       StatsBand absorbe el corte con su propio whitespace). Mapeado el
+       ritmo completo del homepage actual con Playwright, el corte más
+       abrupto hoy es este: esta sección (tabs + panel de foto, contenido
+       "de trabajo" activo hasta el último píxel) choca sin ningún margen
+       contra NaschelPlant — el otro momento cinematográfico full-bleed del
+       sitio, a la par de Hero, que hoy arranca ya totalmente resuelto sin
+       ningún respiro. pb-* extra (nada en md:, todo en el override) le da
+       a esa entrada el aire que le falta — no se toca NaschelPlant (su
+       diseño full-bleed es intencional) ni la clase compartida
+       section-py-md (la usan también WhyCota y ProductFamilies). El "!"
+       hace falta porque section-py-md se define después de
+       @import "tailwindcss" y le gana en cascada a un pb-* sin
+       important (ver memoria de dirección de arte, punto 18). */
+    <section id="soluciones" className="section-py-md relative w-full bg-paper pb-36! md:pb-60!">
       <div className="container-industrial">
         <span className="font-label mb-8 block text-ink/50">Soluciones — 03</span>
         <h2 className="text-display max-w-3xl text-ink">De la materia a la operación del cliente.</h2>
