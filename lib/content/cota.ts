@@ -178,7 +178,14 @@ export const cota = {
    * link real (mismo criterio que se aplicó antes acá mismo). */
   social: [
     { name: "Instagram", href: "https://www.instagram.com/cota_papelera/" },
-    { name: "LinkedIn", href: "https://www.linkedin.com/company/cota-sa/posts/?feedView=all" },
+    // Probado con Playwright: tanto esta URL como la de /posts/?feedView=all
+    // redirigen al mismo "authwall" de LinkedIn (pantalla de Registrarse) en
+    // un navegador sin sesión iniciada — es el comportamiento propio de
+    // LinkedIn para visitantes anónimos en páginas de empresa, no depende
+    // de qué variante de URL se use. No se puede arreglar desde acá; se
+    // deja la URL base (sin /posts), que es la correcta para quien sí
+    // tenga sesión abierta.
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/cota-sa/" },
     { name: "Facebook", href: "https://www.facebook.com/p/Cota-SA-6157699516126" },
   ],
 } as const;

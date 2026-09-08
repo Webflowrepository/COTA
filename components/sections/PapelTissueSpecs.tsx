@@ -125,34 +125,36 @@ export default function PapelTissueSpecs() {
                     <SpecCounter values={cota.bobinaSpecs.diametros} />
                   </td>
                 </tr>
-                <tr className="spec-row transition-colors duration-300 hover:bg-paper/[0.04]">
+                <tr className="spec-row border-b border-line-on-dark transition-colors duration-300 hover:bg-paper/[0.04]">
                   <td className="py-5 pr-8 text-paper/70">Cono interior</td>
                   <td className="font-impact-number text-index text-paper transition-transform duration-300 hover:translate-x-1">
                     <SpecCounter values={[cota.bobinaSpecs.conoInterior]} />
                   </td>
                 </tr>
+                {/* Gramaje por producto — mismas filas .spec-row que Ancho/
+                    Diámetro/Cono interior arriba (antes vivían en una lista
+                    <dl> aparte, con números más chicos y sin la animación
+                    de conteo — pedido del cliente: mismo tamaño, layout y
+                    animación que el resto de la tabla). Cada producto es
+                    una fila más — el "Medida" pasa a ser el nombre del
+                    producto, "Valores disponibles" su gramaje. */}
+                {cota.bobinaSpecs.gramajes.map((g, i) => (
+                  <tr
+                    key={g.label}
+                    className={`spec-row transition-colors duration-300 hover:bg-paper/[0.04] ${
+                      i < cota.bobinaSpecs.gramajes.length - 1 ? "border-b border-line-on-dark" : ""
+                    }`}
+                  >
+                    <td className="py-5 pr-8 text-paper/70">{g.label}</td>
+                    <td className="font-impact-number text-index text-paper transition-transform duration-300 hover:translate-x-1">
+                      <SpecCounter values={[g.value]} />
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
-
-          {/* Gramaje por producto — confirmado por el cliente. Va aparte de
-              la tabla de arriba (ancho/diámetro/cono) porque no son
-              variantes de una misma medida, son valores fijos por tipo de
-              producto — forzarlos en el mismo patrón "Medida / Valores
-              disponibles" (con SpecCounter, pensado para listas de
-              números sueltos) leería raro con las etiquetas de producto. */}
-          <div className="mt-10">
-            <span className="font-label mb-4 block text-paper/50">Gramaje por producto</span>
-            <dl className="flex flex-col divide-y divide-line-on-dark">
-              {cota.bobinaSpecs.gramajes.map((g) => (
-                <div key={g.label} className="flex items-baseline justify-between gap-6 py-3">
-                  <dt className="text-paper/70">{g.label}</dt>
-                  <dd className="font-impact-number text-lg text-paper">{g.value}</dd>
-                </div>
-              ))}
-            </dl>
-            <p className="font-label mt-3 text-paper/40">Consultar alternativas de gramaje.</p>
-          </div>
+          <p className="font-label mt-4 text-paper/40">Consultar alternativas de gramaje.</p>
 
           <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
             <a

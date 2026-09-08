@@ -114,6 +114,21 @@ export default function IndustrialProcess() {
         animation: tween,
         invalidateOnRefresh: true,
         onUpdate: (self) => setProgress(self.progress),
+        // z-index sólo mientras está activamente pineado (fixed) — ver
+        // comentario en el JSX. Un z-10 fijo en la clase se quedaba
+        // pegado incluso después de soltarse (vuelve a position:relative,
+        // scrollea como cualquier bloque normal), tapando otros 900px de
+        // scroll normal a ChemicalsToPaper entrando por abajo — mismo
+        // síntoma raro reportado, sólo que corrido de lugar. onEnter/
+        // onEnterBack (arranca a pinear, en cualquier dirección) le suman
+        // el z-index; onLeave/onLeaveBack (se suelta, en cualquier
+        // dirección) se lo sacan — así el orden normal por DOM (que
+        // funciona bien para dos secciones que no están pineadas) vuelve
+        // a mandar apenas termina el pin.
+        onEnter: () => pinRef.current?.classList.add("z-10"),
+        onEnterBack: () => pinRef.current?.classList.add("z-10"),
+        onLeave: () => pinRef.current?.classList.remove("z-10"),
+        onLeaveBack: () => pinRef.current?.classList.remove("z-10"),
       });
     }, sectionRef);
 
@@ -148,7 +163,16 @@ export default function IndustrialProcess() {
           ScrollTrigger.create arriba). El contenido real, visualmente
           idéntico a como estaba antes, va adentro con position:absolute
           para no aportarle altura al wrapper — así el spacer que arma el
-          pin no reserva una pantalla completa de más. */}
+          pin no reserva una pantalla completa de más.
+          El z-10 que agregan/sacan los callbacks onEnter/onLeave de arriba
+          (no está en esta clase — sólo mientras el pin está activo)
+          resuelve que ChemicalsToPaper (#quimicos, que arranca pegado sin
+          ningún margen desde que se sacó la zona muerta) se pintaba
+          ENCIMA del contenido todavía pineado acá — confirmado con
+          Playwright. Un z-10 fijo en la clase "arregla" eso pero rompe la
+          transición normal de salida (queda pegado 900px de más después
+          de soltarse, ahora tapando a Químicos en sentido contrario) —
+          por eso se maneja dinámico, sólo durante el pin real. */}
       <div ref={pinRef} className="relative h-0">
         <div className="absolute inset-x-0 top-0 flex h-[100svh] w-full flex-col overflow-hidden">
         <div className="container-industrial flex shrink-0 items-end justify-between pt-10 pb-6 md:pt-14 md:pb-8">

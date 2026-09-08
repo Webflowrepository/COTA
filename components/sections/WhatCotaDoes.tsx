@@ -113,11 +113,18 @@ export default function WhatCotaDoes() {
         <div className="flex flex-col divide-y divide-line-on-light">
           {LINES.map((line) => (
             <div className="line-row group relative flex flex-col gap-5 py-9 transition-[padding] duration-500 ease-out md:flex-row md:items-center md:justify-between md:gap-10 md:py-12 md:hover:pl-3" key={line.id}>
-              {/* md:max-w acotado — a 768px, max-w-md (448px fijo) le
-                  dejaba a la foto (flex-1) sólo ~180px de ancho en una fila
-                  de ~660px. lg: vuelve a max-w-md sin cambios — 1440/1280
-                  quedan iguales. */}
-              <div className="min-w-0 max-w-md md:max-w-[280px] lg:max-w-md">
+              {/* w-[280px]/w-[28rem] fijos (con shrink-0), no max-w — con
+                  sólo un tope máximo, esta columna se achicaba al ancho
+                  natural de SU PROPIO texto (shrink-to-fit en flexbox sin
+                  width explícito), así que filas con copy corto ("Bobinas
+                  Industriales", "Conversión Integrada") quedaban más
+                  angostas que filas con copy largo (Químicos, Soluciones)
+                  — la foto de al lado (flex-1) absorbía esa diferencia y
+                  terminaba con anchos y bordes izquierdos distintos entre
+                  filas (confirmado midiendo getBoundingClientRect: hasta
+                  90px de diferencia). Ancho fijo = las 4 filas alinean
+                  igual sin importar cuánto texto tenga cada una. */}
+              <div className="min-w-0 w-full shrink-0 md:w-[280px] lg:w-[28rem]">
                 <h3 className="text-heading text-ink transition-opacity duration-300 group-hover:opacity-60">{line.label}</h3>
                 <p className="mt-3 text-sm text-ink/55 md:text-base">{line.short}</p>
                 {SECONDARY_CTA[line.id] && (

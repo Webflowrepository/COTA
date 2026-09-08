@@ -23,18 +23,14 @@ const CATALOGS = [
   { label: "Catálogo interactivo COTA", href: "/catalogos/catalogo-interactivo-marketing.pdf" },
 ];
 
+// Instagram al final (pedido del cliente: "ponelo a la derecha") — el
+// resto queda WhatsApp/LinkedIn/Facebook/Mail antes.
 const CHANNELS = [
   {
     id: "whatsapp",
     label: "WhatsApp",
     href: cota.whatsapp.number ? `https://wa.me/${cota.whatsapp.number}` : null,
     Icon: WhatsAppIcon,
-  },
-  {
-    id: "instagram",
-    label: "Instagram",
-    href: cota.social.find((s) => s.name === "Instagram")?.href ?? null,
-    Icon: InstagramIcon,
   },
   {
     id: "linkedin",
@@ -53,6 +49,12 @@ const CHANNELS = [
     label: "Mail",
     href: `mailto:${cota.contact.email}`,
     Icon: MailIcon,
+  },
+  {
+    id: "instagram",
+    label: "Instagram",
+    href: cota.social.find((s) => s.name === "Instagram")?.href ?? null,
+    Icon: InstagramIcon,
   },
 ];
 
