@@ -38,11 +38,33 @@ export default function Nav() {
     let ticking = false;
     const updateActive = () => {
       ticking = false;
-      const triggerY = window.scrollY + window.innerHeight * 0.35;
+      const scrollY = window.scrollY;
+      const triggerY = scrollY + window.innerHeight * 0.35;
       let current: string | null = null;
       for (const el of targets) {
-        const top = el.getBoundingClientRect().top + window.scrollY;
+        const top = el.getBoundingClientRect().top + scrollY;
         if (top <= triggerY) current = el.id;
+      }
+
+      // IndustrialProcess (#proceso) está pineado — el "0.35 de viewport de
+      // anticipo" de arriba asume secciones normales en flujo (adelantar el
+      // resaltado un poco antes de que el usuario llegue de verdad), pero
+      // acá esos mismos 0.35*innerHeight son ~35% de la duración TOTAL del
+      // pin (900px, ver IndustrialProcess.tsx — antes eran 1800px con una
+      // cola muerta al final, así que ese mismo adelanto caía en la parte
+      // que ya no cambiaba y no se notaba). Resultado: el nav marcaba
+      // "Químicos" mientras la pantalla todavía mostraba el paneo
+      // horizontal de Proceso a mitad de camino — confirmado con
+      // Playwright. Mientras el pin de #proceso sigue activo (scrollY no
+      // llegó todavía al top real de #quimicos, que es exactamente donde
+      // se suelta), se fuerza "proceso" sin importar qué diga el cálculo
+      // genérico de arriba.
+      const procesoEl = document.getElementById("proceso");
+      const quimicosEl = document.getElementById("quimicos");
+      if (procesoEl && quimicosEl) {
+        const procesoTop = procesoEl.getBoundingClientRect().top + scrollY;
+        const quimicosTop = quimicosEl.getBoundingClientRect().top + scrollY;
+        if (scrollY >= procesoTop && scrollY < quimicosTop) current = "proceso";
       }
 
       // ChemicalsToPaper (#quimicos) hace un crossfade interno de un
