@@ -1,5 +1,5 @@
 import { cota } from "@/lib/content/cota";
-import { WhatsAppIcon, InstagramIcon, MailIcon } from "@/components/ui/SocialIcons";
+import { WhatsAppIcon, InstagramIcon, LinkedInIcon, FacebookIcon, MailIcon } from "@/components/ui/SocialIcons";
 
 const INFO_ROWS = [
   { label: "Cel.", value: cota.contact.phone },
@@ -35,6 +35,18 @@ const CHANNELS = [
     label: "Instagram",
     href: cota.social.find((s) => s.name === "Instagram")?.href ?? null,
     Icon: InstagramIcon,
+  },
+  {
+    id: "linkedin",
+    label: "LinkedIn",
+    href: cota.social.find((s) => s.name === "LinkedIn")?.href ?? null,
+    Icon: LinkedInIcon,
+  },
+  {
+    id: "facebook",
+    label: "Facebook",
+    href: cota.social.find((s) => s.name === "Facebook")?.href ?? null,
+    Icon: FacebookIcon,
   },
   {
     id: "mail",

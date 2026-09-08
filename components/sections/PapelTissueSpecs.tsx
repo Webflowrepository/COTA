@@ -134,6 +134,26 @@ export default function PapelTissueSpecs() {
               </tbody>
             </table>
           </div>
+
+          {/* Gramaje por producto — confirmado por el cliente. Va aparte de
+              la tabla de arriba (ancho/diámetro/cono) porque no son
+              variantes de una misma medida, son valores fijos por tipo de
+              producto — forzarlos en el mismo patrón "Medida / Valores
+              disponibles" (con SpecCounter, pensado para listas de
+              números sueltos) leería raro con las etiquetas de producto. */}
+          <div className="mt-10">
+            <span className="font-label mb-4 block text-paper/50">Gramaje por producto</span>
+            <dl className="flex flex-col divide-y divide-line-on-dark">
+              {cota.bobinaSpecs.gramajes.map((g) => (
+                <div key={g.label} className="flex items-baseline justify-between gap-6 py-3">
+                  <dt className="text-paper/70">{g.label}</dt>
+                  <dd className="font-impact-number text-lg text-paper">{g.value}</dd>
+                </div>
+              ))}
+            </dl>
+            <p className="font-label mt-3 text-paper/40">Consultar alternativas de gramaje.</p>
+          </div>
+
           <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
             <a
               href={`mailto:${cota.contact.email}?subject=${encodeURIComponent("Ficha técnica — Bobinas para convertidores")}`}

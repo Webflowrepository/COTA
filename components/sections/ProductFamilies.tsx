@@ -6,12 +6,18 @@ import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
 const bobinas = cota.services.find((s) => s.id === "bobinas")!;
+const conversionIntegrada = cota.papelSplit.find((l) => l.id === "conversion-integrada")!;
 const quimicos = cota.businessLines.find((l) => l.id === "quimicos")!;
 const soluciones = cota.businessLines.find((l) => l.id === "soluciones")!;
 
 // Bobinas primero — el sitio no debe leer como una fábrica solo de
 // química; Papel/bobinas encabeza el carrusel igual que ahora encabeza
-// cota.businessLines.
+// cota.businessLines. Conversión Integrada se agregó como panel propio
+// (antes Papel era un solo concepto acá) para mantener congruencia con
+// WhatCotaDoes, que separa Papel en las mismas 2 filas — ver
+// cota.papelSplit. Reusa la misma foto que esa fila en WhatCotaDoes
+// (conversion-integrada.png): mismo concepto de negocio en 2 secciones,
+// no dos fotos elegidas al azar — mismo criterio que Químicos ya usaba acá.
 const PANELS = [
   {
     id: "bobinas",
@@ -20,6 +26,14 @@ const PANELS = [
     mediaLabel: "Foto — bobina de papel",
     categoryId: "bobinas",
     photo: { src: "/photos/bobinas-pallet-220cm.jpeg", alt: "Bobina industrial de 220 cm sobre pallet, planta de COTA" },
+  },
+  {
+    id: "conversion-integrada",
+    label: conversionIntegrada.label,
+    short: conversionIntegrada.short,
+    mediaLabel: "Foto — línea de conversión",
+    categoryId: "distribucion",
+    photo: { src: "/photos/conversion-integrada.png", alt: "Operarios junto a máquina de conversión de papel Tissue" },
   },
   {
     id: "quimicos",
@@ -150,15 +164,16 @@ export default function ProductFamilies() {
         </a>
       </div>
 
-      {/* Mobile: carrusel deslizable (3 paneles no entran en un teléfono sin
-          achicarlos hasta ilegibles). Desde md: grid fijo de 3 columnas —
-          el cliente lo pidió explícito después de ver que en pantallas
-          anchas alcanzaba y sobraba con agrandar los paneles para forzar
-          un scroll real: quiere ver las 3 sin tener que desplazar nada. */}
+      {/* Mobile: carrusel deslizable (4 paneles no entran en un teléfono sin
+          achicarlos hasta ilegibles). Desde md: grid fijo (el cliente pidió
+          explícito ver los paneles sin tener que desplazar nada) — 2x2 en
+          tablet (768-1023px, 4 columnas quedaban demasiado angostas ahí) y
+          4 en una fila desde lg (1024px+), que es donde entran cómodas
+          desde que "Conversión Integrada" se sumó como 4to panel. */}
       <div
         ref={scrollerRef}
         onScroll={handleScroll}
-        className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 md:mx-auto md:grid md:max-w-[1440px] md:grid-cols-3 md:gap-6 md:overflow-visible md:px-12 md:pb-0"
+        className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 md:mx-auto md:grid md:max-w-[1440px] md:grid-cols-2 md:gap-6 md:overflow-visible md:px-12 md:pb-0 lg:grid-cols-4"
       >
         {PANELS.map((panel) => {
           const categoryLabel = cota.contactCategories.find((c) => c.id === panel.categoryId)?.label ?? panel.label;
@@ -182,7 +197,9 @@ export default function ProductFamilies() {
                   para tapar esos dos huecos — ver nota en PANELS arriba
                   sobre reemplazarlas por foto real cuando exista. */}
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
-                <PhotoMedia src={panel.photo.src} alt={panel.photo.alt} />
+                {/* Panel = 86vw en el carrusel mobile; en md+ es 1 de 3
+                    columnas dentro de un grid con max-w-[1440px] — ~33vw. */}
+                <PhotoMedia src={panel.photo.src} alt={panel.photo.alt} sizes="(min-width: 768px) 33vw, 86vw" />
               </div>
               <div
                 className="absolute inset-0"

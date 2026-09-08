@@ -43,11 +43,17 @@ const STAGES = [
   },
   {
     n: "03",
-    title: "Fabricación de Papel Tissue",
-    copy: "La fibra se transforma en papel Tissue a escala industrial.",
+    // Antes decía "Fabricación de Papel Tissue" — el cliente marcó que la
+    // foto (papel-produccion-tissue.jpeg) en realidad muestra conversión
+    // (corte y apilado de servilletas en la línea), no la fabricación del
+    // papel en sí. En vez de salir a buscar otra foto de fabricación pura,
+    // se ajustó el título/copy para que describan lo que la foto
+    // efectivamente muestra.
+    title: "Conversión Integrada",
+    copy: "El papel se corta y convierte en línea, a escala industrial.",
     label: "Foto — máquina papelera en producción",
     dark: false,
-    photo: { src: "/photos/papel-produccion-tissue.jpeg", alt: "Máquina de producción de papel Tissue en la planta de COTA" },
+    photo: { src: "/photos/papel-produccion-tissue.jpeg", alt: "Línea de conversión de papel Tissue en la planta de COTA" },
   },
   {
     n: "04",
@@ -57,18 +63,19 @@ const STAGES = [
     dark: false,
     photo: { src: "/photos/proceso-rebobinado-real.jpeg", alt: "Bobina de papel en máquina rebobinadora, planta de COTA" },
   },
-  {
-    n: "05",
-    title: "Logística",
-    copy: "Distribución de bobinas hacia convertidores y distribuidores.",
-    label: "Foto — despacho / logística",
-    dark: false,
-    photo: { src: "/photos/naschel-planta-aerea.png", alt: "Planta de COTA, vista aérea con patio de despacho" },
-  },
+  // Etapa "Logística" (naschel-planta-aerea.png) sacada a pedido del
+  // cliente — la misma foto/escena (galpón aéreo) ya es el video de
+  // NaschelPlant.tsx, el momento de firma del "700 T/MES"; mostrarla acá
+  // también leía como repetida. Mismo criterio que cuando se sacó
+  // "Producto Terminado" (arriba): no queda placeholder ni foto
+  // reemplazo — Rebobinado ya cierra en "se prepara para su conversión"
+  // y el concepto de logística/distribución sigue cubierto en
+  // SolutionsByApplication y en la propia NaschelPlant.
 ];
 
 export default function IndustrialProcess() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const pinRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const stRef = useRef<ScrollTrigger | null>(null);
   const [progress, setProgress] = useState(0);
@@ -85,11 +92,24 @@ export default function IndustrialProcess() {
         ease: "none",
       });
 
+      // pin: pinRef (no trigger, con altura 0 en flujo normal — ver el
+      // comentario junto al JSX) en vez de pinear el propio trigger.
+      // Medido con Playwright: antes, con pin:true pineando directamente
+      // sectionRef (que sí tiene altura real, 100svh), el spacer que
+      // arma GSAP reservaba altura-natural (900px) + rango-de-scrub
+      // (900px) = 1800px totales, pero el paneo horizontal sólo usa los
+      // primeros 900px — los segundos 900px quedaban con el track
+      // completamente pineado (position:fixed) y congelado, sin ningún
+      // cambio visual pese a que el usuario seguía scrolleando: la
+      // sensación reportada de "se traba la pantalla". Pinear un
+      // elemento con altura 0 en el flujo normal elimina esa reserva
+      // extra — el spacer pasa a ser sólo el rango de scrub (900px),
+      // sin cola muerta.
       stRef.current = ScrollTrigger.create({
         trigger: sectionRef.current,
+        pin: pinRef.current,
         start: "top top",
         end: () => `+=${window.innerHeight}`,
-        pin: true,
         scrub: 0.3,
         animation: tween,
         invalidateOnRefresh: true,
@@ -124,7 +144,13 @@ export default function IndustrialProcess() {
          porque sus kickers ya arrancan más abajo. */
       className="relative w-full scroll-mt-24 bg-ink-deep"
     >
-      <div className="flex h-[100svh] w-full flex-col overflow-hidden">
+      {/* pinRef: altura 0 a propósito — es lo que GSAP pinea (ver
+          ScrollTrigger.create arriba). El contenido real, visualmente
+          idéntico a como estaba antes, va adentro con position:absolute
+          para no aportarle altura al wrapper — así el spacer que arma el
+          pin no reserva una pantalla completa de más. */}
+      <div ref={pinRef} className="relative h-0">
+        <div className="absolute inset-x-0 top-0 flex h-[100svh] w-full flex-col overflow-hidden">
         <div className="container-industrial flex shrink-0 items-end justify-between pt-10 pb-6 md:pt-14 md:pb-8">
           <div>
             <span className="font-label mb-4 block text-paper/50">Recorrido industrial</span>
@@ -144,7 +170,13 @@ export default function IndustrialProcess() {
             >
               <div className="absolute inset-0">
                 {stage.photo ? (
-                  <PhotoMedia src={stage.photo.src} alt={stage.photo.alt} />
+                  // El panel mide 86vw en mobile, 46vw en md, 36vw en lg —
+                  // sin esto next/image bajaba la imagen a 100vw siempre.
+                  <PhotoMedia
+                    src={stage.photo.src}
+                    alt={stage.photo.alt}
+                    sizes="(min-width: 1024px) 36vw, (min-width: 768px) 46vw, 86vw"
+                  />
                 ) : (
                   <PlaceholderMedia tone={stage.dark ? "dark" : "light"} label={stage.label} />
                 )}
@@ -193,6 +225,7 @@ export default function IndustrialProcess() {
               </button>
             ))}
           </div>
+        </div>
         </div>
       </div>
     </section>

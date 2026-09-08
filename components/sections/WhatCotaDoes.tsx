@@ -6,34 +6,47 @@ import { EASE_STANDARD } from "@/lib/motion/tokens";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
-// Foto por línea de negocio — estas 3 filas quedaron en placeholder en la
-// pasada de "ninguna foto se repite" (ver historial: bobinas-deposito.jpeg
-// y quimicos-tanques.png le quedaron a ChemicalsToPaper, naschel-planta-
-// aerea.png a IndustrialProcess). El cliente subió imagen generada propia
-// para tapar los 3 huecos — Papel Tissue y Soluciones con fotos nuevas
-// (producción de papel / logística con montacargas), Químicos reusa
-// quimicos-ibc-tanques.png (ya usada en ProductFamilies — única foto
-// generada disponible con tanques, el cliente confirmó repetirla acá antes
-// que dejar el placeholder). Reemplazar por foto real de COTA cuando
-// exista — mismo criterio que el resto de las imágenes generadas del sitio.
-// objectPosition: "top" en Papel/Soluciones — el contenedor de esta fila
-// es corto y ancho (h-40/44/48/56 según breakpoint, pero flex-1 lo hace
-// muy ancho en tablet/desktop), y en esas dos fotos la gente está cerca
-// del borde superior del encuadre original. El recorte centrado default
-// de object-cover cortaba cabezas (confirmado con capturas en 768px y
+// "Papel" se muestra separado en 2 filas (ver cota.papelSplit — es una
+// sola división real, esto es sólo el relato de esta sección) más
+// Químicos y Soluciones de cota.businessLines — 4 filas en total.
+const LINES = [...cota.papelSplit, ...cota.businessLines.filter((l) => l.id !== "papel")];
+
+// Foto por fila — quedaron en placeholder en la pasada de "ninguna foto se
+// repite" (ver historial: bobinas-deposito.jpeg y quimicos-tanques.png le
+// quedaron a ChemicalsToPaper, naschel-planta-aerea.png a IndustrialProcess).
+// El cliente subió imagen generada propia para tapar los huecos. Químicos
+// reusa quimicos-ibc-tanques.png (ya usada en ProductFamilies — mismo
+// criterio ahora para Conversión Integrada, que reusa conversion-
+// integrada.png también en el panel nuevo de ProductFamilies: son el
+// mismo concepto de negocio en 2 secciones, no fotos elegidas al azar).
+// Reemplazar por foto real de COTA cuando exista.
+// objectPosition: "top" — el contenedor de esta fila es corto y ancho
+// (h-40/44/48/56 según breakpoint, pero flex-1 lo hace muy ancho en
+// tablet/desktop), y en las fotos con gente ésta queda cerca del borde
+// superior del encuadre original. El recorte centrado default de
+// object-cover cortaba cabezas (confirmado con capturas en 768px y
 // 1920px). "top" ancla el borde superior de la foto al del contenedor y
 // recorta desde abajo en su lugar. Químicos no tiene gente — sin cambios.
 const MEDIA_PHOTO: Record<string, { src: string; alt: string; objectPosition?: string }> = {
-  papel: { src: "/photos/papel-tissue-produccion-operarios.png", alt: "Operarios controlando la producción de papel Tissue", objectPosition: "top" },
+  "bobinas-convertidores": {
+    src: "/photos/bobinas-industriales-nave.png",
+    alt: "Nave industrial con bobinas de papel Tissue y máquina rebobinadora",
+  },
+  "conversion-integrada": {
+    src: "/photos/conversion-integrada.png",
+    alt: "Operarios junto a máquina de conversión de papel Tissue",
+    objectPosition: "top",
+  },
   quimicos: { src: "/photos/quimicos-ibc-tanques.png", alt: "Tanques y contenedores IBC de proceso químico" },
   soluciones: { src: "/photos/soluciones-logistica-montacargas.png", alt: "Montacargas moviendo bobina de papel en planta de COTA", objectPosition: "top" },
 };
 
-// CTA secundario por división — apunta a la sección real correspondiente
-// (no a un mailto genérico), ya que las 3 tienen su propio anchor en la página.
+// CTA secundario por fila — apunta a la sección real correspondiente (no
+// a un mailto genérico), ya que todas tienen su propio anchor en la página.
 const SECONDARY_CTA: Record<string, { label: string; href: string }> = {
+  "bobinas-convertidores": { label: "Ver especificaciones", href: "#papel" },
+  "conversion-integrada": { label: "Conocer línea Guardián", href: "#papel" },
   quimicos: { label: "Ver especificaciones", href: "#quimicos" },
-  papel: { label: "Conocer línea Guardián", href: "#papel" },
   soluciones: { label: "Asesoramiento técnico", href: "#soluciones" },
 };
 
@@ -98,7 +111,7 @@ export default function WhatCotaDoes() {
         </a>
 
         <div className="flex flex-col divide-y divide-line-on-light">
-          {cota.businessLines.map((line) => (
+          {LINES.map((line) => (
             <div className="line-row group relative flex flex-col gap-5 py-9 transition-[padding] duration-500 ease-out md:flex-row md:items-center md:justify-between md:gap-10 md:py-12 md:hover:pl-3" key={line.id}>
               {/* md:max-w acotado — a 768px, max-w-md (448px fijo) le
                   dejaba a la foto (flex-1) sólo ~180px de ancho en una fila
@@ -146,6 +159,10 @@ export default function WhatCotaDoes() {
                     src={MEDIA_PHOTO[line.id].src}
                     alt={MEDIA_PHOTO[line.id].alt}
                     objectPosition={MEDIA_PHOTO[line.id].objectPosition}
+                    // Fila apilada a 100vw en mobile; en md+ la foto es
+                    // flex-1 al lado de una columna de texto de ~280-448px
+                    // — ~60vw es una aproximación razonable del resto.
+                    sizes="(min-width: 768px) 60vw, 100vw"
                   />
                 </div>
               </div>

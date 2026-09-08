@@ -19,11 +19,13 @@ const SEGMENTS = [
     categoryId: "bobinas",
     // Video generado que subió el cliente (kling_20260904_VIDEO_que_aprsca
     // _937_0.mp4), recomprimido a ~800KB/1280px para web (original pesaba
-    // 7MB). El poster es el mismo frame que se usaba antes como foto fija
-    // — evita cualquier parpadeo/negro mientras el video carga.
+    // 7MB). El poster es el mismo frame que se usaba antes como foto fija,
+    // pero pasado a WebP (48KB vs. 116KB el .jpg — un <video poster> no
+    // pasa por next/image, así que conviene optimizarlo a mano una sola
+    // vez). Evita cualquier parpadeo/negro mientras el video carga.
     video: {
       src: "/videos/soluciones-convertidor-bobina.mp4",
-      poster: "/photos/soluciones-convertidor-bobina.jpg",
+      poster: "/photos/soluciones-convertidor-bobina-poster.webp",
       alt: "Operario junto a bobina de papel en máquina convertidora",
     },
   },
@@ -48,10 +50,11 @@ const SEGMENTS = [
     mediaLabel: "Foto — control de calidad en papelera",
     categoryId: "quimicos",
     // Video generado (kling_20260904_VIDEO_son_bobina_891_0.mp4),
-    // recomprimido — mismo criterio que Convertidores arriba.
+    // recomprimido — mismo criterio que Convertidores arriba (poster en
+    // WebP: 62KB vs. 143KB el .jpg).
     video: {
       src: "/videos/soluciones-papelera-control-calidad.mp4",
-      poster: "/photos/soluciones-papelera-control-calidad.jpg",
+      poster: "/photos/soluciones-papelera-control-calidad-poster.webp",
       alt: "Pila de papel Tissue plegado en línea de producción",
     },
   },

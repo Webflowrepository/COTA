@@ -11,6 +11,7 @@ export default function PhotoMedia({
   priority = false,
   className = "",
   objectPosition,
+  sizes = "100vw",
 }: {
   src: string;
   alt: string;
@@ -21,6 +22,14 @@ export default function PhotoMedia({
    * default de object-cover corta cabezas en filas cortas y anchas
    * (ver WhatCotaDoes: Papel Tissue y Soluciones Industriales). */
   objectPosition?: string;
+  /** sizes de next/image — default "100vw" para los usos full-bleed reales
+   * (ChemicalsToPaper). El resto de las llamadas (paneles/filas que no
+   * ocupan el viewport completo) deben pasar el ancho real aproximado del
+   * contenedor por breakpoint — si no, next/image baja la imagen al ancho
+   * completo del viewport aunque se muestre mucho más chica (confirmado:
+   * generaba el warning "image is not rendered at full viewport width" en
+   * consola en WhatCotaDoes/ProductFamilies/IndustrialProcess). */
+  sizes?: string;
 }) {
   return (
     <div className={`absolute inset-0 overflow-hidden ${className}`}>
@@ -29,7 +38,7 @@ export default function PhotoMedia({
         alt={alt}
         fill
         priority={priority}
-        sizes="100vw"
+        sizes={sizes}
         className="object-cover"
         style={objectPosition ? { objectPosition } : undefined}
       />

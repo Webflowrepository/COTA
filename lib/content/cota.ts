@@ -51,6 +51,28 @@ export const cota = {
       short: "Asesoramiento, logística, instalación de fábricas y venta de maquinaria de conversión.",
     },
   ],
+  /**
+   * "Papel" es UNA sola división real (ver arriba, y StatsBand cuenta
+   * businessLines.length = 3 divisiones reales de la empresa — ese número
+   * no cambia). Para las secciones que muestran tarjetas/paneles por
+   * línea de negocio (WhatCotaDoes, ProductFamilies), el cliente pidió
+   * comunicar Papel como 2 conceptos separados — bobina para convertidores
+   * (fabricantes) vs. producto ya convertido para distribución — porque
+   * hoy se leían mezclados bajo un solo "Papel Tissue". Sólo separa el
+   * relato, no crea una 4ta división real.
+   */
+  papelSplit: [
+    {
+      id: "bobinas-convertidores",
+      label: "Bobinas Industriales",
+      short: "Papel Tissue en bobina para convertidores y fabricantes.",
+    },
+    {
+      id: "conversion-integrada",
+      label: "Conversión Integrada",
+      short: "Papel Tissue convertido, listo para distribución.",
+    },
+  ],
   services: [
     {
       id: "asesoramiento",
@@ -88,6 +110,14 @@ export const cota = {
     anchos: ["220 cm", "200 cm", "120 cm", "100 cm"],
     diametros: ["110 cm", "100 cm"],
     conoInterior: "7,5 cm",
+    /** Gramaje por tipo de producto — confirmado por el cliente. El resto
+     * de combinaciones ("alternativas") se maneja por consulta directa,
+     * no se lista acá para no dar a entender que es un catálogo cerrado. */
+    gramajes: [
+      { label: "Higiénico", value: "18 g" },
+      { label: "Rollo de cocina (toalla)", value: "19 g" },
+      { label: "Toalla", value: "30 g" },
+    ],
   },
   /** Los 3 modelos de negocio bajo los que opera la línea de papel. */
   businessModels: [
@@ -98,8 +128,8 @@ export const cota = {
     },
     {
       id: "marca-privada",
-      label: "Marca privada / terceros",
-      short: "Producto terminado fabricado bajo la marca del cliente o de un tercero.",
+      label: "Marca para Terceros",
+      short: '"Tu nombre, tu logo" — producto terminado fabricado bajo la marca del cliente o de un tercero.',
     },
     {
       id: "guardian",
@@ -142,10 +172,15 @@ export const cota = {
     number: "5491133713283" as string | null,
     isPlaceholder: false,
   },
-  /** Redes — solo la cuenta real confirmada por el cliente. No hay
-   * LinkedIn ni TikTok de COTA todavía; mostrarlos como "próximamente"
-   * quedaba mal al final del sitio — se sacan del todo hasta que existan. */
-  social: [{ name: "Instagram", href: "https://www.instagram.com/cota_papelera/" }],
+  /** Redes — Instagram siempre primero (pedido explícito del cliente).
+   * LinkedIn y Facebook confirmadas con URL real. TikTok: el cliente dijo
+   * que todavía no existe la cuenta — no se agrega hasta que haya un
+   * link real (mismo criterio que se aplicó antes acá mismo). */
+  social: [
+    { name: "Instagram", href: "https://www.instagram.com/cota_papelera/" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/cota-sa/posts/?feedView=all" },
+    { name: "Facebook", href: "https://www.facebook.com/p/Cota-SA-6157699516126" },
+  ],
 } as const;
 
 export type BusinessLine = (typeof cota.businessLines)[number];

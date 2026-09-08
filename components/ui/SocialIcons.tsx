@@ -33,6 +33,17 @@ export function MailIcon({ className = "h-6 w-6" }: { className?: string }) {
   );
 }
 
+export function FacebookIcon({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
+      <path
+        fill="currentColor"
+        d="M13.5 21v-7.6h2.55l.38-2.96h-2.93V8.55c0-.86.24-1.44 1.47-1.44h1.57V4.46A21 21 0 0 0 14.3 4.3c-2.24 0-3.78 1.37-3.78 3.87v2.16H8v2.97h2.52V21h2.98Z"
+      />
+    </svg>
+  );
+}
+
 export function LinkedInIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
