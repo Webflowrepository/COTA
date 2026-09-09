@@ -1,0 +1,488 @@
+- generic [active] [ref=f71e1]:
+  - generic [ref=f71e3]:
+    - navigation [ref=f71e6]:
+      - link [ref=f71e8] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f71e12]:
+        - button [ref=f71e13] [cursor=pointer]
+        - button "Join" [ref=f71e17] [cursor=pointer]
+        - button [ref=f71e20] [cursor=pointer]
+    - main [ref=f71e25]:
+      - generic [ref=f71e26]:
+        - generic [ref=f71e30]:
+          - paragraph [ref=f71e32] [cursor=pointer]: Any
+          - paragraph [ref=f71e37] [cursor=pointer]: Horizontal
+          - paragraph [ref=f71e42] [cursor=pointer]: Vertical
+          - paragraph [ref=f71e47] [cursor=pointer]: Square
+        - generic [ref=f71e51]:
+          - paragraph [ref=f71e53] [cursor=pointer]: Any
+          - paragraph [ref=f71e55] [cursor=pointer]: "0"
+          - paragraph [ref=f71e60] [cursor=pointer]: "1"
+          - paragraph [ref=f71e65] [cursor=pointer]: "2"
+          - paragraph [ref=f71e70] [cursor=pointer]: 3+
+        - generic [ref=f71e74]:
+          - paragraph [ref=f71e76] [cursor=pointer]: Any
+          - paragraph [ref=f71e81] [cursor=pointer]: Baby
+          - paragraph [ref=f71e86] [cursor=pointer]: Child
+          - paragraph [ref=f71e91] [cursor=pointer]: Teenager
+          - paragraph [ref=f71e96] [cursor=pointer]: Adult
+          - paragraph [ref=f71e101] [cursor=pointer]: Senior adult
+        - generic [ref=f71e104]:
+          - generic [ref=f71e105]:
+            - generic [ref=f71e106] [cursor=pointer]
+            - slider [ref=f71e108] [cursor=pointer]
+            - slider [ref=f71e109] [cursor=pointer]
+          - generic [ref=f71e110]:
+            - generic [ref=f71e111]:
+              - paragraph [ref=f71e112]: Minimum
+              - paragraph [ref=f71e113]: 1,080px
+            - generic [ref=f71e114]:
+              - paragraph [ref=f71e115]: Maximum
+              - paragraph [ref=f71e116]: 20,000px+
+        - generic [ref=f71e119]:
+          - generic [ref=f71e120]:
+            - generic [ref=f71e121] [cursor=pointer]
+            - slider [ref=f71e123] [cursor=pointer]
+            - slider [ref=f71e124] [cursor=pointer]
+          - generic [ref=f71e125]:
+            - generic [ref=f71e126]:
+              - paragraph [ref=f71e127]: Minimum
+              - paragraph [ref=f71e128]: 1,080px
+            - generic [ref=f71e129]:
+              - paragraph [ref=f71e130]: Maximum
+              - paragraph [ref=f71e131]: 20,000px+
+        - generic [ref=f71e135]:
+          - button [ref=f71e136] [cursor=pointer]:
+            - textbox [ref=f71e142]:
+              - /placeholder: Enter hex code
+          - button [ref=f71e145] [cursor=pointer]:
+            - textbox [ref=f71e151]: "#000000"
+        - generic [ref=f71e155]:
+          - paragraph [ref=f71e157] [cursor=pointer]: Any
+          - paragraph [ref=f71e162] [cursor=pointer]: Last 24 hours
+          - paragraph [ref=f71e167] [cursor=pointer]: Last week
+          - paragraph [ref=f71e172] [cursor=pointer]: Last month
+          - paragraph [ref=f71e177] [cursor=pointer]: Last year
+        - main "main-content" [ref=f71e178]:
+          - generic [ref=f71e179]:
+            - generic [ref=f71e180]:
+              - heading "Choose your language:" [level=5] [ref=f71e181]
+              - generic [ref=f71e183]:
+                - link "English English" [ref=f71e185] [cursor=pointer]:
+                  - /url: /search/industrial%20paper%20roll%20perforated%20wiper/
+                  - generic [ref=f71e186]:
+                    - img "English" [ref=f71e187]
+                    - generic [ref=f71e188]: English
+                - link "Español Español" [ref=f71e189] [cursor=pointer]:
+                  - /url: /es-es/buscar/industrial%20paper%20roll%20perforated%20wiper/
+                  - generic [ref=f71e190]:
+                    - img "Español" [ref=f71e191]
+                    - generic [ref=f71e192]: Español
+                - button [ref=f71e193] [cursor=pointer]
+            - heading "Free Industrial Paper Roll Perforated Wiper Photos" [level=1] [ref=f71e200]
+            - generic [ref=f71e203]:
+              - link "Photos 10K" [ref=f71e205] [cursor=pointer]:
+                - /url: /search/industrial%20paper%20roll%20perforated%20wiper/
+                - text: Photos
+                - generic [ref=f71e206]: 10K
+              - link "Videos 10K" [ref=f71e207] [cursor=pointer]:
+                - /url: /search/videos/industrial%20paper%20roll%20perforated%20wiper/
+                - text: Videos
+                - generic [ref=f71e208]: 10K
+              - link "Users 7.4K" [ref=f71e209] [cursor=pointer]:
+                - /url: /search/users/industrial%20paper%20roll%20perforated%20wiper/
+                - text: Users
+                - generic [ref=f71e210]: 7.4K
+              - img [ref=f71e211] [cursor=pointer]
+            - generic [ref=f71e214]:
+              - button "Filters" [ref=f71e216] [cursor=pointer]
+              - link [ref=f71e228] [cursor=pointer]:
+                - /url: /search/toilet%20paper/
+                - img "toilet paper" [ref=f71e229]
+                - generic [ref=f71e230]:
+                  - paragraph [ref=f71e231]: toilet paper
+                  - paragraph [ref=f71e232]: 5K
+            - generic [ref=f71e234]:
+              - generic [ref=f71e237]:
+                - article [ref=f71e240]:
+                  - link [ref=f71e241] [cursor=pointer]:
+                    - /url: /photo/stack-of-rolled-paper-between-green-walls-3724811/
+                    - img "Free Rolls of yellow parchment paper placed in stack on shelf on blurred background Stock Photo" [ref=f71e242]
+                  - generic:
+                    - button "Add Text" [ref=f71e246] [cursor=pointer]
+                    - link "Download" [ref=f71e254] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3724811/pexels-photo-3724811.jpeg?cs=srgb&dl=pexels-brett-sayles-3724811.jpg&fm=jpg
+                - article [ref=f71e260]:
+                  - link [ref=f71e261] [cursor=pointer]:
+                    - /url: /photo/bamboo-tubes-in-a-factory-12483334/
+                    - img "Free Close-up view of rolled papers creating a complex industrial pattern. Stock Photo" [ref=f71e262]
+                  - generic:
+                    - button "Adjust Colors" [ref=f71e266] [cursor=pointer]
+                    - link "Download" [ref=f71e274] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/12483334/pexels-photo-12483334.jpeg?cs=srgb&dl=pexels-cansu-ysfgl-3927827-12483334.jpg&fm=jpg
+                - generic [ref=f71e279]:
+                  - generic [ref=f71e281]:
+                    - link [ref=f71e282] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20industrial%20paper%20roll%20perforated%20wiper%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own industrial paper roll perforated wiper content with Canva" [ref=f71e283]
+                    - link [ref=f71e284] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20industrial%20paper%20roll%20perforated%20wiper%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own industrial paper roll perforated wiper content with Canva" [ref=f71e285]
+                    - link [ref=f71e286] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20industrial%20paper%20roll%20perforated%20wiper%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own industrial paper roll perforated wiper content with Canva" [ref=f71e287]
+                    - link [ref=f71e288] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20industrial%20paper%20roll%20perforated%20wiper%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own industrial paper roll perforated wiper content with Canva" [ref=f71e289]
+                  - link [ref=f71e290] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20industrial%20paper%20roll%20perforated%20wiper%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                    - paragraph [ref=f71e293]: Bring your ideas to life with Canva AI
+                  - link "Get started for free" [ref=f71e294] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20industrial%20paper%20roll%20perforated%20wiper%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                - article [ref=f71e299]:
+                  - link [ref=f71e300] [cursor=pointer]:
+                    - /url: /photo/worker-in-industrial-setting-analyzing-designs-35383623/
+                    - img "Free Industrial worker analyzing designs under a bright light in a modern factory environment. Stock Photo" [ref=f71e301]
+                  - generic:
+                    - button "Crop" [ref=f71e305] [cursor=pointer]
+                    - link "Download" [ref=f71e313] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/35383623/pexels-photo-35383623.jpeg?cs=srgb&dl=pexels-oskelaq-35383623.jpg&fm=jpg
+                - article [ref=f71e319]:
+                  - link [ref=f71e320] [cursor=pointer]:
+                    - /url: /photo/stacks-of-rolled-paper-tubes-in-warehouse-33036772/
+                    - img "Free Close-up view of stacked rolled paper tubes, showcasing texture and patterns. Stock Photo" [ref=f71e321]
+                  - generic:
+                    - button "Adjust Colors" [ref=f71e325] [cursor=pointer]
+                    - link "Download" [ref=f71e333] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/33036772/pexels-photo-33036772.jpeg?cs=srgb&dl=pexels-alper-murat-ki-rpi-k-435417089-33036772.jpg&fm=jpg
+                - article [ref=f71e339]:
+                  - link [ref=f71e340] [cursor=pointer]:
+                    - /url: /photo/abstract-pattern-of-honeycomb-metal-surface-37414841/
+                    - img "Free Close-up of a rusted honeycomb metal pattern with circular perforations. Stock Photo" [ref=f71e341]
+                  - generic:
+                    - button "Add Text" [ref=f71e345] [cursor=pointer]
+                    - link "Download" [ref=f71e353] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/37414841/pexels-photo-37414841.jpeg?cs=srgb&dl=pexels-wal_-172619-2156618639-37414841.jpg&fm=jpg
+                - article [ref=f71e359]:
+                  - link [ref=f71e360] [cursor=pointer]:
+                    - /url: /photo/roll-of-craft-paper-on-shelf-3729179/
+                    - img "Free Closeup of roll of craft eco friendly paper bags placed on shabby shelf at factory Stock Photo" [ref=f71e361]
+                  - generic:
+                    - button "Add Text" [ref=f71e365] [cursor=pointer]
+                    - link "Download" [ref=f71e373] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3729179/pexels-photo-3729179.jpeg?cs=srgb&dl=pexels-brett-sayles-3729179.jpg&fm=jpg
+                - article [ref=f71e379]:
+                  - link [ref=f71e380] [cursor=pointer]:
+                    - /url: /photo/woman-holding-a-roll-of-paper-in-an-art-studio-5393502/
+                    - img "Free Creative female artist arranging art supplies in a studio setting, emphasizing artistic focus. Stock Photo" [ref=f71e381]
+                  - generic:
+                    - button "Edit" [ref=f71e385] [cursor=pointer]
+                    - link "Download" [ref=f71e393] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5393502/pexels-photo-5393502.jpeg?cs=srgb&dl=pexels-ekaterina-bolovtsova-5393502.jpg&fm=jpg
+                - article [ref=f71e399]:
+                  - link [ref=f71e400] [cursor=pointer]:
+                    - /url: /photo/collection-of-architectural-blueprints-in-cardboard-boxes-39185818/
+                    - img "Free Stacked cardboard boxes filled with rolled architectural blueprints in an industrial setting. Stock Photo" [ref=f71e401]
+                  - generic:
+                    - button "Adjust Colors" [ref=f71e405] [cursor=pointer]
+                    - link "Download" [ref=f71e413] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/39185818/pexels-photo-39185818.jpeg?cs=srgb&dl=pexels-rosyfields-39185818.jpg&fm=jpg
+                - article [ref=f71e419]:
+                  - link [ref=f71e420] [cursor=pointer]:
+                    - /url: /photo/white-tissue-paper-rolls-3945257/
+                    - img "Free Three toilet paper rolls neatly stacked on a windowsill in a well-lit bathroom. Stock Photo" [ref=f71e421]
+                  - generic:
+                    - button "Add Text" [ref=f71e425] [cursor=pointer]
+                    - link "Download" [ref=f71e433] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3945257/pexels-photo-3945257.jpeg?cs=srgb&dl=pexels-fotios-photos-3945257.jpg&fm=jpg
+                - generic [ref=f71e438]:
+                  - generic [ref=f71e439]:
+                    - heading "‌‌‌S‌‌p‌‌o‌‌n‌‌‌s‌‌‌o‌‌‌r‌‌e‌‌‌d‌ ‌‌‌P‌‌h‌o‌‌t‌o‌s‌‌" [level=4] [ref=f71e440]
+                    - link [ref=f71e441] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy9pbmR1c3RyaWFsJTIwcGFwZXIlMjByb2xsJTIwcGVyZm9yYXRlZCUyMHdpcGVyP3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9sb2dvJnV0bV90ZXJtPWluZHVzdHJpYWwlMjBwYXBlciUyMHJvbGwlMjBwZXJmb3JhdGVkJTIwd2lwZXIiLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6IjBhMWJiMTc3LTZjY2EtNDIwOS05ZGJlLTRlMGRhZDM3NWQ0NyIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiaW5kdXN0cmlhbCBwYXBlciByb2xsIHBlcmZvcmF0ZWQgd2lwZXIifX0/
+                  - generic [ref=f71e445]:
+                    - link [ref=f71e446] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3JvbGwtb2YtcGFwZXIta2l0Y2hlbi10b3dlbHMtaXNvbGF0ZWQtb24td2hpdGUtZ200ODA3Mzk5ODYtNjg4NTk2MjE_dXRtX3NvdXJjZT1wZXhlbHMmdXRtX21lZGl1bT1hZmZpbGlhdGUmdXRtX2NhbXBhaWduPXNwb25zb3JlZF9waG90byZ1dG1fY29udGVudD1zcnBfaW5saW5lX21lZGlhJnV0bV90ZXJtPWluZHVzdHJpYWwlMjBwYXBlciUyMHJvbGwlMjBwZXJmb3JhdGVkJTIwd2lwZXIiLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6IjBhMWJiMTc3LTZjY2EtNDIwOS05ZGJlLTRlMGRhZDM3NWQ0NyIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiaW5kdXN0cmlhbCBwYXBlciByb2xsIHBlcmZvcmF0ZWQgd2lwZXIifX0/
+                    - link [ref=f71e447] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL2Etcm9sbC1vZi10b2lsZXQtcGFwZXItaXNvbGF0ZWQtb24td2hpdGUtZ20xMTcwNzQ1ODE5LTMyNDA4MDk4Nj91dG1fc291cmNlPXBleGVscyZ1dG1fbWVkaXVtPWFmZmlsaWF0ZSZ1dG1fY2FtcGFpZ249c3BvbnNvcmVkX3Bob3RvJnV0bV9jb250ZW50PXNycF9pbmxpbmVfbWVkaWEmdXRtX3Rlcm09aW5kdXN0cmlhbCUyMHBhcGVyJTIwcm9sbCUyMHBlcmZvcmF0ZWQlMjB3aXBlciIsImRhdGEiOnsiZXhwZXJpbWVudHMiOnt9LCJwYWdlX2xvY2FsZSI6ImVuLVVTIiwibG9jYXRpb24iOiJncmlkIiwiYWRfcGFydG5lciI6ImdldHR5IiwiYWRfZm9ybWF0IjoiaW5saW5lIiwiYWRfcGxhY2VtZW50IjoiMTAiLCJhZF9jcmVhdGl2ZSI6InBob3RvX3NlYXJjaF80IiwiYWRfYWN0aW9uIjoiY2xpY2siLCJhZF9pbXByZXNzaW9uX2lkIjoiMGExYmIxNzctNmNjYS00MjA5LTlkYmUtNGUwZGFkMzc1ZDQ3IiwibWVkaWFfdHlwZSI6InBob3RvIiwicXVlcnkiOiJpbmR1c3RyaWFsIHBhcGVyIHJvbGwgcGVyZm9yYXRlZCB3aXBlciJ9fQ/
+                    - link [ref=f71e448] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL2tpdGNoZW4tdG93ZWxzLWJhbWJvby1yb2xsLWlzb2xhdGVkLW9uLWEtd2hpdGUtYmFja2dyb3VuZC1nbTE0MTAwNDMwNDMtNDYwMzgxMTg3P3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT1pbmR1c3RyaWFsJTIwcGFwZXIlMjByb2xsJTIwcGVyZm9yYXRlZCUyMHdpcGVyIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiIwYTFiYjE3Ny02Y2NhLTQyMDktOWRiZS00ZTBkYWQzNzVkNDciLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6ImluZHVzdHJpYWwgcGFwZXIgcm9sbCBwZXJmb3JhdGVkIHdpcGVyIn19/
+                    - link [ref=f71e449] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3JvbGwtb2YtdGVhci1vZmYtcGFwZXItdG93ZWxzLW9uLWEtZ3JheS1zdXJmYWNlLWdtMjEwMTIwMTQ5MS01NjY0MDcyNDc_dXRtX3NvdXJjZT1wZXhlbHMmdXRtX21lZGl1bT1hZmZpbGlhdGUmdXRtX2NhbXBhaWduPXNwb25zb3JlZF9waG90byZ1dG1fY29udGVudD1zcnBfaW5saW5lX21lZGlhJnV0bV90ZXJtPWluZHVzdHJpYWwlMjBwYXBlciUyMHJvbGwlMjBwZXJmb3JhdGVkJTIwd2lwZXIiLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6IjBhMWJiMTc3LTZjY2EtNDIwOS05ZGJlLTRlMGRhZDM3NWQ0NyIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiaW5kdXN0cmlhbCBwYXBlciByb2xsIHBlcmZvcmF0ZWQgd2lwZXIifX0/
+                  - link [ref=f71e450] [cursor=pointer]:
+                    - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy9pbmR1c3RyaWFsJTIwcGFwZXIlMjByb2xsJTIwcGVyZm9yYXRlZCUyMHdpcGVyP3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9jb3Vwb25jb2RlJnV0bV90ZXJtPWluZHVzdHJpYWwlMjBwYXBlciUyMHJvbGwlMjBwZXJmb3JhdGVkJTIwd2lwZXIiLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6IjBhMWJiMTc3LTZjY2EtNDIwOS05ZGJlLTRlMGRhZDM3NWQ0NyIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiaW5kdXN0cmlhbCBwYXBlciByb2xsIHBlcmZvcmF0ZWQgd2lwZXIifX0/
+                    - img [ref=f71e453]:
+                      - generic [ref=f71e454]: Get 20% off with code PEXELS20 »
+                - article [ref=f71e457]:
+                  - link [ref=f71e458] [cursor=pointer]:
+                    - /url: /photo/female-engineer-in-industrial-plant-holding-documents-32845671/
+                    - img "Free A female engineer wearing safety gear inspects machinery in an industrial factory setting. Stock Photo" [ref=f71e459]
+                  - generic:
+                    - button "Crop" [ref=f71e463] [cursor=pointer]
+                    - link "Download" [ref=f71e471] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/32845671/pexels-photo-32845671.jpeg?cs=srgb&dl=pexels-sergey-sergeev-2153675005-32845671.jpg&fm=jpg
+                - article [ref=f71e477]:
+                  - link [ref=f71e478] [cursor=pointer]:
+                    - /url: /photo/toilet-paper-rolls-in-a-basket-3958205/
+                    - img "Free Collection of toilet paper rolls neatly arranged in a woven basket on a wooden floor, indicating hygiene and cleanliness. Stock Photo" [ref=f71e479]
+                  - generic:
+                    - button "Add Text" [ref=f71e483] [cursor=pointer]
+                    - link "Download" [ref=f71e491] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958205/pexels-photo-3958205.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958205.jpg&fm=jpg
+                - article [ref=f71e497]:
+                  - link [ref=f71e498] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-rolls-3963077/
+                    - img "Free Three toilet paper rolls on craft paper with eucalyptus, showcasing minimalist home essentials. Stock Photo" [ref=f71e499]
+                  - generic:
+                    - button "Add Text" [ref=f71e503] [cursor=pointer]
+                    - link "Download" [ref=f71e511] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3963077/pexels-photo-3963077.jpeg?cs=srgb&dl=pexels-vie-studio-3963077.jpg&fm=jpg
+                - article [ref=f71e517]:
+                  - link [ref=f71e518] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-rolls-on-white-table-3963087/
+                    - img "Free A minimalist display of toilet paper rolls with soft lighting. Stock Photo" [ref=f71e519]
+                  - generic:
+                    - button "Crop" [ref=f71e523] [cursor=pointer]
+                    - link "Download" [ref=f71e531] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3963087/pexels-photo-3963087.jpeg?cs=srgb&dl=pexels-vie-studio-3963087.jpg&fm=jpg
+                - article [ref=f71e537]:
+                  - link [ref=f71e538] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-rolls-on-brown-wooden-surface-10744480/
+                    - img "Free A close-up shot of four toilet paper rolls arranged on a wooden surface with natural lighting. Stock Photo" [ref=f71e539]
+                  - generic:
+                    - button "Adjust Colors" [ref=f71e543] [cursor=pointer]
+                    - link "Download" [ref=f71e551] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/10744480/pexels-photo-10744480.jpeg?cs=srgb&dl=pexels-arturoaez225-10744480.jpg&fm=jpg
+                - article [ref=f71e557]:
+                  - link [ref=f71e558] [cursor=pointer]:
+                    - /url: /photo/set-of-toilet-paper-on-wooden-background-3958211/
+                    - img "Free Top view of white toilet paper rolls placed on wooden surface illustrating concept of everyday need for hygiene and sanitary purposes Stock Photo" [ref=f71e559]
+                  - generic:
+                    - button "Add Text" [ref=f71e563] [cursor=pointer]
+                    - link "Download" [ref=f71e571] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958211/pexels-photo-3958211.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958211.jpg&fm=jpg
+                - article [ref=f71e577]:
+                  - link [ref=f71e578] [cursor=pointer]:
+                    - /url: /photo/paper-masking-tape-against-white-wall-5691628/
+                    - img "Free Closeup of white masking tape for repairing work against white background at home Stock Photo" [ref=f71e579]
+                  - generic:
+                    - button "Adjust Colors" [ref=f71e583] [cursor=pointer]
+                    - link "Download" [ref=f71e591] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5691628/pexels-photo-5691628.jpeg?cs=srgb&dl=pexels-kseniachernaya-5691628.jpg&fm=jpg
+                - link [ref=f71e596] [cursor=pointer]:
+                  - /url: /collections/papers-axnaz1u/
+                  - article [ref=f71e597]:
+                    - list [ref=f71e599]:
+                      - listitem [ref=f71e600]
+                      - listitem [ref=f71e602]
+                      - listitem [ref=f71e604]
+                    - generic [ref=f71e606]:
+                      - heading "Papers" [level=4] [ref=f71e607]
+                      - paragraph [ref=f71e611]: "63"
+                - article [ref=f71e614]:
+                  - link [ref=f71e615] [cursor=pointer]:
+                    - /url: /photo/yellow-plugs-in-holes-15875194/
+                    - img "Free Detailed view of an industrial grinder's metal surface and grating. Stock Photo" [ref=f71e616]
+                  - generic:
+                    - button "Adjust Colors" [ref=f71e620] [cursor=pointer]
+                    - link "Download" [ref=f71e628] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/15875194/pexels-photo-15875194.jpeg?cs=srgb&dl=pexels-nc-farm-bureau-mark-15875194.jpg&fm=jpg
+                - article [ref=f71e634]:
+                  - link [ref=f71e635] [cursor=pointer]:
+                    - /url: /photo/colorful-rolled-paper-with-gradient-light-36135542/
+                    - img "Free Vibrant photograph of rolled paper showcasing gradient lighting effects in pastel hues. Stock Photo" [ref=f71e636]
+                  - generic:
+                    - button "Retouch" [ref=f71e640] [cursor=pointer]
+                    - link "Download" [ref=f71e648] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/36135542/pexels-photo-36135542.jpeg?cs=srgb&dl=pexels-saifee-art-1727821618-36135542.jpg&fm=jpg
+                - article [ref=f71e654]:
+                  - link [ref=f71e655] [cursor=pointer]:
+                    - /url: /photo/close-up-of-toilet-paper-roll-on-white-background-5729364/
+                    - img "Free Close-up of a white toilet paper roll on a neutral background, ideal for hygiene-related themes. Stock Photo" [ref=f71e656]
+                  - generic:
+                    - button "Edit" [ref=f71e660] [cursor=pointer]
+                    - link "Download" [ref=f71e668] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5729364/pexels-photo-5729364.jpeg?cs=srgb&dl=pexels-garreth-5729364.jpg&fm=jpg
+                - article [ref=f71e674]:
+                  - link [ref=f71e675] [cursor=pointer]:
+                    - /url: /photo/industrial-textile-machinery-in-uzbekistan-factory-38357014/
+                    - img "Free Textile machinery with large spools in an Uzbekistan factory. Stock Photo" [ref=f71e676]
+                  - generic:
+                    - button "Adjust Colors" [ref=f71e680] [cursor=pointer]
+                    - link "Download" [ref=f71e688] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/38357014/pexels-photo-38357014.jpeg?cs=srgb&dl=pexels-dmitriy-steinke-559643503-38357014.jpg&fm=jpg
+                - article [ref=f71e694]:
+                  - link [ref=f71e695] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-roll-on-green-towel-3963092/
+                    - img "Free Three toilet paper rolls arranged on a soft green blanket, creating a cozy and clean hygienic feel. Stock Photo" [ref=f71e696]
+                  - generic:
+                    - button "Retouch" [ref=f71e700] [cursor=pointer]
+                    - link "Download" [ref=f71e708] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3963092/pexels-photo-3963092.jpeg?cs=srgb&dl=pexels-vie-studio-3963092.jpg&fm=jpg
+                - article [ref=f71e714]:
+                  - link [ref=f71e715] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-roll-and-eucalyptus-branch-3963071/
+                    - img "Free Clean, minimalist display of toilet paper rolls with eucalyptus in a bathroom setting. Stock Photo" [ref=f71e716]
+                  - generic:
+                    - button "Add Text" [ref=f71e720] [cursor=pointer]
+                    - link "Download" [ref=f71e728] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3963071/pexels-photo-3963071.jpeg?cs=srgb&dl=pexels-vie-studio-3963071.jpg&fm=jpg
+                - article [ref=f71e734]:
+                  - link [ref=f71e735] [cursor=pointer]:
+                    - /url: /photo/rolled-textile-lot-in-shallow-photo-236748/
+                    - img "Free Rows of textile rolls stored in a factory for industrial manufacturing. Stock Photo" [ref=f71e736]
+                  - generic:
+                    - button "Edit" [ref=f71e740] [cursor=pointer]
+                    - link "Download" [ref=f71e748] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/236748/pexels-photo-236748.jpeg?cs=srgb&dl=pexels-pixabay-236748.jpg&fm=jpg
+                - article [ref=f71e754]:
+                  - link [ref=f71e755] [cursor=pointer]:
+                    - /url: /photo/colorful-abstract-art-on-a-rolled-paper-28892457/
+                    - img "Free Vibrant abstract portrait art on paper, partially rolled revealing layers. Stock Photo" [ref=f71e756]
+                  - generic:
+                    - button "Crop" [ref=f71e760] [cursor=pointer]
+                    - link "Download" [ref=f71e768] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/28892457/pexels-photo-28892457.jpeg?cs=srgb&dl=pexels-planka-28892457.jpg&fm=jpg
+              - button "Load More" [ref=f71e773] [cursor=pointer]
+            - navigation [ref=f71e776]:
+              - generic [ref=f71e778]:
+                - link "1" [ref=f71e780]:
+                  - /url: /search/industrial%20paper%20roll%20perforated%20wiper/
+                - link "2" [ref=f71e783] [cursor=pointer]:
+                  - /url: /search/industrial%20paper%20roll%20perforated%20wiper/?page=2
+                - link "3" [ref=f71e786] [cursor=pointer]:
+                  - /url: /search/industrial%20paper%20roll%20perforated%20wiper/?page=3
+                - link "4" [ref=f71e789] [cursor=pointer]:
+                  - /url: /search/industrial%20paper%20roll%20perforated%20wiper/?page=4
+                - link "5" [ref=f71e792] [cursor=pointer]:
+                  - /url: /search/industrial%20paper%20roll%20perforated%20wiper/?page=5
+                - link "6" [ref=f71e795] [cursor=pointer]:
+                  - /url: /search/industrial%20paper%20roll%20perforated%20wiper/?page=6
+                - link "Next" [ref=f71e798] [cursor=pointer]:
+                  - /url: /search/industrial%20paper%20roll%20perforated%20wiper/?page=2
+    - contentinfo [ref=f71e802]:
+      - separator [ref=f71e803]
+      - generic [ref=f71e804]:
+        - generic [ref=f71e805]:
+          - heading "Where stories come together." [level=2] [ref=f71e806]
+          - generic [ref=f71e807]:
+            - link "iOS" [ref=f71e808] [cursor=pointer]:
+              - /url: https://itunes.apple.com/us/app/pexels/id1434330413/
+            - link "Android" [ref=f71e811] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.pexels.app
+          - list [ref=f71e814]:
+            - listitem [ref=f71e815]:
+              - link "Instagram" [ref=f71e816] [cursor=pointer]:
+                - /url: https://www.instagram.com/pexels/
+            - listitem [ref=f71e819]:
+              - link "Threads" [ref=f71e820] [cursor=pointer]:
+                - /url: https://www.threads.net/@pexels/
+            - listitem [ref=f71e823]:
+              - link "YouTube" [ref=f71e824] [cursor=pointer]:
+                - /url: https://www.youtube.com/pexelsphotos/
+            - listitem [ref=f71e827]:
+              - link "TikTok" [ref=f71e828] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@pexels/
+            - listitem [ref=f71e831]:
+              - link "LinkedIn" [ref=f71e832] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/pexels/
+            - listitem [ref=f71e835]:
+              - link "X" [ref=f71e836] [cursor=pointer]:
+                - /url: https://x.com/pexels/
+        - generic [ref=f71e839]:
+          - list [ref=f71e840]:
+            - heading "Pexels" [level=3] [ref=f71e841]
+            - listitem [ref=f71e842]:
+              - link "Free Stock Photos" [ref=f71e843] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f71e844]:
+              - link "Free Videos" [ref=f71e845] [cursor=pointer]:
+                - /url: /videos/
+            - listitem [ref=f71e846]:
+              - link "Popular searches" [ref=f71e847] [cursor=pointer]:
+                - /url: /popular-searches/
+            - listitem [ref=f71e848]:
+              - link "Collections" [ref=f71e849] [cursor=pointer]:
+                - /url: /discover/
+            - listitem [ref=f71e850]:
+              - link "Challenges" [ref=f71e851] [cursor=pointer]:
+                - /url: /challenges/
+            - listitem [ref=f71e852]:
+              - link "Leaderboard" [ref=f71e853] [cursor=pointer]:
+                - /url: /leaderboard/
+            - listitem [ref=f71e854]:
+              - link "Other plugins & apps" [ref=f71e855] [cursor=pointer]:
+                - /url: /pro/
+          - list [ref=f71e856]:
+            - heading "Company" [level=3] [ref=f71e857]
+            - listitem [ref=f71e858]:
+              - link "About" [ref=f71e859] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=f71e860]:
+              - link "Blog" [ref=f71e861] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=f71e862]:
+              - link "Help Center" [ref=f71e863] [cursor=pointer]:
+                - /url: https://help.pexels.com/hc/en-us
+            - listitem [ref=f71e864]:
+              - link "Report content" [ref=f71e865] [cursor=pointer]:
+                - /url: /report/
+            - listitem [ref=f71e866]:
+              - link "Become a Hero" [ref=f71e867] [cursor=pointer]:
+                - /url: /hero/
+            - listitem [ref=f71e868]:
+              - link "Partner with Pexels" [ref=f71e869] [cursor=pointer]:
+                - /url: /become-a-partner/
+            - listitem [ref=f71e870]:
+              - link "Image & Video API" [ref=f71e871] [cursor=pointer]:
+                - /url: /api/
+            - listitem [ref=f71e872]: Sign Up
+        - list [ref=f71e873]:
+          - listitem [ref=f71e874]:
+            - heading "Free Stock Photos" [level=3] [ref=f71e875]
+          - listitem [ref=f71e876]:
+            - generic [ref=f71e878]:
+              - link "Black and white photography" [ref=f71e880] [cursor=pointer]:
+                - /url: /search/black%20and%20white/
+              - link "Happy birthday images" [ref=f71e881] [cursor=pointer]:
+                - /url: /search/happy%20birthday/
+              - link "Free business videos" [ref=f71e882] [cursor=pointer]:
+                - /url: /search/videos/business/
+              - link "Happy new year images" [ref=f71e883] [cursor=pointer]:
+                - /url: /search/happy%20new%20year/
+              - link "Cool wallpapers" [ref=f71e884] [cursor=pointer]:
+                - /url: /search/cool%20wallpaper/
+              - link "Best HD wallpapers" [ref=f71e885] [cursor=pointer]:
+                - /url: /search/hd%20wallpaper/
+              - link "Galaxy wallpaper" [ref=f71e886] [cursor=pointer]:
+                - /url: /search/galaxy%20wallpaper/
+              - link "Lock screen wallpaper" [ref=f71e887] [cursor=pointer]:
+                - /url: /search/lock%20screen%20wallpaper/
+              - link "iPhone wallpaper" [ref=f71e888] [cursor=pointer]:
+                - /url: /search/iphone%20wallpaper/
+              - link "4K wallpaper" [ref=f71e889] [cursor=pointer]:
+                - /url: /search/4k%20wallpaper/
+              - link "Samsung wallpaper" [ref=f71e890] [cursor=pointer]:
+                - /url: /search/samsung%20wallpaper/
+              - link "Love wallpaper" [ref=f71e891] [cursor=pointer]:
+                - /url: /search/love%20wallpaper/
+              - link "Mobile wallpaper" [ref=f71e892] [cursor=pointer]:
+                - /url: /search/mobile%20wallpaper/
+      - generic [ref=f71e894]:
+        - generic [ref=f71e895]: © 2026 Pexels
+        - generic [ref=f71e897]:
+          - link "Terms of Use" [ref=f71e899] [cursor=pointer]:
+            - /url: /terms-of-service/
+          - link "Privacy Policy" [ref=f71e900] [cursor=pointer]:
+            - /url: /privacy-policy/
+          - link "License" [ref=f71e901] [cursor=pointer]:
+            - /url: /license/
+          - link "Imprint" [ref=f71e902] [cursor=pointer]:
+            - /url: /imprint/
+          - link "Cookies Policy" [ref=f71e903] [cursor=pointer]:
+            - /url: /cookies/
+          - img [ref=f71e904] [cursor=pointer]
+        - button "English" [ref=f71e908] [cursor=pointer]
+      - separator [ref=f71e913]
+  - alert [ref=f71e914]
+  - status [ref=f71e915]: "[object Object] has been selected."

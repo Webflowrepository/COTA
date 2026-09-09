@@ -1,0 +1,525 @@
+- generic [active] [ref=f139e1]:
+  - generic [ref=f139e3]:
+    - navigation [ref=f139e6]:
+      - link [ref=f139e8] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f139e12]:
+        - button [ref=f139e13] [cursor=pointer]
+        - button "Join" [ref=f139e17] [cursor=pointer]
+        - button [ref=f139e20] [cursor=pointer]
+    - main [ref=f139e25]:
+      - generic [ref=f139e26]:
+        - generic [ref=f139e30]:
+          - paragraph [ref=f139e32] [cursor=pointer]: Any
+          - paragraph [ref=f139e37] [cursor=pointer]: Horizontal
+          - paragraph [ref=f139e42] [cursor=pointer]: Vertical
+          - paragraph [ref=f139e47] [cursor=pointer]: Square
+        - generic [ref=f139e51]:
+          - paragraph [ref=f139e53] [cursor=pointer]: Any
+          - paragraph [ref=f139e55] [cursor=pointer]: "0"
+          - paragraph [ref=f139e60] [cursor=pointer]: "1"
+          - paragraph [ref=f139e65] [cursor=pointer]: "2"
+          - paragraph [ref=f139e70] [cursor=pointer]: 3+
+        - generic [ref=f139e74]:
+          - paragraph [ref=f139e76] [cursor=pointer]: Any
+          - paragraph [ref=f139e81] [cursor=pointer]: Baby
+          - paragraph [ref=f139e86] [cursor=pointer]: Child
+          - paragraph [ref=f139e91] [cursor=pointer]: Teenager
+          - paragraph [ref=f139e96] [cursor=pointer]: Adult
+          - paragraph [ref=f139e101] [cursor=pointer]: Senior adult
+        - generic [ref=f139e104]:
+          - generic [ref=f139e105]:
+            - generic [ref=f139e106] [cursor=pointer]
+            - slider [ref=f139e108] [cursor=pointer]
+            - slider [ref=f139e109] [cursor=pointer]
+          - generic [ref=f139e110]:
+            - generic [ref=f139e111]:
+              - paragraph [ref=f139e112]: Minimum
+              - paragraph [ref=f139e113]: 1,080px
+            - generic [ref=f139e114]:
+              - paragraph [ref=f139e115]: Maximum
+              - paragraph [ref=f139e116]: 20,000px+
+        - generic [ref=f139e119]:
+          - generic [ref=f139e120]:
+            - generic [ref=f139e121] [cursor=pointer]
+            - slider [ref=f139e123] [cursor=pointer]
+            - slider [ref=f139e124] [cursor=pointer]
+          - generic [ref=f139e125]:
+            - generic [ref=f139e126]:
+              - paragraph [ref=f139e127]: Minimum
+              - paragraph [ref=f139e128]: 1,080px
+            - generic [ref=f139e129]:
+              - paragraph [ref=f139e130]: Maximum
+              - paragraph [ref=f139e131]: 20,000px+
+        - generic [ref=f139e135]:
+          - button [ref=f139e136] [cursor=pointer]:
+            - textbox [ref=f139e142]:
+              - /placeholder: Enter hex code
+          - button [ref=f139e145] [cursor=pointer]:
+            - textbox [ref=f139e151]: "#000000"
+        - generic [ref=f139e155]:
+          - paragraph [ref=f139e157] [cursor=pointer]: Any
+          - paragraph [ref=f139e162] [cursor=pointer]: Last 24 hours
+          - paragraph [ref=f139e167] [cursor=pointer]: Last week
+          - paragraph [ref=f139e172] [cursor=pointer]: Last month
+          - paragraph [ref=f139e177] [cursor=pointer]: Last year
+        - main "main-content" [ref=f139e178]:
+          - generic [ref=f139e179]:
+            - generic [ref=f139e180]:
+              - heading "Choose your language:" [level=5] [ref=f139e181]
+              - generic [ref=f139e183]:
+                - link "English English" [ref=f139e185] [cursor=pointer]:
+                  - /url: /search/disposable%20paper%20napkins%20stack/
+                  - generic [ref=f139e186]:
+                    - img "English" [ref=f139e187]
+                    - generic [ref=f139e188]: English
+                - link "Español Español" [ref=f139e189] [cursor=pointer]:
+                  - /url: /es-es/buscar/disposable%20paper%20napkins%20stack/
+                  - generic [ref=f139e190]:
+                    - img "Español" [ref=f139e191]
+                    - generic [ref=f139e192]: Español
+                - button [ref=f139e193] [cursor=pointer]
+            - heading "Free Disposable Paper Napkins Stack Photos" [level=1] [ref=f139e200]
+            - generic [ref=f139e203]:
+              - link "Photos 10K" [ref=f139e205] [cursor=pointer]:
+                - /url: /search/disposable%20paper%20napkins%20stack/
+                - text: Photos
+                - generic [ref=f139e206]: 10K
+              - link "Videos 10K" [ref=f139e207] [cursor=pointer]:
+                - /url: /search/videos/disposable%20paper%20napkins%20stack/
+                - text: Videos
+                - generic [ref=f139e208]: 10K
+              - link "Users 2.1K" [ref=f139e209] [cursor=pointer]:
+                - /url: /search/users/disposable%20paper%20napkins%20stack/
+                - text: Users
+                - generic [ref=f139e210]: 2.1K
+              - img [ref=f139e211] [cursor=pointer]
+            - generic [ref=f139e214]:
+              - button "Filters" [ref=f139e216] [cursor=pointer]
+              - generic [ref=f139e226]:
+                - link [ref=f139e228] [cursor=pointer]:
+                  - /url: /search/toilet%20paper/
+                  - img "toilet paper" [ref=f139e229]
+                  - generic [ref=f139e230]:
+                    - paragraph [ref=f139e231]: toilet paper
+                    - paragraph [ref=f139e232]: 5K
+                - link [ref=f139e233] [cursor=pointer]:
+                  - /url: /search/tissue/
+                  - img "tissue" [ref=f139e234]
+                  - generic [ref=f139e235]:
+                    - paragraph [ref=f139e236]: tissue
+                    - paragraph [ref=f139e237]: 5K
+                - link [ref=f139e238] [cursor=pointer]:
+                  - /url: /search/stack%20of%20books/
+                  - img "stack of books" [ref=f139e239]
+                  - generic [ref=f139e240]:
+                    - paragraph [ref=f139e241]: stack of books
+                    - paragraph [ref=f139e242]: 5K
+                - link [ref=f139e243] [cursor=pointer]:
+                  - /url: /search/paper%20texture/
+                  - img "paper texture" [ref=f139e244]
+                  - generic [ref=f139e245]:
+                    - paragraph [ref=f139e246]: paper texture
+                    - paragraph [ref=f139e247]: 478K
+                - link [ref=f139e248] [cursor=pointer]:
+                  - /url: /search/newspapers/
+                  - img "newspapers" [ref=f139e249]
+                  - generic [ref=f139e250]:
+                    - paragraph [ref=f139e251]: newspapers
+                    - paragraph [ref=f139e252]: 5K
+                - link [ref=f139e253] [cursor=pointer]:
+                  - /url: /search/crumpled%20paper/
+                  - img "crumpled paper" [ref=f139e254]
+                  - generic [ref=f139e255]:
+                    - paragraph [ref=f139e256]: crumpled paper
+                    - paragraph [ref=f139e257]: 49K
+                - link [ref=f139e258] [cursor=pointer]:
+                  - /url: /search/solution/
+                  - img "solution" [ref=f139e259]
+                  - generic [ref=f139e260]:
+                    - paragraph [ref=f139e261]: solution
+                    - paragraph [ref=f139e262]: 8K
+            - generic [ref=f139e264]:
+              - generic [ref=f139e267]:
+                - article [ref=f139e270]:
+                  - link [ref=f139e271] [cursor=pointer]:
+                    - /url: /photo/red-and-white-paper-plates-and-red-napkins-on-a-dining-table-9147812/
+                    - img "Free Stylish red and white tableware setup ideal for festive celebrations and parties. Stock Photo" [ref=f139e272]
+                  - generic:
+                    - button "Retouch" [ref=f139e276] [cursor=pointer]
+                    - link "Download" [ref=f139e284] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/9147812/pexels-photo-9147812.jpeg?cs=srgb&dl=pexels-mikhail-nilov-9147812.jpg&fm=jpg
+                - article [ref=f139e290]:
+                  - link [ref=f139e291] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-rolls-3958212/
+                    - img "Free Close-up view of stacked toilet paper rolls, highlighting hygiene and essential supplies. Stock Photo" [ref=f139e292]
+                  - generic:
+                    - button "Edit" [ref=f139e296] [cursor=pointer]
+                    - link "Download" [ref=f139e304] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958212/pexels-photo-3958212.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958212.jpg&fm=jpg
+                - generic [ref=f139e309]:
+                  - generic [ref=f139e311]:
+                    - link [ref=f139e312] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20disposable%20paper%20napkins%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own disposable paper napkins stack content with Canva" [ref=f139e313]
+                    - link [ref=f139e314] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20disposable%20paper%20napkins%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own disposable paper napkins stack content with Canva" [ref=f139e315]
+                    - link [ref=f139e316] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20disposable%20paper%20napkins%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own disposable paper napkins stack content with Canva" [ref=f139e317]
+                    - link [ref=f139e318] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20disposable%20paper%20napkins%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own disposable paper napkins stack content with Canva" [ref=f139e319]
+                  - link [ref=f139e320] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20disposable%20paper%20napkins%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                    - paragraph [ref=f139e323]: Bring your ideas to life with Canva AI
+                  - link "Get started for free" [ref=f139e324] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20disposable%20paper%20napkins%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                - article [ref=f139e329]:
+                  - link [ref=f139e330] [cursor=pointer]:
+                    - /url: /photo/toilet-paper-rolls-on-a-basket-3958182/
+                    - img "Free A neatly stacked collection of toilet paper rolls in a basket indoors. Stock Photo" [ref=f139e331]
+                  - generic:
+                    - button "Edit" [ref=f139e335] [cursor=pointer]
+                    - link "Download" [ref=f139e343] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958182/pexels-photo-3958182.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958182.jpg&fm=jpg
+                - article [ref=f139e349]:
+                  - link [ref=f139e350] [cursor=pointer]:
+                    - /url: /photo/stack-of-toilet-paper-rolls-in-a-basket-3958185/
+                    - img "Free A neat stack of white toilet paper rolls in a wicker basket indoors. Stock Photo" [ref=f139e351]
+                  - generic:
+                    - button "Crop" [ref=f139e355] [cursor=pointer]
+                    - link "Download" [ref=f139e363] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958185/pexels-photo-3958185.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958185.jpg&fm=jpg
+                - article [ref=f139e369]:
+                  - link [ref=f139e370] [cursor=pointer]:
+                    - /url: /photo/party-decorations-on-a-white-background-14017541/
+                    - img "Free Colorful paper cups and confetti on white background create a festive party vibe. Stock Photo" [ref=f139e371]
+                  - generic:
+                    - button "Add Text" [ref=f139e375] [cursor=pointer]
+                    - link "Download" [ref=f139e383] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/14017541/pexels-photo-14017541.jpeg?cs=srgb&dl=pexels-jibarofoto-14017541.jpg&fm=jpg
+                - article [ref=f139e389]:
+                  - link [ref=f139e390] [cursor=pointer]:
+                    - /url: /photo/stack-of-toilet-paper-rolls-3958198/
+                    - img "Free A neat pile of white toilet paper rolls arranged on a wooden floor indoors. Stock Photo" [ref=f139e391]
+                  - generic:
+                    - button "Adjust Colors" [ref=f139e395] [cursor=pointer]
+                    - link "Download" [ref=f139e403] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958198/pexels-photo-3958198.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958198.jpg&fm=jpg
+                - article [ref=f139e409]:
+                  - link [ref=f139e410] [cursor=pointer]:
+                    - /url: /photo/person-holding-sanitary-napkins-7692338/
+                    - img "Free A hand holding a stack of menstrual pads against a pink background, highlighting feminine hygiene. Stock Photo" [ref=f139e411]
+                  - generic:
+                    - button "Retouch" [ref=f139e415] [cursor=pointer]
+                    - link "Download" [ref=f139e423] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7692338/pexels-photo-7692338.jpeg?cs=srgb&dl=pexels-karola-g-7692338.jpg&fm=jpg
+                - article [ref=f139e429]:
+                  - link [ref=f139e430] [cursor=pointer]:
+                    - /url: /photo/stack-of-brown-paper-cups-near-the-wooden-box-of-drinking-straws-9475300/
+                    - img "Free Stacked eco-friendly paper cups and bamboo straws organized in a wooden box against a soft fabric backdrop. Stock Photo" [ref=f139e431]
+                  - generic:
+                    - button "Adjust Colors" [ref=f139e435] [cursor=pointer]
+                    - link "Download" [ref=f139e443] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/9475300/pexels-photo-9475300.jpeg?cs=srgb&dl=pexels-greta-hoffman-9475300.jpg&fm=jpg
+                - article [ref=f139e449]:
+                  - link [ref=f139e450] [cursor=pointer]:
+                    - /url: /photo/side-of-a-blue-facemasks-5040604/
+                    - img "Free Close-up of a tall stack of blue disposable medical face masks against a white background. Stock Photo" [ref=f139e451]
+                  - generic:
+                    - button "Adjust Colors" [ref=f139e455] [cursor=pointer]
+                    - link "Download" [ref=f139e463] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5040604/pexels-photo-5040604.jpeg?cs=srgb&dl=pexels-ds-stories-5040604.jpg&fm=jpg
+                - generic [ref=f139e468]:
+                  - generic [ref=f139e469]:
+                    - heading "‌‌S‌‌p‌‌o‌‌‌n‌‌‌s‌o‌r‌‌‌e‌‌d‌‌‌ ‌P‌h‌‌o‌‌t‌‌o‌s‌‌" [level=4] [ref=f139e470]
+                    - link [ref=f139e471] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy9kaXNwb3NhYmxlJTIwcGFwZXIlMjBuYXBraW5zJTIwc3RhY2s_dXRtX3NvdXJjZT1wZXhlbHMmdXRtX21lZGl1bT1hZmZpbGlhdGUmdXRtX2NhbXBhaWduPXNwb25zb3JlZF9waG90byZ1dG1fY29udGVudD1zcnBfaW5saW5lX2xvZ28mdXRtX3Rlcm09ZGlzcG9zYWJsZSUyMHBhcGVyJTIwbmFwa2lucyUyMHN0YWNrIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiI0NzQ5YjgzNi01YTc3LTQwMzEtOGM5Yi0xNzNmZjdkZWE3YjUiLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6ImRpc3Bvc2FibGUgcGFwZXIgbmFwa2lucyBzdGFjayJ9fQ/
+                  - generic [ref=f139e475]:
+                    - link [ref=f139e476] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL2JsYW5rLXBhcGVyLW5hcGtpbi1nbTIxOTQ1MDIxODEtNjEyNjU2MzA2P3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT1kaXNwb3NhYmxlJTIwcGFwZXIlMjBuYXBraW5zJTIwc3RhY2siLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6IjQ3NDliODM2LTVhNzctNDAzMS04YzliLTE3M2ZmN2RlYTdiNSIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiZGlzcG9zYWJsZSBwYXBlciBuYXBraW5zIHN0YWNrIn19/
+                    - link [ref=f139e477] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3doaXRlLXBhcGVyLW5hcGtpbnMtZ20xNjkxNzA0Mzg0LTUzNzYyMTk5OD91dG1fc291cmNlPXBleGVscyZ1dG1fbWVkaXVtPWFmZmlsaWF0ZSZ1dG1fY2FtcGFpZ249c3BvbnNvcmVkX3Bob3RvJnV0bV9jb250ZW50PXNycF9pbmxpbmVfbWVkaWEmdXRtX3Rlcm09ZGlzcG9zYWJsZSUyMHBhcGVyJTIwbmFwa2lucyUyMHN0YWNrIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiI0NzQ5YjgzNi01YTc3LTQwMzEtOGM5Yi0xNzNmZjdkZWE3YjUiLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6ImRpc3Bvc2FibGUgcGFwZXIgbmFwa2lucyBzdGFjayJ9fQ/
+                    - link [ref=f139e478] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL2Vjby1mcmllbmRseS1kaXNwb3NhYmxlLXBhcGVyLW5hcGtpbi1nbTExMzU5Mjk0NzEtMzAyMzYxODMwP3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT1kaXNwb3NhYmxlJTIwcGFwZXIlMjBuYXBraW5zJTIwc3RhY2siLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6IjQ3NDliODM2LTVhNzctNDAzMS04YzliLTE3M2ZmN2RlYTdiNSIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiZGlzcG9zYWJsZSBwYXBlciBuYXBraW5zIHN0YWNrIn19/
+                    - link [ref=f139e479] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL2Etc3RhY2stb2YtbmFwa2lucy1vbi13aGl0ZS1iYWNrZ3JvdW5kLWltYWdlLWdtMTE1NTM1ODMwOS0zMTQ1MDI4MzA_dXRtX3NvdXJjZT1wZXhlbHMmdXRtX21lZGl1bT1hZmZpbGlhdGUmdXRtX2NhbXBhaWduPXNwb25zb3JlZF9waG90byZ1dG1fY29udGVudD1zcnBfaW5saW5lX21lZGlhJnV0bV90ZXJtPWRpc3Bvc2FibGUlMjBwYXBlciUyMG5hcGtpbnMlMjBzdGFjayIsImRhdGEiOnsiZXhwZXJpbWVudHMiOnt9LCJwYWdlX2xvY2FsZSI6ImVuLVVTIiwibG9jYXRpb24iOiJncmlkIiwiYWRfcGFydG5lciI6ImdldHR5IiwiYWRfZm9ybWF0IjoiaW5saW5lIiwiYWRfcGxhY2VtZW50IjoiMTAiLCJhZF9jcmVhdGl2ZSI6InBob3RvX3NlYXJjaF80IiwiYWRfYWN0aW9uIjoiY2xpY2siLCJhZF9pbXByZXNzaW9uX2lkIjoiNDc0OWI4MzYtNWE3Ny00MDMxLThjOWItMTczZmY3ZGVhN2I1IiwibWVkaWFfdHlwZSI6InBob3RvIiwicXVlcnkiOiJkaXNwb3NhYmxlIHBhcGVyIG5hcGtpbnMgc3RhY2sifX0/
+                  - link [ref=f139e480] [cursor=pointer]:
+                    - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy9kaXNwb3NhYmxlJTIwcGFwZXIlMjBuYXBraW5zJTIwc3RhY2s_dXRtX3NvdXJjZT1wZXhlbHMmdXRtX21lZGl1bT1hZmZpbGlhdGUmdXRtX2NhbXBhaWduPXNwb25zb3JlZF9waG90byZ1dG1fY29udGVudD1zcnBfaW5saW5lX2NvdXBvbmNvZGUmdXRtX3Rlcm09ZGlzcG9zYWJsZSUyMHBhcGVyJTIwbmFwa2lucyUyMHN0YWNrIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiI0NzQ5YjgzNi01YTc3LTQwMzEtOGM5Yi0xNzNmZjdkZWE3YjUiLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6ImRpc3Bvc2FibGUgcGFwZXIgbmFwa2lucyBzdGFjayJ9fQ/
+                    - img [ref=f139e483]:
+                      - generic [ref=f139e484]: Get 20% off with code PEXELS20 »
+                - article [ref=f139e487]:
+                  - link [ref=f139e488] [cursor=pointer]:
+                    - /url: /photo/stacks-of-white-paper-cups-in-close-up-photography-12052006/
+                    - img "Free Close-up of stacked paper coffee cups with logo design in dim cafe lighting. Stock Photo" [ref=f139e489]
+                  - generic:
+                    - button "Adjust Colors" [ref=f139e493] [cursor=pointer]
+                    - link "Download" [ref=f139e501] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/12052006/pexels-photo-12052006.jpeg?cs=srgb&dl=pexels-alcaponne-12052006.jpg&fm=jpg
+                - article [ref=f139e507]:
+                  - link [ref=f139e508] [cursor=pointer]:
+                    - /url: /photo/photo-of-stacked-clear-papers-4038653/
+                    - img "Free Stack of white paper on textured fabric surface, perfect for minimalistic designs. Stock Photo" [ref=f139e509]
+                  - generic:
+                    - button "Add Text" [ref=f139e513] [cursor=pointer]
+                    - link "Download" [ref=f139e521] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4038653/pexels-photo-4038653.jpeg?cs=srgb&dl=pexels-karola-g-4038653.jpg&fm=jpg
+                - article [ref=f139e527]:
+                  - link [ref=f139e528] [cursor=pointer]:
+                    - /url: /photo/close-up-shot-of-stacks-of-face-masks-5040591/
+                    - img "Free A repetitive pattern of stacked blue face masks on a light blue background, offering ample copy space. Stock Photo" [ref=f139e529]
+                  - generic:
+                    - button "Crop" [ref=f139e533] [cursor=pointer]
+                    - link "Download" [ref=f139e541] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5040591/pexels-photo-5040591.jpeg?cs=srgb&dl=pexels-ds-stories-5040591.jpg&fm=jpg
+                - article [ref=f139e547]:
+                  - link [ref=f139e548] [cursor=pointer]:
+                    - /url: /photo/close-up-of-pantyliners-3958553/
+                    - img "Free Close-up of sanitary pads on a beige surface, promoting menstrual hygiene. Stock Photo" [ref=f139e549]
+                  - generic:
+                    - button "Add Text" [ref=f139e553] [cursor=pointer]
+                    - link "Download" [ref=f139e561] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958553/pexels-photo-3958553.jpeg?cs=srgb&dl=pexels-polina-zimmerman-3958553.jpg&fm=jpg
+                - article [ref=f139e567]:
+                  - link [ref=f139e568] [cursor=pointer]:
+                    - /url: /photo/stack-of-carton-rolls-on-table-4022330/
+                    - img "Free Closeup of stacked brown cardboard tubes of finished toilet paper placed on wooden table Stock Photo" [ref=f139e569]
+                  - generic:
+                    - button "Retouch" [ref=f139e573] [cursor=pointer]
+                    - link "Download" [ref=f139e581] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4022330/pexels-photo-4022330.jpeg?cs=srgb&dl=pexels-thepaintedsquare-4022330.jpg&fm=jpg
+                - article [ref=f139e587]:
+                  - link [ref=f139e588] [cursor=pointer]:
+                    - /url: /photo/sanitary-napkins-on-pink-background-7692279/
+                    - img "Free Top view of sanitary napkins on a pastel pink background, perfect for health and hygiene concepts. Stock Photo" [ref=f139e589]
+                  - generic:
+                    - button "Crop" [ref=f139e593] [cursor=pointer]
+                    - link "Download" [ref=f139e601] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7692279/pexels-photo-7692279.jpeg?cs=srgb&dl=pexels-karola-g-7692279.jpg&fm=jpg
+                - article [ref=f139e607]:
+                  - link [ref=f139e608] [cursor=pointer]:
+                    - /url: /photo/folded-textile-in-close-up-shot-11733651/
+                    - img "Free Close-up of a stack of neatly folded green linens highlighting their texture and neatness. Stock Photo" [ref=f139e609]
+                  - generic:
+                    - button "Crop" [ref=f139e613] [cursor=pointer]
+                    - link "Download" [ref=f139e621] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/11733651/pexels-photo-11733651.jpeg?cs=srgb&dl=pexels-ruslan-rozanov-174297693-11733651.jpg&fm=jpg
+                - link [ref=f139e626] [cursor=pointer]:
+                  - /url: /collections/papers-axnaz1u/
+                  - article [ref=f139e627]:
+                    - list [ref=f139e629]:
+                      - listitem [ref=f139e630]
+                      - listitem [ref=f139e632]
+                      - listitem [ref=f139e634]
+                    - generic [ref=f139e636]:
+                      - heading "Papers" [level=4] [ref=f139e637]
+                      - paragraph [ref=f139e641]: "63"
+                - article [ref=f139e644]:
+                  - link [ref=f139e645] [cursor=pointer]:
+                    - /url: /photo/stack-of-blue-face-masks-5040608/
+                    - img "Free A hand reaching for a stack of blue medical face masks isolated on white background. Stock Photo" [ref=f139e646]
+                  - generic:
+                    - button "Retouch" [ref=f139e650] [cursor=pointer]
+                    - link "Download" [ref=f139e658] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5040608/pexels-photo-5040608.jpeg?cs=srgb&dl=pexels-ds-stories-5040608.jpg&fm=jpg
+                - article [ref=f139e664]:
+                  - link [ref=f139e665] [cursor=pointer]:
+                    - /url: /photo/close-up-shot-of-a-stack-of-face-masks-5040581/
+                    - img "Free Vertical stack of blue disposable face masks with ample copy space on a white background. Stock Photo" [ref=f139e666]
+                  - generic:
+                    - button "Add Text" [ref=f139e670] [cursor=pointer]
+                    - link "Download" [ref=f139e678] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5040581/pexels-photo-5040581.jpeg?cs=srgb&dl=pexels-ds-stories-5040581.jpg&fm=jpg
+                - article [ref=f139e684]:
+                  - link [ref=f139e685] [cursor=pointer]:
+                    - /url: /photo/stack-of-blue-face-masks-5040607/
+                    - img "Free A neat stack of blue surgical face masks on a plain white background. Stock Photo" [ref=f139e686]
+                  - generic:
+                    - button "Remove Background" [ref=f139e690] [cursor=pointer]
+                    - link "Download" [ref=f139e698] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5040607/pexels-photo-5040607.jpeg?cs=srgb&dl=pexels-ds-stories-5040607.jpg&fm=jpg
+                - article [ref=f139e704]:
+                  - link [ref=f139e705] [cursor=pointer]:
+                    - /url: /photo/a-stack-of-face-masks-5040587/
+                    - img "Free A stack of blue disposable medical face masks on a minimalist white background. Stock Photo" [ref=f139e706]
+                  - generic:
+                    - button "Add Text" [ref=f139e710] [cursor=pointer]
+                    - link "Download" [ref=f139e718] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5040587/pexels-photo-5040587.jpeg?cs=srgb&dl=pexels-ds-stories-5040587.jpg&fm=jpg
+                - article [ref=f139e724]:
+                  - link [ref=f139e725] [cursor=pointer]:
+                    - /url: /photo/ceramic-plates-on-the-wooden-table-6378665/
+                    - img "Free Close-up of stylish rolled napkins arranged elegantly on stacked plates on a wooden table, perfect for dining settings. Stock Photo" [ref=f139e726]
+                  - generic:
+                    - button "Add Text" [ref=f139e730] [cursor=pointer]
+                    - link "Download" [ref=f139e738] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/6378665/pexels-photo-6378665.jpeg?cs=srgb&dl=pexels-fox-58267-6378665.jpg&fm=jpg
+                - article [ref=f139e744]:
+                  - link [ref=f139e745] [cursor=pointer]:
+                    - /url: /photo/close-up-shot-of-a-person-holding-a-stack-of-face-masks-5040603/
+                    - img "Free A hand gently resting on a large stack of blue face masks, highlighting the importance of personal protective equipment. Stock Photo" [ref=f139e746]
+                  - generic:
+                    - button "Crop" [ref=f139e750] [cursor=pointer]
+                    - link "Download" [ref=f139e758] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5040603/pexels-photo-5040603.jpeg?cs=srgb&dl=pexels-ds-stories-5040603.jpg&fm=jpg
+                - article [ref=f139e764]:
+                  - link [ref=f139e765] [cursor=pointer]:
+                    - /url: /photo/stack-of-blue-face-masks-5040582/
+                    - img "Free A large stack of blue face masks neatly piled on a white background for health themes. Stock Photo" [ref=f139e766]
+                  - generic:
+                    - button "Edit" [ref=f139e770] [cursor=pointer]
+                    - link "Download" [ref=f139e778] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5040582/pexels-photo-5040582.jpeg?cs=srgb&dl=pexels-ds-stories-5040582.jpg&fm=jpg
+                - article [ref=f139e784]:
+                  - link [ref=f139e785] [cursor=pointer]:
+                    - /url: /photo/stack-of-paper-pages-13315189/
+                    - img "Free Close-up view of a stack of paper, ideal for recycling and texture concepts. Stock Photo" [ref=f139e786]
+                  - generic:
+                    - button "Remove Background" [ref=f139e790] [cursor=pointer]
+                    - link "Download" [ref=f139e798] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/13315189/pexels-photo-13315189.jpeg?cs=srgb&dl=pexels-ekrulila-13315189.jpg&fm=jpg
+              - button "Load More" [ref=f139e803] [cursor=pointer]
+            - navigation [ref=f139e806]:
+              - generic [ref=f139e808]:
+                - link "1" [ref=f139e810]:
+                  - /url: /search/disposable%20paper%20napkins%20stack/
+                - link "2" [ref=f139e813] [cursor=pointer]:
+                  - /url: /search/disposable%20paper%20napkins%20stack/?page=2
+                - link "3" [ref=f139e816] [cursor=pointer]:
+                  - /url: /search/disposable%20paper%20napkins%20stack/?page=3
+                - link "4" [ref=f139e819] [cursor=pointer]:
+                  - /url: /search/disposable%20paper%20napkins%20stack/?page=4
+                - link "5" [ref=f139e822] [cursor=pointer]:
+                  - /url: /search/disposable%20paper%20napkins%20stack/?page=5
+                - link "6" [ref=f139e825] [cursor=pointer]:
+                  - /url: /search/disposable%20paper%20napkins%20stack/?page=6
+                - link "Next" [ref=f139e828] [cursor=pointer]:
+                  - /url: /search/disposable%20paper%20napkins%20stack/?page=2
+    - contentinfo [ref=f139e832]:
+      - separator [ref=f139e833]
+      - generic [ref=f139e834]:
+        - generic [ref=f139e835]:
+          - heading "Where stories come together." [level=2] [ref=f139e836]
+          - generic [ref=f139e837]:
+            - link "iOS" [ref=f139e838] [cursor=pointer]:
+              - /url: https://itunes.apple.com/us/app/pexels/id1434330413/
+            - link "Android" [ref=f139e841] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.pexels.app
+          - list [ref=f139e844]:
+            - listitem [ref=f139e845]:
+              - link "Instagram" [ref=f139e846] [cursor=pointer]:
+                - /url: https://www.instagram.com/pexels/
+            - listitem [ref=f139e849]:
+              - link "Threads" [ref=f139e850] [cursor=pointer]:
+                - /url: https://www.threads.net/@pexels/
+            - listitem [ref=f139e853]:
+              - link "YouTube" [ref=f139e854] [cursor=pointer]:
+                - /url: https://www.youtube.com/pexelsphotos/
+            - listitem [ref=f139e857]:
+              - link "TikTok" [ref=f139e858] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@pexels/
+            - listitem [ref=f139e861]:
+              - link "LinkedIn" [ref=f139e862] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/pexels/
+            - listitem [ref=f139e865]:
+              - link "X" [ref=f139e866] [cursor=pointer]:
+                - /url: https://x.com/pexels/
+        - generic [ref=f139e869]:
+          - list [ref=f139e870]:
+            - heading "Pexels" [level=3] [ref=f139e871]
+            - listitem [ref=f139e872]:
+              - link "Free Stock Photos" [ref=f139e873] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f139e874]:
+              - link "Free Videos" [ref=f139e875] [cursor=pointer]:
+                - /url: /videos/
+            - listitem [ref=f139e876]:
+              - link "Popular searches" [ref=f139e877] [cursor=pointer]:
+                - /url: /popular-searches/
+            - listitem [ref=f139e878]:
+              - link "Collections" [ref=f139e879] [cursor=pointer]:
+                - /url: /discover/
+            - listitem [ref=f139e880]:
+              - link "Challenges" [ref=f139e881] [cursor=pointer]:
+                - /url: /challenges/
+            - listitem [ref=f139e882]:
+              - link "Leaderboard" [ref=f139e883] [cursor=pointer]:
+                - /url: /leaderboard/
+            - listitem [ref=f139e884]:
+              - link "Other plugins & apps" [ref=f139e885] [cursor=pointer]:
+                - /url: /pro/
+          - list [ref=f139e886]:
+            - heading "Company" [level=3] [ref=f139e887]
+            - listitem [ref=f139e888]:
+              - link "About" [ref=f139e889] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=f139e890]:
+              - link "Blog" [ref=f139e891] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=f139e892]:
+              - link "Help Center" [ref=f139e893] [cursor=pointer]:
+                - /url: https://help.pexels.com/hc/en-us
+            - listitem [ref=f139e894]:
+              - link "Report content" [ref=f139e895] [cursor=pointer]:
+                - /url: /report/
+            - listitem [ref=f139e896]:
+              - link "Become a Hero" [ref=f139e897] [cursor=pointer]:
+                - /url: /hero/
+            - listitem [ref=f139e898]:
+              - link "Partner with Pexels" [ref=f139e899] [cursor=pointer]:
+                - /url: /become-a-partner/
+            - listitem [ref=f139e900]:
+              - link "Image & Video API" [ref=f139e901] [cursor=pointer]:
+                - /url: /api/
+            - listitem [ref=f139e902]: Sign Up
+        - list [ref=f139e903]:
+          - listitem [ref=f139e904]:
+            - heading "Free Stock Photos" [level=3] [ref=f139e905]
+          - listitem [ref=f139e906]:
+            - generic [ref=f139e908]:
+              - link "Black and white photography" [ref=f139e910] [cursor=pointer]:
+                - /url: /search/black%20and%20white/
+              - link "Happy birthday images" [ref=f139e911] [cursor=pointer]:
+                - /url: /search/happy%20birthday/
+              - link "Free business videos" [ref=f139e912] [cursor=pointer]:
+                - /url: /search/videos/business/
+              - link "Happy new year images" [ref=f139e913] [cursor=pointer]:
+                - /url: /search/happy%20new%20year/
+              - link "Cool wallpapers" [ref=f139e914] [cursor=pointer]:
+                - /url: /search/cool%20wallpaper/
+              - link "Best HD wallpapers" [ref=f139e915] [cursor=pointer]:
+                - /url: /search/hd%20wallpaper/
+              - link "Galaxy wallpaper" [ref=f139e916] [cursor=pointer]:
+                - /url: /search/galaxy%20wallpaper/
+              - link "Lock screen wallpaper" [ref=f139e917] [cursor=pointer]:
+                - /url: /search/lock%20screen%20wallpaper/
+              - link "iPhone wallpaper" [ref=f139e918] [cursor=pointer]:
+                - /url: /search/iphone%20wallpaper/
+              - link "4K wallpaper" [ref=f139e919] [cursor=pointer]:
+                - /url: /search/4k%20wallpaper/
+              - link "Samsung wallpaper" [ref=f139e920] [cursor=pointer]:
+                - /url: /search/samsung%20wallpaper/
+              - link "Love wallpaper" [ref=f139e921] [cursor=pointer]:
+                - /url: /search/love%20wallpaper/
+              - link "Mobile wallpaper" [ref=f139e922] [cursor=pointer]:
+                - /url: /search/mobile%20wallpaper/
+      - generic [ref=f139e924]:
+        - generic [ref=f139e925]: © 2026 Pexels
+        - generic [ref=f139e927]:
+          - link "Terms of Use" [ref=f139e929] [cursor=pointer]:
+            - /url: /terms-of-service/
+          - link "Privacy Policy" [ref=f139e930] [cursor=pointer]:
+            - /url: /privacy-policy/
+          - link "License" [ref=f139e931] [cursor=pointer]:
+            - /url: /license/
+          - link "Imprint" [ref=f139e932] [cursor=pointer]:
+            - /url: /imprint/
+          - link "Cookies Policy" [ref=f139e933] [cursor=pointer]:
+            - /url: /cookies/
+          - img [ref=f139e934] [cursor=pointer]
+        - button "English" [ref=f139e938] [cursor=pointer]
+      - separator [ref=f139e943]
+  - alert [ref=f139e944]
+  - status [ref=f139e945]: "[object Object] has been selected."

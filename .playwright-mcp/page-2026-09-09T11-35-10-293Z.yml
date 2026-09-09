@@ -1,0 +1,523 @@
+- generic [active] [ref=f108e1]:
+  - generic [ref=f108e3]:
+    - navigation [ref=f108e6]:
+      - link [ref=f108e8] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f108e12]:
+        - button [ref=f108e13] [cursor=pointer]
+        - button "Join" [ref=f108e17] [cursor=pointer]
+        - button [ref=f108e20] [cursor=pointer]
+    - main [ref=f108e25]:
+      - generic [ref=f108e26]:
+        - generic [ref=f108e30]:
+          - paragraph [ref=f108e32] [cursor=pointer]: Any
+          - paragraph [ref=f108e37] [cursor=pointer]: Horizontal
+          - paragraph [ref=f108e42] [cursor=pointer]: Vertical
+          - paragraph [ref=f108e47] [cursor=pointer]: Square
+        - generic [ref=f108e51]:
+          - paragraph [ref=f108e53] [cursor=pointer]: Any
+          - paragraph [ref=f108e55] [cursor=pointer]: "0"
+          - paragraph [ref=f108e60] [cursor=pointer]: "1"
+          - paragraph [ref=f108e65] [cursor=pointer]: "2"
+          - paragraph [ref=f108e70] [cursor=pointer]: 3+
+        - generic [ref=f108e74]:
+          - paragraph [ref=f108e76] [cursor=pointer]: Any
+          - paragraph [ref=f108e81] [cursor=pointer]: Baby
+          - paragraph [ref=f108e86] [cursor=pointer]: Child
+          - paragraph [ref=f108e91] [cursor=pointer]: Teenager
+          - paragraph [ref=f108e96] [cursor=pointer]: Adult
+          - paragraph [ref=f108e101] [cursor=pointer]: Senior adult
+        - generic [ref=f108e104]:
+          - generic [ref=f108e105]:
+            - generic [ref=f108e106] [cursor=pointer]
+            - slider [ref=f108e108] [cursor=pointer]
+            - slider [ref=f108e109] [cursor=pointer]
+          - generic [ref=f108e110]:
+            - generic [ref=f108e111]:
+              - paragraph [ref=f108e112]: Minimum
+              - paragraph [ref=f108e113]: 1,080px
+            - generic [ref=f108e114]:
+              - paragraph [ref=f108e115]: Maximum
+              - paragraph [ref=f108e116]: 20,000px+
+        - generic [ref=f108e119]:
+          - generic [ref=f108e120]:
+            - generic [ref=f108e121] [cursor=pointer]
+            - slider [ref=f108e123] [cursor=pointer]
+            - slider [ref=f108e124] [cursor=pointer]
+          - generic [ref=f108e125]:
+            - generic [ref=f108e126]:
+              - paragraph [ref=f108e127]: Minimum
+              - paragraph [ref=f108e128]: 1,080px
+            - generic [ref=f108e129]:
+              - paragraph [ref=f108e130]: Maximum
+              - paragraph [ref=f108e131]: 20,000px+
+        - generic [ref=f108e135]:
+          - button [ref=f108e136] [cursor=pointer]:
+            - textbox [ref=f108e142]:
+              - /placeholder: Enter hex code
+          - button [ref=f108e145] [cursor=pointer]:
+            - textbox [ref=f108e151]: "#000000"
+        - generic [ref=f108e155]:
+          - paragraph [ref=f108e157] [cursor=pointer]: Any
+          - paragraph [ref=f108e162] [cursor=pointer]: Last 24 hours
+          - paragraph [ref=f108e167] [cursor=pointer]: Last week
+          - paragraph [ref=f108e172] [cursor=pointer]: Last month
+          - paragraph [ref=f108e177] [cursor=pointer]: Last year
+        - main "main-content" [ref=f108e178]:
+          - generic [ref=f108e179]:
+            - generic [ref=f108e180]:
+              - heading "Choose your language:" [level=5] [ref=f108e181]
+              - generic [ref=f108e183]:
+                - link "English English" [ref=f108e185] [cursor=pointer]:
+                  - /url: /search/multipack%20paper%20towel%20rolls/
+                  - generic [ref=f108e186]:
+                    - img "English" [ref=f108e187]
+                    - generic [ref=f108e188]: English
+                - link "Español Español" [ref=f108e189] [cursor=pointer]:
+                  - /url: /es-es/buscar/multipack%20paper%20towel%20rolls/
+                  - generic [ref=f108e190]:
+                    - img "Español" [ref=f108e191]
+                    - generic [ref=f108e192]: Español
+                - button [ref=f108e193] [cursor=pointer]
+            - heading "Free Multipack Paper Towel Rolls Photos" [level=1] [ref=f108e200]
+            - generic [ref=f108e203]:
+              - link "Photos 10K" [ref=f108e205] [cursor=pointer]:
+                - /url: /search/multipack%20paper%20towel%20rolls/
+                - text: Photos
+                - generic [ref=f108e206]: 10K
+              - link "Videos 10K" [ref=f108e207] [cursor=pointer]:
+                - /url: /search/videos/multipack%20paper%20towel%20rolls/
+                - text: Videos
+                - generic [ref=f108e208]: 10K
+              - link "Users 1.6K" [ref=f108e209] [cursor=pointer]:
+                - /url: /search/users/multipack%20paper%20towel%20rolls/
+                - text: Users
+                - generic [ref=f108e210]: 1.6K
+              - img [ref=f108e211] [cursor=pointer]
+            - generic [ref=f108e214]:
+              - button "Filters" [ref=f108e216] [cursor=pointer]
+              - generic [ref=f108e226]:
+                - link [ref=f108e228] [cursor=pointer]:
+                  - /url: /search/toilet%20paper/
+                  - img "toilet paper" [ref=f108e229]
+                  - generic [ref=f108e230]:
+                    - paragraph [ref=f108e231]: toilet paper
+                    - paragraph [ref=f108e232]: 5K
+                - link [ref=f108e233] [cursor=pointer]:
+                  - /url: /search/towels/
+                  - img "towels" [ref=f108e234]
+                  - generic [ref=f108e235]:
+                    - paragraph [ref=f108e236]: towels
+                    - paragraph [ref=f108e237]: 11K
+                - link [ref=f108e238] [cursor=pointer]:
+                  - /url: /search/tissue/
+                  - img "tissue" [ref=f108e239]
+                  - generic [ref=f108e240]:
+                    - paragraph [ref=f108e241]: tissue
+                    - paragraph [ref=f108e242]: 5K
+                - link [ref=f108e243] [cursor=pointer]:
+                  - /url: /search/paper/
+                  - img "paper" [ref=f108e244]
+                  - generic [ref=f108e245]:
+                    - paragraph [ref=f108e246]: paper
+                    - paragraph [ref=f108e247]: 49K
+                - link [ref=f108e248] [cursor=pointer]:
+                  - /url: /search/crumpled%20paper/
+                  - img "crumpled paper" [ref=f108e249]
+                  - generic [ref=f108e250]:
+                    - paragraph [ref=f108e251]: crumpled paper
+                    - paragraph [ref=f108e252]: 49K
+                - link [ref=f108e253] [cursor=pointer]:
+                  - /url: /search/papers/
+                  - img "papers" [ref=f108e254]
+                  - generic [ref=f108e255]:
+                    - paragraph [ref=f108e256]: papers
+                    - paragraph [ref=f108e257]: 5K
+                - link [ref=f108e258] [cursor=pointer]:
+                  - /url: /search/skateboard/
+                  - img "skateboard" [ref=f108e259]
+                  - generic [ref=f108e260]:
+                    - paragraph [ref=f108e261]: skateboard
+                    - paragraph [ref=f108e262]: 12K
+            - generic [ref=f108e264]:
+              - generic [ref=f108e267]:
+                - article [ref=f108e270]:
+                  - link [ref=f108e271] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-roll-on-green-towel-3963092/
+                    - img "Free Three toilet paper rolls arranged on a soft green blanket, creating a cozy and clean hygienic feel. Stock Photo" [ref=f108e272]
+                  - generic:
+                    - button "Retouch" [ref=f108e276] [cursor=pointer]
+                    - link "Download" [ref=f108e284] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3963092/pexels-photo-3963092.jpeg?cs=srgb&dl=pexels-vie-studio-3963092.jpg&fm=jpg
+                - article [ref=f108e290]:
+                  - link [ref=f108e291] [cursor=pointer]:
+                    - /url: /photo/basket-full-of-toilet-paper-3958206/
+                    - img "Free A cozy and organized display of toilet paper rolls neatly stacked in a woven basket. Stock Photo" [ref=f108e292]
+                  - generic:
+                    - button "Edit" [ref=f108e296] [cursor=pointer]
+                    - link "Download" [ref=f108e304] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958206/pexels-photo-3958206.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958206.jpg&fm=jpg
+                - generic [ref=f108e309]:
+                  - generic [ref=f108e311]:
+                    - link [ref=f108e312] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20multipack%20paper%20towel%20rolls%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own multipack paper towel rolls content with Canva" [ref=f108e313]
+                    - link [ref=f108e314] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20multipack%20paper%20towel%20rolls%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own multipack paper towel rolls content with Canva" [ref=f108e315]
+                    - link [ref=f108e316] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20multipack%20paper%20towel%20rolls%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own multipack paper towel rolls content with Canva" [ref=f108e317]
+                    - link [ref=f108e318] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20multipack%20paper%20towel%20rolls%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own multipack paper towel rolls content with Canva" [ref=f108e319]
+                  - link [ref=f108e320] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20multipack%20paper%20towel%20rolls%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                    - paragraph [ref=f108e323]: Bring your ideas to life with Canva AI
+                  - link "Get started for free" [ref=f108e324] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20multipack%20paper%20towel%20rolls%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                - article [ref=f108e329]:
+                  - link [ref=f108e330] [cursor=pointer]:
+                    - /url: /photo/toilet-paper-rolls-on-green-towel-3963085/
+                    - img "Free Three toilet paper rolls on plush fabric, symbolizing hygiene and essentials. Stock Photo" [ref=f108e331]
+                  - generic:
+                    - button "Remove Background" [ref=f108e335] [cursor=pointer]
+                    - link "Download" [ref=f108e343] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3963085/pexels-photo-3963085.jpeg?cs=srgb&dl=pexels-vie-studio-3963085.jpg&fm=jpg
+                - article [ref=f108e349]:
+                  - link [ref=f108e350] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-rolls-on-green-textile-3963099/
+                    - img "Free Three rolls of toilet paper with a crumpled tissue on a green fabric background, symbolizing hygiene. Stock Photo" [ref=f108e351]
+                  - generic:
+                    - button "Crop" [ref=f108e355] [cursor=pointer]
+                    - link "Download" [ref=f108e363] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3963099/pexels-photo-3963099.jpeg?cs=srgb&dl=pexels-vie-studio-3963099.jpg&fm=jpg
+                - article [ref=f108e369]:
+                  - link [ref=f108e370] [cursor=pointer]:
+                    - /url: /photo/person-carrying-pile-of-tissue-rolls-4021716/
+                    - img "Free Close-up of a person holding a large stack of toilet paper rolls indoors. Stock Photo" [ref=f108e371]
+                  - generic:
+                    - button "Edit" [ref=f108e375] [cursor=pointer]
+                    - link "Download" [ref=f108e383] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4021716/pexels-photo-4021716.jpeg?cs=srgb&dl=pexels-henrix-4021716.jpg&fm=jpg
+                - article [ref=f108e389]:
+                  - link [ref=f108e390] [cursor=pointer]:
+                    - /url: /photo/a-person-wiping-a-table-using-a-tissue-paper-11091978/
+                    - img "Free A hand wipes a dark surface with a tissue near a paper roll and plant. Stock Photo" [ref=f108e391]
+                  - generic:
+                    - button "Edit" [ref=f108e395] [cursor=pointer]
+                    - link "Download" [ref=f108e403] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/11091978/pexels-photo-11091978.jpeg?cs=srgb&dl=pexels-towfiqu-barbhuiya-3440682-11091978.jpg&fm=jpg
+                - article [ref=f108e409]:
+                  - link [ref=f108e410] [cursor=pointer]:
+                    - /url: /photo/person-in-black-long-sleeve-shirt-holding-persons-hand-4145393/
+                    - img "Free Arms holding a stack of toilet paper rolls, symbolizing comfort and cleanliness. Stock Photo" [ref=f108e411]
+                  - generic:
+                    - button "Add Text" [ref=f108e415] [cursor=pointer]
+                    - link "Download" [ref=f108e423] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4145393/pexels-photo-4145393.jpeg?cs=srgb&dl=pexels-enginakyurt-4145393.jpg&fm=jpg
+                - article [ref=f108e429]:
+                  - link [ref=f108e430] [cursor=pointer]:
+                    - /url: /photo/white-tissue-paper-rolls-3945257/
+                    - img "Free Three toilet paper rolls neatly stacked on a windowsill in a well-lit bathroom. Stock Photo" [ref=f108e431]
+                  - generic:
+                    - button "Add Text" [ref=f108e435] [cursor=pointer]
+                    - link "Download" [ref=f108e443] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3945257/pexels-photo-3945257.jpeg?cs=srgb&dl=pexels-fotios-photos-3945257.jpg&fm=jpg
+                - article [ref=f108e449]:
+                  - link [ref=f108e450] [cursor=pointer]:
+                    - /url: /photo/rolls-of-paper-towels-on-table-near-board-with-lettering-3941873/
+                    - img "Free Rolls of paper towels placed on wooden table against window with prediction about end near on modern cafe Stock Photo" [ref=f108e451]
+                  - generic:
+                    - button "Add Text" [ref=f108e455] [cursor=pointer]
+                    - link "Download" [ref=f108e463] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3941873/pexels-photo-3941873.jpeg?cs=srgb&dl=pexels-brett-sayles-3941873.jpg&fm=jpg
+                - generic [ref=f108e468]:
+                  - generic [ref=f108e469]:
+                    - heading "S‌‌‌p‌‌‌o‌‌n‌‌s‌‌o‌r‌‌e‌‌‌d‌ ‌‌‌P‌h‌‌o‌‌t‌‌‌o‌‌‌s‌" [level=4] [ref=f108e470]
+                    - link [ref=f108e471] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy9tdWx0aXBhY2slMjBwYXBlciUyMHRvd2VsJTIwcm9sbHM_dXRtX3NvdXJjZT1wZXhlbHMmdXRtX21lZGl1bT1hZmZpbGlhdGUmdXRtX2NhbXBhaWduPXNwb25zb3JlZF9waG90byZ1dG1fY29udGVudD1zcnBfaW5saW5lX2xvZ28mdXRtX3Rlcm09bXVsdGlwYWNrJTIwcGFwZXIlMjB0b3dlbCUyMHJvbGxzIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiJlMzI0N2VmMi1jOTZiLTQ0NGEtYmM4Mi1iYjY4OWUzMDNjMDEiLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6Im11bHRpcGFjayBwYXBlciB0b3dlbCByb2xscyJ9fQ/
+                  - generic [ref=f108e475]:
+                    - link [ref=f108e476] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3B5cmFtaWQtdGlzc3VlLXBhcGVyLW9uLXdoaXRlLXB1cmUtZnJlc2gtZ20yMjIxNTE1NjI3LTYzNzg1OTY3NT91dG1fc291cmNlPXBleGVscyZ1dG1fbWVkaXVtPWFmZmlsaWF0ZSZ1dG1fY2FtcGFpZ249c3BvbnNvcmVkX3Bob3RvJnV0bV9jb250ZW50PXNycF9pbmxpbmVfbWVkaWEmdXRtX3Rlcm09bXVsdGlwYWNrJTIwcGFwZXIlMjB0b3dlbCUyMHJvbGxzIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiJlMzI0N2VmMi1jOTZiLTQ0NGEtYmM4Mi1iYjY4OWUzMDNjMDEiLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6Im11bHRpcGFjayBwYXBlciB0b3dlbCByb2xscyJ9fQ/
+                    - link [ref=f108e477] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3RvaWxldC1wYXBlci1nbTEyMTIwNDU0NzktMzUxNzMxMzgxP3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT1tdWx0aXBhY2slMjBwYXBlciUyMHRvd2VsJTIwcm9sbHMiLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6ImUzMjQ3ZWYyLWM5NmItNDQ0YS1iYzgyLWJiNjg5ZTMwM2MwMSIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoibXVsdGlwYWNrIHBhcGVyIHRvd2VsIHJvbGxzIn19/
+                    - link [ref=f108e478] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3BhcGVyLXRvd2VsLWlzb2xhdGVkLW9uLXdoaXRlLWdtNTE5MzU1MTE0LTkwNDg2NDY3P3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT1tdWx0aXBhY2slMjBwYXBlciUyMHRvd2VsJTIwcm9sbHMiLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6ImUzMjQ3ZWYyLWM5NmItNDQ0YS1iYzgyLWJiNjg5ZTMwM2MwMSIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoibXVsdGlwYWNrIHBhcGVyIHRvd2VsIHJvbGxzIn19/
+                    - link [ref=f108e479] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3JvbGxzLW9mLXBhcGVyLXRvd2Vscy1pc29sYXRlZC1vbi13aGl0ZS1nbTE0NTUyODc1MTEtNDkwNjY0OTU1P3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT1tdWx0aXBhY2slMjBwYXBlciUyMHRvd2VsJTIwcm9sbHMiLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6ImUzMjQ3ZWYyLWM5NmItNDQ0YS1iYzgyLWJiNjg5ZTMwM2MwMSIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoibXVsdGlwYWNrIHBhcGVyIHRvd2VsIHJvbGxzIn19/
+                  - link "Get 20% off with code PEXELS20 »" [ref=f108e480] [cursor=pointer]:
+                    - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy9tdWx0aXBhY2slMjBwYXBlciUyMHRvd2VsJTIwcm9sbHM_dXRtX3NvdXJjZT1wZXhlbHMmdXRtX21lZGl1bT1hZmZpbGlhdGUmdXRtX2NhbXBhaWduPXNwb25zb3JlZF9waG90byZ1dG1fY29udGVudD1zcnBfaW5saW5lX2NvdXBvbmNvZGUmdXRtX3Rlcm09bXVsdGlwYWNrJTIwcGFwZXIlMjB0b3dlbCUyMHJvbGxzIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiJlMzI0N2VmMi1jOTZiLTQ0NGEtYmM4Mi1iYjY4OWUzMDNjMDEiLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6Im11bHRpcGFjayBwYXBlciB0b3dlbCByb2xscyJ9fQ/
+                - article [ref=f108e485]:
+                  - link [ref=f108e486] [cursor=pointer]:
+                    - /url: /photo/woman-packing-and-wrapping-a-plate-7217883/
+                    - img "Free A woman wraps plates in bubble wrap on a kitchen counter, preparing for a move. Stock Photo" [ref=f108e487]
+                  - generic:
+                    - button "Crop" [ref=f108e491] [cursor=pointer]
+                    - link "Download" [ref=f108e499] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7217883/pexels-photo-7217883.jpeg?cs=srgb&dl=pexels-blue-bird-7217883.jpg&fm=jpg
+                - article [ref=f108e505]:
+                  - link [ref=f108e506] [cursor=pointer]:
+                    - /url: /photo/toilet-paper-rolls-in-a-basket-3958205/
+                    - img "Free Collection of toilet paper rolls neatly arranged in a woven basket on a wooden floor, indicating hygiene and cleanliness. Stock Photo" [ref=f108e507]
+                  - generic:
+                    - button "Add Text" [ref=f108e511] [cursor=pointer]
+                    - link "Download" [ref=f108e519] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958205/pexels-photo-3958205.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958205.jpg&fm=jpg
+                - article [ref=f108e525]:
+                  - link [ref=f108e526] [cursor=pointer]:
+                    - /url: /photo/set-of-toilet-paper-on-wooden-background-3958211/
+                    - img "Free Top view of white toilet paper rolls placed on wooden surface illustrating concept of everyday need for hygiene and sanitary purposes Stock Photo" [ref=f108e527]
+                  - generic:
+                    - button "Add Text" [ref=f108e531] [cursor=pointer]
+                    - link "Download" [ref=f108e539] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958211/pexels-photo-3958211.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958211.jpg&fm=jpg
+                - article [ref=f108e545]:
+                  - link [ref=f108e546] [cursor=pointer]:
+                    - /url: /photo/rolled-white-and-yellow-towels-5833316/
+                    - img "Free Neatly arranged rolled white and yellow towels in a bathroom setting for hygiene and decor. Stock Photo" [ref=f108e547]
+                  - generic:
+                    - button "Retouch" [ref=f108e551] [cursor=pointer]
+                    - link "Download" [ref=f108e559] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5833316/pexels-photo-5833316.jpeg?cs=srgb&dl=pexels-analogicus-5833316.jpg&fm=jpg
+                - article [ref=f108e565]:
+                  - link [ref=f108e566] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-rolls-3963077/
+                    - img "Free Three toilet paper rolls on craft paper with eucalyptus, showcasing minimalist home essentials. Stock Photo" [ref=f108e567]
+                  - generic:
+                    - button "Add Text" [ref=f108e571] [cursor=pointer]
+                    - link "Download" [ref=f108e579] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3963077/pexels-photo-3963077.jpeg?cs=srgb&dl=pexels-vie-studio-3963077.jpg&fm=jpg
+                - article [ref=f108e585]:
+                  - link [ref=f108e586] [cursor=pointer]:
+                    - /url: /photo/white-tissue-paper-roll-on-pink-table-4065840/
+                    - img "Free Close-up image of stacked toilet paper rolls on a pink colored bathroom wall. Stock Photo" [ref=f108e587]
+                  - generic:
+                    - button "Edit" [ref=f108e591] [cursor=pointer]
+                    - link "Download" [ref=f108e599] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4065840/pexels-photo-4065840.jpeg?cs=srgb&dl=pexels-vovaflame-4065840.jpg&fm=jpg
+                - article [ref=f108e605]:
+                  - link [ref=f108e606] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-rolls-on-brown-wooden-surface-10744480/
+                    - img "Free A close-up shot of four toilet paper rolls arranged on a wooden surface with natural lighting. Stock Photo" [ref=f108e607]
+                  - generic:
+                    - button "Adjust Colors" [ref=f108e611] [cursor=pointer]
+                    - link "Download" [ref=f108e619] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/10744480/pexels-photo-10744480.jpeg?cs=srgb&dl=pexels-arturoaez225-10744480.jpg&fm=jpg
+                - link [ref=f108e624] [cursor=pointer]:
+                  - /url: /collections/papers-axnaz1u/
+                  - article [ref=f108e625]:
+                    - list [ref=f108e627]:
+                      - listitem [ref=f108e628]
+                      - listitem [ref=f108e630]
+                      - listitem [ref=f108e632]
+                    - generic [ref=f108e634]:
+                      - heading "Papers" [level=4] [ref=f108e635]
+                      - paragraph [ref=f108e639]: "63"
+                - article [ref=f108e642]:
+                  - link [ref=f108e643] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-rolls-on-white-table-3963087/
+                    - img "Free A minimalist display of toilet paper rolls with soft lighting. Stock Photo" [ref=f108e644]
+                  - generic:
+                    - button "Crop" [ref=f108e648] [cursor=pointer]
+                    - link "Download" [ref=f108e656] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3963087/pexels-photo-3963087.jpeg?cs=srgb&dl=pexels-vie-studio-3963087.jpg&fm=jpg
+                - article [ref=f108e662]:
+                  - link [ref=f108e663] [cursor=pointer]:
+                    - /url: /photo/person-pulling-paper-towel-4008507/
+                    - img "Free A bathroom sink with a golden faucet and hand reaching for a paper towel in a clean setting. Stock Photo" [ref=f108e664]
+                  - generic:
+                    - button "Crop" [ref=f108e668] [cursor=pointer]
+                    - link "Download" [ref=f108e676] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4008507/pexels-photo-4008507.jpeg?cs=srgb&dl=pexels-polina-zimmerman-4008507.jpg&fm=jpg
+                - article [ref=f108e682]:
+                  - link [ref=f108e683] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-rolls-3958212/
+                    - img "Free Close-up view of stacked toilet paper rolls, highlighting hygiene and essential supplies. Stock Photo" [ref=f108e684]
+                  - generic:
+                    - button "Edit" [ref=f108e688] [cursor=pointer]
+                    - link "Download" [ref=f108e696] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958212/pexels-photo-3958212.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958212.jpg&fm=jpg
+                - article [ref=f108e702]:
+                  - link [ref=f108e703] [cursor=pointer]:
+                    - /url: /photo/white-tissue-paper-roll-on-white-wicker-basket-3958207/
+                    - img "Free Stack of toilet paper rolls in a woven basket on a wooden floor in a bathroom. Stock Photo" [ref=f108e704]
+                  - generic:
+                    - button "Remove Background" [ref=f108e708] [cursor=pointer]
+                    - link "Download" [ref=f108e716] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958207/pexels-photo-3958207.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958207.jpg&fm=jpg
+                - article [ref=f108e722]:
+                  - link [ref=f108e723] [cursor=pointer]:
+                    - /url: /photo/person-drying-hands-with-paper-towel-4008503/
+                    - img "Free Hands being dried with paper towels near a gold faucet in a bathroom setting. Stock Photo" [ref=f108e724]
+                  - generic:
+                    - button "Add Text" [ref=f108e728] [cursor=pointer]
+                    - link "Download" [ref=f108e736] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4008503/pexels-photo-4008503.jpeg?cs=srgb&dl=pexels-polina-zimmerman-4008503.jpg&fm=jpg
+                - article [ref=f108e742]:
+                  - link [ref=f108e743] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-roll-on-pink-textile-3962341/
+                    - img "Free Toilet paper rolls arranged on a pink textured background for a clean, minimalist look. Stock Photo" [ref=f108e744]
+                  - generic:
+                    - button "Remove Background" [ref=f108e748] [cursor=pointer]
+                    - link "Download" [ref=f108e756] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3962341/pexels-photo-3962341.jpeg?cs=srgb&dl=pexels-shvetsa-3962341.jpg&fm=jpg
+                - article [ref=f108e762]:
+                  - link [ref=f108e763] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-rolls-on-white-wall-3962439/
+                    - img "Free Minimalist image of stacked toilet paper rolls on a human hand against a textured wall. Stock Photo" [ref=f108e764]
+                  - generic:
+                    - button "Crop" [ref=f108e768] [cursor=pointer]
+                    - link "Download" [ref=f108e776] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3962439/pexels-photo-3962439.jpeg?cs=srgb&dl=pexels-shvetsa-3962439.jpg&fm=jpg
+                - article [ref=f108e782]:
+                  - link [ref=f108e783] [cursor=pointer]:
+                    - /url: /photo/different-colors-of-toilet-paper-rolls-on-peach-background-4031868/
+                    - img "Free Vibrant blue, green, and peach toilet paper rolls on a peach background. Stock Photo" [ref=f108e784]
+                  - generic:
+                    - button "Edit" [ref=f108e788] [cursor=pointer]
+                    - link "Download" [ref=f108e796] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4031868/pexels-photo-4031868.jpeg?cs=srgb&dl=pexels-edward-jenner-4031868.jpg&fm=jpg
+              - button "Load More" [ref=f108e801] [cursor=pointer]
+            - navigation [ref=f108e804]:
+              - generic [ref=f108e806]:
+                - link "1" [ref=f108e808]:
+                  - /url: /search/multipack%20paper%20towel%20rolls/
+                - link "2" [ref=f108e811] [cursor=pointer]:
+                  - /url: /search/multipack%20paper%20towel%20rolls/?page=2
+                - link "3" [ref=f108e814] [cursor=pointer]:
+                  - /url: /search/multipack%20paper%20towel%20rolls/?page=3
+                - link "4" [ref=f108e817] [cursor=pointer]:
+                  - /url: /search/multipack%20paper%20towel%20rolls/?page=4
+                - link "5" [ref=f108e820] [cursor=pointer]:
+                  - /url: /search/multipack%20paper%20towel%20rolls/?page=5
+                - link "6" [ref=f108e823] [cursor=pointer]:
+                  - /url: /search/multipack%20paper%20towel%20rolls/?page=6
+                - link "Next" [ref=f108e826] [cursor=pointer]:
+                  - /url: /search/multipack%20paper%20towel%20rolls/?page=2
+    - contentinfo [ref=f108e830]:
+      - separator [ref=f108e831]
+      - generic [ref=f108e832]:
+        - generic [ref=f108e833]:
+          - heading "Where stories come together." [level=2] [ref=f108e834]
+          - generic [ref=f108e835]:
+            - link "iOS" [ref=f108e836] [cursor=pointer]:
+              - /url: https://itunes.apple.com/us/app/pexels/id1434330413/
+            - link "Android" [ref=f108e839] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.pexels.app
+          - list [ref=f108e842]:
+            - listitem [ref=f108e843]:
+              - link "Instagram" [ref=f108e844] [cursor=pointer]:
+                - /url: https://www.instagram.com/pexels/
+            - listitem [ref=f108e847]:
+              - link "Threads" [ref=f108e848] [cursor=pointer]:
+                - /url: https://www.threads.net/@pexels/
+            - listitem [ref=f108e851]:
+              - link "YouTube" [ref=f108e852] [cursor=pointer]:
+                - /url: https://www.youtube.com/pexelsphotos/
+            - listitem [ref=f108e855]:
+              - link "TikTok" [ref=f108e856] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@pexels/
+            - listitem [ref=f108e859]:
+              - link "LinkedIn" [ref=f108e860] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/pexels/
+            - listitem [ref=f108e863]:
+              - link "X" [ref=f108e864] [cursor=pointer]:
+                - /url: https://x.com/pexels/
+        - generic [ref=f108e867]:
+          - list [ref=f108e868]:
+            - heading "Pexels" [level=3] [ref=f108e869]
+            - listitem [ref=f108e870]:
+              - link "Free Stock Photos" [ref=f108e871] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f108e872]:
+              - link "Free Videos" [ref=f108e873] [cursor=pointer]:
+                - /url: /videos/
+            - listitem [ref=f108e874]:
+              - link "Popular searches" [ref=f108e875] [cursor=pointer]:
+                - /url: /popular-searches/
+            - listitem [ref=f108e876]:
+              - link "Collections" [ref=f108e877] [cursor=pointer]:
+                - /url: /discover/
+            - listitem [ref=f108e878]:
+              - link "Challenges" [ref=f108e879] [cursor=pointer]:
+                - /url: /challenges/
+            - listitem [ref=f108e880]:
+              - link "Leaderboard" [ref=f108e881] [cursor=pointer]:
+                - /url: /leaderboard/
+            - listitem [ref=f108e882]:
+              - link "Other plugins & apps" [ref=f108e883] [cursor=pointer]:
+                - /url: /pro/
+          - list [ref=f108e884]:
+            - heading "Company" [level=3] [ref=f108e885]
+            - listitem [ref=f108e886]:
+              - link "About" [ref=f108e887] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=f108e888]:
+              - link "Blog" [ref=f108e889] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=f108e890]:
+              - link "Help Center" [ref=f108e891] [cursor=pointer]:
+                - /url: https://help.pexels.com/hc/en-us
+            - listitem [ref=f108e892]:
+              - link "Report content" [ref=f108e893] [cursor=pointer]:
+                - /url: /report/
+            - listitem [ref=f108e894]:
+              - link "Become a Hero" [ref=f108e895] [cursor=pointer]:
+                - /url: /hero/
+            - listitem [ref=f108e896]:
+              - link "Partner with Pexels" [ref=f108e897] [cursor=pointer]:
+                - /url: /become-a-partner/
+            - listitem [ref=f108e898]:
+              - link "Image & Video API" [ref=f108e899] [cursor=pointer]:
+                - /url: /api/
+            - listitem [ref=f108e900]: Sign Up
+        - list [ref=f108e901]:
+          - listitem [ref=f108e902]:
+            - heading "Free Stock Photos" [level=3] [ref=f108e903]
+          - listitem [ref=f108e904]:
+            - generic [ref=f108e906]:
+              - link "Black and white photography" [ref=f108e908] [cursor=pointer]:
+                - /url: /search/black%20and%20white/
+              - link "Happy birthday images" [ref=f108e909] [cursor=pointer]:
+                - /url: /search/happy%20birthday/
+              - link "Free business videos" [ref=f108e910] [cursor=pointer]:
+                - /url: /search/videos/business/
+              - link "Happy new year images" [ref=f108e911] [cursor=pointer]:
+                - /url: /search/happy%20new%20year/
+              - link "Cool wallpapers" [ref=f108e912] [cursor=pointer]:
+                - /url: /search/cool%20wallpaper/
+              - link "Best HD wallpapers" [ref=f108e913] [cursor=pointer]:
+                - /url: /search/hd%20wallpaper/
+              - link "Galaxy wallpaper" [ref=f108e914] [cursor=pointer]:
+                - /url: /search/galaxy%20wallpaper/
+              - link "Lock screen wallpaper" [ref=f108e915] [cursor=pointer]:
+                - /url: /search/lock%20screen%20wallpaper/
+              - link "iPhone wallpaper" [ref=f108e916] [cursor=pointer]:
+                - /url: /search/iphone%20wallpaper/
+              - link "4K wallpaper" [ref=f108e917] [cursor=pointer]:
+                - /url: /search/4k%20wallpaper/
+              - link "Samsung wallpaper" [ref=f108e918] [cursor=pointer]:
+                - /url: /search/samsung%20wallpaper/
+              - link "Love wallpaper" [ref=f108e919] [cursor=pointer]:
+                - /url: /search/love%20wallpaper/
+              - link "Mobile wallpaper" [ref=f108e920] [cursor=pointer]:
+                - /url: /search/mobile%20wallpaper/
+      - generic [ref=f108e922]:
+        - generic [ref=f108e923]: © 2026 Pexels
+        - generic [ref=f108e925]:
+          - link "Terms of Use" [ref=f108e927] [cursor=pointer]:
+            - /url: /terms-of-service/
+          - link "Privacy Policy" [ref=f108e928] [cursor=pointer]:
+            - /url: /privacy-policy/
+          - link "License" [ref=f108e929] [cursor=pointer]:
+            - /url: /license/
+          - link "Imprint" [ref=f108e930] [cursor=pointer]:
+            - /url: /imprint/
+          - link "Cookies Policy" [ref=f108e931] [cursor=pointer]:
+            - /url: /cookies/
+          - img [ref=f108e932] [cursor=pointer]
+        - button "English" [ref=f108e936] [cursor=pointer]
+      - separator [ref=f108e941]
+  - alert [ref=f108e942]
+  - status [ref=f108e943]: "[object Object] has been selected."

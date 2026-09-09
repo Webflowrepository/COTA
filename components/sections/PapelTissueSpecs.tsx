@@ -4,7 +4,26 @@ import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import { EASE_STANDARD } from "@/lib/motion/tokens";
 import SpecCounter from "@/components/ui/SpecCounter";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
+
+/**
+ * Rodrigo pidió que "Productos terminados" tenga alguna visual (antes era
+ * una lista de texto puro) — no hay fotografía de producto real de COTA
+ * todavía, así que estas son fotos de stock con licencia libre (Pexels,
+ * mismo criterio que el resto del sitio para material genérico no
+ * específico de la planta), elegidas para que ninguna se repita/parezca a
+ * otra ya usada en el sitio (ver memoria de dirección de arte: evitar
+ * fotos casi-duplicadas). Producto real de COTA a futuro reemplaza esto.
+ */
+const PRODUCT_PHOTO: Record<string, string> = {
+  "Toallas en rollo": "/photos/producto-toallas-rollo-pexels.webp",
+  Camilleros: "/photos/producto-camilleros-pexels.webp",
+  "Bobinas de limpieza con precorte": "/photos/producto-bobinas-limpieza-pexels.webp",
+  "Toallas intercaladas": "/photos/producto-toallas-intercaladas-pexels.webp",
+  "Papel higiénico de medio y alto metraje": "/photos/producto-papel-higienico-pexels.webp",
+  "Servilletas extra blancas": "/photos/producto-servilletas-pexels.webp",
+};
 
 export default function PapelTissueSpecs() {
   const modelsRef = useRef<HTMLDivElement>(null);

@@ -1,0 +1,507 @@
+- generic [active] [ref=f93e1]:
+  - generic [ref=f93e3]:
+    - navigation [ref=f93e6]:
+      - link [ref=f93e8] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f93e12]:
+        - button [ref=f93e13] [cursor=pointer]
+        - button "Join" [ref=f93e17] [cursor=pointer]
+        - button [ref=f93e20] [cursor=pointer]
+    - main [ref=f93e25]:
+      - generic [ref=f93e26]:
+        - generic [ref=f93e30]:
+          - paragraph [ref=f93e32] [cursor=pointer]: Any
+          - paragraph [ref=f93e37] [cursor=pointer]: Horizontal
+          - paragraph [ref=f93e42] [cursor=pointer]: Vertical
+          - paragraph [ref=f93e47] [cursor=pointer]: Square
+        - generic [ref=f93e51]:
+          - paragraph [ref=f93e53] [cursor=pointer]: Any
+          - paragraph [ref=f93e55] [cursor=pointer]: "0"
+          - paragraph [ref=f93e60] [cursor=pointer]: "1"
+          - paragraph [ref=f93e65] [cursor=pointer]: "2"
+          - paragraph [ref=f93e70] [cursor=pointer]: 3+
+        - generic [ref=f93e74]:
+          - paragraph [ref=f93e76] [cursor=pointer]: Any
+          - paragraph [ref=f93e81] [cursor=pointer]: Baby
+          - paragraph [ref=f93e86] [cursor=pointer]: Child
+          - paragraph [ref=f93e91] [cursor=pointer]: Teenager
+          - paragraph [ref=f93e96] [cursor=pointer]: Adult
+          - paragraph [ref=f93e101] [cursor=pointer]: Senior adult
+        - generic [ref=f93e104]:
+          - generic [ref=f93e105]:
+            - generic [ref=f93e106] [cursor=pointer]
+            - slider [ref=f93e108] [cursor=pointer]
+            - slider [ref=f93e109] [cursor=pointer]
+          - generic [ref=f93e110]:
+            - generic [ref=f93e111]:
+              - paragraph [ref=f93e112]: Minimum
+              - paragraph [ref=f93e113]: 1,080px
+            - generic [ref=f93e114]:
+              - paragraph [ref=f93e115]: Maximum
+              - paragraph [ref=f93e116]: 20,000px+
+        - generic [ref=f93e119]:
+          - generic [ref=f93e120]:
+            - generic [ref=f93e121] [cursor=pointer]
+            - slider [ref=f93e123] [cursor=pointer]
+            - slider [ref=f93e124] [cursor=pointer]
+          - generic [ref=f93e125]:
+            - generic [ref=f93e126]:
+              - paragraph [ref=f93e127]: Minimum
+              - paragraph [ref=f93e128]: 1,080px
+            - generic [ref=f93e129]:
+              - paragraph [ref=f93e130]: Maximum
+              - paragraph [ref=f93e131]: 20,000px+
+        - generic [ref=f93e135]:
+          - button [ref=f93e136] [cursor=pointer]:
+            - textbox [ref=f93e142]:
+              - /placeholder: Enter hex code
+          - button [ref=f93e145] [cursor=pointer]:
+            - textbox [ref=f93e151]: "#000000"
+        - generic [ref=f93e155]:
+          - paragraph [ref=f93e157] [cursor=pointer]: Any
+          - paragraph [ref=f93e162] [cursor=pointer]: Last 24 hours
+          - paragraph [ref=f93e167] [cursor=pointer]: Last week
+          - paragraph [ref=f93e172] [cursor=pointer]: Last month
+          - paragraph [ref=f93e177] [cursor=pointer]: Last year
+        - main "main-content" [ref=f93e178]:
+          - generic [ref=f93e179]:
+            - generic [ref=f93e180]:
+              - heading "Choose your language:" [level=5] [ref=f93e181]
+              - generic [ref=f93e183]:
+                - link "English English" [ref=f93e185] [cursor=pointer]:
+                  - /url: /search/commercial%20paper%20towel%20dispenser%20wall/
+                  - generic [ref=f93e186]:
+                    - img "English" [ref=f93e187]
+                    - generic [ref=f93e188]: English
+                - link "Español Español" [ref=f93e189] [cursor=pointer]:
+                  - /url: /es-es/buscar/commercial%20paper%20towel%20dispenser%20wall/
+                  - generic [ref=f93e190]:
+                    - img "Español" [ref=f93e191]
+                    - generic [ref=f93e192]: Español
+                - button [ref=f93e193] [cursor=pointer]
+            - heading "Free Commercial Paper Towel Dispenser Wall Photos" [level=1] [ref=f93e200]
+            - generic [ref=f93e203]:
+              - link "Photos 10K" [ref=f93e205] [cursor=pointer]:
+                - /url: /search/commercial%20paper%20towel%20dispenser%20wall/
+                - text: Photos
+                - generic [ref=f93e206]: 10K
+              - link "Videos 10K" [ref=f93e207] [cursor=pointer]:
+                - /url: /search/videos/commercial%20paper%20towel%20dispenser%20wall/
+                - text: Videos
+                - generic [ref=f93e208]: 10K
+              - link "Users 10K" [ref=f93e209] [cursor=pointer]:
+                - /url: /search/users/commercial%20paper%20towel%20dispenser%20wall/
+                - text: Users
+                - generic [ref=f93e210]: 10K
+              - img [ref=f93e211] [cursor=pointer]
+            - generic [ref=f93e214]:
+              - button "Filters" [ref=f93e216] [cursor=pointer]
+              - generic [ref=f93e226]:
+                - link [ref=f93e228] [cursor=pointer]:
+                  - /url: /search/toilet%20paper/
+                  - img "toilet paper" [ref=f93e229]
+                  - generic [ref=f93e230]:
+                    - paragraph [ref=f93e231]: toilet paper
+                    - paragraph [ref=f93e232]: 5K
+                - link [ref=f93e233] [cursor=pointer]:
+                  - /url: /search/commercial%20kitchen/
+                  - img "commercial kitchen" [ref=f93e234]
+                  - generic [ref=f93e235]:
+                    - paragraph [ref=f93e236]: commercial kitchen
+                    - paragraph [ref=f93e237]: 147K
+                - link [ref=f93e238] [cursor=pointer]:
+                  - /url: /search/atm%20machine/
+                  - img "atm machine" [ref=f93e239]
+                  - generic [ref=f93e240]:
+                    - paragraph [ref=f93e241]: atm machine
+                    - paragraph [ref=f93e242]: 26K
+                - link [ref=f93e243] [cursor=pointer]:
+                  - /url: /search/commercial%20cleaning/
+                  - img "commercial cleaning" [ref=f93e244]
+                  - generic [ref=f93e245]:
+                    - paragraph [ref=f93e246]: commercial cleaning
+                    - paragraph [ref=f93e247]: 157K
+            - generic [ref=f93e249]:
+              - generic [ref=f93e252]:
+                - article [ref=f93e255]:
+                  - link [ref=f93e256] [cursor=pointer]:
+                    - /url: /photo/interior-of-public-toilet-20846593/
+                    - img "Free Modern public restroom interior with a handbasin, mirror, and wooden door. Stock Photo" [ref=f93e257]
+                  - generic:
+                    - button "Remove Background" [ref=f93e261] [cursor=pointer]
+                    - link "Download" [ref=f93e269] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/20846593/pexels-photo-20846593.jpeg?cs=srgb&dl=pexels-tomasito-20846593.jpg&fm=jpg
+                - article [ref=f93e275]:
+                  - link [ref=f93e276] [cursor=pointer]:
+                    - /url: /photo/soap-and-disinfection-station-in-medical-cabinet-7789606/
+                    - img "Free Close-up of wall-mounted soap, sanitizer, and paper dispenser in a sterile environment. Stock Photo" [ref=f93e277]
+                  - generic:
+                    - button "Adjust Colors" [ref=f93e281] [cursor=pointer]
+                    - link "Download" [ref=f93e289] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7789606/pexels-photo-7789606.jpeg?cs=srgb&dl=pexels-babydov-7789606.jpg&fm=jpg
+                - generic [ref=f93e294]:
+                  - generic [ref=f93e296]:
+                    - link [ref=f93e297] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20commercial%20paper%20towel%20dispenser%20wall%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own commercial paper towel dispenser wall content with Canva" [ref=f93e298]
+                    - link [ref=f93e299] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20commercial%20paper%20towel%20dispenser%20wall%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own commercial paper towel dispenser wall content with Canva" [ref=f93e300]
+                    - link [ref=f93e301] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20commercial%20paper%20towel%20dispenser%20wall%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own commercial paper towel dispenser wall content with Canva" [ref=f93e302]
+                    - link [ref=f93e303] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20commercial%20paper%20towel%20dispenser%20wall%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own commercial paper towel dispenser wall content with Canva" [ref=f93e304]
+                  - link [ref=f93e305] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20commercial%20paper%20towel%20dispenser%20wall%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                    - paragraph [ref=f93e308]: Bring your ideas to life with Canva AI
+                  - link "Get started for free" [ref=f93e309] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20commercial%20paper%20towel%20dispenser%20wall%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                - article [ref=f93e314]:
+                  - link [ref=f93e315] [cursor=pointer]:
+                    - /url: /photo/kitchen-in-restaurant-18283284/
+                    - img "Free A cluttered industrial kitchen sink area with cleaning supplies, towels, and a wall dispenser. Stock Photo" [ref=f93e316]
+                  - generic:
+                    - button "Edit" [ref=f93e320] [cursor=pointer]
+                    - link "Download" [ref=f93e328] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/18283284/pexels-photo-18283284.jpeg?cs=srgb&dl=pexels-fran-fruh-18283284.jpg&fm=jpg
+                - article [ref=f93e334]:
+                  - link [ref=f93e335] [cursor=pointer]:
+                    - /url: /photo/elegant-modern-restroom-with-marble-finish-34490338/
+                    - img "Free Spacious and elegant modern restroom with marble countertops and sleek design features. Stock Photo" [ref=f93e336]
+                  - generic:
+                    - button "Adjust Colors" [ref=f93e340] [cursor=pointer]
+                    - link "Download" [ref=f93e348] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/34490338/pexels-photo-34490338.jpeg?cs=srgb&dl=pexels-maya-ali-1763363404-34490338.jpg&fm=jpg
+                - article [ref=f93e354]:
+                  - link [ref=f93e355] [cursor=pointer]:
+                    - /url: /photo/person-drying-hands-with-paper-towel-4008503/
+                    - img "Free Hands being dried with paper towels near a gold faucet in a bathroom setting. Stock Photo" [ref=f93e356]
+                  - generic:
+                    - button "Add Text" [ref=f93e360] [cursor=pointer]
+                    - link "Download" [ref=f93e368] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4008503/pexels-photo-4008503.jpeg?cs=srgb&dl=pexels-polina-zimmerman-4008503.jpg&fm=jpg
+                - article [ref=f93e374]:
+                  - link [ref=f93e375] [cursor=pointer]:
+                    - /url: /photo/minimalist-bathroom-paper-roll-holder-on-tiled-wall-36292480/
+                    - img "Free A simple bathroom setting with toilet paper in a holder against a tiled wall. Stock Photo" [ref=f93e376]
+                  - generic:
+                    - button "Adjust Colors" [ref=f93e380] [cursor=pointer]
+                    - link "Download" [ref=f93e388] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/36292480/pexels-photo-36292480.jpeg?cs=srgb&dl=pexels-pexels-user-2159474115-36292480.jpg&fm=jpg
+                - article [ref=f93e394]:
+                  - link [ref=f93e395] [cursor=pointer]:
+                    - /url: /photo/white-ceramic-sink-with-black-faucet-4816260/
+                    - img "Free Modern bathroom showcasing sleek faucet and tiled walls in a minimalist design. Stock Photo" [ref=f93e396]
+                  - generic:
+                    - button "Edit" [ref=f93e400] [cursor=pointer]
+                    - link "Download" [ref=f93e408] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4816260/pexels-photo-4816260.jpeg?cs=srgb&dl=pexels-maksgelatin-4816260.jpg&fm=jpg
+                - article [ref=f93e414]:
+                  - link [ref=f93e415] [cursor=pointer]:
+                    - /url: /photo/sink-in-a-bathroom-19866402/
+                    - img "Free A sleek, modern bathroom showcasing minimalist design with functional shelving and clean aesthetics. Stock Photo" [ref=f93e416]
+                  - generic:
+                    - button "Edit" [ref=f93e420] [cursor=pointer]
+                    - link "Download" [ref=f93e428] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/19866402/pexels-photo-19866402.jpeg?cs=srgb&dl=pexels-lisa-anna-901356985-19866402.jpg&fm=jpg
+                - article [ref=f93e434]:
+                  - link [ref=f93e435] [cursor=pointer]:
+                    - /url: /photo/wash-your-hands-labels-in-cabinet-with-disinfectant-and-paper-towel-4108114/
+                    - img "Free Blue poster with 'Wash Your Hands' next to soap and paper towel on white shelf. Stock Photo" [ref=f93e436]
+                  - generic:
+                    - button "Adjust Colors" [ref=f93e440] [cursor=pointer]
+                    - link "Download" [ref=f93e448] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4108114/pexels-photo-4108114.jpeg?cs=srgb&dl=pexels-polina-zimmerman-4108114.jpg&fm=jpg
+                - generic [ref=f93e453]:
+                  - generic [ref=f93e454]:
+                    - heading "S‌‌‌p‌‌‌o‌‌n‌‌s‌‌‌o‌r‌e‌‌d‌‌ ‌‌P‌‌‌h‌‌o‌‌t‌‌‌o‌s‌‌" [level=4] [ref=f93e455]
+                    - link [ref=f93e456] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy9jb21tZXJjaWFsJTIwcGFwZXIlMjB0b3dlbCUyMGRpc3BlbnNlciUyMHdhbGw_dXRtX3NvdXJjZT1wZXhlbHMmdXRtX21lZGl1bT1hZmZpbGlhdGUmdXRtX2NhbXBhaWduPXNwb25zb3JlZF9waG90byZ1dG1fY29udGVudD1zcnBfaW5saW5lX2xvZ28mdXRtX3Rlcm09Y29tbWVyY2lhbCUyMHBhcGVyJTIwdG93ZWwlMjBkaXNwZW5zZXIlMjB3YWxsIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiI3OTllMWM0Yi01YmMxLTRjMTktODAwMC0zM2VlZTE2OGEyYzMiLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6ImNvbW1lcmNpYWwgcGFwZXIgdG93ZWwgZGlzcGVuc2VyIHdhbGwifX0/
+                  - generic [ref=f93e460]:
+                    - link [ref=f93e461] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3NpbHZlci1tZXRhbC1wYXBlci10b3dlbC1iYXRocm9vbS1kaXNwZW5zZXItb24tYW4tZWxlZ2FudC13aGl0ZS1ncmF5LXdhbGxwYXBlci1nbTEyMTAxNzcwNTgtMzUwNDgwOTUyP3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT1jb21tZXJjaWFsJTIwcGFwZXIlMjB0b3dlbCUyMGRpc3BlbnNlciUyMHdhbGwiLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6Ijc5OWUxYzRiLTViYzEtNGMxOS04MDAwLTMzZWVlMTY4YTJjMyIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiY29tbWVyY2lhbCBwYXBlciB0b3dlbCBkaXNwZW5zZXIgd2FsbCJ9fQ/
+                    - link [ref=f93e462] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL2ZsYXQtYmFyLXN0YWlubGVzcy1nbTE5MzY1OTA2MDAtNTU2MzE0OTY4P3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT1jb21tZXJjaWFsJTIwcGFwZXIlMjB0b3dlbCUyMGRpc3BlbnNlciUyMHdhbGwiLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6Ijc5OWUxYzRiLTViYzEtNGMxOS04MDAwLTMzZWVlMTY4YTJjMyIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiY29tbWVyY2lhbCBwYXBlciB0b3dlbCBkaXNwZW5zZXIgd2FsbCJ9fQ/
+                    - link [ref=f93e463] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL2ZsYXQtYmFyLXN0YWlubGVzcy1nbTE5MzY1OTM2NDctNTU2MzE0OTcwP3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT1jb21tZXJjaWFsJTIwcGFwZXIlMjB0b3dlbCUyMGRpc3BlbnNlciUyMHdhbGwiLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6Ijc5OWUxYzRiLTViYzEtNGMxOS04MDAwLTMzZWVlMTY4YTJjMyIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiY29tbWVyY2lhbCBwYXBlciB0b3dlbCBkaXNwZW5zZXIgd2FsbCJ9fQ/
+                    - link [ref=f93e464] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL2ZsYXQtYmFyLXN0YWlubGVzcy1nbTE5MzY1OTAwMzEtNTU2MzE0OTY3P3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT1jb21tZXJjaWFsJTIwcGFwZXIlMjB0b3dlbCUyMGRpc3BlbnNlciUyMHdhbGwiLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6Ijc5OWUxYzRiLTViYzEtNGMxOS04MDAwLTMzZWVlMTY4YTJjMyIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiY29tbWVyY2lhbCBwYXBlciB0b3dlbCBkaXNwZW5zZXIgd2FsbCJ9fQ/
+                  - link [ref=f93e465] [cursor=pointer]:
+                    - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy9jb21tZXJjaWFsJTIwcGFwZXIlMjB0b3dlbCUyMGRpc3BlbnNlciUyMHdhbGw_dXRtX3NvdXJjZT1wZXhlbHMmdXRtX21lZGl1bT1hZmZpbGlhdGUmdXRtX2NhbXBhaWduPXNwb25zb3JlZF9waG90byZ1dG1fY29udGVudD1zcnBfaW5saW5lX2NvdXBvbmNvZGUmdXRtX3Rlcm09Y29tbWVyY2lhbCUyMHBhcGVyJTIwdG93ZWwlMjBkaXNwZW5zZXIlMjB3YWxsIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiI3OTllMWM0Yi01YmMxLTRjMTktODAwMC0zM2VlZTE2OGEyYzMiLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6ImNvbW1lcmNpYWwgcGFwZXIgdG93ZWwgZGlzcGVuc2VyIHdhbGwifX0/
+                    - img [ref=f93e468]:
+                      - generic [ref=f93e469]: Get 20% off with code PEXELS20 »
+                - article [ref=f93e472]:
+                  - link [ref=f93e473] [cursor=pointer]:
+                    - /url: /photo/modern-public-restroom-with-granite-countertops-39405204/
+                    - img "Free Sleek and clean modern public restroom featuring granite countertops and mirrors. Stock Photo" [ref=f93e474]
+                  - generic:
+                    - button "Edit" [ref=f93e478] [cursor=pointer]
+                    - link "Download" [ref=f93e486] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/39405204/pexels-photo-39405204.jpeg?cs=srgb&dl=pexels-branphonegraphy-39405204.jpg&fm=jpg
+                - article [ref=f93e492]:
+                  - link [ref=f93e493] [cursor=pointer]:
+                    - /url: /photo/kitchen-with-box-shelves-5490925/
+                    - img "Free Chemex and coffee kettle with books and cups placed on wooden shelves hanging on wall over sink in kitchen Stock Photo" [ref=f93e494]
+                  - generic:
+                    - button "Remove Background" [ref=f93e498] [cursor=pointer]
+                    - link "Download" [ref=f93e506] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5490925/pexels-photo-5490925.jpeg?cs=srgb&dl=pexels-rachel-claire-5490925.jpg&fm=jpg
+                - article [ref=f93e512]:
+                  - link [ref=f93e513] [cursor=pointer]:
+                    - /url: /photo/elegant-toilet-paper-holder-and-decorative-vase-38605745/
+                    - img "Free A stylish toilet paper holder with a decorative vase, blending functionality and aesthetics. Stock Photo" [ref=f93e514]
+                  - generic:
+                    - button "Add Text" [ref=f93e518] [cursor=pointer]
+                    - link "Download" [ref=f93e526] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/38605745/pexels-photo-38605745.jpeg?cs=srgb&dl=pexels-serkan-dinc-522587596-38605745.jpg&fm=jpg
+                - article [ref=f93e532]:
+                  - link [ref=f93e533] [cursor=pointer]:
+                    - /url: /photo/black-hand-soap-dispenser-in-public-restroom-34516659/
+                    - img "Free Black Ecolab hand soap dispenser mounted in a public restroom above a mirror. Stock Photo" [ref=f93e534]
+                  - generic:
+                    - button "Crop" [ref=f93e538] [cursor=pointer]
+                    - link "Download" [ref=f93e546] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/34516659/pexels-photo-34516659.jpeg?cs=srgb&dl=pexels-caleboquendo-34516659.jpg&fm=jpg
+                - article [ref=f93e552]:
+                  - link [ref=f93e553] [cursor=pointer]:
+                    - /url: /photo/a-kitchen-with-a-sink-a-counter-top-and-a-wooden-cutting-board-28080318/
+                    - img "Free A modern kitchen setup with wooden kitchenware and stylish accessories, perfect for contemporary interiors. Stock Photo" [ref=f93e554]
+                  - generic:
+                    - button "Edit" [ref=f93e558] [cursor=pointer]
+                    - link "Download" [ref=f93e566] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/28080318/pexels-photo-28080318.jpeg?cs=srgb&dl=pexels-isabeu-28080318.jpg&fm=jpg
+                - article [ref=f93e572]:
+                  - link [ref=f93e573] [cursor=pointer]:
+                    - /url: /photo/bathroom-with-a-sink-and-a-shower-8143714/
+                    - img "Free Contemporary bathroom with a glass shower and illuminated mirror. Stock Photo" [ref=f93e574]
+                  - generic:
+                    - button "Adjust Colors" [ref=f93e578] [cursor=pointer]
+                    - link "Download" [ref=f93e586] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/8143714/pexels-photo-8143714.jpeg?cs=srgb&dl=pexels-artbovich-8143714.jpg&fm=jpg
+                - article [ref=f93e592]:
+                  - link [ref=f93e593] [cursor=pointer]:
+                    - /url: /photo/contemporary-bathroom-interior-with-washbasin-and-toilet-bowl-6956845/
+                    - img "Free Modern bathroom with washstand under mirror and bidet on ceramic floor with towel on rack at home Stock Photo" [ref=f93e594]
+                  - generic:
+                    - button "Remove Background" [ref=f93e598] [cursor=pointer]
+                    - link "Download" [ref=f93e606] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/6956845/pexels-photo-6956845.jpeg?cs=srgb&dl=pexels-artbovich-6956845.jpg&fm=jpg
+                - link [ref=f93e611] [cursor=pointer]:
+                  - /url: /collections/walls-k1fo3bm/
+                  - article [ref=f93e612]:
+                    - list [ref=f93e614]:
+                      - listitem [ref=f93e615]
+                      - listitem [ref=f93e617]
+                      - listitem [ref=f93e619]
+                    - generic [ref=f93e621]:
+                      - heading "Walls" [level=4] [ref=f93e622]
+                      - paragraph [ref=f93e626]: "172"
+                - article [ref=f93e629]:
+                  - link [ref=f93e630] [cursor=pointer]:
+                    - /url: /photo/sinks-and-a-hand-dryer-in-the-public-toilet-20059730/
+                    - img "Free Clean and spacious public bathroom with sinks and hand dryer, Mexico. Stock Photo" [ref=f93e631]
+                  - generic:
+                    - button "Retouch" [ref=f93e635] [cursor=pointer]
+                    - link "Download" [ref=f93e643] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/20059730/pexels-photo-20059730.jpeg?cs=srgb&dl=pexels-unpoquitodefoto-20059730.jpg&fm=jpg
+                - article [ref=f93e649]:
+                  - link [ref=f93e650] [cursor=pointer]:
+                    - /url: /photo/photo-of-mirrors-in-bathroom-2507016/
+                    - img "Free Stylish modern bathroom interior with twin mirrors and towels arranged over sleek dark countertops. Stock Photo" [ref=f93e651]
+                  - generic:
+                    - button "Edit" [ref=f93e655] [cursor=pointer]
+                    - link "Download" [ref=f93e663] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/2507016/pexels-photo-2507016.jpeg?cs=srgb&dl=pexels-quark-studio-1159039-2507016.jpg&fm=jpg
+                - article [ref=f93e669]:
+                  - link [ref=f93e670] [cursor=pointer]:
+                    - /url: /photo/white-toilet-paper-rolls-on-brown-wooden-rack-3958179/
+                    - img "Free Elegant wooden rack displaying multiple toilet paper rolls. Ideal for bathroom essentials storage. Stock Photo" [ref=f93e671]
+                  - generic:
+                    - button "Crop" [ref=f93e675] [cursor=pointer]
+                    - link "Download" [ref=f93e683] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958179/pexels-photo-3958179.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958179.jpg&fm=jpg
+                - article [ref=f93e689]:
+                  - link [ref=f93e690] [cursor=pointer]:
+                    - /url: /photo/modern-bathroom-interior-with-illuminated-mirror-36545764/
+                    - img "Free Contemporary bathroom with wooden decor, illuminated mirror, and amenities. Stock Photo" [ref=f93e691]
+                  - generic:
+                    - button "Adjust Colors" [ref=f93e695] [cursor=pointer]
+                    - link "Download" [ref=f93e703] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/36545764/pexels-photo-36545764.jpeg?cs=srgb&dl=pexels-silas-tarus-2160155700-36545764.jpg&fm=jpg
+                - article [ref=f93e709]:
+                  - link [ref=f93e710] [cursor=pointer]:
+                    - /url: /photo/tissue-box-in-vibrant-night-setting-39071419/
+                    - img "Free A tissue box on a table with colorful bokeh lights in a night setting. Stock Photo" [ref=f93e711]
+                  - generic:
+                    - button "Remove Background" [ref=f93e715] [cursor=pointer]
+                    - link "Download" [ref=f93e723] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/39071419/pexels-photo-39071419.jpeg?cs=srgb&dl=pexels-caleboquendo-39071419.jpg&fm=jpg
+                - article [ref=f93e729]:
+                  - link [ref=f93e730] [cursor=pointer]:
+                    - /url: /photo/modern-public-restroom-with-marble-decor-34490331/
+                    - img "Free Spacious, well-lit modern public restroom with marble and beige tones, featuring multiple sinks and hand dryers. Stock Photo" [ref=f93e731]
+                  - generic:
+                    - button "Crop" [ref=f93e735] [cursor=pointer]
+                    - link "Download" [ref=f93e743] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/34490331/pexels-photo-34490331.jpeg?cs=srgb&dl=pexels-maya-ali-1763363404-34490331.jpg&fm=jpg
+                - article [ref=f93e749]:
+                  - link [ref=f93e750] [cursor=pointer]:
+                    - /url: /photo/person-pulling-paper-towel-4008507/
+                    - img "Free A bathroom sink with a golden faucet and hand reaching for a paper towel in a clean setting. Stock Photo" [ref=f93e751]
+                  - generic:
+                    - button "Crop" [ref=f93e755] [cursor=pointer]
+                    - link "Download" [ref=f93e763] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4008507/pexels-photo-4008507.jpeg?cs=srgb&dl=pexels-polina-zimmerman-4008507.jpg&fm=jpg
+                - article [ref=f93e769]:
+                  - link [ref=f93e770] [cursor=pointer]:
+                    - /url: /photo/a-cardboard-box-with-a-plant-on-top-of-it-27668284/
+                    - img "Free Wooden box on green background with Wi-Fi details and storage compartments. Stock Photo" [ref=f93e771]
+                  - generic:
+                    - button "Adjust Colors" [ref=f93e775] [cursor=pointer]
+                    - link "Download" [ref=f93e783] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/27668284/pexels-photo-27668284.jpeg?cs=srgb&dl=pexels-akemiyu-27668284.jpg&fm=jpg
+              - button "Load More" [ref=f93e788] [cursor=pointer]
+            - navigation [ref=f93e791]:
+              - generic [ref=f93e793]:
+                - link "1" [ref=f93e795]:
+                  - /url: /search/commercial%20paper%20towel%20dispenser%20wall/
+                - link "2" [ref=f93e798] [cursor=pointer]:
+                  - /url: /search/commercial%20paper%20towel%20dispenser%20wall/?page=2
+                - link "3" [ref=f93e801] [cursor=pointer]:
+                  - /url: /search/commercial%20paper%20towel%20dispenser%20wall/?page=3
+                - link "4" [ref=f93e804] [cursor=pointer]:
+                  - /url: /search/commercial%20paper%20towel%20dispenser%20wall/?page=4
+                - link "5" [ref=f93e807] [cursor=pointer]:
+                  - /url: /search/commercial%20paper%20towel%20dispenser%20wall/?page=5
+                - link "6" [ref=f93e810] [cursor=pointer]:
+                  - /url: /search/commercial%20paper%20towel%20dispenser%20wall/?page=6
+                - link "Next" [ref=f93e813] [cursor=pointer]:
+                  - /url: /search/commercial%20paper%20towel%20dispenser%20wall/?page=2
+    - contentinfo [ref=f93e817]:
+      - separator [ref=f93e818]
+      - generic [ref=f93e819]:
+        - generic [ref=f93e820]:
+          - heading "Where stories come together." [level=2] [ref=f93e821]
+          - generic [ref=f93e822]:
+            - link "iOS" [ref=f93e823] [cursor=pointer]:
+              - /url: https://itunes.apple.com/us/app/pexels/id1434330413/
+            - link "Android" [ref=f93e826] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.pexels.app
+          - list [ref=f93e829]:
+            - listitem [ref=f93e830]:
+              - link "Instagram" [ref=f93e831] [cursor=pointer]:
+                - /url: https://www.instagram.com/pexels/
+            - listitem [ref=f93e834]:
+              - link "Threads" [ref=f93e835] [cursor=pointer]:
+                - /url: https://www.threads.net/@pexels/
+            - listitem [ref=f93e838]:
+              - link "YouTube" [ref=f93e839] [cursor=pointer]:
+                - /url: https://www.youtube.com/pexelsphotos/
+            - listitem [ref=f93e842]:
+              - link "TikTok" [ref=f93e843] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@pexels/
+            - listitem [ref=f93e846]:
+              - link "LinkedIn" [ref=f93e847] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/pexels/
+            - listitem [ref=f93e850]:
+              - link "X" [ref=f93e851] [cursor=pointer]:
+                - /url: https://x.com/pexels/
+        - generic [ref=f93e854]:
+          - list [ref=f93e855]:
+            - heading "Pexels" [level=3] [ref=f93e856]
+            - listitem [ref=f93e857]:
+              - link "Free Stock Photos" [ref=f93e858] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f93e859]:
+              - link "Free Videos" [ref=f93e860] [cursor=pointer]:
+                - /url: /videos/
+            - listitem [ref=f93e861]:
+              - link "Popular searches" [ref=f93e862] [cursor=pointer]:
+                - /url: /popular-searches/
+            - listitem [ref=f93e863]:
+              - link "Collections" [ref=f93e864] [cursor=pointer]:
+                - /url: /discover/
+            - listitem [ref=f93e865]:
+              - link "Challenges" [ref=f93e866] [cursor=pointer]:
+                - /url: /challenges/
+            - listitem [ref=f93e867]:
+              - link "Leaderboard" [ref=f93e868] [cursor=pointer]:
+                - /url: /leaderboard/
+            - listitem [ref=f93e869]:
+              - link "Other plugins & apps" [ref=f93e870] [cursor=pointer]:
+                - /url: /pro/
+          - list [ref=f93e871]:
+            - heading "Company" [level=3] [ref=f93e872]
+            - listitem [ref=f93e873]:
+              - link "About" [ref=f93e874] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=f93e875]:
+              - link "Blog" [ref=f93e876] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=f93e877]:
+              - link "Help Center" [ref=f93e878] [cursor=pointer]:
+                - /url: https://help.pexels.com/hc/en-us
+            - listitem [ref=f93e879]:
+              - link "Report content" [ref=f93e880] [cursor=pointer]:
+                - /url: /report/
+            - listitem [ref=f93e881]:
+              - link "Become a Hero" [ref=f93e882] [cursor=pointer]:
+                - /url: /hero/
+            - listitem [ref=f93e883]:
+              - link "Partner with Pexels" [ref=f93e884] [cursor=pointer]:
+                - /url: /become-a-partner/
+            - listitem [ref=f93e885]:
+              - link "Image & Video API" [ref=f93e886] [cursor=pointer]:
+                - /url: /api/
+            - listitem [ref=f93e887]: Sign Up
+        - list [ref=f93e888]:
+          - listitem [ref=f93e889]:
+            - heading "Free Stock Photos" [level=3] [ref=f93e890]
+          - listitem [ref=f93e891]:
+            - generic [ref=f93e893]:
+              - link "Black and white photography" [ref=f93e895] [cursor=pointer]:
+                - /url: /search/black%20and%20white/
+              - link "Happy birthday images" [ref=f93e896] [cursor=pointer]:
+                - /url: /search/happy%20birthday/
+              - link "Free business videos" [ref=f93e897] [cursor=pointer]:
+                - /url: /search/videos/business/
+              - link "Happy new year images" [ref=f93e898] [cursor=pointer]:
+                - /url: /search/happy%20new%20year/
+              - link "Cool wallpapers" [ref=f93e899] [cursor=pointer]:
+                - /url: /search/cool%20wallpaper/
+              - link "Best HD wallpapers" [ref=f93e900] [cursor=pointer]:
+                - /url: /search/hd%20wallpaper/
+              - link "Galaxy wallpaper" [ref=f93e901] [cursor=pointer]:
+                - /url: /search/galaxy%20wallpaper/
+              - link "Lock screen wallpaper" [ref=f93e902] [cursor=pointer]:
+                - /url: /search/lock%20screen%20wallpaper/
+              - link "iPhone wallpaper" [ref=f93e903] [cursor=pointer]:
+                - /url: /search/iphone%20wallpaper/
+              - link "4K wallpaper" [ref=f93e904] [cursor=pointer]:
+                - /url: /search/4k%20wallpaper/
+              - link "Samsung wallpaper" [ref=f93e905] [cursor=pointer]:
+                - /url: /search/samsung%20wallpaper/
+              - link "Love wallpaper" [ref=f93e906] [cursor=pointer]:
+                - /url: /search/love%20wallpaper/
+              - link "Mobile wallpaper" [ref=f93e907] [cursor=pointer]:
+                - /url: /search/mobile%20wallpaper/
+      - generic [ref=f93e909]:
+        - generic [ref=f93e910]: © 2026 Pexels
+        - generic [ref=f93e912]:
+          - link "Terms of Use" [ref=f93e914] [cursor=pointer]:
+            - /url: /terms-of-service/
+          - link "Privacy Policy" [ref=f93e915] [cursor=pointer]:
+            - /url: /privacy-policy/
+          - link "License" [ref=f93e916] [cursor=pointer]:
+            - /url: /license/
+          - link "Imprint" [ref=f93e917] [cursor=pointer]:
+            - /url: /imprint/
+          - link "Cookies Policy" [ref=f93e918] [cursor=pointer]:
+            - /url: /cookies/
+          - img [ref=f93e919] [cursor=pointer]
+        - button "English" [ref=f93e923] [cursor=pointer]
+      - separator [ref=f93e928]
+  - alert [ref=f93e929]
+  - status [ref=f93e930]: "[object Object] has been selected."

@@ -1,0 +1,543 @@
+- generic [active] [ref=f123e1]:
+  - generic [ref=f123e3]:
+    - navigation [ref=f123e6]:
+      - link [ref=f123e8] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f123e12]:
+        - button [ref=f123e13] [cursor=pointer]
+        - button "Join" [ref=f123e17] [cursor=pointer]
+        - button [ref=f123e20] [cursor=pointer]
+    - main [ref=f123e25]:
+      - generic [ref=f123e26]:
+        - generic [ref=f123e30]:
+          - paragraph [ref=f123e32] [cursor=pointer]: Any
+          - paragraph [ref=f123e37] [cursor=pointer]: Horizontal
+          - paragraph [ref=f123e42] [cursor=pointer]: Vertical
+          - paragraph [ref=f123e47] [cursor=pointer]: Square
+        - generic [ref=f123e51]:
+          - paragraph [ref=f123e53] [cursor=pointer]: Any
+          - paragraph [ref=f123e55] [cursor=pointer]: "0"
+          - paragraph [ref=f123e60] [cursor=pointer]: "1"
+          - paragraph [ref=f123e65] [cursor=pointer]: "2"
+          - paragraph [ref=f123e70] [cursor=pointer]: 3+
+        - generic [ref=f123e74]:
+          - paragraph [ref=f123e76] [cursor=pointer]: Any
+          - paragraph [ref=f123e81] [cursor=pointer]: Baby
+          - paragraph [ref=f123e86] [cursor=pointer]: Child
+          - paragraph [ref=f123e91] [cursor=pointer]: Teenager
+          - paragraph [ref=f123e96] [cursor=pointer]: Adult
+          - paragraph [ref=f123e101] [cursor=pointer]: Senior adult
+        - generic [ref=f123e104]:
+          - generic [ref=f123e105]:
+            - generic [ref=f123e106] [cursor=pointer]
+            - slider [ref=f123e108] [cursor=pointer]
+            - slider [ref=f123e109] [cursor=pointer]
+          - generic [ref=f123e110]:
+            - generic [ref=f123e111]:
+              - paragraph [ref=f123e112]: Minimum
+              - paragraph [ref=f123e113]: 1,080px
+            - generic [ref=f123e114]:
+              - paragraph [ref=f123e115]: Maximum
+              - paragraph [ref=f123e116]: 20,000px+
+        - generic [ref=f123e119]:
+          - generic [ref=f123e120]:
+            - generic [ref=f123e121] [cursor=pointer]
+            - slider [ref=f123e123] [cursor=pointer]
+            - slider [ref=f123e124] [cursor=pointer]
+          - generic [ref=f123e125]:
+            - generic [ref=f123e126]:
+              - paragraph [ref=f123e127]: Minimum
+              - paragraph [ref=f123e128]: 1,080px
+            - generic [ref=f123e129]:
+              - paragraph [ref=f123e130]: Maximum
+              - paragraph [ref=f123e131]: 20,000px+
+        - generic [ref=f123e135]:
+          - button [ref=f123e136] [cursor=pointer]:
+            - textbox [ref=f123e142]:
+              - /placeholder: Enter hex code
+          - button [ref=f123e145] [cursor=pointer]:
+            - textbox [ref=f123e151]: "#000000"
+        - generic [ref=f123e155]:
+          - paragraph [ref=f123e157] [cursor=pointer]: Any
+          - paragraph [ref=f123e162] [cursor=pointer]: Last 24 hours
+          - paragraph [ref=f123e167] [cursor=pointer]: Last week
+          - paragraph [ref=f123e172] [cursor=pointer]: Last month
+          - paragraph [ref=f123e177] [cursor=pointer]: Last year
+        - main "main-content" [ref=f123e178]:
+          - generic [ref=f123e179]:
+            - generic [ref=f123e180]:
+              - heading "Choose your language:" [level=5] [ref=f123e181]
+              - generic [ref=f123e183]:
+                - link "English English" [ref=f123e185] [cursor=pointer]:
+                  - /url: /search/white%20paper%20napkins%20stack/
+                  - generic [ref=f123e186]:
+                    - img "English" [ref=f123e187]
+                    - generic [ref=f123e188]: English
+                - link "Español Español" [ref=f123e189] [cursor=pointer]:
+                  - /url: /es-es/buscar/white%20paper%20napkins%20stack/
+                  - generic [ref=f123e190]:
+                    - img "Español" [ref=f123e191]
+                    - generic [ref=f123e192]: Español
+                - button [ref=f123e193] [cursor=pointer]
+            - heading "Free White Paper Napkins Stack Photos" [level=1] [ref=f123e200]
+            - generic [ref=f123e203]:
+              - link "Photos 759.9K" [ref=f123e205] [cursor=pointer]:
+                - /url: /search/white%20paper%20napkins%20stack/
+                - text: Photos
+                - generic [ref=f123e206]: 759.9K
+              - link "Videos 80.9K" [ref=f123e207] [cursor=pointer]:
+                - /url: /search/videos/white%20paper%20napkins%20stack/
+                - text: Videos
+                - generic [ref=f123e208]: 80.9K
+              - link "Users 18.9K" [ref=f123e209] [cursor=pointer]:
+                - /url: /search/users/white%20paper%20napkins%20stack/
+                - text: Users
+                - generic [ref=f123e210]: 18.9K
+              - img [ref=f123e211] [cursor=pointer]
+            - generic [ref=f123e214]:
+              - button "Filters" [ref=f123e216] [cursor=pointer]
+              - generic [ref=f123e226]:
+                - link [ref=f123e228] [cursor=pointer]:
+                  - /url: /search/stack%20of%20books/
+                  - img "stack of books" [ref=f123e229]
+                  - generic [ref=f123e230]:
+                    - paragraph [ref=f123e231]: stack of books
+                    - paragraph [ref=f123e232]: 5K
+                - link [ref=f123e233] [cursor=pointer]:
+                  - /url: /search/toilet%20paper/
+                  - img "toilet paper" [ref=f123e234]
+                  - generic [ref=f123e235]:
+                    - paragraph [ref=f123e236]: toilet paper
+                    - paragraph [ref=f123e237]: 5K
+                - link [ref=f123e238] [cursor=pointer]:
+                  - /url: /search/white%20paper/
+                  - img "white paper" [ref=f123e239]
+                  - generic [ref=f123e240]:
+                    - paragraph [ref=f123e241]: white paper
+                    - paragraph [ref=f123e242]: 739K
+                - link [ref=f123e243] [cursor=pointer]:
+                  - /url: /search/paper%20texture/
+                  - img "paper texture" [ref=f123e244]
+                  - generic [ref=f123e245]:
+                    - paragraph [ref=f123e246]: paper texture
+                    - paragraph [ref=f123e247]: 478K
+                - link [ref=f123e248] [cursor=pointer]:
+                  - /url: /search/tissue/
+                  - img "tissue" [ref=f123e249]
+                  - generic [ref=f123e250]:
+                    - paragraph [ref=f123e251]: tissue
+                    - paragraph [ref=f123e252]: 5K
+                - link [ref=f123e253] [cursor=pointer]:
+                  - /url: /search/newspapers/
+                  - img "newspapers" [ref=f123e254]
+                  - generic [ref=f123e255]:
+                    - paragraph [ref=f123e256]: newspapers
+                    - paragraph [ref=f123e257]: 5K
+                - link [ref=f123e258] [cursor=pointer]:
+                  - /url: /search/crumpled%20paper/
+                  - img "crumpled paper" [ref=f123e259]
+                  - generic [ref=f123e260]:
+                    - paragraph [ref=f123e261]: crumpled paper
+                    - paragraph [ref=f123e262]: 49K
+                - link [ref=f123e263] [cursor=pointer]:
+                  - /url: /search/old%20paper/
+                  - img "old paper" [ref=f123e264]
+                  - generic [ref=f123e265]:
+                    - paragraph [ref=f123e266]: old paper
+                    - paragraph [ref=f123e267]: 273K
+                - link [ref=f123e268] [cursor=pointer]:
+                  - /url: /search/old%20paper%20texture/
+                  - img "old paper texture" [ref=f123e269]
+                  - generic [ref=f123e270]:
+                    - paragraph [ref=f123e271]: old paper texture
+                    - paragraph [ref=f123e272]: 680K
+                - link [ref=f123e273] [cursor=pointer]:
+                  - /url: /search/white%20texture/
+                  - img "white texture" [ref=f123e274]
+                  - generic [ref=f123e275]:
+                    - paragraph [ref=f123e276]: white texture
+                    - paragraph [ref=f123e277]: 1M
+            - generic [ref=f123e279]:
+              - generic [ref=f123e282]:
+                - article [ref=f123e285]:
+                  - link [ref=f123e286] [cursor=pointer]:
+                    - /url: /photo/red-and-white-paper-plates-and-red-napkins-on-a-dining-table-9147812/
+                    - img "Free Stylish red and white tableware setup ideal for festive celebrations and parties. Stock Photo" [ref=f123e287]
+                  - generic:
+                    - button "Retouch" [ref=f123e291] [cursor=pointer]
+                    - link "Download" [ref=f123e299] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/9147812/pexels-photo-9147812.jpeg?cs=srgb&dl=pexels-mikhail-nilov-9147812.jpg&fm=jpg
+                - article [ref=f123e305]:
+                  - link [ref=f123e306] [cursor=pointer]:
+                    - /url: /photo/retirement-event-supplies-with-humorous-napkins-38993321/
+                    - img "Free Colorful paper plates and humorous retirement-themed napkins on display. Stock Photo" [ref=f123e307]
+                  - generic:
+                    - button "Add Text" [ref=f123e311] [cursor=pointer]
+                    - link "Download" [ref=f123e319] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/38993321/pexels-photo-38993321.jpeg?cs=srgb&dl=pexels-caleboquendo-38993321.jpg&fm=jpg
+                - generic [ref=f123e324]:
+                  - generic [ref=f123e326]:
+                    - link [ref=f123e327] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20white%20paper%20napkins%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own white paper napkins stack content with Canva" [ref=f123e328]
+                    - link [ref=f123e329] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20white%20paper%20napkins%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own white paper napkins stack content with Canva" [ref=f123e330]
+                    - link [ref=f123e331] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20white%20paper%20napkins%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own white paper napkins stack content with Canva" [ref=f123e332]
+                    - link [ref=f123e333] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20white%20paper%20napkins%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own white paper napkins stack content with Canva" [ref=f123e334]
+                  - link [ref=f123e335] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20white%20paper%20napkins%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                    - paragraph [ref=f123e338]: Bring your ideas to life with Canva AI
+                  - link "Get started for free" [ref=f123e339] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20white%20paper%20napkins%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                - article [ref=f123e344]:
+                  - link [ref=f123e345] [cursor=pointer]:
+                    - /url: /photo/photo-of-stacked-clear-papers-4038653/
+                    - img "Free Stack of white paper on textured fabric surface, perfect for minimalistic designs. Stock Photo" [ref=f123e346]
+                  - generic:
+                    - button "Add Text" [ref=f123e350] [cursor=pointer]
+                    - link "Download" [ref=f123e358] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4038653/pexels-photo-4038653.jpeg?cs=srgb&dl=pexels-karola-g-4038653.jpg&fm=jpg
+                - article [ref=f123e364]:
+                  - link [ref=f123e365] [cursor=pointer]:
+                    - /url: /photo/grayscale-photo-of-stacked-papers-9850121/
+                    - img "Free Stack of papers in black and white, highlighting texture and minimalism. Stock Photo" [ref=f123e366]
+                  - generic:
+                    - button "Add Text" [ref=f123e370] [cursor=pointer]
+                    - link "Download" [ref=f123e378] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/9850121/pexels-photo-9850121.jpeg?cs=srgb&dl=pexels-kasia-sikorska-53796158-9850121.jpg&fm=jpg
+                - article [ref=f123e384]:
+                  - link [ref=f123e385] [cursor=pointer]:
+                    - /url: /photo/photo-of-stacked-clear-papers-4038659/
+                    - img "Free Stack of blank white cards on a textured tablecloth with tomatoes in the background. Stock Photo" [ref=f123e386]
+                  - generic:
+                    - button "Add Text" [ref=f123e390] [cursor=pointer]
+                    - link "Download" [ref=f123e398] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4038659/pexels-photo-4038659.jpeg?cs=srgb&dl=pexels-karola-g-4038659.jpg&fm=jpg
+                - article [ref=f123e404]:
+                  - link [ref=f123e405] [cursor=pointer]:
+                    - /url: /photo/photo-of-clear-stacked-papers-4038614/
+                    - img "Free A simple stack of papers on beige fabric with tulips, ideal for stationery displays. Stock Photo" [ref=f123e406]
+                  - generic:
+                    - button "Retouch" [ref=f123e410] [cursor=pointer]
+                    - link "Download" [ref=f123e418] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4038614/pexels-photo-4038614.jpeg?cs=srgb&dl=pexels-karola-g-4038614.jpg&fm=jpg
+                - article [ref=f123e424]:
+                  - link [ref=f123e425] [cursor=pointer]:
+                    - /url: /photo/photo-of-flower-near-clear-paper-4038656/
+                    - img "Free Close-up of purple tulips alongside blank cards on textured linen fabric. Stock Photo" [ref=f123e426]
+                  - generic:
+                    - button "Retouch" [ref=f123e430] [cursor=pointer]
+                    - link "Download" [ref=f123e438] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4038656/pexels-photo-4038656.jpeg?cs=srgb&dl=pexels-karola-g-4038656.jpg&fm=jpg
+                - article [ref=f123e444]:
+                  - link [ref=f123e445] [cursor=pointer]:
+                    - /url: /photo/close-up-photo-of-stacked-clear-papers-4038663/
+                    - img "Free Stack of blank white cards on linen cloth with red tomatoes in background. Stock Photo" [ref=f123e446]
+                  - generic:
+                    - button "Crop" [ref=f123e450] [cursor=pointer]
+                    - link "Download" [ref=f123e458] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4038663/pexels-photo-4038663.jpeg?cs=srgb&dl=pexels-karola-g-4038663.jpg&fm=jpg
+                - article [ref=f123e464]:
+                  - link [ref=f123e465] [cursor=pointer]:
+                    - /url: /photo/photo-of-clear-papers-beside-flowers-4038627/
+                    - img "Free Elegant white tulips with purple streaks beside a stack of blank white papers on a textured surface. Stock Photo" [ref=f123e466]
+                  - generic:
+                    - button "Crop" [ref=f123e470] [cursor=pointer]
+                    - link "Download" [ref=f123e478] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4038627/pexels-photo-4038627.jpeg?cs=srgb&dl=pexels-karola-g-4038627.jpg&fm=jpg
+                - generic [ref=f123e483]:
+                  - generic [ref=f123e484]:
+                    - heading "‌‌‌S‌‌p‌‌o‌‌n‌s‌‌o‌r‌‌e‌d‌‌‌ ‌P‌‌h‌o‌‌‌t‌‌‌o‌s‌‌" [level=4] [ref=f123e485]
+                    - link [ref=f123e486] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy93aGl0ZSUyMHBhcGVyJTIwbmFwa2lucyUyMHN0YWNrP3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9sb2dvJnV0bV90ZXJtPXdoaXRlJTIwcGFwZXIlMjBuYXBraW5zJTIwc3RhY2siLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6ImEyYzE1NzY3LWNlOTgtNGMxYi1iMmY5LWJmNTkyZTZiNDM4MSIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5Ijoid2hpdGUgcGFwZXIgbmFwa2lucyBzdGFjayJ9fQ/
+                  - generic [ref=f123e490]:
+                    - link [ref=f123e491] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3doaXRlLXBhcGVyLW5hcGtpbnMtZ20xNjkxNzA0Mzg0LTUzNzYyMTk5OD91dG1fc291cmNlPXBleGVscyZ1dG1fbWVkaXVtPWFmZmlsaWF0ZSZ1dG1fY2FtcGFpZ249c3BvbnNvcmVkX3Bob3RvJnV0bV9jb250ZW50PXNycF9pbmxpbmVfbWVkaWEmdXRtX3Rlcm09d2hpdGUlMjBwYXBlciUyMG5hcGtpbnMlMjBzdGFjayIsImRhdGEiOnsiZXhwZXJpbWVudHMiOnt9LCJwYWdlX2xvY2FsZSI6ImVuLVVTIiwibG9jYXRpb24iOiJncmlkIiwiYWRfcGFydG5lciI6ImdldHR5IiwiYWRfZm9ybWF0IjoiaW5saW5lIiwiYWRfcGxhY2VtZW50IjoiMTAiLCJhZF9jcmVhdGl2ZSI6InBob3RvX3NlYXJjaF80IiwiYWRfYWN0aW9uIjoiY2xpY2siLCJhZF9pbXByZXNzaW9uX2lkIjoiYTJjMTU3NjctY2U5OC00YzFiLWIyZjktYmY1OTJlNmI0MzgxIiwibWVkaWFfdHlwZSI6InBob3RvIiwicXVlcnkiOiJ3aGl0ZSBwYXBlciBuYXBraW5zIHN0YWNrIn19/
+                    - link [ref=f123e492] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL2lzb2xhdGVkLXNob3Qtb2Ytc3RhY2tlZC13aGl0ZS1wYXBlci1uYXBraW5zLW9uLXdoaXRlLWJhY2tncm91bmQtZ20xNzU1NDEwMTYtMjEzODgwMTc_dXRtX3NvdXJjZT1wZXhlbHMmdXRtX21lZGl1bT1hZmZpbGlhdGUmdXRtX2NhbXBhaWduPXNwb25zb3JlZF9waG90byZ1dG1fY29udGVudD1zcnBfaW5saW5lX21lZGlhJnV0bV90ZXJtPXdoaXRlJTIwcGFwZXIlMjBuYXBraW5zJTIwc3RhY2siLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6ImEyYzE1NzY3LWNlOTgtNGMxYi1iMmY5LWJmNTkyZTZiNDM4MSIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5Ijoid2hpdGUgcGFwZXIgbmFwa2lucyBzdGFjayJ9fQ/
+                    - link [ref=f123e493] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3doaXRlLXBhcGVyLW5hcGtpbnMtZ200ODI2MjkxMDgtNzAxODE5MzE_dXRtX3NvdXJjZT1wZXhlbHMmdXRtX21lZGl1bT1hZmZpbGlhdGUmdXRtX2NhbXBhaWduPXNwb25zb3JlZF9waG90byZ1dG1fY29udGVudD1zcnBfaW5saW5lX21lZGlhJnV0bV90ZXJtPXdoaXRlJTIwcGFwZXIlMjBuYXBraW5zJTIwc3RhY2siLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6ImEyYzE1NzY3LWNlOTgtNGMxYi1iMmY5LWJmNTkyZTZiNDM4MSIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5Ijoid2hpdGUgcGFwZXIgbmFwa2lucyBzdGFjayJ9fQ/
+                    - link [ref=f123e494] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL2Vjby1mcmllbmRseS1kaXNwb3NhYmxlLXBhcGVyLW5hcGtpbi1nbTExMzU5Mjk0NzEtMzAyMzYxODMwP3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT13aGl0ZSUyMHBhcGVyJTIwbmFwa2lucyUyMHN0YWNrIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiJhMmMxNTc2Ny1jZTk4LTRjMWItYjJmOS1iZjU5MmU2YjQzODEiLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6IndoaXRlIHBhcGVyIG5hcGtpbnMgc3RhY2sifX0/
+                  - link [ref=f123e495] [cursor=pointer]:
+                    - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy93aGl0ZSUyMHBhcGVyJTIwbmFwa2lucyUyMHN0YWNrP3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9jb3Vwb25jb2RlJnV0bV90ZXJtPXdoaXRlJTIwcGFwZXIlMjBuYXBraW5zJTIwc3RhY2siLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6ImEyYzE1NzY3LWNlOTgtNGMxYi1iMmY5LWJmNTkyZTZiNDM4MSIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5Ijoid2hpdGUgcGFwZXIgbmFwa2lucyBzdGFjayJ9fQ/
+                    - img [ref=f123e498]:
+                      - generic [ref=f123e499]: Get 20% off with code PEXELS20 »
+                - article [ref=f123e502]:
+                  - link [ref=f123e503] [cursor=pointer]:
+                    - /url: /photo/close-up-shot-of-a-paper-with-message-13789907/
+                    - img "Free Close-up view of a white napkin labeled 'Good For You' in a modern setting. Stock Photo" [ref=f123e504]
+                  - generic:
+                    - button "Add Text" [ref=f123e508] [cursor=pointer]
+                    - link "Download" [ref=f123e516] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/13789907/pexels-photo-13789907.jpeg?cs=srgb&dl=pexels-mlkbnl-13789907.jpg&fm=jpg
+                - article [ref=f123e522]:
+                  - link [ref=f123e523] [cursor=pointer]:
+                    - /url: /photo/stack-of-paper-files-14935583/
+                    - img "Free Close-up of neatly stacked white paper sheets, perfect for stationery, art, or printing. Stock Photo" [ref=f123e524]
+                  - generic:
+                    - button "Add Text" [ref=f123e528] [cursor=pointer]
+                    - link "Download" [ref=f123e536] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/14935583/pexels-photo-14935583.jpeg?cs=srgb&dl=pexels-eugenia-remark-5767088-14935583.jpg&fm=jpg
+                - article [ref=f123e542]:
+                  - link [ref=f123e543] [cursor=pointer]:
+                    - /url: /photo/photo-of-flowers-near-clear-papers-4038647/
+                    - img "Free Elegant white tulips and a stack of papers on a textured linen surface. Stock Photo" [ref=f123e544]
+                  - generic:
+                    - button "Add Text" [ref=f123e548] [cursor=pointer]
+                    - link "Download" [ref=f123e556] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4038647/pexels-photo-4038647.jpeg?cs=srgb&dl=pexels-karola-g-4038647.jpg&fm=jpg
+                - article [ref=f123e562]:
+                  - link [ref=f123e563] [cursor=pointer]:
+                    - /url: /photo/corner-of-paper-stack-20062955/
+                    - img "Free Artistic close-up of stacked white paper sheets creating geometric shadows and patterns in soft light. Stock Photo" [ref=f123e564]
+                  - generic:
+                    - button "Add Text" [ref=f123e568] [cursor=pointer]
+                    - link "Download" [ref=f123e576] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/20062955/pexels-photo-20062955.jpeg?cs=srgb&dl=pexels-michaela-st-3448542-20062955.jpg&fm=jpg
+                - article [ref=f123e582]:
+                  - link [ref=f123e583] [cursor=pointer]:
+                    - /url: /photo/basket-full-of-toilet-paper-3958206/
+                    - img "Free A cozy and organized display of toilet paper rolls neatly stacked in a woven basket. Stock Photo" [ref=f123e584]
+                  - generic:
+                    - button "Edit" [ref=f123e588] [cursor=pointer]
+                    - link "Download" [ref=f123e596] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958206/pexels-photo-3958206.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958206.jpg&fm=jpg
+                - article [ref=f123e602]:
+                  - link [ref=f123e603] [cursor=pointer]:
+                    - /url: /photo/white-tissue-paper-roll-on-white-wicker-basket-3958207/
+                    - img "Free Stack of toilet paper rolls in a woven basket on a wooden floor in a bathroom. Stock Photo" [ref=f123e604]
+                  - generic:
+                    - button "Remove Background" [ref=f123e608] [cursor=pointer]
+                    - link "Download" [ref=f123e616] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958207/pexels-photo-3958207.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958207.jpg&fm=jpg
+                - article [ref=f123e622]:
+                  - link [ref=f123e623] [cursor=pointer]:
+                    - /url: /photo/napkin-on-empty-plate-12265164/
+                    - img "Free A close-up of an empty plate with a crumpled napkin and fork, creating a post-meal scene. Stock Photo" [ref=f123e624]
+                  - generic:
+                    - button "Edit" [ref=f123e628] [cursor=pointer]
+                    - link "Download" [ref=f123e636] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/12265164/pexels-photo-12265164.jpeg?cs=srgb&dl=pexels-alexeydemidov-12265164.jpg&fm=jpg
+                - link [ref=f123e641] [cursor=pointer]:
+                  - /url: /collections/papers-axnaz1u/
+                  - article [ref=f123e642]:
+                    - list [ref=f123e644]:
+                      - listitem [ref=f123e645]
+                      - listitem [ref=f123e647]
+                      - listitem [ref=f123e649]
+                    - generic [ref=f123e651]:
+                      - heading "Papers" [level=4] [ref=f123e652]
+                      - paragraph [ref=f123e656]: "63"
+                - article [ref=f123e659]:
+                  - link [ref=f123e660] [cursor=pointer]:
+                    - /url: /photo/photo-of-clear-stacked-paper-4038626/
+                    - img "Free A stack of white papers on textured fabric next to elegant white tulips in warm sunlight. Stock Photo" [ref=f123e661]
+                  - generic:
+                    - button "Retouch" [ref=f123e665] [cursor=pointer]
+                    - link "Download" [ref=f123e673] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4038626/pexels-photo-4038626.jpeg?cs=srgb&dl=pexels-karola-g-4038626.jpg&fm=jpg
+                - article [ref=f123e679]:
+                  - link [ref=f123e680] [cursor=pointer]:
+                    - /url: /photo/stack-of-white-bowls-19141652/
+                    - img "Free Stacks of white ceramic coffee cups arranged outdoors with saucers and napkins. Stock Photo" [ref=f123e681]
+                  - generic:
+                    - button "Retouch" [ref=f123e685] [cursor=pointer]
+                    - link "Download" [ref=f123e693] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/19141652/pexels-photo-19141652.jpeg?cs=srgb&dl=pexels-miami302-19141652.jpg&fm=jpg
+                - article [ref=f123e699]:
+                  - link [ref=f123e700] [cursor=pointer]:
+                    - /url: /photo/folded-newspapers-5505690/
+                    - img "Free Close-up of stacked newspapers on a table, representing media and journalism. Stock Photo" [ref=f123e701]
+                  - generic:
+                    - button "Edit" [ref=f123e705] [cursor=pointer]
+                    - link "Download" [ref=f123e713] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5505690/pexels-photo-5505690.jpeg?cs=srgb&dl=pexels-mike-van-schoonderwalt-1884800-5505690.jpg&fm=jpg
+                - article [ref=f123e719]:
+                  - link [ref=f123e720] [cursor=pointer]:
+                    - /url: /photo/close-up-shot-of-a-blank-card-8066710/
+                    - img "Free A stack of blank white square cards perfect for design mockups and presentations. Stock Photo" [ref=f123e721]
+                  - generic:
+                    - button "Adjust Colors" [ref=f123e725] [cursor=pointer]
+                    - link "Download" [ref=f123e733] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/8066710/pexels-photo-8066710.png?cs=srgb&dl=pexels-mediamodifier-61455177-8066710.jpg&fm=jpg
+                - article [ref=f123e739]:
+                  - link [ref=f123e740] [cursor=pointer]:
+                    - /url: /photo/photo-of-flower-near-clear-papers-4038652/
+                    - img "Free Delicate purple and white tulips beside a stack of blank cards on soft linen fabric. Stock Photo" [ref=f123e741]
+                  - generic:
+                    - button "Adjust Colors" [ref=f123e745] [cursor=pointer]
+                    - link "Download" [ref=f123e753] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4038652/pexels-photo-4038652.jpeg?cs=srgb&dl=pexels-karola-g-4038652.jpg&fm=jpg
+                - article [ref=f123e759]:
+                  - link [ref=f123e760] [cursor=pointer]:
+                    - /url: /photo/photo-of-clear-papers-near-tomatoes-4038662/
+                    - img "Free Stack of blank cards on linen cloth surrounded by fresh cherry tomatoes, offering natural texture and color contrast. Stock Photo" [ref=f123e761]
+                  - generic:
+                    - button "Retouch" [ref=f123e765] [cursor=pointer]
+                    - link "Download" [ref=f123e773] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4038662/pexels-photo-4038662.jpeg?cs=srgb&dl=pexels-karola-g-4038662.jpg&fm=jpg
+                - article [ref=f123e779]:
+                  - link [ref=f123e780] [cursor=pointer]:
+                    - /url: /photo/white-paper-on-pink-surface-5594287/
+                    - img "Free A stack of white papers on a pink background, perfect for business or creative projects. Stock Photo" [ref=f123e781]
+                  - generic:
+                    - button "Remove Background" [ref=f123e785] [cursor=pointer]
+                    - link "Download" [ref=f123e793] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5594287/pexels-photo-5594287.jpeg?cs=srgb&dl=pexels-content-prod-co-5594287.jpg&fm=jpg
+                - article [ref=f123e799]:
+                  - link [ref=f123e800] [cursor=pointer]:
+                    - /url: /photo/photo-of-clear-papers-beside-paper-clips-4038624/
+                    - img "Free Flat lay of white and pink tulips, blank papers, and gold paper clips on linen. Stock Photo" [ref=f123e801]
+                  - generic:
+                    - button "Edit" [ref=f123e805] [cursor=pointer]
+                    - link "Download" [ref=f123e813] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4038624/pexels-photo-4038624.jpeg?cs=srgb&dl=pexels-karola-g-4038624.jpg&fm=jpg
+              - button "Load More" [ref=f123e818] [cursor=pointer]
+            - navigation [ref=f123e821]:
+              - generic [ref=f123e823]:
+                - link "1" [ref=f123e825]:
+                  - /url: /search/white%20paper%20napkins%20stack/
+                - link "2" [ref=f123e828] [cursor=pointer]:
+                  - /url: /search/white%20paper%20napkins%20stack/?page=2
+                - link "3" [ref=f123e831] [cursor=pointer]:
+                  - /url: /search/white%20paper%20napkins%20stack/?page=3
+                - link "4" [ref=f123e834] [cursor=pointer]:
+                  - /url: /search/white%20paper%20napkins%20stack/?page=4
+                - link "5" [ref=f123e837] [cursor=pointer]:
+                  - /url: /search/white%20paper%20napkins%20stack/?page=5
+                - link "6" [ref=f123e840] [cursor=pointer]:
+                  - /url: /search/white%20paper%20napkins%20stack/?page=6
+                - link "Next" [ref=f123e843] [cursor=pointer]:
+                  - /url: /search/white%20paper%20napkins%20stack/?page=2
+    - contentinfo [ref=f123e847]:
+      - separator [ref=f123e848]
+      - generic [ref=f123e849]:
+        - generic [ref=f123e850]:
+          - heading "Where stories come together." [level=2] [ref=f123e851]
+          - generic [ref=f123e852]:
+            - link "iOS" [ref=f123e853] [cursor=pointer]:
+              - /url: https://itunes.apple.com/us/app/pexels/id1434330413/
+            - link "Android" [ref=f123e856] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.pexels.app
+          - list [ref=f123e859]:
+            - listitem [ref=f123e860]:
+              - link "Instagram" [ref=f123e861] [cursor=pointer]:
+                - /url: https://www.instagram.com/pexels/
+            - listitem [ref=f123e864]:
+              - link "Threads" [ref=f123e865] [cursor=pointer]:
+                - /url: https://www.threads.net/@pexels/
+            - listitem [ref=f123e868]:
+              - link "YouTube" [ref=f123e869] [cursor=pointer]:
+                - /url: https://www.youtube.com/pexelsphotos/
+            - listitem [ref=f123e872]:
+              - link "TikTok" [ref=f123e873] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@pexels/
+            - listitem [ref=f123e876]:
+              - link "LinkedIn" [ref=f123e877] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/pexels/
+            - listitem [ref=f123e880]:
+              - link "X" [ref=f123e881] [cursor=pointer]:
+                - /url: https://x.com/pexels/
+        - generic [ref=f123e884]:
+          - list [ref=f123e885]:
+            - heading "Pexels" [level=3] [ref=f123e886]
+            - listitem [ref=f123e887]:
+              - link "Free Stock Photos" [ref=f123e888] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f123e889]:
+              - link "Free Videos" [ref=f123e890] [cursor=pointer]:
+                - /url: /videos/
+            - listitem [ref=f123e891]:
+              - link "Popular searches" [ref=f123e892] [cursor=pointer]:
+                - /url: /popular-searches/
+            - listitem [ref=f123e893]:
+              - link "Collections" [ref=f123e894] [cursor=pointer]:
+                - /url: /discover/
+            - listitem [ref=f123e895]:
+              - link "Challenges" [ref=f123e896] [cursor=pointer]:
+                - /url: /challenges/
+            - listitem [ref=f123e897]:
+              - link "Leaderboard" [ref=f123e898] [cursor=pointer]:
+                - /url: /leaderboard/
+            - listitem [ref=f123e899]:
+              - link "Other plugins & apps" [ref=f123e900] [cursor=pointer]:
+                - /url: /pro/
+          - list [ref=f123e901]:
+            - heading "Company" [level=3] [ref=f123e902]
+            - listitem [ref=f123e903]:
+              - link "About" [ref=f123e904] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=f123e905]:
+              - link "Blog" [ref=f123e906] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=f123e907]:
+              - link "Help Center" [ref=f123e908] [cursor=pointer]:
+                - /url: https://help.pexels.com/hc/en-us
+            - listitem [ref=f123e909]:
+              - link "Report content" [ref=f123e910] [cursor=pointer]:
+                - /url: /report/
+            - listitem [ref=f123e911]:
+              - link "Become a Hero" [ref=f123e912] [cursor=pointer]:
+                - /url: /hero/
+            - listitem [ref=f123e913]:
+              - link "Partner with Pexels" [ref=f123e914] [cursor=pointer]:
+                - /url: /become-a-partner/
+            - listitem [ref=f123e915]:
+              - link "Image & Video API" [ref=f123e916] [cursor=pointer]:
+                - /url: /api/
+            - listitem [ref=f123e917]: Sign Up
+        - list [ref=f123e918]:
+          - listitem [ref=f123e919]:
+            - heading "Free Stock Photos" [level=3] [ref=f123e920]
+          - listitem [ref=f123e921]:
+            - generic [ref=f123e923]:
+              - link "Black and white photography" [ref=f123e925] [cursor=pointer]:
+                - /url: /search/black%20and%20white/
+              - link "Happy birthday images" [ref=f123e926] [cursor=pointer]:
+                - /url: /search/happy%20birthday/
+              - link "Free business videos" [ref=f123e927] [cursor=pointer]:
+                - /url: /search/videos/business/
+              - link "Happy new year images" [ref=f123e928] [cursor=pointer]:
+                - /url: /search/happy%20new%20year/
+              - link "Cool wallpapers" [ref=f123e929] [cursor=pointer]:
+                - /url: /search/cool%20wallpaper/
+              - link "Best HD wallpapers" [ref=f123e930] [cursor=pointer]:
+                - /url: /search/hd%20wallpaper/
+              - link "Galaxy wallpaper" [ref=f123e931] [cursor=pointer]:
+                - /url: /search/galaxy%20wallpaper/
+              - link "Lock screen wallpaper" [ref=f123e932] [cursor=pointer]:
+                - /url: /search/lock%20screen%20wallpaper/
+              - link "iPhone wallpaper" [ref=f123e933] [cursor=pointer]:
+                - /url: /search/iphone%20wallpaper/
+              - link "4K wallpaper" [ref=f123e934] [cursor=pointer]:
+                - /url: /search/4k%20wallpaper/
+              - link "Samsung wallpaper" [ref=f123e935] [cursor=pointer]:
+                - /url: /search/samsung%20wallpaper/
+              - link "Love wallpaper" [ref=f123e936] [cursor=pointer]:
+                - /url: /search/love%20wallpaper/
+              - link "Mobile wallpaper" [ref=f123e937] [cursor=pointer]:
+                - /url: /search/mobile%20wallpaper/
+      - generic [ref=f123e939]:
+        - generic [ref=f123e940]: © 2026 Pexels
+        - generic [ref=f123e942]:
+          - link "Terms of Use" [ref=f123e944] [cursor=pointer]:
+            - /url: /terms-of-service/
+          - link "Privacy Policy" [ref=f123e945] [cursor=pointer]:
+            - /url: /privacy-policy/
+          - link "License" [ref=f123e946] [cursor=pointer]:
+            - /url: /license/
+          - link "Imprint" [ref=f123e947] [cursor=pointer]:
+            - /url: /imprint/
+          - link "Cookies Policy" [ref=f123e948] [cursor=pointer]:
+            - /url: /cookies/
+          - img [ref=f123e949] [cursor=pointer]
+        - button "English" [ref=f123e953] [cursor=pointer]
+      - separator [ref=f123e958]
+  - alert [ref=f123e959]
+  - status [ref=f123e960]: "[object Object] has been selected."

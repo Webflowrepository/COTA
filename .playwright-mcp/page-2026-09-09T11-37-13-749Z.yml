@@ -1,0 +1,519 @@
+- generic [active] [ref=f146e1]:
+  - generic [ref=f146e3]:
+    - navigation [ref=f146e6]:
+      - link [ref=f146e8] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f146e12]:
+        - button [ref=f146e13] [cursor=pointer]
+        - button "Join" [ref=f146e17] [cursor=pointer]
+        - button [ref=f146e20] [cursor=pointer]
+    - main [ref=f146e25]:
+      - generic [ref=f146e26]:
+        - generic [ref=f146e30]:
+          - paragraph [ref=f146e32] [cursor=pointer]: Any
+          - paragraph [ref=f146e37] [cursor=pointer]: Horizontal
+          - paragraph [ref=f146e42] [cursor=pointer]: Vertical
+          - paragraph [ref=f146e47] [cursor=pointer]: Square
+        - generic [ref=f146e51]:
+          - paragraph [ref=f146e53] [cursor=pointer]: Any
+          - paragraph [ref=f146e55] [cursor=pointer]: "0"
+          - paragraph [ref=f146e60] [cursor=pointer]: "1"
+          - paragraph [ref=f146e65] [cursor=pointer]: "2"
+          - paragraph [ref=f146e70] [cursor=pointer]: 3+
+        - generic [ref=f146e74]:
+          - paragraph [ref=f146e76] [cursor=pointer]: Any
+          - paragraph [ref=f146e81] [cursor=pointer]: Baby
+          - paragraph [ref=f146e86] [cursor=pointer]: Child
+          - paragraph [ref=f146e91] [cursor=pointer]: Teenager
+          - paragraph [ref=f146e96] [cursor=pointer]: Adult
+          - paragraph [ref=f146e101] [cursor=pointer]: Senior adult
+        - generic [ref=f146e104]:
+          - generic [ref=f146e105]:
+            - generic [ref=f146e106] [cursor=pointer]
+            - slider [ref=f146e108] [cursor=pointer]
+            - slider [ref=f146e109] [cursor=pointer]
+          - generic [ref=f146e110]:
+            - generic [ref=f146e111]:
+              - paragraph [ref=f146e112]: Minimum
+              - paragraph [ref=f146e113]: 1,080px
+            - generic [ref=f146e114]:
+              - paragraph [ref=f146e115]: Maximum
+              - paragraph [ref=f146e116]: 20,000px+
+        - generic [ref=f146e119]:
+          - generic [ref=f146e120]:
+            - generic [ref=f146e121] [cursor=pointer]
+            - slider [ref=f146e123] [cursor=pointer]
+            - slider [ref=f146e124] [cursor=pointer]
+          - generic [ref=f146e125]:
+            - generic [ref=f146e126]:
+              - paragraph [ref=f146e127]: Minimum
+              - paragraph [ref=f146e128]: 1,080px
+            - generic [ref=f146e129]:
+              - paragraph [ref=f146e130]: Maximum
+              - paragraph [ref=f146e131]: 20,000px+
+        - generic [ref=f146e135]:
+          - button [ref=f146e136] [cursor=pointer]:
+            - textbox [ref=f146e142]:
+              - /placeholder: Enter hex code
+          - button [ref=f146e145] [cursor=pointer]:
+            - textbox [ref=f146e151]: "#000000"
+        - generic [ref=f146e155]:
+          - paragraph [ref=f146e157] [cursor=pointer]: Any
+          - paragraph [ref=f146e162] [cursor=pointer]: Last 24 hours
+          - paragraph [ref=f146e167] [cursor=pointer]: Last week
+          - paragraph [ref=f146e172] [cursor=pointer]: Last month
+          - paragraph [ref=f146e177] [cursor=pointer]: Last year
+        - main "main-content" [ref=f146e178]:
+          - generic [ref=f146e179]:
+            - generic [ref=f146e180]:
+              - heading "Choose your language:" [level=5] [ref=f146e181]
+              - generic [ref=f146e183]:
+                - link "English English" [ref=f146e185] [cursor=pointer]:
+                  - /url: /search/cocktail%20napkin%20stack/
+                  - generic [ref=f146e186]:
+                    - img "English" [ref=f146e187]
+                    - generic [ref=f146e188]: English
+                - link "Español Español" [ref=f146e189] [cursor=pointer]:
+                  - /url: /es-es/buscar/cocktail%20napkin%20stack/
+                  - generic [ref=f146e190]:
+                    - img "Español" [ref=f146e191]
+                    - generic [ref=f146e192]: Español
+                - button [ref=f146e193] [cursor=pointer]
+            - heading "Free Cocktail Napkin Stack Photos" [level=1] [ref=f146e200]
+            - generic [ref=f146e203]:
+              - link "Photos 10K" [ref=f146e205] [cursor=pointer]:
+                - /url: /search/cocktail%20napkin%20stack/
+                - text: Photos
+                - generic [ref=f146e206]: 10K
+              - link "Videos 7.8K" [ref=f146e207] [cursor=pointer]:
+                - /url: /search/videos/cocktail%20napkin%20stack/
+                - text: Videos
+                - generic [ref=f146e208]: 7.8K
+              - link "Users 872" [ref=f146e209] [cursor=pointer]:
+                - /url: /search/users/cocktail%20napkin%20stack/
+                - text: Users
+                - generic [ref=f146e210]: "872"
+              - img [ref=f146e211] [cursor=pointer]
+            - generic [ref=f146e214]:
+              - button "Filters" [ref=f146e216] [cursor=pointer]
+              - generic [ref=f146e226]:
+                - link [ref=f146e228] [cursor=pointer]:
+                  - /url: /search/book%20stack/
+                  - img "book stack" [ref=f146e229]
+                  - generic [ref=f146e230]:
+                    - paragraph [ref=f146e231]: book stack
+                    - paragraph [ref=f146e232]: 76K
+                - link [ref=f146e233] [cursor=pointer]:
+                  - /url: /search/stack%20of%20books/
+                  - img "stack of books" [ref=f146e234]
+                  - generic [ref=f146e235]:
+                    - paragraph [ref=f146e236]: stack of books
+                    - paragraph [ref=f146e237]: 5K
+                - link [ref=f146e238] [cursor=pointer]:
+                  - /url: /search/stack/
+                  - img "stack" [ref=f146e239]
+                  - generic [ref=f146e240]:
+                    - paragraph [ref=f146e241]: stack
+                    - paragraph [ref=f146e242]: 23K
+                - link [ref=f146e243] [cursor=pointer]:
+                  - /url: /search/tissue/
+                  - img "tissue" [ref=f146e244]
+                  - generic [ref=f146e245]:
+                    - paragraph [ref=f146e246]: tissue
+                    - paragraph [ref=f146e247]: 5K
+                - link [ref=f146e248] [cursor=pointer]:
+                  - /url: /search/toilet%20paper/
+                  - img "toilet paper" [ref=f146e249]
+                  - generic [ref=f146e250]:
+                    - paragraph [ref=f146e251]: toilet paper
+                    - paragraph [ref=f146e252]: 5K
+                - link [ref=f146e253] [cursor=pointer]:
+                  - /url: /search/solution/
+                  - img "solution" [ref=f146e254]
+                  - generic [ref=f146e255]:
+                    - paragraph [ref=f146e256]: solution
+                    - paragraph [ref=f146e257]: 8K
+            - generic [ref=f146e259]:
+              - generic [ref=f146e262]:
+                - article [ref=f146e265]:
+                  - link [ref=f146e266] [cursor=pointer]:
+                    - /url: /photo/red-and-white-paper-plates-and-red-napkins-on-a-dining-table-9147812/
+                    - img "Free Stylish red and white tableware setup ideal for festive celebrations and parties. Stock Photo" [ref=f146e267]
+                  - generic:
+                    - button "Retouch" [ref=f146e271] [cursor=pointer]
+                    - link "Download" [ref=f146e279] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/9147812/pexels-photo-9147812.jpeg?cs=srgb&dl=pexels-mikhail-nilov-9147812.jpg&fm=jpg
+                - article [ref=f146e285]:
+                  - link [ref=f146e286] [cursor=pointer]:
+                    - /url: /photo/folded-textile-in-close-up-shot-11733651/
+                    - img "Free Close-up of a stack of neatly folded green linens highlighting their texture and neatness. Stock Photo" [ref=f146e287]
+                  - generic:
+                    - button "Crop" [ref=f146e291] [cursor=pointer]
+                    - link "Download" [ref=f146e299] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/11733651/pexels-photo-11733651.jpeg?cs=srgb&dl=pexels-ruslan-rozanov-174297693-11733651.jpg&fm=jpg
+                - generic [ref=f146e304]:
+                  - generic [ref=f146e306]:
+                    - link [ref=f146e307] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20cocktail%20napkin%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own cocktail napkin stack content with Canva" [ref=f146e308]
+                    - link [ref=f146e309] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20cocktail%20napkin%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own cocktail napkin stack content with Canva" [ref=f146e310]
+                    - link [ref=f146e311] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20cocktail%20napkin%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own cocktail napkin stack content with Canva" [ref=f146e312]
+                    - link [ref=f146e313] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20cocktail%20napkin%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own cocktail napkin stack content with Canva" [ref=f146e314]
+                  - link [ref=f146e315] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20cocktail%20napkin%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                    - paragraph [ref=f146e318]: Bring your ideas to life with Canva AI
+                  - link "Get started for free" [ref=f146e319] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20cocktail%20napkin%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                - article [ref=f146e324]:
+                  - link [ref=f146e325] [cursor=pointer]:
+                    - /url: /photo/ceramic-plates-on-the-wooden-table-6378665/
+                    - img "Free Close-up of stylish rolled napkins arranged elegantly on stacked plates on a wooden table, perfect for dining settings. Stock Photo" [ref=f146e326]
+                  - generic:
+                    - button "Add Text" [ref=f146e330] [cursor=pointer]
+                    - link "Download" [ref=f146e338] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/6378665/pexels-photo-6378665.jpeg?cs=srgb&dl=pexels-fox-58267-6378665.jpg&fm=jpg
+                - article [ref=f146e344]:
+                  - link [ref=f146e345] [cursor=pointer]:
+                    - /url: /photo/elegant-table-setting-with-pink-cocktails-and-roses-36398279/
+                    - img "Free Chic table setting featuring pink cocktails garnished with roses, ideal for celebrations. Stock Photo" [ref=f146e346]
+                  - generic:
+                    - button "Add Text" [ref=f146e350] [cursor=pointer]
+                    - link "Download" [ref=f146e358] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/36398279/pexels-photo-36398279.jpeg?cs=srgb&dl=pexels-kissa-155338264-36398279.jpg&fm=jpg
+                - article [ref=f146e364]:
+                  - link [ref=f146e365] [cursor=pointer]:
+                    - /url: /photo/table-napkin-on-top-of-stacked-plates-7247925/
+                    - img "Free Sophisticated wedding table setting featuring butterfly napkin rings, fine china, and elegant tableware. Stock Photo" [ref=f146e366]
+                  - generic:
+                    - button "Crop" [ref=f146e370] [cursor=pointer]
+                    - link "Download" [ref=f146e378] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7247925/pexels-photo-7247925.jpeg?cs=srgb&dl=pexels-george-sistonen-952755-7247925.jpg&fm=jpg
+                - article [ref=f146e384]:
+                  - link [ref=f146e385] [cursor=pointer]:
+                    - /url: /photo/stack-of-white-bowls-19141652/
+                    - img "Free Stacks of white ceramic coffee cups arranged outdoors with saucers and napkins. Stock Photo" [ref=f146e386]
+                  - generic:
+                    - button "Retouch" [ref=f146e390] [cursor=pointer]
+                    - link "Download" [ref=f146e398] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/19141652/pexels-photo-19141652.jpeg?cs=srgb&dl=pexels-miami302-19141652.jpg&fm=jpg
+                - article [ref=f146e404]:
+                  - link [ref=f146e405] [cursor=pointer]:
+                    - /url: /photo/formal-place-setting-with-floral-center-piece-14646744/
+                    - img "Free Luxurious dining table setup with elegant floral centerpiece and fine tableware for a formal banquet setting. Stock Photo" [ref=f146e406]
+                  - generic:
+                    - button "Edit" [ref=f146e410] [cursor=pointer]
+                    - link "Download" [ref=f146e418] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/14646744/pexels-photo-14646744.jpeg?cs=srgb&dl=pexels-vidalbalielojrfotografia-14646744.jpg&fm=jpg
+                - article [ref=f146e424]:
+                  - link [ref=f146e425] [cursor=pointer]:
+                    - /url: /photo/rolled-assorted-colored-hand-towels-near-round-orange-ceramic-plates-on-wooden-table-2868976/
+                    - img "Free A cozy restaurant table setup with striped napkins, plates, and silverware container. Stock Photo" [ref=f146e426]
+                  - generic:
+                    - button "Adjust Colors" [ref=f146e430] [cursor=pointer]
+                    - link "Download" [ref=f146e438] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/2868976/pexels-photo-2868976.jpeg?cs=srgb&dl=pexels-kelly-2868976.jpg&fm=jpg
+                - article [ref=f146e444]:
+                  - link [ref=f146e445] [cursor=pointer]:
+                    - /url: /photo/minimalist-stack-of-soft-pastel-linens-32795059/
+                    - img "Free A stack of pastel-colored linens with a modern, neutral vase. Stock Photo" [ref=f146e446]
+                  - generic:
+                    - button "Remove Background" [ref=f146e450] [cursor=pointer]
+                    - link "Download" [ref=f146e458] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/32795059/pexels-photo-32795059.jpeg?cs=srgb&dl=pexels-dijana-tandel-2153433656-32795059.jpg&fm=jpg
+                - generic [ref=f146e463]:
+                  - generic [ref=f146e464]:
+                    - heading "S‌‌p‌‌o‌‌n‌s‌‌‌o‌‌r‌‌e‌‌d‌ ‌‌‌P‌‌h‌‌‌o‌t‌‌‌o‌‌‌s‌‌" [level=4] [ref=f146e465]
+                    - link [ref=f146e466] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy9jb2NrdGFpbCUyMG5hcGtpbiUyMHN0YWNrP3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9sb2dvJnV0bV90ZXJtPWNvY2t0YWlsJTIwbmFwa2luJTIwc3RhY2siLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6IjQ3MWUxMDNlLWNmZGQtNGE2Yi04ZTQ0LTAxZWY4YWM4MjdhMyIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiY29ja3RhaWwgbmFwa2luIHN0YWNrIn19/
+                  - generic [ref=f146e470]:
+                    - link [ref=f146e471] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL2dyb3VwLW9mLXdoaXRlLWNsb3NldXAtc3F1YXJlLXBhcHBlci1uYXBraW5zLWlzb2xhdGVkLW9uLXdoaXRlLWJhY2tncm91bmQtZ205NzAwMDc0OTQtMjY0MzE4Nzc0P3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT1jb2NrdGFpbCUyMG5hcGtpbiUyMHN0YWNrIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiI0NzFlMTAzZS1jZmRkLTRhNmItOGU0NC0wMWVmOGFjODI3YTMiLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6ImNvY2t0YWlsIG5hcGtpbiBzdGFjayJ9fQ/
+                    - link [ref=f146e472] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL211bHRpY29sb3JlZC1zdHJhd3Mtd2l0aC1uYXBraW5zLXN0YW5kLW9uLXRoZS1iYXItY291bnRlci1nbTEwNTQ0ODUzNTQtMjgxNzUyMDcxP3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT1jb2NrdGFpbCUyMG5hcGtpbiUyMHN0YWNrIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiI0NzFlMTAzZS1jZmRkLTRhNmItOGU0NC0wMWVmOGFjODI3YTMiLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6ImNvY2t0YWlsIG5hcGtpbiBzdGFjayJ9fQ/
+                    - link [ref=f146e473] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL2Etc3RhY2stb2YtbmFwa2lucy1vbi13aGl0ZS1iYWNrZ3JvdW5kLWltYWdlLWdtMTE1NTM1ODMwOS0zMTQ1MDI4MzA_dXRtX3NvdXJjZT1wZXhlbHMmdXRtX21lZGl1bT1hZmZpbGlhdGUmdXRtX2NhbXBhaWduPXNwb25zb3JlZF9waG90byZ1dG1fY29udGVudD1zcnBfaW5saW5lX21lZGlhJnV0bV90ZXJtPWNvY2t0YWlsJTIwbmFwa2luJTIwc3RhY2siLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6IjQ3MWUxMDNlLWNmZGQtNGE2Yi04ZTQ0LTAxZWY4YWM4MjdhMyIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiY29ja3RhaWwgbmFwa2luIHN0YWNrIn19/
+                    - link [ref=f146e474] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL21hbGUtYmFydGVuZGVyLW1ha2luZy1pcmlzaC1jb2ZmZWUtZ202MTM3NjQxNTgtMTA2MDA0NzkzP3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9tZWRpYSZ1dG1fdGVybT1jb2NrdGFpbCUyMG5hcGtpbiUyMHN0YWNrIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiI0NzFlMTAzZS1jZmRkLTRhNmItOGU0NC0wMWVmOGFjODI3YTMiLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6ImNvY2t0YWlsIG5hcGtpbiBzdGFjayJ9fQ/
+                  - link [ref=f146e475] [cursor=pointer]:
+                    - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy9jb2NrdGFpbCUyMG5hcGtpbiUyMHN0YWNrP3V0bV9zb3VyY2U9cGV4ZWxzJnV0bV9tZWRpdW09YWZmaWxpYXRlJnV0bV9jYW1wYWlnbj1zcG9uc29yZWRfcGhvdG8mdXRtX2NvbnRlbnQ9c3JwX2lubGluZV9jb3Vwb25jb2RlJnV0bV90ZXJtPWNvY2t0YWlsJTIwbmFwa2luJTIwc3RhY2siLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6IjQ3MWUxMDNlLWNmZGQtNGE2Yi04ZTQ0LTAxZWY4YWM4MjdhMyIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiY29ja3RhaWwgbmFwa2luIHN0YWNrIn19/
+                    - img [ref=f146e478]:
+                      - generic [ref=f146e479]: Get 20% off with code PEXELS20 »
+                - article [ref=f146e482]:
+                  - link [ref=f146e483] [cursor=pointer]:
+                    - /url: /photo/eco-friendly-cotton-clothes-4857619/
+                    - img "Free A stack of eco-friendly cotton cloths with delicate textures, alongside dry twigs. Stock Photo" [ref=f146e484]
+                  - generic:
+                    - button "Remove Background" [ref=f146e488] [cursor=pointer]
+                    - link "Download" [ref=f146e496] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4857619/pexels-photo-4857619.jpeg?cs=srgb&dl=pexels-vie-studio-4857619.jpg&fm=jpg
+                - article [ref=f146e502]:
+                  - link [ref=f146e503] [cursor=pointer]:
+                    - /url: /photo/yellow-and-pink-liquids-in-glasses-with-salt-on-edges-4958858/
+                    - img "Free Close-up of vibrant citrus cocktails with salt rims and a bag of chips on paper. Stock Photo" [ref=f146e504]
+                  - generic:
+                    - button "Retouch" [ref=f146e508] [cursor=pointer]
+                    - link "Download" [ref=f146e516] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4958858/pexels-photo-4958858.jpeg?cs=srgb&dl=pexels-roman-odintsov-4958858.jpg&fm=jpg
+                - article [ref=f146e522]:
+                  - link [ref=f146e523] [cursor=pointer]:
+                    - /url: /photo/blue-cloth-on-the-wooden-chair-4794849/
+                    - img "Free Neatly stacked blue and white kitchen towels on a wooden stool in a cozy kitchen setting. Stock Photo" [ref=f146e524]
+                  - generic:
+                    - button "Crop" [ref=f146e528] [cursor=pointer]
+                    - link "Download" [ref=f146e536] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4794849/pexels-photo-4794849.jpeg?cs=srgb&dl=pexels-tima-miroshnichenko-4794849.jpg&fm=jpg
+                - article [ref=f146e542]:
+                  - link [ref=f146e543] [cursor=pointer]:
+                    - /url: /photo/drinks-in-vintage-glasses-on-table-12046627/
+                    - img "Free Stylish tabletop scene featuring drinks on marble surface with a napkin, evoking a retro vibe. Stock Photo" [ref=f146e544]
+                  - generic:
+                    - button "Remove Background" [ref=f146e548] [cursor=pointer]
+                    - link "Download" [ref=f146e556] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/12046627/pexels-photo-12046627.jpeg?cs=srgb&dl=pexels-yaroslava-borz-126286496-12046627.jpg&fm=jpg
+                - article [ref=f146e562]:
+                  - link [ref=f146e563] [cursor=pointer]:
+                    - /url: /photo/rustic-table-served-for-christmas-dinner-6210892/
+                    - img "Free High angle of served table for Christmas dinner with plates and glasses decorated with coniferous twigs Stock Photo" [ref=f146e564]
+                  - generic:
+                    - button "Adjust Colors" [ref=f146e568] [cursor=pointer]
+                    - link "Download" [ref=f146e576] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/6210892/pexels-photo-6210892.jpeg?cs=srgb&dl=pexels-tim-douglas-6210892.jpg&fm=jpg
+                - article [ref=f146e582]:
+                  - link [ref=f146e583] [cursor=pointer]:
+                    - /url: /photo/close-up-of-a-stack-of-vintage-cloths-5865758/
+                    - img "Free A collection of colorful and patterned textiles neatly stacked on a decorative table, showcasing vintage and retro designs. Stock Photo" [ref=f146e584]
+                  - generic:
+                    - button "Retouch" [ref=f146e588] [cursor=pointer]
+                    - link "Download" [ref=f146e596] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5865758/pexels-photo-5865758.jpeg?cs=srgb&dl=pexels-rachel-claire-5865758.jpg&fm=jpg
+                - article [ref=f146e602]:
+                  - link [ref=f146e603] [cursor=pointer]:
+                    - /url: /photo/refreshing-mojito-cocktail-and-open-book-on-table-34042168/
+                    - img "Free Crystal glass mojito with lime and mint beside open book on a sunny day. Stock Photo" [ref=f146e604]
+                  - generic:
+                    - button "Adjust Colors" [ref=f146e608] [cursor=pointer]
+                    - link "Download" [ref=f146e616] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/34042168/pexels-photo-34042168.jpeg?cs=srgb&dl=pexels-oceanofstars-34042168.jpg&fm=jpg
+                - link [ref=f146e621] [cursor=pointer]:
+                  - /url: /collections/cocktail-hour-4dgsvhy/
+                  - article [ref=f146e622]:
+                    - list [ref=f146e624]:
+                      - listitem [ref=f146e625]
+                      - listitem [ref=f146e627]
+                      - listitem [ref=f146e629]
+                    - generic [ref=f146e631]:
+                      - heading "Cocktail Hour" [level=4] [ref=f146e632]
+                      - paragraph [ref=f146e636]: "83"
+                - article [ref=f146e639]:
+                  - link [ref=f146e640] [cursor=pointer]:
+                    - /url: /photo/cold-beverage-in-glass-15138586/
+                    - img "Free Tall glass of cold drink with ice cubes and citrus slice on a tray. Stock Photo" [ref=f146e641]
+                  - generic:
+                    - button "Adjust Colors" [ref=f146e645] [cursor=pointer]
+                    - link "Download" [ref=f146e653] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/15138586/pexels-photo-15138586.jpeg?cs=srgb&dl=pexels-alpyildizlar-15138586.jpg&fm=jpg
+                - article [ref=f146e659]:
+                  - link [ref=f146e660] [cursor=pointer]:
+                    - /url: /photo/cocktail-with-fruit-slices-24906325/
+                    - img "Free Refreshing peach cocktail with vibrant garnish on wooden table, adding a touch of summer. Stock Photo" [ref=f146e661]
+                  - generic:
+                    - button "Remove Background" [ref=f146e665] [cursor=pointer]
+                    - link "Download" [ref=f146e673] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/24906325/pexels-photo-24906325.jpeg?cs=srgb&dl=pexels-jayce-q-132128526-24906325.jpg&fm=jpg
+                - article [ref=f146e679]:
+                  - link [ref=f146e680] [cursor=pointer]:
+                    - /url: /photo/a-drink-with-a-banana-slice-on-a-plate-27695891/
+                    - img "Free Overhead view of a tropical cocktail with dried fruit garnish on blue tiles, evoking summer vibes. Stock Photo" [ref=f146e681]
+                  - generic:
+                    - button "Add Text" [ref=f146e685] [cursor=pointer]
+                    - link "Download" [ref=f146e693] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/27695891/pexels-photo-27695891.jpeg?cs=srgb&dl=pexels-andres-villamizar-185552101-27695891.jpg&fm=jpg
+                - article [ref=f146e699]:
+                  - link [ref=f146e700] [cursor=pointer]:
+                    - /url: /photo/sitting-place-in-restaurant-with-menu-17315404/
+                    - img "Free Elegant table setting with a menu and wine glasses, perfect for dinner events. Stock Photo" [ref=f146e701]
+                  - generic:
+                    - button "Adjust Colors" [ref=f146e705] [cursor=pointer]
+                    - link "Download" [ref=f146e713] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/17315404/pexels-photo-17315404.jpeg?cs=srgb&dl=pexels-bertellifotografia-17315404.jpg&fm=jpg
+                - article [ref=f146e719]:
+                  - link [ref=f146e720] [cursor=pointer]:
+                    - /url: /photo/drink-in-a-glass-on-a-table-14994714/
+                    - img "Free A stylish cocktail garnished with a lemon slice placed on a modern table with a napkin. Stock Photo" [ref=f146e721]
+                  - generic:
+                    - button "Edit" [ref=f146e725] [cursor=pointer]
+                    - link "Download" [ref=f146e733] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/14994714/pexels-photo-14994714.jpeg?cs=srgb&dl=pexels-alpyildizlar-14994714.jpg&fm=jpg
+                - article [ref=f146e739]:
+                  - link [ref=f146e740] [cursor=pointer]:
+                    - /url: /photo/elegant-celebration-table-setting-with-fruits-and-cheese-36845220/
+                    - img "Free A luxurious table setting with assorted fruits, cheese, champagne, and balloons for a festive occasion. Stock Photo" [ref=f146e741]
+                  - generic:
+                    - button "Edit" [ref=f146e745] [cursor=pointer]
+                    - link "Download" [ref=f146e753] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/36845220/pexels-photo-36845220.jpeg?cs=srgb&dl=pexels-nadin-sh-78971847-36845220.jpg&fm=jpg
+                - article [ref=f146e759]:
+                  - link [ref=f146e760] [cursor=pointer]:
+                    - /url: /photo/close-up-shot-of-a-glass-of-drink-14151873/
+                    - img "Free Close-up of a refreshing lemon cocktail with rosemary garnish, served on a slate mat. Stock Photo" [ref=f146e761]
+                  - generic:
+                    - button "Crop" [ref=f146e765] [cursor=pointer]
+                    - link "Download" [ref=f146e773] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/14151873/pexels-photo-14151873.jpeg?cs=srgb&dl=pexels-ieva-astrauskaite-348546338-14151873.jpg&fm=jpg
+                - article [ref=f146e779]:
+                  - link [ref=f146e780] [cursor=pointer]:
+                    - /url: /photo/glasses-with-drinks-on-table-17652016/
+                    - img "Free Sophisticated table arrangement with glasses, beverages, and lush green leaves. Stock Photo" [ref=f146e781]
+                  - generic:
+                    - button "Adjust Colors" [ref=f146e785] [cursor=pointer]
+                    - link "Download" [ref=f146e793] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/17652016/pexels-photo-17652016.jpeg?cs=srgb&dl=pexels-seizoenenblog-17652016.jpg&fm=jpg
+              - button "Load More" [ref=f146e798] [cursor=pointer]
+            - navigation [ref=f146e801]:
+              - generic [ref=f146e803]:
+                - link "1" [ref=f146e805]:
+                  - /url: /search/cocktail%20napkin%20stack/
+                - link "2" [ref=f146e808] [cursor=pointer]:
+                  - /url: /search/cocktail%20napkin%20stack/?page=2
+                - link "3" [ref=f146e811] [cursor=pointer]:
+                  - /url: /search/cocktail%20napkin%20stack/?page=3
+                - link "4" [ref=f146e814] [cursor=pointer]:
+                  - /url: /search/cocktail%20napkin%20stack/?page=4
+                - link "5" [ref=f146e817] [cursor=pointer]:
+                  - /url: /search/cocktail%20napkin%20stack/?page=5
+                - link "6" [ref=f146e820] [cursor=pointer]:
+                  - /url: /search/cocktail%20napkin%20stack/?page=6
+                - link "Next" [ref=f146e823] [cursor=pointer]:
+                  - /url: /search/cocktail%20napkin%20stack/?page=2
+    - contentinfo [ref=f146e827]:
+      - separator [ref=f146e828]
+      - generic [ref=f146e829]:
+        - generic [ref=f146e830]:
+          - heading "Where stories come together." [level=2] [ref=f146e831]
+          - generic [ref=f146e832]:
+            - link "iOS" [ref=f146e833] [cursor=pointer]:
+              - /url: https://itunes.apple.com/us/app/pexels/id1434330413/
+            - link "Android" [ref=f146e836] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.pexels.app
+          - list [ref=f146e839]:
+            - listitem [ref=f146e840]:
+              - link "Instagram" [ref=f146e841] [cursor=pointer]:
+                - /url: https://www.instagram.com/pexels/
+            - listitem [ref=f146e844]:
+              - link "Threads" [ref=f146e845] [cursor=pointer]:
+                - /url: https://www.threads.net/@pexels/
+            - listitem [ref=f146e848]:
+              - link "YouTube" [ref=f146e849] [cursor=pointer]:
+                - /url: https://www.youtube.com/pexelsphotos/
+            - listitem [ref=f146e852]:
+              - link "TikTok" [ref=f146e853] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@pexels/
+            - listitem [ref=f146e856]:
+              - link "LinkedIn" [ref=f146e857] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/pexels/
+            - listitem [ref=f146e860]:
+              - link "X" [ref=f146e861] [cursor=pointer]:
+                - /url: https://x.com/pexels/
+        - generic [ref=f146e864]:
+          - list [ref=f146e865]:
+            - heading "Pexels" [level=3] [ref=f146e866]
+            - listitem [ref=f146e867]:
+              - link "Free Stock Photos" [ref=f146e868] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f146e869]:
+              - link "Free Videos" [ref=f146e870] [cursor=pointer]:
+                - /url: /videos/
+            - listitem [ref=f146e871]:
+              - link "Popular searches" [ref=f146e872] [cursor=pointer]:
+                - /url: /popular-searches/
+            - listitem [ref=f146e873]:
+              - link "Collections" [ref=f146e874] [cursor=pointer]:
+                - /url: /discover/
+            - listitem [ref=f146e875]:
+              - link "Challenges" [ref=f146e876] [cursor=pointer]:
+                - /url: /challenges/
+            - listitem [ref=f146e877]:
+              - link "Leaderboard" [ref=f146e878] [cursor=pointer]:
+                - /url: /leaderboard/
+            - listitem [ref=f146e879]:
+              - link "Other plugins & apps" [ref=f146e880] [cursor=pointer]:
+                - /url: /pro/
+          - list [ref=f146e881]:
+            - heading "Company" [level=3] [ref=f146e882]
+            - listitem [ref=f146e883]:
+              - link "About" [ref=f146e884] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=f146e885]:
+              - link "Blog" [ref=f146e886] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=f146e887]:
+              - link "Help Center" [ref=f146e888] [cursor=pointer]:
+                - /url: https://help.pexels.com/hc/en-us
+            - listitem [ref=f146e889]:
+              - link "Report content" [ref=f146e890] [cursor=pointer]:
+                - /url: /report/
+            - listitem [ref=f146e891]:
+              - link "Become a Hero" [ref=f146e892] [cursor=pointer]:
+                - /url: /hero/
+            - listitem [ref=f146e893]:
+              - link "Partner with Pexels" [ref=f146e894] [cursor=pointer]:
+                - /url: /become-a-partner/
+            - listitem [ref=f146e895]:
+              - link "Image & Video API" [ref=f146e896] [cursor=pointer]:
+                - /url: /api/
+            - listitem [ref=f146e897]: Sign Up
+        - list [ref=f146e898]:
+          - listitem [ref=f146e899]:
+            - heading "Free Stock Photos" [level=3] [ref=f146e900]
+          - listitem [ref=f146e901]:
+            - generic [ref=f146e903]:
+              - link "Black and white photography" [ref=f146e905] [cursor=pointer]:
+                - /url: /search/black%20and%20white/
+              - link "Happy birthday images" [ref=f146e906] [cursor=pointer]:
+                - /url: /search/happy%20birthday/
+              - link "Free business videos" [ref=f146e907] [cursor=pointer]:
+                - /url: /search/videos/business/
+              - link "Happy new year images" [ref=f146e908] [cursor=pointer]:
+                - /url: /search/happy%20new%20year/
+              - link "Cool wallpapers" [ref=f146e909] [cursor=pointer]:
+                - /url: /search/cool%20wallpaper/
+              - link "Best HD wallpapers" [ref=f146e910] [cursor=pointer]:
+                - /url: /search/hd%20wallpaper/
+              - link "Galaxy wallpaper" [ref=f146e911] [cursor=pointer]:
+                - /url: /search/galaxy%20wallpaper/
+              - link "Lock screen wallpaper" [ref=f146e912] [cursor=pointer]:
+                - /url: /search/lock%20screen%20wallpaper/
+              - link "iPhone wallpaper" [ref=f146e913] [cursor=pointer]:
+                - /url: /search/iphone%20wallpaper/
+              - link "4K wallpaper" [ref=f146e914] [cursor=pointer]:
+                - /url: /search/4k%20wallpaper/
+              - link "Samsung wallpaper" [ref=f146e915] [cursor=pointer]:
+                - /url: /search/samsung%20wallpaper/
+              - link "Love wallpaper" [ref=f146e916] [cursor=pointer]:
+                - /url: /search/love%20wallpaper/
+              - link "Mobile wallpaper" [ref=f146e917] [cursor=pointer]:
+                - /url: /search/mobile%20wallpaper/
+      - generic [ref=f146e919]:
+        - generic [ref=f146e920]: © 2026 Pexels
+        - generic [ref=f146e922]:
+          - link "Terms of Use" [ref=f146e924] [cursor=pointer]:
+            - /url: /terms-of-service/
+          - link "Privacy Policy" [ref=f146e925] [cursor=pointer]:
+            - /url: /privacy-policy/
+          - link "License" [ref=f146e926] [cursor=pointer]:
+            - /url: /license/
+          - link "Imprint" [ref=f146e927] [cursor=pointer]:
+            - /url: /imprint/
+          - link "Cookies Policy" [ref=f146e928] [cursor=pointer]:
+            - /url: /cookies/
+          - img [ref=f146e929] [cursor=pointer]
+        - button "English" [ref=f146e933] [cursor=pointer]
+      - separator [ref=f146e938]
+  - alert [ref=f146e939]
+  - status [ref=f146e940]: "[object Object] has been selected."

@@ -1,0 +1,513 @@
+- generic [active] [ref=f116e1]:
+  - generic [ref=f116e3]:
+    - navigation [ref=f116e6]:
+      - link [ref=f116e8] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f116e12]:
+        - button [ref=f116e13] [cursor=pointer]
+        - button "Join" [ref=f116e17] [cursor=pointer]
+        - button [ref=f116e20] [cursor=pointer]
+    - main [ref=f116e25]:
+      - generic [ref=f116e26]:
+        - generic [ref=f116e30]:
+          - paragraph [ref=f116e32] [cursor=pointer]: Any
+          - paragraph [ref=f116e37] [cursor=pointer]: Horizontal
+          - paragraph [ref=f116e42] [cursor=pointer]: Vertical
+          - paragraph [ref=f116e47] [cursor=pointer]: Square
+        - generic [ref=f116e51]:
+          - paragraph [ref=f116e53] [cursor=pointer]: Any
+          - paragraph [ref=f116e55] [cursor=pointer]: "0"
+          - paragraph [ref=f116e60] [cursor=pointer]: "1"
+          - paragraph [ref=f116e65] [cursor=pointer]: "2"
+          - paragraph [ref=f116e70] [cursor=pointer]: 3+
+        - generic [ref=f116e74]:
+          - paragraph [ref=f116e76] [cursor=pointer]: Any
+          - paragraph [ref=f116e81] [cursor=pointer]: Baby
+          - paragraph [ref=f116e86] [cursor=pointer]: Child
+          - paragraph [ref=f116e91] [cursor=pointer]: Teenager
+          - paragraph [ref=f116e96] [cursor=pointer]: Adult
+          - paragraph [ref=f116e101] [cursor=pointer]: Senior adult
+        - generic [ref=f116e104]:
+          - generic [ref=f116e105]:
+            - generic [ref=f116e106] [cursor=pointer]
+            - slider [ref=f116e108] [cursor=pointer]
+            - slider [ref=f116e109] [cursor=pointer]
+          - generic [ref=f116e110]:
+            - generic [ref=f116e111]:
+              - paragraph [ref=f116e112]: Minimum
+              - paragraph [ref=f116e113]: 1,080px
+            - generic [ref=f116e114]:
+              - paragraph [ref=f116e115]: Maximum
+              - paragraph [ref=f116e116]: 20,000px+
+        - generic [ref=f116e119]:
+          - generic [ref=f116e120]:
+            - generic [ref=f116e121] [cursor=pointer]
+            - slider [ref=f116e123] [cursor=pointer]
+            - slider [ref=f116e124] [cursor=pointer]
+          - generic [ref=f116e125]:
+            - generic [ref=f116e126]:
+              - paragraph [ref=f116e127]: Minimum
+              - paragraph [ref=f116e128]: 1,080px
+            - generic [ref=f116e129]:
+              - paragraph [ref=f116e130]: Maximum
+              - paragraph [ref=f116e131]: 20,000px+
+        - generic [ref=f116e135]:
+          - button [ref=f116e136] [cursor=pointer]:
+            - textbox [ref=f116e142]:
+              - /placeholder: Enter hex code
+          - button [ref=f116e145] [cursor=pointer]:
+            - textbox [ref=f116e151]: "#000000"
+        - generic [ref=f116e155]:
+          - paragraph [ref=f116e157] [cursor=pointer]: Any
+          - paragraph [ref=f116e162] [cursor=pointer]: Last 24 hours
+          - paragraph [ref=f116e167] [cursor=pointer]: Last week
+          - paragraph [ref=f116e172] [cursor=pointer]: Last month
+          - paragraph [ref=f116e177] [cursor=pointer]: Last year
+        - main "main-content" [ref=f116e178]:
+          - generic [ref=f116e179]:
+            - generic [ref=f116e180]:
+              - heading "Choose your language:" [level=5] [ref=f116e181]
+              - generic [ref=f116e183]:
+                - link "English English" [ref=f116e185] [cursor=pointer]:
+                  - /url: /search/folded%20paper%20hand%20towels%20stack/
+                  - generic [ref=f116e186]:
+                    - img "English" [ref=f116e187]
+                    - generic [ref=f116e188]: English
+                - link "Español Español" [ref=f116e189] [cursor=pointer]:
+                  - /url: /es-es/buscar/folded%20paper%20hand%20towels%20stack/
+                  - generic [ref=f116e190]:
+                    - img "Español" [ref=f116e191]
+                    - generic [ref=f116e192]: Español
+                - button [ref=f116e193] [cursor=pointer]
+            - heading "Free Folded Paper Hand Towels Stack Photos" [level=1] [ref=f116e200]
+            - generic [ref=f116e203]:
+              - link "Photos 10K" [ref=f116e205] [cursor=pointer]:
+                - /url: /search/folded%20paper%20hand%20towels%20stack/
+                - text: Photos
+                - generic [ref=f116e206]: 10K
+              - link "Videos 10K" [ref=f116e207] [cursor=pointer]:
+                - /url: /search/videos/folded%20paper%20hand%20towels%20stack/
+                - text: Videos
+                - generic [ref=f116e208]: 10K
+              - link "Users 10K" [ref=f116e209] [cursor=pointer]:
+                - /url: /search/users/folded%20paper%20hand%20towels%20stack/
+                - text: Users
+                - generic [ref=f116e210]: 10K
+              - img [ref=f116e211] [cursor=pointer]
+            - generic [ref=f116e214]:
+              - button "Filters" [ref=f116e216] [cursor=pointer]
+              - generic [ref=f116e226]:
+                - link [ref=f116e228] [cursor=pointer]:
+                  - /url: /search/stack%20of%20books/
+                  - img "stack of books" [ref=f116e229]
+                  - generic [ref=f116e230]:
+                    - paragraph [ref=f116e231]: stack of books
+                    - paragraph [ref=f116e232]: 5K
+                - link [ref=f116e233] [cursor=pointer]:
+                  - /url: /search/toilet%20paper/
+                  - img "toilet paper" [ref=f116e234]
+                  - generic [ref=f116e235]:
+                    - paragraph [ref=f116e236]: toilet paper
+                    - paragraph [ref=f116e237]: 5K
+                - link [ref=f116e238] [cursor=pointer]:
+                  - /url: /search/book%20stack/
+                  - img "book stack" [ref=f116e239]
+                  - generic [ref=f116e240]:
+                    - paragraph [ref=f116e241]: book stack
+                    - paragraph [ref=f116e242]: 76K
+                - link [ref=f116e243] [cursor=pointer]:
+                  - /url: /search/towels/
+                  - img "towels" [ref=f116e244]
+                  - generic [ref=f116e245]:
+                    - paragraph [ref=f116e246]: towels
+                    - paragraph [ref=f116e247]: 11K
+                - link [ref=f116e248] [cursor=pointer]:
+                  - /url: /search/paper%20texture/
+                  - img "paper texture" [ref=f116e249]
+                  - generic [ref=f116e250]:
+                    - paragraph [ref=f116e251]: paper texture
+                    - paragraph [ref=f116e252]: 478K
+            - generic [ref=f116e254]:
+              - generic [ref=f116e257]:
+                - article [ref=f116e260]:
+                  - link [ref=f116e261] [cursor=pointer]:
+                    - /url: /photo/white-and-maroon-rugs-45980/
+                    - img "Free Close-up of rolled bathroom towels in neutral tones, ideal for interior design or spa themes. Stock Photo" [ref=f116e262]
+                  - generic:
+                    - button "Retouch" [ref=f116e266] [cursor=pointer]
+                    - link "Download" [ref=f116e274] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/45980/pexels-photo-45980.jpeg?cs=srgb&dl=pexels-dom-j-7304-45980.jpg&fm=jpg
+                - article [ref=f116e280]:
+                  - link [ref=f116e281] [cursor=pointer]:
+                    - /url: /photo/white-towels-on-white-table-7691101/
+                    - img "Free Neatly folded clean white towels stacked on a surface, perfect for home or spa use. Stock Photo" [ref=f116e282]
+                  - generic:
+                    - button "Remove Background" [ref=f116e286] [cursor=pointer]
+                    - link "Download" [ref=f116e294] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7691101/pexels-photo-7691101.jpeg?cs=srgb&dl=pexels-roman-odintsov-7691101.jpg&fm=jpg
+                - generic [ref=f116e299]:
+                  - generic [ref=f116e301]:
+                    - link [ref=f116e302] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20folded%20paper%20hand%20towels%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own folded paper hand towels stack content with Canva" [ref=f116e303]
+                    - link [ref=f116e304] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20folded%20paper%20hand%20towels%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own folded paper hand towels stack content with Canva" [ref=f116e305]
+                    - link [ref=f116e306] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20folded%20paper%20hand%20towels%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own folded paper hand towels stack content with Canva" [ref=f116e307]
+                    - link [ref=f116e308] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20folded%20paper%20hand%20towels%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own folded paper hand towels stack content with Canva" [ref=f116e309]
+                  - link [ref=f116e310] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20folded%20paper%20hand%20towels%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                    - paragraph [ref=f116e313]: Bring your ideas to life with Canva AI
+                  - link "Get started for free" [ref=f116e314] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20folded%20paper%20hand%20towels%20stack%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                - article [ref=f116e319]:
+                  - link [ref=f116e320] [cursor=pointer]:
+                    - /url: /photo/close-up-of-neatly-folded-textiles-in-stack-39427053/
+                    - img "Free Neatly stacked fabrics including towels and patterned textiles in neutral tones. Stock Photo" [ref=f116e321]
+                  - generic:
+                    - button "Crop" [ref=f116e325] [cursor=pointer]
+                    - link "Download" [ref=f116e333] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/39427053/pexels-photo-39427053.jpeg?cs=srgb&dl=pexels-alla-nadtochii-631992140-39427053.jpg&fm=jpg
+                - article [ref=f116e339]:
+                  - link [ref=f116e340] [cursor=pointer]:
+                    - /url: /photo/towels-in-a-store-20665616/
+                    - img "Free Neatly folded towels in various colors stacked on retail shelves inside a store. Stock Photo" [ref=f116e341]
+                  - generic:
+                    - button "Retouch" [ref=f116e345] [cursor=pointer]
+                    - link "Download" [ref=f116e353] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/20665616/pexels-photo-20665616.jpeg?cs=srgb&dl=pexels-v1nhdotcom-20665616.jpg&fm=jpg
+                - article [ref=f116e359]:
+                  - link [ref=f116e360] [cursor=pointer]:
+                    - /url: /photo/stacked-brown-envelopes-in-organized-rows-29534962/
+                    - img "Free A detailed view of neatly stacked brown envelopes showcasing organization. Stock Photo" [ref=f116e361]
+                  - generic:
+                    - button "Adjust Colors" [ref=f116e365] [cursor=pointer]
+                    - link "Download" [ref=f116e373] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/29534962/pexels-photo-29534962.jpeg?cs=srgb&dl=pexels-serdar-baris-2093847029-29534962.jpg&fm=jpg
+                - article [ref=f116e379]:
+                  - link [ref=f116e380] [cursor=pointer]:
+                    - /url: /photo/close-up-shot-of-stacked-brown-papers-7654123/
+                    - img "Free Close-up of stacked recycled cardboard sheets with visible texture and selective focus. Stock Photo" [ref=f116e381]
+                  - generic:
+                    - button "Remove Background" [ref=f116e385] [cursor=pointer]
+                    - link "Download" [ref=f116e393] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7654123/pexels-photo-7654123.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-7654123.jpg&fm=jpg
+                - article [ref=f116e399]:
+                  - link [ref=f116e400] [cursor=pointer]:
+                    - /url: /photo/basket-full-of-toilet-paper-3958206/
+                    - img "Free A cozy and organized display of toilet paper rolls neatly stacked in a woven basket. Stock Photo" [ref=f116e401]
+                  - generic:
+                    - button "Edit" [ref=f116e405] [cursor=pointer]
+                    - link "Download" [ref=f116e413] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3958206/pexels-photo-3958206.jpeg?cs=srgb&dl=pexels-vlada-karpovich-3958206.jpg&fm=jpg
+                - article [ref=f116e419]:
+                  - link [ref=f116e420] [cursor=pointer]:
+                    - /url: /photo/layers-of-paper-sheets-20062956/
+                    - img "Free Close-up of curved layers of stacked paper sheets showcasing texture and lines. Stock Photo" [ref=f116e421]
+                  - generic:
+                    - button "Edit" [ref=f116e425] [cursor=pointer]
+                    - link "Download" [ref=f116e433] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/20062956/pexels-photo-20062956.jpeg?cs=srgb&dl=pexels-michaela-st-3448542-20062956.jpg&fm=jpg
+                - article [ref=f116e439]:
+                  - link [ref=f116e440] [cursor=pointer]:
+                    - /url: /photo/person-holding-a-stack-of-white-towels-6466227/
+                    - img "Free Professional housekeeper folding clean towels on a bed in a hotel room, emphasizing neatness and service. Stock Photo" [ref=f116e441]
+                  - generic:
+                    - button "Crop" [ref=f116e445] [cursor=pointer]
+                    - link "Download" [ref=f116e453] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/6466227/pexels-photo-6466227.jpeg?cs=srgb&dl=pexels-cottonbro-6466227.jpg&fm=jpg
+                - generic [ref=f116e458]:
+                  - generic [ref=f116e459]:
+                    - heading "‌S‌p‌‌o‌n‌‌s‌‌o‌r‌‌‌e‌‌d‌ ‌P‌h‌‌‌o‌‌t‌‌o‌‌s" [level=4] [ref=f116e460]
+                    - link [ref=f116e461] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy9mb2xkZWQlMjBwYXBlciUyMGhhbmQlMjB0b3dlbHMlMjBzdGFjaz91dG1fc291cmNlPXBleGVscyZ1dG1fbWVkaXVtPWFmZmlsaWF0ZSZ1dG1fY2FtcGFpZ249c3BvbnNvcmVkX3Bob3RvJnV0bV9jb250ZW50PXNycF9pbmxpbmVfbG9nbyZ1dG1fdGVybT1mb2xkZWQlMjBwYXBlciUyMGhhbmQlMjB0b3dlbHMlMjBzdGFjayIsImRhdGEiOnsiZXhwZXJpbWVudHMiOnt9LCJwYWdlX2xvY2FsZSI6ImVuLVVTIiwibG9jYXRpb24iOiJncmlkIiwiYWRfcGFydG5lciI6ImdldHR5IiwiYWRfZm9ybWF0IjoiaW5saW5lIiwiYWRfcGxhY2VtZW50IjoiMTAiLCJhZF9jcmVhdGl2ZSI6InBob3RvX3NlYXJjaF80IiwiYWRfYWN0aW9uIjoiY2xpY2siLCJhZF9pbXByZXNzaW9uX2lkIjoiZGFlYWRmZWUtNTlhMC00ZmRlLTkxM2MtZmMxNDA2OTViOWI4IiwibWVkaWFfdHlwZSI6InBob3RvIiwicXVlcnkiOiJmb2xkZWQgcGFwZXIgaGFuZCB0b3dlbHMgc3RhY2sifX0/
+                  - generic [ref=f116e465]:
+                    - link [ref=f116e466] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3doaXRlLXBhcGVyLW5hcGtpbnMtZ20xNjkxNzA0Mzg0LTUzNzYyMTk5OD91dG1fc291cmNlPXBleGVscyZ1dG1fbWVkaXVtPWFmZmlsaWF0ZSZ1dG1fY2FtcGFpZ249c3BvbnNvcmVkX3Bob3RvJnV0bV9jb250ZW50PXNycF9pbmxpbmVfbWVkaWEmdXRtX3Rlcm09Zm9sZGVkJTIwcGFwZXIlMjBoYW5kJTIwdG93ZWxzJTIwc3RhY2siLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6ImRhZWFkZmVlLTU5YTAtNGZkZS05MTNjLWZjMTQwNjk1YjliOCIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiZm9sZGVkIHBhcGVyIGhhbmQgdG93ZWxzIHN0YWNrIn19/
+                    - link [ref=f116e467] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3BhcGVyLW5hcGtpbnMtYW5kLXRvd2Vscy1nbTUyMTAzNzI4NC05MTIwODkzNz91dG1fc291cmNlPXBleGVscyZ1dG1fbWVkaXVtPWFmZmlsaWF0ZSZ1dG1fY2FtcGFpZ249c3BvbnNvcmVkX3Bob3RvJnV0bV9jb250ZW50PXNycF9pbmxpbmVfbWVkaWEmdXRtX3Rlcm09Zm9sZGVkJTIwcGFwZXIlMjBoYW5kJTIwdG93ZWxzJTIwc3RhY2siLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6ImRhZWFkZmVlLTU5YTAtNGZkZS05MTNjLWZjMTQwNjk1YjliOCIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiZm9sZGVkIHBhcGVyIGhhbmQgdG93ZWxzIHN0YWNrIn19/
+                    - link [ref=f116e468] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3doaXRlLXBhcGVyLW5hcGtpbnMtZ200ODI2MjkxMDgtNzAxODE5MzE_dXRtX3NvdXJjZT1wZXhlbHMmdXRtX21lZGl1bT1hZmZpbGlhdGUmdXRtX2NhbXBhaWduPXNwb25zb3JlZF9waG90byZ1dG1fY29udGVudD1zcnBfaW5saW5lX21lZGlhJnV0bV90ZXJtPWZvbGRlZCUyMHBhcGVyJTIwaGFuZCUyMHRvd2VscyUyMHN0YWNrIiwiZGF0YSI6eyJleHBlcmltZW50cyI6e30sInBhZ2VfbG9jYWxlIjoiZW4tVVMiLCJsb2NhdGlvbiI6ImdyaWQiLCJhZF9wYXJ0bmVyIjoiZ2V0dHkiLCJhZF9mb3JtYXQiOiJpbmxpbmUiLCJhZF9wbGFjZW1lbnQiOiIxMCIsImFkX2NyZWF0aXZlIjoicGhvdG9fc2VhcmNoXzQiLCJhZF9hY3Rpb24iOiJjbGljayIsImFkX2ltcHJlc3Npb25faWQiOiJkYWVhZGZlZS01OWEwLTRmZGUtOTEzYy1mYzE0MDY5NWI5YjgiLCJtZWRpYV90eXBlIjoicGhvdG8iLCJxdWVyeSI6ImZvbGRlZCBwYXBlciBoYW5kIHRvd2VscyBzdGFjayJ9fQ/
+                    - link [ref=f116e469] [cursor=pointer]:
+                      - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3RvL3RvcC12aWV3LXdpdGgtd2hpdGUtZW1wdHkta2l0Y2hlbi1uYXBraW4taXNvbGF0ZWQtb24tdGFibGUtYmFja2dyb3VuZC1mb2xkZWQtY2xvdGgtZ20xNDczNDk3ODE2LTUwMzYxNTAxOD91dG1fc291cmNlPXBleGVscyZ1dG1fbWVkaXVtPWFmZmlsaWF0ZSZ1dG1fY2FtcGFpZ249c3BvbnNvcmVkX3Bob3RvJnV0bV9jb250ZW50PXNycF9pbmxpbmVfbWVkaWEmdXRtX3Rlcm09Zm9sZGVkJTIwcGFwZXIlMjBoYW5kJTIwdG93ZWxzJTIwc3RhY2siLCJkYXRhIjp7ImV4cGVyaW1lbnRzIjp7fSwicGFnZV9sb2NhbGUiOiJlbi1VUyIsImxvY2F0aW9uIjoiZ3JpZCIsImFkX3BhcnRuZXIiOiJnZXR0eSIsImFkX2Zvcm1hdCI6ImlubGluZSIsImFkX3BsYWNlbWVudCI6IjEwIiwiYWRfY3JlYXRpdmUiOiJwaG90b19zZWFyY2hfNCIsImFkX2FjdGlvbiI6ImNsaWNrIiwiYWRfaW1wcmVzc2lvbl9pZCI6ImRhZWFkZmVlLTU5YTAtNGZkZS05MTNjLWZjMTQwNjk1YjliOCIsIm1lZGlhX3R5cGUiOiJwaG90byIsInF1ZXJ5IjoiZm9sZGVkIHBhcGVyIGhhbmQgdG93ZWxzIHN0YWNrIn19/
+                  - link [ref=f116e470] [cursor=pointer]:
+                    - /url: https://www.pexels.com/r/eyJkZXN0IjoiaHR0cHM6Ly93d3cuaXN0b2NrcGhvdG8uY29tL3Bob3Rvcy9mb2xkZWQlMjBwYXBlciUyMGhhbmQlMjB0b3dlbHMlMjBzdGFjaz91dG1fc291cmNlPXBleGVscyZ1dG1fbWVkaXVtPWFmZmlsaWF0ZSZ1dG1fY2FtcGFpZ249c3BvbnNvcmVkX3Bob3RvJnV0bV9jb250ZW50PXNycF9pbmxpbmVfY291cG9uY29kZSZ1dG1fdGVybT1mb2xkZWQlMjBwYXBlciUyMGhhbmQlMjB0b3dlbHMlMjBzdGFjayIsImRhdGEiOnsiZXhwZXJpbWVudHMiOnt9LCJwYWdlX2xvY2FsZSI6ImVuLVVTIiwibG9jYXRpb24iOiJncmlkIiwiYWRfcGFydG5lciI6ImdldHR5IiwiYWRfZm9ybWF0IjoiaW5saW5lIiwiYWRfcGxhY2VtZW50IjoiMTAiLCJhZF9jcmVhdGl2ZSI6InBob3RvX3NlYXJjaF80IiwiYWRfYWN0aW9uIjoiY2xpY2siLCJhZF9pbXByZXNzaW9uX2lkIjoiZGFlYWRmZWUtNTlhMC00ZmRlLTkxM2MtZmMxNDA2OTViOWI4IiwibWVkaWFfdHlwZSI6InBob3RvIiwicXVlcnkiOiJmb2xkZWQgcGFwZXIgaGFuZCB0b3dlbHMgc3RhY2sifX0/
+                    - img [ref=f116e473]:
+                      - generic [ref=f116e474]: Get 20% off with code PEXELS20 »
+                - article [ref=f116e477]:
+                  - link [ref=f116e478] [cursor=pointer]:
+                    - /url: /photo/stack-of-colorful-striped-turkish-towels-30982437/
+                    - img "Free A neatly stacked pile of colorful striped Turkish towels with fringe details. Stock Photo" [ref=f116e479]
+                  - generic:
+                    - button "Crop" [ref=f116e483] [cursor=pointer]
+                    - link "Download" [ref=f116e491] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/30982437/pexels-photo-30982437.jpeg?cs=srgb&dl=pexels-laarkstudio-30982437.jpg&fm=jpg
+                - article [ref=f116e497]:
+                  - link [ref=f116e498] [cursor=pointer]:
+                    - /url: /photo/folded-newspapers-5505690/
+                    - img "Free Close-up of stacked newspapers on a table, representing media and journalism. Stock Photo" [ref=f116e499]
+                  - generic:
+                    - button "Edit" [ref=f116e503] [cursor=pointer]
+                    - link "Download" [ref=f116e511] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5505690/pexels-photo-5505690.jpeg?cs=srgb&dl=pexels-mike-van-schoonderwalt-1884800-5505690.jpg&fm=jpg
+                - article [ref=f116e517]:
+                  - link [ref=f116e518] [cursor=pointer]:
+                    - /url: /photo/textile-worker-folding-red-fabrics-in-factory-31030925/
+                    - img "Free A female textile worker folding red towels in an indoor factory setting. Stock Photo" [ref=f116e519]
+                  - generic:
+                    - button "Add Text" [ref=f116e523] [cursor=pointer]
+                    - link "Download" [ref=f116e531] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/31030925/pexels-photo-31030925.jpeg?cs=srgb&dl=pexels-equalstock-31030925.jpg&fm=jpg
+                - article [ref=f116e537]:
+                  - link [ref=f116e538] [cursor=pointer]:
+                    - /url: /photo/stack-of-coffee-filters-4816503/
+                    - img "Free Detailed close-up of wavy stacked paper sheets showcasing texture and pattern. Stock Photo" [ref=f116e539]
+                  - generic:
+                    - button "Crop" [ref=f116e543] [cursor=pointer]
+                    - link "Download" [ref=f116e551] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4816503/pexels-photo-4816503.jpeg?cs=srgb&dl=pexels-maksgelatin-4816503.jpg&fm=jpg
+                - article [ref=f116e557]:
+                  - link [ref=f116e558] [cursor=pointer]:
+                    - /url: /photo/stack-of-blue-towels-on-wooden-shelf-34006035/
+                    - img "Free Neatly folded stack of blue towels on a wooden shelf with soft lighting. Stock Photo" [ref=f116e559]
+                  - generic:
+                    - button "Crop" [ref=f116e563] [cursor=pointer]
+                    - link "Download" [ref=f116e571] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/34006035/pexels-photo-34006035.jpeg?cs=srgb&dl=pexels-theo-cold-814199886-34006035.jpg&fm=jpg
+                - article [ref=f116e577]:
+                  - link [ref=f116e578] [cursor=pointer]:
+                    - /url: /photo/folded-textile-in-close-up-shot-11733651/
+                    - img "Free Close-up of a stack of neatly folded green linens highlighting their texture and neatness. Stock Photo" [ref=f116e579]
+                  - generic:
+                    - button "Crop" [ref=f116e583] [cursor=pointer]
+                    - link "Download" [ref=f116e591] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/11733651/pexels-photo-11733651.jpeg?cs=srgb&dl=pexels-ruslan-rozanov-174297693-11733651.jpg&fm=jpg
+                - article [ref=f116e597]:
+                  - link [ref=f116e598] [cursor=pointer]:
+                    - /url: /photo/stack-of-clean-towels-on-white-stool-4210378/
+                    - img "Free Stack of soft clean fresh gray towels placed on white minimalist stool against beige wall Stock Photo" [ref=f116e599]
+                  - generic:
+                    - button "Adjust Colors" [ref=f116e603] [cursor=pointer]
+                    - link "Download" [ref=f116e611] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4210378/pexels-photo-4210378.jpeg?cs=srgb&dl=pexels-karola-g-4210378.jpg&fm=jpg
+                - link [ref=f116e616] [cursor=pointer]:
+                  - /url: /collections/papers-axnaz1u/
+                  - article [ref=f116e617]:
+                    - list [ref=f116e619]:
+                      - listitem [ref=f116e620]
+                      - listitem [ref=f116e622]
+                      - listitem [ref=f116e624]
+                    - generic [ref=f116e626]:
+                      - heading "Papers" [level=4] [ref=f116e627]
+                      - paragraph [ref=f116e631]: "63"
+                - article [ref=f116e634]:
+                  - link [ref=f116e635] [cursor=pointer]:
+                    - /url: /photo/stack-of-newspapers-3866816/
+                    - img "Free A stack of folded newspapers placed on a wooden table, symbolizing news and information. Stock Photo" [ref=f116e636]
+                  - generic:
+                    - button "Retouch" [ref=f116e640] [cursor=pointer]
+                    - link "Download" [ref=f116e648] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/3866816/pexels-photo-3866816.jpeg?cs=srgb&dl=pexels-suzyhazelwood-3866816.jpg&fm=jpg
+                - article [ref=f116e654]:
+                  - link [ref=f116e655] [cursor=pointer]:
+                    - /url: /photo/happy-textile-worker-in-production-line-31259251/
+                    - img "Free Smiling female factory worker organizes folded textiles in a busy production line. Stock Photo" [ref=f116e656]
+                  - generic:
+                    - button "Remove Background" [ref=f116e660] [cursor=pointer]
+                    - link "Download" [ref=f116e668] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/31259251/pexels-photo-31259251.jpeg?cs=srgb&dl=pexels-equalstock-31259251.jpg&fm=jpg
+                - article [ref=f116e674]:
+                  - link [ref=f116e675] [cursor=pointer]:
+                    - /url: /photo/photo-of-folded-towels-7466531/
+                    - img "Free An array of colorful folded towels organized neatly on display shelves. Stock Photo" [ref=f116e676]
+                  - generic:
+                    - button "Add Text" [ref=f116e680] [cursor=pointer]
+                    - link "Download" [ref=f116e688] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7466531/pexels-photo-7466531.jpeg?cs=srgb&dl=pexels-hngstrm-7466531.jpg&fm=jpg
+                - article [ref=f116e694]:
+                  - link [ref=f116e695] [cursor=pointer]:
+                    - /url: /photo/person-drying-hands-with-paper-towel-4008503/
+                    - img "Free Hands being dried with paper towels near a gold faucet in a bathroom setting. Stock Photo" [ref=f116e696]
+                  - generic:
+                    - button "Add Text" [ref=f116e700] [cursor=pointer]
+                    - link "Download" [ref=f116e708] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4008503/pexels-photo-4008503.jpeg?cs=srgb&dl=pexels-polina-zimmerman-4008503.jpg&fm=jpg
+                - article [ref=f116e714]:
+                  - link [ref=f116e715] [cursor=pointer]:
+                    - /url: /photo/close-up-of-stack-of-newspapers-5505718/
+                    - img "Free A detailed close-up view of stacked newspapers, highlighting textures and layers. Stock Photo" [ref=f116e716]
+                  - generic:
+                    - button "Adjust Colors" [ref=f116e720] [cursor=pointer]
+                    - link "Download" [ref=f116e728] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5505718/pexels-photo-5505718.jpeg?cs=srgb&dl=pexels-mike-van-schoonderwalt-1884800-5505718.jpg&fm=jpg
+                - article [ref=f116e734]:
+                  - link [ref=f116e735] [cursor=pointer]:
+                    - /url: /photo/towels-on-shelf-15852132/
+                    - img "Free Stack of rolled cotton towels on a wooden shelf in soft lighting, perfect for spas or home decor. Stock Photo" [ref=f116e736]
+                  - generic:
+                    - button "Edit" [ref=f116e740] [cursor=pointer]
+                    - link "Download" [ref=f116e748] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/15852132/pexels-photo-15852132.jpeg?cs=srgb&dl=pexels-tugce-acikyurek-3099881-15852132.jpg&fm=jpg
+                - article [ref=f116e754]:
+                  - link [ref=f116e755] [cursor=pointer]:
+                    - /url: /photo/close-up-photo-of-newspapers-5010877/
+                    - img "Free Close-up of a stack of colorful newspapers on a wooden table, showcasing print media. Stock Photo" [ref=f116e756]
+                  - generic:
+                    - button "Remove Background" [ref=f116e760] [cursor=pointer]
+                    - link "Download" [ref=f116e768] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5010877/pexels-photo-5010877.jpeg?cs=srgb&dl=pexels-suzyhazelwood-5010877.jpg&fm=jpg
+                - article [ref=f116e774]:
+                  - link [ref=f116e775] [cursor=pointer]:
+                    - /url: /photo/photo-of-stacked-clear-papers-4038653/
+                    - img "Free Stack of white paper on textured fabric surface, perfect for minimalistic designs. Stock Photo" [ref=f116e776]
+                  - generic:
+                    - button "Add Text" [ref=f116e780] [cursor=pointer]
+                    - link "Download" [ref=f116e788] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4038653/pexels-photo-4038653.jpeg?cs=srgb&dl=pexels-karola-g-4038653.jpg&fm=jpg
+              - button "Load More" [ref=f116e793] [cursor=pointer]
+            - navigation [ref=f116e796]:
+              - generic [ref=f116e798]:
+                - link "1" [ref=f116e800]:
+                  - /url: /search/folded%20paper%20hand%20towels%20stack/
+                - link "2" [ref=f116e803] [cursor=pointer]:
+                  - /url: /search/folded%20paper%20hand%20towels%20stack/?page=2
+                - link "3" [ref=f116e806] [cursor=pointer]:
+                  - /url: /search/folded%20paper%20hand%20towels%20stack/?page=3
+                - link "4" [ref=f116e809] [cursor=pointer]:
+                  - /url: /search/folded%20paper%20hand%20towels%20stack/?page=4
+                - link "5" [ref=f116e812] [cursor=pointer]:
+                  - /url: /search/folded%20paper%20hand%20towels%20stack/?page=5
+                - link "6" [ref=f116e815] [cursor=pointer]:
+                  - /url: /search/folded%20paper%20hand%20towels%20stack/?page=6
+                - link "Next" [ref=f116e818] [cursor=pointer]:
+                  - /url: /search/folded%20paper%20hand%20towels%20stack/?page=2
+    - contentinfo [ref=f116e822]:
+      - separator [ref=f116e823]
+      - generic [ref=f116e824]:
+        - generic [ref=f116e825]:
+          - heading "Where stories come together." [level=2] [ref=f116e826]
+          - generic [ref=f116e827]:
+            - link "iOS" [ref=f116e828] [cursor=pointer]:
+              - /url: https://itunes.apple.com/us/app/pexels/id1434330413/
+            - link "Android" [ref=f116e831] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.pexels.app
+          - list [ref=f116e834]:
+            - listitem [ref=f116e835]:
+              - link "Instagram" [ref=f116e836] [cursor=pointer]:
+                - /url: https://www.instagram.com/pexels/
+            - listitem [ref=f116e839]:
+              - link "Threads" [ref=f116e840] [cursor=pointer]:
+                - /url: https://www.threads.net/@pexels/
+            - listitem [ref=f116e843]:
+              - link "YouTube" [ref=f116e844] [cursor=pointer]:
+                - /url: https://www.youtube.com/pexelsphotos/
+            - listitem [ref=f116e847]:
+              - link "TikTok" [ref=f116e848] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@pexels/
+            - listitem [ref=f116e851]:
+              - link "LinkedIn" [ref=f116e852] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/pexels/
+            - listitem [ref=f116e855]:
+              - link "X" [ref=f116e856] [cursor=pointer]:
+                - /url: https://x.com/pexels/
+        - generic [ref=f116e859]:
+          - list [ref=f116e860]:
+            - heading "Pexels" [level=3] [ref=f116e861]
+            - listitem [ref=f116e862]:
+              - link "Free Stock Photos" [ref=f116e863] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f116e864]:
+              - link "Free Videos" [ref=f116e865] [cursor=pointer]:
+                - /url: /videos/
+            - listitem [ref=f116e866]:
+              - link "Popular searches" [ref=f116e867] [cursor=pointer]:
+                - /url: /popular-searches/
+            - listitem [ref=f116e868]:
+              - link "Collections" [ref=f116e869] [cursor=pointer]:
+                - /url: /discover/
+            - listitem [ref=f116e870]:
+              - link "Challenges" [ref=f116e871] [cursor=pointer]:
+                - /url: /challenges/
+            - listitem [ref=f116e872]:
+              - link "Leaderboard" [ref=f116e873] [cursor=pointer]:
+                - /url: /leaderboard/
+            - listitem [ref=f116e874]:
+              - link "Other plugins & apps" [ref=f116e875] [cursor=pointer]:
+                - /url: /pro/
+          - list [ref=f116e876]:
+            - heading "Company" [level=3] [ref=f116e877]
+            - listitem [ref=f116e878]:
+              - link "About" [ref=f116e879] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=f116e880]:
+              - link "Blog" [ref=f116e881] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=f116e882]:
+              - link "Help Center" [ref=f116e883] [cursor=pointer]:
+                - /url: https://help.pexels.com/hc/en-us
+            - listitem [ref=f116e884]:
+              - link "Report content" [ref=f116e885] [cursor=pointer]:
+                - /url: /report/
+            - listitem [ref=f116e886]:
+              - link "Become a Hero" [ref=f116e887] [cursor=pointer]:
+                - /url: /hero/
+            - listitem [ref=f116e888]:
+              - link "Partner with Pexels" [ref=f116e889] [cursor=pointer]:
+                - /url: /become-a-partner/
+            - listitem [ref=f116e890]:
+              - link "Image & Video API" [ref=f116e891] [cursor=pointer]:
+                - /url: /api/
+            - listitem [ref=f116e892]: Sign Up
+        - list [ref=f116e893]:
+          - listitem [ref=f116e894]:
+            - heading "Free Stock Photos" [level=3] [ref=f116e895]
+          - listitem [ref=f116e896]:
+            - generic [ref=f116e898]:
+              - link "Black and white photography" [ref=f116e900] [cursor=pointer]:
+                - /url: /search/black%20and%20white/
+              - link "Happy birthday images" [ref=f116e901] [cursor=pointer]:
+                - /url: /search/happy%20birthday/
+              - link "Free business videos" [ref=f116e902] [cursor=pointer]:
+                - /url: /search/videos/business/
+              - link "Happy new year images" [ref=f116e903] [cursor=pointer]:
+                - /url: /search/happy%20new%20year/
+              - link "Cool wallpapers" [ref=f116e904] [cursor=pointer]:
+                - /url: /search/cool%20wallpaper/
+              - link "Best HD wallpapers" [ref=f116e905] [cursor=pointer]:
+                - /url: /search/hd%20wallpaper/
+              - link "Galaxy wallpaper" [ref=f116e906] [cursor=pointer]:
+                - /url: /search/galaxy%20wallpaper/
+              - link "Lock screen wallpaper" [ref=f116e907] [cursor=pointer]:
+                - /url: /search/lock%20screen%20wallpaper/
+              - link "iPhone wallpaper" [ref=f116e908] [cursor=pointer]:
+                - /url: /search/iphone%20wallpaper/
+              - link "4K wallpaper" [ref=f116e909] [cursor=pointer]:
+                - /url: /search/4k%20wallpaper/
+              - link "Samsung wallpaper" [ref=f116e910] [cursor=pointer]:
+                - /url: /search/samsung%20wallpaper/
+              - link "Love wallpaper" [ref=f116e911] [cursor=pointer]:
+                - /url: /search/love%20wallpaper/
+              - link "Mobile wallpaper" [ref=f116e912] [cursor=pointer]:
+                - /url: /search/mobile%20wallpaper/
+      - generic [ref=f116e914]:
+        - generic [ref=f116e915]: © 2026 Pexels
+        - generic [ref=f116e917]:
+          - link "Terms of Use" [ref=f116e919] [cursor=pointer]:
+            - /url: /terms-of-service/
+          - link "Privacy Policy" [ref=f116e920] [cursor=pointer]:
+            - /url: /privacy-policy/
+          - link "License" [ref=f116e921] [cursor=pointer]:
+            - /url: /license/
+          - link "Imprint" [ref=f116e922] [cursor=pointer]:
+            - /url: /imprint/
+          - link "Cookies Policy" [ref=f116e923] [cursor=pointer]:
+            - /url: /cookies/
+          - img [ref=f116e924] [cursor=pointer]
+        - button "English" [ref=f116e928] [cursor=pointer]
+      - separator [ref=f116e933]
+  - alert [ref=f116e934]
+  - status [ref=f116e935]: "[object Object] has been selected."

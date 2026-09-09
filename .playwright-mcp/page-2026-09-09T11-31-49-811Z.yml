@@ -1,0 +1,495 @@
+- generic [active] [ref=f55e1]:
+  - generic [ref=f55e3]:
+    - navigation [ref=f55e6]:
+      - link [ref=f55e8] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f55e12]:
+        - button [ref=f55e13] [cursor=pointer]
+        - button "Join" [ref=f55e17] [cursor=pointer]
+        - button [ref=f55e20] [cursor=pointer]
+    - main [ref=f55e25]:
+      - generic [ref=f55e26]:
+        - generic [ref=f55e30]:
+          - paragraph [ref=f55e32] [cursor=pointer]: Any
+          - paragraph [ref=f55e37] [cursor=pointer]: Horizontal
+          - paragraph [ref=f55e42] [cursor=pointer]: Vertical
+          - paragraph [ref=f55e47] [cursor=pointer]: Square
+        - generic [ref=f55e51]:
+          - paragraph [ref=f55e53] [cursor=pointer]: Any
+          - paragraph [ref=f55e55] [cursor=pointer]: "0"
+          - paragraph [ref=f55e60] [cursor=pointer]: "1"
+          - paragraph [ref=f55e65] [cursor=pointer]: "2"
+          - paragraph [ref=f55e70] [cursor=pointer]: 3+
+        - generic [ref=f55e74]:
+          - paragraph [ref=f55e76] [cursor=pointer]: Any
+          - paragraph [ref=f55e81] [cursor=pointer]: Baby
+          - paragraph [ref=f55e86] [cursor=pointer]: Child
+          - paragraph [ref=f55e91] [cursor=pointer]: Teenager
+          - paragraph [ref=f55e96] [cursor=pointer]: Adult
+          - paragraph [ref=f55e101] [cursor=pointer]: Senior adult
+        - generic [ref=f55e104]:
+          - generic [ref=f55e105]:
+            - generic [ref=f55e106] [cursor=pointer]
+            - slider [ref=f55e108] [cursor=pointer]
+            - slider [ref=f55e109] [cursor=pointer]
+          - generic [ref=f55e110]:
+            - generic [ref=f55e111]:
+              - paragraph [ref=f55e112]: Minimum
+              - paragraph [ref=f55e113]: 1,080px
+            - generic [ref=f55e114]:
+              - paragraph [ref=f55e115]: Maximum
+              - paragraph [ref=f55e116]: 20,000px+
+        - generic [ref=f55e119]:
+          - generic [ref=f55e120]:
+            - generic [ref=f55e121] [cursor=pointer]
+            - slider [ref=f55e123] [cursor=pointer]
+            - slider [ref=f55e124] [cursor=pointer]
+          - generic [ref=f55e125]:
+            - generic [ref=f55e126]:
+              - paragraph [ref=f55e127]: Minimum
+              - paragraph [ref=f55e128]: 1,080px
+            - generic [ref=f55e129]:
+              - paragraph [ref=f55e130]: Maximum
+              - paragraph [ref=f55e131]: 20,000px+
+        - generic [ref=f55e135]:
+          - button [ref=f55e136] [cursor=pointer]:
+            - textbox [ref=f55e142]:
+              - /placeholder: Enter hex code
+          - button [ref=f55e145] [cursor=pointer]:
+            - textbox [ref=f55e151]: "#000000"
+        - generic [ref=f55e155]:
+          - paragraph [ref=f55e157] [cursor=pointer]: Any
+          - paragraph [ref=f55e162] [cursor=pointer]: Last 24 hours
+          - paragraph [ref=f55e167] [cursor=pointer]: Last week
+          - paragraph [ref=f55e172] [cursor=pointer]: Last month
+          - paragraph [ref=f55e177] [cursor=pointer]: Last year
+        - main "main-content" [ref=f55e178]:
+          - generic [ref=f55e179]:
+            - generic [ref=f55e180]:
+              - heading "Choose your language:" [level=5] [ref=f55e181]
+              - generic [ref=f55e183]:
+                - link "English English" [ref=f55e185] [cursor=pointer]:
+                  - /url: /search/medical%20exam%20table%20paper%20roll/
+                  - generic [ref=f55e186]:
+                    - img "English" [ref=f55e187]
+                    - generic [ref=f55e188]: English
+                - link "Español Español" [ref=f55e189] [cursor=pointer]:
+                  - /url: /es-es/buscar/medical%20exam%20table%20paper%20roll/
+                  - generic [ref=f55e190]:
+                    - img "Español" [ref=f55e191]
+                    - generic [ref=f55e192]: Español
+                - button [ref=f55e193] [cursor=pointer]
+            - heading "Free Medical Exam Table Paper Roll Photos" [level=1] [ref=f55e200]
+            - generic [ref=f55e203]:
+              - link "Photos 10K" [ref=f55e205] [cursor=pointer]:
+                - /url: /search/medical%20exam%20table%20paper%20roll/
+                - text: Photos
+                - generic [ref=f55e206]: 10K
+              - link "Videos 10K" [ref=f55e207] [cursor=pointer]:
+                - /url: /search/videos/medical%20exam%20table%20paper%20roll/
+                - text: Videos
+                - generic [ref=f55e208]: 10K
+              - link "Users 10K" [ref=f55e209] [cursor=pointer]:
+                - /url: /search/users/medical%20exam%20table%20paper%20roll/
+                - text: Users
+                - generic [ref=f55e210]: 10K
+              - img [ref=f55e211] [cursor=pointer]
+            - generic [ref=f55e214]:
+              - button "Filters" [ref=f55e216] [cursor=pointer]
+              - generic [ref=f55e226]:
+                - link [ref=f55e228] [cursor=pointer]:
+                  - /url: /search/hospital%20bed/
+                  - img "hospital bed" [ref=f55e229]
+                  - generic [ref=f55e230]:
+                    - paragraph [ref=f55e231]: hospital bed
+                    - paragraph [ref=f55e232]: 73K
+                - link [ref=f55e233] [cursor=pointer]:
+                  - /url: /search/toilet%20paper/
+                  - img "toilet paper" [ref=f55e234]
+                  - generic [ref=f55e235]:
+                    - paragraph [ref=f55e236]: toilet paper
+                    - paragraph [ref=f55e237]: 5K
+                - link [ref=f55e238] [cursor=pointer]:
+                  - /url: /search/medical%20equipment/
+                  - img "medical equipment" [ref=f55e239]
+                  - generic [ref=f55e240]:
+                    - paragraph [ref=f55e241]: medical equipment
+                    - paragraph [ref=f55e242]: 127K
+                - link [ref=f55e243] [cursor=pointer]:
+                  - /url: /search/baby%20diaper/
+                  - img "baby diaper" [ref=f55e244]
+                  - generic [ref=f55e245]:
+                    - paragraph [ref=f55e246]: baby diaper
+                    - paragraph [ref=f55e247]: 36K
+                - link [ref=f55e248] [cursor=pointer]:
+                  - /url: /search/hospital%20room/
+                  - img "hospital room" [ref=f55e249]
+                  - generic [ref=f55e250]:
+                    - paragraph [ref=f55e251]: hospital room
+                    - paragraph [ref=f55e252]: 150K
+            - generic [ref=f55e254]:
+              - generic [ref=f55e257]:
+                - article [ref=f55e260]:
+                  - link [ref=f55e261] [cursor=pointer]:
+                    - /url: /photo/patient-sitting-during-examination-8313188/
+                    - img "Free A healthcare professional in a clinical setting examines a patient sitting on a treatment table. Stock Photo" [ref=f55e262]
+                  - generic:
+                    - button "Retouch" [ref=f55e266] [cursor=pointer]
+                    - link "Download" [ref=f55e274] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/8313188/pexels-photo-8313188.jpeg?cs=srgb&dl=pexels-rdne-8313188.jpg&fm=jpg
+                - article [ref=f55e280]:
+                  - link [ref=f55e281] [cursor=pointer]:
+                    - /url: /photo/close-up-shot-of-person-writing-on-white-paper-8376141/
+                    - img "Free Close-up of a doctor's hand writing notes with a pen on paper, capturing a moment in a medical setting. Stock Photo" [ref=f55e282]
+                  - generic:
+                    - button "Crop" [ref=f55e286] [cursor=pointer]
+                    - link "Download" [ref=f55e294] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/8376141/pexels-photo-8376141.jpeg?cs=srgb&dl=pexels-tima-miroshnichenko-8376141.jpg&fm=jpg
+                - generic [ref=f55e299]:
+                  - generic [ref=f55e301]:
+                    - link [ref=f55e302] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20medical%20exam%20table%20paper%20roll%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own medical exam table paper roll content with Canva" [ref=f55e303]
+                    - link [ref=f55e304] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20medical%20exam%20table%20paper%20roll%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own medical exam table paper roll content with Canva" [ref=f55e305]
+                    - link [ref=f55e306] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20medical%20exam%20table%20paper%20roll%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own medical exam table paper roll content with Canva" [ref=f55e307]
+                    - link [ref=f55e308] [cursor=pointer]:
+                      - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20medical%20exam%20table%20paper%20roll%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                      - img "Create your own medical exam table paper roll content with Canva" [ref=f55e309]
+                  - link [ref=f55e310] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20medical%20exam%20table%20paper%20roll%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                    - paragraph [ref=f55e313]: Bring your ideas to life with Canva AI
+                  - link "Get started for free" [ref=f55e314] [cursor=pointer]:
+                    - /url: https://www.canva.com/features/ai-image-generator/?prompt=High%20quality%20stock%20photo%20of%20medical%20exam%20table%20paper%20roll%2C%20professional%20lighting%2C%20sharp%20focus%2C%20natural%20colors%2C%20realistic%20detail%2C%20modern%20composition%2C%20commercial%20use%20standard%2C%20editorial%20style%2C%20ultra%20HD%2C%20clean%20background&utm_source=pexels&utm_campaign=aigc_pexelscampaign&utm_medium=partner
+                - article [ref=f55e319]:
+                  - link [ref=f55e320] [cursor=pointer]:
+                    - /url: /photo/person-in-white-coat-holding-a-black-pen-4989149/
+                    - img "Free Close-up of a doctor writing on a notepad, wearing a stethoscope around the neck. Stock Photo" [ref=f55e321]
+                  - generic:
+                    - button "Add Text" [ref=f55e325] [cursor=pointer]
+                    - link "Download" [ref=f55e333] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4989149/pexels-photo-4989149.jpeg?cs=srgb&dl=pexels-ivan-s-4989149.jpg&fm=jpg
+                - article [ref=f55e339]:
+                  - link [ref=f55e340] [cursor=pointer]:
+                    - /url: /photo/a-woman-in-white-coat-sitting-at-the-table-7578800/
+                    - img "Free Doctor with stethoscope and white coat seated at a clinic desk. Stock Photo" [ref=f55e341]
+                  - generic:
+                    - button "Retouch" [ref=f55e345] [cursor=pointer]
+                    - link "Download" [ref=f55e353] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7578800/pexels-photo-7578800.jpeg?cs=srgb&dl=pexels-cottonbro-7578800.jpg&fm=jpg
+                - article [ref=f55e359]:
+                  - link [ref=f55e360] [cursor=pointer]:
+                    - /url: /photo/a-black-stethoscope-on-white-sheet-of-paper-7722676/
+                    - img "Free Flat lay of a stethoscope, blank paper, and pen on a blue background. Stock Photo" [ref=f55e361]
+                  - generic:
+                    - button "Adjust Colors" [ref=f55e365] [cursor=pointer]
+                    - link "Download" [ref=f55e373] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7722676/pexels-photo-7722676.jpeg?cs=srgb&dl=pexels-tara-winstead-7722676.jpg&fm=jpg
+                - article [ref=f55e379]:
+                  - link [ref=f55e380] [cursor=pointer]:
+                    - /url: /photo/a-beige-gynecological-chair-7108391/
+                    - img "Free A well-equipped gynecological examination room with modern medical equipment. Stock Photo" [ref=f55e381]
+                  - generic:
+                    - button "Add Text" [ref=f55e385] [cursor=pointer]
+                    - link "Download" [ref=f55e393] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7108391/pexels-photo-7108391.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-7108391.jpg&fm=jpg
+                - article [ref=f55e399]:
+                  - link [ref=f55e400] [cursor=pointer]:
+                    - /url: /photo/female-patient-sitting-on-a-doctor-s-examination-table-6129495/
+                    - img "Free A woman in a hospital gown sits on an examination table in a medical office. Stock Photo" [ref=f55e401]
+                  - generic:
+                    - button "Crop" [ref=f55e405] [cursor=pointer]
+                    - link "Download" [ref=f55e413] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/6129495/pexels-photo-6129495.jpeg?cs=srgb&dl=pexels-rdne-6129495.jpg&fm=jpg
+                - article [ref=f55e419]:
+                  - link [ref=f55e420] [cursor=pointer]:
+                    - /url: /photo/detailed-view-of-ecg-equipment-and-readings-28585010/
+                    - img "Free Close-up of ECG device with leads and electrodes on printed heart rate graph, showcasing medical technology. Stock Photo" [ref=f55e421]
+                  - generic:
+                    - button "Retouch" [ref=f55e425] [cursor=pointer]
+                    - link "Download" [ref=f55e433] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/28585010/pexels-photo-28585010.jpeg?cs=srgb&dl=pexels-martabranco-28585010.jpg&fm=jpg
+                - article [ref=f55e439]:
+                  - link [ref=f55e440] [cursor=pointer]:
+                    - /url: /photo/a-bed-near-the-office-table-7789602/
+                    - img "Free Bright white clinic room with exam table, desk, and chair, showcasing modern minimalist design. Stock Photo" [ref=f55e441]
+                  - generic:
+                    - button "Edit" [ref=f55e445] [cursor=pointer]
+                    - link "Download" [ref=f55e453] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7789602/pexels-photo-7789602.jpeg?cs=srgb&dl=pexels-babydov-7789602.jpg&fm=jpg
+                - article [ref=f55e459]:
+                  - link [ref=f55e460] [cursor=pointer]:
+                    - /url: /photo/bed-in-a-clinic-8460220/
+                    - img "Free Clean and well-equipped hospital examination room with blue medical equipment and diagnostic devices. Stock Photo" [ref=f55e461]
+                  - generic:
+                    - button "Adjust Colors" [ref=f55e465] [cursor=pointer]
+                    - link "Download" [ref=f55e473] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/8460220/pexels-photo-8460220.jpeg?cs=srgb&dl=pexels-cristian-rojas-8460220.jpg&fm=jpg
+                - article [ref=f55e479]:
+                  - link [ref=f55e480] [cursor=pointer]:
+                    - /url: /photo/a-male-doctor-preparing-a-gauze-7469502/
+                    - img "Free A veterinarian preparing medical supplies in a clinic setting, showcasing professionalism and care. Stock Photo" [ref=f55e481]
+                  - generic:
+                    - button "Edit" [ref=f55e485] [cursor=pointer]
+                    - link "Download" [ref=f55e493] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7469502/pexels-photo-7469502.jpeg?cs=srgb&dl=pexels-mikhail-nilov-7469502.jpg&fm=jpg
+                - article [ref=f55e499]:
+                  - link [ref=f55e500] [cursor=pointer]:
+                    - /url: /photo/white-wooden-table-with-chairs-7789610/
+                    - img "Free Minimalist office interior featuring a desk with chairs, suitable for healthcare or office settings. Stock Photo" [ref=f55e501]
+                  - generic:
+                    - button "Retouch" [ref=f55e505] [cursor=pointer]
+                    - link "Download" [ref=f55e513] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7789610/pexels-photo-7789610.jpeg?cs=srgb&dl=pexels-babydov-7789610.jpg&fm=jpg
+                - article [ref=f55e519]:
+                  - link [ref=f55e520] [cursor=pointer]:
+                    - /url: /photo/woman-in-white-scrub-and-red-stethoscope-writing-down-prescription-5998466/
+                    - img "Free Female doctor writing a prescription in a clinical setting. Professional medical attire with stethoscope. Stock Photo" [ref=f55e521]
+                  - generic:
+                    - button "Retouch" [ref=f55e525] [cursor=pointer]
+                    - link "Download" [ref=f55e533] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5998466/pexels-photo-5998466.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-5998466.jpg&fm=jpg
+                - article [ref=f55e539]:
+                  - link [ref=f55e540] [cursor=pointer]:
+                    - /url: /photo/vintage-medical-office-with-examination-table-38666659/
+                    - img "Free A retro medical office setup with an examination table, instruments, and vintage decor. Stock Photo" [ref=f55e541]
+                  - generic:
+                    - button "Remove Background" [ref=f55e545] [cursor=pointer]
+                    - link "Download" [ref=f55e553] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/38666659/pexels-photo-38666659.jpeg?cs=srgb&dl=pexels-magda-ehlers-pexels-38666659.jpg&fm=jpg
+                - article [ref=f55e559]:
+                  - link [ref=f55e560] [cursor=pointer]:
+                    - /url: /photo/digital-blood-pressure-monitor-with-medication-32292593/
+                    - img "Free Digital blood pressure monitor on ECG paper with pills and medical supplies, ideal for healthcare topics. Stock Photo" [ref=f55e561]
+                  - generic:
+                    - button "Add Text" [ref=f55e565] [cursor=pointer]
+                    - link "Download" [ref=f55e573] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/32292593/pexels-photo-32292593.jpeg?cs=srgb&dl=pexels-martabranco-32292593.jpg&fm=jpg
+                - article [ref=f55e579]:
+                  - link [ref=f55e580] [cursor=pointer]:
+                    - /url: /photo/a-woman-putting-a-protective-sheet-on-an-examination-couch-7108351/
+                    - img "Free A nurse prepares an examination table in a healthcare facility, ensuring cleanliness and safety. Stock Photo" [ref=f55e581]
+                  - generic:
+                    - button "Remove Background" [ref=f55e585] [cursor=pointer]
+                    - link "Download" [ref=f55e593] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7108351/pexels-photo-7108351.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-7108351.jpg&fm=jpg
+                - link [ref=f55e598] [cursor=pointer]:
+                  - /url: /collections/tables-lkckuom/
+                  - article [ref=f55e599]:
+                    - list [ref=f55e601]:
+                      - listitem [ref=f55e602]
+                      - listitem [ref=f55e604]
+                      - listitem [ref=f55e606]
+                    - generic [ref=f55e608]:
+                      - heading "Tables" [level=4] [ref=f55e609]
+                      - paragraph [ref=f55e613]: "37"
+                - article [ref=f55e616]:
+                  - link [ref=f55e617] [cursor=pointer]:
+                    - /url: /photo/woman-in-white-robe-writing-on-white-paper-5998440/
+                    - img "Free A female doctor in a lab coat writing a prescription in a clinic office setting with a laptop on the table. Stock Photo" [ref=f55e618]
+                  - generic:
+                    - button "Edit" [ref=f55e622] [cursor=pointer]
+                    - link "Download" [ref=f55e630] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/5998440/pexels-photo-5998440.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-5998440.jpg&fm=jpg
+                - article [ref=f55e636]:
+                  - link [ref=f55e637] [cursor=pointer]:
+                    - /url: /photo/man-in-scrub-suit-7469496/
+                    - img "Free Doctor wearing gloves and holding syringe in medical setup Stock Photo" [ref=f55e638]
+                  - generic:
+                    - button "Edit" [ref=f55e642] [cursor=pointer]
+                    - link "Download" [ref=f55e650] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7469496/pexels-photo-7469496.jpeg?cs=srgb&dl=pexels-mikhail-nilov-7469496.jpg&fm=jpg
+                - article [ref=f55e656]:
+                  - link [ref=f55e657] [cursor=pointer]:
+                    - /url: /photo/comprehensive-medical-equipment-display-on-ecg-printout-32237047/
+                    - img "Free Medical setup featuring blood pressure monitor, pills, syringes, and ECG printout for healthcare themes. Stock Photo" [ref=f55e658]
+                  - generic:
+                    - button "Remove Background" [ref=f55e662] [cursor=pointer]
+                    - link "Download" [ref=f55e670] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/32237047/pexels-photo-32237047.jpeg?cs=srgb&dl=pexels-martabranco-32237047.jpg&fm=jpg
+                - article [ref=f55e676]:
+                  - link [ref=f55e677] [cursor=pointer]:
+                    - /url: /photo/close-up-shot-of-a-tissue-paper-roll-and-a-face-mask-4107941/
+                    - img "Free Close-up of toilet paper roll and face mask illustrating essential hygiene items. Stock Photo" [ref=f55e678]
+                  - generic:
+                    - button "Add Text" [ref=f55e682] [cursor=pointer]
+                    - link "Download" [ref=f55e690] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/4107941/pexels-photo-4107941.jpeg?cs=srgb&dl=pexels-polina-zimmerman-4107941.jpg&fm=jpg
+                - article [ref=f55e696]:
+                  - link [ref=f55e697] [cursor=pointer]:
+                    - /url: /photo/a-woman-in-white-lab-coat-smiling-7904406/
+                    - img "Free Smiling female doctor in a lab coat with a stethoscope, exemplifying healthcare expertise. Stock Photo" [ref=f55e698]
+                  - generic:
+                    - button "Edit" [ref=f55e702] [cursor=pointer]
+                    - link "Download" [ref=f55e710] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/7904406/pexels-photo-7904406.jpeg?cs=srgb&dl=pexels-anntarazevich-7904406.jpg&fm=jpg
+                - article [ref=f55e716]:
+                  - link [ref=f55e717] [cursor=pointer]:
+                    - /url: /photo/a-doctor-looking-at-the-camera-6749781/
+                    - img "Free Portrait of a confident female doctor smiling with arms crossed in a medical office setting. Stock Photo" [ref=f55e718]
+                  - generic:
+                    - button "Crop" [ref=f55e722] [cursor=pointer]
+                    - link "Download" [ref=f55e730] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/6749781/pexels-photo-6749781.jpeg?cs=srgb&dl=pexels-shkrabaanthony-6749781.jpg&fm=jpg
+                - article [ref=f55e736]:
+                  - link [ref=f55e737] [cursor=pointer]:
+                    - /url: /photo/woman-holding-a-stick-inside-a-clinic-6749715/
+                    - img "Free A professional female ophthalmologist examines an eye chart in a clinic setting, emphasizing eye health. Stock Photo" [ref=f55e738]
+                  - generic:
+                    - button "Crop" [ref=f55e742] [cursor=pointer]
+                    - link "Download" [ref=f55e750] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/6749715/pexels-photo-6749715.jpeg?cs=srgb&dl=pexels-shkrabaanthony-6749715.jpg&fm=jpg
+                - article [ref=f55e756]:
+                  - link [ref=f55e757] [cursor=pointer]:
+                    - /url: /photo/modern-optometry-chair-and-examination-equipment-33857823/
+                    - img "Free A modern optometry examination room with an ophthalmic chair and slit lamp. Stock Photo" [ref=f55e758]
+                  - generic:
+                    - button "Crop" [ref=f55e762] [cursor=pointer]
+                    - link "Download" [ref=f55e770] [cursor=pointer]:
+                      - /url: https://images.pexels.com/photos/33857823/pexels-photo-33857823.jpeg?cs=srgb&dl=pexels-fernando-capetillo-94107723-33857823.jpg&fm=jpg
+              - button "Load More" [ref=f55e775] [cursor=pointer]
+            - navigation [ref=f55e778]:
+              - generic [ref=f55e780]:
+                - link "1" [ref=f55e782]:
+                  - /url: /search/medical%20exam%20table%20paper%20roll/
+                - link "2" [ref=f55e785] [cursor=pointer]:
+                  - /url: /search/medical%20exam%20table%20paper%20roll/?page=2
+                - link "3" [ref=f55e788] [cursor=pointer]:
+                  - /url: /search/medical%20exam%20table%20paper%20roll/?page=3
+                - link "4" [ref=f55e791] [cursor=pointer]:
+                  - /url: /search/medical%20exam%20table%20paper%20roll/?page=4
+                - link "5" [ref=f55e794] [cursor=pointer]:
+                  - /url: /search/medical%20exam%20table%20paper%20roll/?page=5
+                - link "6" [ref=f55e797] [cursor=pointer]:
+                  - /url: /search/medical%20exam%20table%20paper%20roll/?page=6
+                - link "Next" [ref=f55e800] [cursor=pointer]:
+                  - /url: /search/medical%20exam%20table%20paper%20roll/?page=2
+    - contentinfo [ref=f55e804]:
+      - separator [ref=f55e805]
+      - generic [ref=f55e806]:
+        - generic [ref=f55e807]:
+          - heading "Where stories come together." [level=2] [ref=f55e808]
+          - generic [ref=f55e809]:
+            - link "iOS" [ref=f55e810] [cursor=pointer]:
+              - /url: https://itunes.apple.com/us/app/pexels/id1434330413/
+            - link "Android" [ref=f55e813] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.pexels.app
+          - list [ref=f55e816]:
+            - listitem [ref=f55e817]:
+              - link "Instagram" [ref=f55e818] [cursor=pointer]:
+                - /url: https://www.instagram.com/pexels/
+            - listitem [ref=f55e821]:
+              - link "Threads" [ref=f55e822] [cursor=pointer]:
+                - /url: https://www.threads.net/@pexels/
+            - listitem [ref=f55e825]:
+              - link "YouTube" [ref=f55e826] [cursor=pointer]:
+                - /url: https://www.youtube.com/pexelsphotos/
+            - listitem [ref=f55e829]:
+              - link "TikTok" [ref=f55e830] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@pexels/
+            - listitem [ref=f55e833]:
+              - link "LinkedIn" [ref=f55e834] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/pexels/
+            - listitem [ref=f55e837]:
+              - link "X" [ref=f55e838] [cursor=pointer]:
+                - /url: https://x.com/pexels/
+        - generic [ref=f55e841]:
+          - list [ref=f55e842]:
+            - heading "Pexels" [level=3] [ref=f55e843]
+            - listitem [ref=f55e844]:
+              - link "Free Stock Photos" [ref=f55e845] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=f55e846]:
+              - link "Free Videos" [ref=f55e847] [cursor=pointer]:
+                - /url: /videos/
+            - listitem [ref=f55e848]:
+              - link "Popular searches" [ref=f55e849] [cursor=pointer]:
+                - /url: /popular-searches/
+            - listitem [ref=f55e850]:
+              - link "Collections" [ref=f55e851] [cursor=pointer]:
+                - /url: /discover/
+            - listitem [ref=f55e852]:
+              - link "Challenges" [ref=f55e853] [cursor=pointer]:
+                - /url: /challenges/
+            - listitem [ref=f55e854]:
+              - link "Leaderboard" [ref=f55e855] [cursor=pointer]:
+                - /url: /leaderboard/
+            - listitem [ref=f55e856]:
+              - link "Other plugins & apps" [ref=f55e857] [cursor=pointer]:
+                - /url: /pro/
+          - list [ref=f55e858]:
+            - heading "Company" [level=3] [ref=f55e859]
+            - listitem [ref=f55e860]:
+              - link "About" [ref=f55e861] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=f55e862]:
+              - link "Blog" [ref=f55e863] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=f55e864]:
+              - link "Help Center" [ref=f55e865] [cursor=pointer]:
+                - /url: https://help.pexels.com/hc/en-us
+            - listitem [ref=f55e866]:
+              - link "Report content" [ref=f55e867] [cursor=pointer]:
+                - /url: /report/
+            - listitem [ref=f55e868]:
+              - link "Become a Hero" [ref=f55e869] [cursor=pointer]:
+                - /url: /hero/
+            - listitem [ref=f55e870]:
+              - link "Partner with Pexels" [ref=f55e871] [cursor=pointer]:
+                - /url: /become-a-partner/
+            - listitem [ref=f55e872]:
+              - link "Image & Video API" [ref=f55e873] [cursor=pointer]:
+                - /url: /api/
+            - listitem [ref=f55e874]: Sign Up
+        - list [ref=f55e875]:
+          - listitem [ref=f55e876]:
+            - heading "Free Stock Photos" [level=3] [ref=f55e877]
+          - listitem [ref=f55e878]:
+            - generic [ref=f55e880]:
+              - link "Black and white photography" [ref=f55e882] [cursor=pointer]:
+                - /url: /search/black%20and%20white/
+              - link "Happy birthday images" [ref=f55e883] [cursor=pointer]:
+                - /url: /search/happy%20birthday/
+              - link "Free business videos" [ref=f55e884] [cursor=pointer]:
+                - /url: /search/videos/business/
+              - link "Happy new year images" [ref=f55e885] [cursor=pointer]:
+                - /url: /search/happy%20new%20year/
+              - link "Cool wallpapers" [ref=f55e886] [cursor=pointer]:
+                - /url: /search/cool%20wallpaper/
+              - link "Best HD wallpapers" [ref=f55e887] [cursor=pointer]:
+                - /url: /search/hd%20wallpaper/
+              - link "Galaxy wallpaper" [ref=f55e888] [cursor=pointer]:
+                - /url: /search/galaxy%20wallpaper/
+              - link "Lock screen wallpaper" [ref=f55e889] [cursor=pointer]:
+                - /url: /search/lock%20screen%20wallpaper/
+              - link "iPhone wallpaper" [ref=f55e890] [cursor=pointer]:
+                - /url: /search/iphone%20wallpaper/
+              - link "4K wallpaper" [ref=f55e891] [cursor=pointer]:
+                - /url: /search/4k%20wallpaper/
+              - link "Samsung wallpaper" [ref=f55e892] [cursor=pointer]:
+                - /url: /search/samsung%20wallpaper/
+              - link "Love wallpaper" [ref=f55e893] [cursor=pointer]:
+                - /url: /search/love%20wallpaper/
+              - link "Mobile wallpaper" [ref=f55e894] [cursor=pointer]:
+                - /url: /search/mobile%20wallpaper/
+      - generic [ref=f55e896]:
+        - generic [ref=f55e897]: © 2026 Pexels
+        - generic [ref=f55e899]:
+          - link "Terms of Use" [ref=f55e901] [cursor=pointer]:
+            - /url: /terms-of-service/
+          - link "Privacy Policy" [ref=f55e902] [cursor=pointer]:
+            - /url: /privacy-policy/
+          - link "License" [ref=f55e903] [cursor=pointer]:
+            - /url: /license/
+          - link "Imprint" [ref=f55e904] [cursor=pointer]:
+            - /url: /imprint/
+          - link "Cookies Policy" [ref=f55e905] [cursor=pointer]:
+            - /url: /cookies/
+          - img [ref=f55e906] [cursor=pointer]
+        - button "English" [ref=f55e910] [cursor=pointer]
+      - separator [ref=f55e915]
+  - alert [ref=f55e916]
+  - status [ref=f55e917]: "[object Object] has been selected."
