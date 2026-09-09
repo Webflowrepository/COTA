@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import { EASE_STANDARD } from "@/lib/motion/tokens";
-import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
 // "Papel" se muestra separado en 2 filas (ver cota.papelSplit — es una
@@ -11,37 +10,7 @@ import { cota } from "@/lib/content/cota";
 // Químicos y Soluciones de cota.businessLines — 4 filas en total.
 const LINES = [...cota.papelSplit, ...cota.businessLines.filter((l) => l.id !== "papel")];
 
-// Foto por fila — quedaron en placeholder en la pasada de "ninguna foto se
-// repite" (ver historial: bobinas-deposito.jpeg y quimicos-tanques.png le
-// quedaron a ChemicalsToPaper, naschel-planta-aerea.png a IndustrialProcess).
-// El cliente subió imagen generada propia para tapar los huecos. Químicos
-// reusa quimicos-ibc-tanques.png (ya usada en ProductFamilies — mismo
-// criterio ahora para Conversión Integrada, que reusa conversion-
-// integrada.png también en el panel nuevo de ProductFamilies: son el
-// mismo concepto de negocio en 2 secciones, no fotos elegidas al azar).
-// Reemplazar por foto real de COTA cuando exista.
-// objectPosition: "top" — el contenedor de esta fila es corto y ancho
-// (h-40/44/48/56 según breakpoint, pero flex-1 lo hace muy ancho en
-// tablet/desktop), y en las fotos con gente ésta queda cerca del borde
-// superior del encuadre original. El recorte centrado default de
-// object-cover cortaba cabezas (confirmado con capturas en 768px y
-// 1920px). "top" ancla el borde superior de la foto al del contenedor y
-// recorta desde abajo en su lugar. Químicos no tiene gente — sin cambios.
-const MEDIA_PHOTO: Record<string, { src: string; alt: string; objectPosition?: string }> = {
-  "bobinas-convertidores": {
-    src: "/photos/bobinas-industriales-nave.png",
-    alt: "Nave industrial con bobinas de papel Tissue y máquina rebobinadora",
-  },
-  "conversion-integrada": {
-    src: "/photos/conversion-integrada.png",
-    alt: "Operarios junto a máquina de conversión de papel Tissue",
-    objectPosition: "top",
-  },
-  quimicos: { src: "/photos/quimicos-ibc-tanques.png", alt: "Tanques y contenedores IBC de proceso químico" },
-  soluciones: { src: "/photos/soluciones-logistica-montacargas.png", alt: "Montacargas moviendo bobina de papel en planta de COTA", objectPosition: "top" },
-};
-
-// CTA secundario por fila — apunta a la sección real correspondiente (no
+// CTA secundario por línea — apunta a la sección real correspondiente (no
 // a un mailto genérico), ya que todas tienen su propio anchor en la página.
 const SECONDARY_CTA: Record<string, { label: string; href: string }> = {
   "bobinas-convertidores": { label: "Ver especificaciones", href: "#papel" },
@@ -54,31 +23,34 @@ export default function WhatCotaDoes() {
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const { gsap, ScrollTrigger } = ensureGsapRegistered();
+    const { gsap } = ensureGsapRegistered();
     const ctx = gsap.context(() => {
-      gsap.utils.toArray<HTMLElement>(".line-row").forEach((row) => {
+      // Rediseño (pedido del cliente, ver memoria de esta conversación):
+      // antes eran 4 filas apiladas con foto grande al lado del texto —
+      // el cliente lo comparó con el panel fotográfico de "Un sistema
+      // industrial integrado" (ProductFamilies.tsx, más abajo en la
+      // página) y notó que mostraban las mismas 4 líneas con las mismas
+      // fotos en un formato parecido, como la misma sección repetida dos
+      // veces. Se sacó la foto de acá — pasa a ser un índice compacto
+      // (número + título + texto corto), mismo patrón que "Modelos de
+      // negocio" en PapelTissueSpecs.tsx (misma escala tipográfica,
+      // mismo group-hover, mismos divide-x) — así el sitio no inventa un
+      // tercer estilo de tarjeta para el mismo tipo de contenido. El
+      // panel con foto grande de ProductFamilies queda como el único
+      // lugar con esas fotos a tamaño protagonista.
+      gsap.utils.toArray<HTMLElement>(".line-card").forEach((card) => {
         gsap.fromTo(
-          row,
+          card,
           { autoAlpha: 0, y: 24 },
           {
             autoAlpha: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.7,
             ease: EASE_STANDARD,
-            scrollTrigger: { trigger: row, start: "top 85%", end: "top 55%", scrub: true },
-          },
-        );
-        gsap.fromTo(
-          row.querySelector(".media-reveal"),
-          { clipPath: "inset(100% 0 0 0)" },
-          {
-            clipPath: "inset(0% 0 0 0)",
-            ease: EASE_STANDARD,
-            scrollTrigger: { trigger: row, start: "top 85%", end: "top 50%", scrub: true },
+            scrollTrigger: { trigger: card, start: "top 88%", end: "top 60%", scrub: true },
           },
         );
       });
-      return () => ScrollTrigger.getAll().forEach((t) => t.trigger === rootRef.current && t.kill());
     }, rootRef);
     return () => ctx.revert();
   }, []);
@@ -110,69 +82,27 @@ export default function WhatCotaDoes() {
           Ir al formulario <span className="cta-arrow">→</span>
         </a>
 
-        <div className="flex flex-col divide-y divide-line-on-light">
-          {LINES.map((line) => (
-            <div className="line-row group relative flex flex-col gap-5 py-9 transition-[padding] duration-500 ease-out md:flex-row md:items-center md:justify-between md:gap-10 md:py-12 md:hover:pl-3" key={line.id}>
-              {/* w-[280px]/w-[28rem] fijos (con shrink-0), no max-w — con
-                  sólo un tope máximo, esta columna se achicaba al ancho
-                  natural de SU PROPIO texto (shrink-to-fit en flexbox sin
-                  width explícito), así que filas con copy corto ("Bobinas
-                  Industriales", "Conversión Integrada") quedaban más
-                  angostas que filas con copy largo (Químicos, Soluciones)
-                  — la foto de al lado (flex-1) absorbía esa diferencia y
-                  terminaba con anchos y bordes izquierdos distintos entre
-                  filas (confirmado midiendo getBoundingClientRect: hasta
-                  90px de diferencia). Ancho fijo = las 4 filas alinean
-                  igual sin importar cuánto texto tenga cada una. */}
-              <div className="min-w-0 w-full shrink-0 md:w-[280px] lg:w-[28rem]">
-                <h3 className="text-heading text-ink transition-opacity duration-300 group-hover:opacity-60">{line.label}</h3>
-                <p className="mt-3 text-sm text-ink/55 md:text-base">{line.short}</p>
-                {SECONDARY_CTA[line.id] && (
-                  <a
-                    href={SECONDARY_CTA[line.id].href}
-                    className="font-label mt-5 inline-block w-fit border-b border-ink/40 pb-0.5 text-ink/70 transition-opacity hover:opacity-60"
-                  >
-                    {SECONDARY_CTA[line.id].label} <span className="cta-arrow">→</span>
-                  </a>
-                )}
-              </div>
-              {/* antes se ocultaba en mobile (hidden md:block) — dejaba un
-                  tramo de puro texto entre esta sección y "Por qué COTA".
-                  Ahora se ve también en mobile, más baja, para cortar la
-                  densidad.
-                  Auditoría comparativa (COTA_REFERENCE_GAP_AUDIT.md,
-                  intervención #1): antes tenía md:max-w-lg (512px) — con
-                  flex-1 ya de por sí capaz de crecer mucho más, ese tope
-                  cortaba la foto corta y dejaba ~325px de hueco muerto
-                  entre texto y foto (ni el texto ni la foto lo
-                  reclamaban, "justify-between" lo repartía como
-                  separación). Sacar el tope deja que flex-1 ocupe ese
-                  espacio de verdad. El margen negativo (md:-mr-12,
-                  1440px:-mr-20) empuja la foto hasta el borde real del
-                  viewport, cancelando el padding-inline de
-                  .container-industrial en esos mismos breakpoints (3rem/
-                  5rem) — sólo en la foto, el texto sigue dentro del
-                  container. El "!" en min-[1440px] hace falta porque ese
-                  variant arbitrario no le gana en cascada a "md:" por
-                  orden de aparición en el CSS generado, aunque 1440px
-                  sea un breakpoint más angosto (mismo tipo de problema
-                  que container-industrial vs. utilidades Tailwind — ver
-                  memoria de dirección de arte, punto 18). Sin cambios en
-                  mobile (<md sigue apilado a ancho completo, como ya
-                  estaba). */}
-              <div className="media-reveal relative h-40 w-full overflow-hidden sm:h-48 md:h-44 md:flex-1 md:-mr-12 lg:h-56 min-[1440px]:-mr-20!">
-                <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
-                  <PhotoMedia
-                    src={MEDIA_PHOTO[line.id].src}
-                    alt={MEDIA_PHOTO[line.id].alt}
-                    objectPosition={MEDIA_PHOTO[line.id].objectPosition}
-                    // Fila apilada a 100vw en mobile; en md+ la foto es
-                    // flex-1 al lado de una columna de texto de ~280-448px
-                    // — ~60vw es una aproximación razonable del resto.
-                    sizes="(min-width: 768px) 60vw, 100vw"
-                  />
-                </div>
-              </div>
+        {/* 1 columna en mobile (apiladas) → 2 en tablet (grid 2x2) → 4 en
+            desktop (una fila) — pedido explícito del cliente. divide-x
+            sólo en lg: con 2 columnas (tablet) un divisor vertical corta
+            raro contra el wrap a la fila de abajo; con 4 en una sola fila
+            (lg) se ve limpio, igual que "Modelos de negocio". */}
+        <div className="grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 sm:gap-y-14 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-line-on-light">
+          {LINES.map((line, i) => (
+            <div key={line.id} className="line-card group lg:px-8 lg:first:pl-0 lg:last:pr-0">
+              <span className="font-impact-number text-stat block text-ink/25 transition-colors duration-300 group-hover:text-ink/50">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="text-heading mt-4 text-ink transition-transform duration-300 group-hover:translate-x-1">{line.label}</h3>
+              <p className="mt-3 text-sm text-ink/60 md:text-base">{line.short}</p>
+              {SECONDARY_CTA[line.id] && (
+                <a
+                  href={SECONDARY_CTA[line.id].href}
+                  className="font-label mt-5 inline-block w-fit border-b border-ink/40 pb-0.5 text-ink/70 transition-opacity hover:opacity-60"
+                >
+                  {SECONDARY_CTA[line.id].label} <span className="cta-arrow">→</span>
+                </a>
+              )}
             </div>
           ))}
         </div>

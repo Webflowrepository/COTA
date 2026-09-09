@@ -34,7 +34,13 @@ export default function NaschelPlant() {
           y: 0,
           duration: 0.7,
           ease: "power2.out",
-          scrollTrigger: { trigger: rootRef.current, start: "top 70%", toggleActions: "play none none none" },
+          // "top 100%" (no "top 70%"): dispara apenas el borde superior de
+          // la sección toca el borde inferior del viewport — el instante
+          // exacto en que la sección empieza a aparecer, no después de
+          // haber scrolleado un tramo extra. El cliente lo pidió así: que
+          // el heading/stats aparezcan solos al llegar, sin depender de
+          // cuánto más se siga scrolleando.
+          scrollTrigger: { trigger: rootRef.current, start: "top 100%", toggleActions: "play none none none" },
         },
       );
     }, rootRef);
