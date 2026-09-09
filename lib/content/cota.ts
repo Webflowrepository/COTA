@@ -137,14 +137,42 @@ export const cota = {
       short: "Línea propia de COTA, con apoyo a distribuidores en todo el país.",
     },
   ],
-  /** Catálogo de productos terminados — confirmado por el cliente. */
+  /**
+   * Catálogo de productos terminados — confirmado por el cliente.
+   * "Toallas en rollo" + "Camilleros" se muestran fusionados en una sola
+   * tarjeta (mismo material en rollo, distinto formato/uso) — decisión
+   * tomada junto con el cliente al rediseñar "Nuestros Productos": eran 6
+   * productos pero uno quedaba sin tarjeta propia si no se fusionaba
+   * ninguno, y separar los 6 en tarjetas iguales diluía la jerarquía.
+   * Quedan 5 tarjetas. Subtítulos (formato/medida) provistos por el
+   * cliente en esa misma conversación — no inventados.
+   */
   finishedProducts: [
-    "Toallas en rollo",
-    "Camilleros",
-    "Bobinas de limpieza con precorte",
-    "Toallas intercaladas",
-    "Papel higiénico de medio y alto metraje",
-    "Servilletas extra blancas",
+    {
+      id: "toallas-rollo-camilleros",
+      label: "Toallas de papel en rollo y camilleros",
+      subtitle: "Múltiples formatos",
+    },
+    {
+      id: "bobinas-limpieza",
+      label: "Bobinas industriales de limpieza y multiuso con precorte",
+      subtitle: "Gran absorción",
+    },
+    {
+      id: "toallas-intercaladas",
+      label: "Caja toallas de papel intercaladas",
+      subtitle: "20cm x 24cm",
+    },
+    {
+      id: "papel-higienico",
+      label: "Papel higiénico de medio y alto metraje",
+      subtitle: "Suavidad y rendimiento en cada rollo",
+    },
+    {
+      id: "servilletas",
+      label: "Caja servilletas extra blancas",
+      subtitle: "Suaves y absorbentes",
+    },
   ],
   /**
    * Guardián — línea profesional de producto terminado (papel Tissue),

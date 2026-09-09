@@ -1,28 +1,34 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type JSX } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import { EASE_STANDARD } from "@/lib/motion/tokens";
 import SpecCounter from "@/components/ui/SpecCounter";
-import PhotoMedia from "@/components/visuals/PhotoMedia";
+import {
+  RollIcon,
+  IndustrialRollIcon,
+  InterfoldBoxIcon,
+  ToiletRollIcon,
+  NapkinBoxIcon,
+  LeafIcon,
+} from "@/components/ui/ProductIcons";
 import { cota } from "@/lib/content/cota";
 
 /**
- * Rodrigo pidió que "Productos terminados" tenga alguna visual (antes era
- * una lista de texto puro) — no hay fotografía de producto real de COTA
- * todavía, así que estas son fotos de stock con licencia libre (Pexels,
- * mismo criterio que el resto del sitio para material genérico no
- * específico de la planta), elegidas para que ninguna se repita/parezca a
- * otra ya usada en el sitio (ver memoria de dirección de arte: evitar
- * fotos casi-duplicadas). Producto real de COTA a futuro reemplaza esto.
+ * Rediseño de "Nuestros Productos" (pedido explícito del cliente, con
+ * referencia visual propia — línea minimalista verde sobre blanco, sin
+ * fotos/cards/sombras). Reemplaza el intento anterior con fotos de stock
+ * (no llegó a usarse: quedaba un mapa de fotos sin conectar al render) —
+ * un ícono de línea propio por producto es más consistente con "no look
+ * de stock-photo" que pidió el cliente, y no depende de conseguir fotos
+ * reales de producto que todavía no existen.
  */
-const PRODUCT_PHOTO: Record<string, string> = {
-  "Toallas en rollo": "/photos/producto-toallas-rollo-pexels.webp",
-  Camilleros: "/photos/producto-camilleros-pexels.webp",
-  "Bobinas de limpieza con precorte": "/photos/producto-bobinas-limpieza-pexels.webp",
-  "Toallas intercaladas": "/photos/producto-toallas-intercaladas-pexels.webp",
-  "Papel higiénico de medio y alto metraje": "/photos/producto-papel-higienico-pexels.webp",
-  "Servilletas extra blancas": "/photos/producto-servilletas-pexels.webp",
+const PRODUCT_ICON: Record<string, (props: { className?: string }) => JSX.Element> = {
+  "toallas-rollo-camilleros": RollIcon,
+  "bobinas-limpieza": IndustrialRollIcon,
+  "toallas-intercaladas": InterfoldBoxIcon,
+  "papel-higienico": ToiletRollIcon,
+  servilletas: NapkinBoxIcon,
 };
 
 export default function PapelTissueSpecs() {
@@ -60,7 +66,7 @@ export default function PapelTissueSpecs() {
         },
       );
       gsap.fromTo(
-        ".catalog-item",
+        ".product-card",
         { autoAlpha: 0, y: 14 },
         {
           autoAlpha: 1,
@@ -192,41 +198,69 @@ export default function PapelTissueSpecs() {
         </div>
       </div>
 
-      {/* Catálogo de productos terminados + Guardián. Se sacó de acá una vez
-          (quedaba "colgado" en Familias de Producto sin foto, y después
-          desconectado de este catálogo) y volvió a pedido del cliente en
-          la revisión — misma composición de 2 columnas que ya funcionaba:
-          catálogo con números grandes a la izquierda, marca a tamaño hero
-          a la derecha. */}
+      {/* Nuestros Productos — rediseño a pedido del cliente: línea
+          minimalista verde sobre blanco, un ícono propio por producto (sin
+          fotos, sin cards, sin sombras — ver comentario junto a
+          PRODUCT_ICON arriba). 5 tarjetas, no 6: "Toallas en rollo" y
+          "Camilleros" se fusionaron en una sola (ver comentario en
+          cota.ts). Grilla de 6 columnas en desktop, cada tarjeta ocupa 2
+          (=3 por fila): la fila de abajo (2 tarjetas) usa col-start para
+          quedar centrada en vez de pegada a la izquierda.
+          Encabezado: la primera versión centraba título+ícono como un
+          bloque aislado — no seguía el patrón del resto del sitio (acá
+          mismo, "Modelos de negocio" y "Especificaciones técnicas" usan un
+          kicker .font-label chico, alineado a la izquierda, sin heading
+          grande propio). Se corrigió a ese mismo patrón — la hoja queda
+          chica, en línea junto al kicker, no como marca centrada. */}
       <div ref={catalogRef} className="container-industrial py-16 md:py-24">
-        <div className="grid grid-cols-1 gap-14 border-t border-line-on-light pt-14 md:grid-cols-12 md:gap-10 md:pt-20">
-          <div className="md:col-span-7">
-            <span className="font-label mb-10 block text-ink/45">Productos terminados</span>
-            <ul className="flex flex-col divide-y divide-line-on-light">
-              {cota.finishedProducts.map((product, i) => (
-                <li key={product} className="catalog-item group flex items-baseline gap-6 py-4">
-                  <span className="font-impact-number text-index text-ink/25 transition-colors duration-300 group-hover:text-ink/55">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-ink/70 transition-colors duration-300 group-hover:text-ink">{product}</span>
-                </li>
-              ))}
-            </ul>
+        <div className="border-t border-line-on-light pt-14 md:pt-20">
+          <span className="font-label mb-10 flex items-center gap-2 text-ink/45">
+            Nuestros productos
+            <LeafIcon className="h-4 w-4 text-green" />
+          </span>
+
+          <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-6 md:gap-y-20">
+            {cota.finishedProducts.map((product, i) => {
+              const Icon = PRODUCT_ICON[product.id];
+              return (
+                <div
+                  key={product.id}
+                  className={`product-card flex flex-col items-center text-center md:col-span-2 ${
+                    i === 3 ? "md:col-start-2" : i === 4 ? "md:col-start-4" : ""
+                  }`}
+                >
+                  <Icon className="h-12 w-12 text-green md:h-14 md:w-14" />
+                  <h4 className="mt-6 max-w-[15rem] text-lg text-ink">{product.label}</h4>
+                  <p className="font-label mt-2 text-ink/45">{product.subtitle}</p>
+                </div>
+              );
+            })}
           </div>
 
-          <div className="guardian-block md:col-span-5">
-            <span className="font-label mb-4 block text-ink/45">Línea propia</span>
-            <h3 className="text-hero text-ink">{cota.guardian.name}.</h3>
-            <p className="mt-5 max-w-sm text-ink/60">
-              {cota.guardian.tagline}. Con apoyo a distribuidores en todo el país.
-            </p>
+          <div className="mt-16 md:mt-20">
             <a
-              href={guardianMailto}
-              className="font-label mt-8 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+              href="/catalogos/catalogo-producto-convertido.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-label inline-flex items-center gap-2 rounded-full border border-green px-8 py-3.5 text-green transition-colors hover:bg-green hover:text-paper"
             >
-              Consultar distribución <span className="cta-arrow">→</span>
+              Descargá nuestro catálogo <span className="cta-arrow">→</span>
             </a>
           </div>
+        </div>
+
+        <div className="guardian-block mt-20 border-t border-line-on-light pt-14 text-center md:mt-28 md:pt-20">
+          <span className="font-label mb-4 block text-ink/45">Línea propia</span>
+          <h3 className="text-hero text-ink">{cota.guardian.name}.</h3>
+          <p className="mx-auto mt-5 max-w-sm text-ink/60">
+            {cota.guardian.tagline}. Con apoyo a distribuidores en todo el país.
+          </p>
+          <a
+            href={guardianMailto}
+            className="font-label mt-8 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+          >
+            Consultar distribución <span className="cta-arrow">→</span>
+          </a>
         </div>
       </div>
     </section>
