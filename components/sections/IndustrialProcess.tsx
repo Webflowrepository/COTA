@@ -142,7 +142,18 @@ export default function IndustrialProcess() {
   function goToStage(i: number) {
     const st = stRef.current;
     if (!st) return;
-    const target = st.start + (i / (STAGES.length - 1)) * (st.end - st.start);
+    // La última etapa (progreso 1) cae justo en st.end — el borde exacto
+    // donde el pin se suelta y arranca ChemicalsToPaper. Confirmado con
+    // Playwright en mobile: tocar el punto de "Rebobinado" saltaba directo
+    // a Químicos en vez de mostrar la etapa — el scroll suave (behavior:
+    // "smooth", con Lenis interceptando el scroll global) se pasaba del
+    // límite por el propio decay del scroll, soltando el pin antes de
+    // asentarse. Frenar unos px antes del borde deja el track
+    // visualmente en el mismo lugar (ya casi en su posición final) pero
+    // sin cruzar el límite. Solo afecta a la última etapa — el resto da
+    // valores muy por debajo del límite.
+    const rawTarget = st.start + (i / (STAGES.length - 1)) * (st.end - st.start);
+    const target = Math.min(rawTarget, st.end - 40);
     window.scrollTo({ top: target, behavior: prefersReducedMotion() ? "auto" : "smooth" });
   }
 

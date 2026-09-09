@@ -110,9 +110,16 @@ export default function NaschelPlant() {
         preload="none"
         aria-label={`Video institucional de COTA — planta en ${cota.plant.location}`}
       />
+      {/* Antes el velo caía a 0.1 de opacidad justo a mitad de sección — con
+          un frame claro del video (ej. la pieza amarilla de máquina) el
+          texto/stats que caen ahí (todo el bloque queda pegado abajo, así
+          que gran parte cae en esa franja media) casi desaparecían.
+          Confirmado con captura del cliente en mobile. Sube el piso de
+          contraste en toda la mitad inferior — el tope de la sección sigue
+          casi sin velo (se ve bien el video ahí, no hay texto encima). */}
       <div
         className="absolute inset-0"
-        style={{ background: "linear-gradient(0deg, rgba(6,8,17,0.85) 0%, rgba(6,8,17,0.1) 50%, rgba(6,8,17,0.35) 100%)" }}
+        style={{ background: "linear-gradient(0deg, rgba(6,8,17,0.92) 0%, rgba(6,8,17,0.6) 42%, rgba(6,8,17,0.12) 78%, rgba(6,8,17,0) 100%)" }}
       />
 
       <div className="container-industrial naschel-heading relative flex w-full flex-col justify-end pb-20 md:pb-28">
@@ -122,7 +129,17 @@ export default function NaschelPlant() {
           <div>
             <h2 className="text-hero max-w-xl text-paper">Naschel.</h2>
 
-            <div className="mt-10 flex flex-wrap items-end gap-x-12 gap-y-6">
+            {/* El "700 T/mes" se suma acá como un 3er dato más, solo en
+                mobile (md:hidden) — antes vivía aparte, como bloque propio
+                más abajo (ver el otro bloque, hidden en mobile): eran 5
+                piezas apiladas en poco alto de pantalla (heading, stats,
+                párrafo, CTA, stat gigante), compitiendo por contraste
+                contra el video. En desktop sigue como número grande a la
+                derecha, sin cambios — ahí no había queja. También se saca
+                la línea "instalación con capitales propios" en mobile
+                (md:block más abajo) — es la de menor prioridad de todo el
+                bloque. */}
+            <div className="mt-10 flex flex-wrap items-end gap-x-10 gap-y-6 md:gap-x-12">
               <div>
                 <span className="font-impact-number text-stat block text-paper">
                   <Counter target={cota.yearsOfOperation} />+
@@ -133,13 +150,19 @@ export default function NaschelPlant() {
                 <span className="font-impact-number text-stat block text-paper">1</span>
                 <span className="font-label text-paper/60">Planta propia</span>
               </div>
+              <div className="md:hidden">
+                <span className="font-impact-number text-stat block text-paper">
+                  <Counter target={cota.production.chemicalsMonthlyTons} />
+                </span>
+                <span className="font-label text-paper/60">T/mes</span>
+              </div>
               <span className="font-label pb-1 text-paper/50">
                 {cota.plant.location}, {cota.country}
               </span>
             </div>
 
             {cota.plant.ownCapital && (
-              <p className="font-label mt-6 max-w-md text-paper/45">Instalación realizada con capitales propios.</p>
+              <p className="font-label mt-6 hidden max-w-md text-paper/45 md:block">Instalación realizada con capitales propios.</p>
             )}
 
             <a
@@ -150,7 +173,7 @@ export default function NaschelPlant() {
             </a>
           </div>
 
-          <div className="shrink-0 md:text-right">
+          <div className="hidden shrink-0 md:block md:text-right">
             <span className="font-label mb-2 block text-paper/60">Capacidad — Químicos</span>
             <div className="flex items-end gap-3 md:justify-end">
               <span className="font-impact-number text-mega block text-paper">
