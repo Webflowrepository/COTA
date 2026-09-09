@@ -44,13 +44,19 @@ export default function NaschelPlant() {
     // Counter.tsx: IntersectionObserver, dispara una sola vez) — así no se
     // gasta ancho de banda bajando un video que puede estar a 15+
     // pantallas de scroll de distancia. Antes de eso queda el fondo
-    // bg-ink-deep de la sección (sin `poster`) — se sacó el poster que
-    // apuntaba a naschel-planta-aerea.png para que esa foto no aparezca
-    // dos veces en el sitio (pasada de "ninguna foto se repite"): esa
-    // foto ya es la real usada en IndustrialProcess, etapa "Logística".
-    // El video en sí (naschel-planta-aerea.mp4) es un archivo generado
-    // aparte, no la foto — sigue siendo el contenido real de esta
-    // sección una vez que carga.
+    // bg-ink-deep de la sección (sin `poster`).
+    // naschel-video-institucional.mp4: reemplaza al video generado
+    // (naschel-planta-aerea.mp4, dron aéreo con IA) que el cliente marcó
+    // como "buenísima pero no es la empresa" — la escena real (edificios,
+    // luz) no coincidía con la planta real de Naschel. Este es un video
+    // institucional real de COTA: arranca con un sobrevuelo aéreo
+    // genuino de la planta, sigue con el cartel real "COTA S.A." de la
+    // entrada y tomas del piso de fábrica — subtítulos en español
+    // quemados en el video (no se editaron ni recortaron, decisión
+    // explícita del cliente: "video completo, subtítulos y todo", aunque
+    // van a superponerse visualmente con el título/stats de esta sección
+    // en algunos momentos del loop de 41s). Sigue en loop y muted como el
+    // resto de los videos de fondo del sitio — no se agregó audio.
     const video = videoRef.current;
     const section = rootRef.current;
     let io: IntersectionObserver | undefined;
@@ -66,7 +72,7 @@ export default function NaschelPlant() {
             // mismo tick que `.load()` puede interrumpir el propio
             // `play()` (AbortError) en algunos navegadores, así que se
             // espera a `loadedmetadata` antes de reproducir.
-            video.src = "/videos/naschel-planta-aerea.mp4";
+            video.src = "/videos/naschel-video-institucional.mp4";
             video.addEventListener("loadedmetadata", () => video.play().catch(() => {}), { once: true });
             video.load();
           }
@@ -92,7 +98,7 @@ export default function NaschelPlant() {
         loop
         playsInline
         preload="none"
-        aria-label={`Planta de COTA en ${cota.plant.location}, vista aérea`}
+        aria-label={`Video institucional de COTA — planta en ${cota.plant.location}`}
       />
       <div
         className="absolute inset-0"
