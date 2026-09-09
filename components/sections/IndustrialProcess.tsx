@@ -174,7 +174,21 @@ export default function IndustrialProcess() {
           de soltarse, ahora tapando a Químicos en sentido contrario) —
           por eso se maneja dinámico, sólo durante el pin real. */}
       <div ref={pinRef} className="relative h-0">
-        <div className="absolute inset-x-0 top-0 flex h-[100svh] w-full flex-col overflow-hidden">
+        {/* bg-ink-deep acá (no solo en la <section> de afuera): mientras
+            GSAP pinea, este div pasa a position:fixed y pasa a pintarse
+            como una capa aparte, ya no "dentro" de la caja de la section
+            para efectos visuales — el bg-ink-deep de la section de afuera
+            no lo cubre. Sin fondo propio, cualquier franja sin foto encima
+            (la barra de progreso de abajo, ~41px, sólo tiene texto/línea,
+            sin bg) queda transparente y deja ver lo que hay scrolleando
+            debajo en ese momento — que ya es ChemicalsToPaper (#quimicos,
+            arranca pegado apenas termina el spacer del pin). Confirmado
+            con Playwright: a mitad del pin se veía una franja de Químicos
+            asomando por debajo de la barra de progreso, y a simple vista
+            se leía como "otra copia" de los paneles (misma estética de
+            tanques) — no era un duplicado, era la sección siguiente
+            filtrándose por la franja transparente. */}
+        <div className="absolute inset-x-0 top-0 flex h-[100svh] w-full flex-col overflow-hidden bg-ink-deep">
         <div className="container-industrial flex shrink-0 items-end justify-between pt-10 pb-6 md:pt-14 md:pb-8">
           <div>
             <span className="font-label mb-4 block text-paper/50">Recorrido industrial</span>

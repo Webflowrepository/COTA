@@ -91,9 +91,19 @@ export default function NaschelPlant() {
 
   return (
     <section id="planta" ref={rootRef} className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-ink-deep">
+      {/* origin-top + scale-[1.12]: el video trae subtítulos en español
+          quemados pegados al borde inferior del cuadro ("Bienvenidos al
+          corazón de Cota Papelera...", confirmado con Playwright en
+          currentTime=2s) — se superponen con el heading/stats de esta
+          sección. object-cover por sí solo no los saca (llena el
+          contenedor pero no recorta más allá de eso). Un scale con origen
+          arriba agranda el video ~108px hacia abajo sin mover el encuadre
+          superior, empujando esa franja de subtítulos fuera del área
+          visible (el overflow-hidden de la sección la recorta) — el resto
+          de la composición no se corre. */}
       <video
         ref={videoRef}
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full origin-top scale-[1.12] object-cover"
         muted
         loop
         playsInline
