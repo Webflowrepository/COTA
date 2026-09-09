@@ -109,7 +109,11 @@ export default function IndustrialProcess() {
         trigger: sectionRef.current,
         pin: pinRef.current,
         start: "top top",
-        end: () => `+=${window.innerHeight}`,
+        // visualViewport.height (si existe) en vez de window.innerHeight
+        // a secas — en Safari iOS innerHeight no siempre reflejaba el
+        // viewport visible real una vez colapsada la barra de
+        // direcciones (ver el comentario más abajo, junto al h-[100dvh]).
+        end: () => `+=${window.visualViewport?.height ?? window.innerHeight}`,
         scrub: 0.3,
         animation: tween,
         invalidateOnRefresh: true,
@@ -199,7 +203,17 @@ export default function IndustrialProcess() {
             se leía como "otra copia" de los paneles (misma estética de
             tanques) — no era un duplicado, era la sección siguiente
             filtrándose por la franja transparente. */}
-        <div className="absolute inset-x-0 top-0 flex h-[100svh] w-full flex-col overflow-hidden bg-ink-deep">
+        {/* h-[100dvh], no 100svh: esta capa pasa a position:fixed mientras
+            pinea (más arriba en pinRef) — tiene que cubrir el viewport
+            REAL visible en cada momento. En Safari iOS la barra de
+            direcciones se colapsa al scrollear y el viewport visible
+            crece; 100svh es a propósito el viewport "chico" (con la barra
+            puesta) y se queda corto una vez que la barra se colapsa,
+            dejando un hueco abajo por donde se asoma Químicos — bug real
+            confirmado en un iPhone (Playwright emula un viewport fijo, sin
+            esta barra dinámica, así que no lo reproducía). 100dvh sigue el
+            viewport visible en tiempo real. */}
+        <div className="absolute inset-x-0 top-0 flex h-[100dvh] w-full flex-col overflow-hidden bg-ink-deep">
         <div className="container-industrial flex shrink-0 items-end justify-between pt-10 pb-6 md:pt-14 md:pb-8">
           <div>
             <span className="font-label mb-4 block text-paper/50">Recorrido industrial</span>
