@@ -28,24 +28,30 @@ export default function Home() {
           explícitamente NO reordenar las secciones (Químicos tiene su
           propio capítulo "Papel" al final que hace de pase de posta a
           #papel — moverlo rompería esa narrativa) — esto es solo una
-          pausa visual corta entre los dos, mismo bg-ink-deep de ambos
-          lados para que no haya ningún flash de color, usando el ritmo
-          más chico de la escala (.section-py-xs, ya documentado en
-          globals.css como "conector rápido entre dos momentos más
-          grandes" — este es exactamente ese caso de uso).
+          pausa visual entre los dos, mismo bg-ink-deep de ambos lados
+          para que no haya ningún flash de color.
+
+          .section-py-xs (el ritmo más chico, pensado como "conector
+          rápido") no alcanzaba — confirmado por el cliente viendo el
+          resultado: con las dos fotos industriales oscuras a los lados,
+          112/144px de negro liso se leía como más de lo mismo, no como
+          una pausa a propósito. .section-py-lg (el ritmo más grande de la
+          escala) da un negro liso lo bastante largo como para que se lea
+          como una pausa real entre dos momentos, no como que se pisan.
+
           `relative`, no un div estático: el contenido pineado de Proceso
           (contentWrap, en IndustrialProcess.tsx) queda `position:absolute`
           incluso una vez suelto el pin — GSAP lo reposiciona por transform
-          en vez de devolverlo al flujo normal. Un elemento
-          absoluto SIEMPRE pinta por encima de hermanos `static` sin
-          importar el orden del DOM — con este div sin `position`, el
-          último frame de Proceso quedaba visible ENCIMA del conector
-          (confirmado con Playwright: el heading "Materia prima" seguía
-          en pantalla, superpuesto con Químicos). #quimicos (la sección
-          de al lado) ya es `position:relative`, por eso ahí sí ganaba el
-          orden del DOM. `relative` acá hace que este conector compita en
-          el mismo grupo de apilado y tape ese frame residual como corresponde. */}
-      <div className="relative section-py-xs bg-ink-deep" aria-hidden="true" />
+          en vez de devolverlo al flujo normal. Un elemento absoluto
+          SIEMPRE pinta por encima de hermanos `static` sin importar el
+          orden del DOM — con este div sin `position`, el último frame de
+          Proceso quedaba visible ENCIMA del conector (confirmado con
+          Playwright: el heading "Materia prima" seguía en pantalla,
+          superpuesto con Químicos). #quimicos (la sección de al lado) ya
+          es `position:relative`, por eso ahí sí ganaba el orden del DOM.
+          `relative` acá hace que este conector compita en el mismo grupo
+          de apilado y tape ese frame residual como corresponde. */}
+      <div className="relative section-py-lg bg-ink-deep" aria-hidden="true" />
       <ChemicalsToPaper />
       <PapelTissueSpecs />
       <ProductFamilies />
