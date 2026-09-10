@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type JSX } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import { EASE_STANDARD } from "@/lib/motion/tokens";
+import { RawRollIcon, ConversionIcon, FlaskIcon, GearIcon } from "@/components/ui/LineIcons";
 import { cota } from "@/lib/content/cota";
 
 // "Papel" se muestra separado en 2 filas (ver cota.papelSplit — es una
@@ -17,6 +18,18 @@ const SECONDARY_CTA: Record<string, { label: string; href: string }> = {
   "conversion-integrada": { label: "Conocer línea Guardián", href: "#papel" },
   quimicos: { label: "Ver especificaciones", href: "#quimicos" },
   soluciones: { label: "Asesoramiento técnico", href: "#soluciones" },
+};
+
+// Ícono por línea — el cliente pidió sumar algo visual después de sacar
+// las fotos (quedaba "sin nada de visual"). LineIcons.tsx, no
+// ProductIcons.tsx: son íconos de línea de negocio/proceso, no de
+// packaging — evita reusar el mismo ícono para dos conceptos distintos
+// en la misma página.
+const LINE_ICON: Record<string, (props: { className?: string }) => JSX.Element> = {
+  "bobinas-convertidores": RawRollIcon,
+  "conversion-integrada": ConversionIcon,
+  quimicos: FlaskIcon,
+  soluciones: GearIcon,
 };
 
 export default function WhatCotaDoes() {
@@ -88,23 +101,34 @@ export default function WhatCotaDoes() {
             raro contra el wrap a la fila de abajo; con 4 en una sola fila
             (lg) se ve limpio, igual que "Modelos de negocio". */}
         <div className="grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 sm:gap-y-14 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-line-on-light">
-          {LINES.map((line, i) => (
-            <div key={line.id} className="line-card group lg:px-8 lg:first:pl-0 lg:last:pr-0">
-              <span className="font-impact-number text-stat block text-ink/25 transition-colors duration-300 group-hover:text-ink/50">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="text-heading mt-4 text-ink transition-transform duration-300 group-hover:translate-x-1">{line.label}</h3>
-              <p className="mt-3 text-sm text-ink/60 md:text-base">{line.short}</p>
-              {SECONDARY_CTA[line.id] && (
-                <a
-                  href={SECONDARY_CTA[line.id].href}
-                  className="font-label mt-5 inline-block w-fit border-b border-ink/40 pb-0.5 text-ink/70 transition-opacity hover:opacity-60"
-                >
-                  {SECONDARY_CTA[line.id].label} <span className="cta-arrow">→</span>
-                </a>
-              )}
-            </div>
-          ))}
+          {LINES.map((line, i) => {
+            const Icon = LINE_ICON[line.id];
+            return (
+              // flex h-full flex-col + mt-auto en el CTA (abajo): "short"
+              // tiene distinto largo por tarjeta (2 líneas vs. 3), así que
+              // el CTA quedaba a distinta altura en cada una — descentrado
+              // pedido explícito del cliente. Con esto, las 4 CTA quedan
+              // siempre en el mismo renglón de abajo, sin importar cuánto
+              // texto tenga cada tarjeta arriba (la grilla ya estira las 4
+              // columnas a la misma altura por default).
+              <div key={line.id} className="line-card group flex h-full flex-col lg:px-8 lg:first:pl-0 lg:last:pr-0">
+                <Icon className="h-9 w-9 text-green" />
+                <span className="font-impact-number text-stat mt-5 block text-ink/25 transition-colors duration-300 group-hover:text-ink/50">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="text-heading mt-4 text-ink transition-transform duration-300 group-hover:translate-x-1">{line.label}</h3>
+                <p className="mt-3 text-sm text-ink/60 md:text-base">{line.short}</p>
+                {SECONDARY_CTA[line.id] && (
+                  <a
+                    href={SECONDARY_CTA[line.id].href}
+                    className="font-label mt-auto inline-block w-fit border-b border-ink/40 pb-0.5 pt-5 text-ink/70 transition-opacity hover:opacity-60"
+                  >
+                    {SECONDARY_CTA[line.id].label} <span className="cta-arrow">→</span>
+                  </a>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

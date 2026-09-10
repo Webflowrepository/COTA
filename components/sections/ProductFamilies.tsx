@@ -201,9 +201,18 @@ export default function ProductFamilies() {
                     columnas dentro de un grid con max-w-[1440px] — ~33vw. */}
                 <PhotoMedia src={panel.photo.src} alt={panel.photo.alt} sizes="(min-width: 768px) 33vw, 86vw" />
               </div>
+              {/* Velo más fuerte que antes (0.75→transparent a 45%): con
+                  fotos claras (bobinas blancas, planta con luz de día) el
+                  texto de abajo (kicker + título + copy) quedaba con poco
+                  contraste — pedido del cliente. Sube el piso de opacidad
+                  y estira el alcance hacia arriba, mismo criterio que se
+                  usó para el mismo problema en NaschelPlant.tsx. */}
               <div
                 className="absolute inset-0"
-                style={{ background: "linear-gradient(0deg, rgba(6,8,17,0.75) 0%, transparent 45%)" }}
+                style={{
+                  background:
+                    "linear-gradient(0deg, rgba(6,8,17,0.92) 0%, rgba(6,8,17,0.55) 40%, rgba(6,8,17,0.1) 75%, rgba(6,8,17,0) 100%)",
+                }}
               />
               <div className="absolute inset-0 flex flex-col justify-end p-7 text-paper md:p-9">
                 <span className="font-label mb-3 block text-paper/70">Línea de producto</span>
