@@ -237,7 +237,13 @@ export default function PapelTissueSpecs() {
             })}
           </div>
 
-          <div className="mt-16 md:mt-20">
+          {/* Centrado, no alineado a la izquierda como el resto de los CTA
+              del sitio — acá el contenido de arriba (las 5 tarjetas) es
+              simétrico/centrado en la página, no un bloque de texto a la
+              izquierda como en el resto de las secciones. Un CTA pegado
+              al margen izquierdo quedaba descolgado de esa simetría
+              (pedido del cliente viendo el resultado en pantalla). */}
+          <div className="mt-16 flex justify-center md:mt-20">
             <a
               href="/catalogos/catalogo-producto-convertido.pdf"
               target="_blank"

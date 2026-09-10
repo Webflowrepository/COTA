@@ -16,6 +16,18 @@ export default function Home() {
       <Hero />
       <StatsBand />
       <WhatCotaDoes />
+      {/* ProductFamilies va justo después de Compañía (WhatCotaDoes), no
+          más abajo entre Papel y Soluciones como antes — las 2 secciones
+          muestran las mismas 4 líneas (Bobinas Industriales / Conversión
+          Integrada / Químicos / Soluciones Industriales), sólo que ésta
+          es el índice compacto (con preview de foto al hover) y
+          ProductFamilies es el detalle con foto grande. Separadas por 6
+          secciones se leían como una repetición accidental — pegadas,
+          se leen como resumen → detalle, a propósito. Sólo cambio de
+          orden, mismo contenido/CTAs de ambas, sin tocar nada más
+          (análisis pedido por el cliente sobre por qué "los rubros" y
+          "papel" se sentían repetidos en la página). */}
+      <ProductFamilies />
       <WhyCota />
       <IndustrialProcess />
       {/* Conector — Proceso y Químicos son los dos únicos scroll-jack
@@ -54,7 +66,6 @@ export default function Home() {
       <div className="relative section-py-lg bg-ink-deep" aria-hidden="true" />
       <ChemicalsToPaper />
       <PapelTissueSpecs />
-      <ProductFamilies />
       <SolutionsByApplication />
       <NaschelPlant />
       {/* Certificaciones se sacó del todo (auditoría visual, hallazgo #1) —
