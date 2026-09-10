@@ -107,7 +107,7 @@ export default function ContactForm() {
             value={volume}
             onChange={(e) => setVolume(e.target.value)}
             className={inputClass}
-            placeholder="ej. 5 T/mes"
+            placeholder="ej. 5 Tn/mes"
           />
         </label>
 

@@ -40,7 +40,7 @@ export default function Hero() {
       // misma coreografía relativa (fade de fondo → reveal del H1 en
       // clip-path → subtítulo/label/cue). Medido con Lighthouse (mobile,
       // preset default con CPU throttling): el LCP real de la página es el
-      // segundo renglón del H1 ("transformación."), y el clip-path que lo
+      // segundo renglón del H1 ("de papel Tissue."), y el clip-path que lo
       // arranca 100% oculto hacía que el navegador no lo contara como
       // "pintado" hasta que la animación lo revelaba — 91% del LCP (4.4s
       // de 4.9s) era "Render Delay" por esto, no carga de red. Acortar a
@@ -98,8 +98,8 @@ export default function Hero() {
         </span>
 
         <h1 className="max-w-3xl overflow-hidden">
-          <span className="hero-line text-hero block overflow-hidden text-paper">Materia en</span>
-          <span className="hero-line text-hero block overflow-hidden text-paper">transformación.</span>
+          <span className="hero-line text-hero block overflow-hidden text-paper">Líderes en la producción</span>
+          <span className="hero-line text-hero block overflow-hidden text-paper">de papel Tissue.</span>
         </h1>
 
         <p className="hero-sub mt-7 max-w-md text-base text-paper/65 md:text-lg">

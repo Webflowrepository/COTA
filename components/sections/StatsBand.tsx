@@ -12,7 +12,7 @@ import Counter from "@/components/ui/Counter";
 // cota.bobinaSpecs) para que Papel también tenga su número acá.
 const STATS = [
   { value: cota.yearsOfOperation, suffix: "+", label: "Años operando" },
-  { value: cota.production.chemicalsMonthlyTons, suffix: "", label: "T/mes — capacidad Químicos" },
+  { value: cota.production.chemicalsMonthlyTons, suffix: "", label: "Tn/mes — capacidad Químicos" },
   { value: 220, suffix: " cm", label: "Ancho máx. de bobina — Papel" },
   { value: cota.businessLines.length, suffix: "", label: "Divisiones integradas" },
 ] as const;

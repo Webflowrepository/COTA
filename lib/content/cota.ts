@@ -28,7 +28,7 @@ export const cota = {
     chemicalsMonthlyTons: 700,
     /** No confirmado todavía por COTA — no inventar un número acá. */
     paperMonthlyTons: null as number | null,
-    unit: "T/mes",
+    unit: "Tn/mes",
   },
   // Orden: Papel primero — el cliente pidió que el sitio no lea como una
   // fábrica solo de química, y la Misión real de COTA ("Socios estratégicos

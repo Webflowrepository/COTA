@@ -160,7 +160,7 @@ export default function NaschelPlant() {
                 <span className="font-impact-number text-stat block text-paper">
                   <Counter target={cota.production.chemicalsMonthlyTons} />
                 </span>
-                <span className="font-label text-paper/60">T/mes</span>
+                <span className="font-label text-paper/60">Tn/mes</span>
               </div>
               <span className="font-label pb-1 text-paper/50">
                 {cota.plant.location}, {cota.country}
@@ -185,7 +185,7 @@ export default function NaschelPlant() {
               <span className="font-impact-number text-mega block text-paper">
                 <Counter target={cota.production.chemicalsMonthlyTons} />
               </span>
-              <span className="font-label mb-3 text-paper/70 md:mb-6">T/MES</span>
+              <span className="font-label mb-3 text-paper/70 md:mb-6">TN/MES</span>
             </div>
           </div>
         </div>

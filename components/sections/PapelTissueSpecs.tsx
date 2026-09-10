@@ -35,8 +35,6 @@ export default function PapelTissueSpecs() {
   const modelsRef = useRef<HTMLDivElement>(null);
   const specsRef = useRef<HTMLDivElement>(null);
   const catalogRef = useRef<HTMLDivElement>(null);
-  const distribucionLabel = cota.contactCategories.find((c) => c.id === "distribucion")?.label ?? "Distribución — Guardián";
-  const guardianMailto = `mailto:${cota.contact.email}?subject=${encodeURIComponent(`Consulta — ${distribucionLabel}`)}`;
 
   useEffect(() => {
     const { gsap } = ensureGsapRegistered();
@@ -75,17 +73,6 @@ export default function PapelTissueSpecs() {
           stagger: 0.06,
           ease: EASE_STANDARD,
           scrollTrigger: { trigger: catalogRef.current, start: "top 80%", end: "top 45%", scrub: true },
-        },
-      );
-      gsap.fromTo(
-        ".guardian-block",
-        { autoAlpha: 0, y: 20 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.8,
-          ease: EASE_STANDARD,
-          scrollTrigger: { trigger: catalogRef.current, start: "top 75%", end: "top 40%", scrub: true },
         },
       );
     }, [modelsRef, specsRef, catalogRef]);
@@ -253,20 +240,6 @@ export default function PapelTissueSpecs() {
               Descargá nuestro catálogo <span className="cta-arrow">→</span>
             </a>
           </div>
-        </div>
-
-        <div className="guardian-block mt-20 border-t border-line-on-light pt-14 text-center md:mt-28 md:pt-20">
-          <span className="font-label mb-4 block text-ink/45">Línea propia</span>
-          <h3 className="text-hero text-ink">{cota.guardian.name}.</h3>
-          <p className="mx-auto mt-5 max-w-sm text-ink/60">
-            {cota.guardian.tagline}. Con apoyo a distribuidores en todo el país.
-          </p>
-          <a
-            href={guardianMailto}
-            className="font-label mt-8 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
-          >
-            Consultar distribución <span className="cta-arrow">→</span>
-          </a>
         </div>
       </div>
     </section>

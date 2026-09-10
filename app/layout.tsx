@@ -31,7 +31,7 @@ const mono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "COTA — Materia en transformación",
+  title: "COTA — Líderes en la producción de papel Tissue",
   description:
     "COTA es una empresa industrial argentina con más de 30 años de trayectoria en blanqueadores ópticos (tetrasulfónicos, hexasulfónicos, antraquinona), bobinas de papel Tissue y soluciones industriales. Planta propia en Naschel, San Luis.",
 };
