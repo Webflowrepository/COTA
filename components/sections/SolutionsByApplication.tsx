@@ -94,7 +94,7 @@ export default function SolutionsByApplication() {
           href="#contacto"
           className="font-label mt-4 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
         >
-          Ir al formulario <span className="cta-arrow">→</span>
+          Ir a contacto <span className="cta-arrow">→</span>
         </a>
 
         <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-b border-line-on-light pb-6">

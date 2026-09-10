@@ -121,7 +121,7 @@ export default function WhatCotaDoes() {
               href="#contacto"
               className="font-label mt-6 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
             >
-              Ir al formulario <span className="cta-arrow">→</span>
+              Ir a contacto <span className="cta-arrow">→</span>
             </a>
           </div>
 

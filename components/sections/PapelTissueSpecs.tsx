@@ -92,7 +92,7 @@ export default function PapelTissueSpecs() {
           href="#contacto"
           className="font-label mt-6 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
         >
-          Ir al formulario <span className="cta-arrow">→</span>
+          Ir a contacto <span className="cta-arrow">→</span>
         </a>
       </div>
 
@@ -179,7 +179,7 @@ export default function PapelTissueSpecs() {
               href="#contacto"
               className="font-label inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
             >
-              Ir al formulario <span className="cta-arrow">→</span>
+              Ir a contacto <span className="cta-arrow">→</span>
             </a>
           </div>
         </div>
