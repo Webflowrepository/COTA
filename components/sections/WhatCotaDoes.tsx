@@ -11,15 +11,6 @@ import { cota } from "@/lib/content/cota";
 // Químicos y Soluciones de cota.businessLines — 4 filas en total.
 const LINES = [...cota.papelSplit, ...cota.businessLines.filter((l) => l.id !== "papel")];
 
-// CTA secundario por línea — apunta a la sección real correspondiente (no
-// a un mailto genérico), ya que todas tienen su propio anchor en la página.
-const SECONDARY_CTA: Record<string, { label: string; href: string }> = {
-  "bobinas-convertidores": { label: "Ver especificaciones", href: "#papel" },
-  "conversion-integrada": { label: "Conocer línea Guardián", href: "#papel" },
-  quimicos: { label: "Ver especificaciones", href: "#quimicos" },
-  soluciones: { label: "Asesoramiento técnico", href: "#soluciones" },
-};
-
 // Foto que aparece al pasar el mouse por cada tarjeta (ver "marco de
 // preview" más abajo) — a propósito NO son íconos, el cliente pidió
 // sacarlos y mostrar una foto real relacionada con el texto en su lugar.
@@ -117,12 +108,11 @@ export default function WhatCotaDoes() {
               Compañía — {cota.country}, desde {cota.foundedYear}
             </span>
             <h2 className="text-display max-w-2xl text-ink">{cota.mission}</h2>
-            <a
-              href="#contacto"
-              className="font-label mt-6 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
-            >
-              Ir a contacto <span className="cta-arrow">→</span>
-            </a>
+            <p className="mt-6 max-w-lg text-base text-ink/60 md:text-lg">
+              Somos un socio estratégico clave para la industria de la conversión. Nos especializamos en la
+              producción y venta de bobinas de papel Tissue de alta calidad para la industria, y en la fabricación de
+              producto terminado.
+            </p>
           </div>
 
           <div className="relative hidden h-[160px] w-[240px] shrink-0 overflow-hidden rounded-sm md:block">
@@ -152,13 +142,6 @@ export default function WhatCotaDoes() {
             (lg) se ve limpio, igual que "Modelos de negocio". */}
         <div className="mt-16 grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 sm:gap-y-14 md:mt-20 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-line-on-light">
           {LINES.map((line, i) => (
-            // flex h-full flex-col + mt-auto en el CTA (abajo): "short"
-            // tiene distinto largo por tarjeta (2 líneas vs. 3), así que
-            // el CTA quedaba a distinta altura en cada una — descentrado
-            // pedido explícito del cliente. Con esto, las 4 CTA quedan
-            // siempre en el mismo renglón de abajo, sin importar cuánto
-            // texto tenga cada tarjeta arriba (la grilla ya estira las 4
-            // columnas a la misma altura por default).
             <div
               key={line.id}
               className="line-card group flex h-full flex-col lg:px-8 lg:first:pl-0 lg:last:pr-0"
@@ -170,16 +153,29 @@ export default function WhatCotaDoes() {
               </span>
               <h3 className="text-heading mt-4 text-ink transition-transform duration-300 group-hover:translate-x-1">{line.label}</h3>
               <p className="mt-3 text-sm text-ink/60 md:text-base">{line.short}</p>
-              {SECONDARY_CTA[line.id] && (
-                <a
-                  href={SECONDARY_CTA[line.id].href}
-                  className="font-label mt-auto inline-block w-fit border-b border-ink/40 pb-0.5 pt-5 text-ink/70 transition-opacity hover:opacity-60"
-                >
-                  {SECONDARY_CTA[line.id].label} <span className="cta-arrow">→</span>
-                </a>
-              )}
             </div>
           ))}
+        </div>
+
+        {/* CTA único y consolidado (antes eran 5: "Ir a contacto" arriba +
+            un secundario por tarjeta que llevaba a otra sección — el
+            cliente pidió sacar los que hacen navegar por la web y dejar
+            uno solo, directo a WhatsApp/mail). */}
+        <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 md:mt-16">
+          <a
+            href={cota.whatsapp.number ? `https://wa.me/${cota.whatsapp.number}` : "#contacto"}
+            target={cota.whatsapp.number ? "_blank" : undefined}
+            rel={cota.whatsapp.number ? "noopener noreferrer" : undefined}
+            className="font-label inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+          >
+            Escribir por WhatsApp <span className="cta-arrow">→</span>
+          </a>
+          <a
+            href={`mailto:${cota.contact.email}`}
+            className="font-label inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+          >
+            Enviar un email <span className="cta-arrow">→</span>
+          </a>
         </div>
       </div>
     </section>
