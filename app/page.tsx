@@ -2,7 +2,6 @@ import Hero from "@/components/sections/Hero";
 import StatsBand from "@/components/sections/StatsBand";
 import WhatCotaDoes from "@/components/sections/WhatCotaDoes";
 import WhyCota from "@/components/sections/WhyCota";
-import IndustrialProcess from "@/components/sections/IndustrialProcess";
 import ChemicalsToPaper from "@/components/sections/ChemicalsToPaper";
 import PapelTissueSpecs from "@/components/sections/PapelTissueSpecs";
 import ProductFamilies from "@/components/sections/ProductFamilies";
@@ -29,13 +28,14 @@ export default function Home() {
           "papel" se sentían repetidos en la página). */}
       <ProductFamilies />
       <WhyCota />
-      {/* IndustrialProcess dejó de ser un pin/scroll-jack (rediseño
-          2026-09-14, ver comentario al tope de IndustrialProcess.tsx) —
-          ya no hay dos efectos pesados pegados, así que el conector negro
-          que separaba a Proceso de Químicos (necesario cuando ambos
-          pineaban) ya no tiene motivo: se sacó. Ayuda además a acortar la
-          página, pedido explícito del cliente en la misma revisión. */}
-      <IndustrialProcess />
+      {/* IndustrialProcess ("Recorrido industrial", el banco de fotos entre
+          WhyCota y Químicos) se sacó del todo (2026-09-15, pedido directo
+          del cliente) — pasó por 2 rediseños en el mismo día (pin/scroll-jack
+          → grilla de 3 etapas → banco de 10 fotos deslizable) y en ninguno
+          terminó de convencer; en vez de seguir iterando el cliente pidió
+          eliminarla directamente. El componente se borró (no quedó
+          desmontado en el árbol, a diferencia de InstagramFeed más abajo,
+          porque acá no hay intención de reactivarlo). */}
       <ChemicalsToPaper />
       <PapelTissueSpecs />
       <SolutionsByApplication />
