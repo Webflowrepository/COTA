@@ -37,9 +37,20 @@ const SEGMENTS = [
     cta: "Ver Guardián",
     mediaLabel: "Foto — producto Guardián en punto de venta",
     categoryId: "distribucion",
-    // Sin foto — ninguna de las imágenes/videos subidos muestra producto
-    // en punto de venta. Queda en placeholder marcado a propósito en vez
-    // de forzar una imagen que no corresponde (decisión del cliente).
+    // Video real subido por el cliente (Images/"usa estaaaa.mp4", 17MB/
+    // 900x900/10s) — recomprimido a 1280x1280 (~1.5MB) siguiendo el mismo
+    // criterio que los otros 2 videos de esta sección. A diferencia de
+    // esos 2 (generados con Kling), este es footage real de la planta:
+    // operarios junto a una máquina rebobinadora/convertidora — no muestra
+    // literalmente "distribución" ni producto Guardián en punto de venta,
+    // pero el cliente pidió explícitamente usarlo acá en vez de dejarlo en
+    // placeholder. Reemplazar si en algún momento llega material que
+    // muestre distribución/punto de venta más directamente.
+    video: {
+      src: "/videos/soluciones-guardian-distribucion.mp4",
+      poster: "/photos/soluciones-guardian-distribucion-poster.webp",
+      alt: "Operarios junto a máquina rebobinadora de papel en la planta de COTA",
+    },
   },
   {
     id: "papeleras",
