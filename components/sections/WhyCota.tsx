@@ -80,7 +80,7 @@ export default function WhyCota() {
           </div>
 
           <a
-            href="#proceso"
+            href="#planta"
             className="font-label mt-10 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
           >
             Conocer nuestra planta <span className="cta-arrow">→</span>
