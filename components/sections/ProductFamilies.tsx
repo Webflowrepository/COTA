@@ -41,13 +41,14 @@ const PANELS = [
     short: quimicos.short,
     mediaLabel: "Foto — proceso químico",
     categoryId: "quimicos",
-    // Imagen generada (no foto real de COTA) — el cliente subió 3
-    // renders y eligió ésta para tapar el placeholder mientras no haya
-    // fotografía real del proceso químico. Reemplazar apenas exista una
-    // foto real equivalente (misma lógica que el resto del sitio: la
-    // fotografía real de COTA es siempre la prioridad sobre imagen
-    // generada — ver memoria de dirección de arte).
-    photo: { src: "/photos/quimicos-ibc-tanques.png", alt: "Tanques y contenedores IBC de proceso químico" },
+    // Foto real (2026-09-17, subida por el cliente) — reemplaza al render
+    // generado que tapaba este panel desde el 2026-09-03. Mismo criterio
+    // documentado abajo (Soluciones): fotografía real de COTA siempre
+    // prioridad sobre imagen generada.
+    photo: {
+      src: "/photos/quimicos-mantenimiento-tanques.png",
+      alt: "Operarios realizando mantenimiento en tanques de proceso químico, planta de COTA",
+    },
   },
   // Guardián ya no es un panel acá — sin foto de producto, quedaba "colgado"
   // junto a 3 fotos reales (2 rondas de retoque de estilo no lo arreglaron,
@@ -60,9 +61,13 @@ const PANELS = [
     short: soluciones.short,
     mediaLabel: "Foto — maquinaria / instalación",
     categoryId: "maquinaria",
-    // Imagen generada (no foto real de COTA) — mismo criterio que arriba:
-    // reemplazar apenas exista una foto real de instalación/maquinaria.
-    photo: { src: "/photos/soluciones-rebobinadora.png", alt: "Operario trabajando en máquina rebobinadora industrial" },
+    // Foto real (2026-09-17, subida por el cliente) — reemplaza al render
+    // generado que tapaba este panel desde el 2026-09-03; se ve el uniforme
+    // "COTA" del operario, foto propia de la planta.
+    photo: {
+      src: "/photos/soluciones-rebobinadora-cota.png",
+      alt: "Operario de COTA controlando bobina de papel en máquina rebobinadora",
+    },
   },
 ];
 
@@ -189,13 +194,10 @@ export default function ProductFamilies() {
                  se tocan. */
               className="pf-panel group relative h-[62vh] w-[86vw] shrink-0 snap-start overflow-hidden md:h-[420px] md:w-auto lg:h-[58vh]"
             >
-              {/* Los 3 paneles tienen foto — Soluciones y Químicos usaban
-                  PlaceholderMedia (naschel-planta-aerea.png y
-                  quimicos-tanques.png le quedaron a IndustrialProcess y
-                  ChemicalsToPaper en la pasada de "ninguna foto se repite")
-                  hasta que el cliente subió y eligió imagen generada propia
-                  para tapar esos dos huecos — ver nota en PANELS arriba
-                  sobre reemplazarlas por foto real cuando exista. */}
+              {/* Los 4 paneles tienen foto real de COTA — Soluciones y
+                  Químicos pasaron por imagen generada como placeholder
+                  temporal (ver historial de este archivo) hasta que el
+                  cliente subió fotografía propia real (2026-09-17). */}
               <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:scale-105">
                 {/* Panel = 86vw en el carrusel mobile; en md+ es 1 de 3
                     columnas dentro de un grid con max-w-[1440px] — ~33vw. */}
