@@ -213,3 +213,23 @@ asset, a broken link — add the check that catches it then.
 
 *Reverses if:* lint warnings start accumulating. Then fix them and add
 `--max-warnings 0` in the same change.
+
+---
+
+## D-011 — The verifier runs on every push, not on pull requests
+**2026-09-20 · Active**
+
+First written as `on: [pull_request, push to main]`. Pushing the branch produced
+no run at all — the workflow would not have executed until someone opened a pull
+request, leaving work-in-progress branches unverified and the verifier itself
+unproven. A verifier that has never run is a configuration file, not evidence.
+
+Changed to `on: push` for every branch. GitHub surfaces a same-repo branch's push
+run on the pull request, so a separate `pull_request` trigger would only duplicate
+every run. `workflow_dispatch` is kept for manual re-runs.
+
+Evidence: run #1 succeeded in 46s on `claude/youthful-mccarthy-50xcv0` —
+checkout, node 22, `npm ci`, lint, build.
+
+*Reverses if:* outside contributors start opening pull requests from forks, which
+`on: push` does not cover. Add `pull_request` then, and accept the duplication.

@@ -87,13 +87,15 @@ Everything below was run, not assumed.
 | `ask-jev-skill` with `ASKJEV_DISABLED=1` | Exit **2**, `{"disabled": true}`, no network |
 | `ask-jev-skill` with no `TYPESAFE_API_KEY` | Exit **2**, `{"disabled": true}`, no network |
 | Hermes native skill install path | Confirmed in source: `hermes skills install <url>`, GitHub/URL source, `--name`, security scan, write-approval gate |
+| **`verify` run #1 on GitHub Actions** | **Success in 46s** — checkout, node 22, `npm ci`, lint, build all green ([run 35538644940](https://github.com/Webflowrepository/COTA/actions/runs/35538644940)) |
 | `git status` | Only intentional changes |
 | Secrets tracked | None; `.env*` gitignored; no key read, written, or printed |
 
 The end-to-end slice is this change itself: an outcome contract
 (`docs/OUTCOME_CONTRACT.md`, worked example), executed on a branch, evidenced by
-a CI run on the pushed branch, with the learning recorded as D-004. It exercises
-the whole lifecycle on real work instead of on a toy task, and contaminates nothing.
+a green CI run on the pushed branch (#1, 46s), with the learning recorded as
+D-004 and D-011. It exercises the whole lifecycle on real work instead of on a
+toy task, and contaminates nothing.
 
 ## 7. What remains in shadow mode
 
@@ -154,8 +156,9 @@ I never see or handle that key; the skill reads it from `.env` itself.
 
 ## 10. Known limitations
 
-- **CI has never run in this repository before.** The workflow is verified
-  locally and structurally, but its first real run is on this branch.
+- **CI had never run in this repository before.** Its first run is green
+  (run #1, 46s), so the verifier is proven, not merely configured. It has still
+  only ever run on this branch — `main` gets its first run on merge.
 - **CI depth matches the project's current maturity.** Lint and build only —
   there are no tests to run, and inventing them was refused (D-010).
 - The lint warning in `app/layout.tsx:68` is real and left alone (D-010).
