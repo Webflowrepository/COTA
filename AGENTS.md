@@ -39,7 +39,7 @@ npm run build      # compiles AND typechecks — this is the real gate
 `npm run build` is the typecheck. Do not run `npx tsc --noEmit` on a clean
 checkout and report the failure as a bug: `LayoutProps` and friends are
 generated into `.next/types` by the build, so standalone `tsc` fails until a
-build has run. See `docs/DECISIONS.md` D-004.
+build has run.
 
 CI runs exactly these checks on every push (`.github/workflows/verify.yml`).
 Green CI is the evidence that work is done. A claim of "done" without it is a
@@ -63,10 +63,6 @@ claim you cannot source.
 
 ## Going deeper
 
-- `docs/OPERATING.md` — operating principles, the work lifecycle, and which tool
-  currently fills which role (Hermes, Jev, Claude/Codex, Obsidian Mind).
-- `docs/OUTCOME_CONTRACT.md` — the template for briefing a non-trivial task.
-- `docs/DECISIONS.md` — why things are the way they are. Read before undoing something.
 - `ASSETS.md` — real vs. pending media, and site architecture history.
 - `COTA_VISUAL_AUDIT.md`, `COTA_REFERENCE_GAP_AUDIT.md` — measured visual audits.
   Findings marked RESOLVED are done; the rest were deliberately left.
