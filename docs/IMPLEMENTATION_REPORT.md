@@ -92,7 +92,7 @@ Everything below was run, not assumed.
 
 The end-to-end slice is this change itself: an outcome contract
 (`docs/OUTCOME_CONTRACT.md`, worked example), executed on a branch, evidenced by
-a CI run on the pull request, with the learning recorded as D-004. It exercises
+a CI run on the pushed branch, with the learning recorded as D-004. It exercises
 the whole lifecycle on real work instead of on a toy task, and contaminates nothing.
 
 ## 7. What remains in shadow mode
@@ -155,7 +155,7 @@ I never see or handle that key; the skill reads it from `.env` itself.
 ## 10. Known limitations
 
 - **CI has never run in this repository before.** The workflow is verified
-  locally and structurally, but its first real run is on this pull request.
+  locally and structurally, but its first real run is on this branch.
 - **CI depth matches the project's current maturity.** Lint and build only —
   there are no tests to run, and inventing them was refused (D-010).
 - The lint warning in `app/layout.tsx:68` is real and left alone (D-010).

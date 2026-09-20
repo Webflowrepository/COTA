@@ -6,10 +6,10 @@
 # (`LayoutProps` is a build-generated global). See docs/DECISIONS.md D-004.
 name: verify
 
+# Every push to every branch. Same-repo pull requests display this run, so a
+# separate `pull_request` trigger would only duplicate it.
 on:
-  pull_request:
   push:
-    branches: [main]
   workflow_dispatch:
 
 concurrency:

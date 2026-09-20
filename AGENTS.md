@@ -41,7 +41,7 @@ checkout and report the failure as a bug: `LayoutProps` and friends are
 generated into `.next/types` by the build, so standalone `tsc` fails until a
 build has run. See `docs/DECISIONS.md` D-004.
 
-CI runs exactly these checks on every pull request (`.github/workflows/verify.yml`).
+CI runs exactly these checks on every push (`.github/workflows/verify.yml`).
 Green CI is the evidence that work is done. A claim of "done" without it is a
 claim, not evidence.
 
