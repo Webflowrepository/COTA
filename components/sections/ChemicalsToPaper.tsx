@@ -9,84 +9,50 @@ import { cota } from "@/lib/content/cota";
 const CHEM_ITEMS = cota.chemicalTypes.map((type) => `Blanqueadores ${type}`);
 const PAPER_ITEMS = ["Bobinas para convertidores", `${cota.guardian.name} — línea profesional`, "Producción propia en Naschel"];
 
+// Rediseño completo (pedido del cliente, reiterado varias veces: "no quiero
+// que tengas que ir scrolleando para que se vaya animando"). La versión
+// anterior pineaba esta sección (200vh, sticky) y usaba un timeline de GSAP
+// atado al scroll (scrub) para hacer un crossfade entre el capítulo
+// "Químicos" y el capítulo "Papel" — el mismo mecanismo que tenía
+// IndustrialProcess antes de sacarlo (ver ese archivo/git log). Aunque ya se
+// le había sacado el slide effect, el problema de fondo seguía siendo el
+// pin+scrub en sí: con la sección entera ya a la vista, había que seguir
+// scrolleando para que el texto/lista terminaran de aparecer.
+//
+// Ahora son 2 secciones normales, sin pin, cada una con su propia foto de
+// fondo (antes crossfadeaban entre sí) y un reveal de una sola vez al
+// llegar (mismo patrón que NaschelPlant.tsx: fade simple, sin slide,
+// disparado apenas la sección empieza a entrar en pantalla — no scrubbed,
+// no hay que seguir scrolleando para que termine).
 export default function ChemicalsToPaper() {
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const chemLayerRef = useRef<HTMLDivElement>(null);
-  const paperLayerRef = useRef<HTMLDivElement>(null);
-  const chemTextRef = useRef<HTMLDivElement>(null);
-  const paperTextRef = useRef<HTMLDivElement>(null);
+  const chemRef = useRef<HTMLDivElement>(null);
+  const paperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const { gsap, ScrollTrigger } = ensureGsapRegistered();
-
+    const { gsap } = ensureGsapRegistered();
     const ctx = gsap.context(() => {
-      const paperItems = paperTextRef.current!.querySelectorAll<HTMLLIElement>(".paper-item");
-
-      gsap.set(paperLayerRef.current, { autoAlpha: 0 });
-      gsap.set(paperTextRef.current, { autoAlpha: 0 });
-      gsap.set(paperItems, { autoAlpha: 0 });
-
-      const tl = gsap.timeline({ paused: true });
-
-      tl.to(chemLayerRef.current, { autoAlpha: 0, duration: 0.2 }, 0.38);
-      tl.to(paperLayerRef.current, { autoAlpha: 1, duration: 0.2 }, 0.42);
-
-      // Sin slide (pedido del cliente, 2026-09-17: "que no haya un slide
-      // effect") — sólo fade de opacidad, tanto acá como en los items de
-      // abajo. Antes cada uno sumaba su propio y (-16/20/8) al entrar/salir.
-      tl.to(chemTextRef.current, { autoAlpha: 0, duration: 0.14 }, 0.32);
-      tl.to(paperTextRef.current, { autoAlpha: 1, duration: 0.16 }, 0.52);
-
-      [0.58, 0.68, 0.78].forEach((t, i) => {
-        tl.to(paperItems[i], { autoAlpha: 1, duration: 0.1 }, t);
+      [chemRef, paperRef].forEach((ref) => {
+        gsap.fromTo(
+          ref.current,
+          { autoAlpha: 0 },
+          {
+            autoAlpha: 1,
+            duration: 0.7,
+            ease: "power2.out",
+            scrollTrigger: { trigger: ref.current, start: "top 100%", toggleActions: "play none none none" },
+          },
+        );
       });
-
-      ScrollTrigger.create({
-        trigger: wrapperRef.current,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 0.15,
-        onUpdate: (self) => tl.totalProgress(self.progress),
-      });
-    }, wrapperRef);
-
+    });
     return () => ctx.revert();
   }, []);
 
   return (
-    /* Pacing (COTA_REFERENCE_GAP_AUDIT.md, intervención #3): con 240vh el
-       ScrollTrigger que maneja el crossfade ("top top" a "bottom bottom")
-       sólo cubre 140vh — matemáticamente siempre altura-wrapper menos
-       altura-sticky (100vh) — y el crossfade ya usa ese rango entero (sus
-       posiciones dentro del timeline son fracciones del propio rango de
-       scrub, no valores absolutos, así que se reescalan solas). Los 100vh
-       restantes eran el capítulo "Papel" ya resuelto, deslizándose fuera
-       de pantalla sin que pase nada más — medido con Playwright scrolleando
-       de a pasos reales: a partir de que el crossfade cierra, el frame
-       queda visualmente estático durante 1 pantalla completa antes de que
-       empiece la sección siguiente. 200vh acorta esa cola manteniendo el
-       ritmo del crossfade Químicos→Papel intacto (mismo timeline, mismas
-       fracciones, sólo corre sobre menos scroll). IndustrialProcess (la
-       otra mitad de esta secuencia consecutiva) no se tocó: su propia
-       "zona muerta" viene de que GSAP pin:true reserva altura-natural +
-       rango-de-scrub como espacio total del spacer — reducir su `end` no
-       la achica (achica sólo la parte que sí es útil, el paneo horizontal
-       real), y arreglarla de verdad requeriría desacoplar el trigger del
-       elemento pineado (cambio estructural, fuera del alcance de esta
-       intervención — el mecanismo horizontal en sí está protegido). */
-    <section ref={wrapperRef} id="quimicos" className="relative h-[200vh] w-full bg-ink-deep">
-      <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
-        <div ref={chemLayerRef} className="absolute inset-0">
-          <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
-          <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.5)" }} />
-        </div>
-        <div ref={paperLayerRef} className="absolute inset-0">
-          <PhotoMedia src="/photos/bobinas-deposito.jpeg" alt="Bobinas de papel Tissue en depósito de COTA" />
-          <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.35)" }} />
-        </div>
-
-        {/* Capítulo Químicos */}
-        <div ref={chemTextRef} className="container-industrial absolute inset-0 flex flex-col justify-end pb-20 md:pb-28">
+    <>
+      <section id="quimicos" className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-ink-deep">
+        <PhotoMedia src="/photos/quimicos-tanques.png" alt="Tanques de proceso en la planta de COTA" />
+        <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.5)" }} />
+        <div ref={chemRef} className="container-industrial relative flex w-full flex-col pb-20 md:pb-28">
           <span className="font-label mb-4 block text-paper/60">Químicos — 01</span>
           <div className="flex flex-wrap items-end gap-x-8 gap-y-4">
             <h3 className="text-display max-w-2xl text-paper">Precisión en cada reacción.</h3>
@@ -99,7 +65,7 @@ export default function ChemicalsToPaper() {
           </div>
           <ul className="mt-8 flex flex-col gap-2">
             {CHEM_ITEMS.map((item, i) => (
-              <li key={item} className="chem-item font-label text-paper/65">
+              <li key={item} className="font-label text-paper/65">
                 {String(i + 1).padStart(2, "0")} — {item}
               </li>
             ))}
@@ -111,14 +77,17 @@ export default function ChemicalsToPaper() {
             Solicitar ficha técnica <span className="cta-arrow">→</span>
           </a>
         </div>
+      </section>
 
-        {/* Capítulo Papel */}
-        <div ref={paperTextRef} className="container-industrial absolute inset-0 flex flex-col justify-end pb-20 md:pb-28">
+      <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-ink-deep">
+        <PhotoMedia src="/photos/bobinas-deposito.jpeg" alt="Bobinas de papel Tissue en depósito de COTA" />
+        <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.35)" }} />
+        <div ref={paperRef} className="container-industrial relative flex w-full flex-col pb-20 md:pb-28">
           <span className="font-label mb-4 block text-paper/60">Papel — 02</span>
           <h3 className="text-display max-w-2xl text-paper">Papel Tissue a escala industrial.</h3>
           <ul className="mt-8 flex flex-col gap-2">
             {PAPER_ITEMS.map((item, i) => (
-              <li key={item} className="paper-item font-label text-paper/65">
+              <li key={item} className="font-label text-paper/65">
                 {String(i + 1).padStart(2, "0")} — {item}
               </li>
             ))}
@@ -138,7 +107,7 @@ export default function ChemicalsToPaper() {
             </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
