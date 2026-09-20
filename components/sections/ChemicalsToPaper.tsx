@@ -20,12 +20,10 @@ export default function ChemicalsToPaper() {
     const { gsap, ScrollTrigger } = ensureGsapRegistered();
 
     const ctx = gsap.context(() => {
-      const chemItems = chemTextRef.current!.querySelectorAll<HTMLLIElement>(".chem-item");
       const paperItems = paperTextRef.current!.querySelectorAll<HTMLLIElement>(".paper-item");
 
       gsap.set(paperLayerRef.current, { autoAlpha: 0 });
       gsap.set(paperTextRef.current, { autoAlpha: 0 });
-      gsap.set(chemItems, { autoAlpha: 0 });
       gsap.set(paperItems, { autoAlpha: 0 });
 
       const tl = gsap.timeline({ paused: true });
@@ -39,9 +37,6 @@ export default function ChemicalsToPaper() {
       tl.to(chemTextRef.current, { autoAlpha: 0, duration: 0.14 }, 0.32);
       tl.to(paperTextRef.current, { autoAlpha: 1, duration: 0.16 }, 0.52);
 
-      [0.06, 0.16, 0.26].forEach((t, i) => {
-        tl.to(chemItems[i], { autoAlpha: 1, duration: 0.1 }, t);
-      });
       [0.58, 0.68, 0.78].forEach((t, i) => {
         tl.to(paperItems[i], { autoAlpha: 1, duration: 0.1 }, t);
       });
