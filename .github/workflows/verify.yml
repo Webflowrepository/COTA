@@ -1,0 +1,40 @@
+# The verifier. Runs the checks this project already owns — nothing invented.
+#
+# `next build` is the typecheck: it runs TypeScript over the project itself
+# ("Running TypeScript ..." in the log). A standalone `tsc --noEmit` is NOT
+# run here because it fails before a build has generated `.next/types`
+# (`LayoutProps` is a build-generated global). See docs/DECISIONS.md D-004.
+name: verify
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci --no-audit --no-fund
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build (compiles and typechecks)
+        run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
