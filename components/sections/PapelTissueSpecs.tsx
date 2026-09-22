@@ -170,12 +170,6 @@ export default function PapelTissueSpecs() {
 
           <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
             <a
-              href={`mailto:${cota.contact.email}?subject=${encodeURIComponent("Ficha técnica — Bobinas para convertidores")}`}
-              className="font-label inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
-            >
-              Solicitar ficha técnica completa <span className="cta-arrow">→</span>
-            </a>
-            <a
               href="#contacto"
               className="font-label inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
             >

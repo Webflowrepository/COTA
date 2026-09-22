@@ -94,7 +94,7 @@ export default function Hero() {
 
       <div className="container-industrial relative z-10 flex h-full flex-col justify-end pb-20 md:pb-28">
         <span className="hero-label font-label mb-6 block text-paper/60">
-          Argentina — Químicos / Papel Tissue / Soluciones Industriales
+          Argentina — Papel Tissue / Químicos / Soluciones Industriales
         </span>
 
         <h1 className="max-w-3xl overflow-hidden">

@@ -182,7 +182,6 @@ export default function ProductFamilies() {
       >
         {PANELS.map((panel) => {
           const categoryLabel = cota.contactCategories.find((c) => c.id === panel.categoryId)?.label ?? panel.label;
-          const mailto = `mailto:${cota.contact.email}?subject=${encodeURIComponent(`Ficha técnica — ${categoryLabel}`)}`;
           return (
             <div
               key={panel.id}
@@ -221,11 +220,7 @@ export default function ProductFamilies() {
                 <h3 className="text-heading">{panel.label}</h3>
                 <p className="mt-3 max-w-xs text-sm text-paper/70">{panel.short}</p>
                 <a
-                  href={mailto}
-                  className="font-label mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
-                >
-                  Solicitar ficha técnica <span className="cta-arrow">→</span>
-                </a>
+
               </div>
             </div>
           );

@@ -3,10 +3,8 @@
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
-import Counter from "@/components/ui/Counter";
 import { cota } from "@/lib/content/cota";
 
-const CHEM_ITEMS = cota.chemicalTypes.map((type) => `Blanqueadores ${type}`);
 const PAPER_ITEMS = ["Bobinas para convertidores", `${cota.guardian.name} — línea profesional`, "Producción propia en Naschel"];
 
 // La sección "Químicos — 01" (foto full-bleed de tanques + lista de
@@ -60,26 +58,6 @@ export default function ChemicalsToPaper() {
           </a>
         </div>
 
-        {/* Químicos — bloque secundario */}
-        <div className="mt-10 border-t border-paper/20 pt-8">
-          <div className="flex flex-wrap items-start gap-x-10 gap-y-6">
-            <div>
-              <span className="font-impact-number text-stat block leading-none text-paper">
-                <Counter target={cota.chemicalTypes.length} />
-              </span>
-              <span className="font-label text-paper/50">Tipos de blanqueadores</span>
-            </div>
-            <div>
-              <ul className="flex flex-col gap-2">
-                {CHEM_ITEMS.map((item, i) => (
-                  <li key={item} className="font-label text-paper/65">
-                    {String(i + 1).padStart(2, "0")} — {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

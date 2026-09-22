@@ -124,17 +124,17 @@ export const cota = {
     {
       id: "fabricacion",
       label: "Fabricación",
-      short: "Producción de bobinas de papel Tissue a pedido, según las medidas que requiera el convertidor.",
+      short: "Producción de bobinas de papel tissue blanco puro para convertidores. Medidas y stock a consultar.",
     },
     {
-      id: "marca-privada",
-      label: "Marca para Terceros",
-      short: '"Tu nombre, tu logo" — producto terminado fabricado bajo la marca del cliente o de un tercero.',
+      id: "producto-terminado",
+      label: "Producto Terminado",
+      short: "Papel desnudo para revender o etiquetar con tu marca. Posibilidad de desarrollar el packaging con tu marca propia con nosotros. Consultar requisitos mínimos.",
     },
     {
       id: "guardian",
       label: "Guardián",
-      short: "Línea propia de COTA, con apoyo a distribuidores en todo el país.",
+      short: "Podés ser nuestro representante oficial. Consultar requisitos.",
     },
   ],
   /**
