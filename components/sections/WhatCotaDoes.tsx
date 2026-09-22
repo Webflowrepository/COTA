@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import { EASE_STANDARD } from "@/lib/motion/tokens";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
 // Los 4 diferenciales (antes en WhyCota.tsx, sección aparte más abajo en la
@@ -48,6 +49,17 @@ export default function WhatCotaDoes() {
         },
       );
       gsap.fromTo(
+        ".whatcota-photo",
+        { autoAlpha: 0, scale: 1.05 },
+        {
+          autoAlpha: 1,
+          scale: 1,
+          duration: 0.9,
+          ease: "power2.out",
+          scrollTrigger: { trigger: rootRef.current, start: "top 85%", toggleActions: "play none none none" },
+        },
+      );
+      gsap.fromTo(
         ".why-point",
         { autoAlpha: 0, y: 20 },
         {
@@ -69,8 +81,8 @@ export default function WhatCotaDoes() {
       ref={rootRef}
       className="section-py-lg relative w-full bg-paper max-md:pt-14!"
     >
-      <div className="container-industrial">
-        <div className="whatcota-body max-w-2xl">
+      <div className="container-industrial grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-10">
+        <div className="whatcota-body md:col-span-6">
           <span className="font-label mb-6 block text-ink/45">
             Compañía — {cota.country}, desde {cota.foundedYear}
           </span>
@@ -78,21 +90,31 @@ export default function WhatCotaDoes() {
           <h2 className="text-display text-ink">{cota.mission}</h2>
 
           <p className="mt-8 text-base text-ink/60 md:text-lg leading-relaxed">
-            Desde 1994, nuestra empresa tiene su sede en Naschel, San Luis. Inicialmente nos
-            dedicamos a la producción de productos químicos para la industria papelera y textil.
-            Con el paso del tiempo y gracias a nuestro arduo trabajo, logramos dar un paso
-            adelante con capitales propios: la instalación de nuestra propia planta papelera,
-            especializada en la producción de papel Tissue para la industria. Este logro
-            representa un hito en nuestra trayectoria y refleja nuestro compromiso con la
-            innovación y la calidad.
+            Desde 1994 en Naschel, San Luis. Empezamos produciendo químicos para la industria
+            papelera y textil, y con capitales propios dimos el salto a instalar nuestra propia
+            planta de papel Tissue — un hito que refleja nuestro compromiso con la innovación
+            y la calidad.
           </p>
+        </div>
+
+        {/* Foto que llena el hueco a la derecha de la intro — antes esa
+            mitad quedaba en blanco. proceso-materia-prima.png estaba libre
+            (era de WhyCota.tsx, sección que ya no se renderiza en
+            page.tsx), no repite ninguna foto visible en otra parte de la
+            página. */}
+        <div className="whatcota-photo relative hidden min-h-[320px] overflow-hidden rounded-sm md:col-span-6 md:block">
+          <PhotoMedia
+            src="/photos/proceso-materia-prima.png"
+            alt="Materia prima en proceso, planta de COTA en Naschel"
+            sizes="(min-width: 768px) 50vw, 100vw"
+          />
         </div>
 
         {/* Diferenciales — fila horizontal, sin la línea de acento que
             tenían antes; el título ahora tiene más peso/tamaño para que
             se destaque como cabecera de cada columna en vez de leer
             parejo con la copy de abajo. */}
-        <div className="mt-16 md:mt-20">
+        <div className="md:col-span-12 mt-6 md:mt-10">
           <span className="font-label mb-6 block text-ink/45">Por qué COTA</span>
           <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-line-on-light">
             {POINTS.map((point) => (
@@ -105,7 +127,7 @@ export default function WhatCotaDoes() {
         </div>
 
         {/* Fila única de CTAs al pie de toda la sección. */}
-        <div className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line-on-light pt-8 md:mt-20">
+        <div className="md:col-span-12 mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line-on-light pt-8 md:mt-14">
           <a
             href={cota.whatsapp.number ? `https://wa.me/${cota.whatsapp.number}` : "#contacto"}
             target={cota.whatsapp.number ? "_blank" : undefined}
