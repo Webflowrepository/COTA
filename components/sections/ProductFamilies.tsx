@@ -181,7 +181,6 @@ export default function ProductFamilies() {
         className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 md:mx-auto md:grid md:max-w-[1440px] md:grid-cols-2 md:gap-6 md:overflow-visible md:px-12 md:pb-0 lg:grid-cols-4"
       >
         {PANELS.map((panel) => {
-          const categoryLabel = cota.contactCategories.find((c) => c.id === panel.categoryId)?.label ?? panel.label;
           return (
             <div
               key={panel.id}
@@ -219,8 +218,6 @@ export default function ProductFamilies() {
                 <span className="font-label mb-3 block text-paper/90">Línea de producto</span>
                 <h3 className="text-heading">{panel.label}</h3>
                 <p className="mt-3 max-w-xs text-sm text-paper/70">{panel.short}</p>
-                <a
-
               </div>
             </div>
           );
