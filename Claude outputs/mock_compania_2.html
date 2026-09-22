@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mock 2 — Grid asimétrico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0b0e1a; --paper: #fafaf8; --green: #017130;
+    --line: rgba(11,14,26,0.12); --ink-60: rgba(11,14,26,0.6);
+    --ink-45: rgba(11,14,26,0.45); --ink-25: rgba(11,14,26,0.25);
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',system-ui,sans-serif; }
+  .container { max-width:1280px; margin:0 auto; padding:96px 48px; }
+  .label { font-family:'Teko',sans-serif; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; font-size:13px; color:var(--ink-45); display:block; margin-bottom:24px; }
+  .display { font-size:clamp(2.1rem,4.2vw,3.75rem); line-height:1.03; font-weight:400; letter-spacing:-0.01em; margin:0 0 48px 0; max-width:32ch; }
+  .body-text { font-size:16px; line-height:1.6; color:var(--ink-60); margin:0; }
+
+  /* grid asimétrico por peso real de cada línea de negocio */
+  .weight-grid {
+    display:grid;
+    grid-template-columns: 3fr 1.6fr 1fr;
+    gap:1px;
+    background:var(--line);
+    margin-top:56px;
+    border-top:1px solid var(--line);
+  }
+  .weight-block {
+    background:var(--paper);
+    padding:40px 32px;
+    position:relative;
+    min-height:260px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .weight-block .num {
+    font-family:'Teko',sans-serif; font-weight:700; font-size:44px; line-height:0.9; color:var(--ink-25);
+  }
+  .weight-block h3 { font-size:22px; font-weight:400; margin:16px 0 8px 0; letter-spacing:-0.01em; }
+  .weight-block.small h3 { font-size:17px; }
+  .weight-block p.copy { font-size:14px; color:var(--ink-60); line-height:1.5; margin:0; max-width:38ch; }
+  .weight-block .tag { font-family:'Teko',sans-serif; font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:var(--green); margin-top:16px; }
+
+  /* diferenciales como anotaciones flotantes en el margen del bloque grande */
+  .annotations { display:flex; flex-direction:column; gap:14px; margin-top:24px; }
+  .annotation { display:flex; gap:10px; align-items:flex-start; }
+  .annotation .dot { width:5px; height:5px; border-radius:50%; background:var(--ink-45); margin-top:7px; flex-shrink:0; }
+  .annotation span { font-size:13px; color:var(--ink-60); line-height:1.4; }
+
+  .cta-row { margin-top:48px; display:flex; gap:32px; flex-wrap:wrap; padding-top:32px; border-top:1px solid var(--line); }
+  .cta { font-family:'Teko',sans-serif; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; font-size:13px; color:var(--ink); border-bottom:1px solid var(--ink); padding-bottom:4px; text-decoration:none; }
+
+  .section-tag { position:fixed; top:16px; left:16px; background:var(--green); color:var(--paper); font-family:'Teko',sans-serif; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; padding:6px 12px; border-radius:2px; z-index:10; }
+</style>
+</head>
+<body>
+
+<div class="section-tag">Mock 2 — grid por peso de negocio</div>
+
+<div class="container">
+  <span class="label">Compañía — Argentina, desde 1994</span>
+  <h2 class="display">Socios estratégicos en soluciones de papel.</h2>
+  <p class="body-text" style="max-width:60ch;">
+    Desde 1994, nuestra empresa tiene su sede en Naschel, San Luis. Inicialmente nos
+    dedicamos a la producción de productos químicos para la industria papelera y textil.
+    Con el paso del tiempo, instalamos nuestra propia planta papelera especializada en
+    papel Tissue para la industria.
+  </p>
+
+  <div class="weight-grid">
+    <div class="weight-block">
+      <div>
+        <span class="num">01</span>
+        <h3>Papel Tissue</h3>
+        <p class="copy">Bobinas para convertidores y línea profesional Guardián — hoy nuestro negocio principal.</p>
+      </div>
+      <div class="annotations">
+        <div class="annotation"><span class="dot"></span><span>Integración vertical: de materia prima a producto terminado, misma planta.</span></div>
+        <div class="annotation"><span class="dot"></span><span>Logística propia, instalación de fábricas y maquinaria de conversión.</span></div>
+      </div>
+    </div>
+    <div class="weight-block small">
+      <div>
+        <span class="num">02</span>
+        <h3>Químicos</h3>
+        <p class="copy">Blanqueadores ópticos desarrollados por COTA — tetrasulfónicos, hexasulfónicos, antraquinona.</p>
+      </div>
+      <span class="tag">Desarrollo propio</span>
+    </div>
+    <div class="weight-block small">
+      <div>
+        <span class="num">03</span>
+        <h3>Asesoramiento</h3>
+        <p class="copy">Soporte técnico especializado para papeleras que necesitan blanquear.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-row">
+    <a href="#" class="cta">Escribir por WhatsApp →</a>
+    <a href="#" class="cta">Enviar un email →</a>
+    <a href="#" class="cta">Conocer nuestra planta →</a>
+  </div>
+</div>
+
+</body>
+</html>

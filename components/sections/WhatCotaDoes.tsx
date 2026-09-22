@@ -6,10 +6,11 @@ import { EASE_STANDARD } from "@/lib/motion/tokens";
 import { cota } from "@/lib/content/cota";
 
 // Los 4 diferenciales (antes en WhyCota.tsx, sección aparte más abajo en la
-// página) se integraron acá como columna derecha de la intro de la empresa
-// — el cliente pidió juntar las 2 secciones porque la intro sola (kicker +
-// h2 + párrafo + CTAs) dejaba mucho espacio vacío debajo. Texto ya
-// verificado, no son datos nuevos.
+// página) se integraron acá — el cliente pidió juntar las 2 secciones
+// porque la intro sola dejaba mucho espacio vacío debajo. Van en fila
+// horizontal (no lista vertical apilada) siguiendo el mismo patrón que
+// "Modelos de negocio" (4 columnas con divisor vertical desde lg). Texto
+// ya verificado, no son datos nuevos.
 const POINTS = [
   {
     title: "Desarrollo propio, no reventa.",
@@ -55,7 +56,7 @@ export default function WhatCotaDoes() {
           duration: 0.7,
           stagger: 0.1,
           ease: EASE_STANDARD,
-          scrollTrigger: { trigger: rootRef.current, start: "top 75%", end: "top 40%", scrub: true },
+          scrollTrigger: { trigger: rootRef.current, start: "top 80%", end: "top 50%", scrub: true },
         },
       );
     }, rootRef);
@@ -68,14 +69,8 @@ export default function WhatCotaDoes() {
       ref={rootRef}
       className="section-py-lg relative w-full bg-paper max-md:pt-14!"
     >
-      <div className="container-industrial grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-10">
-        {/* Kicker de la columna izquierda cubre toda la sección — no hace
-            falta repetirlo arriba de la derecha, pero sí un label propio
-            ("Por qué COTA") a la misma altura para que ambas columnas
-            arranquen parejas — antes estaba oculto en desktop (md:hidden)
-            y la derecha arrancaba en seco, sin nada que la empareje con el
-            kicker de la izquierda. */}
-        <div className="whatcota-body md:col-span-6">
+      <div className="container-industrial">
+        <div className="whatcota-body max-w-2xl">
           <span className="font-label mb-6 block text-ink/45">
             Compañía — {cota.country}, desde {cota.foundedYear}
           </span>
@@ -93,26 +88,24 @@ export default function WhatCotaDoes() {
           </p>
         </div>
 
-        <div className="md:col-span-6">
+        {/* Diferenciales — fila horizontal, sin la línea de acento que
+            tenían antes; el título ahora tiene más peso/tamaño para que
+            se destaque como cabecera de cada columna en vez de leer
+            parejo con la copy de abajo. */}
+        <div className="mt-16 md:mt-20">
           <span className="font-label mb-6 block text-ink/45">Por qué COTA</span>
-          <div className="flex flex-col divide-y divide-line-on-light">
+          <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-line-on-light">
             {POINTS.map((point) => (
-              <div key={point.title} className="why-point flex gap-5 py-6 first:pt-0">
-                <span className="mt-2 h-px w-6 shrink-0 bg-ink/40" aria-hidden />
-                <div>
-                  <h3 className="text-base font-medium text-ink md:text-lg">{point.title}</h3>
-                  <p className="mt-1.5 max-w-md text-sm text-ink/60 md:text-base">{point.copy}</p>
-                </div>
+              <div key={point.title} className="why-point flex flex-col lg:px-8 lg:first:pl-0 lg:last:pr-0">
+                <h3 className="text-lg font-semibold text-ink md:text-xl">{point.title}</h3>
+                <p className="mt-2 text-sm text-ink/60 md:text-base">{point.copy}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Fila única de CTAs al pie de toda la sección — antes había 3
-            CTAs repartidos en 2 lugares (WhatsApp/Email bajo la intro,
-            "Conocer nuestra planta" bajo los diferenciales), se leían
-            como acciones sueltas. Una sola fila, ancho completo. */}
-        <div className="md:col-span-12 mt-2 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line-on-light pt-8">
+        {/* Fila única de CTAs al pie de toda la sección. */}
+        <div className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line-on-light pt-8 md:mt-20">
           <a
             href={cota.whatsapp.number ? `https://wa.me/${cota.whatsapp.number}` : "#contacto"}
             target={cota.whatsapp.number ? "_blank" : undefined}
