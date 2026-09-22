@@ -21,9 +21,17 @@ export default function StatsBand() {
   return (
     <section className="section-py-sm w-full bg-paper">
       <div className="container-industrial grid grid-cols-2 gap-x-6 gap-y-10 border-t border-line-on-light pt-10 md:grid-cols-4 md:gap-x-10">
-        {STATS.map((stat) => (
+        {STATS.map((stat, i) => (
           <div key={stat.label}>
-            <span className="font-impact-number text-stat block text-ink">
+            {/* El primer dato (Anos operando) es el que respalda la
+                promesa del H1 del Hero ("Lideres en la produccion") - de
+                los 4, es el unico que es una credencial de confianza, no
+                una especificacion tecnica. Un solo acento en verde (el
+                unico color de marca del sitio) le da a la franja un lugar
+                donde apoyar la mirada antes de recorrer el resto en negro
+                - evita que las 4 cifras compitan con el mismo peso, sin
+                sumar ningun elemento nuevo al sistema. */}
+            <span className={`font-impact-number text-stat block ${i === 0 ? "text-green" : "text-ink"}`}>
               <Counter target={stat.value} />
               {stat.suffix}
             </span>
