@@ -69,6 +69,12 @@ export default function WhatCotaDoes() {
       className="section-py-lg relative w-full bg-paper max-md:pt-14!"
     >
       <div className="container-industrial grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-10">
+        {/* Kicker de la columna izquierda cubre toda la sección — no hace
+            falta repetirlo arriba de la derecha, pero sí un label propio
+            ("Por qué COTA") a la misma altura para que ambas columnas
+            arranquen parejas — antes estaba oculto en desktop (md:hidden)
+            y la derecha arrancaba en seco, sin nada que la empareje con el
+            kicker de la izquierda. */}
         <div className="whatcota-body md:col-span-6">
           <span className="font-label mb-6 block text-ink/45">
             Compañía — {cota.country}, desde {cota.foundedYear}
@@ -85,27 +91,10 @@ export default function WhatCotaDoes() {
             representa un hito en nuestra trayectoria y refleja nuestro compromiso con la
             innovación y la calidad.
           </p>
-
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3">
-            <a
-              href={cota.whatsapp.number ? `https://wa.me/${cota.whatsapp.number}` : "#contacto"}
-              target={cota.whatsapp.number ? "_blank" : undefined}
-              rel={cota.whatsapp.number ? "noopener noreferrer" : undefined}
-              className="font-label inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
-            >
-              Escribir por WhatsApp <span className="cta-arrow">→</span>
-            </a>
-            <a
-              href={`mailto:${cota.contact.email}`}
-              className="font-label inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
-            >
-              Enviar un email <span className="cta-arrow">→</span>
-            </a>
-          </div>
         </div>
 
         <div className="md:col-span-6">
-          <span className="font-label mb-6 block text-ink/45 md:hidden">Por qué COTA</span>
+          <span className="font-label mb-6 block text-ink/45">Por qué COTA</span>
           <div className="flex flex-col divide-y divide-line-on-light">
             {POINTS.map((point) => (
               <div key={point.title} className="why-point flex gap-5 py-6 first:pt-0">
@@ -117,10 +106,30 @@ export default function WhatCotaDoes() {
               </div>
             ))}
           </div>
+        </div>
 
+        {/* Fila única de CTAs al pie de toda la sección — antes había 3
+            CTAs repartidos en 2 lugares (WhatsApp/Email bajo la intro,
+            "Conocer nuestra planta" bajo los diferenciales), se leían
+            como acciones sueltas. Una sola fila, ancho completo. */}
+        <div className="md:col-span-12 mt-2 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line-on-light pt-8">
+          <a
+            href={cota.whatsapp.number ? `https://wa.me/${cota.whatsapp.number}` : "#contacto"}
+            target={cota.whatsapp.number ? "_blank" : undefined}
+            rel={cota.whatsapp.number ? "noopener noreferrer" : undefined}
+            className="font-label inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+          >
+            Escribir por WhatsApp <span className="cta-arrow">→</span>
+          </a>
+          <a
+            href={`mailto:${cota.contact.email}`}
+            className="font-label inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+          >
+            Enviar un email <span className="cta-arrow">→</span>
+          </a>
           <a
             href="#planta"
-            className="font-label mt-10 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+            className="font-label inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
           >
             Conocer nuestra planta <span className="cta-arrow">→</span>
           </a>
