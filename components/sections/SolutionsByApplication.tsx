@@ -6,7 +6,6 @@ import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
 import { cota } from "@/lib/content/cota";
 
 const bobinas = cota.services.find((s) => s.id === "bobinas")!;
-const quimicos = cota.businessLines.find((l) => l.id === "quimicos")!;
 
 const SEGMENTS = [
   {
@@ -50,23 +49,6 @@ const SEGMENTS = [
       src: "/videos/soluciones-guardian-distribucion.mp4",
       poster: "/photos/soluciones-guardian-distribucion-poster.webp",
       alt: "Operarios junto a máquina rebobinadora de papel en la planta de COTA",
-    },
-  },
-  {
-    id: "papeleras",
-    label: "Papeleras y textiles",
-    headline: "Blanqueadores ópticos a medida.",
-    copy: quimicos.short,
-    cta: "Ver químicos",
-    mediaLabel: "Foto — control de calidad en papelera",
-    categoryId: "quimicos",
-    // Video generado (kling_20260904_VIDEO_son_bobina_891_0.mp4),
-    // recomprimido — mismo criterio que Convertidores arriba (poster en
-    // WebP: 62KB vs. 143KB el .jpg).
-    video: {
-      src: "/videos/soluciones-papelera-control-calidad.mp4",
-      poster: "/photos/soluciones-papelera-control-calidad-poster.webp",
-      alt: "Pila de papel Tissue plegado en línea de producción",
     },
   },
 ];
