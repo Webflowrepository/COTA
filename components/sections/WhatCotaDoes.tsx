@@ -75,29 +75,19 @@ export default function WhatCotaDoes() {
           izquierda, diferenciales a la derecha — mismo patrón que una
           maqueta editorial de revista, no una grilla de cards repetidas. */}
       <div className="container-industrial grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 md:gap-y-16">
-        {/* Fila 1 — texto */}
-        <div className="whatcota-cell flex flex-col justify-center">
+        {/* Fila 1 — texto, ancho completo (la foto que la acompañaba se
+            sacó a pedido del cliente). */}
+        <div className="whatcota-cell flex flex-col justify-center md:col-span-2">
           <span className="font-label mb-6 block text-ink/45">
             Compañía — {cota.country}, desde {cota.foundedYear}
           </span>
-          <h2 className="text-display text-ink">{cota.mission}</h2>
-          <p className="mt-8 text-base text-ink/60 md:text-lg leading-relaxed">
+          <h2 className="text-display max-w-2xl text-ink">{cota.mission}</h2>
+          <p className="mt-8 max-w-2xl text-base text-ink/60 md:text-lg leading-relaxed">
             Desde 1994 en Naschel, San Luis. Empezamos produciendo químicos para la industria
             papelera y textil, y con capitales propios dimos el salto a instalar nuestra propia
             planta de papel Tissue — un hito que refleja nuestro compromiso con la innovación
             y la calidad.
           </p>
-        </div>
-
-        {/* Fila 1 — foto. papel-tissue-produccion-operarios.png pega mejor
-            con el texto de "soluciones de papel" que la foto de tanques
-            químicos que había antes — no se usaba en ninguna otra sección. */}
-        <div className="whatcota-cell relative aspect-[4/3] overflow-hidden rounded-sm md:aspect-auto">
-          <PhotoMedia
-            src="/photos/papel-tissue-produccion-operarios.png"
-            alt="Operarios en línea de producción de papel Tissue, planta de COTA"
-            sizes="(min-width: 768px) 50vw, 100vw"
-          />
         </div>
 
         {/* Fila 2 — foto. El orden del DOM ya produce el apilado correcto
