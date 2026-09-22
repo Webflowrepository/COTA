@@ -1,7 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import StatsBand from "@/components/sections/StatsBand";
 import WhatCotaDoes from "@/components/sections/WhatCotaDoes";
-import WhyCota from "@/components/sections/WhyCota";
 import ChemicalsToPaper from "@/components/sections/ChemicalsToPaper";
 import PapelTissueSpecs from "@/components/sections/PapelTissueSpecs";
 import ProductFamilies from "@/components/sections/ProductFamilies";
@@ -27,7 +26,6 @@ export default function Home() {
           (análisis pedido por el cliente sobre por qué "los rubros" y
           "papel" se sentían repetidos en la página). */}
       <ProductFamilies />
-      <WhyCota />
       {/* IndustrialProcess ("Recorrido industrial", el banco de fotos entre
           WhyCota y Químicos) se sacó del todo (2026-09-15, pedido directo
           del cliente) — pasó por 2 rediseños en el mismo día (pin/scroll-jack
