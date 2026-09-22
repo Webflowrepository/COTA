@@ -8,26 +8,24 @@ import { cota } from "@/lib/content/cota";
 
 // Los 4 diferenciales (antes en WhyCota.tsx, sección aparte más abajo en la
 // página) se integraron acá — el cliente pidió juntar las 2 secciones
-// porque la intro sola dejaba mucho espacio vacío debajo. Van en fila
-// horizontal (no lista vertical apilada) siguiendo el mismo patrón que
-// "Modelos de negocio" (4 columnas con divisor vertical desde lg). Texto
-// ya verificado, no son datos nuevos.
+// porque la intro sola dejaba mucho espacio vacío debajo. Texto ya
+// verificado, no son datos nuevos.
 const POINTS = [
   {
     title: "Desarrollo propio, no reventa.",
-    copy: "Blanqueadores ópticos desarrollados por COTA — tetrasulfónicos, hexasulfónicos y antraquinona.",
+    copy: "Blanqueadores ópticos desarrollados por COTA.",
   },
   {
     title: "Integración vertical.",
-    copy: "De la materia prima al producto terminado, dentro de la misma planta en Naschel.",
+    copy: "De la materia prima al producto terminado, misma planta.",
   },
   {
     title: "Logística propia.",
-    copy: cota.services.find((s) => s.id === "logistica")?.short ?? "",
+    copy: "Instalación de fábricas y venta de maquinaria de conversión.",
   },
   {
     title: "Asesoramiento técnico.",
-    copy: cota.services.find((s) => s.id === "asesoramiento")?.short ?? "",
+    copy: "Para papeleras que necesitan blanquear papel y pasta.",
   },
 ];
 
@@ -38,37 +36,27 @@ export default function WhatCotaDoes() {
     const { gsap } = ensureGsapRegistered();
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        ".whatcota-body",
-        { autoAlpha: 0, y: 20 },
+        ".whatcota-cell",
+        { autoAlpha: 0, y: 24 },
         {
           autoAlpha: 1,
           y: 0,
           duration: 0.7,
-          ease: "power3.out",
-          scrollTrigger: { trigger: rootRef.current, start: "top 85%", toggleActions: "play none none none" },
-        },
-      );
-      gsap.fromTo(
-        ".whatcota-photo",
-        { autoAlpha: 0, scale: 1.05 },
-        {
-          autoAlpha: 1,
-          scale: 1,
-          duration: 0.9,
-          ease: "power2.out",
-          scrollTrigger: { trigger: rootRef.current, start: "top 85%", toggleActions: "play none none none" },
+          stagger: 0.08,
+          ease: EASE_STANDARD,
+          scrollTrigger: { trigger: rootRef.current, start: "top 80%", end: "top 30%", scrub: true },
         },
       );
       gsap.fromTo(
         ".why-point",
-        { autoAlpha: 0, y: 20 },
+        { autoAlpha: 0, y: 16 },
         {
           autoAlpha: 1,
           y: 0,
-          duration: 0.7,
-          stagger: 0.1,
+          duration: 0.6,
+          stagger: 0.08,
           ease: EASE_STANDARD,
-          scrollTrigger: { trigger: rootRef.current, start: "top 80%", end: "top 50%", scrub: true },
+          scrollTrigger: { trigger: rootRef.current, start: "top 60%", end: "top 20%", scrub: true },
         },
       );
     }, rootRef);
@@ -81,14 +69,18 @@ export default function WhatCotaDoes() {
       ref={rootRef}
       className="section-py-lg relative w-full bg-paper max-md:pt-14!"
     >
-      <div className="container-industrial grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-10">
-        <div className="whatcota-body md:col-span-6">
+      {/* Grid editorial 2x2 alternado: texto/foto cambian de lado fila por
+          fila (pedido del cliente — que no sea "todo texto"). Fila 1:
+          intro a la izquierda, foto a la derecha. Fila 2: foto a la
+          izquierda, diferenciales a la derecha — mismo patrón que una
+          maqueta editorial de revista, no una grilla de cards repetidas. */}
+      <div className="container-industrial grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 md:gap-y-16">
+        {/* Fila 1 — texto */}
+        <div className="whatcota-cell flex flex-col justify-center">
           <span className="font-label mb-6 block text-ink/45">
             Compañía — {cota.country}, desde {cota.foundedYear}
           </span>
-
           <h2 className="text-display text-ink">{cota.mission}</h2>
-
           <p className="mt-8 text-base text-ink/60 md:text-lg leading-relaxed">
             Desde 1994 en Naschel, San Luis. Empezamos produciendo químicos para la industria
             papelera y textil, y con capitales propios dimos el salto a instalar nuestra propia
@@ -97,37 +89,44 @@ export default function WhatCotaDoes() {
           </p>
         </div>
 
-        {/* Foto que llena el hueco a la derecha de la intro — antes esa
-            mitad quedaba en blanco. proceso-materia-prima.png estaba libre
-            (era de WhyCota.tsx, sección que ya no se renderiza en
-            page.tsx), no repite ninguna foto visible en otra parte de la
-            página. */}
-        <div className="whatcota-photo relative hidden min-h-[320px] overflow-hidden rounded-sm md:col-span-6 md:block">
+        {/* Fila 1 — foto. papel-tissue-produccion-operarios.png pega mejor
+            con el texto de "soluciones de papel" que la foto de tanques
+            químicos que había antes — no se usaba en ninguna otra sección. */}
+        <div className="whatcota-cell relative aspect-[4/3] overflow-hidden rounded-sm md:aspect-auto">
           <PhotoMedia
-            src="/photos/proceso-materia-prima.png"
-            alt="Materia prima en proceso, planta de COTA en Naschel"
+            src="/photos/papel-tissue-produccion-operarios.png"
+            alt="Operarios en línea de producción de papel Tissue, planta de COTA"
             sizes="(min-width: 768px) 50vw, 100vw"
           />
         </div>
 
-        {/* Diferenciales — fila horizontal, sin la línea de acento que
-            tenían antes; el título ahora tiene más peso/tamaño para que
-            se destaque como cabecera de cada columna en vez de leer
-            parejo con la copy de abajo. */}
-        <div className="md:col-span-12 mt-6 md:mt-10">
+        {/* Fila 2 — foto. El orden del DOM ya produce el apilado correcto
+            en mobile (foto, después texto) y el grid alternado en
+            desktop, sin necesitar order-*. bobinas-industriales-nave.png
+            no se usaba en ninguna otra sección. */}
+        <div className="whatcota-cell relative aspect-[4/3] overflow-hidden rounded-sm md:aspect-auto">
+          <PhotoMedia
+            src="/photos/bobinas-industriales-nave.png"
+            alt="Nave industrial con bobinas de papel Tissue, planta de COTA"
+            sizes="(min-width: 768px) 50vw, 100vw"
+          />
+        </div>
+
+        {/* Fila 2 — texto: diferenciales compactos (antes en WhyCota.tsx). */}
+        <div className="whatcota-cell flex flex-col justify-center">
           <span className="font-label mb-6 block text-ink/45">Por qué COTA</span>
-          <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-line-on-light">
+          <div className="flex flex-col divide-y divide-line-on-light">
             {POINTS.map((point) => (
-              <div key={point.title} className="why-point flex flex-col lg:px-8 lg:first:pl-0 lg:last:pr-0">
-                <h3 className="text-lg font-semibold text-ink md:text-xl">{point.title}</h3>
-                <p className="mt-2 text-sm text-ink/60 md:text-base">{point.copy}</p>
+              <div key={point.title} className="why-point py-4 first:pt-0">
+                <h3 className="text-base font-semibold text-ink md:text-lg">{point.title}</h3>
+                <p className="mt-1 text-sm text-ink/60">{point.copy}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Fila única de CTAs al pie de toda la sección. */}
-        <div className="md:col-span-12 mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line-on-light pt-8 md:mt-14">
+        {/* CTAs — fila única, ancho completo. */}
+        <div className="mt-2 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line-on-light pt-8 md:col-span-2">
           <a
             href={cota.whatsapp.number ? `https://wa.me/${cota.whatsapp.number}` : "#contacto"}
             target={cota.whatsapp.number ? "_blank" : undefined}
