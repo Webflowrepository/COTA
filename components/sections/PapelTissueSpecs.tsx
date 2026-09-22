@@ -143,34 +143,38 @@ export default function PapelTissueSpecs() {
 
   return (
     <section id="papel" className="relative w-full bg-paper">
-      <div className="container-industrial pt-24 pb-16 md:pt-32 md:pb-20">
-        <span className="font-label mb-4 block text-ink/45">Papel Tissue</span>
-        <h2 className="text-display max-w-2xl text-ink">Bobinas para convertidores, a su medida.</h2>
-        <p className="mt-6 max-w-lg text-base text-ink/60 md:text-lg">
-          {cota.businessLines.find((l) => l.id === "papel")?.short} Producción propia en{" "}
-          {cota.plant.location}, con tres formas de trabajar según lo que necesite su operación.
-        </p>
-        <a
-          href="#contacto"
-          className="font-label mt-6 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
-        >
-          Ir a contacto <span className="cta-arrow">→</span>
-        </a>
-      </div>
+      <div className="container-industrial grid grid-cols-1 gap-12 pt-24 pb-16 md:grid-cols-[1fr_0.8fr] md:gap-16 md:pt-32 md:pb-20">
+        <div>
+          <span className="font-label mb-4 block text-ink/45">Papel Tissue</span>
+          <h2 className="text-display max-w-2xl text-ink">Bobinas para convertidores, a su medida.</h2>
+          <p className="mt-6 max-w-lg text-base text-ink/60 md:text-lg">
+            {cota.businessLines.find((l) => l.id === "papel")?.short} Producción propia en{" "}
+            {cota.plant.location}, con tres formas de trabajar según lo que necesite su operación.
+          </p>
+          <a
+            href="#contacto"
+            className="font-label mt-6 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+          >
+            Ir a contacto <span className="cta-arrow">→</span>
+          </a>
+        </div>
 
-      {/* Modelos de negocio */}
-      <div ref={modelsRef} className="container-industrial pb-16 md:pb-20">
-        <span className="font-label mb-10 block text-ink/45">Modelos de negocio</span>
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-0 md:divide-x md:divide-line-on-light">
-          {cota.businessModels.map((model, i) => (
-            <div key={model.id} className="biz-model group md:px-10 md:first:pl-0 md:last:pr-0">
-              <span className="font-impact-number text-stat block text-ink/25 transition-colors duration-300 group-hover:text-ink/50">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="text-heading mt-4 text-ink transition-transform duration-300 group-hover:translate-x-1">{model.label}</h3>
-              <p className="mt-3 text-sm text-ink/60 md:text-base">{model.short}</p>
-            </div>
-          ))}
+        {/* Modelos de negocio — vertical, al lado del texto en vez de abajo
+            como fila de 3 columnas (dejaba mucho vacío a la derecha del
+            texto principal). */}
+        <div ref={modelsRef}>
+          <span className="font-label mb-6 block text-ink/45">Modelos de negocio</span>
+          <div className="flex flex-col divide-y divide-line-on-light">
+            {cota.businessModels.map((model, i) => (
+              <div key={model.id} className="biz-model group py-6 first:pt-0 last:pb-0">
+                <span className="font-impact-number text-stat block text-ink/25 transition-colors duration-300 group-hover:text-ink/50">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="text-heading mt-3 text-ink transition-transform duration-300 group-hover:translate-x-1">{model.label}</h3>
+                <p className="mt-2 text-sm text-ink/60 md:text-base">{model.short}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

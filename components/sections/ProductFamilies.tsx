@@ -180,7 +180,7 @@ export default function ProductFamilies() {
         onScroll={handleScroll}
         className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 md:mx-auto md:grid md:max-w-[1440px] md:grid-cols-2 md:gap-6 md:overflow-visible md:px-12 md:pb-0 lg:grid-cols-4"
       >
-        {PANELS.map((panel) => {
+        {PANELS.map((panel, i) => {
           return (
             <div
               key={panel.id}
@@ -215,7 +215,17 @@ export default function ProductFamilies() {
                 }}
               />
               <div className="absolute inset-0 flex flex-col justify-end p-7 text-paper md:p-9">
-                <span className="font-label mb-3 block text-paper/90">Línea de producto</span>
+                {/* Numeración 01/02/03/04 — el mismo patrón de índice que
+                    ya usan Modelos de negocio (PapelTissueSpecs.tsx) y las
+                    listas de Papel/Químicos (ChemicalsToPaper.tsx). Estos
+                    4 paneles eran el único bloque "de catálogo" del sitio
+                    sin esa numeración; sumarla no agrega peso visual
+                    nuevo (mismo font-label ya usado acá) y conecta el
+                    carrusel al lenguaje de índice que ya reconoce el
+                    resto de la página. */}
+                <span className="font-label mb-3 block text-paper/90">
+                  {String(i + 1).padStart(2, "0")} — Línea de producto
+                </span>
                 <h3 className="text-heading">{panel.label}</h3>
                 <p className="mt-3 max-w-xs text-sm text-paper/70">{panel.short}</p>
               </div>

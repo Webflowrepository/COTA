@@ -74,7 +74,7 @@ export default function WhatCotaDoes() {
           intro a la izquierda, foto a la derecha. Fila 2: foto a la
           izquierda, diferenciales a la derecha — mismo patrón que una
           maqueta editorial de revista, no una grilla de cards repetidas. */}
-      <div className="container-industrial grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2 md:gap-y-16">
+      <div className="container-industrial grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2 md:gap-y-28">
         {/* Fila 1 — texto, ancho completo (la foto que la acompañaba se
             sacó a pedido del cliente). */}
         <div className="whatcota-cell flex flex-col justify-center md:col-span-2">
