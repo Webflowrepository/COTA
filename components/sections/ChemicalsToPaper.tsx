@@ -7,6 +7,8 @@ import { cota } from "@/lib/content/cota";
 
 const PAPER_ITEMS = ["Bobinas para convertidores", `${cota.guardian.name} — línea profesional`, "Producción propia en Naschel"];
 
+const CHEM_ITEMS = ["Blanqueadores tetrasulfónicos", "Blanqueadores hexasulfónicos", "Antraquinona — para la preparación de pasta de papel"];
+
 // La sección "Químicos — 01" (foto full-bleed de tanques + lista de
 // blanqueadores separada) se eliminó a pedido del cliente (2026-09-21).
 // Su contenido — contador, lista de blanqueadores y CTA de ficha técnica —
@@ -56,6 +58,25 @@ export default function ChemicalsToPaper() {
           >
             Ver especificaciones técnicas <span className="cta-arrow">→</span>
           </a>
+        </div>
+
+        {/* Químicos — breve descripción de la línea, a pedido del cliente.
+            No repite el bloque de contador que se sacó el 2026-09-22 —
+            esto es prosa + lista de productos específicos, no un dato
+            numérico. */}
+        <div className="mt-10 border-t border-paper/20 pt-8">
+          <span className="font-label mb-3 block text-paper/60">Línea química: Blanqueadores ópticos</span>
+          <p className="max-w-xl text-sm text-paper/65 md:text-base">
+            Desde 1994 fabricamos blanqueadores ópticos (agentes blanqueadores fluorescentes)
+            para blanquear papel y pasta de papel.
+          </p>
+          <ul className="mt-4 flex flex-col gap-2">
+            {CHEM_ITEMS.map((item, i) => (
+              <li key={item} className="font-label text-paper/65">
+                {String(i + 1).padStart(2, "0")} — {item}
+              </li>
+            ))}
+          </ul>
         </div>
 
       </div>

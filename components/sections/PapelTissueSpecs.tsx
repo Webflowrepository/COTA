@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef, type JSX } from "react";
+import { useEffect, useRef, useState, type JSX } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import { EASE_STANDARD } from "@/lib/motion/tokens";
 import SpecCounter from "@/components/ui/SpecCounter";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 import {
   RollIcon,
   IndustrialRollIcon,
@@ -31,10 +32,59 @@ const PRODUCT_ICON: Record<string, (props: { className?: string }) => JSX.Elemen
   servilletas: NapkinBoxIcon,
 };
 
+// Galería "De la bobina al producto convertido" — restaurada a pedido del
+// cliente (se había sacado el 2026-09-20). papel-tissue-produccion-operarios.png
+// se reemplazó por papel-produccion-tissue.jpeg porque la primera ahora se
+// usa en WhatCotaDoes.tsx — ninguna foto se repite entre secciones. Orden:
+// depósito → logística → conversión → producto → control de calidad.
+const GALLERY_PHOTOS = [
+  { src: "/photos/galeria-bobinas-deposito-filas.jpeg", alt: "Filas de bobinas de papel Tissue en depósito de COTA" },
+  { src: "/photos/galeria-bobina-forklift.jpg", alt: "Operario trasladando bobina de papel con autoelevador en depósito" },
+  { src: "/photos/galeria-bobina-inspeccion.jpeg", alt: "Equipo de COTA inspeccionando bobinas de papel en planta" },
+  { src: "/photos/galeria-bobina-camion.jpg", alt: "Carga de bobinas de papel en camión para despacho" },
+  { src: "/photos/papel-produccion-tissue.jpeg", alt: "Línea de producción de papel Tissue en planta de COTA" },
+  { src: "/photos/galeria-rebobinado-detalle.jpeg", alt: "Bobina ya convertida en máquina rebobinadora" },
+  { src: "/photos/galeria-toallas-plegadas.jpeg", alt: "Toallas de papel plegadas saliendo de la línea de conversión" },
+  { src: "/photos/galeria-control-calidad.jpg", alt: "Control de calidad de papel Tissue en laboratorio de planta" },
+];
+
+function ChevronIcon({ direction, className = "h-4 w-4" }: { direction: "left" | "right"; className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
+      <path
+        d={direction === "left" ? "M15 5l-7 7 7 7" : "M9 5l7 7-7 7"}
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function PapelTissueSpecs() {
   const modelsRef = useRef<HTMLDivElement>(null);
   const specsRef = useRef<HTMLDivElement>(null);
   const catalogRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const [galleryAtStart, setGalleryAtStart] = useState(true);
+  const [galleryAtEnd, setGalleryAtEnd] = useState(false);
+
+  function updateGalleryEdges() {
+    const el = galleryRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setGalleryAtStart(el.scrollLeft <= 1);
+    setGalleryAtEnd(el.scrollLeft >= max - 1);
+  }
+
+  function scrollGalleryByCard(dir: 1 | -1) {
+    const el = galleryRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>(".gallery-photo");
+    const amount = (card?.offsetWidth ?? el.clientWidth) + 16; // + gap-4
+    el.scrollBy({ left: dir * amount, behavior: "smooth" });
+  }
 
   useEffect(() => {
     const { gsap } = ensureGsapRegistered();
@@ -75,7 +125,19 @@ export default function PapelTissueSpecs() {
           scrollTrigger: { trigger: catalogRef.current, start: "top 80%", end: "top 45%", scrub: true },
         },
       );
-    }, [modelsRef, specsRef, catalogRef]);
+      gsap.fromTo(
+        ".gallery-photo",
+        { autoAlpha: 0, y: 14 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.05,
+          ease: EASE_STANDARD,
+          scrollTrigger: { trigger: galleryRef.current, start: "top 85%", end: "top 55%", scrub: true },
+        },
+      );
+    }, [modelsRef, specsRef, catalogRef, galleryRef]);
     return () => ctx.revert();
   }, []);
 
@@ -216,6 +278,50 @@ export default function PapelTissueSpecs() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Galería "De la bobina al producto convertido" — tira
+              horizontal deslizable en todos los breakpoints, con flechas
+              prev/next (mismo patrón que se usaba en Proceso Industrial,
+              sección ya eliminada, pero el affordance para desktop sin
+              trackpad sigue siendo válido acá). */}
+          <div className="mt-16 md:mt-20">
+            <span className="font-label mb-6 block text-ink/45">De la bobina al producto convertido</span>
+            <div
+              ref={galleryRef}
+              onScroll={updateGalleryEdges}
+              className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
+            >
+              {GALLERY_PHOTOS.map((photo) => (
+                <div
+                  key={photo.src}
+                  className="gallery-photo relative h-[260px] w-[220px] shrink-0 snap-start overflow-hidden md:h-[320px] md:w-[270px]"
+                >
+                  <PhotoMedia src={photo.src} alt={photo.alt} sizes="(min-width: 768px) 270px, 220px" />
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 flex items-center gap-4">
+              <button
+                type="button"
+                aria-label="Foto anterior"
+                disabled={galleryAtStart}
+                onClick={() => scrollGalleryByCard(-1)}
+                className="flex h-9 w-9 shrink-0 items-center justify-center border border-line-on-light text-ink/60 transition-opacity disabled:opacity-30"
+              >
+                <ChevronIcon direction="left" />
+              </button>
+              <button
+                type="button"
+                aria-label="Foto siguiente"
+                disabled={galleryAtEnd}
+                onClick={() => scrollGalleryByCard(1)}
+                className="flex h-9 w-9 shrink-0 items-center justify-center border border-line-on-light text-ink/60 transition-opacity disabled:opacity-30"
+              >
+                <ChevronIcon direction="right" />
+              </button>
+              <span className="font-label text-ink/40">Deslizar para ver más →</span>
+            </div>
           </div>
 
           {/* Centrado, no alineado a la izquierda como el resto de los CTA
