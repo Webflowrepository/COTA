@@ -31,8 +31,11 @@ const SEGMENTS = [
   {
     id: "distribuidores",
     label: "Distribuidores",
-    headline: cota.guardian.tagline,
-    copy: `Línea profesional ${cota.guardian.name}, con apoyo a distribuidores en todo el país.`,
+    // Dos propuestas para distribuidores (pedido del cliente): producto
+    // terminado sin marca (modelo "Producto Terminado" de cota.ts) y la
+    // línea Guardián. Sin requisitos ni condiciones nuevas.
+    headline: `Producto terminado y línea ${cota.guardian.name}.`,
+    copy: `Papel terminado sin marca para revender o etiquetar con marca propia, con posibilidad de desarrollar el packaging con su marca. Consultar requisitos mínimos. También puede comercializar la línea profesional ${cota.guardian.name}, con apoyo a distribuidores en todo el país.`,
     cta: "Ver Guardián",
     mediaLabel: "Foto — producto Guardián en punto de venta",
     categoryId: "distribucion",
