@@ -75,9 +75,9 @@ export default function WhatCotaDoes() {
           izquierda, diferenciales a la derecha — mismo patrón que una
           maqueta editorial de revista, no una grilla de cards repetidas. */}
       <div className="container-industrial grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2 md:gap-y-24">
-        {/* Fila 1 — texto, ancho completo (la foto que la acompañaba se
-            sacó a pedido del cliente). */}
-        <div className="whatcota-cell flex flex-col justify-center md:col-span-2">
+        {/* Fila 1 — texto a la izquierda, foto a la derecha (pedido del
+            cliente, 2026-09-23). En mobile: texto, después foto. */}
+        <div className="whatcota-cell flex flex-col justify-center">
           <span className="font-label mb-6 block text-ink/45">
             Compañía — {cota.country}, desde {cota.foundedYear}
           </span>
@@ -90,11 +90,7 @@ export default function WhatCotaDoes() {
           </p>
         </div>
 
-        {/* Fila 2 — foto. El orden del DOM ya produce el apilado correcto
-            en mobile (foto, después texto) y el grid alternado en
-            desktop, sin necesitar order-*. bobinas-industriales-nave.png
-            no se usaba en ninguna otra sección. */}
-        <div className="whatcota-cell relative aspect-[4/3] overflow-hidden rounded-sm md:aspect-auto">
+        <div className="whatcota-cell relative aspect-[4/3] overflow-hidden rounded-sm md:aspect-auto md:min-h-[22rem]">
           <PhotoMedia
             src="/photos/bobinas-industriales-nave.png"
             alt="Nave industrial con bobinas de papel Tissue, planta de COTA"
@@ -102,14 +98,16 @@ export default function WhatCotaDoes() {
           />
         </div>
 
-        {/* Fila 2 — texto: diferenciales compactos (antes en WhyCota.tsx). */}
-        <div className="whatcota-cell flex flex-col justify-center">
+        {/* Fila 2 — diferenciales en horizontal, ancho completo: 4 columnas
+            en desktop, 2 en tablet, apilados en mobile. Cada uno con la
+            misma línea fina arriba que usa el resto del sitio. */}
+        <div className="whatcota-cell md:col-span-2">
           <span className="font-label mb-6 block text-ink/45">Por qué COTA</span>
-          <div className="flex flex-col divide-y divide-line-on-light">
+          <div className="grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
             {POINTS.map((point) => (
-              <div key={point.title} className="why-point py-4 first:pt-0">
+              <div key={point.title} className="why-point border-t border-line-on-light pt-6">
                 <h3 className="text-base font-semibold text-ink md:text-lg">{point.title}</h3>
-                <p className="mt-1 text-sm text-ink/60">{point.copy}</p>
+                <p className="mt-2 text-sm text-ink/60">{point.copy}</p>
               </div>
             ))}
           </div>
