@@ -42,8 +42,6 @@ const GALLERY_PHOTOS = [
   { src: "/photos/galeria-bobina-forklift.jpg", alt: "Operario trasladando bobina de papel con autoelevador en depósito" },
   { src: "/photos/soluciones-rebobinadora.png", alt: "Bobina de papel Tissue montada en rebobinadora, planta de COTA" },
   { src: "/photos/galeria-bobina-camion.jpg", alt: "Carga de bobinas de papel en camión para despacho" },
-  { src: "/photos/papel-produccion-tissue.jpeg", alt: "Línea de producción de papel Tissue en planta de COTA" },
-  { src: "/photos/galeria-rebobinado-detalle.jpeg", alt: "Bobina ya convertida en máquina rebobinadora" },
   { src: "/photos/galeria-toallas-plegadas.jpeg", alt: "Toallas de papel plegadas saliendo de la línea de conversión" },
   { src: "/photos/galeria-control-calidad.jpg", alt: "Control de calidad de papel Tissue en laboratorio de planta" },
 ];
