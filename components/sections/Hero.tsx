@@ -94,7 +94,7 @@ export default function Hero() {
 
       <div className="container-industrial relative z-10 flex h-full flex-col justify-end pb-20 md:pb-28">
         <span className="hero-label font-label mb-6 block text-paper/60">
-          Argentina — Papel Tissue / Químicos / Soluciones Industriales
+          COTA S.A. — Fabricante industrial desde 1994
         </span>
 
         <h1 className="max-w-3xl overflow-hidden">
@@ -103,7 +103,7 @@ export default function Hero() {
         </h1>
 
         <p className="hero-sub mt-6 max-w-md text-base text-paper/65 md:text-lg">
-          Blanqueadores ópticos, papel Tissue y soluciones industriales, desde 1994.
+          Producción propia de bobinas industriales y productos convertidos desde Naschel, San Luis.
         </p>
 
         <a

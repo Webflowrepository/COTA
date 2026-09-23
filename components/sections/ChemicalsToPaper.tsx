@@ -4,36 +4,19 @@ import { useEffect, useRef } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import { EASE_STANDARD } from "@/lib/motion/tokens";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
-import { cota } from "@/lib/content/cota";
-
-const PAPER_ITEMS = ["Bobinas para convertidores", `${cota.guardian.name} — línea profesional`, "Producción propia en Naschel"];
 
 const CHEM_ITEMS = ["Blanqueadores tetrasulfónicos", "Blanqueadores hexasulfónicos", "Antraquinona — para la preparación de pasta de papel"];
 
-// La sección "Químicos — 01" (foto full-bleed de tanques + lista de
-// blanqueadores separada) se eliminó a pedido del cliente (2026-09-21). Su
-// contenido se consolidó primero como bloque secundario dentro de esta
-// sección full-bleed (Papel), y después (2026-09-22) se movió a su propia
-// sección clara debajo — sobre la foto oscura el texto quedaba apretado y
-// perdido, mismo problema que tuvo la versión original. quimicos-ibc-tanques.png
-// estaba libre (no se usaba en ninguna otra sección).
+// Químicos — división secundaria de COTA (jerarquía de contenido,
+// 2026-09-23). La apertura oscura "Papel Tissue a escala industrial" que
+// antes vivía en este archivo pasó a PapelTissue.tsx; acá queda sólo la
+// línea química, después de todo el bloque de Papel Tissue.
 export default function ChemicalsToPaper() {
-  const sectionRef = useRef<HTMLDivElement>(null);
   const chemRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const { gsap } = ensureGsapRegistered();
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        sectionRef.current,
-        { autoAlpha: 0 },
-        {
-          autoAlpha: 1,
-          duration: 0.7,
-          ease: "power2.out",
-          scrollTrigger: { trigger: sectionRef.current, start: "top 100%", toggleActions: "play none none none" },
-        },
-      );
       gsap.fromTo(
         ".chem-item",
         { autoAlpha: 0, y: 16 },
@@ -50,39 +33,11 @@ export default function ChemicalsToPaper() {
     return () => ctx.revert();
   }, []);
 
+  // Split editorial (pedido del cliente con referencia visual,
+  // 2026-09-23): texto a la izquierda alineado a la grilla del sitio, foto a
+  // sangre ocupando toda la mitad derecha. En mobile: texto, después foto.
   return (
-    <>
-      <section id="quimicos" className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-ink-deep">
-        <PhotoMedia src="/photos/bobinas-deposito.jpeg" alt="Bobinas de papel Tissue en depósito de COTA" />
-        <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.45)" }} />
-
-        <div ref={sectionRef} className="container-industrial relative flex w-full flex-col pb-20 md:pb-28">
-          <span className="font-label mb-6 block text-paper/60">Papel y Químicos</span>
-          <h3 className="text-display max-w-2xl text-paper">Papel Tissue a escala industrial.</h3>
-          <ul className="mt-8 flex flex-col gap-2">
-            {PAPER_ITEMS.map((item, i) => (
-              <li key={item} className="font-label text-paper/65">
-                {String(i + 1).padStart(2, "0")} — {item}
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
-            <a
-              href="#papel"
-              className="font-label inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
-            >
-              Ver especificaciones técnicas <span className="cta-arrow">→</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Químicos — split editorial (pedido del cliente con referencia
-          visual, 2026-09-23): texto a la izquierda alineado a la grilla del
-          sitio, foto a sangre ocupando toda la mitad derecha y todo el alto
-          de la sección. Cierre inferior con pie de sección (rubro + línea +
-          año). En mobile se apila: texto, después foto. */}
-      <section ref={chemRef} className="relative grid w-full grid-cols-1 bg-paper md:grid-cols-2">
+      <section id="quimicos" ref={chemRef} className="relative grid w-full grid-cols-1 bg-paper md:grid-cols-2">
         <div className="flex w-full flex-col px-5 py-20 md:ml-auto md:max-w-[720px] md:py-24 md:pl-12 md:pr-16 md:min-h-[36rem] min-[1440px]:pl-20!">
           <span className="font-label mb-6 block text-ink/50">Línea química</span>
           <h2 className="text-display max-w-xl text-ink">Blanqueadores ópticos a medida.</h2>
@@ -120,6 +75,5 @@ export default function ChemicalsToPaper() {
           />
         </div>
       </section>
-    </>
   );
 }

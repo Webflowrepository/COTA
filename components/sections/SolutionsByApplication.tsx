@@ -3,25 +3,39 @@
 import { useState } from "react";
 import VideoMedia from "@/components/visuals/VideoMedia";
 import PlaceholderMedia from "@/components/visuals/PlaceholderMedia";
+import PhotoMedia from "@/components/visuals/PhotoMedia";
 import { cota } from "@/lib/content/cota";
 
-const bobinas = cota.services.find((s) => s.id === "bobinas")!;
+const serviceShort = (id: string) => cota.services.find((s) => s.id === id)!.short;
 
-const SEGMENTS = [
+/*
+ * Soluciones Industriales — oferta complementaria de servicios (jerarquía
+ * de contenido, 2026-09-23). Antes las pestañas eran "Convertidores" y
+ * "Distribuidores", que repetían Bobinas y Guardián (hoy con sección
+ * propia arriba). Ahora muestran los servicios reales ya cargados en
+ * cota.ts, con el mismo componente de pestañas + media.
+ */
+type Segment = {
+  id: string;
+  label: string;
+  headline: string;
+  copy: string;
+  cta: string;
+  mediaLabel: string;
+  categoryId: string;
+  video?: { src: string; poster: string; alt: string };
+  photo?: { src: string; alt: string };
+};
+
+const SEGMENTS: Segment[] = [
   {
-    id: "convertidores",
-    label: "Convertidores",
-    headline: "Bobinas listas para su línea de conversión.",
-    copy: bobinas.short,
-    cta: "Ver bobinas",
-    mediaLabel: "Foto — convertidor trabajando con bobina",
-    categoryId: "bobinas",
-    // Video generado que subió el cliente (kling_20260904_VIDEO_que_aprsca
-    // _937_0.mp4), recomprimido a ~800KB/1280px para web (original pesaba
-    // 7MB). El poster es el mismo frame que se usaba antes como foto fija,
-    // pero pasado a WebP (48KB vs. 116KB el .jpg — un <video poster> no
-    // pasa por next/image, así que conviene optimizarlo a mano una sola
-    // vez). Evita cualquier parpadeo/negro mientras el video carga.
+    id: "maquinaria",
+    label: "Maquinaria e instalación",
+    headline: "Maquinaria de conversión.",
+    copy: serviceShort("logistica"),
+    cta: "Consultar",
+    mediaLabel: "Foto — maquinaria de conversión",
+    categoryId: "maquinaria",
     video: {
       src: "/videos/soluciones-convertidor-bobina.mp4",
       poster: "/photos/soluciones-convertidor-bobina-poster.webp",
@@ -29,26 +43,29 @@ const SEGMENTS = [
     },
   },
   {
-    id: "distribuidores",
-    label: "Distribuidores",
-    headline: cota.guardian.tagline,
-    copy: `Línea profesional ${cota.guardian.name}, con apoyo a distribuidores en todo el país.`,
-    cta: "Ver Guardián",
-    mediaLabel: "Foto — producto Guardián en punto de venta",
-    categoryId: "distribucion",
-    // Video real subido por el cliente (Images/"usa estaaaa.mp4", 17MB/
-    // 900x900/10s) — recomprimido a 1280x1280 (~1.5MB) siguiendo el mismo
-    // criterio que los otros 2 videos de esta sección. A diferencia de
-    // esos 2 (generados con Kling), este es footage real de la planta:
-    // operarios junto a una máquina rebobinadora/convertidora — no muestra
-    // literalmente "distribución" ni producto Guardián en punto de venta,
-    // pero el cliente pidió explícitamente usarlo acá en vez de dejarlo en
-    // placeholder. Reemplazar si en algún momento llega material que
-    // muestre distribución/punto de venta más directamente.
-    video: {
-      src: "/videos/soluciones-guardian-distribucion.mp4",
-      poster: "/photos/soluciones-guardian-distribucion-poster.webp",
-      alt: "Operarios junto a máquina rebobinadora de papel en la planta de COTA",
+    id: "logistica",
+    label: "Logística y embalaje",
+    headline: "Autoelevadores y embalaje.",
+    copy: serviceShort("autoelevadores"),
+    cta: "Consultar",
+    mediaLabel: "Foto — logística",
+    categoryId: "maquinaria",
+    photo: {
+      src: "/photos/soluciones-logistica-montacargas.png",
+      alt: "Autoelevador trasladando carga en la planta de COTA",
+    },
+  },
+  {
+    id: "asesoramiento",
+    label: "Asesoramiento técnico",
+    headline: "Asesoramiento para papeleras.",
+    copy: serviceShort("asesoramiento"),
+    cta: "Consultar",
+    mediaLabel: "Foto — asesoramiento técnico",
+    categoryId: "quimicos",
+    photo: {
+      src: "/photos/quimicos-mantenimiento-tanques.png",
+      alt: "Técnicos de COTA trabajando junto a tanques de proceso",
     },
   },
 ];
@@ -78,10 +95,10 @@ export default function SolutionsByApplication() {
        important (ver memoria de dirección de arte, punto 18). */
     <section id="soluciones" className="section-py-md relative w-full bg-paper pb-24! md:pb-40!">
       <div className="container-industrial">
-        <span className="font-label mb-6 block text-ink/50">Soluciones — 03</span>
+        <span className="font-label mb-6 block text-ink/50">Soluciones industriales</span>
         <h2 className="text-display max-w-3xl text-ink">De la materia a la operación del cliente.</h2>
         <p className="mt-6 max-w-lg text-base text-ink/60 md:text-lg">
-          Cada línea de COTA se integra en procesos industriales más amplios. Elija su perfil.
+          Servicios que complementan la producción: {cota.businessLines.find((l) => l.id === "soluciones")?.short.toLowerCase()}
         </p>
         <a
           href="#contacto"
@@ -132,6 +149,8 @@ export default function SolutionsByApplication() {
               >
                 {seg.video ? (
                   <VideoMedia src={seg.video.src} poster={seg.video.poster} ariaLabel={seg.video.alt} />
+                ) : seg.photo ? (
+                  <PhotoMedia src={seg.photo.src} alt={seg.photo.alt} sizes="(min-width: 768px) 62vw, 100vw" />
                 ) : (
                   <PlaceholderMedia tone="dark" label={seg.mediaLabel} />
                 )}
