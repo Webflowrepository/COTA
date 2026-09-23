@@ -1,30 +1,96 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, type JSX } from "react";
 import { ensureGsapRegistered } from "@/lib/motion/gsap";
 import { EASE_STANDARD } from "@/lib/motion/tokens";
 import SpecCounter from "@/components/ui/SpecCounter";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
+import {
+  RollIcon,
+  IndustrialRollIcon,
+  InterfoldBoxIcon,
+  ToiletRollIcon,
+  NapkinBoxIcon,
+  LeafIcon,
+} from "@/components/ui/ProductIcons";
 import { cota } from "@/lib/content/cota";
 
-/*
- * Bobinas Industriales — producto principal de COTA (jerarquía de
- * contenido, 2026-09-23). Relato: Papel Tissue (PapelTissue.tsx) → Bobinas
- * Industriales (acá) → Productos convertidos (ProductosConvertidos.tsx).
- * Junta en una sola sección lo que antes estaba repartido: la presentación
- * de bobinas, el modelo "Fabricación", las especificaciones técnicas y el
- * catálogo de bobinas (que antes sólo aparecía en Contacto). Nombre de
- * archivo sin cambiar para no romper imports.
+/**
+ * Rediseño de "Nuestros Productos" (pedido explícito del cliente, con
+ * referencia visual propia — línea minimalista verde sobre blanco, sin
+ * fotos/cards/sombras). Reemplaza el intento anterior con fotos de stock
+ * (no llegó a usarse: quedaba un mapa de fotos sin conectar al render) —
+ * un ícono de línea propio por producto es más consistente con "no look
+ * de stock-photo" que pidió el cliente, y no depende de conseguir fotos
+ * reales de producto que todavía no existen.
  */
+const PRODUCT_ICON: Record<string, (props: { className?: string }) => JSX.Element> = {
+  "toallas-rollo-camilleros": RollIcon,
+  "bobinas-limpieza": IndustrialRollIcon,
+  "toallas-intercaladas": InterfoldBoxIcon,
+  "papel-higienico": ToiletRollIcon,
+  servilletas: NapkinBoxIcon,
+};
+
+// Galería "De la bobina al producto convertido" — restaurada a pedido del
+// cliente (se había sacado el 2026-09-20). papel-tissue-produccion-operarios.png
+// se reemplazó por papel-produccion-tissue.jpeg porque la primera ahora se
+// usa en WhatCotaDoes.tsx — ninguna foto se repite entre secciones. Orden:
+// depósito → logística → conversión → producto → control de calidad.
+const GALLERY_PHOTOS = [
+  { src: "/photos/galeria-bobinas-deposito-filas.jpeg", alt: "Filas de bobinas de papel Tissue en depósito de COTA" },
+  { src: "/photos/galeria-bobina-forklift.jpg", alt: "Operario trasladando bobina de papel con autoelevador en depósito" },
+  { src: "/photos/galeria-bobina-inspeccion.jpeg", alt: "Equipo de COTA inspeccionando bobinas de papel en planta" },
+  { src: "/photos/galeria-bobina-camion.jpg", alt: "Carga de bobinas de papel en camión para despacho" },
+  { src: "/photos/papel-produccion-tissue.jpeg", alt: "Línea de producción de papel Tissue en planta de COTA" },
+  { src: "/photos/galeria-rebobinado-detalle.jpeg", alt: "Bobina ya convertida en máquina rebobinadora" },
+  { src: "/photos/galeria-toallas-plegadas.jpeg", alt: "Toallas de papel plegadas saliendo de la línea de conversión" },
+  { src: "/photos/galeria-control-calidad.jpg", alt: "Control de calidad de papel Tissue en laboratorio de planta" },
+];
+
+function ChevronIcon({ direction, className = "h-4 w-4" }: { direction: "left" | "right"; className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden>
+      <path
+        d={direction === "left" ? "M15 5l-7 7 7 7" : "M9 5l7 7-7 7"}
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function PapelTissueSpecs() {
-  const introRef = useRef<HTMLDivElement>(null);
+  const modelsRef = useRef<HTMLDivElement>(null);
   const specsRef = useRef<HTMLDivElement>(null);
+  const catalogRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const [galleryAtStart, setGalleryAtStart] = useState(true);
+  const [galleryAtEnd, setGalleryAtEnd] = useState(false);
+
+  function updateGalleryEdges() {
+    const el = galleryRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    setGalleryAtStart(el.scrollLeft <= 1);
+    setGalleryAtEnd(el.scrollLeft >= max - 1);
+  }
+
+  function scrollGalleryByCard(dir: 1 | -1) {
+    const el = galleryRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>(".gallery-photo");
+    const amount = (card?.offsetWidth ?? el.clientWidth) + 16; // + gap-4
+    el.scrollBy({ left: dir * amount, behavior: "smooth" });
+  }
 
   useEffect(() => {
     const { gsap } = ensureGsapRegistered();
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        ".bobina-intro",
+        ".biz-model",
         { autoAlpha: 0, y: 20 },
         {
           autoAlpha: 1,
@@ -32,7 +98,7 @@ export default function PapelTissueSpecs() {
           duration: 0.7,
           stagger: 0.12,
           ease: EASE_STANDARD,
-          scrollTrigger: { trigger: introRef.current, start: "top 80%", end: "top 45%", scrub: true },
+          scrollTrigger: { trigger: modelsRef.current, start: "top 80%", end: "top 45%", scrub: true },
         },
       );
       gsap.fromTo(
@@ -47,50 +113,68 @@ export default function PapelTissueSpecs() {
           scrollTrigger: { trigger: specsRef.current, start: "top 75%", end: "top 35%", scrub: true },
         },
       );
-    }, [introRef, specsRef]);
+      gsap.fromTo(
+        ".product-card",
+        { autoAlpha: 0, y: 14 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.06,
+          ease: EASE_STANDARD,
+          scrollTrigger: { trigger: catalogRef.current, start: "top 80%", end: "top 45%", scrub: true },
+        },
+      );
+      gsap.fromTo(
+        ".gallery-photo",
+        { autoAlpha: 0, y: 14 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.05,
+          ease: EASE_STANDARD,
+          scrollTrigger: { trigger: galleryRef.current, start: "top 85%", end: "top 55%", scrub: true },
+        },
+      );
+    }, [modelsRef, specsRef, catalogRef, galleryRef]);
     return () => ctx.revert();
   }, []);
 
   return (
-    <section id="bobinas" className="relative w-full bg-paper">
-      <div
-        ref={introRef}
-        className="container-industrial grid grid-cols-1 gap-16 pt-24 pb-16 md:grid-cols-[1fr_0.8fr] md:items-center md:gap-16 md:pt-32 md:pb-20"
-      >
-        <div className="bobina-intro">
-          <span className="font-label mb-6 block text-ink/45">Papel Tissue — Bobinas industriales</span>
+    <section id="papel" className="relative w-full bg-paper">
+      <div className="container-industrial grid grid-cols-1 gap-16 pt-24 pb-16 md:grid-cols-[1fr_0.8fr] md:gap-16 md:pt-40 md:pb-20">
+        <div>
+          <span className="font-label mb-6 block text-ink/45">Papel Tissue</span>
           <h2 className="text-display max-w-2xl text-ink">Bobinas para convertidores, a su medida.</h2>
           <p className="mt-6 max-w-lg text-base text-ink/60 md:text-lg">
-            Bobinas de papel Tissue blanco puro para convertidores y rebobinadores. Producción
-            propia en {cota.plant.location}, con anchos de hasta {cota.bobinaSpecs.anchos[0]}.
+            {cota.businessLines.find((l) => l.id === "papel")?.short} Producción propia en{" "}
+            {cota.plant.location}, con tres formas de trabajar según lo que necesite su operación.
           </p>
-          <p className="font-label mt-6 text-ink/45">Medidas y stock a consultar.</p>
-          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
-            <a
-              href="#contacto"
-              className="font-label inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
-            >
-              Consultar por bobinas <span className="cta-arrow">→</span>
-            </a>
-            <a
-              href="/catalogos/catalogo-bobinas-2026.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-label inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
-            >
-              Catálogo de bobinas 2026 <span className="cta-arrow">→</span>
-            </a>
-          </div>
+          <a
+            href="#contacto"
+            className="font-label mt-8 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+          >
+            Ir a contacto <span className="cta-arrow">→</span>
+          </a>
         </div>
 
-        {/* bobinas-pallet-220cm.jpeg: antes era la foto del panel "Bobinas
-            Industriales" de ProductFamilies (desmontado). */}
-        <div className="bobina-intro relative aspect-[4/3] w-full overflow-hidden rounded-sm">
-          <PhotoMedia
-            src="/photos/bobinas-pallet-220cm.jpeg"
-            alt="Bobina industrial de 220 cm sobre pallet, planta de COTA"
-            sizes="(min-width: 768px) 44vw, 100vw"
-          />
+        {/* Modelos de negocio — vertical, al lado del texto en vez de abajo
+            como fila de 3 columnas (dejaba mucho vacío a la derecha del
+            texto principal). */}
+        <div ref={modelsRef}>
+          <span className="font-label mb-6 block text-ink/45">Modelos de negocio</span>
+          <div className="flex flex-col divide-y divide-line-on-light">
+            {cota.businessModels.map((model, i) => (
+              <div key={model.id} className="biz-model group py-6 first:pt-0 last:pb-0">
+                <span className="font-impact-number text-stat block text-ink/25 transition-colors duration-300 group-hover:text-ink/50">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="text-heading mt-3 text-ink transition-transform duration-300 group-hover:translate-x-1">{model.label}</h3>
+                <p className="mt-2 text-sm text-ink/60 md:text-base">{model.short}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -161,6 +245,107 @@ export default function PapelTissueSpecs() {
         </div>
       </div>
 
+      {/* Nuestros Productos — rediseño a pedido del cliente: línea
+          minimalista verde sobre blanco, un ícono propio por producto (sin
+          fotos, sin cards, sin sombras — ver comentario junto a
+          PRODUCT_ICON arriba). 5 tarjetas, no 6: "Toallas en rollo" y
+          "Camilleros" se fusionaron en una sola (ver comentario en
+          cota.ts). Grilla de 6 columnas en desktop, cada tarjeta ocupa 2
+          (=3 por fila): la fila de abajo (2 tarjetas) usa col-start para
+          quedar centrada en vez de pegada a la izquierda.
+          Encabezado: la primera versión centraba título+ícono como un
+          bloque aislado — no seguía el patrón del resto del sitio (acá
+          mismo, "Modelos de negocio" y "Especificaciones técnicas" usan un
+          kicker .font-label chico, alineado a la izquierda, sin heading
+          grande propio). Se corrigió a ese mismo patrón — la hoja queda
+          chica, en línea junto al kicker, no como marca centrada. */}
+      <div ref={catalogRef} className="container-industrial pt-16 pb-16 md:pt-20 md:pb-28">
+        <div className="border-t border-line-on-light pt-12 md:pt-16">
+          <span className="font-label mb-10 flex items-center gap-2 text-ink/45">
+            Nuestros productos
+            <LeafIcon className="h-4 w-4 text-green" />
+          </span>
+
+          <div className="grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-6 md:gap-y-20">
+            {cota.finishedProducts.map((product, i) => {
+              const Icon = PRODUCT_ICON[product.id];
+              return (
+                <div
+                  key={product.id}
+                  className={`product-card flex flex-col items-center text-center md:col-span-2 ${
+                    i === 3 ? "md:col-start-2" : i === 4 ? "md:col-start-4" : ""
+                  }`}
+                >
+                  <Icon className="h-12 w-12 text-green md:h-14 md:w-14" />
+                  <h4 className="mt-6 max-w-[15rem] text-lg text-ink">{product.label}</h4>
+                  <p className="font-label mt-2 text-ink/45">{product.subtitle}</p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Galería "De la bobina al producto convertido" — tira
+              horizontal deslizable en todos los breakpoints, con flechas
+              prev/next (mismo patrón que se usaba en Proceso Industrial,
+              sección ya eliminada, pero el affordance para desktop sin
+              trackpad sigue siendo válido acá). */}
+          <div className="mt-16 md:mt-24">
+            <span className="font-label mb-6 block text-ink/45">De la bobina al producto convertido</span>
+            <div
+              ref={galleryRef}
+              onScroll={updateGalleryEdges}
+              className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2"
+            >
+              {GALLERY_PHOTOS.map((photo) => (
+                <div
+                  key={photo.src}
+                  className="gallery-photo relative h-[260px] w-[220px] shrink-0 snap-start overflow-hidden md:h-[320px] md:w-[270px]"
+                >
+                  <PhotoMedia src={photo.src} alt={photo.alt} sizes="(min-width: 768px) 270px, 220px" />
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 flex items-center gap-4">
+              <button
+                type="button"
+                aria-label="Foto anterior"
+                disabled={galleryAtStart}
+                onClick={() => scrollGalleryByCard(-1)}
+                className="flex h-9 w-9 shrink-0 items-center justify-center border border-line-on-light text-ink/60 transition-opacity disabled:opacity-30"
+              >
+                <ChevronIcon direction="left" />
+              </button>
+              <button
+                type="button"
+                aria-label="Foto siguiente"
+                disabled={galleryAtEnd}
+                onClick={() => scrollGalleryByCard(1)}
+                className="flex h-9 w-9 shrink-0 items-center justify-center border border-line-on-light text-ink/60 transition-opacity disabled:opacity-30"
+              >
+                <ChevronIcon direction="right" />
+              </button>
+              <span className="font-label text-ink/40">Deslizar para ver más →</span>
+            </div>
+          </div>
+
+          {/* Centrado, no alineado a la izquierda como el resto de los CTA
+              del sitio — acá el contenido de arriba (las 5 tarjetas) es
+              simétrico/centrado en la página, no un bloque de texto a la
+              izquierda como en el resto de las secciones. Un CTA pegado
+              al margen izquierdo quedaba descolgado de esa simetría
+              (pedido del cliente viendo el resultado en pantalla). */}
+          <div className="mt-12 flex justify-center md:mt-16">
+            <a
+              href="/catalogos/catalogo-producto-convertido.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-label inline-flex items-center gap-2 rounded-full border border-green px-8 py-3.5 text-green transition-colors hover:bg-green hover:text-paper"
+            >
+              Descargá nuestro catálogo <span className="cta-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

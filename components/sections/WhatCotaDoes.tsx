@@ -10,9 +10,11 @@ import { cota } from "@/lib/content/cota";
 // página) se integraron acá — el cliente pidió juntar las 2 secciones
 // porque la intro sola dejaba mucho espacio vacío debajo. Texto ya
 // verificado, no son datos nuevos.
-// Orden (2026-09-23): primero lo que define a COTA como fabricante
-// (integración vertical, planta y logística), después químicos/servicios.
 const POINTS = [
+  {
+    title: "Desarrollo propio, no reventa.",
+    copy: "Blanqueadores ópticos desarrollados por COTA.",
+  },
   {
     title: "Integración vertical.",
     copy: "De la materia prima al producto terminado, misma planta.",
@@ -20,10 +22,6 @@ const POINTS = [
   {
     title: "Logística propia.",
     copy: "Instalación de fábricas y venta de maquinaria de conversión.",
-  },
-  {
-    title: "Desarrollo propio, no reventa.",
-    copy: "Blanqueadores ópticos desarrollados por COTA.",
   },
   {
     title: "Asesoramiento técnico.",
