@@ -113,27 +113,13 @@ export default function WhatCotaDoes() {
           </div>
         </div>
 
-        {/* CTAs — fila única, ancho completo. */}
+        {/* CTA único — lleva a Contacto, al final de la página (pedido del cliente). */}
         <div className="flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line-on-light pt-8 md:col-span-2">
           <a
-            href={cota.whatsapp.number ? `https://wa.me/${cota.whatsapp.number}` : "#contacto"}
-            target={cota.whatsapp.number ? "_blank" : undefined}
-            rel={cota.whatsapp.number ? "noopener noreferrer" : undefined}
+            href="#contacto"
             className="font-label inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
           >
-            Escribir por WhatsApp <span className="cta-arrow">→</span>
-          </a>
-          <a
-            href={`mailto:${cota.contact.email}`}
-            className="font-label inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
-          >
-            Enviar un email <span className="cta-arrow">→</span>
-          </a>
-          <a
-            href="#planta"
-            className="font-label inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
-          >
-            Conocer nuestra planta <span className="cta-arrow">→</span>
+            Contactanos <span className="cta-arrow">→</span>
           </a>
         </div>
       </div>

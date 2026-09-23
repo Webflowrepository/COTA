@@ -40,7 +40,7 @@ const PRODUCT_ICON: Record<string, (props: { className?: string }) => JSX.Elemen
 const GALLERY_PHOTOS = [
   { src: "/photos/galeria-bobinas-deposito-filas.jpeg", alt: "Filas de bobinas de papel Tissue en depósito de COTA" },
   { src: "/photos/galeria-bobina-forklift.jpg", alt: "Operario trasladando bobina de papel con autoelevador en depósito" },
-  { src: "/photos/galeria-bobina-inspeccion.jpeg", alt: "Equipo de COTA inspeccionando bobinas de papel en planta" },
+  { src: "/photos/soluciones-rebobinadora.png", alt: "Bobina de papel Tissue montada en rebobinadora, planta de COTA" },
   { src: "/photos/galeria-bobina-camion.jpg", alt: "Carga de bobinas de papel en camión para despacho" },
   { src: "/photos/papel-produccion-tissue.jpeg", alt: "Línea de producción de papel Tissue en planta de COTA" },
   { src: "/photos/galeria-rebobinado-detalle.jpeg", alt: "Bobina ya convertida en máquina rebobinadora" },
