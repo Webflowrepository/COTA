@@ -55,9 +55,6 @@ const SEGMENTS = [
 
 export default function SolutionsByApplication() {
   const [activeId, setActiveId] = useState(SEGMENTS[0].id);
-  const active = SEGMENTS.find((s) => s.id === activeId)!;
-  const categoryLabel = cota.contactCategories.find((c) => c.id === active.categoryId)?.label ?? active.label;
-  const mailto = `mailto:${cota.contact.email}?subject=${encodeURIComponent(`Consulta — ${categoryLabel}`)}`;
 
   // Split editorial, mismo lineamiento que Blanqueadores ópticos
   // (ChemicalsToPaper.tsx): texto a la izquierda, media a sangre a la
@@ -77,53 +74,25 @@ export default function SolutionsByApplication() {
           </p>
         </div>
 
+        {/* Los 2 perfiles con su info completa a la vista (pedido del
+            cliente) — sin acordeón ni CTA por perfil. Pasar el mouse o
+            tocar un perfil cambia el video de la derecha. */}
         <ul className="mt-12 flex max-w-md flex-col border-b border-line-on-light md:mt-16">
-          {SEGMENTS.map((seg, i) => {
-            const isActive = activeId === seg.id;
-            return (
-              <li key={seg.id} className="border-t border-line-on-light">
-                <button
-                  onClick={() => setActiveId(seg.id)}
-                  aria-expanded={isActive}
-                  className="group grid w-full grid-cols-[2.5rem_1fr_auto] items-baseline py-5 text-left"
-                >
-                  <span className={`font-label ${isActive ? "text-ink" : "text-ink/55"}`}>
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span
-                    className={`font-label transition-colors ${
-                      isActive ? "text-ink" : "text-ink/70 group-hover:text-ink"
-                    }`}
-                  >
-                    {seg.label}
-                  </span>
-                  <span
-                    aria-hidden
-                    className={`font-label transition-transform duration-300 ${
-                      isActive ? "rotate-90 text-ink" : "text-ink/55 group-hover:text-ink"
-                    }`}
-                  >
-                    →
-                  </span>
-                </button>
-
-                {isActive && (
-                  <div className="grid grid-cols-[2.5rem_1fr] pb-8">
-                    <div className="col-start-2">
-                      <h3 className="text-base font-semibold text-ink md:text-lg">{seg.headline}</h3>
-                      <p className="mt-2 max-w-md text-sm text-ink/60 md:text-base">{seg.copy}</p>
-                      <a
-                        href={mailto}
-                        className="font-label mt-6 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
-                      >
-                        {seg.cta} <span className="cta-arrow">→</span>
-                      </a>
-                    </div>
-                  </div>
-                )}
-              </li>
-            );
-          })}
+          {SEGMENTS.map((seg, i) => (
+            <li
+              key={seg.id}
+              onMouseEnter={() => setActiveId(seg.id)}
+              onClick={() => setActiveId(seg.id)}
+              className="grid cursor-default grid-cols-[2.5rem_1fr] border-t border-line-on-light py-6"
+            >
+              <span className="font-label text-ink">{String(i + 1).padStart(2, "0")}</span>
+              <div>
+                <span className="font-label block text-ink">{seg.label}</span>
+                <h3 className="mt-3 text-base font-semibold text-ink md:text-lg">{seg.headline}</h3>
+                <p className="mt-2 text-sm text-ink/60 md:text-base">{seg.copy}</p>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
 
