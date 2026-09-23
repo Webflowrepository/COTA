@@ -67,14 +67,14 @@ export default function WhatCotaDoes() {
     <section
       id="compania"
       ref={rootRef}
-      className="section-py-lg relative w-full bg-paper max-md:pt-14!"
+      className="section-py-lg relative w-full bg-paper"
     >
       {/* Grid editorial 2x2 alternado: texto/foto cambian de lado fila por
           fila (pedido del cliente — que no sea "todo texto"). Fila 1:
           intro a la izquierda, foto a la derecha. Fila 2: foto a la
           izquierda, diferenciales a la derecha — mismo patrón que una
           maqueta editorial de revista, no una grilla de cards repetidas. */}
-      <div className="container-industrial grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2 md:gap-y-28">
+      <div className="container-industrial grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2 md:gap-y-24">
         {/* Fila 1 — texto, ancho completo (la foto que la acompañaba se
             sacó a pedido del cliente). */}
         <div className="whatcota-cell flex flex-col justify-center md:col-span-2">
@@ -82,7 +82,7 @@ export default function WhatCotaDoes() {
             Compañía — {cota.country}, desde {cota.foundedYear}
           </span>
           <h2 className="text-display max-w-2xl text-ink">{cota.mission}</h2>
-          <p className="mt-8 max-w-2xl text-base text-ink/60 md:text-lg leading-relaxed">
+          <p className="mt-6 max-w-xl text-base text-ink/60 md:text-lg leading-relaxed">
             Desde 1994 en Naschel, San Luis. Empezamos produciendo químicos para la industria
             papelera y textil, y con capitales propios dimos el salto a instalar nuestra propia
             planta de papel Tissue — un hito que refleja nuestro compromiso con la innovación
@@ -116,7 +116,7 @@ export default function WhatCotaDoes() {
         </div>
 
         {/* CTAs — fila única, ancho completo. */}
-        <div className="mt-2 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line-on-light pt-8 md:col-span-2">
+        <div className="flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-line-on-light pt-8 md:col-span-2">
           <a
             href={cota.whatsapp.number ? `https://wa.me/${cota.whatsapp.number}` : "#contacto"}
             target={cota.whatsapp.number ? "_blank" : undefined}

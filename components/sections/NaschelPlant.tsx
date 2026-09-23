@@ -129,7 +129,7 @@ export default function NaschelPlant() {
       />
 
       <div className="container-industrial naschel-heading relative flex w-full flex-col justify-end pb-20 md:pb-28">
-        <span className="font-label mb-4 block text-paper/60">Planta industrial — {cota.plant.location}</span>
+        <span className="font-label mb-6 block text-paper/60">Planta industrial — {cota.plant.location}</span>
 
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between md:gap-8">
           <div>

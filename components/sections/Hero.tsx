@@ -102,13 +102,13 @@ export default function Hero() {
           <span className="hero-line text-hero block overflow-hidden text-paper">de papel Tissue.</span>
         </h1>
 
-        <p className="hero-sub mt-7 max-w-md text-base text-paper/65 md:text-lg">
+        <p className="hero-sub mt-6 max-w-md text-base text-paper/65 md:text-lg">
           Blanqueadores ópticos, papel Tissue y soluciones industriales, desde 1994.
         </p>
 
         <a
           href="#contacto"
-          className="hero-sub font-label mt-9 inline-block w-fit border-b border-paper/50 pb-1 text-paper transition-colors hover:border-paper"
+          className="hero-sub font-label mt-8 inline-block w-fit border-b border-paper/50 pb-1 text-paper transition-colors hover:border-paper"
         >
           Solicitar asesoramiento técnico <span className="cta-arrow">→</span>
         </a>

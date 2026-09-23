@@ -76,16 +76,16 @@ export default function SolutionsByApplication() {
        hace falta porque section-py-md se define después de
        @import "tailwindcss" y le gana en cascada a un pb-* sin
        important (ver memoria de dirección de arte, punto 18). */
-    <section id="soluciones" className="section-py-md relative w-full bg-paper pb-36! md:pb-60!">
+    <section id="soluciones" className="section-py-md relative w-full bg-paper pb-24! md:pb-40!">
       <div className="container-industrial">
-        <span className="font-label mb-8 block text-ink/50">Soluciones — 03</span>
+        <span className="font-label mb-6 block text-ink/50">Soluciones — 03</span>
         <h2 className="text-display max-w-3xl text-ink">De la materia a la operación del cliente.</h2>
         <p className="mt-6 max-w-lg text-base text-ink/60 md:text-lg">
           Cada línea de COTA se integra en procesos industriales más amplios. Elija su perfil.
         </p>
         <a
           href="#contacto"
-          className="font-label mt-4 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+          className="font-label mt-8 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
         >
           Ir a contacto <span className="cta-arrow">→</span>
         </a>

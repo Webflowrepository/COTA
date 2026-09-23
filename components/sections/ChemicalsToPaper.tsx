@@ -57,7 +57,7 @@ export default function ChemicalsToPaper() {
         <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.45)" }} />
 
         <div ref={sectionRef} className="container-industrial relative flex w-full flex-col pb-20 md:pb-28">
-          <span className="font-label mb-4 block text-paper/60">Papel y Químicos</span>
+          <span className="font-label mb-6 block text-paper/60">Papel y Químicos</span>
           <h3 className="text-display max-w-2xl text-paper">Papel Tissue a escala industrial.</h3>
           <ul className="mt-8 flex flex-col gap-2">
             {PAPER_ITEMS.map((item, i) => (
@@ -66,7 +66,7 @@ export default function ChemicalsToPaper() {
               </li>
             ))}
           </ul>
-          <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
+          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
             <a
               href="#papel"
               className="font-label inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
@@ -89,7 +89,7 @@ export default function ChemicalsToPaper() {
             para blanquear papel y pasta de papel.
           </p>
 
-          <div className="relative mt-8 grid grid-cols-1 gap-6 md:grid-cols-[1fr_1.6fr] md:items-center md:gap-10">
+          <div className="relative mt-12 grid grid-cols-1 gap-8 md:grid-cols-[1fr_1.6fr] md:items-center md:gap-16">
             <ul className="chem-item flex flex-col gap-2">
               {CHEM_ITEMS.map((item, i) => (
                 <li key={item} className="font-label text-ink/65">

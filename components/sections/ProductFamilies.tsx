@@ -159,11 +159,11 @@ export default function ProductFamilies() {
           compartiendo una fila, no como un encabezado. El hint de scroll
           se movió abajo, junto al control real (la barra), que es donde
           efectivamente pasa la interacción. */}
-      <div className="container-industrial mb-10 md:mb-14">
+      <div className="container-industrial mb-12">
         <h2 className="text-display max-w-md text-ink">Un sistema industrial integrado.</h2>
         <a
           href="#contacto"
-          className="font-label mt-4 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+          className="font-label mt-8 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
         >
           Ir a contacto <span className="cta-arrow">→</span>
         </a>
@@ -178,7 +178,7 @@ export default function ProductFamilies() {
       <div
         ref={scrollerRef}
         onScroll={handleScroll}
-        className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 md:mx-auto md:grid md:max-w-[1440px] md:grid-cols-2 md:gap-6 md:overflow-visible md:px-12 md:pb-0 lg:grid-cols-4"
+        className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 md:mx-auto md:grid md:max-w-[1440px] md:grid-cols-2 md:gap-6 md:overflow-visible md:px-12 md:pb-0 lg:grid-cols-4 min-[1440px]:px-20!"
       >
         {PANELS.map((panel, i) => {
           return (

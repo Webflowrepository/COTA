@@ -123,47 +123,49 @@ h1, h2, h3, h4 {
   font-size: 0.8125rem;
 }
 
-/* Ritmo vertical entre secciones. Antes cada sección tenía su propio
-   py-24/py-28/py-32 sin ninguna lógica — todo el sitio respiraba al mismo
-   ritmo, sin momentos comprimidos ni momentos que se tomen su tiempo. Estas
-   4 categorías son deliberadas: xs = conector rápido entre dos momentos
-   más grandes; sm = beat corto (un dato, una fila de logos); md = ritmo
-   estándar de una sección de contenido; lg = una afirmación que necesita
-   aire (una declaración de misión, el cierre de contacto). Las secciones
-   pinneadas/full-bleed (Hero, Proceso Industrial, Químicos→Papel, Naschel)
-   no usan esta escala — su alto lo define el propio scroll-story. */
-.section-py-xs {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-}
+/* Ritmo vertical — pase de espaciado (2026-09-23). Una sola escala de 8pt
+   para todo el sitio: 8 · 16 · 24 · 32 · 48 · 64 · 80 · 96 · 112 · 128 · 160.
+   Jerarquía por espacio:
+     elemento → elemento     16–24   (kicker→título, título→párrafo)
+     texto → acción          32      (párrafo→CTA)
+     bloque → bloque         48–64   (encabezado→contenido)
+     subsección              64–96
+     cambio de capítulo      160 mobile / 240 desktop, medido de contenido
+                             a contenido (pb de una + pt de la siguiente),
+                             nunca optimizado sección por sección.
+   Tres ritmos de sección:
+     sm  compacto   — continuación de la idea anterior (StatsBand después
+                      del Hero, Blanqueadores después de Químicos)
+     md  estándar   — sección de contenido
+     lg  editorial  — apertura de capítulo: entra con mucho aire, cierra
+                      con un cierre estándar (para no sumar doble espacio
+                      con el padding-top de la siguiente).
+   Las secciones full-bleed oscuras (Hero, Químicos, Naschel) no usan esta
+   escala: su alto es 100svh y su contenido cierra siempre en pb-20/md:pb-28. */
 .section-py-sm {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 .section-py-md {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
 .section-py-lg {
-  padding-top: 7rem;
-  padding-bottom: 9rem;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
 }
 @media (min-width: 768px) {
-  .section-py-xs {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
   .section-py-sm {
-    padding-top: 5.5rem;
-    padding-bottom: 5.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
   .section-py-md {
     padding-top: 8rem;
     padding-bottom: 8rem;
   }
   .section-py-lg {
-    padding-top: 9rem;
-    padding-bottom: 11rem;
+    padding-top: 10rem;
+    padding-bottom: 7rem;
   }
 }
 

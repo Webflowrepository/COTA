@@ -143,9 +143,9 @@ export default function PapelTissueSpecs() {
 
   return (
     <section id="papel" className="relative w-full bg-paper">
-      <div className="container-industrial grid grid-cols-1 gap-12 pt-24 pb-16 md:grid-cols-[1fr_0.8fr] md:gap-16 md:pt-32 md:pb-20">
+      <div className="container-industrial grid grid-cols-1 gap-16 pt-24 pb-16 md:grid-cols-[1fr_0.8fr] md:gap-16 md:pt-40 md:pb-20">
         <div>
-          <span className="font-label mb-4 block text-ink/45">Papel Tissue</span>
+          <span className="font-label mb-6 block text-ink/45">Papel Tissue</span>
           <h2 className="text-display max-w-2xl text-ink">Bobinas para convertidores, a su medida.</h2>
           <p className="mt-6 max-w-lg text-base text-ink/60 md:text-lg">
             {cota.businessLines.find((l) => l.id === "papel")?.short} Producción propia en{" "}
@@ -153,7 +153,7 @@ export default function PapelTissueSpecs() {
           </p>
           <a
             href="#contacto"
-            className="font-label mt-6 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
+            className="font-label mt-8 inline-block w-fit border-b border-ink pb-1 text-ink transition-opacity hover:opacity-60"
           >
             Ir a contacto <span className="cta-arrow">→</span>
           </a>
@@ -259,8 +259,8 @@ export default function PapelTissueSpecs() {
           kicker .font-label chico, alineado a la izquierda, sin heading
           grande propio). Se corrigió a ese mismo patrón — la hoja queda
           chica, en línea junto al kicker, no como marca centrada. */}
-      <div ref={catalogRef} className="container-industrial py-16 md:py-24">
-        <div className="border-t border-line-on-light pt-14 md:pt-20">
+      <div ref={catalogRef} className="container-industrial pt-16 pb-16 md:pt-20 md:pb-28">
+        <div className="border-t border-line-on-light pt-12 md:pt-16">
           <span className="font-label mb-10 flex items-center gap-2 text-ink/45">
             Nuestros productos
             <LeafIcon className="h-4 w-4 text-green" />
@@ -289,7 +289,7 @@ export default function PapelTissueSpecs() {
               prev/next (mismo patrón que se usaba en Proceso Industrial,
               sección ya eliminada, pero el affordance para desktop sin
               trackpad sigue siendo válido acá). */}
-          <div className="mt-16 md:mt-20">
+          <div className="mt-16 md:mt-24">
             <span className="font-label mb-6 block text-ink/45">De la bobina al producto convertido</span>
             <div
               ref={galleryRef}
@@ -334,7 +334,7 @@ export default function PapelTissueSpecs() {
               izquierda como en el resto de las secciones. Un CTA pegado
               al margen izquierdo quedaba descolgado de esa simetría
               (pedido del cliente viendo el resultado en pantalla). */}
-          <div className="mt-16 flex justify-center md:mt-20">
+          <div className="mt-12 flex justify-center md:mt-16">
             <a
               href="/catalogos/catalogo-producto-convertido.pdf"
               target="_blank"

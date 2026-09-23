@@ -20,7 +20,8 @@ const STATS = [
 export default function StatsBand() {
   return (
     <section className="section-py-sm w-full bg-paper">
-      <div className="container-industrial grid grid-cols-2 gap-x-6 gap-y-10 border-t border-line-on-light pt-10 md:grid-cols-4 md:gap-x-10">
+      <div className="container-industrial">
+      <div className="grid grid-cols-2 gap-x-6 gap-y-10 border-t border-line-on-light pt-10 md:grid-cols-4 md:gap-x-10">
         {STATS.map((stat, i) => (
           <div key={stat.label}>
             {/* El primer dato (Anos operando) es el que respalda la
@@ -38,6 +39,7 @@ export default function StatsBand() {
             <span className="font-label mt-3 block text-ink/50">{stat.label}</span>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
