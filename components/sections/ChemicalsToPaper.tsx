@@ -56,7 +56,7 @@ export default function ChemicalsToPaper({ part }: { part?: "papel" | "quimicos"
     <>
       {part !== "quimicos" && (
       <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-ink-deep">
-        <PhotoMedia src="/photos/bobinas-deposito.jpeg" alt="Bobinas de papel Tissue en depósito de COTA" />
+        <PhotoMedia src="/photos/papel-tissue-escala-industrial.png" alt="Bobinas de papel Tissue sobre pallets en depósito de COTA" />
         <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.45)" }} />
 
         <div ref={sectionRef} className="container-industrial relative flex w-full flex-col pb-20 md:pb-28">
