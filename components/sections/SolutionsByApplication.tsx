@@ -68,17 +68,16 @@ export default function SolutionsByApplication() {
   // apila todo a la vez. Mismos textos que antes.
   return (
     <section id="soluciones" className="relative grid w-full grid-cols-1 bg-paper md:grid-cols-2">
-      <div className="flex w-full flex-col justify-between gap-16 px-5 py-20 md:ml-auto md:max-w-[720px] md:py-24 md:pl-12 md:pr-16 md:min-h-[40rem] min-[1440px]:pl-20!">
+      <div className="flex w-full flex-col justify-center px-5 py-20 md:ml-auto md:max-w-[720px] md:py-24 md:pl-12 md:pr-16 md:min-h-[40rem] min-[1440px]:pl-20!">
         <div>
           <span className="font-label mb-6 block text-ink/50">Soluciones — 03</span>
-          <h2 className="text-display max-w-xl text-ink">De la materia a la operación del cliente.</h2>
+          <h2 className="text-display max-w-md text-ink">De la materia a la operación del cliente.</h2>
           <p className="mt-6 max-w-md text-base text-ink/60 md:text-lg">
             Cada línea de COTA se integra en procesos industriales más amplios. Elija su perfil.
           </p>
-          <span aria-hidden className="mt-10 block h-px w-10 bg-green" />
         </div>
 
-        <ul className="flex flex-col border-b border-line-on-light">
+        <ul className="mt-12 flex max-w-md flex-col border-b border-line-on-light md:mt-16">
           {SEGMENTS.map((seg, i) => {
             const isActive = activeId === seg.id;
             return (
@@ -88,12 +87,12 @@ export default function SolutionsByApplication() {
                   aria-expanded={isActive}
                   className="group grid w-full grid-cols-[2.5rem_1fr_auto] items-baseline py-5 text-left"
                 >
-                  <span className={`font-label ${isActive ? "text-ink" : "text-ink/35"}`}>
+                  <span className={`font-label ${isActive ? "text-ink" : "text-ink/55"}`}>
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span
                     className={`font-label transition-colors ${
-                      isActive ? "text-ink" : "text-ink/45 group-hover:text-ink"
+                      isActive ? "text-ink" : "text-ink/70 group-hover:text-ink"
                     }`}
                   >
                     {seg.label}
@@ -101,7 +100,7 @@ export default function SolutionsByApplication() {
                   <span
                     aria-hidden
                     className={`font-label transition-transform duration-300 ${
-                      isActive ? "rotate-90 text-ink" : "text-ink/35"
+                      isActive ? "rotate-90 text-ink" : "text-ink/55 group-hover:text-ink"
                     }`}
                   >
                     →
