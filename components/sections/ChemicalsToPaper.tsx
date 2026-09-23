@@ -17,7 +17,9 @@ const CHEM_ITEMS = ["Blanqueadores tetrasulfónicos", "Blanqueadores hexasulfón
 // sección clara debajo — sobre la foto oscura el texto quedaba apretado y
 // perdido, mismo problema que tuvo la versión original. quimicos-ibc-tanques.png
 // estaba libre (no se usaba en ninguna otra sección).
-export default function ChemicalsToPaper() {
+// part: permite ubicar cada mitad en un lugar distinto de la página
+// (prueba de orden de secciones). Sin part se ven las dos, como antes.
+export default function ChemicalsToPaper({ part }: { part?: "papel" | "quimicos" } = {}) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const chemRef = useRef<HTMLDivElement>(null);
 
@@ -52,7 +54,8 @@ export default function ChemicalsToPaper() {
 
   return (
     <>
-      <section id="quimicos" className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-ink-deep">
+      {part !== "quimicos" && (
+      <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-ink-deep">
         <PhotoMedia src="/photos/bobinas-deposito.jpeg" alt="Bobinas de papel Tissue en depósito de COTA" />
         <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.45)" }} />
 
@@ -76,13 +79,15 @@ export default function ChemicalsToPaper() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Químicos — split editorial (pedido del cliente con referencia
           visual, 2026-09-23): texto a la izquierda alineado a la grilla del
           sitio, foto a sangre ocupando toda la mitad derecha y todo el alto
           de la sección. Cierre inferior con pie de sección (rubro + línea +
           año). En mobile se apila: texto, después foto. */}
-      <section ref={chemRef} className="relative grid w-full grid-cols-1 bg-paper md:grid-cols-2">
+      {part !== "papel" && (
+      <section id="quimicos" ref={chemRef} className="relative grid w-full grid-cols-1 bg-paper md:grid-cols-2">
         <div className="flex w-full flex-col px-5 py-20 md:ml-auto md:max-w-[720px] md:py-24 md:pl-12 md:pr-16 md:min-h-[36rem] min-[1440px]:pl-20!">
           <span className="font-label mb-6 block text-ink/50">Línea química</span>
           <h2 className="text-display max-w-xl text-ink">Blanqueadores ópticos a medida.</h2>
@@ -120,6 +125,7 @@ export default function ChemicalsToPaper() {
           />
         </div>
       </section>
+      )}
     </>
   );
 }

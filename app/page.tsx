@@ -25,7 +25,6 @@ export default function Home() {
           orden, mismo contenido/CTAs de ambas, sin tocar nada más
           (análisis pedido por el cliente sobre por qué "los rubros" y
           "papel" se sentían repetidos en la página). */}
-      <ProductFamilies />
       {/* IndustrialProcess ("Recorrido industrial", el banco de fotos entre
           WhyCota y Químicos) se sacó del todo (2026-09-15, pedido directo
           del cliente) — pasó por 2 rediseños en el mismo día (pin/scroll-jack
@@ -34,8 +33,12 @@ export default function Home() {
           eliminarla directamente. El componente se borró (no quedó
           desmontado en el árbol, a diferencia de InstagramFeed más abajo,
           porque acá no hay intención de reactivarlo). */}
-      <ChemicalsToPaper />
+      {/* Prueba de orden (rama prueba-orden): Compañía → Papel → Bobinas
+          y productos → sistema integrado → Químicos → Soluciones. */}
+      <ChemicalsToPaper part="papel" />
       <PapelTissueSpecs />
+      <ProductFamilies />
+      <ChemicalsToPaper part="quimicos" />
       <SolutionsByApplication />
       <NaschelPlant />
       {/* Certificaciones se sacó del todo (auditoría visual, hallazgo #1) —
