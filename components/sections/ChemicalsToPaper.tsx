@@ -77,34 +77,47 @@ export default function ChemicalsToPaper() {
         </div>
       </section>
 
-      {/* Químicos — sección propia, clara, mismo patrón que "Soluciones"
-          (SolutionsByApplication.tsx): kicker, h2, párrafo, foto al 62/38.
-          Ya no vive superpuesta a la foto oscura de arriba. */}
-      <section ref={chemRef} className="section-py-sm relative w-full bg-paper">
-        <div className="container-industrial">
+      {/* Químicos — split editorial (pedido del cliente con referencia
+          visual, 2026-09-23): texto a la izquierda alineado a la grilla del
+          sitio, foto a sangre ocupando toda la mitad derecha y todo el alto
+          de la sección. Cierre inferior con pie de sección (rubro + línea +
+          año). En mobile se apila: texto, después foto. */}
+      <section ref={chemRef} className="relative grid w-full grid-cols-1 bg-paper md:grid-cols-2">
+        <div className="flex w-full flex-col px-5 py-20 md:ml-auto md:max-w-[720px] md:py-24 md:pl-12 md:pr-16 md:min-h-[36rem] min-[1440px]:pl-20!">
           <span className="font-label mb-6 block text-ink/50">Línea química</span>
-          <h2 className="text-display max-w-3xl text-ink">Blanqueadores ópticos a medida.</h2>
-          <p className="mt-6 max-w-lg text-base text-ink/60 md:text-lg">
+          <h2 className="text-display max-w-xl text-ink">Blanqueadores ópticos a medida.</h2>
+          <p className="mt-6 max-w-md text-base text-ink/60 md:text-lg">
             Desde 1994 fabricamos blanqueadores ópticos (agentes blanqueadores fluorescentes)
             para blanquear papel y pasta de papel.
           </p>
 
-          <div className="relative mt-12 grid grid-cols-1 gap-8 md:grid-cols-[1fr_1.6fr] md:items-center md:gap-16">
-            <ul className="chem-item flex flex-col gap-2">
-              {CHEM_ITEMS.map((item, i) => (
-                <li key={item} className="font-label text-ink/65">
-                  {String(i + 1).padStart(2, "0")} — {item}
-                </li>
-              ))}
-            </ul>
-            <div className="chem-item relative h-[30vh] w-full overflow-hidden md:-mr-12 md:h-[34vh] min-[1440px]:-mr-20!">
-              <PhotoMedia
-                src="/photos/quimicos-ibc-tanques.png"
-                alt="Tanques y contenedores IBC de proceso químico, planta de COTA"
-                sizes="(min-width: 768px) 62vw, 100vw"
-              />
-            </div>
+          <span aria-hidden className="chem-item mt-10 block h-px w-10 bg-green" />
+
+          <ul className="chem-item mt-8 flex flex-col gap-3">
+            {CHEM_ITEMS.map((item, i) => (
+              <li key={item} className="font-label text-ink/65">
+                <span className="text-ink">{String(i + 1).padStart(2, "0")}</span> — {item}
+              </li>
+            ))}
+          </ul>
+
+          <div className="chem-item mt-16 flex items-end gap-6 md:mt-auto md:pt-16">
+            <span className="font-label leading-snug text-ink/40">
+              Productos químicos
+              <br />
+              para la industria del papel
+            </span>
+            <span aria-hidden className="mb-1.5 h-px flex-1 bg-line-on-light" />
+            <span className="font-label text-ink/40">Desde 1994</span>
           </div>
+        </div>
+
+        <div className="chem-item relative aspect-[4/3] w-full overflow-hidden md:aspect-auto md:h-full">
+          <PhotoMedia
+            src="/photos/quimicos-ibc-tanques.png"
+            alt="Tanques y contenedores IBC de proceso químico, planta de COTA"
+            sizes="(min-width: 768px) 50vw, 100vw"
+          />
         </div>
       </section>
     </>
