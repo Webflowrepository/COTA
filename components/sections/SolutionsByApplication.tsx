@@ -73,7 +73,7 @@ export default function SolutionsByApplication() {
       <div className="flex w-full flex-col justify-center px-5 py-20 md:ml-auto md:max-w-[720px] md:py-24 md:pl-12 md:pr-16 md:min-h-[40rem] min-[1440px]:pl-20!">
         <div>
           <span className="font-label mb-6 block text-ink/50">Soluciones — 03</span>
-          <h2 className="text-display max-w-md text-ink">Soluciones en papel Tissue para la industria.</h2>
+          <h2 className="text-display max-w-md text-ink">De la materia a la operación del cliente.</h2>
           <p className="mt-6 max-w-md text-base text-ink/60 md:text-lg">
             Cada línea de COTA se integra en procesos industriales más amplios. Elija su perfil.
           </p>

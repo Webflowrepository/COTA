@@ -98,8 +98,8 @@ export default function Hero() {
         </span>
 
         <h1 className="max-w-3xl overflow-hidden">
-          <span className="hero-line text-hero block overflow-hidden text-paper">Líderes en la producción</span>
-          <span className="hero-line text-hero block overflow-hidden text-paper">de papel Tissue.</span>
+          <span className="hero-line text-hero block overflow-hidden text-paper">Soluciones en papel Tissue</span>
+          <span className="hero-line text-hero block overflow-hidden text-paper">para la industria.</span>
         </h1>
 
         <p className="hero-sub mt-6 max-w-md text-base text-paper/65 md:text-lg">
