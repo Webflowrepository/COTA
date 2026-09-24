@@ -43,6 +43,9 @@ const GALLERY_PHOTOS = [
   { src: "/photos/soluciones-rebobinadora.png", alt: "Bobina de papel Tissue montada en rebobinadora, planta de COTA" },
   { src: "/photos/galeria-bobina-camion.jpg", alt: "Carga de bobinas de papel en camión para despacho" },
   { src: "/photos/galeria-toallas-plegadas.jpeg", alt: "Toallas de papel plegadas saliendo de la línea de conversión" },
+  { src: "/photos/galeria-rollos-papel.jpeg", alt: "Rollos de papel Tissue terminados" },
+  { src: "/photos/galeria-toallas-intercaladas-caja.jpeg", alt: "Caja de toallas de papel intercaladas" },
+  { src: "/photos/galeria-producto-terminado-pallets.jpeg", alt: "Producto terminado de papel Tissue en pallets, depósito de COTA" },
   { src: "/photos/galeria-control-calidad.jpg", alt: "Control de calidad de papel Tissue en laboratorio de planta" },
 ];
 
