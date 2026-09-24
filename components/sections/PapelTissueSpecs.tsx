@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type JSX } from "react";
-import { ensureGsapRegistered } from "@/lib/motion/gsap";
+import { ensureGsapRegistered, prefersReducedMotion } from "@/lib/motion/gsap";
 import { EASE_STANDARD } from "@/lib/motion/tokens";
 import SpecCounter from "@/components/ui/SpecCounter";
 import PhotoMedia from "@/components/visuals/PhotoMedia";
@@ -83,6 +83,41 @@ export default function PapelTissueSpecs() {
     const amount = (card?.offsetWidth ?? el.clientWidth) + 16; // + gap-4
     el.scrollBy({ left: dir * amount, behavior: "smooth" });
   }
+
+  // Galería con avance automático (pedido del cliente): pasa una foto cada
+  // 3,5 s y al llegar al final vuelve al principio. Se pausa mientras el
+  // usuario tiene el mouse/dedo encima o el foco en la galería, y no corre
+  // con "reducir movimiento" activado en el sistema.
+  const galleryPaused = useRef(false);
+  useEffect(() => {
+    const el = galleryRef.current;
+    if (!el || prefersReducedMotion()) return;
+    const pause = () => (galleryPaused.current = true);
+    const resume = () => (galleryPaused.current = false);
+    const wrap = el.parentElement ?? el;
+    wrap.addEventListener("mouseenter", pause);
+    wrap.addEventListener("mouseleave", resume);
+    wrap.addEventListener("touchstart", pause, { passive: true });
+    wrap.addEventListener("touchend", resume);
+    wrap.addEventListener("focusin", pause);
+    wrap.addEventListener("focusout", resume);
+    const id = window.setInterval(() => {
+      if (galleryPaused.current || document.hidden) return;
+      const max = el.scrollWidth - el.clientWidth;
+      if (max <= 0) return;
+      if (el.scrollLeft >= max - 1) el.scrollTo({ left: 0, behavior: "smooth" });
+      else scrollGalleryByCard(1);
+    }, 3500);
+    return () => {
+      window.clearInterval(id);
+      wrap.removeEventListener("mouseenter", pause);
+      wrap.removeEventListener("mouseleave", resume);
+      wrap.removeEventListener("touchstart", pause);
+      wrap.removeEventListener("touchend", resume);
+      wrap.removeEventListener("focusin", pause);
+      wrap.removeEventListener("focusout", resume);
+    };
+  }, []);
 
   useEffect(() => {
     const { gsap } = ensureGsapRegistered();
@@ -309,7 +344,7 @@ export default function PapelTissueSpecs() {
                 aria-label="Foto anterior"
                 disabled={galleryAtStart}
                 onClick={() => scrollGalleryByCard(-1)}
-                className="flex h-9 w-9 shrink-0 items-center justify-center border border-line-on-light text-ink/60 transition-opacity disabled:opacity-30"
+                className="flex h-9 w-9 shrink-0 items-center justify-center border border-ink/40 text-ink transition-colors hover:border-ink disabled:opacity-35"
               >
                 <ChevronIcon direction="left" />
               </button>
@@ -318,11 +353,11 @@ export default function PapelTissueSpecs() {
                 aria-label="Foto siguiente"
                 disabled={galleryAtEnd}
                 onClick={() => scrollGalleryByCard(1)}
-                className="flex h-9 w-9 shrink-0 items-center justify-center border border-line-on-light text-ink/60 transition-opacity disabled:opacity-30"
+                className="flex h-9 w-9 shrink-0 items-center justify-center border border-ink/40 text-ink transition-colors hover:border-ink disabled:opacity-35"
               >
                 <ChevronIcon direction="right" />
               </button>
-              <span className="font-label text-ink/40">Deslizar para ver más →</span>
+              <span className="font-label text-ink/80">Deslizar para ver más →</span>
             </div>
           </div>
 
