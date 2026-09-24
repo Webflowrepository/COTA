@@ -66,8 +66,10 @@ export default function SolutionsByApplication() {
   // divisores finos — mismo patrón que "Por qué COTA" en Compañía. Sólo el
   // perfil activo se despliega (título, texto y CTA), así la columna no
   // apila todo a la vez. Mismos textos que antes.
+  // pb en la sección: franja clara debajo para que el video de acá no quede
+  // pegado al video full-bleed de Planta (Naschel), que viene justo después.
   return (
-    <section id="soluciones" className="relative grid w-full grid-cols-1 bg-paper md:grid-cols-2">
+    <section id="soluciones" className="relative grid w-full grid-cols-1 bg-paper pb-24 md:grid-cols-2 md:pb-32">
       <div className="flex w-full flex-col justify-center px-5 py-20 md:ml-auto md:max-w-[720px] md:py-24 md:pl-12 md:pr-16 md:min-h-[40rem] min-[1440px]:pl-20!">
         <div>
           <span className="font-label mb-6 block text-ink/50">Soluciones — 03</span>
