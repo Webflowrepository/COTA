@@ -370,15 +370,23 @@ export default function PapelTissueSpecs() {
               izquierda como en el resto de las secciones. Un CTA pegado
               al margen izquierdo quedaba descolgado de esa simetría
               (pedido del cliente viendo el resultado en pantalla). */}
-          <div className="mt-12 flex justify-center md:mt-16">
-            <a
-              href="/catalogos/catalogo-producto-convertido.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-label inline-flex items-center gap-2 rounded-full border border-green px-8 py-3.5 text-green transition-colors hover:bg-green hover:text-paper"
-            >
-              Descargá nuestro catálogo <span className="cta-arrow">→</span>
-            </a>
+          {/* Los 2 catálogos (mismos PDFs que en Contacto), mismo botón
+              que antes — uno al lado del otro, apilados en mobile. */}
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row md:mt-16">
+            {[
+              { label: "Catálogo bobinas", href: "/catalogos/catalogo-bobinas-2026.pdf" },
+              { label: "Catálogo producto convertido", href: "/catalogos/catalogo-producto-convertido.pdf" },
+            ].map((c) => (
+              <a
+                key={c.href}
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-label inline-flex items-center gap-2 rounded-full border border-green px-8 py-3.5 text-green transition-colors hover:bg-green hover:text-paper"
+              >
+                {c.label} <span className="cta-arrow">→</span>
+              </a>
+            ))}
           </div>
         </div>
       </div>

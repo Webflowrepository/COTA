@@ -214,7 +214,7 @@ export const cota = {
     // deja la URL base (sin /posts), que es la correcta para quien sí
     // tenga sesión abierta.
     { name: "LinkedIn", href: "https://www.linkedin.com/company/cota-sa/" },
-    { name: "Facebook", href: "https://www.facebook.com/p/Cota-SA-6157699516126" },
+    { name: "Facebook", href: "https://www.facebook.com/p/Cota-SA-61576995161264/" },
   ],
 } as const;
 

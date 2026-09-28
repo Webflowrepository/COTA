@@ -18,9 +18,8 @@ const INFO_ROWS = [
 // sitio. Se movieron a public/catalogos/ con nombre limpio; acá se linkean
 // directo (abren en pestaña nueva, no se descargan solos).
 const CATALOGS = [
-  { label: "Catálogo de bobinas 2026", href: "/catalogos/catalogo-bobinas-2026.pdf" },
+  { label: "Catálogo de bobinas", href: "/catalogos/catalogo-bobinas-2026.pdf" },
   { label: "Catálogo de producto convertido", href: "/catalogos/catalogo-producto-convertido.pdf" },
-  { label: "Catálogo interactivo COTA", href: "/catalogos/catalogo-interactivo-marketing.pdf" },
 ];
 
 // Instagram al final (pedido del cliente: "ponelo a la derecha") — el
