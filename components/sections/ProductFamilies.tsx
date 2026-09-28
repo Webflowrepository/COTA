@@ -152,7 +152,7 @@ export default function ProductFamilies() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="section-py-md relative w-full bg-paper">
+    <section id="sistema" ref={sectionRef} className="section-py-md relative w-full bg-paper">
       {/* Antes había un segundo elemento ("Desplazar horizontalmente →")
           pegado al borde derecho del contenedor, separado del título por
           un hueco enorme en pantallas anchas — leía como dos cosas sueltas

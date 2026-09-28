@@ -12,7 +12,9 @@ const LINKS = [
   { href: "#compania", id: "compania", label: "Compañía" },
   { href: "#papel", id: "papel", label: "Papel" },
   { href: "#quimicos", id: "quimicos", label: "Químicos" },
-  { href: "#soluciones", id: "soluciones", label: "Soluciones" },
+  // "Soluciones" lleva a "Un sistema industrial integrado" (las 4 líneas: bobinas,
+  // conversión, químicos, soluciones) — pedido del cliente.
+  { href: "#sistema", id: "sistema", label: "Soluciones" },
   { href: "#planta", id: "planta", label: "Planta" },
 ];
 
