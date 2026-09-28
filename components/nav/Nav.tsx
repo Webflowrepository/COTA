@@ -10,11 +10,13 @@ import Image from "next/image";
 // siguiente en aparecer.
 const LINKS = [
   { href: "#compania", id: "compania", label: "Compañía" },
+  // #papel = la apertura oscura "Papel Tissue a escala industrial"; sigue
+  // activo mientras se recorre Bobinas/especificaciones/galería (#bobinas).
   { href: "#papel", id: "papel", label: "Papel" },
-  { href: "#quimicos", id: "quimicos", label: "Químicos" },
   // "Soluciones" lleva a "Un sistema industrial integrado" (las 4 líneas: bobinas,
   // conversión, químicos, soluciones) — pedido del cliente.
   { href: "#sistema", id: "sistema", label: "Soluciones" },
+  { href: "#quimicos", id: "quimicos", label: "Químicos" },
   { href: "#planta", id: "planta", label: "Planta" },
 ];
 
@@ -31,9 +33,10 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
-    const targets = LINKS.map((l) => document.getElementById(l.id)).filter(
-      (el): el is HTMLElement => el !== null,
-    );
+    const targets = LINKS.map((l) => document.getElementById(l.id))
+      .filter((el): el is HTMLElement => el !== null)
+      // orden real del DOM, por si el array y la página se desfasan
+      .sort((a, b) => (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1));
     if (targets.length === 0) return;
 
     let ticking = false;

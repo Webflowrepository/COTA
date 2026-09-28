@@ -55,7 +55,7 @@ export default function ChemicalsToPaper({ part }: { part?: "papel" | "quimicos"
   return (
     <>
       {part !== "quimicos" && (
-      <section className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-ink-deep">
+      <section id="papel" className="relative flex min-h-[100svh] w-full items-end overflow-hidden bg-ink-deep">
         <PhotoMedia src="/photos/papel-tissue-escala-industrial.png" alt="Bobinas de papel Tissue sobre pallets en depósito de COTA" />
         <div className="absolute inset-0" style={{ background: "rgba(6,8,17,0.45)" }} />
 
@@ -71,7 +71,7 @@ export default function ChemicalsToPaper({ part }: { part?: "papel" | "quimicos"
           </ul>
           <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
             <a
-              href="#papel"
+              href="#bobinas"
               className="font-label inline-block w-fit border-b border-paper/40 pb-0.5 text-paper transition-colors hover:border-paper"
             >
               Ver especificaciones técnicas <span className="cta-arrow">→</span>

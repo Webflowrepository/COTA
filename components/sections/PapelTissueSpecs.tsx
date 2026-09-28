@@ -178,7 +178,7 @@ export default function PapelTissueSpecs() {
   }, []);
 
   return (
-    <section id="papel" className="relative w-full bg-paper">
+    <section id="bobinas" className="relative w-full bg-paper">
       <div className="container-industrial grid grid-cols-1 gap-16 pt-24 pb-16 md:grid-cols-[1fr_0.8fr] md:gap-16 md:pt-40 md:pb-20">
         <div>
           <span className="font-label mb-6 block text-ink/45">Papel Tissue</span>
