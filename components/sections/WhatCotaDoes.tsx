@@ -11,13 +11,15 @@ import { cota } from "@/lib/content/cota";
 // porque la intro sola dejaba mucho espacio vacío debajo. Texto ya
 // verificado, no son datos nuevos.
 const POINTS = [
-  {
-    title: "Desarrollo propio, no reventa.",
-    copy: "Blanqueadores ópticos desarrollados por COTA.",
-  },
+  // Integración vertical primero (pedido del cliente): que Compañía no
+  // arranque hablando de blanqueadores ópticos.
   {
     title: "Integración vertical.",
     copy: "De la materia prima al producto terminado, misma planta.",
+  },
+  {
+    title: "Desarrollo propio, no reventa.",
+    copy: "Blanqueadores ópticos desarrollados por COTA.",
   },
   {
     title: "Logística propia.",
