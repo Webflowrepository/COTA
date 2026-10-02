@@ -11,23 +11,22 @@ import { cota } from "@/lib/content/cota";
 // porque la intro sola dejaba mucho espacio vacío debajo. Texto ya
 // verificado, no son datos nuevos.
 const POINTS = [
-  // Integración vertical primero (pedido del cliente): que Compañía no
-  // arranque hablando de blanqueadores ópticos.
+  // Texto provisto por el cliente (2026-10-02), con ortografía corregida.
   {
-    title: "Integración vertical.",
-    copy: "De la materia prima al producto terminado, misma planta.",
+    title: "Fábrica de papel con integración vertical.",
+    copy: "De la materia prima al producto terminado, en la misma planta. Fabricamos con fibra virgen las bobinas industriales que te proveemos y también te damos el servicio de producto terminado.",
   },
   {
-    title: "Desarrollo propio, no reventa.",
-    copy: "Blanqueadores ópticos desarrollados por COTA.",
+    title: "Trato personalizado.",
+    copy: "Todo cliente es importante para nosotros: damos un servicio de atención personalizada y buscamos soluciones para cada cliente.",
   },
   {
-    title: "Logística propia.",
-    copy: "Instalación de fábricas y venta de maquinaria de conversión.",
+    title: "Soluciones industriales.",
+    copy: "Somos representantes de fabricantes internacionales de maquinaria. Te asesoramos en el montaje de tu empresa.",
   },
   {
-    title: "Asesoramiento técnico.",
-    copy: "Para papeleras que necesitan blanquear papel y pasta.",
+    title: "Fábrica de químicos.",
+    copy: "Somos fabricantes de químicos para papeleras y textiles.",
   },
 ];
 
