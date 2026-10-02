@@ -12,9 +12,11 @@ import { cota } from "@/lib/content/cota";
 // verificado, no son datos nuevos.
 const POINTS = [
   // Texto provisto por el cliente (2026-10-02), con ortografía corregida.
+  // Grilla 2x2 (no 4 columnas): con 4 columnas los títulos largos bajaban
+  // a 2 líneas y los textos quedaban en "escalerita".
   {
     title: "Fábrica de papel con integración vertical.",
-    copy: "De la materia prima al producto terminado, en la misma planta. Fabricamos con fibra virgen las bobinas industriales que te proveemos y también te damos el servicio de producto terminado.",
+    copy: "De la materia prima al producto terminado, en la misma planta: bobinas industriales de fibra virgen y servicio de producto terminado.",
   },
   {
     title: "Trato personalizado.",
@@ -104,11 +106,11 @@ export default function WhatCotaDoes() {
             misma línea fina arriba que usa el resto del sitio. */}
         <div className="whatcota-cell md:col-span-2">
           <span className="font-label mb-6 block text-ink/45">Por qué COTA</span>
-          <div className="grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-x-16 gap-y-10 md:grid-cols-2">
             {POINTS.map((point) => (
               <div key={point.title} className="why-point border-t border-line-on-light pt-6">
                 <h3 className="text-base font-semibold text-ink md:text-lg">{point.title}</h3>
-                <p className="mt-2 text-sm text-ink/60">{point.copy}</p>
+                <p className="mt-2 max-w-md text-sm text-ink/60 md:text-base">{point.copy}</p>
               </div>
             ))}
           </div>
