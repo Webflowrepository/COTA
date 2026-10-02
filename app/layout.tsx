@@ -6,6 +6,7 @@ import Footer from "@/components/footer/Footer";
 import SmoothScrollProvider from "@/lib/motion/SmoothScrollProvider";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { cota } from "@/lib/content/cota";
+import { SITE_URL } from "@/lib/site";
 
 // Reemplaza a Big Shoulders — el cliente pidió Teko después de comparar
 // varias rondas de opciones (condensada técnica, cortes angulosos). Solo
@@ -30,10 +31,45 @@ const mono = Geist_Mono({
   weight: ["400", "500", "600"],
 });
 
+// SEO (2026-10-02). SITE_URL en lib/site.ts. opengraph-image.jpg /
+// twitter-image.jpg / icon.png en app/ los toma Next.js solo.
+
 export const metadata: Metadata = {
-  title: "COTA — Líderes en la producción de papel Tissue",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "COTA S.A. — Soluciones en papel Tissue para la industria",
+    template: "%s | COTA S.A.",
+  },
   description:
-    "COTA es una empresa industrial argentina con más de 30 años de trayectoria en blanqueadores ópticos (tetrasulfónicos, hexasulfónicos, antraquinona), bobinas de papel Tissue y soluciones industriales. Planta propia en Naschel, San Luis.",
+    "Fabricante argentino de papel Tissue desde 1994: bobinas industriales para convertidores, productos convertidos y línea profesional Guardián. Planta propia en Naschel, San Luis. También blanqueadores ópticos y soluciones industriales.",
+  keywords: [
+    "papel Tissue",
+    "bobinas industriales",
+    "bobinas de papel",
+    "fabricante de papel Tissue Argentina",
+    "productos convertidos",
+    "Guardián",
+    "blanqueadores ópticos",
+    "COTA",
+    "Naschel San Luis",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    url: "/",
+    siteName: "COTA S.A.",
+    title: "COTA S.A. — Soluciones en papel Tissue para la industria",
+    description:
+      "Bobinas industriales de papel Tissue, productos convertidos y línea Guardián. Planta propia en Naschel, San Luis, desde 1994.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "COTA S.A. — Soluciones en papel Tissue para la industria",
+    description:
+      "Bobinas industriales de papel Tissue, productos convertidos y línea Guardián. Planta propia en Naschel, San Luis.",
+  },
+  robots: { index: true, follow: true },
 };
 
 // schema.org — sólo datos verificados de lib/content/cota.ts, nada de
@@ -41,8 +77,12 @@ export const metadata: Metadata = {
 // afuera hasta tener algo real que declarar).
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["Organization", "LocalBusiness"],
   name: cota.legalName,
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo-cota.png`,
+  description:
+    "Fabricante argentino de papel Tissue: bobinas industriales, productos convertidos y línea Guardián. Planta propia en Naschel, San Luis.",
   foundingDate: String(cota.foundedYear),
   address: {
     "@type": "PostalAddress",

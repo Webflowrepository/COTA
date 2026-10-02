@@ -61,7 +61,7 @@ export default function ChemicalsToPaper({ part }: { part?: "papel" | "quimicos"
 
         <div ref={sectionRef} className="container-industrial relative flex w-full flex-col pb-20 md:pb-28">
           <span className="font-label mb-6 block text-paper/60">Papel y Químicos</span>
-          <h3 className="text-display max-w-2xl text-paper">Papel Tissue a escala industrial.</h3>
+          <h2 className="text-display max-w-2xl text-paper">Papel Tissue a escala industrial.</h2>
           <ul className="mt-8 flex flex-col gap-2">
             {PAPER_ITEMS.map((item, i) => (
               <li key={item} className="font-label text-paper/65">
