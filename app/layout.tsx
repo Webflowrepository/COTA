@@ -76,12 +76,14 @@ export const metadata: Metadata = {
 // certificaciones/reseñas/ratings (esos campos de LocalBusiness quedan
 // afuera hasta tener algo real que declarar).
 // WebSite es lo que Google usa para el nombre del sitio arriba de cada
-// resultado (sin esto mostraba "Vercel", por el dominio vercel.app).
+// resultado (sin esto mostraba "Vercel", por el dominio vercel.app). El
+// nombre tiene que coincidir con el <title> y og:site_name ("COTA S.A.") —
+// Google elige el nombre por consistencia entre esas señales.
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "COTA",
-  alternateName: ["COTA S.A.", "Cota Papelera"],
+  name: "COTA S.A.",
+  alternateName: ["COTA", "Cota Papelera"],
   url: `${SITE_URL}/`,
 };
 
