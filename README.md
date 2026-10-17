@@ -5,6 +5,8 @@ se hacen pidiéndoselos en palabras normales a una inteligencia artificial
 (Claude o Codex), que edita la web por vos y te muestra el resultado antes de
 publicarlo.
 
+▶️ **[Ver el video de la guía (1 minuto)](docs/guia-cambios-web-cota.mp4)** — tocá el link y después **View raw** para reproducirlo o descargarlo.
+
 ---
 
 ## 1. Lo que necesitás (una sola vez)
