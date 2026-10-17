@@ -1,8 +1,8 @@
 /**
- * Ãšnica fuente de verdad para datos verificados de COTA.
+ * Única fuente de verdad para datos verificados de COTA.
  * Fuentes: cota.com.ar (sitio actual) + brief provisto directamente por el cliente.
- * No agregar certificaciones, clientes, paÃ­ses, specs tÃ©cnicas
- * o claims de sostenibilidad/liderazgo que no estÃ©n confirmados en alguna de esas dos fuentes.
+ * No agregar certificaciones, clientes, países, specs técnicas
+ * o claims de sostenibilidad/liderazgo que no estén confirmados en alguna de esas dos fuentes.
  */
 
 export const cota = {
@@ -14,52 +14,52 @@ export const cota = {
   plant: {
     location: "Naschel, San Luis",
     postalCode: "5759",
-    /** cota.com.ar (historia): instalaciÃ³n de la planta propia con capitales propios. */
+    /** cota.com.ar (historia): instalación de la planta propia con capitales propios. */
     ownCapital: true,
   },
-  /** Oficina comercial â€” distinta de la planta de producciÃ³n en Naschel. */
+  /** Oficina comercial — distinta de la planta de producción en Naschel. */
   offices: {
     commercial: "San Isidro, Buenos Aires",
   },
-  /** Distillado de la MisiÃ³n real publicada en cota.com.ar ("Socios EstratÃ©gicos en Soluciones de Papel"). */
-  mission: "Socios estratÃ©gicos en soluciones de papel.",
+  /** Distillado de la Misión real publicada en cota.com.ar ("Socios Estratégicos en Soluciones de Papel"). */
+  mission: "Socios estratégicos en soluciones de papel.",
   production: {
-    /** Capacidad de la lÃ­nea de quÃ­micos/blanqueadores â€” no es la capacidad total de la planta. */
+    /** Capacidad de la línea de químicos/blanqueadores — no es la capacidad total de la planta. */
     chemicalsMonthlyTons: 700,
-    /** No confirmado todavÃ­a por COTA â€” no inventar un nÃºmero acÃ¡. */
+    /** No confirmado todavía por COTA — no inventar un número acá. */
     paperMonthlyTons: null as number | null,
     unit: "Tn/mes",
   },
-  // Orden: Papel primero â€” el cliente pidiÃ³ que el sitio no lea como una
-  // fÃ¡brica solo de quÃ­mica, y la MisiÃ³n real de COTA ("Socios estratÃ©gicos
-  // en soluciones de papel") ya es papel-cÃ©ntrica. Este orden se propaga
+  // Orden: Papel primero — el cliente pidió que el sitio no lea como una
+  // fábrica solo de química, y la Misión real de COTA ("Socios estratégicos
+  // en soluciones de papel") ya es papel-céntrica. Este orden se propaga
   // solo a todo lo que itera cota.businessLines (WhatCotaDoes.tsx, etc.).
   businessLines: [
     {
       id: "papel",
       label: "Papel Tissue",
-      short: "Bobinas para convertidores y lÃ­nea profesional GuardiÃ¡n.",
+      short: "Bobinas para convertidores y línea profesional Guardián.",
     },
     {
       id: "quimicos",
-      label: "QuÃ­micos",
-      short: "Blanqueadores Ã³pticos para la industria papelera y textil, y abastecimiento a la industria de la limpieza.",
+      label: "Químicos",
+      short: "Blanqueadores ópticos para la industria papelera y textil, y abastecimiento a la industria de la limpieza.",
     },
     {
       id: "soluciones",
       label: "Soluciones Industriales",
-      short: "Asesoramiento, logÃ­stica, instalaciÃ³n de fÃ¡bricas y venta de maquinaria de conversiÃ³n.",
+      short: "Asesoramiento, logística, instalación de fábricas y venta de maquinaria de conversión.",
     },
   ],
   /**
-   * "Papel" es UNA sola divisiÃ³n real (ver arriba, y StatsBand cuenta
-   * businessLines.length = 3 divisiones reales de la empresa â€” ese nÃºmero
+   * "Papel" es UNA sola división real (ver arriba, y StatsBand cuenta
+   * businessLines.length = 3 divisiones reales de la empresa — ese número
    * no cambia). Para las secciones que muestran tarjetas/paneles por
-   * lÃ­nea de negocio (WhatCotaDoes, ProductFamilies), el cliente pidiÃ³
-   * comunicar Papel como 2 conceptos separados â€” bobina para convertidores
-   * (fabricantes) vs. producto ya convertido para distribuciÃ³n â€” porque
-   * hoy se leÃ­an mezclados bajo un solo "Papel Tissue". SÃ³lo separa el
-   * relato, no crea una 4ta divisiÃ³n real.
+   * línea de negocio (WhatCotaDoes, ProductFamilies), el cliente pidió
+   * comunicar Papel como 2 conceptos separados — bobina para convertidores
+   * (fabricantes) vs. producto ya convertido para distribución — porque
+   * hoy se leían mezclados bajo un solo "Papel Tissue". Sólo separa el
+   * relato, no crea una 4ta división real.
    */
   papelSplit: [
     {
@@ -69,8 +69,8 @@ export const cota = {
     },
     {
       id: "conversion-integrada",
-      label: "ConversiÃ³n Integrada",
-      short: "Papel Tissue convertido, listo para distribuciÃ³n.",
+      label: "Conversión Integrada",
+      short: "Papel Tissue convertido, listo para distribución.",
     },
   ],
   services: [
@@ -86,77 +86,77 @@ export const cota = {
     },
     {
       id: "logistica",
-      label: "Servicio de logÃ­stica",
-      short: "LogÃ­stica, instalaciÃ³n de fÃ¡bricas y venta de maquinaria de conversiÃ³n.",
+      label: "Servicio de logística",
+      short: "Logística, instalación de fábricas y venta de maquinaria de conversión.",
     },
     {
       id: "productos",
       label: "Productos finales",
-      short: "Productos finales y asesoramiento a distribuidores en todo el paÃ­s.",
+      short: "Productos finales y asesoramiento a distribuidores en todo el país.",
     },
     {
       id: "autoelevadores",
       label: "Autoelevadores y embalajes",
-      short: "ProvisiÃ³n de autoelevadores y soluciones de embalaje para la operaciÃ³n del cliente.",
+      short: "Provisión de autoelevadores y soluciones de embalaje para la operación del cliente.",
     },
   ],
-  /** Tipos de blanqueadores Ã³pticos que produce COTA â€” provisto por el cliente. */
-  chemicalTypes: ["TetrasulfÃ³nicos", "HexasulfÃ³nicos", "Antraquinona"],
+  /** Tipos de blanqueadores ópticos que produce COTA — provisto por el cliente. */
+  chemicalTypes: ["Tetrasulfónicos", "Hexasulfónicos", "Antraquinona"],
   /**
-   * Especificaciones tÃ©cnicas de bobinas de papel Tissue.
-   * Confirmadas por el cliente â€” no inventadas.
+   * Especificaciones técnicas de bobinas de papel Tissue.
+   * Confirmadas por el cliente — no inventadas.
    */
   bobinaSpecs: {
     anchos: ["220 cm", "200 cm", "120 cm", "100 cm"],
     diametros: ["110 cm", "100 cm"],
     conoInterior: "7,5 cm",
-    /** Gramaje por tipo de producto â€” confirmado por el cliente. El resto
+    /** Gramaje por tipo de producto — confirmado por el cliente. El resto
      * de combinaciones ("alternativas") se maneja por consulta directa,
-     * no se lista acÃ¡ para no dar a entender que es un catÃ¡logo cerrado. */
+     * no se lista acá para no dar a entender que es un catálogo cerrado. */
     gramajes: [
-      { label: "HigiÃ©nico", value: "18 g" },
+      { label: "Higiénico", value: "18 g" },
       { label: "Rollo de cocina (toalla)", value: "19 g" },
       { label: "Toalla", value: "30 g" },
     ],
   },
-  /** Los 3 modelos de negocio bajo los que opera la lÃ­nea de papel. */
+  /** Los 3 modelos de negocio bajo los que opera la línea de papel. */
   businessModels: [
     {
       id: "fabricacion",
-      label: "FabricaciÃ³n",
-      short: "ProducciÃ³n de bobinas de papel tissue blanco puro para convertidores. Medidas y stock a consultar.",
+      label: "Fabricación",
+      short: "Producción de bobinas de papel tissue blanco puro para convertidores. Medidas y stock a consultar.",
     },
     {
       id: "producto-terminado",
       label: "Producto Terminado",
-      short: "Papel desnudo para revender o etiquetar con tu marca. Posibilidad de desarrollar el packaging con tu marca propia con nosotros. Consultar requisitos mÃ­nimos.",
+      short: "Papel desnudo para revender o etiquetar con tu marca. Posibilidad de desarrollar el packaging con tu marca propia con nosotros. Consultar requisitos mínimos.",
     },
     {
       id: "guardian",
-      label: "GuardiÃ¡n",
-      short: "PodÃ©s ser nuestro representante oficial. Consultar requisitos.",
+      label: "Guardián",
+      short: "Podés ser nuestro representante oficial. Consultar requisitos.",
     },
   ],
   /**
-   * CatÃ¡logo de productos terminados â€” confirmado por el cliente.
+   * Catálogo de productos terminados — confirmado por el cliente.
    * "Toallas en rollo" + "Camilleros" se muestran fusionados en una sola
-   * tarjeta (mismo material en rollo, distinto formato/uso) â€” decisiÃ³n
-   * tomada junto con el cliente al rediseÃ±ar "Nuestros Productos": eran 6
+   * tarjeta (mismo material en rollo, distinto formato/uso) — decisión
+   * tomada junto con el cliente al rediseñar "Nuestros Productos": eran 6
    * productos pero uno quedaba sin tarjeta propia si no se fusionaba
-   * ninguno, y separar los 6 en tarjetas iguales diluÃ­a la jerarquÃ­a.
-   * Quedan 5 tarjetas. SubtÃ­tulos (formato/medida) provistos por el
-   * cliente en esa misma conversaciÃ³n â€” no inventados.
+   * ninguno, y separar los 6 en tarjetas iguales diluía la jerarquía.
+   * Quedan 5 tarjetas. Subtítulos (formato/medida) provistos por el
+   * cliente en esa misma conversación — no inventados.
    */
   finishedProducts: [
     {
       id: "toallas-rollo-camilleros",
       label: "Toallas de papel en rollo y camilleros",
-      subtitle: "MÃºltiples formatos",
+      subtitle: "Múltiples formatos",
     },
     {
       id: "bobinas-limpieza",
       label: "Bobinas industriales de limpieza y multiuso con precorte",
-      subtitle: "Gran absorciÃ³n",
+      subtitle: "Gran absorción",
     },
     {
       id: "toallas-intercaladas",
@@ -165,7 +165,7 @@ export const cota = {
     },
     {
       id: "papel-higienico",
-      label: "Papel higiÃ©nico de medio y alto metraje",
+      label: "Papel higiénico de medio y alto metraje",
       subtitle: "Suavidad y rendimiento en cada rollo",
     },
     {
@@ -175,44 +175,44 @@ export const cota = {
     },
   ],
   /**
-   * GuardiÃ¡n â€” lÃ­nea profesional de producto terminado (papel Tissue),
+   * Guardián — línea profesional de producto terminado (papel Tissue),
    * dirigida a distribuidores. Marca real de COTA, confirmada por el cliente.
-   * No hay fotografÃ­a de producto en alta resoluciÃ³n todavÃ­a â€” usar proxy visual.
+   * No hay fotografía de producto en alta resolución todavía — usar proxy visual.
    */
   guardian: {
-    name: "GuardiÃ¡n",
-    tagline: "LÃ­nea Profesional â€” Protector de Ambientes Limpios",
+    name: "Guardián",
+    tagline: "Línea Profesional — Protector de Ambientes Limpios",
   },
-  /** CategorÃ­as para el contacto segmentado â€” mismo canal real, asunto pre-completado por categorÃ­a. */
+  /** Categorías para el contacto segmentado — mismo canal real, asunto pre-completado por categoría. */
   contactCategories: [
     { id: "general", label: "Consulta general" },
     { id: "bobinas", label: "Bobinas para convertidores" },
-    { id: "quimicos", label: "Blanqueadores y quÃ­micos" },
-    { id: "distribucion", label: "DistribuciÃ³n â€” GuardiÃ¡n" },
-    { id: "maquinaria", label: "Maquinaria y logÃ­stica" },
+    { id: "quimicos", label: "Blanqueadores y químicos" },
+    { id: "distribucion", label: "Distribución — Guardián" },
+    { id: "maquinaria", label: "Maquinaria y logística" },
   ],
   contact: {
     email: "ventaspapel@cota.com.ar",
     phone: "+54 9 11 3371 3283",
   },
-  /** Mismo celular confirmado por el cliente para contacto â€” formato wa.me (solo dÃ­gitos, sin +). */
+  /** Mismo celular confirmado por el cliente para contacto — formato wa.me (solo dígitos, sin +). */
   whatsapp: {
     number: "5491133713283" as string | null,
     isPlaceholder: false,
   },
-  /** Redes â€” Instagram siempre primero (pedido explÃ­cito del cliente).
+  /** Redes — Instagram siempre primero (pedido explícito del cliente).
    * LinkedIn y Facebook confirmadas con URL real. TikTok: el cliente dijo
-   * que todavÃ­a no existe la cuenta â€” no se agrega hasta que haya un
-   * link real (mismo criterio que se aplicÃ³ antes acÃ¡ mismo). */
+   * que todavía no existe la cuenta — no se agrega hasta que haya un
+   * link real (mismo criterio que se aplicó antes acá mismo). */
   social: [
     { name: "Instagram", href: "https://www.instagram.com/cota_papelera/" },
     // Probado con Playwright: tanto esta URL como la de /posts/?feedView=all
     // redirigen al mismo "authwall" de LinkedIn (pantalla de Registrarse) en
-    // un navegador sin sesiÃ³n iniciada â€” es el comportamiento propio de
-    // LinkedIn para visitantes anÃ³nimos en pÃ¡ginas de empresa, no depende
-    // de quÃ© variante de URL se use. No se puede arreglar desde acÃ¡; se
-    // deja la URL base (sin /posts), que es la correcta para quien sÃ­
-    // tenga sesiÃ³n abierta.
+    // un navegador sin sesión iniciada — es el comportamiento propio de
+    // LinkedIn para visitantes anónimos en páginas de empresa, no depende
+    // de qué variante de URL se use. No se puede arreglar desde acá; se
+    // deja la URL base (sin /posts), que es la correcta para quien sí
+    // tenga sesión abierta.
     { name: "LinkedIn", href: "https://www.linkedin.com/company/cota-sa/" },
     { name: "Facebook", href: "https://www.facebook.com/p/Cota-SA-61576995161264/" },
   ],
@@ -220,3 +220,4 @@ export const cota = {
 
 export type BusinessLine = (typeof cota.businessLines)[number];
 export type Service = (typeof cota.services)[number];
+
