@@ -2,12 +2,13 @@ import { NextResponse, type NextRequest } from "next/server";
 
 const CANONICAL_HOST = "www.cota.com.ar";
 
-// Dirección vieja de Vercel: servía el sitio completo como un sitio aparte,
-// y Google la listaba como resultado propio con el nombre "Vercel". Se
-// redirige todo a www.cota.com.ar para que exista un solo sitio. Sólo esta
-// dirección exacta: los deploys de prueba (cota-xxxx.vercel.app) siguen
-// funcionando y Vercel ya les pone noindex.
-const LEGACY_HOSTS = new Set(["cota-eta.vercel.app"]);
+// Direcciones *.vercel.app de producción: servían el sitio completo como un
+// sitio aparte, y Google las listaba como resultado propio con el nombre
+// "Vercel". Se redirige todo a www.cota.com.ar para que exista un solo
+// sitio. cota-eta = cuenta Vercel anterior; cota-sigma = cuenta de COTA.
+// Sólo estas direcciones exactas: los deploys de prueba
+// (cota-xxxx.vercel.app) siguen funcionando y Vercel ya les pone noindex.
+const LEGACY_HOSTS = new Set(["cota-eta.vercel.app", "cota-sigma.vercel.app"]);
 
 // URLs del sitio Joomla anterior que Google todavía tiene indexadas (ej.
 // /index.php/es/la-empresa.html, /website/index.php?option=com_content&...).
